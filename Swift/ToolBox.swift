@@ -224,6 +224,11 @@ class ToolBox: NSObject{
     public static let DATE_NONE_yyyyMMddHHmmss:String = "yyyyMMddHHmmss"
     public static let DATE_TIME_HHmm:String = "HH.mm"
     public static let DATE_TIME_HHmmss:String = "HH.mm.ss"
+    //
+    public static let TOOLBOX_SYMBOL_DEFAULT_MONETARY:String = "R$"
+    public static let TOOLBOX_SYMBOL_DEFAULT_VOLUME_LIQUID:String = "L"
+    public static let TOOLBOX_SYMBOL_DEFAULT_VOLUME_SOLID:String = "m³"
+    public static let TOOLBOX_SYMBOL_DEFAULT_DISTANCE:String = "KM"
 
     
     //MARK: - • TOOL BOX =======================================================================
@@ -1477,6 +1482,236 @@ class ToolBox: NSObject{
         let strDate:String = self.dateHelper_StringFromDate(date: date, stringFormat: newStringFormat)
         //
         return strDate
+        
+    }
+    
+    //MARK: - • CONVERTER HELPER =======================================================================
+    
+    /** Converte um dicionário JSON em texto.*/
+    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary) -> String
+    {
+        if let dic:NSDictionary = dictionary
+        {
+            var jsonData:Data? = Data()
+            do
+            {
+                jsonData = try JSONSerialization.data(withJSONObject: dic, options: JSONSerialization.WritingOptions.init(rawValue: 0))
+            }catch{
+                print(error)
+            }
+            
+            if(jsonData == nil)
+            {
+                return "{}"
+            }
+            else
+            {
+                return String.init(data: jsonData!, encoding: String.Encoding.utf8)!
+            }
+        }
+        else
+        {
+            return ""
+        }
+        
+    }
+    
+    /** Converte um texto em dicionário JSON.*/
+    class func converterHelper_DictionaryFromStringJson(string:String) -> NSDictionary?
+    {
+        if(string.isEmpty)
+        {
+            return nil
+        }
+        
+        let objectData:Data? = (string.data(using: String.Encoding.utf8))
+        var json:NSDictionary?
+        do
+        {
+            json = try (JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary)
+        }catch{
+            print(error)
+        }
+        
+        if(json != nil)
+        {
+            return json!
+        }
+        
+        return nil
+        
+    }
+    
+    /** Remove valores textuais '<null>', '(null)', 'null' do dicionário parâmetro, substituindo pela por um termo escolhido.*/
+    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary, withString newString:String) -> NSDictionary?
+    {
+        if let dic:NSDictionary = oldDictionary
+        {
+            var replaced:NSMutableDictionary = NSMutableDictionary(dictionary: dic)
+            
+            for key in replaced.allKeys {
+                
+                var object:AnyObject = replaced.object(forKey: key) as AnyObject
+                if(object is String)
+                {
+                    if(isNullString(valueString: (object as! String)))
+                    {
+                        replaced.setObject(newString, forKey: key as! NSCopying)
+                    }
+                }
+                else if(object is NSNull)
+                {
+                    replaced.setObject(newString, forKey: key as! NSCopying)
+                }
+            }
+            return NSDictionary.init(dictionary: replaced)
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    /** Substitui o símbolo '+' do texto de um dicionário referência.*/
+    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary) -> NSDictionary?
+    {
+        if let dic:NSDictionary = refDictionary
+        {
+            let replaced:NSMutableDictionary = NSMutableDictionary.init(dictionary: dic)
+            var dicString = converterHelper_StringJsonFromDictionary(dictionary: replaced)
+            
+            dicString = dicString.removingPercentEncoding!
+            
+            let resultDic = converterHelper_DictionaryFromStringJson(string: dicString)
+            return resultDic
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    /** Retorna uma url normalizada baseada em uma string.*/
+    class func converterHelper_NormalizedURLString(string:String) -> NSURL?
+    {
+        if let paramString:String = string
+        {
+            let urlString = paramString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+            return NSURL.init(string: urlString!)!
+        }
+        else
+        {
+            return nil
+        }
+        
+    }
+    
+    /** Retorna o texto 'limpo' de uma html.*/
+    class func converterHelper_PlainStringFromHTMLString(htmlString:String) -> String?
+    {
+        if let paramString:String = htmlString
+        {
+            var aString:NSAttributedString = NSAttributedString()
+            
+            do{
+                aString = try NSAttributedString.init(data: paramString.data(using: String.Encoding.utf8)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSNumber.init(value: String.Encoding.utf8.rawValue)], documentAttributes: nil)
+            }
+            catch
+            {
+                print(error)
+            }
+            
+            return aString.string
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    /** Formata um valor numérico para seu equivalente monetário. Utiliza a localidade padrão do sistema.*/
+    class func converterHelper_MonetaryStringForValue(value:Double) -> String?
+    {
+        if let paramValue:Double = value
+        {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = NumberFormatter.Style.currency
+            return formatter.string(from: NSNumber.init(value: paramValue))
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    /** Converte graus em radianos.*/
+    class func converterHelper_DegreeToRadian(degree:CGFloat) -> CGFloat
+    {
+        return degree * CGFloat(M_PI) / 180.0
+    }
+    
+    /** Converte radianos em graus.*/
+    class func converterHelper_RadianToDegree(radius:CGFloat) -> CGFloat
+    {
+        return radius * 180.0 / CGFloat(M_PI)
+    }
+    
+    /** Converte grau celsius para fahenheit.*/
+    class func converterHelper_CelsiusToFahenheit(celcius:CGFloat) -> CGFloat
+    {
+        return (celcius-32.0) / 1.8
+    }
+    
+    /** Converte fahenheit para grau celsius.*/
+    class func converterHelper_FahenheitToCelsius(fahenheit:CGFloat) -> CGFloat
+    {
+        return (fahenheit*1.8)+32.0
+    }
+    
+    /** Retorna o equivalente numérico para um dado texto (localizado pt-BR). Ex: "R$ 50,00", "2,3 L", "5 m³" etc.*/
+    class func converterHelper_DecimalValueFromText(text:String) -> Double
+    {
+        var tempVE = text
+        tempVE = tempVE.replacingOccurrences(of: ".", with: "")
+        tempVE = tempVE.replacingOccurrences(of: " ", with: "")
+        tempVE = tempVE.replacingOccurrences(of: ",", with: ".")
+        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_MONETARY, with: "")
+        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_VOLUME_LIQUID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_VOLUME_SOLID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_DISTANCE, with: "")
+        
+        let value:NSDecimalNumber = NSDecimalNumber(string: tempVE)
+        
+        return Double(value)
+    }
+    
+    /** Formata um valor para texto, aplicando opcionalmente o símbolo monetário (localizado pt-BR).*/
+    class func converterHelper_StringFromValue(value:Double, monetaryFormat monetary:Bool, decimalPrecision precision:Int) -> String
+    {
+        var texto:String
+        
+        let v = NSNumber.init(value: value)
+        let formatter = NumberFormatter()
+        let locale = Locale(identifier: "pt-BR")
+        
+        formatter.locale = locale
+        formatter.numberStyle = .decimal
+        formatter.roundingMode = .halfDown
+        formatter.decimalSeparator = ","
+        formatter.groupingSeparator = "."
+        formatter.maximumFractionDigits = precision
+        formatter.minimumFractionDigits = precision
+        formatter.minimumIntegerDigits = 1
+        texto = formatter.string(from: v)!
+        //
+        if(monetary)
+        {
+            return String("\(TOOLBOX_SYMBOL_DEFAULT_MONETARY) \(texto)")
+        }
+        else
+        {
+            return texto
+        }
         
     }
     
