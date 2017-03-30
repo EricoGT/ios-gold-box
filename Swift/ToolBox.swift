@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Accelerate
+
+//MARK: - • EXTENSIONS
 
 private extension String {
     
@@ -33,6 +36,10 @@ private extension String {
         let nsSt = self as NSString
         return nsSt.appendingPathExtension(ext)
     }
+    //
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }
 
 private extension UIDevice {
@@ -47,84 +54,84 @@ private extension UIDevice {
         }
         
         switch identifier {
-            //iPhone
-            case "iPhone1,1":    return  "iPhone 1G"
-            case "iPhone1,2":    return  "iPhone 3G"
-            case "iPhone2,1":    return  "iPhone 3GS"
-            case "iPhone3,1":    return  "iPhone 4"
-            case "iPhone3,2":    return  "iPhone 4 (GSM)"
-            case "iPhone3,3":    return  "iPhone 4 (CDMA)"
-            case "iPhone4,1":    return  "iPhone 4S"
-            case "iPhone5,1":    return  "iPhone 5 (GSM)"
-            case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
-            case "iPhone5,3":    return  "iPhone 5C (GSM)"
-            case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
-            case "iPhone6,1":    return  "iPhone 5S (GSM)"
-            case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
-            case "iPhone7,1":    return  "iPhone 6 Plus"
-            case "iPhone7,2":    return  "iPhone 6"
-            case "iPhone8,1":    return  "iPhone 6S"
-            case "iPhone8,2":    return  "iPhone 6S Plus"
-            case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
-            case "iPhone8,4":    return  "iPhone SE (GSM)"
-            case "iPhone9,1":    return  "iPhone 7"
-            case "iPhone9,2":    return  "iPhone 7 Plus"
-            case "iPhone9,3":    return  "iPhone 7"
-            case "iPhone9,4":    return  "iPhone 7 Plus"
-                
-            //iPod
-            case "iPod1,1":      return  "iPod Touch 1G"
-            case "iPod2,1":      return  "iPod Touch 2G"
-            case "iPod3,1":      return  "iPod Touch 3G"
-            case "iPod4,1":      return  "iPod Touch 4G"
-            case "iPod5,1":      return  "iPod Touch 5G"
-            case "iPod6,1":      return  "iPod Touch 6G"
-                
-            //iPad
-            case "iPad1,1":      return  "iPad"
-            case "iPad2,1":      return  "iPad 2 (WiFi)"
-            case "iPad2,2":      return  "iPad 2 (GSM)"
-            case "iPad2,3":      return  "iPad 2 (CDMA)"
-            case "iPad2,4":      return  "iPad 2 (WiFi)"
-            case "iPad3,1":      return  "iPad 3 (WiFi)"
-            case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
-            case "iPad3,3":      return  "iPad 3 (GSM)"
-            case "iPad3,4":      return  "iPad 4 (WiFi)"
-            case "iPad3,5":      return  "iPad 4 (GSM)"
-            case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
-                
-            //iPad Mini
-            case "iPad2,5":      return  "iPad Mini (WiFi)"
-            case "iPad2,6":      return  "iPad Mini (GSM)"
-            case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
-            case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
-            case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
-            case "iPad4,6":      return  "iPad Mini 2"
-            case "iPad4,7":      return  "iPad Mini 3"
-            case "iPad4,8":      return  "iPad Mini 3"
-            case "iPad4,9":      return  "iPad Mini 3"
-            case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
-            case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
-                
-            //iPad Air
-            case "iPad4,1":      return  "iPad Air (WiFi)"
-            case "iPad4,2":      return  "iPad Air (Cellular)"
-            case "iPad4,3":      return  "iPad Air"
-            case "iPad5,3":      return  "iPad Air 2 (WiFi)"
-            case "iPad5,4":      return  "iPad Air 2 (Cellular)"
-                
-            //iPad Pro
-            case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
-            case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
-            case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
-            case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
-                
-            //simulador
-            case "i386":         return  "Simulator"
-            case "x86_64":       return  "Simulator"
+        //iPhone
+        case "iPhone1,1":    return  "iPhone 1G"
+        case "iPhone1,2":    return  "iPhone 3G"
+        case "iPhone2,1":    return  "iPhone 3GS"
+        case "iPhone3,1":    return  "iPhone 4"
+        case "iPhone3,2":    return  "iPhone 4 (GSM)"
+        case "iPhone3,3":    return  "iPhone 4 (CDMA)"
+        case "iPhone4,1":    return  "iPhone 4S"
+        case "iPhone5,1":    return  "iPhone 5 (GSM)"
+        case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
+        case "iPhone5,3":    return  "iPhone 5C (GSM)"
+        case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
+        case "iPhone6,1":    return  "iPhone 5S (GSM)"
+        case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
+        case "iPhone7,1":    return  "iPhone 6 Plus"
+        case "iPhone7,2":    return  "iPhone 6"
+        case "iPhone8,1":    return  "iPhone 6S"
+        case "iPhone8,2":    return  "iPhone 6S Plus"
+        case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
+        case "iPhone8,4":    return  "iPhone SE (GSM)"
+        case "iPhone9,1":    return  "iPhone 7"
+        case "iPhone9,2":    return  "iPhone 7 Plus"
+        case "iPhone9,3":    return  "iPhone 7"
+        case "iPhone9,4":    return  "iPhone 7 Plus"
             
-            //other
-            default:             return identifier
+        //iPod
+        case "iPod1,1":      return  "iPod Touch 1G"
+        case "iPod2,1":      return  "iPod Touch 2G"
+        case "iPod3,1":      return  "iPod Touch 3G"
+        case "iPod4,1":      return  "iPod Touch 4G"
+        case "iPod5,1":      return  "iPod Touch 5G"
+        case "iPod6,1":      return  "iPod Touch 6G"
+            
+        //iPad
+        case "iPad1,1":      return  "iPad"
+        case "iPad2,1":      return  "iPad 2 (WiFi)"
+        case "iPad2,2":      return  "iPad 2 (GSM)"
+        case "iPad2,3":      return  "iPad 2 (CDMA)"
+        case "iPad2,4":      return  "iPad 2 (WiFi)"
+        case "iPad3,1":      return  "iPad 3 (WiFi)"
+        case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
+        case "iPad3,3":      return  "iPad 3 (GSM)"
+        case "iPad3,4":      return  "iPad 4 (WiFi)"
+        case "iPad3,5":      return  "iPad 4 (GSM)"
+        case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
+            
+        //iPad Mini
+        case "iPad2,5":      return  "iPad Mini (WiFi)"
+        case "iPad2,6":      return  "iPad Mini (GSM)"
+        case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
+        case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
+        case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
+        case "iPad4,6":      return  "iPad Mini 2"
+        case "iPad4,7":      return  "iPad Mini 3"
+        case "iPad4,8":      return  "iPad Mini 3"
+        case "iPad4,9":      return  "iPad Mini 3"
+        case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
+        case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
+            
+        //iPad Air
+        case "iPad4,1":      return  "iPad Air (WiFi)"
+        case "iPad4,2":      return  "iPad Air (Cellular)"
+        case "iPad4,3":      return  "iPad Air"
+        case "iPad5,3":      return  "iPad Air 2 (WiFi)"
+        case "iPad5,4":      return  "iPad Air 2 (Cellular)"
+            
+        //iPad Pro
+        case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
+        case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
+        case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
+        case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
+            
+        //simulador
+        case "i386":         return  "Simulator"
+        case "x86_64":       return  "Simulator"
+            
+        //other
+        default:             return identifier
         }
     }
 }
@@ -136,45 +143,46 @@ private extension Calendar{
         
         switch identifier {
             
-            case Identifier.gregorian:              return "gregorian"
-                
-            case Identifier.buddhist:               return "buddhist"
-                
-            case Identifier.chinese:                return "chinese"
-                
-            case Identifier.coptic:                 return "coptic"
-                
-            case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
-                
-            case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
-                
-            case Identifier.hebrew:                 return "hebrew"
-                
-            case Identifier.iso8601:                return "iso8601"
-                
-            case Identifier.indian:                 return "indian"
-                
-            case Identifier.islamic:                return "islamic"
-                
-            case Identifier.islamicCivil:           return "islamicCivil"
-                
-            case Identifier.japanese:               return "japanese"
-                
-            case Identifier.persian:                return "persian"
-                
-            case Identifier.republicOfChina:        return "republicOfChina"
-                
-            /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
-            case Identifier.islamicTabular:         return "islamicTabular"
-                
-            /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
-            case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
-                
-            default:                                return ""
+        case Identifier.gregorian:              return "gregorian"
             
+        case Identifier.buddhist:               return "buddhist"
+            
+        case Identifier.chinese:                return "chinese"
+            
+        case Identifier.coptic:                 return "coptic"
+            
+        case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
+            
+        case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
+            
+        case Identifier.hebrew:                 return "hebrew"
+            
+        case Identifier.iso8601:                return "iso8601"
+            
+        case Identifier.indian:                 return "indian"
+            
+        case Identifier.islamic:                return "islamic"
+            
+        case Identifier.islamicCivil:           return "islamicCivil"
+            
+        case Identifier.japanese:               return "japanese"
+            
+        case Identifier.persian:                return "persian"
+            
+        case Identifier.republicOfChina:        return "republicOfChina"
+            
+        /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
+        case Identifier.islamicTabular:         return "islamicTabular"
+            
+        /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
+        case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
+            
+            //default:                                return ""
         }
     }
 }
+
+//MARK: - • ENUMS
 
 enum ToolBoxComparationRule:Int {
     case Less = 1
@@ -184,9 +192,22 @@ enum ToolBoxComparationRule:Int {
     case GreaterOrEqual = 5
 }
 
+
+enum ToolBoxValidationResult:Int {
+    case Undefined = 0
+    case Approved = 1
+    case Disapproved = 2
+}
+
+enum ToolBoxGrayScaleEffect:Int {
+    case Noir = 0
+    case Mono = 1
+    case Tonal = 2
+}
+
 class ToolBox: NSObject{
     
-    //MARK: - DEFINES
+    //MARK: - • DEFINES (STATIC PROPERTIES)
     
     public static let DATE_BAR_ddMMM:String = "dd/MMM"
     public static let DATE_BAR_ddMMMyyyy:String = "dd/MMM/yyyy"
@@ -225,11 +246,13 @@ class ToolBox: NSObject{
     public static let DATE_TIME_HHmm:String = "HH.mm"
     public static let DATE_TIME_HHmmss:String = "HH.mm.ss"
     //
-    public static let TOOLBOX_SYMBOL_DEFAULT_MONETARY:String = "R$"
-    public static let TOOLBOX_SYMBOL_DEFAULT_VOLUME_LIQUID:String = "L"
-    public static let TOOLBOX_SYMBOL_DEFAULT_VOLUME_SOLID:String = "m³"
-    public static let TOOLBOX_SYMBOL_DEFAULT_DISTANCE:String = "KM"
-
+    public static let CDATA_START:String = "<![CDATA["
+    public static let CDATA_END:String = "]]>"
+    //
+    public static let SYMBOL_MONETARY:String = "R$"
+    public static let SYMBOL_VOLUME_LIQUID:String = "L"
+    public static let SYMBOL_VOLUME_SOLID:String = "m³"
+    public static let SYMBOL_DISTANCE:String = "KM"
     
     //MARK: - • TOOL BOX =======================================================================
     
@@ -237,7 +260,10 @@ class ToolBox: NSObject{
     class func toolBoxHelper_classVersionInfo() -> String!{
         
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
-        return "Version: 7.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
+        //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
+        //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //
+        return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -260,15 +286,15 @@ class ToolBox: NSObject{
         return "\(version) - \(build)"
     }
     
-
+    
     /** Retorna o caminho de instalação do app (útil para testes com simulador). Preferencialmente utilize no 'didFinishLaunchingWithOptions' do AppDelegate.*/
     class func applicationHelper_InstalationDataForSimulator() -> String!{
         
         return String.init(format: "\n\n---------- Logs ----------\nClasse: %@\nMétodo: %@\nLinha: %d\nDescrição: LOCAL SIMULATOR: %@\n---------- Logs ----------\n\n",
                            arguments: [String(describing: type(of: self)),
-                            #function,
-                            #line,
-                            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
+                                       #function,
+                                       #line,
+                                       NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
     }
     
     
@@ -284,7 +310,7 @@ class ToolBox: NSObject{
             let attr = try FileManager.default.attributesOfItem(atPath: filePath)
             fileSize = attr[FileAttributeKey.size] as! UInt64
             //
-            return self.toolBoxPrivate_TransformedValue(size: fileSize)
+            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
             
         } catch {
             print("Error >> applicationHelper_FileSize: \(error)")
@@ -447,13 +473,13 @@ class ToolBox: NSObject{
             let attr = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             let fileSize:UInt64 = attr[FileAttributeKey.systemSize] as! UInt64
             //
-            return self.toolBoxPrivate_TransformedValue(size: fileSize)
+            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
         }catch{
-            return self.toolBoxPrivate_TransformedValue(size: 0)
+            return self.messureHelper_FormatedStringToDataSize(dataSize: 0)
         }
     }
     
-
+    
     /** Busca o tamanho da memória livre disponível no dispositivo.*/
     class func deviceHelper_FreeMemorySpace() -> String{
         
@@ -461,9 +487,9 @@ class ToolBox: NSObject{
             let attr = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             let fileSize:UInt64 = attr[FileAttributeKey.systemFreeSize] as! UInt64
             //
-            return self.toolBoxPrivate_TransformedValue(size: fileSize)
+            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
         }catch{
-            return self.toolBoxPrivate_TransformedValue(size: 0)
+            return self.messureHelper_FormatedStringToDataSize(dataSize: 0)
         }
     }
     
@@ -898,7 +924,7 @@ class ToolBox: NSObject{
                     {
                         return String.init(format: "%d horas e %lu minutos", [hoursBetweenDates, minutesLeft])
                     }
-                }                
+                }
             }else{
                 return ""
             }
@@ -953,7 +979,7 @@ class ToolBox: NSObject{
             return 0
         }
     }
-
+    
     
     /** Retorna uma nova data, utilizando uma data base deslocada de 'n' unidades de calendário (ex.: dias, horas, minutos).*/
     class func dateHelper_NewDateForReferenceDate(referenceDate:Date?, offSet:Int, unitCalendar:Calendar.Component) -> Date?{
@@ -1114,90 +1140,90 @@ class ToolBox: NSObject{
                 let dateComponents2:DateComponents = calendar.dateComponents(setComponents, from: d2)
                 
                 for i in 1...7 {
-                
+                    
                     switch (i)
                     {
-                        case 1: //Ano Maior
+                    case 1: //Ano Maior
+                        
+                        if (dateComponents1.year! > dateComponents2.year!){
                             
-                            if (dateComponents1.year! > dateComponents2.year!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 2: //Ano Menor
+                        
+                        if (dateComponents1.year! < dateComponents2.year!){
                             
-                        case 2: //Ano Menor
-                            
-                            if (dateComponents1.year! < dateComponents2.year!){
-                            
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
-                           
+                        }
+                        
+                        
+                    case 3: //Ano Igual / Mês Menor
+                        
+                        if (dateComponents1.month! > dateComponents2.month!){
                             
-                        case 3: //Ano Igual / Mês Menor
-                            
-                            if (dateComponents1.month! > dateComponents2.month!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 4: //Ano Igual / Mês Maior
+                        
+                        if (dateComponents1.month! < dateComponents2.month!){
                             
-                        case 4: //Ano Igual / Mês Maior
-                            
-                            if (dateComponents1.month! < dateComponents2.month!){
-                                
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 5: //Ano Igual / Mês Igual / Dia Menor
+                        
+                        if (dateComponents1.day! > dateComponents2.day!){
                             
-                        case 5: //Ano Igual / Mês Igual / Dia Menor
-                            
-                            if (dateComponents1.day! > dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 6: //Ano Igual / Mês Igual / Dia Meior
+                        
+                        if (dateComponents1.day! < dateComponents2.day!){
                             
-                        case 6: //Ano Igual / Mês Igual / Dia Meior
-                            
-                            if (dateComponents1.day! < dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 7: //Ano Igual / Mês Igual / Dia Igual
+                        
+                        if (dateComponents1.day! == dateComponents2.day!){
                             
-                        case 7: //Ano Igual / Mês Igual / Dia Igual
-                            
-                            if (dateComponents1.day! == dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
-                           
-                        default:
-                            
-                            return false
+                        }
+                        
+                    default:
+                        
+                        return false
                     }
                 }
                 return false
@@ -1213,7 +1239,7 @@ class ToolBox: NSObject{
     
     /** Retorna um texto no formato Mês/Ano (localizado pt-BR) para uma data referência. Ex.: JAN/2016. */
     class func dateHelper_MonthAndYearForReferenceDate(referenceDate:Date?, abbreviation:Bool) -> String{
-    
+        
         if let date:Date = referenceDate{
             
             let calendar:Calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
@@ -1238,38 +1264,38 @@ class ToolBox: NSObject{
     class func dateHelper_MonthNameForIndex(index:Int, abbreviation:Bool) -> String{
         
         switch index {
-            case 1:
-                return (abbreviation ? "JAN" : "Janeiro")
-            case 2:
-                return (abbreviation ? "FEV" : "Fevereiro")
-            case 3:
-                return (abbreviation ? "MAR" : "Março")
-            case 4:
-                return (abbreviation ? "ABR" : "Abril")
-            case 5:
-                return (abbreviation ? "MAI" : "Maio")
-            case 6:
-                return (abbreviation ? "JUN" : "Junho")
-            case 7:
-                return (abbreviation ? "JUL" : "Julho")
-            case 8:
-                return (abbreviation ? "AGO" : "Agosto")
-            case 9:
-                return (abbreviation ? "SET" : "Setembro")
-            case 10:
-                return (abbreviation ? "OUT" : "Outubro")
-            case 11:
-                return (abbreviation ? "NOV" : "Novembro")
-            case 12:
-                return (abbreviation ? "DEZ" : "Dezembro")
-            default:
-                return (abbreviation ? "-" : "-")
+        case 1:
+            return (abbreviation ? "JAN" : "Janeiro")
+        case 2:
+            return (abbreviation ? "FEV" : "Fevereiro")
+        case 3:
+            return (abbreviation ? "MAR" : "Março")
+        case 4:
+            return (abbreviation ? "ABR" : "Abril")
+        case 5:
+            return (abbreviation ? "MAI" : "Maio")
+        case 6:
+            return (abbreviation ? "JUN" : "Junho")
+        case 7:
+            return (abbreviation ? "JUL" : "Julho")
+        case 8:
+            return (abbreviation ? "AGO" : "Agosto")
+        case 9:
+            return (abbreviation ? "SET" : "Setembro")
+        case 10:
+            return (abbreviation ? "OUT" : "Outubro")
+        case 11:
+            return (abbreviation ? "NOV" : "Novembro")
+        case 12:
+            return (abbreviation ? "DEZ" : "Dezembro")
+        default:
+            return (abbreviation ? "-" : "-")
         }
     }
     
     /** Encontra o nome do dia da semana para determinado indice (localizado pt-BR). */
     class func dateHelper_DayOfTheWeekNameForIndex(indexDay:Int, abbreviation:Bool) -> String{
-    
+        
         switch indexDay {
         case 1:
             return (abbreviation ? "DOM" : "Domingo")
@@ -1290,12 +1316,12 @@ class ToolBox: NSObject{
         }
     }
     
-
+    
     /** Formata uma dada data para texto com máscara 'EEEE, dd 'de' MMMM 'de' yyyy, HH:mm:ss. */
     class func dateHelper_CompleteStringFromDate(referenceDay:Date?) -> String{
         
         if let rDate:Date = referenceDay{
-         
+            
             let dateFormatter:DateFormatter = DateFormatter.init()
             dateFormatter.dateFormat = "EEEE, dd 'de' MMMM 'de' yyyy, kk:mm:ss."
             //
@@ -1377,7 +1403,7 @@ class ToolBox: NSObject{
             }else if (dateComponents.hour! >= 12){
                 
                 return "Tarde"
-            
+                
             }else if (dateComponents.hour! >= 6){
                 
                 return "Dia"
@@ -1485,6 +1511,1354 @@ class ToolBox: NSObject{
         
     }
     
+    
+    //MARK: - • MESSURE HELPER =======================================================================
+    
+    
+    /** Normaliza um valor para uma determinada precisão.*/
+    class func messureHelper_NormalizeValue(value:Double, decimalPrecision:Int) -> Double{
+        
+        let normalizador:Double = Double(powf(10, Float(decimalPrecision)));
+        let result:Double = (ceil(value * normalizador))/normalizador;
+        //
+        return result;
+    }
+    
+    
+    /** Verifica se dois números são iguais, utilizando uma precisão parâmetro como limitador.*/
+    class func messureHelper_CheckEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int) -> Bool{
+        
+        //TODO:
+        //        NSString *vString1 = [self converterHelper_StringFromValue:value1 monetaryFormat:true decimalPrecision:precision];
+        //        NSString *vString2 = [self converterHelper_StringFromValue:value2 monetaryFormat:true decimalPrecision:precision];
+        //        //
+        //        double vDouble1 = [self converterHelper_DecimalValueFromText:vString1];
+        //        double vDouble2 = [self converterHelper_DecimalValueFromText:vString2];
+        //        //
+        //        return (vDouble1 == vDouble2);
+        
+        return false
+    }
+    
+    
+    /** Formata um tamanho para a unidade mais apropriada, relacionada ao tamanho em 'bytes'.*/
+    class func messureHelper_FormatedStringToDataSize(dataSize:UInt64) -> String{
+        
+        var convertedValue:Double  = Double(dataSize)
+        var multiplyFactor:Int = 0;
+        let tokens:Array = ["bytes", "KB", "MB", "GB", "TB"]
+        
+        while (convertedValue > 1024.0) {
+            convertedValue /= 1024.0
+            multiplyFactor += 1
+        }
+        
+        return String(format: "%.2f %@", convertedValue, tokens[multiplyFactor])
+    }
+    
+    
+    //MARK: - • VALIDATION HELPER =======================================================================
+    
+    
+    /** Verifica se um email é compatível segundo o regex utilizado por padrão. Para saber mais: 'http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/'.*/
+    class func validationHelper_EmailChecker(email:String!) -> ToolBoxValidationResult{
+        
+        // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+        //let stricterFilter:Bool = true
+        
+        let stricterFilterString:String = "^[_a-zA-Z0-9-]+([.]{1}[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+([.]{1}[a-zA-Z0-9-]+)*([.]{1}[a-zA-Z]{2,6})"
+        //let laxString:String = ".+@([A-Za-z0-9]+\\.)+[A-Za-z]{2}[A-Za-z]*"
+        let emailRegex:String = stricterFilterString //stricterFilter ? stricterFilterString : laxString
+        //
+        let emailTest:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", emailRegex)
+        //
+        if (emailTest.evaluate(with: email) == false){
+            return ToolBoxValidationResult.Disapproved
+        }else{
+            return ToolBoxValidationResult.Approved
+        }
+    }
+    
+    
+    /** Verifica se todos os caracteres de um texto pertencem ou não a uma dada lista de caracteres.*/
+    class func validationHelper_TextCheck(text:String, validationList:Array<Character>, restrictForList:Bool) -> ToolBoxValidationResult{
+        
+        if(restrictForList) //somente aceita caracteres da lista
+        {
+            
+            for char in text.characters {
+                
+                var ok:Bool = false
+                
+                for vChar in validationList {
+                    
+                    if (char == vChar){
+                        
+                        ok = true
+                        break
+                    }
+                }
+                
+                if (!ok) {
+                    return ToolBoxValidationResult.Disapproved
+                }
+            }
+            
+            return ToolBoxValidationResult.Approved
+            
+        }
+        else //rejeita todos caracteres da lista
+        {
+            
+            for char in text.characters {
+                
+                var ok:Bool = true
+                
+                for vChar in validationList {
+                    
+                    if (char == vChar){
+                        
+                        ok = false
+                        break
+                    }
+                }
+                
+                if (!ok) {
+                    return ToolBoxValidationResult.Disapproved
+                }
+            }
+            
+            return ToolBoxValidationResult.Approved
+        }
+    }
+    
+    
+    
+    /**
+     * Cria uma lista de caracteres, contendo os elementos selecionados.
+     * @param numbers     Acrescenta os numerais a lista [0-9].
+     * @param capsLetters     Acrescenta letras maiúsculas a lista [A-Z].
+     * @param minusLetters     Acrescenta letras maiúsculas a lista [a-z].
+     * @param symbols     Acrescenta símbolos a lista [vários].
+     * @param control     Acrescenta caracteres de controle a lista [\a, \b, \t, \n, \v, \f, \r, \e].
+     * @return     Retorna uma lista vazia caso todos os paramêtros estejam negados.
+     */
+    class func validationHelper_NewListOfCharactersWith(numbers:Bool, capsLetters:Bool, minusLetters:Bool, symbols:Bool, controlCharacters:Bool) -> Array<Character>{
+        
+        var finalList:Array<Character> = Array()
+        
+        if (numbers){
+            
+            finalList.append(contentsOf: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+        }
+        
+        if (capsLetters){
+            
+            finalList.append(contentsOf: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"])
+        }
+        
+        if (minusLetters){
+            
+            finalList.append(contentsOf: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"])
+        }
+        
+        if (symbols){
+            
+            finalList.append(contentsOf: [" ", "!", "?", ".", ",", ";", ":", "\"", "\'", "<", ">", "[", "]", "(", ")", "{", "}", "#", "$", "%", "&", "*", "/", "\\","|", "-", "_", "+", "=", "^", "ª", "º"])
+        }
+        
+        if (controlCharacters){
+            
+            finalList.append(contentsOf: ["\n", "\r", "\t"])
+        }
+        
+        return finalList
+    }
+    
+    /** Verifica o MIMEType para um determinado arquivo com extensão conhecida.*/
+    class func validationHelper_MIMETypeForWebContent(url:String) -> String{
+        
+        let strArray:Array = url.components(separatedBy: ".")
+        
+        if (strArray.count > 0){
+            
+            let strMIME:String = strArray.last!
+            
+            if strMIME.uppercased() == "JPE" {return "image/jpeg"}
+            if strMIME.uppercased() == "JPEG" {return "image/jpeg"}
+            if strMIME.uppercased() == "JPG" {return "image/jpeg"}
+            if strMIME.uppercased() == "BM" {return "image/bmp"}
+            if strMIME.uppercased() == "BMP" {return "image/bmp"}
+            if strMIME.uppercased() == "PNG" {return "image/png"}
+            if strMIME.uppercased() == "GIF" {return "image/gif"}
+            if strMIME.uppercased() == "TIFF" {return "image/tiff"}
+        }
+        
+        return ""
+    }
+    
+    
+    /** Verifica se o texto equivale a verdadeiro ou falso.*/
+    class func validationHelper_ValidateBolean(text:String?, comparingBoolean:Bool) ->Bool{
+        
+        guard text != nil else {
+            return false
+        }
+        
+        if(comparingBoolean)
+        {
+            if (text!.uppercased() == "TRUE") {return true}
+            if (text!.uppercased() == "YES") {return true}
+            if (text!.uppercased() == "ON") {return true}
+            if (text!.uppercased() == "ONLINE") {return true}
+            if (text!.uppercased() == "ENABLE") {return true}
+            if (text!.uppercased() == "ACTIVATED") {return true}
+            if (text!.uppercased() == "ONE") {return true}
+            //
+            if (text!.uppercased() == "VERDADEIRO") {return true}
+            if (text!.uppercased() == "SIM") {return true}
+            if (text!.uppercased() == "LIGADO") {return true}
+            if (text!.uppercased() == "ATIVO") {return true}
+            if (text!.uppercased() == "ATIVADO") {return true}
+            if (text!.uppercased() == "HABILITADO") {return true}
+            if (text!.uppercased() == "UM") {return true}
+            //
+            if (text!.uppercased() == "1") {return true}
+            if (text!.uppercased() == "T") {return true}
+            if (text!.uppercased() == "Y") {return true}
+            if (text!.uppercased() == "S") {return true}
+        }
+        else
+        {
+            if (text!.uppercased() == "FALSE") {return true}
+            if (text!.uppercased() == "NO") {return true}
+            if (text!.uppercased() == "OFF") {return true}
+            if (text!.uppercased() == "OFFLINE") {return true}
+            if (text!.uppercased() == "DISABLED") {return true}
+            if (text!.uppercased() == "DEACTIVATED") {return true}
+            if (text!.uppercased() == "ZERO") {return true}
+            //
+            if (text!.uppercased() == "FALSO") {return true}
+            if (text!.uppercased() == "NÃO") {return true}
+            if (text!.uppercased() == "NAO") {return true}
+            if (text!.uppercased() == "DESLIGADO") {return true}
+            if (text!.uppercased() == "DESATIVADO") {return true}
+            if (text!.uppercased() == "DESABILITADO") {return true}
+            //
+            if (text!.uppercased() == "0") {return true}
+            if (text!.uppercased() == "F") {return true}
+            if (text!.uppercased() == "N") {return true}
+        }
+        
+        return false;
+    }
+    
+    
+    /** Verifica se um CPF é válido.*/
+    class func validationHelper_Validate(CPF:String?) -> ToolBoxValidationResult{
+        
+        guard CPF != nil else {
+            return ToolBoxValidationResult.Undefined
+        }
+        
+        
+        //VERIFICA SE CPF TEM 11 DIGITOS
+        if (CPF!.characters.count != 11 || CPF! == ""){
+            
+            return ToolBoxValidationResult.Disapproved
+        }
+        
+        
+        //VERIFICA SEQUENCIA DE CARACTERES INVÁLIDAS
+        if (CPF! == "00000000000") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "11111111111") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "22222222222") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "33333333333") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "44444444444") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "55555555555") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "66666666666") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "77777777777") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "88888888888") { return ToolBoxValidationResult.Disapproved }
+        if (CPF! == "99999999999") { return ToolBoxValidationResult.Disapproved }
+        
+        
+        //VALIDA CPF PELO DIGITO VERIFICADOR
+        
+        let nsCPF:NSString = CPF! as NSString
+        
+        var soma:Int = 0
+        var peso:Int = 0
+        //
+        let digit_10:Int = Int(nsCPF.substring(with: NSRange(location: 9, length: 1)))!
+        let digit_11:Int = Int(nsCPF.substring(with: NSRange(location: 10, length: 1)))!
+        //
+        var digit_10_correct:Int = 0;
+        var digit_11_correct:Int = 0;
+        
+        //Verificação 10 Digito
+        peso = 10
+        
+        for i in 0...8 {
+            
+            let x:Int = Int(nsCPF.substring(with: NSRange(location: i, length: 1)))!
+            soma = soma + ( x * peso );
+            peso = peso - 1;
+        }
+        
+        if (soma % 11 < 2){
+            digit_10_correct = 0;
+        }else{
+            digit_10_correct = 11 - (soma % 11);
+        }
+        
+        
+        //Verifição 11 Digito
+        soma = 0
+        peso = 11
+        
+        for i in 0...9 {
+            
+            let y:Int = Int(nsCPF.substring(with: NSRange(location: i, length: 1)))!
+            soma = soma + ( y * peso );
+            peso = peso - 1;
+        }
+        
+        if (soma % 11 < 2){
+            digit_11_correct = 0;
+        }else{
+            digit_11_correct = 11 - (soma % 11);
+        }
+        
+        
+        //Retorno
+        if (digit_10_correct == digit_10 && digit_11_correct == digit_11){
+            return ToolBoxValidationResult.Approved;
+        }else{
+            return ToolBoxValidationResult.Disapproved;
+        }
+    }
+    
+    
+    
+    /** Encapsula campos de um dicionário com '<![CDATA[]]>'.*/
+    class func validationHelper_NormalizeDictionaryForCDATA(originalDictionary:Dictionary<String, Any>?, encapsulating:Bool) -> Dictionary<String, Any>?{
+        
+        if var oDic:Dictionary<String, Any> = originalDictionary{
+            
+            let keysList:Array = Array(oDic.keys)
+            
+            for key:String in keysList{
+                
+                if (encapsulating){
+                    
+                    if (oDic[key] is String){
+                        
+                        let str:String = oDic[key] as! String
+                        oDic[key] = validationHelper_AddCDATA(string: str) //addCDATA
+                    }
+                    
+                }else{
+                    
+                    if (oDic[key] is String){
+                        
+                        let str:String = oDic[key] as! String
+                        oDic[key] = validationHelper_RemoveCDATA(string: str) //removeCDATA
+                    }
+                }
+            }
+            
+            return oDic
+            
+        }else{
+            return originalDictionary
+        }
+    }
+    
+    
+    /** Valida um CNPJ digitado*/
+    class func validationHelper_Validate(CNPJ:String?) -> ToolBoxValidationResult{
+        
+        guard CNPJ != nil else {
+            return ToolBoxValidationResult.Undefined
+        }
+        
+        let checkComums:Int = validationHelper_ComumsCNPJ(cnpj: CNPJ!)
+        
+        if (checkComums != 0){
+            
+            return ToolBoxValidationResult.Disapproved
+        }else{
+            
+            let checkValidate:Bool = validationHelper_ValidateDigits(cnpj: CNPJ!)
+            
+            if (checkValidate){
+                return ToolBoxValidationResult.Approved
+            }else{
+                return ToolBoxValidationResult.Disapproved
+            }
+        }
+    }
+    
+    
+    /** Verifica se um cartão de crédito é válido */
+    class func validationHelper_Validate(CreditCard:String) -> Bool{
+        
+        let numbers = validationHelper_OnlyNumbers(string: CreditCard)
+        if numbers.characters.count < 9 {
+            return false
+        }
+        
+        var reversedString = ""
+        let range: Range<String.Index> = numbers.startIndex..<numbers.endIndex
+        
+        numbers.enumerateSubstrings(in: range, options: [.reverse, .byComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
+            reversedString += substring!
+        }
+        
+        var oddSum = 0, evenSum = 0
+        let reversedArray = reversedString.characters
+        
+        for (i, s) in reversedArray.enumerated() {
+            
+            let digit = Int(String(s))!
+            
+            if i % 2 == 0 {
+                evenSum += digit
+            } else {
+                oddSum += digit / 5 + (2 * digit) % 10
+            }
+        }
+        return (oddSum + evenSum) % 10 == 0
+        
+    }
+    
+    
+    
+    //MARK: - • GRAPHIC HELPER =======================================================================
+    
+    
+    /** Cria uma cor RGB através de um texto HEX.*/
+    class func graphicHelper_ColorWithHexString(string:String) -> UIColor{
+        
+        let colorString:String = string.replacingOccurrences(of: "#", with: "").uppercased()
+        var  alpha:CGFloat, red:CGFloat, blue:CGFloat, green:CGFloat
+        
+        switch colorString.characters.count {
+            
+        case 3: // #RGB
+            alpha = 1.0;
+            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
+            green = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
+            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
+            
+        case 4: // #ARGB
+            alpha = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
+            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
+            green = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
+            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 3, length: 1)
+            
+        case 6: // #RRGGBB
+            alpha = 1.0;
+            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
+            green = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
+            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 4, length: 1)
+            
+        case 8: // #AARRGGBB
+            alpha = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
+            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
+            green = graphicHelper_ColorComponentFrom(str: colorString, start: 4, length: 1)
+            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 6, length: 1)
+            
+            
+        default:
+            alpha = 0.0
+            red = 0.0
+            green = 0.0
+            blue = 0.0
+            
+        }
+        
+        return UIColor.init(colorLiteralRed: Float(red), green: Float(green), blue: Float(blue), alpha: Float(alpha))
+    }
+    
+    
+    /** Reduz o tamanho de uma imagem, aplicando compressão JPEG para otimizar o tamanho da mesma. [Ver também método 'graphicHelper_CompressImage:usingQuality:']*/
+    class func graphicHelper_NormalizeImage(image:UIImage, maximumDimension:CGFloat, quality:Float) -> UIImage{
+        
+        let qualityI = quality < 0 ? 0 : (quality > 1 ? 1 : quality)
+        
+        //Convertendo outros formatos para JPEG
+        let iData:Data = UIImageJPEGRepresentation(image, CGFloat(qualityI))!
+        let imageR:UIImage = UIImage.init(data: iData)!
+        let max:CGFloat = imageR.size.width > imageR.size.height ? imageR.size.width : imageR.size.height
+        
+        //Desnecessário prosseguir:
+        if (max <= maximumDimension){
+            return imageR
+        }
+        
+        //Precisa redimensionar:
+        
+        //Tamanhos:
+        let largura:CGFloat = imageR.size.width;
+        let altura:CGFloat = imageR.size.height;
+        var novaLargura:CGFloat = 0;
+        var novaAltura:CGFloat = 0;
+        
+        // maxDimension = abs(maxDimension);
+        
+        //Imagem de retorno:
+        var newImage:UIImage
+        let aspectRatio:CGFloat = largura / altura
+        
+        if(largura > altura){
+            novaLargura = maximumDimension
+            novaAltura = novaLargura / aspectRatio
+        }
+        else{
+            novaAltura = maximumDimension
+            novaLargura = novaAltura * aspectRatio
+        }
+        
+        let rect:CGRect = CGRect.init(x: 0.0, y: 0.0, width: novaLargura, height: novaAltura)
+        UIGraphicsBeginImageContext(rect.size);
+        image.draw(in: rect)
+        newImage = UIGraphicsGetImageFromCurrentImageContext()!;
+        UIGraphicsEndImageContext();
+        
+        return newImage
+    }
+    
+    
+    /** Converte uma imagem para sua representação base64 string.*/
+    class func graphicHelper_EncodeToBase64String(image:UIImage?) -> String{
+        
+        if let img:UIImage = image{
+            return UIImageJPEGRepresentation(img, 1.0)!.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed)
+        }else{
+            return ""
+        }
+    }
+    
+    
+    /** Converte um texto base64 para a imagem correspondente.*/
+    class func graphicHelper_DecodeBase64ToImage(strEncodeData:String?) -> UIImage?{
+        
+        if let str:String = strEncodeData{
+            let data:Data = Data.init(base64Encoded: str, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+            return UIImage.init(data: data)
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Cria uma cópia de uma imagem fazendo sobreposição de cor.*/
+    class func graphicHelper_TintImage(tintColor:UIColor?, templateImage:UIImage?) -> UIImage?{
+        
+        if let tColor:UIColor = tintColor{
+            
+            if let tImage:UIImage = templateImage{
+                
+                var newImage:UIImage? = tImage.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                UIGraphicsBeginImageContextWithOptions(tImage.size, false, newImage!.scale)
+                tColor.set()
+                newImage?.draw(in: CGRect.init(x: 0.0, y: 0.0, width: (newImage?.size.width)!, height: (newImage?.size.height)!))
+                newImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                //
+                return newImage
+                
+            }else{
+                return nil
+            }
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Retorna uma imagem representação do Layer parâmetro.*/
+    class func graphicHelper_Snapshot(layer:CALayer?) -> UIImage?{
+        
+        if let iLayer:CALayer = layer{
+            
+            UIGraphicsBeginImageContextWithOptions(iLayer.bounds.size, iLayer.isOpaque, UIScreen.main.scale);
+            iLayer.render(in: UIGraphicsGetCurrentContext()!)
+            let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            //
+            return image
+        }else{
+            return nil
+        }
+    }
+    
+    
+    
+    /** Retorna uma imagem representação da View parâmetro.*/;
+    class func graphicHelper_Snapshot(view:UIView?) -> UIImage?{
+        
+        return graphicHelper_Snapshot(layer:view?.layer)
+    }
+    
+    
+    /** Retorna uma imagem representação do ViewController parâmetro.*/
+    class func graphicHelper_Snapshot(viewController:UIViewController?) -> UIImage?{
+        
+        return graphicHelper_Snapshot(layer:viewController?.view?.layer)
+    }
+    
+    
+    /** Adiciona o efeito BLUR em uma imagem referência.*/
+    class func graphicHelper_ApplyBlurEffect(image:UIImage?, radius:CGFloat, tintColor: UIColor?, saturationDeltaFactor: CGFloat, maskImage: UIImage?) -> UIImage?{
+        
+        if let rImage:UIImage = image{
+            
+            // Check pre-conditions.
+            if (rImage.size.width < 1 || rImage.size.height < 1) {
+                print("*** error: invalid size: \(rImage.size.width) x \(rImage.size.height). Both dimensions must be >= 1: \(self)")
+                return nil
+            }
+            guard let cgImage = rImage.cgImage else {
+                print("*** error: image must be backed by a CGImage: \(self)")
+                return nil
+            }
+            if maskImage != nil && maskImage!.cgImage == nil {
+                print("*** error: maskImage must be backed by a CGImage: \(maskImage)")
+                return nil
+            }
+            
+            let __FLT_EPSILON__ = CGFloat(FLT_EPSILON)
+            let screenScale = UIScreen.main.scale
+            let imageRect = CGRect(origin: CGPoint.zero, size: rImage.size)
+            var effectImage = rImage
+            
+            let hasBlur = radius > __FLT_EPSILON__
+            let hasSaturationChange = fabs(saturationDeltaFactor - 1.0) > __FLT_EPSILON__
+            
+            if hasBlur || hasSaturationChange {
+                func createEffectBuffer(_ context: CGContext) -> vImage_Buffer {
+                    let data = context.data
+                    let width = vImagePixelCount(context.width)
+                    let height = vImagePixelCount(context.height)
+                    let rowBytes = context.bytesPerRow
+                    
+                    return vImage_Buffer(data: data, height: height, width: width, rowBytes: rowBytes)
+                }
+                
+                UIGraphicsBeginImageContextWithOptions(rImage.size, false, screenScale)
+                guard let effectInContext = UIGraphicsGetCurrentContext() else { return  nil }
+                
+                effectInContext.scaleBy(x: 1.0, y: -1.0)
+                effectInContext.translateBy(x: 0, y: -rImage.size.height)
+                effectInContext.draw(cgImage, in: imageRect)
+                
+                var effectInBuffer = createEffectBuffer(effectInContext)
+                
+                
+                UIGraphicsBeginImageContextWithOptions(rImage.size, false, screenScale)
+                
+                guard let effectOutContext = UIGraphicsGetCurrentContext() else { return  nil }
+                var effectOutBuffer = createEffectBuffer(effectOutContext)
+                
+                
+                if hasBlur {
+                    // A description of how to compute the box kernel width from the Gaussian
+                    // radius (aka standard deviation) appears in the SVG spec:
+                    // http://www.w3.org/TR/SVG/filters.html#feGaussianBlurElement
+                    //
+                    // For larger values of 's' (s >= 2.0), an approximation can be used: Three
+                    // successive box-blurs build a piece-wise quadratic convolution kernel, which
+                    // approximates the Gaussian kernel to within roughly 3%.
+                    //
+                    // let d = floor(s * 3*sqrt(2*pi)/4 + 0.5)
+                    //
+                    // ... if d is odd, use three box-blurs of size 'd', centered on the output pixel.
+                    //
+                    let inputRadius = radius * screenScale
+                    let d = floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI) / 4 + 0.5))
+                    var radius = UInt32(d)
+                    if radius % 2 != 1 {
+                        radius += 1 // force radius to be odd so that the three box-blur methodology works.
+                    }
+                    
+                    let imageEdgeExtendFlags = vImage_Flags(kvImageEdgeExtend)
+                    
+                    vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+                    vImageBoxConvolve_ARGB8888(&effectOutBuffer, &effectInBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+                    vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+                }
+                
+                var effectImageBuffersAreSwapped = false
+                
+                if hasSaturationChange {
+                    let s: CGFloat = saturationDeltaFactor
+                    let floatingPointSaturationMatrix: [CGFloat] = [
+                        0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
+                        0.7152 - 0.7152 * s,  0.7152 + 0.2848 * s,  0.7152 - 0.7152 * s,  0,
+                        0.2126 - 0.2126 * s,  0.2126 - 0.2126 * s,  0.2126 + 0.7873 * s,  0,
+                        0,                    0,                    0,  1
+                    ]
+                    
+                    let divisor: CGFloat = 256
+                    let matrixSize = floatingPointSaturationMatrix.count
+                    var saturationMatrix = [Int16](repeating: 0, count: matrixSize)
+                    
+                    for i: Int in 0 ..< matrixSize {
+                        saturationMatrix[i] = Int16(round(floatingPointSaturationMatrix[i] * divisor))
+                    }
+                    
+                    if hasBlur {
+                        vImageMatrixMultiply_ARGB8888(&effectOutBuffer, &effectInBuffer, saturationMatrix, Int32(divisor), nil, nil, vImage_Flags(kvImageNoFlags))
+                        effectImageBuffersAreSwapped = true
+                    } else {
+                        vImageMatrixMultiply_ARGB8888(&effectInBuffer, &effectOutBuffer, saturationMatrix, Int32(divisor), nil, nil, vImage_Flags(kvImageNoFlags))
+                    }
+                }
+                
+                if !effectImageBuffersAreSwapped {
+                    effectImage = UIGraphicsGetImageFromCurrentImageContext()!
+                }
+                
+                UIGraphicsEndImageContext()
+                
+                if effectImageBuffersAreSwapped {
+                    effectImage = UIGraphicsGetImageFromCurrentImageContext()!
+                }
+                
+                UIGraphicsEndImageContext()
+            }
+            
+            // Set up output context.
+            UIGraphicsBeginImageContextWithOptions(rImage.size, false, screenScale)
+            
+            guard let outputContext = UIGraphicsGetCurrentContext() else { return nil }
+            
+            outputContext.scaleBy(x: 1.0, y: -1.0)
+            outputContext.translateBy(x: 0, y: -rImage.size.height)
+            
+            // Draw base image.
+            outputContext.draw(cgImage, in: imageRect)
+            
+            // Draw effect image.
+            if hasBlur {
+                outputContext.saveGState()
+                if let maskCGImage = maskImage?.cgImage {
+                    outputContext.clip(to: imageRect, mask: maskCGImage);
+                }
+                outputContext.draw(effectImage.cgImage!, in: imageRect)
+                outputContext.restoreGState()
+            }
+            
+            // Add in color tint.
+            if let color = tintColor {
+                outputContext.saveGState()
+                outputContext.setFillColor(color.cgColor)
+                outputContext.fill(imageRect)
+                outputContext.restoreGState()
+            }
+            
+            // Output image is ready.
+            let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return outputImage
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Adiciona o efeito Branco e Preto em uma imagem referência.*/
+    class func graphicHelper_ApplyGrayScaleEffect(image:UIImage?, type:ToolBoxGrayScaleEffect) -> UIImage?{
+        
+        if let nImage:UIImage = image{
+            
+            let context = CIContext(options: nil)
+            //
+            var effect:String
+            switch type {
+            case ToolBoxGrayScaleEffect.Noir:
+                effect = "CIPhotoEffectNoir"
+            case ToolBoxGrayScaleEffect.Mono:
+                effect = "CIPhotoEffectMono"
+            case ToolBoxGrayScaleEffect.Tonal:
+                effect = "CIPhotoEffectTonal"
+            }
+            //
+            let currentFilter = CIFilter(name: effect)
+            currentFilter!.setValue(CIImage(image: nImage), forKey: kCIInputImageKey)
+            let output = currentFilter!.outputImage
+            let cgimg = context.createCGImage(output!,from: output!.extent)
+            let processedImage = UIImage(cgImage: cgimg!)
+            //
+            return processedImage
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Adiciona o efeito DISTORTION (CIGlassDistortion) em uma imagem referência.*/
+    class func graphicHelper_ApplyGlassDistortionEffect(image:UIImage?, maskImage:UIImage?) -> UIImage?{
+        
+        if let nImage:UIImage = image{
+            
+            let context = CIContext(options: nil)
+            //
+            let currentFilter = CIFilter(name: "CIGlassDistortion")
+            currentFilter!.setValue(CIImage(image: nImage), forKey: kCIInputImageKey)
+            //
+            if let mImage:UIImage = maskImage{
+                currentFilter!.setValue(CIImage(image: mImage), forKey: "inputTexture")
+            }else{
+                currentFilter!.setValue(CIImage(image: nImage), forKey: "inputTexture")
+            }
+            //
+            let output = currentFilter!.outputImage
+            let cgimg = context.createCGImage(output!,from: output!.extent)
+            let processedImage = UIImage(cgImage: cgimg!)
+            //
+            return processedImage
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Adiciona o efeito ROTATION em uma view.*/
+    class func graphicHelper_ApplyRotationEffect(view:UIView, duration:TimeInterval, repeatCount:Int){
+        
+        let animation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.y")
+        animation.fromValue = 0
+        animation.toValue = 2 * M_PI
+        animation.duration = duration
+        animation.repeatCount = Float(repeatCount)
+        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
+        //
+        view.layer.add(animation, forKey: "transform.rotation.y")
+    }
+    
+    
+    /** Adiciona efeito parallax na View parâmetro.*/
+    class func graphicHelper_ApplyParallaxEffect(view:UIView, deep:CGFloat){
+        
+        let effectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
+        let effectY:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
+        //
+        effectX.maximumRelativeValue = deep
+        effectX.minimumRelativeValue = -deep
+        effectY.maximumRelativeValue = deep
+        effectY.minimumRelativeValue = -deep
+        //
+        view.addMotionEffect(effectX)
+        view.addMotionEffect(effectY)
+    }
+    
+    
+    /** Remove todos efeitos parallax da View parâmetro.*/
+    class func graphicHelper_RemoveParallaxEffect(view:UIView, recursive:Bool){
+        
+        let motionsList:Array = Array.init(view.motionEffects)
+        for me in motionsList{
+            view.removeMotionEffect(me)
+        }
+        
+        if (recursive){
+            for v in view.subviews{
+                let motionsList:Array = Array.init(v.motionEffects)
+                for me in motionsList{
+                    v.removeMotionEffect(me)
+                }
+            }
+        }
+    }
+    
+    
+    /** Adiciona uma animação de efeito ripple circular na View parâmetro.*/
+    class func graphicHelper_ApplyCircleRippleEffectAnimation(view:UIView, color:UIColor, radius:CGFloat, duration:TimeInterval){
+        
+        let m:CGFloat = radius == 0 ? (view.bounds.size.width < view.bounds.size.height ? view.bounds.size.width : view.bounds.size.height) : radius
+        
+        var dif:CGFloat = 0.0
+        var pathFrame:CGRect
+        
+        if (view.bounds.size.height > view.bounds.size.width){
+            dif = view.bounds.size.height - view.bounds.size.width; //Y adjust
+            pathFrame = CGRect(x: -(view.bounds.size.width / 2), y: -(view.bounds.size.height / 2) + (dif/2), width: m, height: m)
+        }else{
+            dif = view.bounds.size.width - view.bounds.size.height; //X adjust
+            pathFrame = CGRect(x: -(view.bounds.size.width / 2) + (dif/2), y: -(view.bounds.size.height / 2), width: m, height: m)
+        }
+        
+        let path:UIBezierPath = UIBezierPath.init(roundedRect: pathFrame, cornerRadius: m/2)
+        let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
+        
+        let circleShape:CAShapeLayer = CAShapeLayer.init()
+        circleShape.path = path.cgPath
+        circleShape.position = shapePosition
+        circleShape.fillColor = color.cgColor
+        circleShape.opacity = 0
+        
+        view.layer.addSublayer(circleShape)
+        
+        let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
+        scaleAnimation.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(2.0, 2.0, 1.0))
+        
+        let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+        alphaAnimation.fromValue = 1
+        alphaAnimation.toValue = 0
+        
+        let animationGroup = CAAnimationGroup.init()
+        animationGroup.animations = [scaleAnimation, alphaAnimation];
+        animationGroup.duration = duration
+        animationGroup.repeatCount = 0.0
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        
+        circleShape.add(animationGroup, forKey: "ripple")
+    }
+    
+    
+    /** Adiciona uma animação de efeito ripple na View parâmetro.*/
+    class func graphicHelper_ApplyRippleEffectAnimationForBounds(view:UIView, color:UIColor, sizeScale:CGFloat, duration:TimeInterval){
+        
+        let path:UIBezierPath = UIBezierPath.init(rect: view.frame)
+        let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
+        
+        let circleShape:CAShapeLayer = CAShapeLayer.init()
+        circleShape.path = path.cgPath
+        circleShape.position = shapePosition
+        circleShape.fillColor = color.cgColor
+        circleShape.opacity = 0
+        
+        view.layer.addSublayer(circleShape)
+        
+        let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
+        scaleAnimation.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(sizeScale, sizeScale, 1.0))
+        
+        let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+        alphaAnimation.fromValue = 1
+        alphaAnimation.toValue = 0
+        
+        let animationGroup = CAAnimationGroup.init()
+        animationGroup.animations = [scaleAnimation, alphaAnimation];
+        animationGroup.duration = duration
+        animationGroup.repeatCount = 0.0
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        
+        circleShape.add(animationGroup, forKey: "ripple")
+    }
+    
+    
+    /** Adiciona uma animação de batida de coração na View parâmetro.*/
+    class func graphicHelper_ApplyHeartBeatAnimation(view:UIView, scale:CGFloat){
+        
+        var animations:Array = [CABasicAnimation]()
+        
+        // Step 1
+        let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation.toValue = scale
+        scaleAnimation.duration = 0.3
+        scaleAnimation.fillMode = kCAFillModeForwards
+        animations.append(scaleAnimation)
+        //
+        let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+        alphaAnimation.toValue = 1.0
+        alphaAnimation.duration = 0.3
+        alphaAnimation.fillMode = kCAFillModeForwards
+        animations.append(alphaAnimation)
+        
+        // Step 2
+        let scaleAnimation2:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation2.toValue = 1
+        scaleAnimation2.beginTime = 0.3
+        scaleAnimation2.duration = 0.1
+        scaleAnimation2.fillMode = kCAFillModeForwards
+        animations.append(scaleAnimation2)
+        
+        // Step 3
+        let scaleAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation3.toValue = scale
+        scaleAnimation3.beginTime = 0.4
+        scaleAnimation3.duration = 0.3
+        scaleAnimation3.fillMode = kCAFillModeForwards
+        animations.append(scaleAnimation3)
+        //
+        let alphaAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+        alphaAnimation3.toValue = 0.0
+        alphaAnimation3.beginTime = 0.4
+        alphaAnimation3.duration = 0.3
+        alphaAnimation3.fillMode = kCAFillModeForwards
+        animations.append(alphaAnimation3)
+        
+        let animationGroup = CAAnimationGroup.init()
+        animationGroup.animations = animations;
+        animationGroup.duration = 0.7
+        animationGroup.repeatCount = 0.0
+        animationGroup.fillMode = kCAFillModeBoth
+        
+        view.layer.add(animationGroup, forKey: "heart-beat")
+    }
+    
+    
+    /** Adiciona uma animação de incremento/decremento de tamanho na View parâmetro.*/
+    class func graphicHelper_ApplyScaleBeatAnimation(view:UIView, scale:CGFloat, repeatCount:Int){
+        
+        let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
+        scaleAnimation.fromValue = 1.0
+        scaleAnimation.toValue = scale
+        scaleAnimation.duration = 0.5
+        scaleAnimation.fillMode = kCAFillModeForwards
+        
+        let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
+        alphaAnimation.fromValue = 1.0
+        alphaAnimation.toValue = 0.0
+        alphaAnimation.duration = 0.5
+        alphaAnimation.fillMode = kCAFillModeForwards
+        
+        let animationGroup = CAAnimationGroup.init()
+        animationGroup.animations = [scaleAnimation, alphaAnimation];
+        animationGroup.duration = 0.5
+        animationGroup.repeatCount = Float(repeatCount)
+        animationGroup.fillMode = kCAFillModeBoth
+        
+        view.layer.add(animationGroup, forKey: "scale-beat")
+    }
+    
+    
+    /** Adiciona borda na image parâmetro.*/
+    class func graphicHelper_ApplyBorder(image:UIImage?, borderColor:UIColor, borderWidth:CGFloat) -> UIImage?{
+        
+        if let oImage:UIImage = image{
+            
+            let size:CGSize = CGSize(width: oImage.size.width, height: oImage.size.height)
+            UIGraphicsBeginImageContext(size);
+            let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+            oImage.draw(in: rect, blendMode: CGBlendMode.normal, alpha: 1.0)
+            let context:CGContext = UIGraphicsGetCurrentContext()!
+            //
+            var alpha:CGFloat = 0.0
+            var red:CGFloat = 0.0
+            var green:CGFloat = 0.0
+            var blue:CGFloat = 0.0
+            
+            borderColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+            context.setStrokeColor(red: red, green: green, blue: blue, alpha: alpha)
+            context.setLineWidth(borderWidth)
+            context.stroke(rect)
+            //
+            let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            //
+            return newImage
+            
+        }else{
+            return nil
+        }
+        
+    }
+    
+    
+    /** Cria uma imagem flat num tamanho específico.*/
+    class func graphicHelper_CreateFlatImage(size:CGSize, corners:UIRectCorner, cornerRadius:CGSize, color:UIColor) -> UIImage{
+        
+        let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        let path:UIBezierPath = UIBezierPath.init(roundedRect: rect , byRoundingCorners: corners, cornerRadii: cornerRadius)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        path.fill()
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        //
+        return image
+    }
+    
+    
+    /** Adiciona sombra a View parâmetro.*/
+    class func graphicHelper_ApplyShadow(view:UIView, color:UIColor, offSet:CGSize, radius:CGFloat, opacity:Float){
+        
+        view.layer.shadowColor = color.cgColor
+        view.layer.shadowOffset = offSet
+        view.layer.shadowRadius = radius
+        view.layer.shadowOpacity = opacity
+        view.layer.shouldRasterize = true
+        view.layer.rasterizationScale = UIScreen.main.scale
+        
+    }
+    
+    
+    /** Remove sombra da View parâmetro.*/
+    class func graphicHelper_RemoveShadow(view:UIView){
+        
+        view.layer.shadowColor = UIColor.clear.cgColor
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowRadius = 0.0
+        view.layer.shadowOpacity = 0.0
+        
+    }
+    
+    
+    /** Corta e redimensiona circularmente uma imagem.*/
+    class func graphicHelper_CircularScaleAndCrop(image:UIImage?, frame:CGRect) -> UIImage?{
+        
+        if let cImage:UIImage = image{
+            
+            //Crop
+            let imageRef:CGImage = cImage.cgImage!.cropping(to: frame)!
+            let croppedImage:UIImage = UIImage(cgImage:imageRef)
+            
+            //Draw Ellipse
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: frame.size.width, height: frame.size.height), false, 1.0);
+            let context:CGContext = UIGraphicsGetCurrentContext()!
+            
+            context.beginPath()
+            context.addEllipse(in: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height))
+            context.closePath()
+            context.clip()
+            
+            croppedImage.draw(in: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height))
+            
+            let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            
+            return newImage
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Corta parte da imagem deferência.*/
+    class func graphicHelper_Crop(image:UIImage?, frame:CGRect) -> UIImage?{
+        
+        if let cImage:UIImage = image{
+            
+            let imageRef:CGImage = cImage.cgImage!.cropping(to: frame)!
+            let croppedImage:UIImage = UIImage(cgImage:imageRef)
+            return croppedImage
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Aplica uma máscara na imagem base, gerando uma nova imagem 'vazada'. A máscara deve ser uma imagem sem alpha, em escala de cinza (o branco define a transparência, preto solidez).*/
+    class func graphicHelper_ApplyMask(image:UIImage?, mask:UIImage?, opaque:Bool) -> UIImage?{
+        
+        if let originalImage:UIImage = image{
+            
+            if let maskImage:UIImage = mask{
+                
+                let cgOriginalImage:CGImage = originalImage.cgImage!
+                let cgMaskImage:CGImage = maskImage.cgImage!
+                let imageMask:CGImage = CGImage.init(maskWidth: cgMaskImage.width,
+                                                     height: cgMaskImage.height,
+                                                     bitsPerComponent: cgMaskImage.bitsPerComponent,
+                                                     bitsPerPixel: cgMaskImage.bitsPerPixel,
+                                                     bytesPerRow: cgMaskImage.bytesPerRow,
+                                                     provider: cgMaskImage.dataProvider!, decode: nil, shouldInterpolate: true)!
+                
+                let maskedImage:CGImage = cgOriginalImage.masking(imageMask)!
+                let newImage:UIImage = UIImage.init(cgImage: maskedImage)
+                //
+                UIGraphicsBeginImageContextWithOptions(newImage.size, opaque, 0)
+                newImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newImage.size.width, height: newImage.size.height))
+                let finalImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
+                //
+                return finalImage
+                
+            }else{
+                return nil
+            }
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Mescla duas imagens (a 'top' sobre a 'bottom'). É possível definir posição, mistura, transparência e escala para a imagem superior (top).*/
+    class func graphicHelper_MergeImages(bottomImage:UIImage?, topImage:UIImage?, position:CGPoint, blendMode:CGBlendMode, alpha:CGFloat, topImageScale:Float) -> UIImage?{
+        
+        if let bImage:UIImage = bottomImage{
+            
+            if let tImage:UIImage = topImage{
+                
+                let topNewWidth:CGFloat = tImage.size.width * CGFloat(topImageScale)
+                let topNewHeight:CGFloat = tImage.size.height * CGFloat(topImageScale)
+                let topNewSize:CGSize = CGSize(width: topNewWidth, height: topNewHeight)
+                
+                UIGraphicsBeginImageContext(bImage.size)
+                
+                bImage.draw(in: CGRect(x: 0.0, y: 0.0, width: bImage.size.width, height: bImage.size.height))
+                
+                tImage.draw(at: position, blendMode: blendMode, alpha: alpha)
+                
+                let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
+                
+                return newImage
+                
+            }else{
+                return nil
+            }
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Redimensiona a imagem parâmetro para um tamanho específico.*/
+    class func graphicHelper_ResizeScaleToFill(image:UIImage?, newSize:CGSize) -> UIImage?{
+        
+        if let originalImage:UIImage = image{
+            
+            UIGraphicsBeginImageContext(newSize)
+            originalImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newSize.width, height: newSize.height))
+            let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            //
+            return newImage
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Redimensiona a imagem parâmetro baseando-se numa escala. Escala 0 (zero) ou negativa será ignorada.*/
+    class func graphicHelper_ResizeAspectFit(image:UIImage?, scale:CGFloat) -> UIImage? {
+        
+        if let originalImage:UIImage = image{
+            
+            let newSize:CGSize = CGSize(width: originalImage.size.width * scale, height: originalImage.size.height * scale)
+            UIGraphicsBeginImageContext(newSize)
+            originalImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newSize.width, height: newSize.height))
+            let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            //
+            return newImage
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Redimensiona a imagem parâmetro para caiba num dado tamanho, mantendo o aspecto original. O tamanho parâmetro 'rectSize' deve ser dado em points, conforme tamanho do componente (ex.: <UIImageView>.frame.size).*/
+    class func graphicHelper_ResizeProportional(image:UIImage?, rectSizeView:CGSize) -> UIImage?{
+        
+        if let originalImage:UIImage = image{
+            
+            var w:CGFloat = originalImage.size.width
+            var h:CGFloat = originalImage.size.height
+            let ratio:CGFloat = w / h
+            
+            let scale = UIScreen.main.scale
+            let maxWidth:CGFloat = rectSizeView.width * scale
+            let maxHeight:CGFloat = rectSizeView.height * scale
+            
+            if (w > maxWidth){
+                w = maxWidth
+                h = w / ratio
+            }else if (h > maxHeight){
+                h = maxHeight
+                w = h * ratio
+            }
+            
+            let newSize:CGSize = CGSize(width: w, height: h)
+            UIGraphicsBeginImageContext(newSize);
+            originalImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newSize.width, height: newSize.height))
+            
+            let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            
+            return newImage
+            
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Comprime uma imagem para reduzir sua qualidade. O parâmetro 'image' é transformado no formato JPEG ,na qualidade correspondente.*/
+    class func graphicHelper_Compress(image:UIImage?, quality:CGFloat) -> UIImage?{
+        
+        if let originalImage:UIImage = image{
+            
+            let q:CGFloat = (quality < 0.0) ? 0.0 : (quality > 1.0 ? 1.0 : quality)
+            
+            if let data:Data = UIImageJPEGRepresentation(originalImage, q){
+                let resultImage:UIImage = UIImage(data: data)!
+                return resultImage
+            }else{
+                return nil
+            }
+        }else{
+            return nil
+        }
+    }
+    
+    
+    /** Copia uma imagem, opcionalmente modificando sua qualidade. Para 'quality' 1, é utilizado PNG, inferior JPG.*/
+    class func graphicHelper_Copy(image:UIImage?, quality:CGFloat) -> UIImage? {
+        
+        if let originalImage:UIImage = image{
+            
+            if (quality >= 1.0){
+                let img:UIImage? = UIImage.init(data: UIImagePNGRepresentation(originalImage)!, scale: UIScreen.main.scale)
+                return img
+            }else{
+                
+                let img2:UIImage? = UIImage.init(data: UIImageJPEGRepresentation(originalImage, quality)!, scale: UIScreen.main.scale)
+                return img2
+            }
+        }else{
+            return nil
+        }
+    }
+    
+    /** Aplica filtro na imagem parâmetro. Certos filtros exigem parâmetros adicionais que devem ser passados pelo dicionário. Visitar o endereço para ver as opções: https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/#//apple_ref/doc/uid/TP30000136-SW29.*/
+    class func graphicHelper_ApplyFilter(filterName:String?, image:UIImage?, parameters:[String : Any]?, scale:Float) -> UIImage?{
+        
+        if (ToolBox.isNil(object: filterName as AnyObject?)){
+            return nil
+        }
+        
+        if (ToolBox.isNil(object: image)){
+            return nil
+        }
+        
+        let context = CIContext(options: nil)
+        //
+        let currentFilter = CIFilter(name: filterName!)
+        //
+        if let f:CIFilter = currentFilter{
+            
+            f.setValue(CIImage(image: image!), forKey: kCIInputImageKey)
+            //
+            if (!ToolBox.isNil(object: parameters as AnyObject?)){
+                f.setValuesForKeys(parameters!)
+            }
+            //
+            let output = currentFilter!.outputImage
+            let cgimg = context.createCGImage(output!,from: output!.extent)
+            let processedImage = UIImage(cgImage: cgimg!)
+            //
+            return processedImage
+            
+        }else{
+            return nil
+        }
+    }
+    
     //MARK: - • CONVERTER HELPER =======================================================================
     
     /** Converte um dicionário JSON em texto.*/
@@ -1554,7 +2928,7 @@ class ToolBox: NSObject{
                 var object:AnyObject = replaced.object(forKey: key) as AnyObject
                 if(object is String)
                 {
-                    if(isNullString(valueString: (object as! String)))
+                    if(ToolBox.isNil(object: object))
                     {
                         replaced.setObject(newString, forKey: key as! NSCopying)
                     }
@@ -1675,10 +3049,10 @@ class ToolBox: NSObject{
         tempVE = tempVE.replacingOccurrences(of: ".", with: "")
         tempVE = tempVE.replacingOccurrences(of: " ", with: "")
         tempVE = tempVE.replacingOccurrences(of: ",", with: ".")
-        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_MONETARY, with: "")
-        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_VOLUME_LIQUID, with: "")
-        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_VOLUME_SOLID, with: "")
-        tempVE = tempVE.replacingOccurrences(of: TOOLBOX_SYMBOL_DEFAULT_DISTANCE, with: "")
+        tempVE = tempVE.replacingOccurrences(of: SYMBOL_MONETARY, with: "")
+        tempVE = tempVE.replacingOccurrences(of: SYMBOL_VOLUME_LIQUID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: SYMBOL_VOLUME_SOLID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: SYMBOL_DISTANCE, with: "")
         
         let value:NSDecimalNumber = NSDecimalNumber(string: tempVE)
         
@@ -1706,7 +3080,7 @@ class ToolBox: NSObject{
         //
         if(monetary)
         {
-            return String("\(TOOLBOX_SYMBOL_DEFAULT_MONETARY) \(texto)")
+            return String("\(SYMBOL_MONETARY) \(texto)")
         }
         else
         {
@@ -1715,21 +3089,137 @@ class ToolBox: NSObject{
         
     }
     
-    
     //MARK: - • PRIVATE FUNCTIONS =======================================================================
     
-    private class func toolBoxPrivate_TransformedValue(size: UInt64) -> String{
+    private class func graphicHelper_ColorComponentFrom(str:String, start:Int, length:Int) -> CGFloat{
         
-        var convertedValue:Double  = Double(size)
-        var multiplyFactor:Int = 0;
-        let tokens:Array = ["bytes", "KB", "MB", "GB", "TB"]
-        
-        while (convertedValue > 1024.0) {
-            convertedValue /= 1024.0
-            multiplyFactor += 1
+        let string:NSString = str as NSString
+        let substring:NSString = string.substring(with: NSRange.init(location: start, length: length)) as NSString
+        let fullHex:NSString = length == 2 ? substring : NSString.init(format: "%@%@", [substring, substring])
+        var hexComponent:UInt32 = 0
+        //
+        guard Scanner(string: fullHex as String).scanHexInt32(&hexComponent)
+            else {
+                return 0
         }
         
-        return String(format: "%.2f %@", convertedValue, tokens[multiplyFactor])
+        return CGFloat(hexComponent) / 255.0
     }
     
+    private class func validationHelper_ValidateDigits(cnpj:String) -> Bool{
+        
+        var sum:Int = 0
+        var weight:Int = 0
+        
+        let validatorDigit13:Int = Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: 12)])))!
+        let validatorDigit14:Int = Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: 13)])))!
+        var validDigit13:Int = 0
+        var validDigit14:Int = 0
+        
+        //Verificação 13 Digito
+        
+        weight = 2
+        
+        for i in stride(from: 11, to: 1, by: -1) {
+            let actualInt:Int = Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: i)])))!
+            sum = sum + (actualInt * weight)
+            
+            weight += 1
+            
+            if (weight == 10){
+                weight = 2
+            }
+        }
+        
+        if(sum % 11 == 0 || sum % 11 == 1){
+            validDigit13 = 0
+        }else{
+            validDigit13 = 11 - sum % 11
+        }
+        
+        //Verificação 14 Digito
+        
+        sum = 0
+        weight = 0
+        
+        for i in stride(from: 12, to: 1, by: -1) {
+            
+            sum = sum + (Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: i)])))! * weight)
+            weight = weight + 1
+            
+            if weight == 10{
+                weight = 2
+            }
+        }
+        
+        if(sum % 11 == 0 || sum % 11 == 1){
+            validDigit14 = 0
+        }else{
+            validDigit14 = 11 - sum % 11
+        }
+        
+        //Retorno
+        if (validatorDigit13 == validDigit13 && validatorDigit14 == validDigit14){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    private class func validationHelper_OnlyNumbers(string: String) -> String {
+        let set = CharacterSet.decimalDigits.inverted
+        let numbers = string.components(separatedBy: set)
+        return numbers.joined(separator: "")
+    }
+    
+    private class func validationHelper_AddCDATA(string:String) -> String{
+        
+        let newSTR:String = String.init(format: "%@%@%@", [ToolBox.CDATA_START, string, ToolBox.CDATA_END])
+        
+        return newSTR
+    }
+    
+    private class func validationHelper_RemoveCDATA(string:String) -> String{
+        
+        var newSTR = string
+        
+        if (string.hasPrefix(ToolBox.CDATA_START)){
+            
+            newSTR = newSTR.replacingOccurrences(of: ToolBox.CDATA_START, with: "")
+            
+        }
+        
+        if (string.hasSuffix(ToolBox.CDATA_END)){
+            
+            newSTR = newSTR.replacingOccurrences(of: ToolBox.CDATA_END, with: "")
+        }
+        
+        return newSTR
+    }
+    
+    private class func validationHelper_ComumsCNPJ(cnpj:String) -> Int{
+        
+        /*
+         0 - Validado
+         1 - Não possui 14 digitos
+         2 - CNPJ não permitido: Sequencia de números
+         */
+        
+        if (cnpj.characters.count != 14 || cnpj == ""){
+            return 1
+        }else if (cnpj == "00000000000000"
+            || cnpj == "11111111111111"
+            || cnpj == "22222222222222"
+            || cnpj == "33333333333333"
+            || cnpj == "44444444444444"
+            || cnpj == "55555555555555"
+            || cnpj == "66666666666666"
+            || cnpj == "77777777777777"
+            || cnpj == "88888888888888"
+            || cnpj == "99999999999999"){
+            return 2
+        }else{
+            return 0
+        }
+    }
 }
