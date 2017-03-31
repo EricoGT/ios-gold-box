@@ -1,0 +1,9 @@
+platform :ios, “9.0”
+use_frameworks!
+
+target 'Project-Swift' do
+  
+pod 'Alamofire', ‘4’
+pod 'SwiftyJSON'
+
+end
