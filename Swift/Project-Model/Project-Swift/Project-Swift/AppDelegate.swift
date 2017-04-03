@@ -18,13 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("%@", ToolBox.applicationHelper_InstalationDataForSimulator())
         
-        
-        
         return true
-    }
-
-    func test() -> Int{
-        return 3
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

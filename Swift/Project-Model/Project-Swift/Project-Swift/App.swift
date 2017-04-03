@@ -36,8 +36,8 @@ class App{
     }
     
     //Sounds
-    class final var Sounds:SoundPlayer{
-        return SoundPlayer.init()
+    class final var Sounds:SoundManager{
+        return SoundManager.init()
     }
     
     //Style

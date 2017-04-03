@@ -18,6 +18,8 @@ class ConstantsManager{
     //MARK: - SYSTEM NOTIFICATIONS (para observers)
     //=======================================================================================================
     public static let SYSNOT_UPDATE_MAIN_MENU:String = "sysnot_update_main_menu"
+    public static let SYSNOT_LOCATION_SERVICE_UPDATE_WITHOUT_GEOCODEINFO:String = "sysnot_location_service_update_without_geocodeinfo"
+    public static let SYSNOT_LOCATION_SERVICE_UPDATE_WITH_GEOCODEINFO:String = "sysnot_location_service_update_with_geocodeinfo"
     
     
     //MARK: - CHAVES DICIONARIOS (body, response e afins)
