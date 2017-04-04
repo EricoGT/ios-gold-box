@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, InternetHelperDelegate {
 
     @IBOutlet weak var lblResult:UILabel!
     //
@@ -44,11 +44,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //NotificationCenter.default.addObserver( self, selector: #selector(self.locationUpdate), name: NSNotification.Name(rawValue: App.Constants.SYSNOT_LOCATION_SERVICE_UPDATE_WITH_GEOCODEINFO), object: nil)
-        //NotificationCenter.default.addObserver( self, selector: #selector(self.locationUpdate2), name: NSNotification.Name(rawValue: App.Constants.SYSNOT_LOCATION_SERVICE_UPDATE_WITH_GEOCODEINFO), object: nil)
-        
-        //locationManager = LocationServiceControl.initAndStartMonitoringLocation()
-        
+        locationManager = LocationServiceControl.initAndStartMonitoringLocation()
     }
     
     @IBAction func actionPlaySound(sender:UIButton) {
@@ -65,34 +61,38 @@ class ViewController: UIViewController {
             "y": App.RandInt(1, 100)
         ]
         
-        iH.post(toURL: urlRequest, httpBodyData: parameters) { (response, statusCode, error) in
-            
-            print("StatusCode: %li", statusCode)
-            
-            if let erro:NSError = error{
-                DispatchQueue.main.async {
-                    self.lblResult.text = String.init(format:"Error: %@, %@", [erro.domain, erro.userInfo["message"]])
-                }
-            }
-            
-            if let data:Dictionary = response{
-                DispatchQueue.main.async {
-                    self.lblResult.text = String.init(format:"Result: %@", [data])
-                }
-            }
+        
+        iH.post(toURL: urlRequest, httpBodyData: parameters, delegate: self)
+        
+//        iH.post(toURL: urlRequest, httpBodyData: parameters) { (response, statusCode, error) in
+//            
+//            print("StatusCode: %li", statusCode)
+//            
+//            if let erro:NSError = error{
+//                DispatchQueue.main.async {
+//                    self.lblResult.text = String.init(format:"Error: %@, %@", [erro.domain, erro.userInfo["message"]])
+//                }
+//            }
+//            
+//            if let data:Dictionary = response{
+//                DispatchQueue.main.async {
+//                    self.lblResult.text = String.init(format:"Result: %@", [data])
+//                }
+//            }
+//        }
+    }
+    
+    func didFinishTaskWithError(error: NSError) {
+        DispatchQueue.main.async {
+            self.lblResult.text = String.init(format:"Error: %@, %@\n\nLatitude: %f\nLongitude: %f", [error.domain, error.userInfo["message"], (self.locationManager?.latitude)!, (self.locationManager?.longitude)!])
         }
     }
     
-
-    
-    
-//    func locationUpdate(notification:Notification){
-//        print("Notification: \(notification.userInfo)")
-//    }
-//    
-//    func locationUpdate2(notification:Notification){
-//        print("Notification: \(notification.userInfo)")
-//    }
+    func didFinishTaskWithSuccess(resultData: Dictionary<String, Any>) {
+        DispatchQueue.main.async {
+            self.lblResult.text = String.init(format:"Result: %@\n\nLatitude: %f\nLongitude: %f", [resultData, (self.locationManager?.latitude)!, (self.locationManager?.longitude)!])
+        }
+    }
     
 }
 

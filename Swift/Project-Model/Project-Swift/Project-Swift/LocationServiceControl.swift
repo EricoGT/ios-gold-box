@@ -155,10 +155,14 @@ class LocationServiceControl: NSObject, CLLocationManagerDelegate{
         statusMessage = error.localizedDescription
     }
     
-//    NotificationCenter.default.addObserver(
-//    self,
-//    selector: #selector(self.batteryLevelChanged),
-//    name: .UIDeviceBatteryLevelDidChange,
-//    object: nil)
+    
+    /*
+     
+     EXEMPLO:
+     
+     NotificationCenter.default.addObserver( self, selector: #selector(self.locationUpdate), name: NSNotification.Name(rawValue: App.Constants.SYSNOT_LOCATION_SERVICE_UPDATE_WITHOUT_GEOCODEINFO), object: nil)
+     NotificationCenter.default.addObserver( self, selector: #selector(self.locationUpdate2), name: NSNotification.Name(rawValue: App.Constants.SYSNOT_LOCATION_SERVICE_UPDATE_WITH_GEOCODEINFO), object: nil)
+ 
+     */
 
 }

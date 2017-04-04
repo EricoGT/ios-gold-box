@@ -1,0 +1,53 @@
+/* 
+  ChangeProjectNameTutorial.strings
+  Project-Swift
+
+  Created by Erico GT on 04/04/17.
+  Copyright © 2017 Atlantic Solutions. All rights reserved.
+*/
+
+/*
+ 
+--------------------------------------------------------------------------------------------
+//CHANGE PROJECT NAME TUTORIAL
+//Origin: http://stackoverflow.com/questions/33370175/how-do-i-completely-rename-an-xcode-project-i-e-inclusive-of-folders
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+Step 1 - Rename the project
+
+> Click on the project you want to rename in the "Project navigator" on the left of the Xcode view.
+> On the right select the "File inspector" and the name of your project should be in there under "Identity and Type", change it to the new name.
+> Click "Rename" in a dropdown menu
+ 
+--------------------------------------------------------------------------------------------
+Step 2 - Rename the Scheme
+
+> In the top bar (near "Stop" button), there is a scheme for your OLD product, click on it, then go to "Manage schemes"
+> Click on the OLD name in the scheme, and it will become editable, change the name
+ 
+--------------------------------------------------------------------------------------------
+Step 3 - Rename the folder with your assets
+
+> Quit Xcode
+> In the correctly named master folder, there is a newly named xcodeproj file with the the wrongly named OLD folder. Rename the OLD folder to your new name
+> Reopen the project, you will see a warning: "The folder OLD does not exist", dismiss the warning
+> In the "Project navigator" on the left, click the top level OLD folder name
+> In Utilities pane under "Identity and type" you will see the "Name" entry, change this from the OLD to the new name
+> Just below there is a "Location" entry. Click on a folder with the OLD name and chose the newly renamed folder
+ 
+--------------------------------------------------------------------------------------------
+Step 4 - Rename the Build plist data**
+
+> Click on the project in the "Project navigator" on the left, in the main panel select "Build Settings"
+> Search for "plist" in this section
+> Under packaging, you will see Info.plist, and Product bundle identifier
+> Rename the top entry in Info.plist
+> Do the same for Product Identifier
+ 
+--------------------------------------------------------------------------------------------
+Step 5 - Rebuild Project
+
+> Finally, you are done and can rebuild (Command + Shift + K to clean, Command + B to build)
+> (close and reopen project to see all files updated)
+ 
+*/
