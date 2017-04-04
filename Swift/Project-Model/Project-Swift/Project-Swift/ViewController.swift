@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var imvBackground:UIImageView!
+    @IBOutlet weak var lblResult:UILabel!
     //
     var soundManager:SoundManager?
     var locationManager:LocationServiceControl?
@@ -53,62 +53,37 @@ class ViewController: UIViewController {
     
     @IBAction func actionPlaySound(sender:UIButton) {
         
-        let sm:SoundMedia = SoundMedia(rawValue: App.RandInt(1, 19))!
+        let iH:InternetHelper = InternetHelper.init()
         
-        soundManager?.speak("Tocando som: \(sm)")
+        //URL destino
+        var urlRequest:String = "http://md5.jsontest.com/?text=<text>"
+        urlRequest = urlRequest.replacingOccurrences(of: "<text>", with: "erico.gimenes")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2 ) {
-            self.soundManager?.play(sound: sm, volume: 1.0)
-            //
-            print("Latitude: \(self.locationManager?.latitude ?? 0)")
-            print("Longitude: \(self.locationManager?.longitude ?? 0)")
-        }
+        //Parameters
+        let parameters:Dictionary = [
+            "x": App.RandInt(1, 100),
+            "y": App.RandInt(1, 100)
+        ]
         
-    }
-    
-    @IBAction func testSaveData(sender:UIButton){
-        
-        let dataFileManager:DataFileManager = DataFileManager.init()
-        
-        var dic:Dictionary<String, Any> = Dictionary.init()
-        
-        dic["user"] = "Erico Gimenes"
-        dic["id"] = 25
-        dic["email"] = "erico.gimenes@gmail.com"
-        dic["password"] = "*********"
-        
-        let ok:Bool = dataFileManager.saveData(dictionaryData: dic)
-        
-        if (ok){
+        iH.post(toURL: urlRequest, httpBodyData: parameters) { (response, statusCode, error) in
             
-            if let userDic:Dictionary = dataFileManager.loadData(){
-                
-                print("User data: \(userDic)")
-                
-                if dataFileManager.deleteData(){
-                    print("COMPLETE-SUCCESS!")
-                }else{
-                    print("DELETE ERROR")
+            print("StatusCode: %li", statusCode)
+            
+            if let erro:NSError = error{
+                DispatchQueue.main.async {
+                    self.lblResult.text = String.init(format:"Error: %@, %@", [erro.domain, erro.userInfo["message"]])
                 }
-                
-            }else{
-                print("LOAD ERROR")
             }
-        }else{
-            print("SAVE ERROR")
+            
+            if let data:Dictionary = response{
+                DispatchQueue.main.async {
+                    self.lblResult.text = String.init(format:"Result: %@", [data])
+                }
+            }
         }
     }
     
-    @IBAction func testImage(sender:UIButton){
-        
-        let image1:UIImage? = UIImage.init(named: "animal.jpg")
-        let image2:UIImage? = UIImage.init(named: "guardachuva.jpeg")
-        //
-        let image3:UIImage? = ToolBox.graphicHelper_MergeImages(bottomImage: image1, topImage: image2, position: CGPoint(x: 100, y:100), blendMode: CGBlendMode.normal, alpha: 1.0, topImageScale: App.Rand())
-        
-        imvBackground.image = image3
-        
-    }
+
     
     
 //    func locationUpdate(notification:Notification){

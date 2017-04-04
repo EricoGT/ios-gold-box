@@ -21,6 +21,7 @@
 		E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */; };
 		E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */; };
 		E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */; };
+		E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEC75B1E93CA6300581632 /* InternetHelper.swift */; };
 		E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7B1053D1E92A7C9000A65D6 /* InfoPlist.strings */; };
 		E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1053F1E92B718000A65D6 /* DataFileManager.swift */; };
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
@@ -94,6 +95,7 @@
 		E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsManager.swift; sourceTree = "<group>"; };
+		E7AEC75B1E93CA6300581632 /* InternetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetHelper.swift; sourceTree = "<group>"; };
 		E7B1053C1E92A7C9000A65D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7B1053E1E92A7CB000A65D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7B1053F1E92B718000A65D6 /* DataFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileManager.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				E7A00FEA1E8E84A30050EDD3 /* ConnectionManager.swift */,
 				E7A00FEB1E8E84A30050EDD3 /* Reachability.swift */,
+				E7AEC75B1E93CA6300581632 /* InternetHelper.swift */,
 			);
 			name = ConnectionManager;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */,
 				E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */,
 				E7A00FDA1E8E828A0050EDD3 /* App.swift in Sources */,
+				E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */,
 				E7A00FED1E8E84A30050EDD3 /* Reachability.swift in Sources */,
 				E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */,
 				E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */,
