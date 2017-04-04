@@ -243,8 +243,8 @@ class ToolBox: NSObject{
     public static let DATE_DOT_yyyyMMdd_T_HHmmssSSSZ:String = "yyyy.MM.dd'T'HH:mm:ss.SSSZ"
     //
     public static let DATE_NONE_yyyyMMddHHmmss:String = "yyyyMMddHHmmss"
-    public static let DATE_TIME_HHmm:String = "HH.mm"
-    public static let DATE_TIME_HHmmss:String = "HH.mm.ss"
+    public static let DATE_TIME_HHmm:String = "HH:mm"
+    public static let DATE_TIME_HHmmss:String = "HH:mm:ss"
     //
     public static let CDATA_START:String = "<![CDATA["
     public static let CDATA_END:String = "]]>"
@@ -262,8 +262,9 @@ class ToolBox: NSObject{
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
         //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
         //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
         //
-        return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -2130,7 +2131,7 @@ class ToolBox: NSObject{
                 return nil
             }
             
-            let __FLT_EPSILON__ = CGFloat(FLT_EPSILON)
+            let __FLT_EPSILON__ = CGFloat(Float.ulpOfOne)
             let screenScale = UIScreen.main.scale
             let imageRect = CGRect(origin: CGPoint.zero, size: rImage.size)
             var effectImage = rImage
@@ -2334,7 +2335,7 @@ class ToolBox: NSObject{
         
         let animation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.y")
         animation.fromValue = 0
-        animation.toValue = 2 * M_PI
+        animation.toValue = 2 * Double.pi
         animation.duration = duration
         animation.repeatCount = Float(repeatCount)
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
@@ -2697,7 +2698,7 @@ class ToolBox: NSObject{
                 
                 bImage.draw(in: CGRect(x: 0.0, y: 0.0, width: bImage.size.width, height: bImage.size.height))
                 
-                tImage.draw(at: position, blendMode: blendMode, alpha: alpha)
+                tImage.draw(in: CGRect(x: position.x, y:position.y, width: topNewWidth, height: topNewHeight), blendMode: blendMode, alpha: alpha)
                 
                 let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
@@ -2861,7 +2862,7 @@ class ToolBox: NSObject{
     //MARK: - • CONVERTER HELPER =======================================================================
     
     /** Converte um dicionário JSON em texto.*/
-    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary) -> String
+    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary?) -> String
     {
         if let dic:NSDictionary = dictionary
         {
@@ -2890,51 +2891,56 @@ class ToolBox: NSObject{
     }
     
     /** Converte um texto em dicionário JSON.*/
-    class func converterHelper_DictionaryFromStringJson(string:String) -> NSDictionary?
+    class func converterHelper_DictionaryFromStringJson(string:String?) -> NSDictionary?
     {
-        if(string.isEmpty)
-        {
+        if let strJSON:String = string{
+            
+            if(strJSON.isEmpty)
+            {
+                return nil
+            }
+            
+            let objectData:Data? = (strJSON.data(using: String.Encoding.utf8))
+            var json:NSDictionary?
+            do
+            {
+                json = try (JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary)
+            }catch{
+                print(error)
+            }
+            
+            if(json != nil)
+            {
+                return json!
+            }
+            
+            return nil
+            
+        }else{
             return nil
         }
-        
-        let objectData:Data? = (string.data(using: String.Encoding.utf8))
-        var json:NSDictionary?
-        do
-        {
-            json = try (JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary)
-        }catch{
-            print(error)
-        }
-        
-        if(json != nil)
-        {
-            return json!
-        }
-        
-        return nil
-        
     }
     
     /** Remove valores textuais '<null>', '(null)', 'null' do dicionário parâmetro, substituindo pela por um termo escolhido.*/
-    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary, withString newString:String) -> NSDictionary?
+    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary?, withString newString:String?) -> NSDictionary?
     {
         if let dic:NSDictionary = oldDictionary
         {
-            var replaced:NSMutableDictionary = NSMutableDictionary(dictionary: dic)
+            let replaced:NSMutableDictionary = NSMutableDictionary(dictionary: dic)
             
             for key in replaced.allKeys {
                 
-                var object:AnyObject = replaced.object(forKey: key) as AnyObject
+                let object:AnyObject = replaced.object(forKey: key) as AnyObject
                 if(object is String)
                 {
                     if(ToolBox.isNil(object: object))
                     {
-                        replaced.setObject(newString, forKey: key as! NSCopying)
+                        replaced.setObject(newString!, forKey: key as! NSCopying)
                     }
                 }
                 else if(object is NSNull)
                 {
-                    replaced.setObject(newString, forKey: key as! NSCopying)
+                    replaced.setObject(newString!, forKey: key as! NSCopying)
                 }
             }
             return NSDictionary.init(dictionary: replaced)
@@ -2946,7 +2952,7 @@ class ToolBox: NSObject{
     }
     
     /** Substitui o símbolo '+' do texto de um dicionário referência.*/
-    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary) -> NSDictionary?
+    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary?) -> NSDictionary?
     {
         if let dic:NSDictionary = refDictionary
         {
@@ -2965,7 +2971,7 @@ class ToolBox: NSObject{
     }
     
     /** Retorna uma url normalizada baseada em uma string.*/
-    class func converterHelper_NormalizedURLString(string:String) -> NSURL?
+    class func converterHelper_NormalizedURLString(string:String?) -> NSURL?
     {
         if let paramString:String = string
         {
@@ -2980,7 +2986,7 @@ class ToolBox: NSObject{
     }
     
     /** Retorna o texto 'limpo' de uma html.*/
-    class func converterHelper_PlainStringFromHTMLString(htmlString:String) -> String?
+    class func converterHelper_PlainStringFromHTMLString(htmlString:String?) -> String?
     {
         if let paramString:String = htmlString
         {
@@ -3005,28 +3011,21 @@ class ToolBox: NSObject{
     /** Formata um valor numérico para seu equivalente monetário. Utiliza a localidade padrão do sistema.*/
     class func converterHelper_MonetaryStringForValue(value:Double) -> String?
     {
-        if let paramValue:Double = value
-        {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = NumberFormatter.Style.currency
-            return formatter.string(from: NSNumber.init(value: paramValue))
-        }
-        else
-        {
-            return nil
-        }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        return formatter.string(from: NSNumber.init(value: value))
     }
     
     /** Converte graus em radianos.*/
     class func converterHelper_DegreeToRadian(degree:CGFloat) -> CGFloat
     {
-        return degree * CGFloat(M_PI) / 180.0
+        return degree * CGFloat(Double.pi) / 180.0
     }
     
     /** Converte radianos em graus.*/
     class func converterHelper_RadianToDegree(radius:CGFloat) -> CGFloat
     {
-        return radius * 180.0 / CGFloat(M_PI)
+        return radius * 180.0 / CGFloat(Double.pi)
     }
     
     /** Converte grau celsius para fahenheit.*/

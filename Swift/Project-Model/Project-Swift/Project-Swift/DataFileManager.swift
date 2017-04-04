@@ -86,7 +86,7 @@ class DataFileManager{
     //LOAD
     func loadData() -> Dictionary<String, Any>?{
         
-        let baseURL:URL = URL.init(string:(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as? [String])!.last!)!
+        let baseURL:URL = URL.init(string:(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)).last!)!
         let directoryPath:URL = baseURL.appendingPathComponent("DataDir")
         let filePath:URL = directoryPath.appendingPathComponent("DataFile")
         

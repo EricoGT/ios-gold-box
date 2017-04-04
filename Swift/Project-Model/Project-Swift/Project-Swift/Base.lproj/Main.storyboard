@@ -43,22 +43,49 @@
                                     <action selector="testSaveDataWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZl-Rf-iEr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhS-eW-g4B">
+                                <rect key="frame" x="16" y="232" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qIU-px-hjM"/>
+                                </constraints>
+                                <state key="normal" title="Merge Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="testImageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lO-Bc-DnN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NfH-XH-0lh">
+                                <rect key="frame" x="16" y="296" width="343" height="351"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="SJO-iw-5iI" secondAttribute="trailing" id="0zM-i8-7BZ"/>
+                            <constraint firstItem="RhS-eW-g4B" firstAttribute="top" secondItem="SJO-iw-5iI" secondAttribute="bottom" constant="30" id="3G2-bZ-8yb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NfH-XH-0lh" secondAttribute="bottom" constant="20" id="5U9-r2-YVz"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6DN-DI-eWD"/>
                             <constraint firstItem="SJO-iw-5iI" firstAttribute="top" secondItem="5TN-ev-tGj" secondAttribute="bottom" constant="30" id="BRo-RZ-wA6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NfH-XH-0lh" secondAttribute="trailing" id="GLH-uu-c0L"/>
+                            <constraint firstItem="NfH-XH-0lh" firstAttribute="top" secondItem="RhS-eW-g4B" secondAttribute="bottom" constant="20" id="ILb-rf-6qC"/>
+                            <constraint firstItem="NfH-XH-0lh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="McK-GJ-apW"/>
+                            <constraint firstItem="RhS-eW-g4B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P2e-ye-mRj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RhS-eW-g4B" secondAttribute="trailing" id="PGi-U6-Kaa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5TN-ev-tGj" secondAttribute="trailing" id="SLu-AN-BXz"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ycb-qx-EuK"/>
                             <constraint firstItem="SJO-iw-5iI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cmI-cp-NuJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Okw-U0-KK5"/>
+                    <connections>
+                        <outlet property="imvBackground" destination="NfH-XH-0lh" id="NjN-AI-TPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-349"/>
+            <point key="canvasLocation" x="512.79999999999995" y="-349.47526236881561"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Du7-v8-dr8">

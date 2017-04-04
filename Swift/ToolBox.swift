@@ -1,6 +1,6 @@
 //
 //  ToolBox.swift
-//  Etna
+//  Project-Swift
 //
 //  Created by Erico GT on 3/21/17.
 //  Copyright © 2017 Atlantic Solutions. All rights reserved.
@@ -54,84 +54,84 @@ private extension UIDevice {
         }
         
         switch identifier {
-        //iPhone
-        case "iPhone1,1":    return  "iPhone 1G"
-        case "iPhone1,2":    return  "iPhone 3G"
-        case "iPhone2,1":    return  "iPhone 3GS"
-        case "iPhone3,1":    return  "iPhone 4"
-        case "iPhone3,2":    return  "iPhone 4 (GSM)"
-        case "iPhone3,3":    return  "iPhone 4 (CDMA)"
-        case "iPhone4,1":    return  "iPhone 4S"
-        case "iPhone5,1":    return  "iPhone 5 (GSM)"
-        case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
-        case "iPhone5,3":    return  "iPhone 5C (GSM)"
-        case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
-        case "iPhone6,1":    return  "iPhone 5S (GSM)"
-        case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
-        case "iPhone7,1":    return  "iPhone 6 Plus"
-        case "iPhone7,2":    return  "iPhone 6"
-        case "iPhone8,1":    return  "iPhone 6S"
-        case "iPhone8,2":    return  "iPhone 6S Plus"
-        case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
-        case "iPhone8,4":    return  "iPhone SE (GSM)"
-        case "iPhone9,1":    return  "iPhone 7"
-        case "iPhone9,2":    return  "iPhone 7 Plus"
-        case "iPhone9,3":    return  "iPhone 7"
-        case "iPhone9,4":    return  "iPhone 7 Plus"
+            //iPhone
+            case "iPhone1,1":    return  "iPhone 1G"
+            case "iPhone1,2":    return  "iPhone 3G"
+            case "iPhone2,1":    return  "iPhone 3GS"
+            case "iPhone3,1":    return  "iPhone 4"
+            case "iPhone3,2":    return  "iPhone 4 (GSM)"
+            case "iPhone3,3":    return  "iPhone 4 (CDMA)"
+            case "iPhone4,1":    return  "iPhone 4S"
+            case "iPhone5,1":    return  "iPhone 5 (GSM)"
+            case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
+            case "iPhone5,3":    return  "iPhone 5C (GSM)"
+            case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
+            case "iPhone6,1":    return  "iPhone 5S (GSM)"
+            case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
+            case "iPhone7,1":    return  "iPhone 6 Plus"
+            case "iPhone7,2":    return  "iPhone 6"
+            case "iPhone8,1":    return  "iPhone 6S"
+            case "iPhone8,2":    return  "iPhone 6S Plus"
+            case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
+            case "iPhone8,4":    return  "iPhone SE (GSM)"
+            case "iPhone9,1":    return  "iPhone 7"
+            case "iPhone9,2":    return  "iPhone 7 Plus"
+            case "iPhone9,3":    return  "iPhone 7"
+            case "iPhone9,4":    return  "iPhone 7 Plus"
+                
+            //iPod
+            case "iPod1,1":      return  "iPod Touch 1G"
+            case "iPod2,1":      return  "iPod Touch 2G"
+            case "iPod3,1":      return  "iPod Touch 3G"
+            case "iPod4,1":      return  "iPod Touch 4G"
+            case "iPod5,1":      return  "iPod Touch 5G"
+            case "iPod6,1":      return  "iPod Touch 6G"
+                
+            //iPad
+            case "iPad1,1":      return  "iPad"
+            case "iPad2,1":      return  "iPad 2 (WiFi)"
+            case "iPad2,2":      return  "iPad 2 (GSM)"
+            case "iPad2,3":      return  "iPad 2 (CDMA)"
+            case "iPad2,4":      return  "iPad 2 (WiFi)"
+            case "iPad3,1":      return  "iPad 3 (WiFi)"
+            case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
+            case "iPad3,3":      return  "iPad 3 (GSM)"
+            case "iPad3,4":      return  "iPad 4 (WiFi)"
+            case "iPad3,5":      return  "iPad 4 (GSM)"
+            case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
+                
+            //iPad Mini
+            case "iPad2,5":      return  "iPad Mini (WiFi)"
+            case "iPad2,6":      return  "iPad Mini (GSM)"
+            case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
+            case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
+            case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
+            case "iPad4,6":      return  "iPad Mini 2"
+            case "iPad4,7":      return  "iPad Mini 3"
+            case "iPad4,8":      return  "iPad Mini 3"
+            case "iPad4,9":      return  "iPad Mini 3"
+            case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
+            case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
+                
+            //iPad Air
+            case "iPad4,1":      return  "iPad Air (WiFi)"
+            case "iPad4,2":      return  "iPad Air (Cellular)"
+            case "iPad4,3":      return  "iPad Air"
+            case "iPad5,3":      return  "iPad Air 2 (WiFi)"
+            case "iPad5,4":      return  "iPad Air 2 (Cellular)"
+                
+            //iPad Pro
+            case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
+            case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
+            case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
+            case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
+                
+            //simulador
+            case "i386":         return  "Simulator"
+            case "x86_64":       return  "Simulator"
             
-        //iPod
-        case "iPod1,1":      return  "iPod Touch 1G"
-        case "iPod2,1":      return  "iPod Touch 2G"
-        case "iPod3,1":      return  "iPod Touch 3G"
-        case "iPod4,1":      return  "iPod Touch 4G"
-        case "iPod5,1":      return  "iPod Touch 5G"
-        case "iPod6,1":      return  "iPod Touch 6G"
-            
-        //iPad
-        case "iPad1,1":      return  "iPad"
-        case "iPad2,1":      return  "iPad 2 (WiFi)"
-        case "iPad2,2":      return  "iPad 2 (GSM)"
-        case "iPad2,3":      return  "iPad 2 (CDMA)"
-        case "iPad2,4":      return  "iPad 2 (WiFi)"
-        case "iPad3,1":      return  "iPad 3 (WiFi)"
-        case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
-        case "iPad3,3":      return  "iPad 3 (GSM)"
-        case "iPad3,4":      return  "iPad 4 (WiFi)"
-        case "iPad3,5":      return  "iPad 4 (GSM)"
-        case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
-            
-        //iPad Mini
-        case "iPad2,5":      return  "iPad Mini (WiFi)"
-        case "iPad2,6":      return  "iPad Mini (GSM)"
-        case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
-        case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
-        case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
-        case "iPad4,6":      return  "iPad Mini 2"
-        case "iPad4,7":      return  "iPad Mini 3"
-        case "iPad4,8":      return  "iPad Mini 3"
-        case "iPad4,9":      return  "iPad Mini 3"
-        case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
-        case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
-            
-        //iPad Air
-        case "iPad4,1":      return  "iPad Air (WiFi)"
-        case "iPad4,2":      return  "iPad Air (Cellular)"
-        case "iPad4,3":      return  "iPad Air"
-        case "iPad5,3":      return  "iPad Air 2 (WiFi)"
-        case "iPad5,4":      return  "iPad Air 2 (Cellular)"
-            
-        //iPad Pro
-        case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
-        case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
-        case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
-        case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
-            
-        //simulador
-        case "i386":         return  "Simulator"
-        case "x86_64":       return  "Simulator"
-            
-        //other
-        default:             return identifier
+            //other
+            default:             return identifier
         }
     }
 }
@@ -143,40 +143,40 @@ private extension Calendar{
         
         switch identifier {
             
-        case Identifier.gregorian:              return "gregorian"
-            
-        case Identifier.buddhist:               return "buddhist"
-            
-        case Identifier.chinese:                return "chinese"
-            
-        case Identifier.coptic:                 return "coptic"
-            
-        case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
-            
-        case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
-            
-        case Identifier.hebrew:                 return "hebrew"
-            
-        case Identifier.iso8601:                return "iso8601"
-            
-        case Identifier.indian:                 return "indian"
-            
-        case Identifier.islamic:                return "islamic"
-            
-        case Identifier.islamicCivil:           return "islamicCivil"
-            
-        case Identifier.japanese:               return "japanese"
-            
-        case Identifier.persian:                return "persian"
-            
-        case Identifier.republicOfChina:        return "republicOfChina"
-            
-        /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
-        case Identifier.islamicTabular:         return "islamicTabular"
-            
-        /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
-        case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
-            
+            case Identifier.gregorian:              return "gregorian"
+                
+            case Identifier.buddhist:               return "buddhist"
+                
+            case Identifier.chinese:                return "chinese"
+                
+            case Identifier.coptic:                 return "coptic"
+                
+            case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
+                
+            case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
+                
+            case Identifier.hebrew:                 return "hebrew"
+                
+            case Identifier.iso8601:                return "iso8601"
+                
+            case Identifier.indian:                 return "indian"
+                
+            case Identifier.islamic:                return "islamic"
+                
+            case Identifier.islamicCivil:           return "islamicCivil"
+                
+            case Identifier.japanese:               return "japanese"
+                
+            case Identifier.persian:                return "persian"
+                
+            case Identifier.republicOfChina:        return "republicOfChina"
+                
+            /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
+            case Identifier.islamicTabular:         return "islamicTabular"
+                
+            /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
+            case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
+                
             //default:                                return ""
         }
     }
@@ -243,8 +243,8 @@ class ToolBox: NSObject{
     public static let DATE_DOT_yyyyMMdd_T_HHmmssSSSZ:String = "yyyy.MM.dd'T'HH:mm:ss.SSSZ"
     //
     public static let DATE_NONE_yyyyMMddHHmmss:String = "yyyyMMddHHmmss"
-    public static let DATE_TIME_HHmm:String = "HH.mm"
-    public static let DATE_TIME_HHmmss:String = "HH.mm.ss"
+    public static let DATE_TIME_HHmm:String = "HH:mm"
+    public static let DATE_TIME_HHmmss:String = "HH:mm:ss"
     //
     public static let CDATA_START:String = "<![CDATA["
     public static let CDATA_END:String = "]]>"
@@ -262,8 +262,9 @@ class ToolBox: NSObject{
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
         //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
         //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
         //
-        return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -286,15 +287,15 @@ class ToolBox: NSObject{
         return "\(version) - \(build)"
     }
     
-    
+
     /** Retorna o caminho de instalação do app (útil para testes com simulador). Preferencialmente utilize no 'didFinishLaunchingWithOptions' do AppDelegate.*/
     class func applicationHelper_InstalationDataForSimulator() -> String!{
         
         return String.init(format: "\n\n---------- Logs ----------\nClasse: %@\nMétodo: %@\nLinha: %d\nDescrição: LOCAL SIMULATOR: %@\n---------- Logs ----------\n\n",
                            arguments: [String(describing: type(of: self)),
-                                       #function,
-                                       #line,
-                                       NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
+                            #function,
+                            #line,
+                            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
     }
     
     
@@ -479,7 +480,7 @@ class ToolBox: NSObject{
         }
     }
     
-    
+
     /** Busca o tamanho da memória livre disponível no dispositivo.*/
     class func deviceHelper_FreeMemorySpace() -> String{
         
@@ -924,7 +925,7 @@ class ToolBox: NSObject{
                     {
                         return String.init(format: "%d horas e %lu minutos", [hoursBetweenDates, minutesLeft])
                     }
-                }
+                }                
             }else{
                 return ""
             }
@@ -979,7 +980,7 @@ class ToolBox: NSObject{
             return 0
         }
     }
-    
+
     
     /** Retorna uma nova data, utilizando uma data base deslocada de 'n' unidades de calendário (ex.: dias, horas, minutos).*/
     class func dateHelper_NewDateForReferenceDate(referenceDate:Date?, offSet:Int, unitCalendar:Calendar.Component) -> Date?{
@@ -1140,90 +1141,90 @@ class ToolBox: NSObject{
                 let dateComponents2:DateComponents = calendar.dateComponents(setComponents, from: d2)
                 
                 for i in 1...7 {
-                    
+                
                     switch (i)
                     {
-                    case 1: //Ano Maior
-                        
-                        if (dateComponents1.year! > dateComponents2.year!){
+                        case 1: //Ano Maior
                             
-                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                return true;
-                            }else{
-                                return false;
+                            if (dateComponents1.year! > dateComponents2.year!){
+                                
+                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
                             }
-                        }
-                        
-                    case 2: //Ano Menor
-                        
-                        if (dateComponents1.year! < dateComponents2.year!){
                             
-                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        }
-                        
-                        
-                    case 3: //Ano Igual / Mês Menor
-                        
-                        if (dateComponents1.month! > dateComponents2.month!){
+                        case 2: //Ano Menor
                             
-                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        }
-                        
-                    case 4: //Ano Igual / Mês Maior
-                        
-                        if (dateComponents1.month! < dateComponents2.month!){
+                            if (dateComponents1.year! < dateComponents2.year!){
                             
-                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                return true;
-                            }else{
-                                return false;
+                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
                             }
-                        }
-                        
-                    case 5: //Ano Igual / Mês Igual / Dia Menor
-                        
-                        if (dateComponents1.day! > dateComponents2.day!){
+                           
                             
-                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                return true;
-                            }else{
-                                return false;
-                            }
-                        }
-                        
-                    case 6: //Ano Igual / Mês Igual / Dia Meior
-                        
-                        if (dateComponents1.day! < dateComponents2.day!){
+                        case 3: //Ano Igual / Mês Menor
                             
-                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                return true;
-                            }else{
-                                return false;
+                            if (dateComponents1.month! > dateComponents2.month!){
+                                
+                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
                             }
-                        }
-                        
-                    case 7: //Ano Igual / Mês Igual / Dia Igual
-                        
-                        if (dateComponents1.day! == dateComponents2.day!){
                             
-                            if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
-                                return true;
-                            }else{
-                                return false;
+                        case 4: //Ano Igual / Mês Maior
+                            
+                            if (dateComponents1.month! < dateComponents2.month!){
+                                
+                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
                             }
-                        }
-                        
-                    default:
-                        
-                        return false
+                            
+                        case 5: //Ano Igual / Mês Igual / Dia Menor
+                            
+                            if (dateComponents1.day! > dateComponents2.day!){
+                                
+                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
+                            }
+                            
+                        case 6: //Ano Igual / Mês Igual / Dia Meior
+                            
+                            if (dateComponents1.day! < dateComponents2.day!){
+                                
+                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
+                            }
+                            
+                        case 7: //Ano Igual / Mês Igual / Dia Igual
+                            
+                            if (dateComponents1.day! == dateComponents2.day!){
+                                
+                                if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
+                                    return true;
+                                }else{
+                                    return false;
+                                }
+                            }
+                           
+                        default:
+                            
+                            return false
                     }
                 }
                 return false
@@ -1239,7 +1240,7 @@ class ToolBox: NSObject{
     
     /** Retorna um texto no formato Mês/Ano (localizado pt-BR) para uma data referência. Ex.: JAN/2016. */
     class func dateHelper_MonthAndYearForReferenceDate(referenceDate:Date?, abbreviation:Bool) -> String{
-        
+    
         if let date:Date = referenceDate{
             
             let calendar:Calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
@@ -1264,38 +1265,38 @@ class ToolBox: NSObject{
     class func dateHelper_MonthNameForIndex(index:Int, abbreviation:Bool) -> String{
         
         switch index {
-        case 1:
-            return (abbreviation ? "JAN" : "Janeiro")
-        case 2:
-            return (abbreviation ? "FEV" : "Fevereiro")
-        case 3:
-            return (abbreviation ? "MAR" : "Março")
-        case 4:
-            return (abbreviation ? "ABR" : "Abril")
-        case 5:
-            return (abbreviation ? "MAI" : "Maio")
-        case 6:
-            return (abbreviation ? "JUN" : "Junho")
-        case 7:
-            return (abbreviation ? "JUL" : "Julho")
-        case 8:
-            return (abbreviation ? "AGO" : "Agosto")
-        case 9:
-            return (abbreviation ? "SET" : "Setembro")
-        case 10:
-            return (abbreviation ? "OUT" : "Outubro")
-        case 11:
-            return (abbreviation ? "NOV" : "Novembro")
-        case 12:
-            return (abbreviation ? "DEZ" : "Dezembro")
-        default:
-            return (abbreviation ? "-" : "-")
+            case 1:
+                return (abbreviation ? "JAN" : "Janeiro")
+            case 2:
+                return (abbreviation ? "FEV" : "Fevereiro")
+            case 3:
+                return (abbreviation ? "MAR" : "Março")
+            case 4:
+                return (abbreviation ? "ABR" : "Abril")
+            case 5:
+                return (abbreviation ? "MAI" : "Maio")
+            case 6:
+                return (abbreviation ? "JUN" : "Junho")
+            case 7:
+                return (abbreviation ? "JUL" : "Julho")
+            case 8:
+                return (abbreviation ? "AGO" : "Agosto")
+            case 9:
+                return (abbreviation ? "SET" : "Setembro")
+            case 10:
+                return (abbreviation ? "OUT" : "Outubro")
+            case 11:
+                return (abbreviation ? "NOV" : "Novembro")
+            case 12:
+                return (abbreviation ? "DEZ" : "Dezembro")
+            default:
+                return (abbreviation ? "-" : "-")
         }
     }
     
     /** Encontra o nome do dia da semana para determinado indice (localizado pt-BR). */
     class func dateHelper_DayOfTheWeekNameForIndex(indexDay:Int, abbreviation:Bool) -> String{
-        
+    
         switch indexDay {
         case 1:
             return (abbreviation ? "DOM" : "Domingo")
@@ -1316,12 +1317,12 @@ class ToolBox: NSObject{
         }
     }
     
-    
+
     /** Formata uma dada data para texto com máscara 'EEEE, dd 'de' MMMM 'de' yyyy, HH:mm:ss. */
     class func dateHelper_CompleteStringFromDate(referenceDay:Date?) -> String{
         
         if let rDate:Date = referenceDay{
-            
+         
             let dateFormatter:DateFormatter = DateFormatter.init()
             dateFormatter.dateFormat = "EEEE, dd 'de' MMMM 'de' yyyy, kk:mm:ss."
             //
@@ -1403,7 +1404,7 @@ class ToolBox: NSObject{
             }else if (dateComponents.hour! >= 12){
                 
                 return "Tarde"
-                
+            
             }else if (dateComponents.hour! >= 6){
                 
                 return "Dia"
@@ -1529,13 +1530,13 @@ class ToolBox: NSObject{
     class func messureHelper_CheckEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int) -> Bool{
         
         //TODO:
-        //        NSString *vString1 = [self converterHelper_StringFromValue:value1 monetaryFormat:true decimalPrecision:precision];
-        //        NSString *vString2 = [self converterHelper_StringFromValue:value2 monetaryFormat:true decimalPrecision:precision];
-        //        //
-        //        double vDouble1 = [self converterHelper_DecimalValueFromText:vString1];
-        //        double vDouble2 = [self converterHelper_DecimalValueFromText:vString2];
-        //        //
-        //        return (vDouble1 == vDouble2);
+//        NSString *vString1 = [self converterHelper_StringFromValue:value1 monetaryFormat:true decimalPrecision:precision];
+//        NSString *vString2 = [self converterHelper_StringFromValue:value2 monetaryFormat:true decimalPrecision:precision];
+//        //
+//        double vDouble1 = [self converterHelper_DecimalValueFromText:vString1];
+//        double vDouble2 = [self converterHelper_DecimalValueFromText:vString2];
+//        //
+//        return (vDouble1 == vDouble2);
         
         return false
     }
@@ -1556,7 +1557,7 @@ class ToolBox: NSObject{
         return String(format: "%.2f %@", convertedValue, tokens[multiplyFactor])
     }
     
-    
+
     //MARK: - • VALIDATION HELPER =======================================================================
     
     
@@ -1576,7 +1577,7 @@ class ToolBox: NSObject{
             return ToolBoxValidationResult.Disapproved
         }else{
             return ToolBoxValidationResult.Approved
-        }
+        }        
     }
     
     
@@ -1631,7 +1632,7 @@ class ToolBox: NSObject{
             return ToolBoxValidationResult.Approved
         }
     }
-    
+   
     
     
     /**
@@ -1674,16 +1675,16 @@ class ToolBox: NSObject{
         
         return finalList
     }
-    
+  
     /** Verifica o MIMEType para um determinado arquivo com extensão conhecida.*/
     class func validationHelper_MIMETypeForWebContent(url:String) -> String{
-        
+    
         let strArray:Array = url.components(separatedBy: ".")
         
         if (strArray.count > 0){
             
             let strMIME:String = strArray.last!
-            
+                
             if strMIME.uppercased() == "JPE" {return "image/jpeg"}
             if strMIME.uppercased() == "JPEG" {return "image/jpeg"}
             if strMIME.uppercased() == "JPG" {return "image/jpeg"}
@@ -1700,7 +1701,7 @@ class ToolBox: NSObject{
     
     /** Verifica se o texto equivale a verdadeiro ou falso.*/
     class func validationHelper_ValidateBolean(text:String?, comparingBoolean:Bool) ->Bool{
-        
+    
         guard text != nil else {
             return false
         }
@@ -1756,7 +1757,7 @@ class ToolBox: NSObject{
     
     /** Verifica se um CPF é válido.*/
     class func validationHelper_Validate(CPF:String?) -> ToolBoxValidationResult{
-        
+    
         guard CPF != nil else {
             return ToolBoxValidationResult.Undefined
         }
@@ -1829,7 +1830,7 @@ class ToolBox: NSObject{
             digit_11_correct = 11 - (soma % 11);
         }
         
-        
+                
         //Retorno
         if (digit_10_correct == digit_10 && digit_11_correct == digit_11){
             return ToolBoxValidationResult.Approved;
@@ -1929,7 +1930,7 @@ class ToolBox: NSObject{
             }
         }
         return (oddSum + evenSum) % 10 == 0
-        
+
     }
     
     
@@ -1950,7 +1951,7 @@ class ToolBox: NSObject{
             red   = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
             green = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
             blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
-            
+        
         case 4: // #ARGB
             alpha = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
             red   = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
@@ -2005,7 +2006,7 @@ class ToolBox: NSObject{
         var novaLargura:CGFloat = 0;
         var novaAltura:CGFloat = 0;
         
-        // maxDimension = abs(maxDimension);
+       // maxDimension = abs(maxDimension);
         
         //Imagem de retorno:
         var newImage:UIImage
@@ -2039,8 +2040,8 @@ class ToolBox: NSObject{
             return ""
         }
     }
-    
-    
+
+
     /** Converte um texto base64 para a imagem correspondente.*/
     class func graphicHelper_DecodeBase64ToImage(strEncodeData:String?) -> UIImage?{
         
@@ -2051,7 +2052,7 @@ class ToolBox: NSObject{
             return nil
         }
     }
-    
+
     
     /** Cria uma cópia de uma imagem fazendo sobreposição de cor.*/
     class func graphicHelper_TintImage(tintColor:UIColor?, templateImage:UIImage?) -> UIImage?{
@@ -2078,7 +2079,7 @@ class ToolBox: NSObject{
         }
     }
     
-    
+ 
     /** Retorna uma imagem representação do Layer parâmetro.*/
     class func graphicHelper_Snapshot(layer:CALayer?) -> UIImage?{
         
@@ -2130,7 +2131,7 @@ class ToolBox: NSObject{
                 return nil
             }
             
-            let __FLT_EPSILON__ = CGFloat(FLT_EPSILON)
+            let __FLT_EPSILON__ = CGFloat(Float.ulpOfOne)
             let screenScale = UIScreen.main.scale
             let imageRect = CGRect(origin: CGPoint.zero, size: rImage.size)
             var effectImage = rImage
@@ -2178,7 +2179,7 @@ class ToolBox: NSObject{
                     // ... if d is odd, use three box-blurs of size 'd', centered on the output pixel.
                     //
                     let inputRadius = radius * screenScale
-                    let d = floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI) / 4 + 0.5))
+                    let d = floor(inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi) / 4 + 0.5))
                     var radius = UInt32(d)
                     if radius % 2 != 1 {
                         radius += 1 // force radius to be odd so that the three box-blur methodology works.
@@ -2334,14 +2335,14 @@ class ToolBox: NSObject{
         
         let animation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.y")
         animation.fromValue = 0
-        animation.toValue = 2 * M_PI
+        animation.toValue = 2 * Double.pi
         animation.duration = duration
         animation.repeatCount = Float(repeatCount)
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
         //
         view.layer.add(animation, forKey: "transform.rotation.y")
     }
-    
+
     
     /** Adiciona efeito parallax na View parâmetro.*/
     class func graphicHelper_ApplyParallaxEffect(view:UIView, deep:CGFloat){
@@ -2377,7 +2378,7 @@ class ToolBox: NSObject{
         }
     }
     
-    
+
     /** Adiciona uma animação de efeito ripple circular na View parâmetro.*/
     class func graphicHelper_ApplyCircleRippleEffectAnimation(view:UIView, color:UIColor, radius:CGFloat, duration:TimeInterval){
         
@@ -2396,36 +2397,36 @@ class ToolBox: NSObject{
         
         let path:UIBezierPath = UIBezierPath.init(roundedRect: pathFrame, cornerRadius: m/2)
         let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
-        
+            
         let circleShape:CAShapeLayer = CAShapeLayer.init()
         circleShape.path = path.cgPath
         circleShape.position = shapePosition
         circleShape.fillColor = color.cgColor
         circleShape.opacity = 0
-        
+            
         view.layer.addSublayer(circleShape)
-        
+            
         let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
         scaleAnimation.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(2.0, 2.0, 1.0))
-        
+            
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.fromValue = 1
         alphaAnimation.toValue = 0
-        
+            
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = duration
         animationGroup.repeatCount = 0.0
         animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
-        
+            
         circleShape.add(animationGroup, forKey: "ripple")
     }
     
     
     /** Adiciona uma animação de efeito ripple na View parâmetro.*/
     class func graphicHelper_ApplyRippleEffectAnimationForBounds(view:UIView, color:UIColor, sizeScale:CGFloat, duration:TimeInterval){
-        
+    
         let path:UIBezierPath = UIBezierPath.init(rect: view.frame)
         let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
         
@@ -2451,7 +2452,7 @@ class ToolBox: NSObject{
         animationGroup.repeatCount = 0.0
         animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
         
-        circleShape.add(animationGroup, forKey: "ripple")
+        circleShape.add(animationGroup, forKey: "ripple")    
     }
     
     
@@ -2480,7 +2481,7 @@ class ToolBox: NSObject{
         scaleAnimation2.duration = 0.1
         scaleAnimation2.fillMode = kCAFillModeForwards
         animations.append(scaleAnimation2)
-        
+
         // Step 3
         let scaleAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation3.toValue = scale
@@ -2505,7 +2506,7 @@ class ToolBox: NSObject{
         view.layer.add(animationGroup, forKey: "heart-beat")
     }
     
-    
+
     /** Adiciona uma animação de incremento/decremento de tamanho na View parâmetro.*/
     class func graphicHelper_ApplyScaleBeatAnimation(view:UIView, scale:CGFloat, repeatCount:Int){
         
@@ -2527,7 +2528,7 @@ class ToolBox: NSObject{
         animationGroup.repeatCount = Float(repeatCount)
         animationGroup.fillMode = kCAFillModeBoth
         
-        view.layer.add(animationGroup, forKey: "scale-beat")
+       view.layer.add(animationGroup, forKey: "scale-beat")
     }
     
     
@@ -2546,7 +2547,7 @@ class ToolBox: NSObject{
             var red:CGFloat = 0.0
             var green:CGFloat = 0.0
             var blue:CGFloat = 0.0
-            
+
             borderColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             context.setStrokeColor(red: red, green: green, blue: blue, alpha: alpha)
             context.setLineWidth(borderWidth)
@@ -2563,7 +2564,7 @@ class ToolBox: NSObject{
         
     }
     
-    
+
     /** Cria uma imagem flat num tamanho específico.*/
     class func graphicHelper_CreateFlatImage(size:CGSize, corners:UIRectCorner, cornerRadius:CGSize, color:UIColor) -> UIImage{
         
@@ -2625,7 +2626,7 @@ class ToolBox: NSObject{
             
             let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
-            
+
             return newImage
         }else{
             return nil
@@ -2640,7 +2641,7 @@ class ToolBox: NSObject{
             
             let imageRef:CGImage = cImage.cgImage!.cropping(to: frame)!
             let croppedImage:UIImage = UIImage(cgImage:imageRef)
-            return croppedImage
+            return croppedImage            
             
         }else{
             return nil
@@ -2654,16 +2655,16 @@ class ToolBox: NSObject{
         if let originalImage:UIImage = image{
             
             if let maskImage:UIImage = mask{
-                
+             
                 let cgOriginalImage:CGImage = originalImage.cgImage!
                 let cgMaskImage:CGImage = maskImage.cgImage!
                 let imageMask:CGImage = CGImage.init(maskWidth: cgMaskImage.width,
-                                                     height: cgMaskImage.height,
-                                                     bitsPerComponent: cgMaskImage.bitsPerComponent,
-                                                     bitsPerPixel: cgMaskImage.bitsPerPixel,
-                                                     bytesPerRow: cgMaskImage.bytesPerRow,
-                                                     provider: cgMaskImage.dataProvider!, decode: nil, shouldInterpolate: true)!
-                
+                                                height: cgMaskImage.height,
+                                                bitsPerComponent: cgMaskImage.bitsPerComponent,
+                                                bitsPerPixel: cgMaskImage.bitsPerPixel,
+                                                bytesPerRow: cgMaskImage.bytesPerRow,
+                                                provider: cgMaskImage.dataProvider!, decode: nil, shouldInterpolate: true)!
+            
                 let maskedImage:CGImage = cgOriginalImage.masking(imageMask)!
                 let newImage:UIImage = UIImage.init(cgImage: maskedImage)
                 //
@@ -2681,7 +2682,7 @@ class ToolBox: NSObject{
             return nil
         }
     }
-    
+
     
     /** Mescla duas imagens (a 'top' sobre a 'bottom'). É possível definir posição, mistura, transparência e escala para a imagem superior (top).*/
     class func graphicHelper_MergeImages(bottomImage:UIImage?, topImage:UIImage?, position:CGPoint, blendMode:CGBlendMode, alpha:CGFloat, topImageScale:Float) -> UIImage?{
@@ -2692,13 +2693,12 @@ class ToolBox: NSObject{
                 
                 let topNewWidth:CGFloat = tImage.size.width * CGFloat(topImageScale)
                 let topNewHeight:CGFloat = tImage.size.height * CGFloat(topImageScale)
-                let topNewSize:CGSize = CGSize(width: topNewWidth, height: topNewHeight)
                 
                 UIGraphicsBeginImageContext(bImage.size)
                 
                 bImage.draw(in: CGRect(x: 0.0, y: 0.0, width: bImage.size.width, height: bImage.size.height))
                 
-                tImage.draw(at: position, blendMode: blendMode, alpha: alpha)
+                tImage.draw(in: CGRect(x: position.x, y:position.y, width: topNewWidth, height: topNewHeight), blendMode: blendMode, alpha: alpha)
                 
                 let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
@@ -2719,7 +2719,7 @@ class ToolBox: NSObject{
     class func graphicHelper_ResizeScaleToFill(image:UIImage?, newSize:CGSize) -> UIImage?{
         
         if let originalImage:UIImage = image{
-            
+         
             UIGraphicsBeginImageContext(newSize)
             originalImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newSize.width, height: newSize.height))
             let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -2732,7 +2732,7 @@ class ToolBox: NSObject{
         }
     }
     
-    
+
     /** Redimensiona a imagem parâmetro baseando-se numa escala. Escala 0 (zero) ou negativa será ignorada.*/
     class func graphicHelper_ResizeAspectFit(image:UIImage?, scale:CGFloat) -> UIImage? {
         
@@ -2787,7 +2787,7 @@ class ToolBox: NSObject{
         }
     }
     
-    
+
     /** Comprime uma imagem para reduzir sua qualidade. O parâmetro 'image' é transformado no formato JPEG ,na qualidade correspondente.*/
     class func graphicHelper_Compress(image:UIImage?, quality:CGFloat) -> UIImage?{
         
@@ -2862,7 +2862,7 @@ class ToolBox: NSObject{
     //MARK: - • CONVERTER HELPER =======================================================================
     
     /** Converte um dicionário JSON em texto.*/
-    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary) -> String
+    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary?) -> String
     {
         if let dic:NSDictionary = dictionary
         {
@@ -2891,51 +2891,56 @@ class ToolBox: NSObject{
     }
     
     /** Converte um texto em dicionário JSON.*/
-    class func converterHelper_DictionaryFromStringJson(string:String) -> NSDictionary?
+    class func converterHelper_DictionaryFromStringJson(string:String?) -> NSDictionary?
     {
-        if(string.isEmpty)
-        {
+        if let strJSON:String = string{
+            
+            if(strJSON.isEmpty)
+            {
+                return nil
+            }
+            
+            let objectData:Data? = (strJSON.data(using: String.Encoding.utf8))
+            var json:NSDictionary?
+            do
+            {
+                json = try (JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary)
+            }catch{
+                print(error)
+            }
+            
+            if(json != nil)
+            {
+                return json!
+            }
+            
+            return nil
+            
+        }else{
             return nil
         }
-        
-        let objectData:Data? = (string.data(using: String.Encoding.utf8))
-        var json:NSDictionary?
-        do
-        {
-            json = try (JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary)
-        }catch{
-            print(error)
-        }
-        
-        if(json != nil)
-        {
-            return json!
-        }
-        
-        return nil
-        
     }
     
     /** Remove valores textuais '<null>', '(null)', 'null' do dicionário parâmetro, substituindo pela por um termo escolhido.*/
-    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary, withString newString:String) -> NSDictionary?
+    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary?, withString newString:String?) -> NSDictionary?
     {
         if let dic:NSDictionary = oldDictionary
         {
-            var replaced:NSMutableDictionary = NSMutableDictionary(dictionary: dic)
+            let replaced:NSMutableDictionary = NSMutableDictionary(dictionary: dic)
             
             for key in replaced.allKeys {
                 
-                var object:AnyObject = replaced.object(forKey: key) as AnyObject
+                let object:AnyObject = replaced.object(forKey: key) as AnyObject
                 if(object is String)
                 {
                     if(ToolBox.isNil(object: object))
                     {
-                        replaced.setObject(newString, forKey: key as! NSCopying)
+                        replaced.setObject(newString!, forKey: key as! NSCopying)
                     }
                 }
                 else if(object is NSNull)
                 {
-                    replaced.setObject(newString, forKey: key as! NSCopying)
+                    replaced.setObject(newString!, forKey: key as! NSCopying)
                 }
             }
             return NSDictionary.init(dictionary: replaced)
@@ -2947,7 +2952,7 @@ class ToolBox: NSObject{
     }
     
     /** Substitui o símbolo '+' do texto de um dicionário referência.*/
-    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary) -> NSDictionary?
+    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary?) -> NSDictionary?
     {
         if let dic:NSDictionary = refDictionary
         {
@@ -2966,7 +2971,7 @@ class ToolBox: NSObject{
     }
     
     /** Retorna uma url normalizada baseada em uma string.*/
-    class func converterHelper_NormalizedURLString(string:String) -> NSURL?
+    class func converterHelper_NormalizedURLString(string:String?) -> NSURL?
     {
         if let paramString:String = string
         {
@@ -2981,7 +2986,7 @@ class ToolBox: NSObject{
     }
     
     /** Retorna o texto 'limpo' de uma html.*/
-    class func converterHelper_PlainStringFromHTMLString(htmlString:String) -> String?
+    class func converterHelper_PlainStringFromHTMLString(htmlString:String?) -> String?
     {
         if let paramString:String = htmlString
         {
@@ -3006,28 +3011,21 @@ class ToolBox: NSObject{
     /** Formata um valor numérico para seu equivalente monetário. Utiliza a localidade padrão do sistema.*/
     class func converterHelper_MonetaryStringForValue(value:Double) -> String?
     {
-        if let paramValue:Double = value
-        {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = NumberFormatter.Style.currency
-            return formatter.string(from: NSNumber.init(value: paramValue))
-        }
-        else
-        {
-            return nil
-        }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        return formatter.string(from: NSNumber.init(value: value))
     }
     
     /** Converte graus em radianos.*/
     class func converterHelper_DegreeToRadian(degree:CGFloat) -> CGFloat
     {
-        return degree * CGFloat(M_PI) / 180.0
+        return degree * CGFloat(Double.pi) / 180.0
     }
     
     /** Converte radianos em graus.*/
     class func converterHelper_RadianToDegree(radius:CGFloat) -> CGFloat
     {
-        return radius * 180.0 / CGFloat(M_PI)
+        return radius * 180.0 / CGFloat(Double.pi)
     }
     
     /** Converte grau celsius para fahenheit.*/
@@ -3090,7 +3088,7 @@ class ToolBox: NSObject{
     }
     
     //MARK: - • PRIVATE FUNCTIONS =======================================================================
-    
+
     private class func graphicHelper_ColorComponentFrom(str:String, start:Int, length:Int) -> CGFloat{
         
         let string:NSString = str as NSString
@@ -3105,7 +3103,7 @@ class ToolBox: NSObject{
         
         return CGFloat(hexComponent) / 255.0
     }
-    
+
     private class func validationHelper_ValidateDigits(cnpj:String) -> Bool{
         
         var sum:Int = 0
@@ -3222,4 +3220,6 @@ class ToolBox: NSObject{
             return 0
         }
     }
+    
+
 }

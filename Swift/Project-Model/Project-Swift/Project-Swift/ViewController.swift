@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var soundManager:SoundManager?
+    @IBOutlet weak var imvBackground:UIImageView!
     //
+    var soundManager:SoundManager?
     var locationManager:LocationServiceControl?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
@@ -84,7 +85,7 @@ class ViewController: UIViewController {
                 
                 print("User data: \(userDic)")
                 
-                if let _:Bool = dataFileManager.deleteData(){
+                if dataFileManager.deleteData(){
                     print("COMPLETE-SUCCESS!")
                 }else{
                     print("DELETE ERROR")
@@ -96,6 +97,17 @@ class ViewController: UIViewController {
         }else{
             print("SAVE ERROR")
         }
+    }
+    
+    @IBAction func testImage(sender:UIButton){
+        
+        let image1:UIImage? = UIImage.init(named: "animal.jpg")
+        let image2:UIImage? = UIImage.init(named: "guardachuva.jpeg")
+        //
+        let image3:UIImage? = ToolBox.graphicHelper_MergeImages(bottomImage: image1, topImage: image2, position: CGPoint(x: 100, y:100), blendMode: CGBlendMode.normal, alpha: 1.0, topImageScale: App.Rand())
+        
+        imvBackground.image = image3
+        
     }
     
     
