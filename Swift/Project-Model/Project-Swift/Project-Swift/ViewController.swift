@@ -33,7 +33,7 @@ class ViewController: UIViewController, InternetHelperDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        self.view.backgroundColor = App.Style.colorTextLabel_Other
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +60,6 @@ class ViewController: UIViewController, InternetHelperDelegate {
             "x": App.RandInt(1, 100),
             "y": App.RandInt(1, 100)
         ]
-        
         
         iH.post(toURL: urlRequest, httpBodyData: parameters, delegate: self)
         

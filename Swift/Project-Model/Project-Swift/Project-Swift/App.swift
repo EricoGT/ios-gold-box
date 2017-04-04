@@ -41,9 +41,9 @@ class App{
     }
     
     //Style
-//    class final var Style:Any{
-//        return Any.self
-//    }
+    class final var Style:LayoutStyleManager{
+        return LayoutStyleManager.init()
+    }
     
     //Location
     
