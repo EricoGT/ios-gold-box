@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, InternetHelperDelegate {
 
-    @IBOutlet weak var lblResult:UILabel!
-    //
     var soundManager:SoundManager?
     var locationManager:LocationServiceControl?
     
@@ -33,7 +31,21 @@ class ViewController: UIViewController, InternetHelperDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.view.backgroundColor = App.Style.colorTextLabel_Other
+        self.view.backgroundColor = App.Style.colorBackgroundScreen_Light
+        
+        let arrayImages:Array<UIImage> = [UIImage(named:"flame_a_0001.png")!,
+                                 UIImage(named:"flame_a_0002.png")!,
+                                 UIImage(named:"flame_a_0003.png")!,
+                                 UIImage(named:"flame_a_0004.png")!,
+                                 UIImage(named:"flame_a_0005.png")!,
+                                 UIImage(named:"flame_a_0006.png")!]
+        
+        let alert:SCLAlertViewPlus = SCLAlertViewPlus.createRichAlert(bodyMessage: "Este aplicativo é um projeto modelo para Swift 3.1. Várias classes, frameworks e pods já constam no projeto, prontas para uso.\n\nBasta fazer uma cópia e renomear para um novo projeto!", images: arrayImages, animationTimePerFrame: 0.1)
+        alert.addButton(title: "OK", type: SCLAlertButtonType.Default) {
+            //
+        }
+        alert.showSuccess("Bem vindo!", subTitle: "")
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,35 +73,36 @@ class ViewController: UIViewController, InternetHelperDelegate {
             "y": App.RandInt(1, 100)
         ]
         
-        iH.post(toURL: urlRequest, httpBodyData: parameters, delegate: self)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-//        iH.post(toURL: urlRequest, httpBodyData: parameters) { (response, statusCode, error) in
-//            
-//            print("StatusCode: %li", statusCode)
-//            
-//            if let erro:NSError = error{
-//                DispatchQueue.main.async {
-//                    self.lblResult.text = String.init(format:"Error: %@, %@", [erro.domain, erro.userInfo["message"]])
-//                }
-//            }
-//            
-//            if let data:Dictionary = response{
-//                DispatchQueue.main.async {
-//                    self.lblResult.text = String.init(format:"Result: %@", [data])
-//                }
-//            }
-//        }
+        iH.post(toURL: urlRequest, httpBodyData: parameters, delegate: self)
     }
     
     func didFinishTaskWithError(error: NSError) {
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
         DispatchQueue.main.async {
-            self.lblResult.text = String.init(format:"Error: %@, %@\n\nLatitude: %f\nLongitude: %f", [error.domain, error.userInfo["message"], (self.locationManager?.latitude)!, (self.locationManager?.longitude)!])
+            let alert:SCLAlertViewPlus = SCLAlertViewPlus.init()
+            alert.addButton(title: "OK", type: SCLAlertButtonType.Error) {
+                print("teste")
+            }
+            
+            alert.showError("Error", subTitle: error.userInfo["message"] as! String)
         }
     }
     
     func didFinishTaskWithSuccess(resultData: Dictionary<String, Any>) {
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
         DispatchQueue.main.async {
-            self.lblResult.text = String.init(format:"Result: %@\n\nLatitude: %f\nLongitude: %f", [resultData, (self.locationManager?.latitude)!, (self.locationManager?.longitude)!])
+            let alert:SCLAlertViewPlus = SCLAlertViewPlus.init()
+            alert.addButton(title: "OK", type: SCLAlertButtonType.Success) {
+                print("teste")
+            }
+            
+            alert.showSuccess("Success", subTitle: String.init(format: "%@", [resultData]))
         }
     }
     

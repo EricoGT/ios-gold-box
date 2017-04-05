@@ -29,6 +29,14 @@
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
 		E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536D1E8E904500CBC955 /* Alamofire.framework */; };
 		E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */; };
+		E7ED1C9B1E950AEA00D26C7B /* SCLAlertViewPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */; };
+		E7ED1C9D1E950B4600D26C7B /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */; };
+		E7ED1CA51E952F4D00D26C7B /* flame_a_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1C9F1E952F4D00D26C7B /* flame_a_0001.png */; };
+		E7ED1CA61E952F4D00D26C7B /* flame_a_0002.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1CA01E952F4D00D26C7B /* flame_a_0002.png */; };
+		E7ED1CA71E952F4D00D26C7B /* flame_a_0003.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1CA11E952F4D00D26C7B /* flame_a_0003.png */; };
+		E7ED1CA81E952F4D00D26C7B /* flame_a_0004.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1CA21E952F4D00D26C7B /* flame_a_0004.png */; };
+		E7ED1CA91E952F4D00D26C7B /* flame_a_0005.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1CA31E952F4D00D26C7B /* flame_a_0005.png */; };
+		E7ED1CAA1E952F4D00D26C7B /* flame_a_0006.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1CA41E952F4D00D26C7B /* flame_a_0006.png */; };
 		E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7FD7A911E8ED82500772AF0 /* animal.jpg */; };
 		E7FD7A951E8ED82500772AF0 /* guardachuva.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E7FD7A921E8ED82500772AF0 /* guardachuva.jpeg */; };
 		E7FD7A961E8ED82500772AF0 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FD7A931E8ED82500772AF0 /* mask.png */; };
@@ -106,6 +114,14 @@
 		E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceControl.swift; sourceTree = "<group>"; };
 		E7CA536D1E8E904500CBC955 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertViewPlus.swift; sourceTree = "<group>"; };
+		E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
+		E7ED1C9F1E952F4D00D26C7B /* flame_a_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0001.png; sourceTree = "<group>"; };
+		E7ED1CA01E952F4D00D26C7B /* flame_a_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0002.png; sourceTree = "<group>"; };
+		E7ED1CA11E952F4D00D26C7B /* flame_a_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0003.png; sourceTree = "<group>"; };
+		E7ED1CA21E952F4D00D26C7B /* flame_a_0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0004.png; sourceTree = "<group>"; };
+		E7ED1CA31E952F4D00D26C7B /* flame_a_0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0005.png; sourceTree = "<group>"; };
+		E7ED1CA41E952F4D00D26C7B /* flame_a_0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0006.png; sourceTree = "<group>"; };
 		E7FD7A911E8ED82500772AF0 /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = animal.jpg; sourceTree = "<group>"; };
 		E7FD7A921E8ED82500772AF0 /* guardachuva.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guardachuva.jpeg; sourceTree = "<group>"; };
 		E7FD7A931E8ED82500772AF0 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
@@ -144,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ED1C9D1E950B4600D26C7B /* SCLAlertView.framework in Frameworks */,
 				E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */,
 				E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */,
 				74E5E04D49E1E3DD6810BBFA /* Pods_Project_Swift.framework in Frameworks */,
@@ -170,6 +187,7 @@
 		007062C1B05C475C706FD154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */,
 				E7CA536D1E8E904500CBC955 /* Alamofire.framework */,
 				E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */,
 				FC2A875AFA762C8BAE58C400 /* Pods_Project_Swift.framework */,
@@ -286,6 +304,7 @@
 		E7A00FDE1E8E82D30050EDD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,6 +408,22 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		E7ED1C9E1E952F3C00D26C7B /* Testes */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED1C9F1E952F4D00D26C7B /* flame_a_0001.png */,
+				E7ED1CA01E952F4D00D26C7B /* flame_a_0002.png */,
+				E7ED1CA11E952F4D00D26C7B /* flame_a_0003.png */,
+				E7ED1CA21E952F4D00D26C7B /* flame_a_0004.png */,
+				E7ED1CA31E952F4D00D26C7B /* flame_a_0005.png */,
+				E7ED1CA41E952F4D00D26C7B /* flame_a_0006.png */,
+				E7FD7A911E8ED82500772AF0 /* animal.jpg */,
+				E7FD7A921E8ED82500772AF0 /* guardachuva.jpeg */,
+				E7FD7A931E8ED82500772AF0 /* mask.png */,
+			);
+			name = Testes;
+			sourceTree = "<group>";
+		};
 		E7FD7A8F1E8ED80600772AF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,9 +439,7 @@
 		E7FD7A901E8ED81400772AF0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E7FD7A911E8ED82500772AF0 /* animal.jpg */,
-				E7FD7A921E8ED82500772AF0 /* guardachuva.jpeg */,
-				E7FD7A931E8ED82500772AF0 /* mask.png */,
+				E7ED1C9E1E952F3C00D26C7B /* Testes */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -586,6 +619,7 @@
 			files = (
 				E7FD7ABC1E8EDA5100772AF0 /* alert.m4a in Resources */,
 				E7AEC75E1E93E1C500581632 /* ChangeProjectNameTutorial.strings in Resources */,
+				E7ED1CA51E952F4D00D26C7B /* flame_a_0001.png in Resources */,
 				E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */,
 				E7FD7ACC1E8EDA5100772AF0 /* tada.m4a in Resources */,
 				E7FD7AA61E8EDA4000772AF0 /* MyriadPro-It.otf in Resources */,
@@ -594,22 +628,27 @@
 				E7FD7ACE1E8EDA5100772AF0 /* tic.m4a in Resources */,
 				E7FD7AC01E8EDA5100772AF0 /* cutting_package.m4a in Resources */,
 				E7A00FB41E8E81FF0050EDD3 /* LaunchScreen.storyboard in Resources */,
+				E7ED1CA81E952F4D00D26C7B /* flame_a_0004.png in Resources */,
 				E7FD7AC41E8EDA5100772AF0 /* error.m4a in Resources */,
+				E7ED1CAA1E952F4D00D26C7B /* flame_a_0006.png in Resources */,
 				E7FD7ABF1E8EDA5100772AF0 /* click.m4a in Resources */,
 				E7FD7AA81E8EDA4000772AF0 /* MyriadPro-Semibold.otf in Resources */,
 				E7FD7AC61E8EDA5100772AF0 /* ok.m4a in Resources */,
+				E7ED1CA61E952F4D00D26C7B /* flame_a_0002.png in Resources */,
 				E7FD7AC71E8EDA5100772AF0 /* page_next.m4a in Resources */,
 				E7FD7ACB1E8EDA5100772AF0 /* success.m4a in Resources */,
 				E7FD7AC11E8EDA5100772AF0 /* cutting_paper.m4a in Resources */,
 				E7FD7AC51E8EDA5100772AF0 /* great.m4a in Resources */,
 				E7FD7A961E8ED82500772AF0 /* mask.png in Resources */,
 				E7FD7AC81E8EDA5100772AF0 /* page_previus.m4a in Resources */,
+				E7ED1CA71E952F4D00D26C7B /* flame_a_0003.png in Resources */,
 				E7FD7AA51E8EDA4000772AF0 /* MyriadPro-Bold.otf in Resources */,
 				E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */,
 				E7FD7A9D1E8ED8C500772AF0 /* Images.xcassets in Resources */,
 				E7FD7AA71E8EDA4000772AF0 /* MyriadPro-Regular.otf in Resources */,
 				E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */,
 				E7FD7AC21E8EDA5100772AF0 /* dam.m4a in Resources */,
+				E7ED1CA91E952F4D00D26C7B /* flame_a_0005.png in Resources */,
 				E7FD7ABD1E8EDA5100772AF0 /* chrome_slipping.m4a in Resources */,
 				E7FD7AD21E8EDB0700772AF0 /* Localizable.strings in Resources */,
 				E7FD7AC31E8EDA5100772AF0 /* dum.m4a in Resources */,
@@ -698,6 +737,7 @@
 				E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */,
 				E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */,
 				E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */,
+				E7ED1C9B1E950AEA00D26C7B /* SCLAlertViewPlus.swift in Sources */,
 				E7A00FE81E8E84830050EDD3 /* ToolBox.swift in Sources */,
 				E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */,
 				E7AEC7611E94027300581632 /* LayoutStyleManager.swift in Sources */,

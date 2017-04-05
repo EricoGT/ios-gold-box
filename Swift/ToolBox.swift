@@ -263,8 +263,9 @@ class ToolBox: NSObject{
         //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
         //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
         //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        //return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
         //
-        return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
+        return "Version: 3.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -1527,20 +1528,60 @@ class ToolBox: NSObject{
     
     
     /** Verifica se dois números são iguais, utilizando uma precisão parâmetro como limitador.*/
-    class func messureHelper_CheckEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int) -> Bool{
+    class func messureHelper_CheckEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int, rounding:Bool) -> Bool{
         
-        //TODO:
-//        NSString *vString1 = [self converterHelper_StringFromValue:value1 monetaryFormat:true decimalPrecision:precision];
-//        NSString *vString2 = [self converterHelper_StringFromValue:value2 monetaryFormat:true decimalPrecision:precision];
-//        //
-//        double vDouble1 = [self converterHelper_DecimalValueFromText:vString1];
-//        double vDouble2 = [self converterHelper_DecimalValueFromText:vString2];
-//        //
-//        return (vDouble1 == vDouble2);
+        if (rounding){
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = decimalPrecision
+            //formatter.
+            //
+            let str1:String? = formatter.string(from: NSNumber(value: value1))
+            let str2:String? = formatter.string(from: NSNumber(value: value2))
+            //
+            return str1 == str2
         
-        return false
+        }else{
+            let str1:String? = String.init(value1)
+            let str2:String? = String.init(value2)
+            //
+            return str1 == str2
+        }
     }
     
+    /** Retorna a altura (em pts) adequada para um frame, considerando o texto e fonte parâmetros.*/
+    class func messureHelper_HeightForText(text:String, constrainedWidth:CGFloat, font:UIFont) -> CGFloat{
+        
+        let constraintRect = CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude)
+        let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return boundingBox.height
+    }
+    
+    /** Retorna a altura ou largura (em pts) adequada para um frame, considerando o texto e fonte parâmetros. Para altura, passe 0 (zero) para 'constrainedWidth'. Para largura, passe 0 (zero) para 'constrainedHeight'.*/
+    class func messureHelper_WidthOrHeightForAttributedText(text:String, constrainedWidth:CGFloat, constrainedHeight:CGFloat, font:UIFont) -> CGFloat{
+        
+        if (constrainedWidth != 0.0 && constrainedHeight != 0.0){
+            //Ambos os parâmetros não podem ser usados ao mesmo tempo
+            return 0.0
+        }else if(constrainedWidth == 0.0 && constrainedHeight == 0.0){
+            //Ambos os parâmetros não podem ser zero
+            return 0.0
+        }else{
+            
+            if (constrainedWidth == 0.0){
+                //Retorna a largura
+                let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: constrainedHeight)
+                let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+                return boundingBox.width
+            }else{
+                //Retorna a altura
+                let constraintRect = CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude)
+                let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+                return boundingBox.height
+            }
+        }
+    }
     
     /** Formata um tamanho para a unidade mais apropriada, relacionada ao tamanho em 'bytes'.*/
     class func messureHelper_FormatedStringToDataSize(dataSize:UInt64) -> String{

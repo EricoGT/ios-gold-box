@@ -19,7 +19,6 @@ import UIKit
     
     @objc optional func didFinishTaskWithSuccess(resultData:Dictionary<String, Any>)
     @objc optional func didFinishTaskWithError(error:NSError)
-    //@objc optional func didFinishTaskWithError(error:NSError)
 }
 
 //MARK: - • CLASSES

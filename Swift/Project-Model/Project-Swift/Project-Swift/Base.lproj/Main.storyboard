@@ -28,35 +28,24 @@
                                     <constraint firstAttribute="height" constant="44" id="Oep-Oe-XS0"/>
                                 </constraints>
                                 <state key="normal" title="Test Internet Helper"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionPlaySoundWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5b-5R-7a8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-Yr-NU7">
-                                <rect key="frame" x="16" y="148" width="343" height="300"/>
-                                <color key="backgroundColor" red="1" green="0.94969327111222557" blue="0.36690695128992545" alpha="0.2868953339041096" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="XQ0-0N-rvw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6DN-DI-eWD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wlz-Yr-NU7" secondAttribute="trailing" id="Gb5-Av-IiQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5TN-ev-tGj" secondAttribute="trailing" id="SLu-AN-BXz"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ycb-qx-EuK"/>
-                            <constraint firstItem="Wlz-Yr-NU7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="di5-tE-pbJ"/>
-                            <constraint firstItem="Wlz-Yr-NU7" firstAttribute="top" secondItem="5TN-ev-tGj" secondAttribute="bottom" constant="20" id="hH4-OC-60W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Okw-U0-KK5"/>
-                    <connections>
-                        <outlet property="lblResult" destination="Wlz-Yr-NU7" id="zwo-7H-UDH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +56,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2VT-r5-0RI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qoJ-G7-rj3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qoJ-G7-rj3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
