@@ -193,6 +193,12 @@ typedef enum {tbValidationResult_Undefined, tbValidationResult_Approved, tbValid
 /** Formata um tamanho pata texto adicionando a unidade mais apropriada.*/
 + (NSString*)messureHelper_FormatSizeString:(double)size;
 
+/** Retorna a altura (em pts) adequada para um frame, considerando o texto e fonte parâmetros.*/
++ (CGFloat) messureHelper_HeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh textFont:(UIFont*)font;
+
+/** Retorna a altura ou largura (em pts) adequada para um frame, considerando o texto e fonte parâmetros. Para altura, passe 0 (zero) para 'constrainedWidth'. Para largura, passe 0 (zero) para 'constrainedHeight'.*/
++ (CGFloat) messureHelper_WidthOrHeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh  constrainedHeight:(CGFloat)cHeight textFont:(UIFont*)font;
+
 #pragma mark - • VALIDATION HELPER
 
 /** Verifica se um email é compatível segundo o regex utilizado por padrão. Para saber mais: 'http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/'.*/

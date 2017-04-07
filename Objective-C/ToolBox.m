@@ -25,8 +25,9 @@
     //return @"Version: 4.0  |  Date: 17/02/2017  |  Autor: EricoGT  |  Note: CopyImage.";
     //return @"Version: 5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
     //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
+    //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
     
-    return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
+    return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -1450,6 +1451,44 @@
     }
     
     return [NSString stringWithFormat:@"%.2f %@", size, [tokens objectAtIndex:multiplyFactor]];
+}
+
++ (CGFloat) messureHelper_HeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh textFont:(UIFont*)font
+{
+    CGRect textRect = [text boundingRectWithSize:CGSizeMake(cWitdh, CGFLOAT_MAX)
+                                                          options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                                       attributes:@{NSFontAttributeName:font}
+                                                          context:nil];
+    
+    return textRect.size.height;
+}
+
++ (CGFloat) messureHelper_WidthOrHeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh  constrainedHeight:(CGFloat)cHeight textFont:(UIFont*)font
+{
+    if (cWitdh != 0.0 && cHeight != 0.0){
+        //Ambos os parâmetros não podem ser usados ao mesmo tempo
+        return 0.0;
+    }else if(cWitdh == 0.0 && cHeight == 0.0){
+        //Ambos os parâmetros não podem ser zero
+        return 0.0;
+    }else{
+        
+        if (cWitdh == 0.0){
+            //Retorna a largura
+            CGRect textRect = [text boundingRectWithSize:CGSizeMake(cWitdh, CGFLOAT_MAX)
+                                                 options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                              attributes:@{NSFontAttributeName:font}
+                                                 context:nil];
+            return textRect.size.width;
+        }else{
+            //Retorna a altura
+            CGRect textRect = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, cHeight)
+                                                 options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                              attributes:@{NSFontAttributeName:font}
+                                                 context:nil];
+            return textRect.size.height;
+        }
+    }
 }
 
 #pragma mark - • VALIDATION HELPER
