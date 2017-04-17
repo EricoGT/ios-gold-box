@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS "tb_exemplo";
+CREATE TABLE "tb_exemplo" (
+id_exemplo INTEGER PRIMARY KEY AUTOINCREMENT,
+nm_exemplo TEXT NOT NULL DEFAULT '',
+value_exemplo REAL DEFAULT 0
+);

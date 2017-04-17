@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Project-ObjectiveC
+
+  Created by Erico GT on 17/04/17.
+  Copyright © 2017 Atlantic Solutions. All rights reserved.
+*/
+
+NSCameraUsageDescription = "\nAutorize o acesso a câmera para poder usar o Scanner e concorrer a prêmio";
+
+NSLocationWhenInUseUsageDescription = "\nAutorize o uso do GPS para atividades relacionadas a localização";
+
+NSPhotoLibraryUsageDescription = "\nPara salvar sua máscara no dispositivo autorize o acesso a sua biblioteca de fotos.";

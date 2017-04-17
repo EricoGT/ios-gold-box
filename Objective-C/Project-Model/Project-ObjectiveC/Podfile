@@ -1,0 +1,9 @@
+platform :ios, '7.0'
+
+target “Project-ObjectiveC” do
+pod 'AFNetworking', '~> 2.0'
+pod 'JTCalendar', '~> 2.0'
+pod 'SCLAlertView-Objective-C', '~> 1.0'
+pod 'CardIO'
+pod 'SSZipArchive'
+end
