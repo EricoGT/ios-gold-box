@@ -76,4 +76,15 @@
     return (float)((float)(arc4random()) / (float)(UINT32_MAX));
 }
 
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+//    if ([[rootViewController.navigationController topViewController] isKindOfClass:[VC_VideoPlayer class]]){
+//        return UIInterfaceOrientationMaskAll;
+//    }else{
+//        return UIInterfaceOrientationMaskPortrait;
+//    }
+    
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end
