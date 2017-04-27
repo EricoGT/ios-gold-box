@@ -26,6 +26,7 @@
 #pragma mark - ENUMS
 typedef enum {tbComparationRule_Less, tbComparationRule_Equal, tbComparationRule_Greater, tbComparationRule_LessOrEqual, tbComparationRule_GreaterOrEqual} enumComparationRules;
 typedef enum {tbValidationResult_Undefined, tbValidationResult_Approved, tbValidationResult_Disapproved} enumValidationResult;
+typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_Tonal}enumGrayScaleEffect;
 
 #pragma mark - • TOOL BOX
 
@@ -283,7 +284,7 @@ typedef enum {tbValidationResult_Undefined, tbValidationResult_Approved, tbValid
 + (UIImage*) graphicHelper_ApplyBlurEffectInImage:(UIImage*)image withRadius:(CGFloat)radius;
 
 /** Adiciona o efeito Branco e Preto em uma imagem referência.*/
-+ (UIImage*) graphicHelper_ApplyGrayScaleEffectInImage:(UIImage*)image withIntensity:(CGFloat)intensity;
++ (UIImage*) graphicHelper_ApplyGrayScaleEffectInImage:(UIImage*)image withType:(enumGrayScaleEffect)type;
 
 /** Adiciona o efeito DISTORTION (CIGlassDistortion) em uma imagem referência.*/
 + (UIImage*) graphicHelper_ApplyDistortionEffectInImage:(UIImage*)image;

@@ -26,8 +26,9 @@
     //return @"Version: 5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
     //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
     //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
+    //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
     
-    return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
+    return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -2258,45 +2259,37 @@
 }
 
 /** Adiciona o efeito BLUR em uma imagem referência.*/
-+ (UIImage*) graphicHelper_ApplyGrayScaleEffectInImage:(UIImage*)image withIntensity:(CGFloat)intensity
++ (UIImage*) graphicHelper_ApplyGrayScaleEffectInImage:(UIImage*)image withType:(enumGrayScaleEffect)type
 {
-    if (image != nil){
+    if (image.CGImage == nil){
+        return nil;
+    }else{
         
-        // Create image rectangle with current image width/height
-        CGRect imageRect = CGRectMake(0, 0, image.size.width, image.size.height);
-        
-        // Grayscale color space
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
-        
-        // Create bitmap content with current image size and grayscale colorspace
-        CGContextRef context = CGBitmapContextCreate(nil, image.size.width, image.size.height, 8, 0, colorSpace, kCGImageAlphaNone);
-        
-        // Draw image into current context, with specified rectangle
-        // using previously defined context (with grayscale colorspace)
-        CGContextDrawImage(context, imageRect, [image CGImage]);
-        
-        // Create bitmap image info from pixel data in current context
-        CGImageRef imageRef = CGBitmapContextCreateImage(context);
-        
-        // Release colorspace, context and bitmap information
-        CGColorSpaceRelease(colorSpace);
-        CGContextRelease(context);
-        
-        context = CGBitmapContextCreate(nil,image.size.width, image.size.height, 8, 0, nil, kCGImageAlphaOnly );
-        CGContextDrawImage(context, imageRect, [image CGImage]);
-        CGImageRef mask = CGBitmapContextCreateImage(context);
-        CGContextRelease(context);
-        
-        // Create a new UIImage object
-        UIImage *newImage = [UIImage imageWithCGImage:CGImageCreateWithMask(imageRef, mask)];
-        CGImageRelease(imageRef);
-        CGImageRelease(mask);
-        
-        // Return the new grayscale image
+        UIImageOrientation orientation = image.imageOrientation;
+        CIImage* ciImage = [CIImage imageWithCGImage:image.CGImage];
+        CIContext *context = [CIContext contextWithOptions:nil];
+        //
+        NSString *strFilterName;
+        switch (type) {
+            case tbGrayScaleEffect_Noir:{strFilterName = @"CIPhotoEffectNoir";}break;
+            case tbGrayScaleEffect_Mono:{strFilterName = @"CIPhotoEffectMono";}break;
+            case tbGrayScaleEffect_Tonal:{strFilterName = @"CIPhotoEffectTonal";}break;
+            default:{strFilterName = @"CIPhotoEffectMono";}break;
+        }
+        CIFilter *ciFilter = [CIFilter filterWithName:strFilterName];
+        [ciFilter setValue:ciImage forKey:kCIInputImageKey];
+        //
+        if(parameters){
+            [ciFilter setValuesForKeysWithDictionary:parameters];
+        }
+        //
+        CIImage *outputImage = [ciFilter outputImage];
+        CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:scale orientation:orientation];
+        CGImageRelease(cgimg);
+        context = nil;
         return newImage;
     }
-    
-    return nil;
 }
 
 + (UIImage*) graphicHelper_ApplyDistortionEffectInImage:(UIImage*)image
