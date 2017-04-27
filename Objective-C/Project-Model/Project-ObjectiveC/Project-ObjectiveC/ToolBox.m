@@ -2279,13 +2279,9 @@
         CIFilter *ciFilter = [CIFilter filterWithName:strFilterName];
         [ciFilter setValue:ciImage forKey:kCIInputImageKey];
         //
-        if(parameters){
-            [ciFilter setValuesForKeysWithDictionary:parameters];
-        }
-        //
         CIImage *outputImage = [ciFilter outputImage];
         CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:scale orientation:orientation];
+        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:orientation];
         CGImageRelease(cgimg);
         context = nil;
         return newImage;
