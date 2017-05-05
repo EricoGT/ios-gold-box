@@ -10,6 +10,7 @@
 //
 #import "SQLiteManager.h"
 #import "DatabaseConnection.h"
+#import "LocationServiceControl.h"
 
 @interface ViewController : UIViewController
 

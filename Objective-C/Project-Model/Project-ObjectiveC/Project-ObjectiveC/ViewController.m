@@ -29,15 +29,24 @@
 {
     [super viewWillAppear:animated];
     
-    SQLiteManager *sqliteM = [SQLiteManager new];
+//    SQLiteManager *sqliteM = [SQLiteManager new];
+//    
+//    if (![sqliteM databaseExists]){
+//        
+//        [sqliteM copyDBToUserDocuments];
+//        
+//        [sqliteM executeScriptFromFile:@"script_sqlite"];
+//    }
     
-    if (![sqliteM databaseExists]){
-        
-        [sqliteM copyDBToUserDocuments];
-        
-        [sqliteM executeScriptFromFile:@"script_sqlite"];
-        
-    }
+    long n1 = RandomNumber(-10, 10);
+    long n2 = RandomNumber(0, 10);
+    long n3 = RandomNumber(-10, 0);
+    long n4 = RandomNumber(10, 100);
+    long n5 = RandomNumber(10, -10);
+    long n6 = RandomNumber(10, 10);
+    long n7 = RandomNumber(0, 100);
+    
+    
 }
 
 

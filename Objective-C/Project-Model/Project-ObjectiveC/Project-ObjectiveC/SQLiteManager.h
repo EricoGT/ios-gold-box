@@ -15,7 +15,7 @@
 
 @interface SQLiteManager : NSObject
 
-@property(nonatomic, assign) sqlite3 *database;;
+@property(nonatomic, assign) sqlite3 *database;
 
 //Métodos de preparação:
 - (BOOL)databaseExists;

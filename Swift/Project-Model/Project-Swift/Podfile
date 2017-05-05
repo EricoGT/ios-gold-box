@@ -6,5 +6,6 @@ target 'Project-Swift' do
 pod 'Alamofire', ‘4’
 pod 'SwiftyJSON'
 pod 'SCLAlertView', '~> 0.7'
+pod 'GzipSwift'
 
 end

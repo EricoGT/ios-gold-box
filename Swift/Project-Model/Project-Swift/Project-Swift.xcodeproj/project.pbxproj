@@ -27,6 +27,7 @@
 		E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7B1053D1E92A7C9000A65D6 /* InfoPlist.strings */; };
 		E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1053F1E92B718000A65D6 /* DataFileManager.swift */; };
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
+		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
 		E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536D1E8E904500CBC955 /* Alamofire.framework */; };
 		E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */; };
 		E7ED1C9B1E950AEA00D26C7B /* SCLAlertViewPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */; };
@@ -112,6 +113,7 @@
 		E7B1053E1E92A7CB000A65D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7B1053F1E92B718000A65D6 /* DataFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileManager.swift; sourceTree = "<group>"; };
 		E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceControl.swift; sourceTree = "<group>"; };
+		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
 		E7CA536D1E8E904500CBC955 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertViewPlus.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */,
 				E7ED1C9D1E950B4600D26C7B /* SCLAlertView.framework in Frameworks */,
 				E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */,
 				E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */,
@@ -187,6 +190,7 @@
 		007062C1B05C475C706FD154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7BA336B1EBCB7A700C50770 /* Gzip.framework */,
 				E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */,
 				E7CA536D1E8E904500CBC955 /* Alamofire.framework */,
 				E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */,
