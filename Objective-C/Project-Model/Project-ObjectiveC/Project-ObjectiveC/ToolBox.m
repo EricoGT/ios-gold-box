@@ -27,8 +27,9 @@
     //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
     //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
     //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
+    //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     
-    return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
+    return @"Version: 1.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
 }
 
 #pragma mark - • APPLICATION HELPER

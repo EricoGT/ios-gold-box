@@ -27,8 +27,9 @@
     //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
     //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
     //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
+    //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     
-    return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
+    return @"Version: 1.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -3225,6 +3226,55 @@
     const UInt8 *bytes = (const UInt8 *)data.bytes;
     return (data.length >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b);
 }
+
++ (void)dataHelper_SortArray:(NSArray*)objectsArray usingKey:(NSString*)objectParameterKey ascendingOrder:(BOOL)ascending
+{
+    if (objectsArray != nil && objectParameterKey != nil){
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:objectParameterKey ascending:ascending];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+        objectsArray = [[NSMutableArray alloc] initWithArray:[objectsArray sortedArrayUsingDescriptors:sortDescriptors]];
+    }
+}
+
++ (NSDictionary*)dataHelper_DictionaryFromObject:(id)object
+{
+    if (object == nil){
+        return nil;
+    }else{
+        
+        //Carregando a lista de nomes das propriedades do objeto.
+        unsigned count;
+        objc_property_t *properties = class_copyPropertyList([object class], &count);
+        
+        NSMutableArray *runtimeVariables = [NSMutableArray array];
+        
+        unsigned i;
+        for (i = 0; i < count; i++)
+        {
+            objc_property_t property = properties[i];
+            NSString *name = [NSString stringWithUTF8String:property_getName(property)];
+            [runtimeVariables addObject:name];
+        }
+        
+        free(properties);
+        
+        //Através da lista, buscamos os valores das propriedades para o dicionário;
+        NSMutableDictionary *resultDic = [NSMutableDictionary new];
+        
+        @try {
+            for (NSString *key in runtimeVariables){
+                [resultDic setValue:[object valueForKey:key] forKey:key];
+            }
+        } @catch (NSException *exception) {
+            NSLog(@"Erro ao criar dicionário: %@", exception.reason);
+            resultDic = nil;
+        } @finally {
+            return resultDic;
+        }
+    }
+}
+
+#pragma mark - • AUX METHODS
 
 + (bool)isNullString:(NSString*)valueString
 {

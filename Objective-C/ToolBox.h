@@ -18,17 +18,22 @@
 #import <float.h>
 #import <zlib.h>
 #import <dlfcn.h>
+#import <objc/runtime.h>
 
 #pragma clang diagnostic ignored "-Wcast-qual"
-
-@interface ToolBox : NSObject
 
 #pragma mark - ENUMS
 typedef enum {tbComparationRule_Less, tbComparationRule_Equal, tbComparationRule_Greater, tbComparationRule_LessOrEqual, tbComparationRule_GreaterOrEqual} enumComparationRules;
 typedef enum {tbValidationResult_Undefined, tbValidationResult_Approved, tbValidationResult_Disapproved} enumValidationResult;
 typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_Tonal}enumGrayScaleEffect;
 
+#pragma mark - • AUX CLASSES
+
+//code here:
+
 #pragma mark - • TOOL BOX
+
+@interface ToolBox : NSObject
 
 /** Retorna dados informativos sobre a versão corrente do utilitário 'ToolBox'.*/
 + (NSString*) toolBoxHelper_classVersionInfo;
@@ -404,6 +409,12 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 /** Verifica se um dado está comprimido com 'gzip'.*/
 + (bool)dataHelper_GZipCheckForData:(NSData*)data;
 
+/** Ordena uma lista segundo os descriptors parâmetro.*/
++ (void)dataHelper_SortArray:(NSArray*)objectsArray usingKey:(NSString*)objectParameterKey ascendingOrder:(BOOL)ascending;
+
+/** Retorna um dicionário tendo as propriedades do objeto como chaves.*/
++ (NSDictionary*)dataHelper_DictionaryFromObject:(id)object;
+
 #pragma mark - • DEFINES
 
 //Date Formats ************************************************************************************
@@ -446,5 +457,9 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 //Converter
 #define UIColorFromHEX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//Random Number
+#define RandomPositiveNumber(min, max) min + arc4random_uniform(max - min + 1)
 
 @end
+
+
