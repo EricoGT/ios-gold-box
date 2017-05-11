@@ -15,7 +15,7 @@ enum AppStyle: Int {
     case Special    = 3
 }
 
-class LayoutStyleManager:AnyObject{
+class LayoutStyleManager:NSObject{
     
     //Properties:
     var style:AppStyle
@@ -30,6 +30,8 @@ class LayoutStyleManager:AnyObject{
     var colorTextLabel_Normal:UIColor
     var colorTextLabel_Dark:UIColor
     var colorTextLabel_Other:UIColor
+    var colorTextLabel_White:UIColor
+    var colorTextLabel_Black:UIColor
     //
     var colorBackgroundButton_Light:UIColor
     var colorBackgroundButton_Normal:UIColor
@@ -37,23 +39,27 @@ class LayoutStyleManager:AnyObject{
     var colorBackgroundButton_Other:UIColor
     
     //Initializers:
-    init(){
-        self.style = .Default
+    override init(){
+        style = .Default
         //
         colorBackgroundScreen_Light = UIColor.lightGray
         colorBackgroundScreen_Normal = UIColor.gray
         colorBackgroundScreen_Dark = UIColor.darkGray
         colorBackgroundScreen_Other = UIColor.black
         //
-        colorTextLabel_Light = UIColor.white
+        colorTextLabel_Light = UIColor.lightGray
         colorTextLabel_Normal = UIColor.gray
-        colorTextLabel_Dark = UIColor.black
+        colorTextLabel_Dark = UIColor.darkGray
         colorTextLabel_Other = UIColor.red
+        colorTextLabel_White = UIColor.white
+        colorTextLabel_Black = UIColor.black
         //
         colorBackgroundButton_Light = UIColor.clear
         colorBackgroundButton_Normal = UIColor.white
         colorBackgroundButton_Dark = UIColor.black
         colorBackgroundButton_Other = UIColor.red
+        //
+        super.init()
     }
     
     func setStyle(_ style:AppStyle){
@@ -68,10 +74,12 @@ class LayoutStyleManager:AnyObject{
             colorBackgroundScreen_Dark = UIColor.darkGray
             colorBackgroundScreen_Other = UIColor.black
             //
-            colorTextLabel_Light = UIColor.white
+            colorTextLabel_Light = UIColor.lightGray
             colorTextLabel_Normal = UIColor.gray
-            colorTextLabel_Dark = UIColor.black
+            colorTextLabel_Dark = UIColor.darkGray
             colorTextLabel_Other = UIColor.red
+            colorTextLabel_White = UIColor.white
+            colorTextLabel_Black = UIColor.black
             //
             colorBackgroundButton_Light = UIColor.clear
             colorBackgroundButton_Normal = UIColor.white

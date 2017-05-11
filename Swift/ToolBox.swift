@@ -264,8 +264,9 @@ class ToolBox: NSObject{
         //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
         //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
         //return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
+        //return "Version: 3.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
         //
-        return "Version: 3.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
+        return "Version: 4.0  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -1982,45 +1983,22 @@ class ToolBox: NSObject{
     /** Cria uma cor RGB através de um texto HEX.*/
     class func graphicHelper_ColorWithHexString(string:String) -> UIColor{
         
-        let colorString:String = string.replacingOccurrences(of: "#", with: "").uppercased()
-        var  alpha:CGFloat, red:CGFloat, blue:CGFloat, green:CGFloat
-        
-        switch colorString.characters.count {
-            
-        case 3: // #RGB
-            alpha = 1.0;
-            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
-            green = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
-            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
-        
-        case 4: // #ARGB
-            alpha = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
-            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 1, length: 1)
-            green = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
-            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 3, length: 1)
-            
-        case 6: // #RRGGBB
-            alpha = 1.0;
-            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
-            green = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
-            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 4, length: 1)
-            
-        case 8: // #AARRGGBB
-            alpha = graphicHelper_ColorComponentFrom(str: colorString, start: 0, length: 1)
-            red   = graphicHelper_ColorComponentFrom(str: colorString, start: 2, length: 1)
-            green = graphicHelper_ColorComponentFrom(str: colorString, start: 4, length: 1)
-            blue  = graphicHelper_ColorComponentFrom(str: colorString, start: 6, length: 1)
-            
-            
+        let hex = string.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt32()
+        Scanner(string: hex).scanHexInt32(&int)
+        let a, r, g, b: UInt32
+        switch hex.characters.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         default:
-            alpha = 0.0
-            red = 0.0
-            green = 0.0
-            blue = 0.0
-            
+            (a, r, g, b) = (255, 0, 0, 0)
         }
-        
-        return UIColor.init(colorLiteralRed: Float(red), green: Float(green), blue: Float(blue), alpha: Float(alpha))
+        //
+        return UIColor.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
     
     
@@ -3129,21 +3107,6 @@ class ToolBox: NSObject{
     }
     
     //MARK: - • PRIVATE FUNCTIONS =======================================================================
-
-    private class func graphicHelper_ColorComponentFrom(str:String, start:Int, length:Int) -> CGFloat{
-        
-        let string:NSString = str as NSString
-        let substring:NSString = string.substring(with: NSRange.init(location: start, length: length)) as NSString
-        let fullHex:NSString = length == 2 ? substring : NSString.init(format: "%@%@", [substring, substring])
-        var hexComponent:UInt32 = 0
-        //
-        guard Scanner(string: fullHex as String).scanHexInt32(&hexComponent)
-            else {
-                return 0
-        }
-        
-        return CGFloat(hexComponent) / 255.0
-    }
 
     private class func validationHelper_ValidateDigits(cnpj:String) -> Bool{
         

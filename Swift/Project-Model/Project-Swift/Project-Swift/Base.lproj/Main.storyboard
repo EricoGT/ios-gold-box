@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2VT-r5-0RI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2VT-r5-0RI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,12 +37,28 @@
                                     <action selector="actionPlaySoundWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5b-5R-7a8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-ny-LNR">
+                                <rect key="frame" x="16" y="167" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.71764705882352942" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nMB-pb-ixv"/>
+                                </constraints>
+                                <state key="normal" title="Test Activity Indicator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionLoadingWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Yy-WV-39e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rU0-ny-LNR" firstAttribute="top" secondItem="5TN-ev-tGj" secondAttribute="bottom" constant="39" id="3C1-j5-E20"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6DN-DI-eWD"/>
+                            <constraint firstItem="rU0-ny-LNR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="9FM-hd-O0l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5TN-ev-tGj" secondAttribute="trailing" id="SLu-AN-BXz"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ycb-qx-EuK"/>
+                            <constraint firstAttribute="trailing" secondItem="rU0-ny-LNR" secondAttribute="trailing" constant="16" id="kHi-HP-dyR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Okw-U0-KK5"/>

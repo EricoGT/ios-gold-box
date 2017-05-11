@@ -13,6 +13,10 @@ import UIKit
 
 //MARK: - • OTHERS IMPORTS
 
+//MARK: - • EXTENSIONS
+
+//MARK: - • CLASS
+
 class ModelViewController: UIViewController {
     
     //MARK: - • LOCAL DEFINES

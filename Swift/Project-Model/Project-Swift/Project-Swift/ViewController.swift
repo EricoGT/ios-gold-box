@@ -78,6 +78,21 @@ class ViewController: UIViewController, InternetHelperDelegate {
         iH.post(toURL: urlRequest, httpBodyData: parameters, delegate: self)
     }
     
+    @IBAction func actionLoading(sender:UIButton){
+        
+//        App.Delegate.activityView?.startActivity(.loading, false)
+//        //
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            App.Delegate.activityView?.updateAccessoryLabel("ops...")
+//        }
+//        //
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//            App.Delegate.activityView?.stopActivity(title: "Encerrando", message: "...", timeToHide: 2.0)
+//        }
+        App.Delegate.activityView?.startAutoHideActivity(.loading, true, 10)
+        
+    }
+    
     func didFinishTaskWithError(error: NSError) {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = false

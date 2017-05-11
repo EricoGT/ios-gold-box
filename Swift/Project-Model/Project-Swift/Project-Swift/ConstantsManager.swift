@@ -51,8 +51,9 @@ class ConstantsManager{
     public static let FONT_MYRIAD_PRO_BOLD:String = "MyriadPro-Bold"
     public static let FONT_MYRIAD_PRO_ITALIC:String = "MyriadPro-It"
     //
-    public static let FONT_SIZE_TEXT_FIELDS:Double = 15.0
-    public static let FONT_SIZE_BUTTON_TITLE:Double = 18.0
+    public static let FONT_SIZE_TEXT_FIELDS:CGFloat = 15.0
+    public static let FONT_SIZE_LABEL:CGFloat = 17.0
+    public static let FONT_SIZE_BUTTON_TITLE:CGFloat = 18.0
     
     
     //MARK: - COMPUTED
