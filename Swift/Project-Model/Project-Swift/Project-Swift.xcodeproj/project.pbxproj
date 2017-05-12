@@ -33,6 +33,7 @@
 		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
 		E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536D1E8E904500CBC955 /* Alamofire.framework */; };
 		E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */; };
+		E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */; };
 		E7ED1C9B1E950AEA00D26C7B /* SCLAlertViewPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */; };
 		E7ED1C9D1E950B4600D26C7B /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */; };
 		E7ED1CA51E952F4D00D26C7B /* flame_a_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ED1C9F1E952F4D00D26C7B /* flame_a_0001.png */; };
@@ -122,6 +123,8 @@
 		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
 		E7CA536D1E8E904500CBC955 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = README_LoadingView.strings; sourceTree = "<group>"; };
+		E7E829E21EC63CE900D834DB /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; };
 		E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertViewPlus.swift; sourceTree = "<group>"; };
 		E7ED1C9C1E950B4600D26C7B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
 		E7ED1C9F1E952F4D00D26C7B /* flame_a_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_a_0001.png; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A00FD71E8E82150050EDD3 /* Project-Entitlements */,
+				E7E829E11EC63CA300D834DB /* Playground */,
 				E7A00FD81E8E822E0050EDD3 /* Delegate */,
 				E7A00FDB1E8E82A40050EDD3 /* StoryboardsAndXibs */,
 				E7A00FDD1E8E82C30050EDD3 /* ViewControllers */,
@@ -433,6 +437,7 @@
 			children = (
 				E7B035DB1EC4D1CD00C669C9 /* RPCircularProgress.swift */,
 				E7B035D51EC4995B00C669C9 /* LoadingView.swift */,
+				E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */,
 			);
 			name = LoadingView;
 			sourceTree = "<group>";
@@ -443,6 +448,14 @@
 				E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */,
 			);
 			name = AlertView;
+			sourceTree = "<group>";
+		};
+		E7E829E11EC63CA300D834DB /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				E7E829E21EC63CE900D834DB /* TestPlayground.playground */,
+			);
+			name = Playground;
 			sourceTree = "<group>";
 		};
 		E7ED1C9E1E952F3C00D26C7B /* Testes */ = {
@@ -662,6 +675,7 @@
 				E7FD7AA61E8EDA4000772AF0 /* MyriadPro-It.otf in Resources */,
 				E7FD7AC91E8EDA5100772AF0 /* paste_chrome.m4a in Resources */,
 				E7FD7ACD1E8EDA5100772AF0 /* tap.m4a in Resources */,
+				E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */,
 				E7FD7ACE1E8EDA5100772AF0 /* tic.m4a in Resources */,
 				E7FD7AC01E8EDA5100772AF0 /* cutting_package.m4a in Resources */,
 				E7A00FB41E8E81FF0050EDD3 /* LaunchScreen.storyboard in Resources */,
