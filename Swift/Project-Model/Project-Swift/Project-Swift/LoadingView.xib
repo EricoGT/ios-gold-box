@@ -17,6 +17,27 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YMz-nP-wCb">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-m2-C1b">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="57p-yg-1IT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTK-ad-BEc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="gc0-n7-nOt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="light"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-9p-K5U">
                     <rect key="frame" x="77.5" y="223.5" width="220" height="220"/>
                     <constraints>
@@ -53,7 +74,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="E1x-m2-C1b" firstAttribute="top" secondItem="dGK-4J-NHn" secondAttribute="top" id="4Kn-NS-aXd"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="6hj-tP-2tJ"/>
+                <constraint firstAttribute="trailing" secondItem="E1x-m2-C1b" secondAttribute="trailing" id="7vS-co-Hax"/>
+                <constraint firstAttribute="bottom" secondItem="E1x-m2-C1b" secondAttribute="bottom" id="8g5-2x-jHt"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="8wh-e8-RR9"/>
                 <constraint firstItem="pnO-ZQ-Hze" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" constant="-20" id="9ar-Zw-AXI"/>
                 <constraint firstItem="pnO-ZQ-Hze" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="BR8-bC-hnb"/>
@@ -67,6 +91,7 @@
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="height" secondItem="OxC-At-a67" secondAttribute="height" id="Ypr-BL-9gR"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="width" secondItem="OxC-At-a67" secondAttribute="width" id="fVL-la-RTg"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="height" secondItem="dGK-4J-NHn" secondAttribute="height" id="hxs-je-hqT"/>
+                <constraint firstItem="E1x-m2-C1b" firstAttribute="leading" secondItem="dGK-4J-NHn" secondAttribute="leading" id="iJ3-6v-egx"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="mSn-IQ-hee"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="nRX-xP-BzJ"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="ony-JD-Yf0"/>
@@ -75,6 +100,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="pnO-ZQ-Hze" id="83z-ee-agQ"/>
                 <outlet property="imvBackground" destination="YMz-nP-wCb" id="NL5-uQ-cNH"/>
+                <outlet property="imvBlurEffectBackground" destination="E1x-m2-C1b" id="nvs-w3-wbC"/>
                 <outlet property="imvCenter" destination="ayU-9p-K5U" id="o9i-f5-nCb"/>
                 <outlet property="lblAccessory" destination="oMk-yJ-JUm" id="66n-VI-hvl"/>
                 <outlet property="lblProgress" destination="MLy-sQ-tAx" id="qg2-Vc-Xz1"/>

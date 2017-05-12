@@ -15,20 +15,6 @@ import UIKit
 
 //MARK: - • EXTENSIONS
 
-//extension UIView {
-//
-//    @discardableResult
-//    func fromNib<T : UIView>() -> T? {
-//        guard let view = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?[0] as? T else {
-//            return nil
-//        }
-//        self.addSubview(view)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        //view.layoutAttachAll(to: self)
-//        return view
-//    }
-//}
-
 //MARK: - • CLASS
 
 final class LoadingView: UIView {
@@ -44,18 +30,23 @@ final class LoadingView: UIView {
     private let ANIMA_TIME:TimeInterval = 0.3
     private var isVisible:Bool = false;
     private var totalSecondsToHide:Int = 0;
+    //
+    public var delegate:LoadingViewDelegate? = nil
+    public var useBlurEffect:Bool = false
     
     //MARK: - • PUBLIC PROPERTIES
-    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool){
+    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ delegate:LoadingViewDelegate?){
         
         self.layoutIfNeeded()
-        self.startAutoHideActivity(type, showIndicatorInStatusBar, 0)
+        self.startAutoHideActivity(type, showIndicatorInStatusBar, 0, delegate)
     }
     
-    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ secondsToHide:Int){
+    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ secondsToHide:Int, _ delegate:LoadingViewDelegate?){
     
         if (!isVisible){
             
+            self.delegate = delegate
+            //
             lblProgress?.text = ""
             lblAccessory?.text = ""
             //
@@ -98,8 +89,21 @@ final class LoadingView: UIView {
             App.Delegate.window?.bringSubview(toFront: self)
             //
             isVisible = true
-            UIView.animate(withDuration: ANIMA_TIME) {
+            if (useBlurEffect){
+                imvBackground?.alpha = 0.0
+                imvBlurEffectBackground?.alpha = 1.0
+                //
                 self.alpha = 1.0
+                self.delegate?.loadingViewDidShow(lV: self)
+            }else{
+                imvBackground?.alpha = 1.0
+                imvBlurEffectBackground?.alpha = 0.0
+                //
+                UIView.animate(withDuration: ANIMA_TIME, animations: {
+                    self.alpha = 1.0
+                }, completion: { (finished) in
+                    self.delegate?.loadingViewDidShow(lV: self)
+                })
             }
         }
     }
@@ -113,22 +117,36 @@ final class LoadingView: UIView {
     
     public func stopActivity(){
     
-        UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+        if (useBlurEffect){
             self.alpha = 0.0
-        }, completion: { (finished) in
-            
             self.isVisible = false;
+            self.delegate?.loadingViewDidHide(lV: self)
+            self.lblTitle?.text = ""
+            self.lblAccessory?.text = ""
+            self.totalSecondsToHide = 0
+            self.activityIndicator?.stopAnimating()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }else{
             
-            DispatchQueue.main.async {
-                self.lblTitle?.text = ""
-                self.lblAccessory?.text = ""
-                self.totalSecondsToHide = 0
+            UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+                self.alpha = 0.0
+            }, completion: { (finished) in
+                
+                self.isVisible = false;
                 //
-                self.activityIndicator?.stopAnimating()
+                self.delegate?.loadingViewDidHide(lV: self)
                 //
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
-        })
+                DispatchQueue.main.async {
+                    self.lblTitle?.text = ""
+                    self.lblAccessory?.text = ""
+                    self.totalSecondsToHide = 0
+                    //
+                    self.activityIndicator?.stopAnimating()
+                    //
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            })
+        }
     }
     
     public func stopActivity(title:String?, message:String?, timeToHide:Double){
@@ -152,6 +170,7 @@ final class LoadingView: UIView {
     //MARK: - • PRIVATE PROPERTIES
     @IBOutlet private var activityIndicator:UIActivityIndicatorView?
     @IBOutlet private var imvBackground:UIImageView?
+    @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView?
     @IBOutlet private var imvCenter:UIImageView?
     @IBOutlet private var lblTitle:UILabel?
     @IBOutlet private var lblAccessory:UILabel?
@@ -224,8 +243,11 @@ final class LoadingView: UIView {
         self.lblProgress?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
         self.lblProgress?.textColor = App.Style.colorTextLabel_Dark
         //
-        self.imvBackground?.backgroundColor = UIColor.black
-        self.imvBackground?.alpha = 0.3
+        self.imvBackground?.backgroundColor = UIColor.init(white: 0.0, alpha: 0.5)
+        self.imvBackground?.alpha = 1.0
+        //
+        self.imvBlurEffectBackground?.backgroundColor = UIColor.clear
+        self.imvBlurEffectBackground?.alpha = 1.0
         //
         self.imvCenter?.backgroundColor = UIColor.clear
         self.imvCenter?.image = ToolBox.graphicHelper_CreateFlatImage(size: (imvCenter?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white)
@@ -261,4 +283,11 @@ final class LoadingView: UIView {
             }
         }
     }
+}
+
+//MARK: 
+protocol LoadingViewDelegate:NSObjectProtocol
+{
+    func loadingViewDidShow(lV:LoadingView)
+    func loadingViewDidHide(lV:LoadingView)
 }

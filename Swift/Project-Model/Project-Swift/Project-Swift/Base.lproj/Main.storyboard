@@ -50,14 +50,21 @@
                                     <action selector="actionLoadingWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Yy-WV-39e"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vEG-OS-hSd">
+                                <rect key="frame" x="16" y="231" width="343" height="436"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rU0-ny-LNR" firstAttribute="top" secondItem="5TN-ev-tGj" secondAttribute="bottom" constant="39" id="3C1-j5-E20"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6DN-DI-eWD"/>
                             <constraint firstItem="rU0-ny-LNR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="9FM-hd-O0l"/>
+                            <constraint firstItem="vEG-OS-hSd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="N9M-ER-eD7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5TN-ev-tGj" secondAttribute="trailing" id="SLu-AN-BXz"/>
+                            <constraint firstItem="vEG-OS-hSd" firstAttribute="top" secondItem="rU0-ny-LNR" secondAttribute="bottom" constant="20" id="TsU-LT-2qH"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ycb-qx-EuK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vEG-OS-hSd" secondAttribute="bottom" id="Yl5-3s-U9f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vEG-OS-hSd" secondAttribute="trailing" id="ZfO-qF-sie"/>
                             <constraint firstAttribute="trailing" secondItem="rU0-ny-LNR" secondAttribute="trailing" constant="16" id="kHi-HP-dyR"/>
                         </constraints>
                     </view>
@@ -86,4 +93,7 @@
             <point key="canvasLocation" x="-404" y="-349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="animal.jpg" width="960" height="638"/>
+    </resources>
 </document>

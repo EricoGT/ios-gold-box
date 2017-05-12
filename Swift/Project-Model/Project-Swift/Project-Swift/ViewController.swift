@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, InternetHelperDelegate {
+class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDelegate {
 
     var soundManager:SoundManager?
     var locationManager:LocationServiceControl?
@@ -80,16 +80,17 @@ class ViewController: UIViewController, InternetHelperDelegate {
     
     @IBAction func actionLoading(sender:UIButton){
         
-//        App.Delegate.activityView?.startActivity(.loading, false)
-//        //
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//            App.Delegate.activityView?.updateAccessoryLabel("ops...")
-//        }
-//        //
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//            App.Delegate.activityView?.stopActivity(title: "Encerrando", message: "...", timeToHide: 2.0)
-//        }
-        App.Delegate.activityView?.startAutoHideActivity(.loading, true, 10)
+        App.Delegate.activityView?.useBlurEffect = true
+        App.Delegate.activityView?.startActivity(.loading, false, nil)
+        //
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            App.Delegate.activityView?.updateAccessoryLabel("ops...")
+        }
+        //
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            App.Delegate.activityView?.stopActivity(title: "Encerrando", message: "...", timeToHide: 2.0)
+        }
+        //App.Delegate.activityView?.startAutoHideActivity(.loading, true, 10, self)
         
     }
     
@@ -119,6 +120,14 @@ class ViewController: UIViewController, InternetHelperDelegate {
             
             alert.showSuccess("Success", subTitle: String.init(format: "%@", [resultData]))
         }
+    }
+    
+    func loadingViewDidShow(lV: LoadingView) {
+        print("loadingViewDidShow")
+    }
+    
+    func loadingViewDidHide(lV: LoadingView) {
+        print("loadingViewDidHide")
     }
     
 }
