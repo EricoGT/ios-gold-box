@@ -81,16 +81,9 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
     @IBAction func actionLoading(sender:UIButton){
         
         App.Delegate.activityView?.useBlurEffect = true
-        App.Delegate.activityView?.startActivity(.loading, false, nil)
+        App.Delegate.activityView?.useCancelButton = true
         //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            App.Delegate.activityView?.updateAccessoryLabel("ops...")
-        }
-        //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            App.Delegate.activityView?.stopActivity(title: "Encerrando", message: "...", timeToHide: 2.0)
-        }
-        //App.Delegate.activityView?.startAutoHideActivity(.loading, true, 10, self)
+        App.Delegate.activityView?.startActivity(.loading, false, self)
         
     }
     
@@ -122,6 +115,10 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         }
     }
     
+    func loadingViewWillShow(lV: LoadingView) {
+        print("loadingViewWillShow")
+    }
+    
     func loadingViewDidShow(lV: LoadingView) {
         print("loadingViewDidShow")
     }
@@ -130,5 +127,15 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         print("loadingViewDidHide")
     }
     
+    func loadingViewWillHide(lV: LoadingView) {
+        print("loadingViewWillHide")
+    }
+ 
+    func loadingViewCanceled(lV: LoadingView) {
+        print("loadingViewCanceled")
+        //
+        App.Delegate.activityView?.stopActivity()
+        
+    }
 }
 

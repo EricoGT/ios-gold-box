@@ -71,10 +71,24 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-ZQ-Hze">
                     <rect key="frame" x="169" y="295" width="37" height="37"/>
                 </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFW-Nv-Jz8">
+                    <rect key="frame" x="77" y="453.5" width="220" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.80672470979999999" blue="0.11061285780000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dEQ-ny-2cl"/>
+                    </constraints>
+                    <state key="normal" title="Cancelar">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionCancelWithSender:" destination="dGK-4J-NHn" eventType="touchUpInside" id="37H-1P-S05"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="top" secondItem="dGK-4J-NHn" secondAttribute="top" id="4Kn-NS-aXd"/>
+                <constraint firstItem="zFW-Nv-Jz8" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="4pu-qw-DMd"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="6hj-tP-2tJ"/>
                 <constraint firstAttribute="trailing" secondItem="E1x-m2-C1b" secondAttribute="trailing" id="7vS-co-Hax"/>
                 <constraint firstAttribute="bottom" secondItem="E1x-m2-C1b" secondAttribute="bottom" id="8g5-2x-jHt"/>
@@ -86,12 +100,14 @@
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="EkZ-AJ-tqk"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="width" secondItem="dGK-4J-NHn" secondAttribute="width" id="Hfe-OP-ff6"/>
                 <constraint firstItem="MLy-sQ-tAx" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="IDP-US-BC5"/>
+                <constraint firstItem="zFW-Nv-Jz8" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="LSD-tI-hsH"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="top" secondItem="MLy-sQ-tAx" secondAttribute="bottom" constant="20" id="Poo-j1-xJW"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="top" secondItem="OxC-At-a67" secondAttribute="bottom" constant="15" id="X7u-8F-WCP"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="height" secondItem="OxC-At-a67" secondAttribute="height" id="Ypr-BL-9gR"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="width" secondItem="OxC-At-a67" secondAttribute="width" id="fVL-la-RTg"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="height" secondItem="dGK-4J-NHn" secondAttribute="height" id="hxs-je-hqT"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="leading" secondItem="dGK-4J-NHn" secondAttribute="leading" id="iJ3-6v-egx"/>
+                <constraint firstItem="zFW-Nv-Jz8" firstAttribute="top" secondItem="ayU-9p-K5U" secondAttribute="bottom" constant="10" id="lbL-To-Dp6"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="mSn-IQ-hee"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="nRX-xP-BzJ"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="ony-JD-Yf0"/>
@@ -99,6 +115,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
                 <outlet property="activityIndicator" destination="pnO-ZQ-Hze" id="83z-ee-agQ"/>
+                <outlet property="btnCancel" destination="zFW-Nv-Jz8" id="e46-3e-WDd"/>
                 <outlet property="imvBackground" destination="YMz-nP-wCb" id="NL5-uQ-cNH"/>
                 <outlet property="imvBlurEffectBackground" destination="E1x-m2-C1b" id="nvs-w3-wbC"/>
                 <outlet property="imvCenter" destination="ayU-9p-K5U" id="o9i-f5-nCb"/>

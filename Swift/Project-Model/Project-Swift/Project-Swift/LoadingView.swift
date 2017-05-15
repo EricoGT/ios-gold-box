@@ -25,16 +25,71 @@ final class LoadingView: UIView {
         case processing
         case downloading
         case sending
+        case saving
     }
+
+    //MARK: - • PUBLIC PROPERTIES
+    public weak var delegate:LoadingViewDelegate? = nil
+    public var useBlurEffect:Bool = false
+    public var useCancelButton:Bool = false
     
+    //MARK: - • PRIVATE PROPERTIES
     private let ANIMA_TIME:TimeInterval = 0.3
     private var isVisible:Bool = false;
+    private var isCanceled:Bool = false;
     private var totalSecondsToHide:Int = 0;
     //
-    public var delegate:LoadingViewDelegate? = nil
-    public var useBlurEffect:Bool = false
+    @IBOutlet private var activityIndicator:UIActivityIndicatorView?
+    @IBOutlet private var imvBackground:UIImageView?
+    @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView?
+    @IBOutlet private var imvCenter:UIImageView?
+    @IBOutlet private var lblTitle:UILabel?
+    @IBOutlet private var lblAccessory:UILabel?
+    @IBOutlet private var lblProgress:UILabel?
+    @IBOutlet private var btnCancel:UIButton?
     
-    //MARK: - • PUBLIC PROPERTIES
+    //MARK: - • INITIALISERS
+    
+    //storyboard initializer
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    //programmatic initializer
+    init() {
+        super.init(frame: CGRect())
+    }
+    
+    class func new(owner:Any) -> LoadingView{
+        
+        let lv:LoadingView = UINib(nibName: String(describing: LoadingView.self), bundle: nil).instantiate(withOwner: owner, options: nil)[0] as! LoadingView
+        //
+        lv.layoutIfNeeded()
+        lv.setupLayout()
+        //
+        return lv
+    }
+    
+    //MARK: - • CUSTOM ACCESSORS (SETS & GETS)
+    
+    
+    //MARK: - • DEALLOC
+    
+    deinit {
+        // NSNotificationCenter no longer needs to be cleaned up!
+    }
+    
+    //MARK: - • SUPER CLASS OVERRIDES
+    
+    
+    //MARK: - • CONTROLLER LIFECYCLE/ TABLEVIEW/ DATA-SOURCE
+    
+    
+    //MARK: - • INTERFACE/PROTOCOL METHODS
+    
+    
+    //MARK: - • PUBLIC METHODS
+    
     public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ delegate:LoadingViewDelegate?){
         
         self.layoutIfNeeded()
@@ -42,9 +97,11 @@ final class LoadingView: UIView {
     }
     
     public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ secondsToHide:Int, _ delegate:LoadingViewDelegate?){
-    
+        
         if (!isVisible){
             
+            //Configurando o componente:
+            isCanceled = false
             self.delegate = delegate
             //
             lblProgress?.text = ""
@@ -59,15 +116,25 @@ final class LoadingView: UIView {
                 lblTitle?.text = "Transferindo..."
             case .sending:
                 lblTitle?.text = "Enviando..."
+            case .saving:
+                lblTitle?.text = "Salvando..."
+            }
+            
+            //Exibindo o componente:
+            if (useCancelButton){
+                btnCancel?.alpha = 1.0
+            }else{
+                btnCancel?.alpha = 0.0
             }
             //
             if (secondsToHide < 1){
                 activityIndicator?.alpha = 1.0;
                 activityIndicator?.startAnimating()
             }else{
-                totalSecondsToHide = secondsToHide;
+                totalSecondsToHide = secondsToHide
                 //
-                activityIndicator?.alpha = 0.0;
+                lblProgress?.alpha = 1.0
+                activityIndicator?.alpha = 0.0
                 //
                 //Criando o activity circular
                 let circularProgress:RPCircularProgress? = RPCircularProgress()
@@ -78,17 +145,24 @@ final class LoadingView: UIView {
                 //
                 lblProgress?.addSubview(circularProgress!)
                 //
-                //Timer
-                self.tickProgress(secondsToHide, circularProgress!)
+                //Timer loop:
+                self.tickProgress(totalSecondsToHide, circularProgress!)
             }
-            //
+            
+            //Indicador de atividade conexão internet:
             if (showIndicatorInStatusBar) {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
-            //
+            
+            //Reinserindo o componente:
             App.Delegate.window?.bringSubview(toFront: self)
-            //
             isVisible = true
+            //
+            self.delegate?.loadingViewWillShow(lV: self)
+            
+            //Animações:
+            self.scaleAnimation(self)
+            //
             if (useBlurEffect){
                 imvBackground?.alpha = 0.0
                 imvBlurEffectBackground?.alpha = 1.0
@@ -116,36 +190,43 @@ final class LoadingView: UIView {
     }
     
     public func stopActivity(){
-    
-        if (useBlurEffect){
-            self.alpha = 0.0
-            self.isVisible = false;
-            self.delegate?.loadingViewDidHide(lV: self)
-            self.lblTitle?.text = ""
-            self.lblAccessory?.text = ""
-            self.totalSecondsToHide = 0
-            self.activityIndicator?.stopAnimating()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }else{
-            
-            UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+        
+        self.delegate?.loadingViewWillHide(lV: self)
+        
+        //Animações:
+        self.scaleAnimation(self)
+        //
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if (self.useBlurEffect){
                 self.alpha = 0.0
-            }, completion: { (finished) in
-                
                 self.isVisible = false;
-                //
+                self.lblTitle?.text = ""
+                self.lblAccessory?.text = ""
+                self.totalSecondsToHide = 0
+                self.activityIndicator?.stopAnimating()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.delegate?.loadingViewDidHide(lV: self)
-                //
-                DispatchQueue.main.async {
-                    self.lblTitle?.text = ""
-                    self.lblAccessory?.text = ""
-                    self.totalSecondsToHide = 0
+            }else{
+                
+                UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+                    self.alpha = 0.0
+                }, completion: { (finished) in
+                    
+                    self.isVisible = false;
                     //
-                    self.activityIndicator?.stopAnimating()
+                    self.delegate?.loadingViewDidHide(lV: self)
                     //
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                }
-            })
+                    DispatchQueue.main.async {
+                        self.lblTitle?.text = ""
+                        self.lblAccessory?.text = ""
+                        self.totalSecondsToHide = 0
+                        //
+                        self.activityIndicator?.stopAnimating()
+                        //
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    }
+                })
+            }
         }
     }
     
@@ -167,61 +248,15 @@ final class LoadingView: UIView {
         }
     }
     
-    //MARK: - • PRIVATE PROPERTIES
-    @IBOutlet private var activityIndicator:UIActivityIndicatorView?
-    @IBOutlet private var imvBackground:UIImageView?
-    @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView?
-    @IBOutlet private var imvCenter:UIImageView?
-    @IBOutlet private var lblTitle:UILabel?
-    @IBOutlet private var lblAccessory:UILabel?
-    @IBOutlet private var lblProgress:UILabel?
-    
-    //MARK: - • INITIALISERS
-    
-    //storyboard initializer
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    //programmatic initializer
-    init() {
-        super.init(frame: CGRect())
-    }
-    
-    class func new(owner:Any) -> LoadingView{
-        
-        let lv:LoadingView = UINib(nibName: "LoadingView", bundle: nil).instantiate(withOwner: owner, options: nil)[0] as! LoadingView
-        //
-        lv.layoutIfNeeded()
-        lv.setupLayout()
-        //
-        return lv
-        
-    }
-    
-    //MARK: - • CUSTOM ACCESSORS (SETS & GETS)
-    
-    
-    //MARK: - • DEALLOC
-    
-    deinit {
-        // NSNotificationCenter no longer needs to be cleaned up!
-    }
-    
-    //MARK: - • SUPER CLASS OVERRIDES
-    
-    
-    //MARK: - • CONTROLLER LIFECYCLE/ TABLEVIEW/ DATA-SOURCE
-    
-    
-    //MARK: - • INTERFACE/PROTOCOL METHODS
-    
-    
-    //MARK: - • PUBLIC METHODS
-    
-    
     //MARK: - • ACTION METHODS
     
+    @IBAction func actionCancel(sender:AnyObject){
+        
+        isCanceled = true;
+        //lblProgress?.alpha = 0.0
+        //
+        delegate?.loadingViewCanceled(lV: self)
+    }
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
@@ -243,7 +278,7 @@ final class LoadingView: UIView {
         self.lblProgress?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
         self.lblProgress?.textColor = App.Style.colorTextLabel_Dark
         //
-        self.imvBackground?.backgroundColor = UIColor.init(white: 0.0, alpha: 0.5)
+        self.imvBackground?.backgroundColor = UIColor.init(white: 0.0, alpha: 0.4)
         self.imvBackground?.alpha = 1.0
         //
         self.imvBlurEffectBackground?.backgroundColor = UIColor.clear
@@ -252,6 +287,13 @@ final class LoadingView: UIView {
         self.imvCenter?.backgroundColor = UIColor.clear
         self.imvCenter?.image = ToolBox.graphicHelper_CreateFlatImage(size: (imvCenter?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white)
         ToolBox.graphicHelper_ApplyShadow(view: self.imvCenter!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
+        //
+        self.btnCancel?.backgroundColor = UIColor.clear
+        self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white), for: UIControlState.normal)
+        self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.lightGray), for: UIControlState.highlighted)
+        self.btnCancel?.setTitleColor(App.Style.colorTextLabel_Other, for: UIControlState.normal)
+        self.btnCancel?.titleLabel?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_LABEL)
+        ToolBox.graphicHelper_ApplyShadow(view: self.btnCancel!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
         //
         self.activityIndicator?.color = App.Style.colorBackgroundScreen_Dark
         self.tag = 666
@@ -269,25 +311,44 @@ final class LoadingView: UIView {
         lblProgress?.alpha = 1.0;
         lblProgress?.text = "\(currentTime)"
         //
-        progress.updateProgress((CGFloat(1.0 - Double(time)/Double(totalSecondsToHide))), animated: true, initialDelay: 0.0, duration: 1.0) {
-            //
-            currentTime -= 1
-            //
-            if (currentTime > -1){
-                self.tickProgress(currentTime, progress)
-            }else{
-                progress.removeFromSuperview()
-                //progress = nil
-                //
-                self.stopActivity()
+        progress.updateProgress(1.0 - (CGFloat(Double(currentTime)/Double(totalSecondsToHide))), animated: true, initialDelay: 0.0, duration: 1.0) {
+            
+            if (!self.isCanceled){
+                if (currentTime > 0){
+                    currentTime -= 1
+                    self.tickProgress(currentTime, progress)
+                }else{
+                    progress.removeFromSuperview()
+                    self.lblProgress?.alpha = 0.0
+                    //
+                    self.stopActivity()
+                }
             }
         }
+    }
+    
+    private func scaleAnimation(_ view:UIView){
+        
+        let scaleAnima:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnima.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
+        scaleAnima.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(1.05, 1.05, 1))
+        scaleAnima.duration = 0.1
+        scaleAnima.autoreverses = true
+        scaleAnima.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        scaleAnima.isRemovedOnCompletion = true
+        //
+        view.layer.add(scaleAnima, forKey: "ScaleAnimation")
     }
 }
 
 //MARK: 
 protocol LoadingViewDelegate:NSObjectProtocol
 {
+    func loadingViewWillShow(lV:LoadingView)
     func loadingViewDidShow(lV:LoadingView)
+    //
+    func loadingViewWillHide(lV:LoadingView)
     func loadingViewDidHide(lV:LoadingView)
+    //
+    func loadingViewCanceled(lV:LoadingView)
 }
