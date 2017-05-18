@@ -65,4 +65,15 @@ class App{
     class final func Rand() -> Float{
         return Float(Float(arc4random()) / Float(UINT32_MAX))
     }
+    
+    class func printAvailableFonts(){
+        
+        let fontFamilyNames = UIFont.familyNames
+        for familyName in fontFamilyNames {
+            print("------------------------------")
+            print("Font Family Name = [\(familyName)]")
+            let names = UIFont.fontNames(forFamilyName: familyName)
+            print("Font Names = [\(names)]")
+        }
+    }
 }

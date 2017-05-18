@@ -32,6 +32,11 @@ print("User4 - name: \(user4.name), idade: \(user4.idade)")
 list[2] = user4
 list
 
+user4.idade = 99
+list
+list2
+
+
 for i in 0...(list.count-1){
     var user:User = list[i]
     user.idade = 100

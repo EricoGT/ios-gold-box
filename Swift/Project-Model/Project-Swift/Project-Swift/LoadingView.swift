@@ -20,16 +20,53 @@ import UIKit
 final class LoadingView: UIView {
     
     //MARK: - • LOCAL DEFINES
-    public enum ActivityIndicatorType {
-        case loading
-        case processing
-        case downloading
-        case sending
-        case saving
+    public enum ActivityIndicatorType: Int {
+        case custom         = -1
+        case waiting        = 0
+        case loading        = 1
+        case processing     = 2
+        case downloading    = 3
+        case sending        = 4
+        case saving         = 5
+        case updating       = 6
+        case deleting       = 7
+        case searching      = 8
+        case synchronizing  = 9
+        case sharing        = 10
+        //
+        func toString() -> String{
+            switch self {
+            case .custom:
+                return  ""
+            case .waiting:
+                return NSLocalizedString("ACTIVITY_INDICATOR_TYPE_WAITING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .loading:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_LOADING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .processing:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_PROCESSING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .downloading:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_DOWNLOADING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .sending:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_SENDING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .saving:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_SAVING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .updating:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_UPDATING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .deleting:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_DELETING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .searching:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_SEARCHING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .synchronizing:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_SYNCHRONIZING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            case .sharing:
+                return  NSLocalizedString("ACTIVITY_INDICATOR_TYPE_SHARING", tableName: "LoadingViewLocalizable", bundle: Bundle.main, value: "", comment: "")
+            }
+        }
     }
 
     //MARK: - • PUBLIC PROPERTIES
-    public weak var delegate:LoadingViewDelegate? = nil
+    public weak var controlDelegate:LoadingViewDelegate? = nil
+    public weak var dataSourceDelegate:LoadingViewDataSource? = nil
     public var useBlurEffect:Bool = false
     public var useCancelButton:Bool = false
     
@@ -43,6 +80,7 @@ final class LoadingView: UIView {
     @IBOutlet private var imvBackground:UIImageView?
     @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView?
     @IBOutlet private var imvCenter:UIImageView?
+    @IBOutlet private var imvWaterMark:UIImageView?
     @IBOutlet private var lblTitle:UILabel?
     @IBOutlet private var lblAccessory:UILabel?
     @IBOutlet private var lblProgress:UILabel?
@@ -90,34 +128,40 @@ final class LoadingView: UIView {
     
     //MARK: - • PUBLIC METHODS
     
-    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ delegate:LoadingViewDelegate?){
+    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ showWaterMarkImage:Bool, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
         
         self.layoutIfNeeded()
-        self.startAutoHideActivity(type, showIndicatorInStatusBar, 0, delegate)
+        self.startAutoHideActivity(type, showIndicatorInStatusBar, showWaterMarkImage, 0, cDelegate, dsDelegate)
     }
     
-    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ secondsToHide:Int, _ delegate:LoadingViewDelegate?){
+    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ showWaterMarkImage:Bool, _ secondsToHide:Int, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
         
         if (!isVisible){
             
             //Configurando o componente:
             isCanceled = false
-            self.delegate = delegate
+            self.controlDelegate = cDelegate
+            self.dataSourceDelegate = dsDelegate
             //
             lblProgress?.text = ""
             lblAccessory?.text = ""
             //
-            switch type {
-            case .loading:
-                lblTitle?.text = "Carregando..."
-            case .processing:
-                lblTitle?.text = "Processando..."
-            case .downloading:
-                lblTitle?.text = "Transferindo..."
-            case .sending:
-                lblTitle?.text = "Enviando..."
-            case .saving:
-                lblTitle?.text = "Salvando..."
+            if (type == .custom){
+                lblTitle?.text = self.dataSourceDelegate?.loadingViewStringForCustomType(lV: self)
+                //
+                if (showWaterMarkImage){
+                    imvWaterMark?.image = self.dataSourceDelegate?.loadingViewImageWaterMarkForCustomType(lV: self)
+                }else{
+                    imvWaterMark?.image = nil
+                }
+            }else{
+                lblTitle?.text = type.toString()
+                //
+                if (showWaterMarkImage){
+                    imvWaterMark?.image = self.waterMarkImageForType(type)
+                }else{
+                    imvWaterMark?.image = nil
+                }
             }
             
             //Exibindo o componente:
@@ -158,7 +202,7 @@ final class LoadingView: UIView {
             App.Delegate.window?.bringSubview(toFront: self)
             isVisible = true
             //
-            self.delegate?.loadingViewWillShow(lV: self)
+            self.controlDelegate?.loadingViewWillShow(lV: self)
             
             //Animações:
             self.scaleAnimation(self)
@@ -168,7 +212,7 @@ final class LoadingView: UIView {
                 imvBlurEffectBackground?.alpha = 1.0
                 //
                 self.alpha = 1.0
-                self.delegate?.loadingViewDidShow(lV: self)
+                self.controlDelegate?.loadingViewDidShow(lV: self)
             }else{
                 imvBackground?.alpha = 1.0
                 imvBlurEffectBackground?.alpha = 0.0
@@ -176,7 +220,7 @@ final class LoadingView: UIView {
                 UIView.animate(withDuration: ANIMA_TIME, animations: {
                     self.alpha = 1.0
                 }, completion: { (finished) in
-                    self.delegate?.loadingViewDidShow(lV: self)
+                    self.controlDelegate?.loadingViewDidShow(lV: self)
                 })
             }
         }
@@ -191,7 +235,7 @@ final class LoadingView: UIView {
     
     public func stopActivity(){
         
-        self.delegate?.loadingViewWillHide(lV: self)
+        self.controlDelegate?.loadingViewWillHide(lV: self)
         
         //Animações:
         self.scaleAnimation(self)
@@ -205,7 +249,7 @@ final class LoadingView: UIView {
                 self.totalSecondsToHide = 0
                 self.activityIndicator?.stopAnimating()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.delegate?.loadingViewDidHide(lV: self)
+                self.controlDelegate?.loadingViewDidHide(lV: self)
             }else{
                 
                 UIView.animate(withDuration: self.ANIMA_TIME, animations: {
@@ -214,7 +258,7 @@ final class LoadingView: UIView {
                     
                     self.isVisible = false;
                     //
-                    self.delegate?.loadingViewDidHide(lV: self)
+                    self.controlDelegate?.loadingViewDidHide(lV: self)
                     //
                     DispatchQueue.main.async {
                         self.lblTitle?.text = ""
@@ -255,7 +299,7 @@ final class LoadingView: UIView {
         isCanceled = true;
         //lblProgress?.alpha = 0.0
         //
-        delegate?.loadingViewCanceled(lV: self)
+        controlDelegate?.loadingViewCanceled(lV: self)
     }
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
@@ -267,16 +311,16 @@ final class LoadingView: UIView {
         self.backgroundColor = UIColor.clear
         //
         self.lblTitle?.backgroundColor = UIColor.clear
-        self.lblTitle?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_LABEL)
-        self.lblTitle?.textColor = App.Style.colorTextLabel_Dark
+        self.lblTitle?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_LABEL_NORMAL)
+        self.lblTitle?.textColor = App.Style.colorView_SuperDark
         //
         self.lblAccessory?.backgroundColor = UIColor.clear
         self.lblAccessory?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
-        self.lblAccessory?.textColor = App.Style.colorTextLabel_Light
+        self.lblAccessory?.textColor = App.Style.colorView_Dark
         //
         self.lblProgress?.backgroundColor = UIColor.clear
         self.lblProgress?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
-        self.lblProgress?.textColor = App.Style.colorTextLabel_Dark
+        self.lblProgress?.textColor = App.Style.colorView_SuperDark
         //
         self.imvBackground?.backgroundColor = UIColor.init(white: 0.0, alpha: 0.4)
         self.imvBackground?.alpha = 1.0
@@ -291,11 +335,11 @@ final class LoadingView: UIView {
         self.btnCancel?.backgroundColor = UIColor.clear
         self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white), for: UIControlState.normal)
         self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.lightGray), for: UIControlState.highlighted)
-        self.btnCancel?.setTitleColor(App.Style.colorTextLabel_Other, for: UIControlState.normal)
-        self.btnCancel?.titleLabel?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_LABEL)
+        self.btnCancel?.setTitleColor(App.Style.colorText_RedDark, for: UIControlState.normal)
+        self.btnCancel?.titleLabel?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
         ToolBox.graphicHelper_ApplyShadow(view: self.btnCancel!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
         //
-        self.activityIndicator?.color = App.Style.colorBackgroundScreen_Dark
+        self.activityIndicator?.color = App.Style.colorView_SuperDark
         self.tag = 666
         //
         App.Delegate.window?.addSubview(self)
@@ -339,9 +383,40 @@ final class LoadingView: UIView {
         //
         view.layer.add(scaleAnima, forKey: "ScaleAnimation")
     }
+    
+    private func waterMarkImageForType(_ type:ActivityIndicatorType) -> UIImage?{
+        
+        switch type {
+        case .custom:
+            return  nil
+        case .waiting:
+            return UIImage.init(named: "loadingview_watermark_waiting")
+        case .loading:
+            return UIImage.init(named: "loadingview_watermark_loading")
+        case .processing:
+            return UIImage.init(named: "loadingview_watermark_processing")
+        case .downloading:
+            return UIImage.init(named: "loadingview_watermark_downloading")
+        case .sending:
+            return UIImage.init(named: "loadingview_watermark_sending")
+        case .saving:
+            return UIImage.init(named: "loadingview_watermark_saving")
+        case .updating:
+            return UIImage.init(named: "loadingview_watermark_updating")
+        case .deleting:
+            return UIImage.init(named: "loadingview_watermark_deleting")
+        case .searching:
+            return UIImage.init(named: "loadingview_watermark_searching")
+        case .synchronizing:
+            return UIImage.init(named: "loadingview_watermark_synchronizing")
+        case .sharing:
+            return UIImage.init(named: "loadingview_watermark_sharing")
+        }
+    }
+    
 }
 
-//MARK: 
+//MARK:
 protocol LoadingViewDelegate:NSObjectProtocol
 {
     func loadingViewWillShow(lV:LoadingView)
@@ -351,4 +426,10 @@ protocol LoadingViewDelegate:NSObjectProtocol
     func loadingViewDidHide(lV:LoadingView)
     //
     func loadingViewCanceled(lV:LoadingView)
+}
+
+protocol LoadingViewDataSource:NSObjectProtocol
+{
+    func loadingViewStringForCustomType(lV:LoadingView) -> String
+    func loadingViewImageWaterMarkForCustomType(lV:LoadingView) -> UIImage
 }

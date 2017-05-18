@@ -31,7 +31,7 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.view.backgroundColor = App.Style.colorBackgroundScreen_Light
+        self.view.backgroundColor = App.Style.colorView_Light
         
         let arrayImages:Array<UIImage> = [UIImage(named:"flame_a_0001.png")!,
                                  UIImage(named:"flame_a_0002.png")!,
@@ -83,7 +83,7 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         App.Delegate.activityView?.useBlurEffect = true
         App.Delegate.activityView?.useCancelButton = true
         //
-        App.Delegate.activityView?.startActivity(.loading, false, self)
+        App.Delegate.activityView?.startActivity(.saving, true, false, self, nil)
         
     }
     

@@ -51,9 +51,21 @@ class ConstantsManager{
     public static let FONT_MYRIAD_PRO_BOLD:String = "MyriadPro-Bold"
     public static let FONT_MYRIAD_PRO_ITALIC:String = "MyriadPro-It"
     //
+    public static let FONT_SAN_FRANCISCO_BLACK:String = "SFUIDisplay-Black"
+    public static let FONT_SAN_FRANCISCO_BOLD:String = "SFUIDisplay-Bold"
+    public static let FONT_SAN_FRANCISCO_HEAVY:String = "SFUIDisplay-Heavy"
+    public static let FONT_SAN_FRANCISCO_LIGHT:String = "SFUIDisplay-Light"
+    public static let FONT_SAN_FRANCISCO_MEDIUM:String = "SFUIDisplay-Medium"
+    public static let FONT_SAN_FRANCISCO_REGULAR:String = "SFUIDisplay-Regular"
+    public static let FONT_SAN_FRANCISCO_SEMIBOLD:String = "SFUIDisplay-Semibold"
+    public static let FONT_SAN_FRANCISCO_THIN:String = "SFUIDisplay-Thin"
+    public static let FONT_SAN_FRANCISCO_ULTRALIGHT:String = "SFUIDisplay-Ultralight"
+    //
     public static let FONT_SIZE_TEXT_FIELDS:CGFloat = 15.0
-    public static let FONT_SIZE_LABEL:CGFloat = 17.0
-    public static let FONT_SIZE_BUTTON_TITLE:CGFloat = 18.0
+    public static let FONT_SIZE_LABEL_MINI_PLACEHOLDER:CGFloat = 12.0
+    public static let FONT_SIZE_LABEL_NORMAL:CGFloat = 16.0
+    public static let FONT_SIZE_LABEL_SMALL:CGFloat = 15.0
+    public static let FONT_SIZE_BUTTON_TITLE:CGFloat = 16.0
     
     
     //MARK: - COMPUTED

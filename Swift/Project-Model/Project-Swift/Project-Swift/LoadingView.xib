@@ -45,13 +45,16 @@
                         <constraint firstAttribute="height" constant="220" id="ylF-gr-edJ"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carregando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-At-a67">
+                <imageView userInteractionEnabled="NO" alpha="0.025000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingview_watermark_loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Vm-p2-RRf">
+                    <rect key="frame" x="77" y="223" width="220" height="220"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carregando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-At-a67">
                     <rect key="frame" x="77.5" y="343.5" width="220" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-yJ-JUm">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-yJ-JUm">
                     <rect key="frame" x="77" y="379" width="220" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -87,6 +90,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7Vm-p2-RRf" firstAttribute="height" secondItem="ayU-9p-K5U" secondAttribute="height" id="1yC-HO-Mpe"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="top" secondItem="dGK-4J-NHn" secondAttribute="top" id="4Kn-NS-aXd"/>
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="4pu-qw-DMd"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="6hj-tP-2tJ"/>
@@ -98,12 +102,15 @@
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" constant="20" id="Ca7-0o-NL4"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="Dui-IF-ZCB"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="EkZ-AJ-tqk"/>
+                <constraint firstItem="7Vm-p2-RRf" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" id="GPF-6J-IOE"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="width" secondItem="dGK-4J-NHn" secondAttribute="width" id="Hfe-OP-ff6"/>
                 <constraint firstItem="MLy-sQ-tAx" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="IDP-US-BC5"/>
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="LSD-tI-hsH"/>
+                <constraint firstItem="7Vm-p2-RRf" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="Mu7-0D-TaN"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="top" secondItem="MLy-sQ-tAx" secondAttribute="bottom" constant="20" id="Poo-j1-xJW"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="top" secondItem="OxC-At-a67" secondAttribute="bottom" constant="15" id="X7u-8F-WCP"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="height" secondItem="OxC-At-a67" secondAttribute="height" id="Ypr-BL-9gR"/>
+                <constraint firstItem="7Vm-p2-RRf" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="akP-fL-XrG"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="width" secondItem="OxC-At-a67" secondAttribute="width" id="fVL-la-RTg"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="height" secondItem="dGK-4J-NHn" secondAttribute="height" id="hxs-je-hqT"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="leading" secondItem="dGK-4J-NHn" secondAttribute="leading" id="iJ3-6v-egx"/>
@@ -119,6 +126,7 @@
                 <outlet property="imvBackground" destination="YMz-nP-wCb" id="NL5-uQ-cNH"/>
                 <outlet property="imvBlurEffectBackground" destination="E1x-m2-C1b" id="nvs-w3-wbC"/>
                 <outlet property="imvCenter" destination="ayU-9p-K5U" id="o9i-f5-nCb"/>
+                <outlet property="imvWaterMark" destination="7Vm-p2-RRf" id="wh3-QQ-YJq"/>
                 <outlet property="lblAccessory" destination="oMk-yJ-JUm" id="66n-VI-hvl"/>
                 <outlet property="lblProgress" destination="MLy-sQ-tAx" id="qg2-Vc-Xz1"/>
                 <outlet property="lblTitle" destination="OxC-At-a67" id="asp-vR-NMT"/>
@@ -126,4 +134,7 @@
             <point key="canvasLocation" x="-616" y="61"/>
         </view>
     </objects>
+    <resources>
+        <image name="loadingview_watermark_loading.png" width="256" height="256"/>
+    </resources>
 </document>

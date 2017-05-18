@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		74E5E04D49E1E3DD6810BBFA /* Pods_Project_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2A875AFA762C8BAE58C400 /* Pods_Project_Swift.framework */; };
+		E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */; };
 		E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */; };
 		E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */; };
 		E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A00FAD1E8E81FF0050EDD3 /* Main.storyboard */; };
@@ -21,6 +22,16 @@
 		E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */; };
 		E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */; };
 		E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */; };
+		E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C621ECDD075003F2E79 /* LoadingViewLocalizable.strings */; };
+		E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C641ECDD103003F2E79 /* SFDisplay-Black.otf */; };
+		E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C651ECDD103003F2E79 /* SFDisplay-Bold.otf */; };
+		E7A96C6F1ECDD103003F2E79 /* SFDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C661ECDD103003F2E79 /* SFDisplay-Heavy.otf */; };
+		E7A96C701ECDD103003F2E79 /* SFDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C671ECDD103003F2E79 /* SFDisplay-Light.otf */; };
+		E7A96C711ECDD103003F2E79 /* SFDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C681ECDD103003F2E79 /* SFDisplay-Medium.otf */; };
+		E7A96C721ECDD103003F2E79 /* SFDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C691ECDD103003F2E79 /* SFDisplay-Regular.otf */; };
+		E7A96C731ECDD103003F2E79 /* SFDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C6A1ECDD103003F2E79 /* SFDisplay-Semibold.otf */; };
+		E7A96C741ECDD103003F2E79 /* SFDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C6B1ECDD103003F2E79 /* SFDisplay-Thin.otf */; };
+		E7A96C751ECDD103003F2E79 /* SFDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C6C1ECDD103003F2E79 /* SFDisplay-Ultralight.otf */; };
 		E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEC75B1E93CA6300581632 /* InternetHelper.swift */; };
 		E7AEC75E1E93E1C500581632 /* ChangeProjectNameTutorial.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7AEC75D1E93E1C500581632 /* ChangeProjectNameTutorial.strings */; };
 		E7AEC7611E94027300581632 /* LayoutStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEC7601E94027300581632 /* LayoutStyleManager.swift */; };
@@ -91,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		8AC2E5DAB29284B39A646427 /* Pods-Project-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Swift/Pods-Project-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectProtocol.swift; sourceTree = "<group>"; };
 		E7A00FA61E8E81FF0050EDD3 /* Project-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +122,16 @@
 		E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsManager.swift; sourceTree = "<group>"; };
+		E7A96C621ECDD075003F2E79 /* LoadingViewLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LoadingViewLocalizable.strings; sourceTree = "<group>"; };
+		E7A96C641ECDD103003F2E79 /* SFDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Black.otf"; sourceTree = "<group>"; };
+		E7A96C651ECDD103003F2E79 /* SFDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Bold.otf"; sourceTree = "<group>"; };
+		E7A96C661ECDD103003F2E79 /* SFDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		E7A96C671ECDD103003F2E79 /* SFDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Light.otf"; sourceTree = "<group>"; };
+		E7A96C681ECDD103003F2E79 /* SFDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Medium.otf"; sourceTree = "<group>"; };
+		E7A96C691ECDD103003F2E79 /* SFDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Regular.otf"; sourceTree = "<group>"; };
+		E7A96C6A1ECDD103003F2E79 /* SFDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		E7A96C6B1ECDD103003F2E79 /* SFDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Thin.otf"; sourceTree = "<group>"; };
+		E7A96C6C1ECDD103003F2E79 /* SFDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		E7AEC75B1E93CA6300581632 /* InternetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetHelper.swift; sourceTree = "<group>"; };
 		E7AEC75D1E93E1C500581632 /* ChangeProjectNameTutorial.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ChangeProjectNameTutorial.strings; sourceTree = "<group>"; };
 		E7AEC7601E94027300581632 /* LayoutStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutStyleManager.swift; sourceTree = "<group>"; };
@@ -412,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */,
+				E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */,
 			);
 			name = Reference;
 			sourceTree = "<group>";
@@ -438,6 +461,7 @@
 				E7B035DB1EC4D1CD00C669C9 /* RPCircularProgress.swift */,
 				E7B035D51EC4995B00C669C9 /* LoadingView.swift */,
 				E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */,
+				E7A96C621ECDD075003F2E79 /* LoadingViewLocalizable.strings */,
 			);
 			name = LoadingView;
 			sourceTree = "<group>";
@@ -513,6 +537,15 @@
 		E7FD7A9F1E8ED91400772AF0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E7A96C641ECDD103003F2E79 /* SFDisplay-Black.otf */,
+				E7A96C651ECDD103003F2E79 /* SFDisplay-Bold.otf */,
+				E7A96C661ECDD103003F2E79 /* SFDisplay-Heavy.otf */,
+				E7A96C671ECDD103003F2E79 /* SFDisplay-Light.otf */,
+				E7A96C681ECDD103003F2E79 /* SFDisplay-Medium.otf */,
+				E7A96C691ECDD103003F2E79 /* SFDisplay-Regular.otf */,
+				E7A96C6A1ECDD103003F2E79 /* SFDisplay-Semibold.otf */,
+				E7A96C6B1ECDD103003F2E79 /* SFDisplay-Thin.otf */,
+				E7A96C6C1ECDD103003F2E79 /* SFDisplay-Ultralight.otf */,
 				E7FD7AA11E8EDA4000772AF0 /* MyriadPro-Bold.otf */,
 				E7FD7AA21E8EDA4000772AF0 /* MyriadPro-It.otf */,
 				E7FD7AA31E8EDA4000772AF0 /* MyriadPro-Regular.otf */,
@@ -675,6 +708,7 @@
 				E7FD7AA61E8EDA4000772AF0 /* MyriadPro-It.otf in Resources */,
 				E7FD7AC91E8EDA5100772AF0 /* paste_chrome.m4a in Resources */,
 				E7FD7ACD1E8EDA5100772AF0 /* tap.m4a in Resources */,
+				E7A96C731ECDD103003F2E79 /* SFDisplay-Semibold.otf in Resources */,
 				E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */,
 				E7FD7ACE1E8EDA5100772AF0 /* tic.m4a in Resources */,
 				E7FD7AC01E8EDA5100772AF0 /* cutting_package.m4a in Resources */,
@@ -684,6 +718,7 @@
 				E7ED1CAA1E952F4D00D26C7B /* flame_a_0006.png in Resources */,
 				E7FD7ABF1E8EDA5100772AF0 /* click.m4a in Resources */,
 				E7FD7AA81E8EDA4000772AF0 /* MyriadPro-Semibold.otf in Resources */,
+				E7A96C741ECDD103003F2E79 /* SFDisplay-Thin.otf in Resources */,
 				E7FD7AC61E8EDA5100772AF0 /* ok.m4a in Resources */,
 				E7ED1CA61E952F4D00D26C7B /* flame_a_0002.png in Resources */,
 				E7FD7AC71E8EDA5100772AF0 /* page_next.m4a in Resources */,
@@ -691,10 +726,16 @@
 				E7FD7AC11E8EDA5100772AF0 /* cutting_paper.m4a in Resources */,
 				E7FD7AC51E8EDA5100772AF0 /* great.m4a in Resources */,
 				E7FD7A961E8ED82500772AF0 /* mask.png in Resources */,
+				E7A96C711ECDD103003F2E79 /* SFDisplay-Medium.otf in Resources */,
+				E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */,
+				E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */,
+				E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */,
 				E7FD7AC81E8EDA5100772AF0 /* page_previus.m4a in Resources */,
 				E7ED1CA71E952F4D00D26C7B /* flame_a_0003.png in Resources */,
 				E7FD7AA51E8EDA4000772AF0 /* MyriadPro-Bold.otf in Resources */,
 				E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */,
+				E7A96C6F1ECDD103003F2E79 /* SFDisplay-Heavy.otf in Resources */,
+				E7A96C701ECDD103003F2E79 /* SFDisplay-Light.otf in Resources */,
 				E7FD7A9D1E8ED8C500772AF0 /* Images.xcassets in Resources */,
 				E7FD7AA71E8EDA4000772AF0 /* MyriadPro-Regular.otf in Resources */,
 				E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */,
@@ -705,6 +746,8 @@
 				E7FD7AC31E8EDA5100772AF0 /* dum.m4a in Resources */,
 				E7FD7ABE1E8EDA5100772AF0 /* clap.m4a in Resources */,
 				E7B035D91EC4A6A300C669C9 /* LoadingView.xib in Resources */,
+				E7A96C721ECDD103003F2E79 /* SFDisplay-Regular.otf in Resources */,
+				E7A96C751ECDD103003F2E79 /* SFDisplay-Ultralight.otf in Resources */,
 				E7FD7A951E8ED82500772AF0 /* guardachuva.jpeg in Resources */,
 				E7FD7ACA1E8EDA5100772AF0 /* slap_chrome.m4a in Resources */,
 			);
@@ -780,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A00FEC1E8E84A30050EDD3 /* ConnectionManager.swift in Sources */,
+				E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */,
 				E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */,
 				E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */,
 				E7A00FDA1E8E828A0050EDD3 /* App.swift in Sources */,
