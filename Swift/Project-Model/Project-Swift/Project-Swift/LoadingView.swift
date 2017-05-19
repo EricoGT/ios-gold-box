@@ -19,6 +19,9 @@ import UIKit
 
 final class LoadingView: UIView {
     
+    //Ao utilizar o bloco de retorno desta forma não é necessário @escaping.
+    typealias CompletionHandler = () -> ()
+    
     //MARK: - • LOCAL DEFINES
     public enum ActivityIndicatorType: Int {
         case custom         = -1
@@ -63,12 +66,13 @@ final class LoadingView: UIView {
             }
         }
     }
-
+    
     //MARK: - • PUBLIC PROPERTIES
     public weak var controlDelegate:LoadingViewDelegate? = nil
     public weak var dataSourceDelegate:LoadingViewDataSource? = nil
     public var useBlurEffect:Bool = false
     public var useCancelButton:Bool = false
+    public var useWaterMarkImage:Bool = false
     
     //MARK: - • PRIVATE PROPERTIES
     private let ANIMA_TIME:TimeInterval = 0.3
@@ -128,100 +132,104 @@ final class LoadingView: UIView {
     
     //MARK: - • PUBLIC METHODS
     
-    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ showWaterMarkImage:Bool, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
+    public func startActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
         
-        self.layoutIfNeeded()
-        self.startAutoHideActivity(type, showIndicatorInStatusBar, showWaterMarkImage, 0, cDelegate, dsDelegate)
+        self.startAutoHideActivity(type, showIndicatorInStatusBar, 0, cDelegate, dsDelegate)
     }
     
-    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ showWaterMarkImage:Bool, _ secondsToHide:Int, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
+    public func startAutoHideActivity(_ type:ActivityIndicatorType, _ showIndicatorInStatusBar:Bool, _ secondsToHide:Int, _ cDelegate:LoadingViewDelegate?, _ dsDelegate:LoadingViewDataSource?){
         
-        if (!isVisible){
+        DispatchQueue.main.async {
             
-            //Configurando o componente:
-            isCanceled = false
-            self.controlDelegate = cDelegate
-            self.dataSourceDelegate = dsDelegate
-            //
-            lblProgress?.text = ""
-            lblAccessory?.text = ""
-            //
-            if (type == .custom){
-                lblTitle?.text = self.dataSourceDelegate?.loadingViewStringForCustomType(lV: self)
+            self.layoutIfNeeded()
+            
+            if (!self.isVisible){
+                
+                //Configurando o componente:
+                self.isCanceled = false
+                self.controlDelegate = cDelegate
+                self.dataSourceDelegate = dsDelegate
                 //
-                if (showWaterMarkImage){
-                    imvWaterMark?.image = self.dataSourceDelegate?.loadingViewImageWaterMarkForCustomType(lV: self)
+                self.lblProgress?.text = ""
+                self.lblAccessory?.text = ""
+                //
+                if (type == .custom){
+                    self.lblTitle?.text = self.dataSourceDelegate?.loadingViewStringForCustomType(lV: self)
+                    //
+                    if (self.useWaterMarkImage){
+                        self.imvWaterMark?.image = self.dataSourceDelegate?.loadingViewImageWaterMarkForCustomType(lV: self)
+                    }else{
+                        self.imvWaterMark?.image = nil
+                    }
                 }else{
-                    imvWaterMark?.image = nil
+                    self.lblTitle?.text = type.toString()
+                    //
+                    if (self.useWaterMarkImage){
+                        self.imvWaterMark?.image = self.waterMarkImageForType(type)
+                    }else{
+                        self.imvWaterMark?.image = nil
+                    }
                 }
-            }else{
-                lblTitle?.text = type.toString()
-                //
-                if (showWaterMarkImage){
-                    imvWaterMark?.image = self.waterMarkImageForType(type)
+                
+                //Exibindo o componente:
+                if (self.useCancelButton){
+                    self.btnCancel?.alpha = 1.0
                 }else{
-                    imvWaterMark?.image = nil
+                    self.btnCancel?.alpha = 0.0
                 }
-            }
-            
-            //Exibindo o componente:
-            if (useCancelButton){
-                btnCancel?.alpha = 1.0
-            }else{
-                btnCancel?.alpha = 0.0
-            }
-            //
-            if (secondsToHide < 1){
-                activityIndicator?.alpha = 1.0;
-                activityIndicator?.startAnimating()
-            }else{
-                totalSecondsToHide = secondsToHide
                 //
-                lblProgress?.alpha = 1.0
-                activityIndicator?.alpha = 0.0
+                if (secondsToHide < 1){
+                    self.activityIndicator?.alpha = 1.0;
+                    self.activityIndicator?.startAnimating()
+                }else{
+                    self.totalSecondsToHide = secondsToHide
+                    //
+                    self.lblProgress?.alpha = 1.0
+                    self.activityIndicator?.alpha = 0.0
+                    //
+                    //Criando o activity circular
+                    let circularProgress:RPCircularProgress? = RPCircularProgress()
+                    circularProgress?.thicknessRatio = 0.15
+                    circularProgress?.trackTintColor = UIColor.init(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0) // -> cinzinha sem vergonha!
+                    circularProgress?.progressTintColor = ToolBox.graphicHelper_ColorWithHexString(string: "#31B74D") //-> verdinho maroto!
+                    circularProgress?.frame = CGRect.init(x: 0.0, y: 0.0, width: (self.lblProgress?.frame.size.width)!, height: (self.lblProgress?.frame.size.height)!)
+                    //
+                    self.lblProgress?.addSubview(circularProgress!)
+                    //
+                    //Timer loop:
+                    self.tickProgress(self.totalSecondsToHide, circularProgress!)
+                }
+                
+                //Indicador de atividade conexão internet:
+                if (showIndicatorInStatusBar) {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                }
+                
+                //Reinserindo o componente:
+                App.Delegate.window?.bringSubview(toFront: self)
+                self.isVisible = true
                 //
-                //Criando o activity circular
-                let circularProgress:RPCircularProgress? = RPCircularProgress()
-                circularProgress?.thicknessRatio = 0.15
-                circularProgress?.trackTintColor = UIColor.init(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0) // -> cinzinha sem vergonha!
-                circularProgress?.progressTintColor = ToolBox.graphicHelper_ColorWithHexString(string: "#31B74D") //-> verdinho maroto!
-                circularProgress?.frame = CGRect.init(x: 0.0, y: 0.0, width: (lblProgress?.frame.size.width)!, height: (lblProgress?.frame.size.height)!)
+                self.controlDelegate?.loadingViewWillShow(lV: self)
+                
+                //Animações:
+                self.scaleAnimation(self)
                 //
-                lblProgress?.addSubview(circularProgress!)
-                //
-                //Timer loop:
-                self.tickProgress(totalSecondsToHide, circularProgress!)
-            }
-            
-            //Indicador de atividade conexão internet:
-            if (showIndicatorInStatusBar) {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            }
-            
-            //Reinserindo o componente:
-            App.Delegate.window?.bringSubview(toFront: self)
-            isVisible = true
-            //
-            self.controlDelegate?.loadingViewWillShow(lV: self)
-            
-            //Animações:
-            self.scaleAnimation(self)
-            //
-            if (useBlurEffect){
-                imvBackground?.alpha = 0.0
-                imvBlurEffectBackground?.alpha = 1.0
-                //
-                self.alpha = 1.0
-                self.controlDelegate?.loadingViewDidShow(lV: self)
-            }else{
-                imvBackground?.alpha = 1.0
-                imvBlurEffectBackground?.alpha = 0.0
-                //
-                UIView.animate(withDuration: ANIMA_TIME, animations: {
+                if (self.useBlurEffect){
+                    self.imvBackground?.alpha = 0.0
+                    self.imvBlurEffectBackground?.isHidden = false
+                    //
                     self.alpha = 1.0
-                }, completion: { (finished) in
                     self.controlDelegate?.loadingViewDidShow(lV: self)
-                })
+                }else{
+                    self.imvBackground?.alpha = 1.0
+                    self.imvBlurEffectBackground?.isHidden = true
+                    //
+                    UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+                        self.alpha = 1.0
+                    }, completion: { (finished) in
+                        self.controlDelegate?.loadingViewDidShow(lV: self)
+                    })
+                }
             }
         }
     }
@@ -233,48 +241,55 @@ final class LoadingView: UIView {
         }
     }
     
-    public func stopActivity(){
+    public func stopActivity(_ completionHandler:CompletionHandler?){
         
-        self.controlDelegate?.loadingViewWillHide(lV: self)
-        
-        //Animações:
-        self.scaleAnimation(self)
-        //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            if (self.useBlurEffect){
-                self.alpha = 0.0
-                self.isVisible = false;
-                self.lblTitle?.text = ""
-                self.lblAccessory?.text = ""
-                self.totalSecondsToHide = 0
-                self.activityIndicator?.stopAnimating()
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.controlDelegate?.loadingViewDidHide(lV: self)
-            }else{
-                
-                UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+        DispatchQueue.main.async {
+            
+            self.controlDelegate?.loadingViewWillHide(lV: self)
+            
+            //Animações:
+            self.scaleAnimation(self)
+            //
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                if (self.useBlurEffect){
                     self.alpha = 0.0
-                }, completion: { (finished) in
-                    
                     self.isVisible = false;
-                    //
+                    self.lblTitle?.text = ""
+                    self.lblAccessory?.text = ""
+                    self.totalSecondsToHide = 0
+                    self.activityIndicator?.stopAnimating()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.controlDelegate?.loadingViewDidHide(lV: self)
                     //
-                    DispatchQueue.main.async {
-                        self.lblTitle?.text = ""
-                        self.lblAccessory?.text = ""
-                        self.totalSecondsToHide = 0
+                    completionHandler?()
+                }else{
+                    
+                    UIView.animate(withDuration: self.ANIMA_TIME, animations: {
+                        self.alpha = 0.0
+                    }, completion: { (finished) in
+                        
+                        self.isVisible = false;
                         //
-                        self.activityIndicator?.stopAnimating()
+                        self.controlDelegate?.loadingViewDidHide(lV: self)
                         //
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    }
-                })
+                        completionHandler?()
+                        //
+                        DispatchQueue.main.async {
+                            self.lblTitle?.text = ""
+                            self.lblAccessory?.text = ""
+                            self.totalSecondsToHide = 0
+                            //
+                            self.activityIndicator?.stopAnimating()
+                            //
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        }
+                    })
+                }
             }
         }
     }
     
-    public func stopActivity(title:String?, message:String?, timeToHide:Double){
+    public func stopActivity(title:String?, message:String?, timeToHide:Double, completionHandler:CompletionHandler?){
         
         DispatchQueue.main.async {
             if (title != nil){
@@ -287,7 +302,7 @@ final class LoadingView: UIView {
             //
             DispatchQueue.main.asyncAfter(deadline: .now() + timeToHide, execute: {
                 
-                self.stopActivity()
+                self.stopActivity(completionHandler)
             })
         }
     }
@@ -326,7 +341,7 @@ final class LoadingView: UIView {
         self.imvBackground?.alpha = 1.0
         //
         self.imvBlurEffectBackground?.backgroundColor = UIColor.clear
-        self.imvBlurEffectBackground?.alpha = 1.0
+        self.imvBlurEffectBackground?.isHidden = false
         //
         self.imvCenter?.backgroundColor = UIColor.clear
         self.imvCenter?.image = ToolBox.graphicHelper_CreateFlatImage(size: (imvCenter?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white)
@@ -365,7 +380,7 @@ final class LoadingView: UIView {
                     progress.removeFromSuperview()
                     self.lblProgress?.alpha = 0.0
                     //
-                    self.stopActivity()
+                    self.stopActivity(nil)
                 }
             }
         }

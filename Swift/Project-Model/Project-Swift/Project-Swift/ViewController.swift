@@ -83,7 +83,7 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         App.Delegate.activityView?.useBlurEffect = true
         App.Delegate.activityView?.useCancelButton = true
         //
-        App.Delegate.activityView?.startActivity(.saving, true, false, self, nil)
+        App.Delegate.activityView?.startActivity(.saving, true, self, nil)
         
     }
     
@@ -134,7 +134,7 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
     func loadingViewCanceled(lV: LoadingView) {
         print("loadingViewCanceled")
         //
-        App.Delegate.activityView?.stopActivity()
+        App.Delegate.activityView?.stopActivity(nil)
         
     }
 }
