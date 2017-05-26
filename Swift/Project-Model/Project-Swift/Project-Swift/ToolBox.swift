@@ -265,8 +265,9 @@ class ToolBox: NSObject{
         //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
         //return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
         //return "Version: 3.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
+        //return "Version: 4.0  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
         //
-        return "Version: 4.0  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
+        return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -1622,6 +1623,16 @@ class ToolBox: NSObject{
         }        
     }
     
+    /** Verifica se um determinado texto possui caracteres válidos apenas dos passados como parâmetro.*/
+    class func validationHelper_TextCheckForValidChars(text:String, validCharacterSetString:String) -> ToolBoxValidationResult{
+        
+        let characterset = CharacterSet(charactersIn: validCharacterSetString)
+        if text.rangeOfCharacter(from: characterset.inverted) != nil {
+            //O texto possui caracteres inválidos
+            return .Disapproved
+        }
+        return .Approved
+    }
     
     /** Verifica se todos os caracteres de um texto pertencem ou não a uma dada lista de caracteres.*/
     class func validationHelper_TextCheck(text:String, validationList:Array<Character>, restrictForList:Bool) -> ToolBoxValidationResult{
@@ -3138,7 +3149,7 @@ class ToolBox: NSObject{
         
         weight = 2
         
-        for i in stride(from: 11, to: 1, by: -1) {
+        for i in stride(from: 11, to: -1, by: -1) {
             let actualInt:Int = Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: i)])))!
             sum = sum + (actualInt * weight)
             
@@ -3158,12 +3169,13 @@ class ToolBox: NSObject{
         //Verificação 14 Digito
         
         sum = 0
-        weight = 0
+        weight = 2
         
-        for i in stride(from: 12, to: 1, by: -1) {
+        for i in stride(from: 12, to: -1, by: -1) {
+            let actualInt:Int = Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: i)])))!
+            sum = sum + (actualInt * weight)
             
-            sum = sum + (Int(String((cnpj[cnpj.index(cnpj.startIndex, offsetBy: i)])))! * weight)
-            weight = weight + 1
+            weight += 1
             
             if weight == 10{
                 weight = 2
