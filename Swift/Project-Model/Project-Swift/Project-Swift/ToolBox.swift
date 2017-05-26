@@ -2892,14 +2892,18 @@ class ToolBox: NSObject{
     //MARK: - • CONVERTER HELPER =======================================================================
     
     /** Converte um dicionário JSON em texto.*/
-    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary?) -> String
+    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary?, prettyPrinted:Bool) -> String
     {
         if let dic:NSDictionary = dictionary
         {
             var jsonData:Data? = Data()
             do
             {
-                jsonData = try JSONSerialization.data(withJSONObject: dic, options: JSONSerialization.WritingOptions.init(rawValue: 0))
+                if (prettyPrinted) {
+                    jsonData = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
+                }else{
+                    jsonData = try JSONSerialization.data(withJSONObject: dic, options: .init(rawValue: 0))
+                }
             }catch{
                 print(error)
             }
@@ -2987,7 +2991,7 @@ class ToolBox: NSObject{
         if let dic:NSDictionary = refDictionary
         {
             let replaced:NSMutableDictionary = NSMutableDictionary.init(dictionary: dic)
-            var dicString = converterHelper_StringJsonFromDictionary(dictionary: replaced)
+            var dicString = converterHelper_StringJsonFromDictionary(dictionary: replaced, prettyPrinted: false)
             
             dicString = dicString.removingPercentEncoding!
             
