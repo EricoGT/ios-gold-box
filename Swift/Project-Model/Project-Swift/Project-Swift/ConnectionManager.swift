@@ -129,8 +129,8 @@ class ConnectionManager
             "Content-Type": "application/json",
             "Accept": "application/json",
             "idiom": NSLocalizedString("LANGUAGE_APP", comment: ""),
-            "device_info": ToolBox.converterHelper_StringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary),
-            "token": ToolBox.isNil(object: token as AnyObject?) ? "" :  token!
+            "device_info": ToolBox.converterHelper_StringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary, prettyPrinted: false),
+            "token": ToolBox.isNil(token as AnyObject?) ? "" :  token!
         ]
         return header
     }

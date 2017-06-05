@@ -244,12 +244,12 @@ class InternetHelper: NSObject {
         var headerDic:Dictionary<String, String> = Dictionary.init()
         //
         let token:String? = UserDefaults.standard.value(forKey: "PLISTKEY_ACCESS_TOKEN") as! String?
-        headerDic["token"] = ToolBox.isNil(object: token as AnyObject?) ? "" :  token!
+        headerDic["token"] = ToolBox.isNil(token as AnyObject?) ? "" :  token!
         //
         headerDic["Content-Type"] = "application/json"
         headerDic["Accept"] = "application/json"
         headerDic["idiom"] = App.STR("LANGUAGE_APP")
-        headerDic["device_info"] = ToolBox.converterHelper_StringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary)
+        headerDic["device_info"] = ToolBox.converterHelper_StringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary, prettyPrinted: false)
         //
         return headerDic
     }

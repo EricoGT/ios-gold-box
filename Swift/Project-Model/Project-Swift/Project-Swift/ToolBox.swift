@@ -261,18 +261,19 @@ class ToolBox: NSObject{
         
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
         //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
-        //return "Version: 1.1  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
-        //return "Version: 2.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
-        //return "Version: 2.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
-        //return "Version: 3.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
-        //return "Version: 4.0  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
+        //return "Version: 2.0  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //return "Version: 3.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        //return "Version: 3.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
+        //return "Version: 4.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
+        //return "Version: 4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
+        //return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
         //
-        return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
+        return "Version: 5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
-    class func isNil(object:AnyObject?) -> Bool{
-        if let _:AnyObject = object{
+    class func isNil(_ object:Any?) -> Bool{
+        if let _:Any = object{
             return false
         }else{
             return true
@@ -550,7 +551,7 @@ class ToolBox: NSObject{
             dateFormatter.dateFormat = stringFormat
             dateFormatter.locale = enUSPOSIXLocale
             //
-            let date:Date = dateFormatter.date(from: updatedString)!
+            let date:Date? = dateFormatter.date(from: updatedString)
             //
             return date
             
@@ -624,7 +625,7 @@ class ToolBox: NSObject{
         if let d:Date = date {
             
             let strDate:String = self.dateHelper_StringFromDate(date: d, stringFormat: self.DATE_BAR_ddMMyyyy)
-            let newDate:Date! = self.dateHelper_DateFromString(dateString: strDate, stringFormat: self.DATE_BAR_ddMMyyyy)
+            let newDate:Date? = self.dateHelper_DateFromString(dateString: strDate, stringFormat: self.DATE_BAR_ddMMyyyy)
             //
             return newDate
             
@@ -2858,11 +2859,11 @@ class ToolBox: NSObject{
     /** Aplica filtro na imagem parâmetro. Certos filtros exigem parâmetros adicionais que devem ser passados pelo dicionário. Visitar o endereço para ver as opções: https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/#//apple_ref/doc/uid/TP30000136-SW29.*/
     class func graphicHelper_ApplyFilter(filterName:String?, image:UIImage?, parameters:[String : Any]?, scale:Float) -> UIImage?{
         
-        if (ToolBox.isNil(object: filterName as AnyObject?)){
+        if (ToolBox.isNil(filterName)){
             return nil
         }
         
-        if (ToolBox.isNil(object: image)){
+        if (ToolBox.isNil(image)){
             return nil
         }
         
@@ -2874,7 +2875,7 @@ class ToolBox: NSObject{
             
             f.setValue(CIImage(image: image!), forKey: kCIInputImageKey)
             //
-            if (!ToolBox.isNil(object: parameters as AnyObject?)){
+            if (!ToolBox.isNil(parameters)){
                 f.setValuesForKeys(parameters!)
             }
             //
@@ -2967,7 +2968,7 @@ class ToolBox: NSObject{
                 let object:AnyObject = replaced.object(forKey: key) as AnyObject
                 if(object is String)
                 {
-                    if(ToolBox.isNil(object: object))
+                    if(ToolBox.isNil(object))
                     {
                         replaced.setObject(newString!, forKey: key as! NSCopying)
                     }
