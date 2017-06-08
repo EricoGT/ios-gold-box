@@ -27,3 +27,78 @@ Swift/Project-Model/Project-Swift/Project-Swift.xcodeproj/xcuserdata/lordesire.x
 Swift/Project-Model/Project-Swift/Project-Swift.xcodeproj/xcuserdata/lordesire.xcuserdatad/xcschemes/xcschememanagement.plist
 Swift/Project-Model/Project-Swift/Project-Swift.xcworkspace/xcuserdata/lordesire.xcuserdatad/UserInterfaceState.xcuserstate
 Swift/Project-Model/Project-Swift/Project-Swift.xcworkspace/xcuserdata/lordesire.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/LICENSE
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/README.md
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/AnimatedImageView.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Box.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/CacheSerializer.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Filter.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Image.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImageCache.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImageDownloader.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImagePrefetcher.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImageProcessor.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImageTransition.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ImageView+Kingfisher.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Indicator.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Kingfisher.h
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Kingfisher.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/KingfisherManager.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/KingfisherOptionsInfo.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/RequestModifier.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/Resource.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/String+MD5.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/ThreadHelper.swift
+Swift/Project-Model/Project-Swift/Pods/Kingfisher/Sources/UIButton+Kingfisher.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/LICENSE
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/README.md
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorAnimationDelegate.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorPresenter.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorView.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorViewable.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationAudioEqualizer.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallBeat.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotate.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotatePulse.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridBeat.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridPulse.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulse.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseRise.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseSync.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotate.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotateChase.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScale.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRipple.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRippleMultiple.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallSpinFadeLoader.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallTrianglePath.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZag.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZagDeflect.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBlank.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCubeTransition.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScale.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScaleParty.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOut.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineSpinFadeLoader.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationOrbit.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationPacman.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSemiCircleSpin.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSquareSpin.swift
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationTriangleSkewSpin.swift
+Swift/Project-Model/Project-Swift/Pods/Pods.xcodeproj/xcuserdata/erico.xcuserdatad/xcschemes/Kingfisher.xcscheme
+Swift/Project-Model/Project-Swift/Pods/Pods.xcodeproj/xcuserdata/erico.xcuserdatad/xcschemes/NVActivityIndicatorView.xcscheme
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Info.plist
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Kingfisher-dummy.m
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Kingfisher-prefix.pch
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Kingfisher-umbrella.h
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Kingfisher.modulemap
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/Kingfisher/Kingfisher.xcconfig
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/Info.plist
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-dummy.m
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-umbrella.h
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap
+Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.xcconfig
