@@ -42,6 +42,26 @@
 		E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1053F1E92B718000A65D6 /* DataFileManager.swift */; };
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
 		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
+		E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */; };
+		E7C647001EE96E850008A8F3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */; };
+		E7C647041EE96EF00008A8F3 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647021EE96EF00008A8F3 /* ASTextField.swift */; };
+		E7C647051EE96EF00008A8F3 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647031EE96EF00008A8F3 /* DesignableUITextField.swift */; };
+		E7C647121EE96F3E0008A8F3 /* loadingview_watermark_deleting.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C647071EE96F3E0008A8F3 /* loadingview_watermark_deleting.png */; };
+		E7C647131EE96F3E0008A8F3 /* loadingview_watermark_downloading.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C647081EE96F3E0008A8F3 /* loadingview_watermark_downloading.png */; };
+		E7C647141EE96F3E0008A8F3 /* loadingview_watermark_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C647091EE96F3E0008A8F3 /* loadingview_watermark_loading.png */; };
+		E7C647151EE96F3E0008A8F3 /* loadingview_watermark_processing.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470A1EE96F3E0008A8F3 /* loadingview_watermark_processing.png */; };
+		E7C647161EE96F3E0008A8F3 /* loadingview_watermark_saving.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470B1EE96F3E0008A8F3 /* loadingview_watermark_saving.png */; };
+		E7C647171EE96F3E0008A8F3 /* loadingview_watermark_searching.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470C1EE96F3E0008A8F3 /* loadingview_watermark_searching.png */; };
+		E7C647181EE96F3E0008A8F3 /* loadingview_watermark_sending.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470D1EE96F3E0008A8F3 /* loadingview_watermark_sending.png */; };
+		E7C647191EE96F3E0008A8F3 /* loadingview_watermark_sharing.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470E1EE96F3E0008A8F3 /* loadingview_watermark_sharing.png */; };
+		E7C6471A1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C6470F1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png */; };
+		E7C6471B1EE96F3E0008A8F3 /* loadingview_watermark_updating.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C647101EE96F3E0008A8F3 /* loadingview_watermark_updating.png */; };
+		E7C6471C1EE96F3E0008A8F3 /* loadingview_watermark_waiting.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C647111EE96F3E0008A8F3 /* loadingview_watermark_waiting.png */; };
+		E7C6471E1EE96FAB0008A8F3 /* PMAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C6471D1EE96FAB0008A8F3 /* PMAlertView.swift */; };
+		E7C647211EE96FF50008A8F3 /* PMAlertViewLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7C647231EE96FF50008A8F3 /* PMAlertViewLocalizable.strings */; };
+		E7C647281EE972370008A8F3 /* PMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647261EE972370008A8F3 /* PMViewController.swift */; };
+		E7C647291EE972370008A8F3 /* Exemplo_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647271EE972370008A8F3 /* Exemplo_VC.swift */; };
+		E7C6472B1EE974A70008A8F3 /* PMAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C6472A1EE974A70008A8F3 /* PMAlertView.xib */; };
 		E7CA536F1E8E904500CBC955 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536D1E8E904500CBC955 /* Alamofire.framework */; };
 		E7CA53701E8E904500CBC955 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */; };
 		E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */; };
@@ -143,6 +163,27 @@
 		E7B1053F1E92B718000A65D6 /* DataFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileManager.swift; sourceTree = "<group>"; };
 		E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceControl.swift; sourceTree = "<group>"; };
 		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
+		E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
+		E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
+		E7C647021EE96EF00008A8F3 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
+		E7C647031EE96EF00008A8F3 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		E7C647071EE96F3E0008A8F3 /* loadingview_watermark_deleting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_deleting.png; sourceTree = "<group>"; };
+		E7C647081EE96F3E0008A8F3 /* loadingview_watermark_downloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_downloading.png; sourceTree = "<group>"; };
+		E7C647091EE96F3E0008A8F3 /* loadingview_watermark_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_loading.png; sourceTree = "<group>"; };
+		E7C6470A1EE96F3E0008A8F3 /* loadingview_watermark_processing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_processing.png; sourceTree = "<group>"; };
+		E7C6470B1EE96F3E0008A8F3 /* loadingview_watermark_saving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_saving.png; sourceTree = "<group>"; };
+		E7C6470C1EE96F3E0008A8F3 /* loadingview_watermark_searching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_searching.png; sourceTree = "<group>"; };
+		E7C6470D1EE96F3E0008A8F3 /* loadingview_watermark_sending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_sending.png; sourceTree = "<group>"; };
+		E7C6470E1EE96F3E0008A8F3 /* loadingview_watermark_sharing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_sharing.png; sourceTree = "<group>"; };
+		E7C6470F1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_synchronizing.png; sourceTree = "<group>"; };
+		E7C647101EE96F3E0008A8F3 /* loadingview_watermark_updating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_updating.png; sourceTree = "<group>"; };
+		E7C647111EE96F3E0008A8F3 /* loadingview_watermark_waiting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingview_watermark_waiting.png; sourceTree = "<group>"; };
+		E7C6471D1EE96FAB0008A8F3 /* PMAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertView.swift; sourceTree = "<group>"; };
+		E7C647221EE96FF50008A8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/PMAlertViewLocalizable.strings; sourceTree = "<group>"; };
+		E7C647241EE96FF70008A8F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PMAlertViewLocalizable.strings; sourceTree = "<group>"; };
+		E7C647261EE972370008A8F3 /* PMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMViewController.swift; sourceTree = "<group>"; };
+		E7C647271EE972370008A8F3 /* Exemplo_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exemplo_VC.swift; sourceTree = "<group>"; };
+		E7C6472A1EE974A70008A8F3 /* PMAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAlertView.xib; sourceTree = "<group>"; };
 		E7CA536D1E8E904500CBC955 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		E7CA536E1E8E904500CBC955 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = README_LoadingView.strings; sourceTree = "<group>"; };
@@ -341,6 +382,8 @@
 		E7A00FDE1E8E82D30050EDD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7C647011EE96ED20008A8F3 /* TextField */,
+				E7C646FC1EE96DF70008A8F3 /* CustomPickerView */,
 				E7B035DD1EC4D23F00C669C9 /* AlertView */,
 				E7B035DA1EC4D1BD00C669C9 /* LoadingView */,
 			);
@@ -350,6 +393,7 @@
 		E7A00FE31E8E83A30050EDD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E7C647251EE971C90008A8F3 /* ViewController */,
 				E7A00FF31E8E85080050EDD3 /* LayoutManager */,
 				E7A00FF21E8E84F40050EDD3 /* DataBaseManager */,
 				E7A00FF11E8E84E60050EDD3 /* LocationManager */,
@@ -450,6 +494,8 @@
 		E7B035D71EC4A67000C669C9 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				E7C6472A1EE974A70008A8F3 /* PMAlertView.xib */,
+				E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */,
 				E7B035D81EC4A6A300C669C9 /* LoadingView.xib */,
 			);
 			name = Xibs;
@@ -458,6 +504,7 @@
 		E7B035DA1EC4D1BD00C669C9 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
+				E7C647061EE96F220008A8F3 /* Resources */,
 				E7B035DB1EC4D1CD00C669C9 /* RPCircularProgress.swift */,
 				E7B035D51EC4995B00C669C9 /* LoadingView.swift */,
 				E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */,
@@ -469,9 +516,55 @@
 		E7B035DD1EC4D23F00C669C9 /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
+				E7C6471D1EE96FAB0008A8F3 /* PMAlertView.swift */,
 				E7ED1C9A1E950AEA00D26C7B /* SCLAlertViewPlus.swift */,
+				E7C647231EE96FF50008A8F3 /* PMAlertViewLocalizable.strings */,
 			);
 			name = AlertView;
+			sourceTree = "<group>";
+		};
+		E7C646FC1EE96DF70008A8F3 /* CustomPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */,
+			);
+			name = CustomPickerView;
+			sourceTree = "<group>";
+		};
+		E7C647011EE96ED20008A8F3 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				E7C647021EE96EF00008A8F3 /* ASTextField.swift */,
+				E7C647031EE96EF00008A8F3 /* DesignableUITextField.swift */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		E7C647061EE96F220008A8F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7C647071EE96F3E0008A8F3 /* loadingview_watermark_deleting.png */,
+				E7C647081EE96F3E0008A8F3 /* loadingview_watermark_downloading.png */,
+				E7C647091EE96F3E0008A8F3 /* loadingview_watermark_loading.png */,
+				E7C6470A1EE96F3E0008A8F3 /* loadingview_watermark_processing.png */,
+				E7C6470B1EE96F3E0008A8F3 /* loadingview_watermark_saving.png */,
+				E7C6470C1EE96F3E0008A8F3 /* loadingview_watermark_searching.png */,
+				E7C6470D1EE96F3E0008A8F3 /* loadingview_watermark_sending.png */,
+				E7C6470E1EE96F3E0008A8F3 /* loadingview_watermark_sharing.png */,
+				E7C6470F1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png */,
+				E7C647101EE96F3E0008A8F3 /* loadingview_watermark_updating.png */,
+				E7C647111EE96F3E0008A8F3 /* loadingview_watermark_waiting.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E7C647251EE971C90008A8F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E7C647261EE972370008A8F3 /* PMViewController.swift */,
+				E7C647271EE972370008A8F3 /* Exemplo_VC.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		E7E829E11EC63CA300D834DB /* Playground */ = {
@@ -705,9 +798,13 @@
 				E7ED1CA51E952F4D00D26C7B /* flame_a_0001.png in Resources */,
 				E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */,
 				E7FD7ACC1E8EDA5100772AF0 /* tada.m4a in Resources */,
+				E7C647141EE96F3E0008A8F3 /* loadingview_watermark_loading.png in Resources */,
 				E7FD7AA61E8EDA4000772AF0 /* MyriadPro-It.otf in Resources */,
+				E7C647171EE96F3E0008A8F3 /* loadingview_watermark_searching.png in Resources */,
 				E7FD7AC91E8EDA5100772AF0 /* paste_chrome.m4a in Resources */,
 				E7FD7ACD1E8EDA5100772AF0 /* tap.m4a in Resources */,
+				E7C647131EE96F3E0008A8F3 /* loadingview_watermark_downloading.png in Resources */,
+				E7C647151EE96F3E0008A8F3 /* loadingview_watermark_processing.png in Resources */,
 				E7A96C731ECDD103003F2E79 /* SFDisplay-Semibold.otf in Resources */,
 				E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */,
 				E7FD7ACE1E8EDA5100772AF0 /* tic.m4a in Resources */,
@@ -715,13 +812,17 @@
 				E7A00FB41E8E81FF0050EDD3 /* LaunchScreen.storyboard in Resources */,
 				E7ED1CA81E952F4D00D26C7B /* flame_a_0004.png in Resources */,
 				E7FD7AC41E8EDA5100772AF0 /* error.m4a in Resources */,
+				E7C647181EE96F3E0008A8F3 /* loadingview_watermark_sending.png in Resources */,
+				E7C6471C1EE96F3E0008A8F3 /* loadingview_watermark_waiting.png in Resources */,
 				E7ED1CAA1E952F4D00D26C7B /* flame_a_0006.png in Resources */,
 				E7FD7ABF1E8EDA5100772AF0 /* click.m4a in Resources */,
+				E7C6471B1EE96F3E0008A8F3 /* loadingview_watermark_updating.png in Resources */,
 				E7FD7AA81E8EDA4000772AF0 /* MyriadPro-Semibold.otf in Resources */,
 				E7A96C741ECDD103003F2E79 /* SFDisplay-Thin.otf in Resources */,
 				E7FD7AC61E8EDA5100772AF0 /* ok.m4a in Resources */,
 				E7ED1CA61E952F4D00D26C7B /* flame_a_0002.png in Resources */,
 				E7FD7AC71E8EDA5100772AF0 /* page_next.m4a in Resources */,
+				E7C647001EE96E850008A8F3 /* CustomPickerView.xib in Resources */,
 				E7FD7ACB1E8EDA5100772AF0 /* success.m4a in Resources */,
 				E7FD7AC11E8EDA5100772AF0 /* cutting_paper.m4a in Resources */,
 				E7FD7AC51E8EDA5100772AF0 /* great.m4a in Resources */,
@@ -731,18 +832,24 @@
 				E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */,
 				E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */,
 				E7FD7AC81E8EDA5100772AF0 /* page_previus.m4a in Resources */,
+				E7C6472B1EE974A70008A8F3 /* PMAlertView.xib in Resources */,
 				E7ED1CA71E952F4D00D26C7B /* flame_a_0003.png in Resources */,
 				E7FD7AA51E8EDA4000772AF0 /* MyriadPro-Bold.otf in Resources */,
 				E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */,
+				E7C6471A1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png in Resources */,
+				E7C647211EE96FF50008A8F3 /* PMAlertViewLocalizable.strings in Resources */,
 				E7A96C6F1ECDD103003F2E79 /* SFDisplay-Heavy.otf in Resources */,
 				E7A96C701ECDD103003F2E79 /* SFDisplay-Light.otf in Resources */,
 				E7FD7A9D1E8ED8C500772AF0 /* Images.xcassets in Resources */,
+				E7C647121EE96F3E0008A8F3 /* loadingview_watermark_deleting.png in Resources */,
 				E7FD7AA71E8EDA4000772AF0 /* MyriadPro-Regular.otf in Resources */,
 				E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */,
 				E7FD7AC21E8EDA5100772AF0 /* dam.m4a in Resources */,
+				E7C647191EE96F3E0008A8F3 /* loadingview_watermark_sharing.png in Resources */,
 				E7ED1CA91E952F4D00D26C7B /* flame_a_0005.png in Resources */,
 				E7FD7ABD1E8EDA5100772AF0 /* chrome_slipping.m4a in Resources */,
 				E7FD7AD21E8EDB0700772AF0 /* Localizable.strings in Resources */,
+				E7C647161EE96F3E0008A8F3 /* loadingview_watermark_saving.png in Resources */,
 				E7FD7AC31E8EDA5100772AF0 /* dum.m4a in Resources */,
 				E7FD7ABE1E8EDA5100772AF0 /* clap.m4a in Resources */,
 				E7B035D91EC4A6A300C669C9 /* LoadingView.xib in Resources */,
@@ -834,9 +941,15 @@
 				E7B035D61EC4995B00C669C9 /* LoadingView.swift in Sources */,
 				E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */,
 				E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */,
+				E7C647281EE972370008A8F3 /* PMViewController.swift in Sources */,
+				E7C647291EE972370008A8F3 /* Exemplo_VC.swift in Sources */,
 				E7ED1C9B1E950AEA00D26C7B /* SCLAlertViewPlus.swift in Sources */,
 				E7A00FE81E8E84830050EDD3 /* ToolBox.swift in Sources */,
+				E7C647041EE96EF00008A8F3 /* ASTextField.swift in Sources */,
+				E7C647051EE96EF00008A8F3 /* DesignableUITextField.swift in Sources */,
+				E7C6471E1EE96FAB0008A8F3 /* PMAlertView.swift in Sources */,
 				E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */,
+				E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */,
 				E7AEC7611E94027300581632 /* LayoutStyleManager.swift in Sources */,
 				E7B035DC1EC4D1CD00C669C9 /* RPCircularProgress.swift in Sources */,
 			);
@@ -897,6 +1010,15 @@
 				E7B1053E1E92A7CB000A65D6 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E7C647231EE96FF50008A8F3 /* PMAlertViewLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7C647221EE96FF50008A8F3 /* Base */,
+				E7C647241EE96FF70008A8F3 /* en */,
+			);
+			name = PMAlertViewLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		E7FD7AD41E8EDB0700772AF0 /* Localizable.strings */ = {

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="dGK-4J-NHn" customClass="LoadingView" customModule="Project_Swift">
+        <view contentMode="scaleToFill" id="dGK-4J-NHn" customClass="LoadingView" customModule="Project_Swift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -71,9 +71,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-ZQ-Hze">
-                    <rect key="frame" x="169" y="295" width="37" height="37"/>
-                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-4s-aml" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                    <rect key="frame" x="167" y="289.5" width="40" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="OJu-mZ-Qq3"/>
+                        <constraint firstAttribute="height" constant="40" id="qWq-nw-6M9"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFW-Nv-Jz8">
                     <rect key="frame" x="77" y="453.5" width="220" height="40"/>
                     <color key="backgroundColor" red="1" green="0.80672470979999999" blue="0.11061285780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,6 +95,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="OzC-4s-aml" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="0Hw-dS-trL"/>
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="height" secondItem="ayU-9p-K5U" secondAttribute="height" id="1yC-HO-Mpe"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="top" secondItem="dGK-4J-NHn" secondAttribute="top" id="4Kn-NS-aXd"/>
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="4pu-qw-DMd"/>
@@ -97,8 +103,6 @@
                 <constraint firstAttribute="trailing" secondItem="E1x-m2-C1b" secondAttribute="trailing" id="7vS-co-Hax"/>
                 <constraint firstAttribute="bottom" secondItem="E1x-m2-C1b" secondAttribute="bottom" id="8g5-2x-jHt"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="8wh-e8-RR9"/>
-                <constraint firstItem="pnO-ZQ-Hze" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" constant="-20" id="9ar-Zw-AXI"/>
-                <constraint firstItem="pnO-ZQ-Hze" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="BR8-bC-hnb"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" constant="20" id="Ca7-0o-NL4"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="Dui-IF-ZCB"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="EkZ-AJ-tqk"/>
@@ -108,6 +112,7 @@
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="LSD-tI-hsH"/>
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="Mu7-0D-TaN"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="top" secondItem="MLy-sQ-tAx" secondAttribute="bottom" constant="20" id="Poo-j1-xJW"/>
+                <constraint firstItem="OzC-4s-aml" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" constant="-24" id="W2Z-ze-GKY"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="top" secondItem="OxC-At-a67" secondAttribute="bottom" constant="15" id="X7u-8F-WCP"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="height" secondItem="OxC-At-a67" secondAttribute="height" id="Ypr-BL-9gR"/>
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="akP-fL-XrG"/>
@@ -121,12 +126,12 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
-                <outlet property="activityIndicator" destination="pnO-ZQ-Hze" id="83z-ee-agQ"/>
                 <outlet property="btnCancel" destination="zFW-Nv-Jz8" id="e46-3e-WDd"/>
                 <outlet property="imvBackground" destination="YMz-nP-wCb" id="NL5-uQ-cNH"/>
                 <outlet property="imvBlurEffectBackground" destination="E1x-m2-C1b" id="nvs-w3-wbC"/>
                 <outlet property="imvCenter" destination="ayU-9p-K5U" id="o9i-f5-nCb"/>
                 <outlet property="imvWaterMark" destination="7Vm-p2-RRf" id="wh3-QQ-YJq"/>
+                <outlet property="indicatorView" destination="OzC-4s-aml" id="NIz-iA-wYL"/>
                 <outlet property="lblAccessory" destination="oMk-yJ-JUm" id="66n-VI-hvl"/>
                 <outlet property="lblProgress" destination="MLy-sQ-tAx" id="qg2-Vc-Xz1"/>
                 <outlet property="lblTitle" destination="OxC-At-a67" id="asp-vR-NMT"/>

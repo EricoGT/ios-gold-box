@@ -16,7 +16,7 @@ class App{
     }
     
     //Localizable
-    class final func STR(_ string:String) -> String?{
+    class final func STR(_ string:String) -> String{
         return  NSLocalizedString(string, comment: "")
     }
     

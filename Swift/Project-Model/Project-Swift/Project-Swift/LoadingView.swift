@@ -10,6 +10,7 @@
 
 //MARK: - • FRAMEWORK HEADERS
 import UIKit
+import NVActivityIndicatorView
 
 //MARK: - • OTHERS IMPORTS
 
@@ -80,15 +81,17 @@ final class LoadingView: UIView {
     private var isCanceled:Bool = false;
     private var totalSecondsToHide:Int = 0;
     //
-    @IBOutlet private var activityIndicator:UIActivityIndicatorView?
-    @IBOutlet private var imvBackground:UIImageView?
-    @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView?
-    @IBOutlet private var imvCenter:UIImageView?
-    @IBOutlet private var imvWaterMark:UIImageView?
-    @IBOutlet private var lblTitle:UILabel?
-    @IBOutlet private var lblAccessory:UILabel?
-    @IBOutlet private var lblProgress:UILabel?
-    @IBOutlet private var btnCancel:UIButton?
+    @IBOutlet private var indicatorView:NVActivityIndicatorView!
+    @IBOutlet private var imvBackground:UIImageView!
+    @IBOutlet private var imvBlurEffectBackground:UIVisualEffectView!
+    @IBOutlet private var imvCenter:UIImageView!
+    @IBOutlet private var imvWaterMark:UIImageView!
+    @IBOutlet private var lblTitle:UILabel!
+    @IBOutlet private var lblAccessory:UILabel!
+    @IBOutlet private var lblProgress:UILabel!
+    @IBOutlet private var btnCancel:UIButton!
+    //
+    
     
     //MARK: - • INITIALISERS
     
@@ -105,6 +108,7 @@ final class LoadingView: UIView {
     class func new(owner:Any) -> LoadingView{
         
         let lv:LoadingView = UINib(nibName: String(describing: LoadingView.self), bundle: nil).instantiate(withOwner: owner, options: nil)[0] as! LoadingView
+        //lv.translatesAutoresizingMaskIntoConstraints = true
         //
         lv.layoutIfNeeded()
         lv.setupLayout()
@@ -179,13 +183,13 @@ final class LoadingView: UIView {
                 }
                 //
                 if (secondsToHide < 1){
-                    self.activityIndicator?.alpha = 1.0;
-                    self.activityIndicator?.startAnimating()
+                    self.indicatorView.alpha = 1.0
+                    self.indicatorView.startAnimating()
                 }else{
                     self.totalSecondsToHide = secondsToHide
                     //
                     self.lblProgress?.alpha = 1.0
-                    self.activityIndicator?.alpha = 0.0
+                    //self.indicatorView.alpha = 0.0
                     //
                     //Criando o activity circular
                     let circularProgress:RPCircularProgress? = RPCircularProgress()
@@ -257,7 +261,7 @@ final class LoadingView: UIView {
                     self.lblTitle?.text = ""
                     self.lblAccessory?.text = ""
                     self.totalSecondsToHide = 0
-                    self.activityIndicator?.stopAnimating()
+                    self.indicatorView.stopAnimating()
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.controlDelegate?.loadingViewDidHide(lV: self)
                     //
@@ -279,7 +283,7 @@ final class LoadingView: UIView {
                             self.lblAccessory?.text = ""
                             self.totalSecondsToHide = 0
                             //
-                            self.activityIndicator?.stopAnimating()
+                            self.indicatorView.stopAnimating()
                             //
                             UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         }
@@ -354,8 +358,10 @@ final class LoadingView: UIView {
         self.btnCancel?.titleLabel?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
         ToolBox.graphicHelper_ApplyShadow(view: self.btnCancel!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
         //
-        self.activityIndicator?.color = App.Style.colorView_SuperDark
         self.tag = 666
+        //
+        self.indicatorView.type = .ballSpinFadeLoader
+        self.indicatorView.color = App.Style.colorView_RedDefault
         //
         App.Delegate.window?.addSubview(self)
         self.alpha = 0.0

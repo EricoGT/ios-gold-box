@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 enum AppStyle: Int {
     case Default    = 0
@@ -15,12 +16,12 @@ enum AppStyle: Int {
     case Special    = 3
 }
 
-class LayoutStyleManager:NSObject{
+class LayoutStyleManager:AnyObject{
     
     //Properties:
     var style:AppStyle
     
-    //EXEMPLOS: modifique conforme necessidade:
+    //Componentes gerais (bordas, fundos, etc)
     var colorView_SuperLight:UIColor
     var colorView_Light:UIColor
     var colorView_Normal:UIColor
@@ -44,9 +45,13 @@ class LayoutStyleManager:NSObject{
     //
     var colorText_GreenDefault:UIColor
     var colorText_GreenDark:UIColor
+    //
+    var colorText_BlueDefault:UIColor
+    var colorText_BlueDark:UIColor
+    
     
     //Initializers:
-    override init(){
+    init(){
         self.style = .Default
         //
         colorView_SuperLight = UIColor.white
@@ -72,6 +77,9 @@ class LayoutStyleManager:NSObject{
         //
         colorText_GreenDefault = UIColor.init(red: 117.0/255.0, green: 180.0/255.0, blue: 49.0/255.0, alpha: 1.0)
         colorText_GreenDark = UIColor.init(red: 79.0/255.0, green: 136.0/255.0, blue: 17.0/255.0, alpha: 1.0)
+        //
+        colorText_BlueDefault = UIColor.init(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        colorText_BlueDark = UIColor.init(red: 7.0/255.0, green: 56.0/255.0, blue: 109.0/255.0, alpha: 1.0)
     }
     
     func setStyle(_ style:AppStyle){
@@ -104,6 +112,9 @@ class LayoutStyleManager:NSObject{
             //
             colorText_GreenDefault = UIColor.init(red: 117.0/255.0, green: 180.0/255.0, blue: 49.0/255.0, alpha: 1.0)
             colorText_GreenDark = UIColor.init(red: 79.0/255.0, green: 136.0/255.0, blue: 17.0/255.0, alpha: 1.0)
+            //
+            colorText_BlueDefault = UIColor.init(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            colorText_BlueDark = UIColor.init(red: 7.0/255.0, green: 56.0/255.0, blue: 109.0/255.0, alpha: 1.0)
             
             //        case .Light:
             //            break
@@ -115,7 +126,160 @@ class LayoutStyleManager:NSObject{
             //            break
             
         }
-        
     }
     
+    func updateLayout(textField: inout ASTextField!){
+        
+        textField.canShowBorder = true
+        textField.asLayer.borderColor = colorView_Normal.cgColor
+        textField.asLayer.borderWidth = 1.0
+        textField.asLayer.cornerRadius = 0.0
+        //Padding
+        textField.paddingYFloatLabel = 8.0
+        textField.extraPaddingForBottomConstrait = 2.0
+        //Colors
+        textField.textColor = colorText_GrayDark
+        textField.errorColorView = colorText_RedDefault
+        textField.normalColorView = colorView_Normal
+        //Placeholder
+        textField.floatPlaceholderFont = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_MINI)!
+        textField.placeholderColor = UIColor.gray
+        textField.floatPlaceholderColor = UIColor.gray
+        //Font
+        textField.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
+        //Ajustando o tamanho dos textos:
+        textField.minimumFontSize = App.Constants.FONT_SIZE_TEXT_FIELDS / 2.0
+        textField.adjustsFontSizeToFitWidth = true
+        //Ajustando o tamanho para o placeholder:
+        for  subView in textField.subviews {
+            if let label = subView as? UILabel {
+                
+                label.adjustsFontSizeToFitWidth = true
+                if (label.tag == 101) {
+                    //floating placeholder
+                    label.minimumScaleFactor = 0.5
+                }else{
+                    //normal placeholder
+                    label.minimumScaleFactor = 0.5
+                }
+            }
+        }
+    }
+    
+    func createActivityIndicatorImageView(color:UIColor, position:ActivityIndicatorImageView.IndicatorPosition, parentImageView:UIImageView) -> ActivityIndicatorImageView{
+        
+        let aiiv:ActivityIndicatorImageView = ActivityIndicatorImageView.init(activityIndicatorStyle: .whiteLarge)
+        aiiv.color = color
+        aiiv.parentIV = parentImageView
+        aiiv.positionInImageView = position
+        //
+        return aiiv
+    }
+    
+    func createAccessoryView(targetView:UIView, selector:Selector) -> UIView{
+        
+        let view:UIView = UIView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 44.0))
+        view.backgroundColor = UIColor.init(red: 209.0/255.0, green: 213.0/255.0, blue: 219.0/255.0, alpha: 1.0)
+        //
+        let btnApply:UIButton = UIButton.init(frame: CGRect.init(x: view.frame.size.width/2, y: 0.0, width: view.frame.size.width/2, height: 44.0))
+        btnApply.contentHorizontalAlignment = .right
+        btnApply.addTarget(targetView, action: selector, for: .touchUpInside)
+        btnApply.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 14)
+        btnApply.setTitleColor(self.colorText_BlueDefault, for: .normal)
+        btnApply.titleLabel?.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
+        btnApply.setTitle(App.STR("BUTTON_TITLE_ACCESSORY_VIEW_DONE"), for: .normal)
+        //
+        view.addSubview(btnApply)
+        //
+        return view
+    }
+    
+}
+
+class ActivityIndicatorImageView:UIActivityIndicatorView, Indicator{
+    
+    enum IndicatorPosition: Int {
+        case TopLeft            = 0
+        case TopCenter          = 1
+        case TopRight           = 2
+        //
+        case MidleLeft          = 3
+        case MidleCenter        = 4
+        case MidleRight         = 5
+        //
+        case BottomLeft         = 6
+        case BottomCenter       = 7
+        case BottomRight        = 8
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+        self.commonInit()
+    }
+    
+    override init(activityIndicatorStyle style: UIActivityIndicatorViewStyle) {
+        super.init(activityIndicatorStyle: style)
+        self.commonInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    func startAnimatingView(){
+        self.startAnimating()
+    }
+    
+    func stopAnimatingView(){
+        self.stopAnimating()
+    }
+    
+    var viewCenter: CGPoint {
+        get{
+            return self.center
+        }
+        set{
+            if (parentIV != nil){
+                switch positionInImageView {
+                case .TopLeft:
+                    self.center = CGPoint.init(x: 37.0, y: 37.0)
+                case .TopCenter:
+                    self.center = CGPoint.init(x: ((parentIV?.frame.size.width)! / 2.0), y: 37.0)
+                case .TopRight:
+                    self.center = CGPoint.init(x: (parentIV?.frame.size.width)! - 37.0, y: 37.0)
+                //
+                case .MidleLeft:
+                    self.center = CGPoint.init(x: 37.0, y: ((parentIV?.frame.size.height)! / 2.0))
+                case .MidleCenter:
+                    self.center = CGPoint.init(x: ((parentIV?.frame.size.width)! / 2.0), y: ((parentIV?.frame.size.height)! / 2.0))
+                case .MidleRight:
+                    self.center = CGPoint.init(x: (parentIV?.frame.size.width)! - 37.0, y: ((parentIV?.frame.size.height)! / 2.0))
+                //
+                case .BottomLeft:
+                    self.center = CGPoint.init(x: 37.0, y: (parentIV?.frame.size.height)! - 37.0 - 10.0)
+                case .BottomCenter:
+                    self.center = CGPoint.init(x: ((parentIV?.frame.size.width)! / 2.0), y: (parentIV?.frame.size.height)! - 37.0)
+                case .BottomRight:
+                    self.center = CGPoint.init(x: (parentIV?.frame.size.width)! - 37.0, y: (parentIV?.frame.size.height)! - 37.0)
+                }
+            }else{
+                self.center = newValue
+            }
+        }}
+    
+    var view: IndicatorView {
+        get{
+            return self
+        }
+    }
+    
+    //internal
+    var positionInImageView:IndicatorPosition = .MidleCenter
+    var parentIV:UIImageView? = nil
+    
+    private func commonInit(){
+        self.color = UIColor.white
+        self.hidesWhenStopped = true
+    }
 }

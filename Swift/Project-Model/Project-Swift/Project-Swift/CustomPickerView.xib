@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Toq-Sb-p8V" customClass="CustomPickerView" customModule="Etna">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-pickerview.png" translatesAutoresizingMaskIntoConstraints="NO" id="FhE-2f-LZO">
+                    <rect key="frame" x="0.0" y="40" width="390" height="190"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="190" id="epz-5C-hbS"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7N-U0-4h5">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3B-xG-d6R">
+                            <rect key="frame" x="0.0" y="0.0" width="195" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.34119118469999998" blue="0.9108649875" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="hideAction:" destination="Toq-Sb-p8V" eventType="touchUpInside" id="txR-jl-1nn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB5-oG-eDb">
+                            <rect key="frame" x="195" y="0.0" width="195" height="40"/>
+                            <color key="backgroundColor" red="0.36747239819999999" green="0.73424543850000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="hideAction:" destination="Toq-Sb-p8V" eventType="touchUpInside" id="0mR-1S-kQK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.68729319440000003" blue="0.16304851849999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="r3B-xG-d6R" firstAttribute="centerY" secondItem="m7N-U0-4h5" secondAttribute="centerY" id="1xA-uH-MT7"/>
+                        <constraint firstItem="uB5-oG-eDb" firstAttribute="width" secondItem="m7N-U0-4h5" secondAttribute="width" multiplier="1/2" id="MeO-Ro-R1k"/>
+                        <constraint firstItem="r3B-xG-d6R" firstAttribute="leading" secondItem="m7N-U0-4h5" secondAttribute="leading" id="OXH-Qb-mAR"/>
+                        <constraint firstAttribute="trailing" secondItem="uB5-oG-eDb" secondAttribute="trailing" id="Wni-d9-GLJ"/>
+                        <constraint firstItem="uB5-oG-eDb" firstAttribute="centerY" secondItem="m7N-U0-4h5" secondAttribute="centerY" id="ekI-CC-Srf"/>
+                        <constraint firstAttribute="height" constant="40" id="jZF-VY-qhf"/>
+                        <constraint firstItem="uB5-oG-eDb" firstAttribute="height" secondItem="m7N-U0-4h5" secondAttribute="height" id="rEM-77-Qc8"/>
+                        <constraint firstItem="r3B-xG-d6R" firstAttribute="width" secondItem="m7N-U0-4h5" secondAttribute="width" multiplier="1/2" id="xN1-Hc-hn7"/>
+                        <constraint firstItem="r3B-xG-d6R" firstAttribute="height" secondItem="m7N-U0-4h5" secondAttribute="height" id="zDq-A8-Ceo"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-Sn-BhY">
+                    <rect key="frame" x="0.0" y="40" width="390" height="190"/>
+                    <color key="backgroundColor" red="0.26937283839999998" green="0.83486199380000004" blue="0.066743146370000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="190" id="khj-Rb-CV5"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="Toq-Sb-p8V" id="FqJ-Qu-h6a"/>
+                        <outlet property="delegate" destination="Toq-Sb-p8V" id="lu6-cf-DMq"/>
+                    </connections>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3YU-Sn-BhY" firstAttribute="leading" secondItem="Toq-Sb-p8V" secondAttribute="leading" id="42K-b3-le0"/>
+                <constraint firstItem="FhE-2f-LZO" firstAttribute="width" secondItem="Toq-Sb-p8V" secondAttribute="width" id="CJ1-LF-0PK"/>
+                <constraint firstAttribute="trailing" secondItem="3YU-Sn-BhY" secondAttribute="trailing" id="KoV-EH-LH4"/>
+                <constraint firstAttribute="trailing" secondItem="m7N-U0-4h5" secondAttribute="trailing" id="bhu-Yp-FuG"/>
+                <constraint firstItem="3YU-Sn-BhY" firstAttribute="top" secondItem="m7N-U0-4h5" secondAttribute="bottom" id="dFZ-dg-xIa"/>
+                <constraint firstItem="m7N-U0-4h5" firstAttribute="leading" secondItem="Toq-Sb-p8V" secondAttribute="leading" id="eMv-35-Qfg"/>
+                <constraint firstAttribute="bottom" secondItem="3YU-Sn-BhY" secondAttribute="bottom" id="hqf-cS-y6e"/>
+                <constraint firstAttribute="bottom" secondItem="FhE-2f-LZO" secondAttribute="bottom" id="q3c-PG-YYh"/>
+                <constraint firstItem="FhE-2f-LZO" firstAttribute="centerX" secondItem="Toq-Sb-p8V" secondAttribute="centerX" id="yzO-1r-tml"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accessoryView" destination="m7N-U0-4h5" id="iWV-rv-tJM"/>
+                <outlet property="btnClear" destination="r3B-xG-d6R" id="sxh-BS-QGj"/>
+                <outlet property="btnConfirm" destination="uB5-oG-eDb" id="kLI-IR-Jt6"/>
+                <outlet property="pkrView" destination="3YU-Sn-BhY" id="8Fh-DF-JDE"/>
+            </connections>
+            <point key="canvasLocation" x="-244" y="-82"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background-pickerview.png" width="640" height="380"/>
+    </resources>
+</document>
