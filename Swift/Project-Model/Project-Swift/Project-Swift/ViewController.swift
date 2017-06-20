@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDelegate {
 
@@ -85,6 +86,62 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         //
         App.Delegate.activityView?.startActivity(.saving, true, self, nil)
         
+    }
+    
+    @IBAction func actionSendNotification() {
+        
+        if #available(iOS 10.0, *) {
+            
+            //App.Notifications.deleteAllLocalNotifications()
+            
+            let requestIdentifier = "demoNotification"
+            
+            let content = UNMutableNotificationContent()
+            content.title = "iOS10 Notification!"
+            content.subtitle = "– Thomas Edison"
+            content.body = "Nossa maior fraqueza está em desistir. O caminho mais certo de vencer é tentar mais uma vez."
+            content.badge = 1
+            content.sound = UNNotificationSound.init(named: "alert.m4a")
+            
+            
+            var contentInfo:Dictionary = [String : Any]()
+            contentInfo["identifier"] = "remedio"
+            //
+            content.userInfo = contentInfo
+            
+            // If you want to attach any image to show in local notification
+            let url = Bundle.main.url(forResource: "guardachuva", withExtension: ".jpeg")
+            do {
+                let attachment = try? UNNotificationAttachment(identifier: requestIdentifier, url: url!, options: nil)
+                content.attachments = [attachment!]
+            }
+            
+            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            
+            var dComponents:DateComponents = DateComponents.init()
+            dComponents.timeZone = TimeZone.current
+            dComponents.hour = 20
+            let triggerCalendar = UNCalendarNotificationTrigger.init(dateMatching: dComponents, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: triggerCalendar)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                
+                if let err:Error = error {
+                    print(err)
+                }
+                
+            })
+            
+        } else {
+            
+            let alert:SCLAlertViewPlus = SCLAlertViewPlus.init()
+            alert.addButton(title: "OK", type: SCLAlertButtonType.Error) {
+                print("OK")
+            }
+            
+            alert.showError("Error", subTitle: "Funcionalidade disponível apenas para iOS 10.0 e superior.")
+        }
     }
     
     func didFinishTaskWithError(error: NSError) {

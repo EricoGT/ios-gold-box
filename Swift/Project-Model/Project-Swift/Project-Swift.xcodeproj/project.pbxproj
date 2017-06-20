@@ -42,6 +42,7 @@
 		E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1053F1E92B718000A65D6 /* DataFileManager.swift */; };
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
 		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
+		E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD21561EF9639D005F55ED /* NotificationManager.swift */; };
 		E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */; };
 		E7C647001EE96E850008A8F3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */; };
 		E7C647041EE96EF00008A8F3 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647021EE96EF00008A8F3 /* ASTextField.swift */; };
@@ -163,6 +164,7 @@
 		E7B1053F1E92B718000A65D6 /* DataFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileManager.swift; sourceTree = "<group>"; };
 		E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceControl.swift; sourceTree = "<group>"; };
 		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
+		E7BD21561EF9639D005F55ED /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		E7C647021EE96EF00008A8F3 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 		E7A00FE31E8E83A30050EDD3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E7BD21551EF96371005F55ED /* NotificationManager */,
 				E7C647251EE971C90008A8F3 /* ViewController */,
 				E7A00FF31E8E85080050EDD3 /* LayoutManager */,
 				E7A00FF21E8E84F40050EDD3 /* DataBaseManager */,
@@ -521,6 +524,14 @@
 				E7C647231EE96FF50008A8F3 /* PMAlertViewLocalizable.strings */,
 			);
 			name = AlertView;
+			sourceTree = "<group>";
+		};
+		E7BD21551EF96371005F55ED /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				E7BD21561EF9639D005F55ED /* NotificationManager.swift */,
+			);
+			name = NotificationManager;
 			sourceTree = "<group>";
 		};
 		E7C646FC1EE96DF70008A8F3 /* CustomPickerView */ = {
@@ -935,6 +946,7 @@
 				E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */,
 				E7A00FDA1E8E828A0050EDD3 /* App.swift in Sources */,
 				E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */,
+				E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */,
 				E7A00FED1E8E84A30050EDD3 /* Reachability.swift in Sources */,
 				E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */,
 				E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */,

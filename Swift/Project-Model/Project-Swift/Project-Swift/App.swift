@@ -35,6 +35,11 @@ class App{
         return ConstantsManager.self
     }
     
+    //Notifications
+    class final var Notifications:NotificationManager.Type{
+        return NotificationManager.self
+    }
+    
     //Sounds
     class final var Sounds:SoundManager{
         return SoundManager.init()

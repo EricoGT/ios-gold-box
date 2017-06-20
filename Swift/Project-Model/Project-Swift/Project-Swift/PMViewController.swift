@@ -93,6 +93,10 @@ public class PMViewController: UIViewController {
     
     //MARK: - • INTERFACE/PROTOCOL METHODS
     
+    
+    
+    //MARK: -
+    
     public func setupLayout(screenName:String){
         
         //Colors
@@ -169,7 +173,6 @@ public class PMViewController: UIViewController {
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
-    
     func keyboardWillShow(notification:Notification) {
         guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
         scrollViewBackground.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight.height, 0)
@@ -186,7 +189,6 @@ public class PMViewController: UIViewController {
         //
         self.keyboardWillHideAlert()
     }
-    
 }
 
 //MARK: - PROTOCOLS
