@@ -32,6 +32,8 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationItem.rightBarButtonItem = App.Delegate.createSideMenuItem()
+        
         self.view.backgroundColor = App.Style.colorView_Light
         
         let arrayImages:Array<UIImage> = [UIImage(named:"flame_a_0001.png")!,

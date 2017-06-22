@@ -10,11 +10,13 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, SideMenuDelegate {
 
     var window: UIWindow?
     //
     var activityView:LoadingView? = nil
+    var viewSideMenu:SideMenuVC? = nil
+    var soundPlayer:SoundManager = SoundManager.init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         NSLog("%@", ToolBox.applicationHelper_InstalationDataForSimulator())
         //
         activityView = LoadingView.new(owner: self)
+        
+        //Side Menu
+        let storyboardSM:UIStoryboard = UIStoryboard.init(name: "SideMenu", bundle: nil)
+        viewSideMenu = storyboardSM.instantiateViewController(withIdentifier: "SideMenuVC") as? SideMenuVC
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
@@ -80,6 +86,97 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print(response.notification)
     }
     
+    //MARK: - Side Menu
+    
+    @objc private func showSideMenu() {
+        
+        if (!ToolBox.isNil(viewSideMenu)){
+            self.window?.addSubview(viewSideMenu!.view)
+            viewSideMenu!.show(type: .normal, delegate: self, actualGroup: "OPT_1")
+        }        
+    }
+    
+    func sideMenuOptionSelected(destinationType:SideMenuDestinationType, menuType:SideMenuType){
+        
+        print(destinationType)
+        print(menuType)
+        
+        viewSideMenu?.hide(sender: nil)
+    }
+    
+    func sideMenuLoadData() -> Array<SideMenuOption>{
+        
+        var list:Array<SideMenuOption> = Array.init()
+        
+        let option1:SideMenuOption = SideMenuOption.init()
+        option1.level = 0
+        option1.groupIdentifier = "OPT_1"
+        option1.optionTitle = "Opção 1"
+        option1.state = .expanded
+        option1.blocked = false
+        option1.subItems = Array.init()
+        option1.destinationType = .home
+        option1.badgeCount = 0
+        //
+        let option1B:SideMenuOption = SideMenuOption.init()
+        option1B.level = 1
+        option1B.groupIdentifier = "OPT_1_SUB"
+        option1B.optionTitle = "Opção 1 - Sub"
+        option1B.state = .simple
+        option1B.blocked = false
+        option1B.subItems = nil
+        option1B.destinationType = .home
+        option1B.badgeCount = 0
+        option1.subItems?.append(option1B)
+        
+        //
+        let option2:SideMenuOption = SideMenuOption.init()
+        option2.level = 0
+        option2.groupIdentifier = "OPT_2"
+        option2.optionTitle = "Opção 2"
+        option2.state = .simple
+        option2.blocked = false
+        option2.subItems = nil
+        option2.destinationType = .home
+        option2.badgeCount = 0
+        //
+        let option3:SideMenuOption = SideMenuOption.init()
+        option3.level = 0
+        option3.groupIdentifier = "OPT_3"
+        option3.optionTitle = "Opção 3"
+        option3.state = .simple
+        option3.blocked = false
+        option3.subItems = nil
+        option3.destinationType = .home
+        option3.badgeCount = 0
+        //
+        list.append(option1)
+        list.append(option2)
+        list.append(option3)
+            
+        return list
+    }
+    
+    func sideMenuTextForTitle() -> String?{
+        return "Erico GT"
+    }
+    
+    func sideMenuTextForSubTitle() -> String?{
+        return "erico.gimenes@gmail.com"
+    }
+    
+    func sideMenuTextForDescription() -> String?{
+        return "Atlantic Solutions"
+    }
+    
+    func sideMenuImageForAvatar() -> UIImage?{
+        return UIImage.init(named: "guardachuva.jpeg")
+    }
+    
+    func sideMenuImageForHeaderBackground() -> UIImage?{
+        return UIImage.init(named: "animal.jpeg")
+    }
+    
     /*
     public func layoutTabBarController() {
         
@@ -116,5 +213,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     */
 
+    //MARK: - FAKE-FACTORY
+    
+    public func createSideMenuItem() -> UIBarButtonItem{
+        
+        let button:UIButton = UIButton.init(type: .system)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.setImage(UIImage.init(named: "icon-menu-hamburguer")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = UIColor.gray
+        button.frame = CGRect.init(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
+        button.clipsToBounds = true
+        button.isExclusiveTouch = true
+        button.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
+        //
+        return UIBarButtonItem.init(customView: button)
+    }
+    
 }
 

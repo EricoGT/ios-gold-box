@@ -35,6 +35,15 @@
 		<string>MyriadPro-Semibold.otf</string>
 		<string>MyriadPro-Bold.otf</string>
 		<string>MyriadPro-It.otf</string>
+		<string>SFDisplay-Black.otf</string>
+		<string>SFDisplay-Bold.otf</string>
+		<string>SFDisplay-Heavy.otf</string>
+		<string>SFDisplay-Light.otf</string>
+		<string>SFDisplay-Medium.otf</string>
+		<string>SFDisplay-Regular.otf</string>
+		<string>SFDisplay-Semibold.otf</string>
+		<string>SFDisplay-Thin.otf</string>
+		<string>SFDisplay-Ultralight.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

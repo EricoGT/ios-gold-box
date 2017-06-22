@@ -41,9 +41,9 @@ class App{
     }
     
     //Sounds
-    class final var Sounds:SoundManager{
-        return SoundManager.init()
-    }
+//    class final var Sounds:SoundManager{
+//        return SoundManager.init()
+//    }
     
     //Style
     class final var Style:LayoutStyleManager{

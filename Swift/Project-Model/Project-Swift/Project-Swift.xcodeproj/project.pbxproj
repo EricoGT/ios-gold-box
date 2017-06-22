@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		74E5E04D49E1E3DD6810BBFA /* Pods_Project_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2A875AFA762C8BAE58C400 /* Pods_Project_Swift.framework */; };
+		E73AC19D1EFC2AE100A54069 /* line-separator-side-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */; };
+		E73AC1A11EFC335100A54069 /* icon-menu-hamburguer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */; };
+		E73AC1A21EFC335100A54069 /* icon-menu-hamburguer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */; };
 		E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */; };
 		E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */; };
 		E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */; };
@@ -41,6 +44,8 @@
 		E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7B1053D1E92A7C9000A65D6 /* InfoPlist.strings */; };
 		E7B105401E92B718000A65D6 /* DataFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1053F1E92B718000A65D6 /* DataFileManager.swift */; };
 		E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */; };
+		E7B91A021EFBEEEF00DB1950 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B91A011EFBEEEF00DB1950 /* SideMenu.storyboard */; };
+		E7B91A051EFBEF3800DB1950 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */; };
 		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
 		E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD21561EF9639D005F55ED /* NotificationManager.swift */; };
 		E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */; };
@@ -123,6 +128,9 @@
 
 /* Begin PBXFileReference section */
 		8AC2E5DAB29284B39A646427 /* Pods-Project-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Swift/Pods-Project-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-separator-side-menu.png"; sourceTree = "<group>"; };
+		E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu-hamburguer@2x.png"; sourceTree = "<group>"; };
+		E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu-hamburguer@3x.png"; sourceTree = "<group>"; };
 		E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectProtocol.swift; sourceTree = "<group>"; };
 		E7A00FA61E8E81FF0050EDD3 /* Project-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +171,8 @@
 		E7B1053E1E92A7CB000A65D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7B1053F1E92B718000A65D6 /* DataFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFileManager.swift; sourceTree = "<group>"; };
 		E7B5A6C11E9287A400C18CCC /* LocationServiceControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceControl.swift; sourceTree = "<group>"; };
+		E7B91A011EFBEEEF00DB1950 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
 		E7BD21561EF9639D005F55ED /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
@@ -282,6 +292,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E73AC19B1EFC2AC800A54069 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E73AC19E1EFC332A00A54069 /* SideMenu */,
+			);
+			name = CustomComponents;
+			sourceTree = "<group>";
+		};
+		E73AC19E1EFC332A00A54069 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */,
+				E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */,
+				E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		E7A00F9D1E8E81FF0050EDD3 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A00FAD1E8E81FF0050EDD3 /* Main.storyboard */,
+				E7B91A011EFBEEEF00DB1950 /* SideMenu.storyboard */,
 				E7A00FDC1E8E82AF0050EDD3 /* LaunchScreen */,
 				E7B035D71EC4A67000C669C9 /* Xibs */,
 			);
@@ -376,6 +405,7 @@
 		E7A00FDD1E8E82C30050EDD3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7B91A031EFBEF2000DB1950 /* SideMenu */,
 				E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */,
 			);
 			name = ViewControllers;
@@ -526,6 +556,14 @@
 			name = AlertView;
 			sourceTree = "<group>";
 		};
+		E7B91A031EFBEF2000DB1950 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		E7BD21551EF96371005F55ED /* NotificationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +655,7 @@
 		E7FD7A901E8ED81400772AF0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E73AC19B1EFC2AC800A54069 /* CustomComponents */,
 				E7ED1C9E1E952F3C00D26C7B /* Testes */,
 			);
 			name = Images;
@@ -825,6 +864,7 @@
 				E7FD7AC41E8EDA5100772AF0 /* error.m4a in Resources */,
 				E7C647181EE96F3E0008A8F3 /* loadingview_watermark_sending.png in Resources */,
 				E7C6471C1EE96F3E0008A8F3 /* loadingview_watermark_waiting.png in Resources */,
+				E7B91A021EFBEEEF00DB1950 /* SideMenu.storyboard in Resources */,
 				E7ED1CAA1E952F4D00D26C7B /* flame_a_0006.png in Resources */,
 				E7FD7ABF1E8EDA5100772AF0 /* click.m4a in Resources */,
 				E7C6471B1EE96F3E0008A8F3 /* loadingview_watermark_updating.png in Resources */,
@@ -839,6 +879,7 @@
 				E7FD7AC51E8EDA5100772AF0 /* great.m4a in Resources */,
 				E7FD7A961E8ED82500772AF0 /* mask.png in Resources */,
 				E7A96C711ECDD103003F2E79 /* SFDisplay-Medium.otf in Resources */,
+				E73AC1A11EFC335100A54069 /* icon-menu-hamburguer@2x.png in Resources */,
 				E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */,
 				E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */,
 				E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */,
@@ -861,7 +902,9 @@
 				E7FD7ABD1E8EDA5100772AF0 /* chrome_slipping.m4a in Resources */,
 				E7FD7AD21E8EDB0700772AF0 /* Localizable.strings in Resources */,
 				E7C647161EE96F3E0008A8F3 /* loadingview_watermark_saving.png in Resources */,
+				E73AC1A21EFC335100A54069 /* icon-menu-hamburguer@3x.png in Resources */,
 				E7FD7AC31E8EDA5100772AF0 /* dum.m4a in Resources */,
+				E73AC19D1EFC2AE100A54069 /* line-separator-side-menu.png in Resources */,
 				E7FD7ABE1E8EDA5100772AF0 /* clap.m4a in Resources */,
 				E7B035D91EC4A6A300C669C9 /* LoadingView.xib in Resources */,
 				E7A96C721ECDD103003F2E79 /* SFDisplay-Regular.otf in Resources */,
@@ -964,6 +1007,7 @@
 				E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */,
 				E7AEC7611E94027300581632 /* LayoutStyleManager.swift in Sources */,
 				E7B035DC1EC4D1CD00C669C9 /* RPCircularProgress.swift in Sources */,
+				E7B91A051EFBEF3800DB1950 /* SideMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
