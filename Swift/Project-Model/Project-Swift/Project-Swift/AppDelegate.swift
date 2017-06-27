@@ -29,21 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let storyboardSM:UIStoryboard = UIStoryboard.init(name: "SideMenu", bundle: nil)
         viewSideMenu = storyboardSM.instantiateViewController(withIdentifier: "SideMenuVC") as? SideMenuVC
         
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
-                // Handle Error
-                
-                if (granted) {
-                    UNUserNotificationCenter.current().delegate = self
-                }
-            })
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        UIApplication.shared.applicationIconBadgeNumber = 3
-        
-        
+        self.registerNotifications()
         
         return true
     }
@@ -70,7 +56,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // Called when APNs has assigned the device a unique token
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        // Convert token to string
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        
+        // Print it to console
+        print("APNs device token: \(deviceTokenString)")
+        
+        // Persist it in your backend in case it's new
+    }
+    
+    // Called when APNs failed to register the device for push notifications
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        // Print the error to console (you should alert the user that registration failed)
+        print("APNs registration failed: \(error)")
+    }
+    
     //MARK: - Public functions
+    
+    //NOTA1:toda vez que se recebe um push silencioso esse método é chamado. O app DEVE estar ABERTO (foreground ou background)
+    //NOTA2:esse método é chamado sempre que uma notificação do IOS9 é recebida e o app está aberto (foreground ou background). Caso o app esteja fechado será chamado assim que a notificação for aberta
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+        var not = userInfo["aps"] as! [String : AnyObject]
+        
+        //'content-available' sendo 1, a notificação pode ser iOS 9 ou iOS 10. 'content-available' sendo 0, sempre será iOS 9.
+        if(not["content-available"] as? Int == 1) {
+            
+            if (self.systemVersionGreaterThanOrEqualTo(version: "10.0")){
+                print("iOS 10 received push")
+                
+            }else{
+                print("iOS 9 received push")
+                
+            }
+            
+            completionHandler(.newData)
+        }
+        else
+        {
+            print("iOS 9 received push")
+            completionHandler(.noData)
+            
+        }
+    }
     
     // The method will be called on the delegate only if the application is in the foreground. If the method is not implemented or the handler is not called in a timely manner then the notification will not be presented. The application can choose to have the notification presented as a sound, badge, alert and/or in the notification list. This decision should be based on whether the information in the notification is otherwise visible to the user.
     @available(iOS 10.0, *)
@@ -84,6 +116,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
     {
         print(response.notification)
+        //
+        completionHandler()
     }
     
     //MARK: - Side Menu
@@ -109,46 +143,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         var list:Array<SideMenuOption> = Array.init()
         
         let option1:SideMenuOption = SideMenuOption.init()
-        option1.level = 0
+        option1.isRootOption = true
         option1.groupIdentifier = "OPT_1"
         option1.optionTitle = "Opção 1"
-        option1.state = .expanded
+        option1.state = .compressed
         option1.blocked = false
         option1.subItems = Array.init()
         option1.destinationType = .home
-        option1.badgeCount = 0
+        option1.badgeCount = 2
         //
-        let option1B:SideMenuOption = SideMenuOption.init()
-        option1B.level = 1
-        option1B.groupIdentifier = "OPT_1_SUB"
-        option1B.optionTitle = "Opção 1 - Sub"
-        option1B.state = .simple
-        option1B.blocked = false
-        option1B.subItems = nil
-        option1B.destinationType = .home
-        option1B.badgeCount = 0
-        option1.subItems?.append(option1B)
+            let option1B:SideMenuOption = SideMenuOption.init()
+            option1B.isRootOption = false
+            option1B.groupIdentifier = "OPT_1_SUB"
+            option1B.optionTitle = "Opção 1 - Sub"
+            option1B.state = .compressed
+            option1B.blocked = false
+            option1B.subItems = nil
+            option1B.destinationType = .home
+            option1B.badgeCount = 0
+            option1.subItems?.append(option1B)
+            //
+            let option1B2:SideMenuOption = SideMenuOption.init()
+            option1B2.isRootOption = false
+            option1B2.groupIdentifier = "OPT_1_SUB"
+            option1B2.optionTitle = "Opção 2 - Sub"
+            option1B2.state = .compressed
+            option1B2.blocked = false
+            option1B2.subItems = nil
+            option1B2.destinationType = .home
+            option1B2.badgeCount = 0
+            option1.subItems?.append(option1B2)
         
-        //
         let option2:SideMenuOption = SideMenuOption.init()
-        option2.level = 0
+        option2.isRootOption = true
         option2.groupIdentifier = "OPT_2"
         option2.optionTitle = "Opção 2"
-        option2.state = .simple
+        option2.state = .compressed
         option2.blocked = false
         option2.subItems = nil
         option2.destinationType = .home
         option2.badgeCount = 0
         //
         let option3:SideMenuOption = SideMenuOption.init()
-        option3.level = 0
+        option3.isRootOption = true
         option3.groupIdentifier = "OPT_3"
         option3.optionTitle = "Opção 3"
-        option3.state = .simple
+        option3.state = .compressed
         option3.blocked = false
-        option3.subItems = nil
+        option3.subItems = Array.init()
         option3.destinationType = .home
-        option3.badgeCount = 0
+        option3.badgeCount = 1
+        //
+            let option3B:SideMenuOption = SideMenuOption.init()
+            option3B.isRootOption = false
+            option3B.groupIdentifier = "OPT_3_SUB"
+            option3B.optionTitle = "Opção 1 - Sub"
+            option3B.state = .compressed
+            option3B.blocked = false
+            option3B.subItems = nil
+            option3B.destinationType = .home
+            option3B.badgeCount = 0
+            option3.subItems?.append(option3B)
         //
         list.append(option1)
         list.append(option2)
@@ -175,6 +230,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func sideMenuImageForHeaderBackground() -> UIImage?{
         return UIImage.init(named: "animal.jpeg")
+    }
+    
+    
+    //MARK: - Notifications:
+    
+    func registerNotifications() {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
+                
+                if (granted) {
+                    
+                    UIApplication.shared.registerForRemoteNotifications()
+                    UNUserNotificationCenter.current().delegate = self
+                
+                }else{
+                    // Handle Error
+                    //if let err:Error = error {
+                    // code here...
+                    //}
+                }
+            })
+        } else {
+            
+            // Fallback on earlier versions:
+            let types:UIUserNotificationType = [.badge, .sound, .alert]
+            let settings = UIUserNotificationSettings.init(types: types, categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+        
+        //UIApplication.shared.applicationIconBadgeNumber = 0
+        
     }
     
     /*
@@ -219,7 +307,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let button:UIButton = UIButton.init(type: .system)
         button.imageView?.contentMode = .scaleAspectFit
-        button.setImage(UIImage.init(named: "icon-menu-hamburguer")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage.init(named: "sidemenu-icon-menubutton")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = UIColor.gray
         button.frame = CGRect.init(x: 0.0, y: 0.0, width: 32.0, height: 32.0)
         button.clipsToBounds = true
@@ -227,6 +315,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         button.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
         //
         return UIBarButtonItem.init(customView: button)
+    }
+    
+    //MARK: - Métodos privados:
+    private func systemVersionGreaterThanOrEqualTo(version:String) -> Bool
+    {
+        switch UIDevice.current.systemVersion.compare(version, options: .numeric) {
+        case .orderedSame, .orderedDescending:
+            return true
+        case .orderedAscending:
+            return false
+        }
     }
     
 }

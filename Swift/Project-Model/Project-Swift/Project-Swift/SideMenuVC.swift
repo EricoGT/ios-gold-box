@@ -24,9 +24,8 @@ public enum SideMenuType: Int {
 }
 
 public enum SideMenuOptionState: Int {
-    case simple             = 0
-    case compressed         = 1
-    case expanded           = 2
+    case compressed       = 1
+    case expanded         = 2
 }
 
 public enum SideMenuDestinationType: Int {
@@ -41,7 +40,7 @@ public enum SideMenuDestinationType: Int {
 
 public class SideMenuOption:NSObject
 {
-    public var level:Int
+    public var isRootOption:Bool
     public var groupIdentifier:String?
     public var optionTitle:String
     public var state:SideMenuOptionState
@@ -52,21 +51,21 @@ public class SideMenuOption:NSObject
     
     override init(){
         
-        level = 0
+        isRootOption = true
         groupIdentifier = nil
         optionTitle = ""
-        state = .simple
+        state = .compressed
         blocked = false
         subItems = nil
         destinationType = .home
         badgeCount = 0
     }
     
-    public func new(l:Int, gi:String?, ot:String, s:SideMenuOptionState, b:Bool, si:[SideMenuOption]?, dt:SideMenuDestinationType, bc:Int) -> SideMenuOption!{
+    public func new(iro:Bool, gi:String?, ot:String, s:SideMenuOptionState, b:Bool, si:[SideMenuOption]?, dt:SideMenuDestinationType, bc:Int) -> SideMenuOption!{
         
         let newOption:SideMenuOption = SideMenuOption.init()
-        //
-        newOption.level = l
+        //instance:
+        newOption.isRootOption = iro
         newOption.groupIdentifier = gi
         newOption.optionTitle = ot
         newOption.state = s
@@ -74,6 +73,11 @@ public class SideMenuOption:NSObject
         newOption.subItems = si
         newOption.destinationType = dt
         newOption.badgeCount = bc
+        //validation:
+        if (!newOption.isRootOption){
+            newOption.state = .compressed
+            newOption.subItems = nil
+        }
         //
         return newOption
     }
@@ -82,12 +86,36 @@ public class SideMenuOption:NSObject
 
 public class SideMenuOptionTVC:UITableViewCell
 {
+    public enum SideMenuOptionTVC_RightIconStyle: Int {
+        case none            = 0
+        case plus            = 1
+        case minus           = 2
+        case arrow           = 3
+    }
+    //
     @IBOutlet var lblItem:UILabel!
     @IBOutlet var imvItemSelected:UIImageView!
+    @IBOutlet var imvContainerIcon:UIImageView!
     @IBOutlet var lblBadge:UILabel!
     @IBOutlet var leftPadConstraint:NSLayoutConstraint!
+    @IBOutlet var rightPadConstraint:NSLayoutConstraint!
+    //
+    public var showContainerIcons:Bool! = true {
+        didSet{
+            if showContainerIcons {
+                rightPadConstraint.constant = 32.0
+            }else{
+                rightPadConstraint.constant = 6.0
+            }
+            self.layoutIfNeeded()
+        }
+    }
+    //
+    private let imagePlus:UIImage! = UIImage.init(named: "sidemenu-icon-arrow-down")?.withRenderingMode(.alwaysTemplate)
+    private let imageMinus:UIImage! = UIImage.init(named: "sidemenu-icon-arrow-up")?.withRenderingMode(.alwaysTemplate)
+    private let imageArrow:UIImage! = UIImage.init(named: "sidemenu-icon-arrow-right")?.withRenderingMode(.alwaysTemplate)
     
-    public func setupLayoutForLevel(_ level:Int){
+    public func setupLayout(_ isRootOption:Bool, _ iconStyle:SideMenuOptionTVC_RightIconStyle){
         
         self.backgroundColor = UIColor.clear
         //
@@ -101,8 +129,16 @@ public class SideMenuOptionTVC:UITableViewCell
         //
         self.imvItemSelected.backgroundColor = UIColor.clear
         //
-        let pad:CGFloat = CGFloat(32.0 + (Double(level) * 30.0))
-        self.leftPadConstraint.constant = pad > 92.0 ? 92.0 : pad
+        self.imvContainerIcon.backgroundColor = UIColor.clear
+        self.imvContainerIcon.tintColor = UIColor.gray
+        switch iconStyle {
+            case .none: self.imvContainerIcon.image = nil
+            case .plus: self.imvContainerIcon.image = imagePlus
+            case .minus: self.imvContainerIcon.image = imageMinus
+            case .arrow: self.imvContainerIcon.image = imageArrow
+        }
+        //
+        self.leftPadConstraint.constant = CGFloat(isRootOption ? 32.0 : 64.0)
         //
         self.layoutIfNeeded()
     }
@@ -140,6 +176,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     private var isTouchResolved:Bool
     private var menuType:SideMenuType
     private var groupSelected:String?
+    //
+    private var touchPoint:CGPoint! = CGPoint.zero
     
     //Layout:
     @IBOutlet private var btnClose:UIButton!
@@ -199,6 +237,13 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         super.viewDidLoad()
         
         self.setupLayout()
+        
+        let panGesture:UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(panGestureAction(_:)))
+        panGesture.maximumNumberOfTouches = 1
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.delaysTouchesBegan = false
+        panGesture.delaysTouchesEnded = true
+        self.view.addGestureRecognizer(panGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -244,7 +289,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             let subItemsMax:Int = ToolBox.isNil(option.subItems) ? 0 : option.subItems!.count
             
-            if (option.blocked || subItemsMax == 0 || option.state == .simple) {
+            if (option.blocked || !option.isRootOption || subItemsMax == 0) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + App.Constants.ANIMA_TIME_SUPER_FAST, execute: {
                     self.selectionResolver(destinationType: option.destinationType)
                 })
@@ -261,6 +306,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 option.state = .expanded
                 //
                 self.tvMenu.beginUpdates()
+                self.tvMenu.reloadRows(at: [indexPath], with: .none)
                 self.tvMenu.insertRows(at: indexPathList, with: .fade)
                 self.tvMenu.endUpdates()
             }else{
@@ -275,6 +321,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 option.state = .compressed
                 //
                 self.tvMenu.beginUpdates()
+                self.tvMenu.reloadRows(at: [indexPath], with: .none)
                 self.tvMenu.deleteRows(at: indexPathList, with: .fade)
                 self.tvMenu.endUpdates()
             }
@@ -299,7 +346,19 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         let option:SideMenuOption = self.filteredList![indexPath.row]
         
-        cell?.setupLayoutForLevel(option.level)
+        var style:SideMenuOptionTVC.SideMenuOptionTVC_RightIconStyle = .none
+        
+        if (option.isRootOption){
+            if !ToolBox.isNil(option.subItems) {
+                if (option.state == .compressed){
+                    style = .plus
+                }else{
+                    style = .minus
+                }
+            }
+        }
+        
+        cell?.setupLayout(option.isRootOption, style)
         
         cell?.lblItem.text = option.optionTitle
         
@@ -315,7 +374,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         if (option.groupIdentifier == self.groupSelected){
             cell?.lblItem.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: 17.0)
-            if (option.level == 0){
+            if (option.isRootOption){
                 cell?.imvItemSelected.backgroundColor = UIColor.gray
             }
         }
@@ -353,22 +412,19 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //Arruma a lista filtrada para itens expandidos:
         
         if (!ToolBox.isNil(self.optionsList)) {
-            
+
             for i in 0..<self.optionsList!.count {
                 
-                let optE = self.optionsList![i]
+                let opt:SideMenuOption = self.optionsList![i]
                 
-                self.filteredList?.append(optE)
+                self.filteredList?.append(opt)
                 
-                if (!ToolBox.isNil(optE.subItems)) {
+                if (opt.state == .expanded){
                     
-                    if optE.state == .expanded {
+                    if let list:Array<SideMenuOption> = opt.subItems {
                         
-                        for j in 0..<optE.subItems!.count {
-                            
-                            let optI = optE.subItems![j]
-                            self.filteredList?.append(optI)
-                        }
+                        self.filteredList! = self.filteredList! + list
+                        
                     }
                 }
             }
@@ -377,12 +433,16 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         self.tvMenu.reloadData()
         self.tvMenu.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
         
-        self.btnClose.alpha = 0.0
         self.viewMenu.frame = CGRect.init(x: -self.viewMenu.frame.size.width, y: 0.0, width: self.viewMenu.frame.size.width, height: self.viewMenu.frame.size.height)
+        self.btnClose.alpha = 0.0
+        self.btnClose.frame = CGRect.init(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.btnClose.frame.size.height)
         //
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: { 
-            self.btnClose.alpha = 0.5
+            
             self.viewMenu.frame = CGRect.init(x: 0.0, y: 0.0, width: self.viewMenu.frame.size.width, height: self.viewMenu.frame.size.height)
+            self.btnClose.alpha = 0.6
+            self.btnClose.frame = CGRect.init(x: self.viewMenu.frame.size.width, y: 0.0, width: (self.view.frame.size.width - self.viewMenu.frame.size.width), height: self.btnClose.frame.size.height)
+            
         }, completion: nil)
         
     }
@@ -404,8 +464,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBAction public func hide(sender:Any?){
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
-            self.btnClose.alpha = 0.0
+            
             self.viewMenu.frame = CGRect.init(x: -self.viewMenu.frame.size.width, y: 0.0, width: self.viewMenu.frame.size.width, height: self.viewMenu.frame.size.height)
+            self.btnClose.alpha = 0.0
+            self.btnClose.frame = CGRect.init(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.btnClose.frame.size.height)
+            
         }, completion: { (finished) in
             self.view.removeFromSuperview()
         })
@@ -419,7 +482,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         self.view.backgroundColor = UIColor.clear
         //
         self.btnClose.backgroundColor = UIColor.black
-        self.btnClose.alpha = 0.0 //Vai para 0.5 na animação de exibição
+        self.btnClose.alpha = 0.0 //Vai para 0.6 na animação de exibição
+        self.btnClose.setTitle("", for: .normal)
         //
         self.viewMenu.backgroundColor = UIColor.white
         self.tvMenu.backgroundColor = UIColor.clear
@@ -441,17 +505,15 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //
         self.imvAvatar.backgroundColor = UIColor.clear
         self.imvAvatar.image = nil
-        self.imvHeaderBackground.backgroundColor = UIColor.clear
-        self.imvHeaderBackground.image = nil
-        //
-        self.imvAvatar.backgroundColor = UIColor.clear
-        self.imvAvatar.image = nil
-        //
+        self.imvAvatar.layer.cornerRadius = self.imvAvatar.frame.size.height / 2.0
+        self.imvAvatar.layer.borderColor = UIColor.gray.cgColor
+        self.imvAvatar.layer.borderWidth = 1.0
+        self.imvAvatar.clipsToBounds = true
         self.imvHeaderBackground.backgroundColor = UIColor.clear
         self.imvHeaderBackground.image = nil
         //
         self.imvHeaderLine.backgroundColor = UIColor.clear
-        self.imvHeaderLine.image = UIImage.init(named: "line-separator-side-menu")!.withRenderingMode(.alwaysTemplate)
+        self.imvHeaderLine.image = UIImage.init(named: "sidemenu-line-separator")!.withRenderingMode(.alwaysTemplate)
         self.imvHeaderLine.tintColor = UIColor.gray
         //
         self.viewFooter.backgroundColor = UIColor.white
@@ -467,7 +529,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //
         self.imvLogo.backgroundColor = UIColor.clear
         self.imvLogo.image = UIImage.init(named: "guardachuva.jpeg")
-        self.imvFooterLine.image = UIImage.init(named: "line-separator-side-menu")!.withRenderingMode(.alwaysTemplate)
+        self.imvFooterLine.image = UIImage.init(named: "sidemenu-line-separator")!.withRenderingMode(.alwaysTemplate)
         self.imvFooterLine.tintColor = UIColor.gray
         
         //Data:
@@ -475,6 +537,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         //Shadow
         ToolBox.graphicHelper_ApplyShadow(view: viewMenu, color: UIColor.black, offSet: CGSize.init(width: 3.0, height: 0.0), radius: 5.0, opacity: 0.5)
+        
+        self.view.layoutIfNeeded()
     }
     
     public func loadItemsForType(_ t:SideMenuType) -> [SideMenuOption]!{
@@ -489,30 +553,30 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             case .normal:
                 
                 let option1:SideMenuOption = SideMenuOption.init()
-                option1.level = 0
+                option1.isRootOption = true
                 option1.groupIdentifier = "OPT_1"
                 option1.optionTitle = "Opção 1"
-                option1.state = .simple
+                option1.state = .compressed
                 option1.blocked = false
                 option1.subItems = nil
                 option1.destinationType = .home
                 option1.badgeCount = 0
                 //
                 let option2:SideMenuOption = SideMenuOption.init()
-                option2.level = 0
+                option2.isRootOption = true
                 option2.groupIdentifier = "OPT_2"
                 option2.optionTitle = "Opção 2"
-                option2.state = .simple
+                option2.state = .compressed
                 option2.blocked = false
                 option2.subItems = nil
                 option2.destinationType = .home
                 option2.badgeCount = 0
                 //
                 let option3:SideMenuOption = SideMenuOption.init()
-                option3.level = 0
+                option3.isRootOption = true
                 option3.groupIdentifier = "OPT_3"
                 option3.optionTitle = "Opção 3"
-                option3.state = .simple
+                option3.state = .compressed
                 option3.blocked = false
                 option3.subItems = nil
                 option3.destinationType = .home
@@ -548,21 +612,82 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         
         self.isTouchResolved = true
-        
-//        switch destinationType {
-//        case .home:
-//            break
-//        case .screen_1:
-//            break
-//        case .screen_2:
-//            break
-//        case .screen_3:
-//            break
-//        case .screen_4:
-//            break
-//        }
+
     }
     
+    @objc private func panGestureAction(_ gesture:UIPanGestureRecognizer) {
+        
+        switch gesture.state {
+        case .began:
+         
+            //reference point:
+            touchPoint = gesture.location(in: self.view)
+
+        case .changed:
+            
+            let actualTouchPoint:CGPoint = gesture.location(in: self.view)
+            let offSet = actualTouchPoint.x - touchPoint.x
+            
+            viewMenu.frame = CGRect.init(x: (offSet > 0 ? 0 : offSet), y: 0, width: viewMenu.frame.size.width, height: viewMenu.frame.size.height)
+            //
+            var alpha:CGFloat = ((offSet > 0.0 ? 0.0 : offSet) / -(viewMenu.frame.size.width))
+            alpha = alpha < 0.0 ? 0.0 : (alpha > 1.0 ? 1.0 : alpha)
+            self.btnClose.alpha = 0.6 - (0.6 * alpha)
+            //
+            self.btnClose.frame = CGRect.init(x: (viewMenu.frame.origin.x + viewMenu.frame.size.width), y: 0.0, width: (self.view.frame.size.width - (viewMenu.frame.origin.x + viewMenu.frame.size.width)), height: self.btnClose.frame.size.height)
+                
+            print("handlePanPosition: x:%.1f, y:%.1f", touchPoint.x, touchPoint.y)
+            
+            
+        case .ended, .cancelled, .failed:
+            
+            if ((viewMenu.frame.origin.x < -(viewMenu.frame.size.width / 2.0))  ||  (gesture.velocity(in: self.view).x < -1200)){
+                self.hide(sender: nil)
+            }else{
+                
+                print("velocity: %.1f", gesture.velocity(in: self.view))
+                
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
+                    
+                    self.viewMenu.frame = CGRect.init(x: 0.0, y: 0.0, width: self.viewMenu.frame.size.width, height: self.viewMenu.frame.size.height)
+                    self.btnClose.alpha = 0.6
+                    self.btnClose.frame = CGRect.init(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.btnClose.frame.size.height)
+                }, completion: nil)
+            }
+            
+        default:
+            return
+            
+        }
+        
+        
+    }
+    
+    /*
+     //Método para expansão recursiva para quando a estrutura aceita subItens ilimitados
+    private func expand(list:Array<SideMenuOption>) -> Array<SideMenuOption> {
+        
+        var expandedList:Array<SideMenuOption> = Array<SideMenuOption>.init()
+        
+        for i in 0..<list.count {
+            
+            let opt:SideMenuOption = list[i]
+            
+            expandedList.append(opt)
+            
+            if let subItems:Array<SideMenuOption> = opt.subItems {
+                
+                if (opt.state == .expanded) {
+                    
+                    expandedList = expandedList + self.expand(list: subItems)
+                    
+                }
+            }
+        }
+        
+        return expandedList
+    }
+    */
     
 }
 

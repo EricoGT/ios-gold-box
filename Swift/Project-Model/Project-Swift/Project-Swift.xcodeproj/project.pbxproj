@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		74E5E04D49E1E3DD6810BBFA /* Pods_Project_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2A875AFA762C8BAE58C400 /* Pods_Project_Swift.framework */; };
-		E73AC19D1EFC2AE100A54069 /* line-separator-side-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */; };
-		E73AC1A11EFC335100A54069 /* icon-menu-hamburguer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */; };
-		E73AC1A21EFC335100A54069 /* icon-menu-hamburguer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */; };
+		E73AC19D1EFC2AE100A54069 /* sidemenu-line-separator.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19C1EFC2AE100A54069 /* sidemenu-line-separator.png */; };
+		E73AC1A11EFC335100A54069 /* sidemenu-icon-menubutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19F1EFC335100A54069 /* sidemenu-icon-menubutton@2x.png */; };
+		E73AC1A21EFC335100A54069 /* sidemenu-icon-menubutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC1A01EFC335100A54069 /* sidemenu-icon-menubutton@3x.png */; };
 		E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */; };
 		E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */; };
 		E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */; };
@@ -48,6 +48,14 @@
 		E7B91A051EFBEF3800DB1950 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */; };
 		E7BA336C1EBCB7A700C50770 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA336B1EBCB7A700C50770 /* Gzip.framework */; };
 		E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD21561EF9639D005F55ED /* NotificationManager.swift */; };
+		E7C55E971EFD4AAD00E0624D /* sidemenu-icon-arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E8F1EFD4AAD00E0624D /* sidemenu-icon-arrow-down@2x.png */; };
+		E7C55E981EFD4AAD00E0624D /* sidemenu-icon-arrow-down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E901EFD4AAD00E0624D /* sidemenu-icon-arrow-down@3x.png */; };
+		E7C55E991EFD4AAD00E0624D /* sidemenu-icon-arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E911EFD4AAD00E0624D /* sidemenu-icon-arrow-left@2x.png */; };
+		E7C55E9A1EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E921EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png */; };
+		E7C55E9B1EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E931EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png */; };
+		E7C55E9C1EFD4AAD00E0624D /* sidemenu-icon-arrow-right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E941EFD4AAD00E0624D /* sidemenu-icon-arrow-right@3x.png */; };
+		E7C55E9D1EFD4AAD00E0624D /* sidemenu-icon-arrow-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E951EFD4AAD00E0624D /* sidemenu-icon-arrow-up@2x.png */; };
+		E7C55E9E1EFD4AAD00E0624D /* sidemenu-icon-arrow-up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C55E961EFD4AAD00E0624D /* sidemenu-icon-arrow-up@3x.png */; };
 		E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */; };
 		E7C647001EE96E850008A8F3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */; };
 		E7C647041EE96EF00008A8F3 /* ASTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C647021EE96EF00008A8F3 /* ASTextField.swift */; };
@@ -128,9 +136,9 @@
 
 /* Begin PBXFileReference section */
 		8AC2E5DAB29284B39A646427 /* Pods-Project-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Swift/Pods-Project-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line-separator-side-menu.png"; sourceTree = "<group>"; };
-		E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu-hamburguer@2x.png"; sourceTree = "<group>"; };
-		E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu-hamburguer@3x.png"; sourceTree = "<group>"; };
+		E73AC19C1EFC2AE100A54069 /* sidemenu-line-separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-line-separator.png"; sourceTree = "<group>"; };
+		E73AC19F1EFC335100A54069 /* sidemenu-icon-menubutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-menubutton@2x.png"; sourceTree = "<group>"; };
+		E73AC1A01EFC335100A54069 /* sidemenu-icon-menubutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-menubutton@3x.png"; sourceTree = "<group>"; };
 		E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectProtocol.swift; sourceTree = "<group>"; };
 		E7A00FA61E8E81FF0050EDD3 /* Project-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +183,15 @@
 		E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		E7BA336B1EBCB7A700C50770 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Project-Swift-ezafwqrkhqpfbcbvpvczkrpopaoj/Build/Products/Debug-iphonesimulator/GzipSwift/Gzip.framework"; sourceTree = "<group>"; };
 		E7BD21561EF9639D005F55ED /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		E7C2CC881F02852800A12EF3 /* Project-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project-Swift.entitlements"; sourceTree = "<group>"; };
+		E7C55E8F1EFD4AAD00E0624D /* sidemenu-icon-arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-down@2x.png"; sourceTree = "<group>"; };
+		E7C55E901EFD4AAD00E0624D /* sidemenu-icon-arrow-down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-down@3x.png"; sourceTree = "<group>"; };
+		E7C55E911EFD4AAD00E0624D /* sidemenu-icon-arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-left@2x.png"; sourceTree = "<group>"; };
+		E7C55E921EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-left@3x.png"; sourceTree = "<group>"; };
+		E7C55E931EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-right@2x.png"; sourceTree = "<group>"; };
+		E7C55E941EFD4AAD00E0624D /* sidemenu-icon-arrow-right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-right@3x.png"; sourceTree = "<group>"; };
+		E7C55E951EFD4AAD00E0624D /* sidemenu-icon-arrow-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-up@2x.png"; sourceTree = "<group>"; };
+		E7C55E961EFD4AAD00E0624D /* sidemenu-icon-arrow-up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-arrow-up@3x.png"; sourceTree = "<group>"; };
 		E7C646FD1EE96E3A0008A8F3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		E7C646FF1EE96E850008A8F3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		E7C647021EE96EF00008A8F3 /* ASTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTextField.swift; sourceTree = "<group>"; };
@@ -295,19 +312,8 @@
 		E73AC19B1EFC2AC800A54069 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
-				E73AC19E1EFC332A00A54069 /* SideMenu */,
 			);
 			name = CustomComponents;
-			sourceTree = "<group>";
-		};
-		E73AC19E1EFC332A00A54069 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				E73AC19F1EFC335100A54069 /* icon-menu-hamburguer@2x.png */,
-				E73AC1A01EFC335100A54069 /* icon-menu-hamburguer@3x.png */,
-				E73AC19C1EFC2AE100A54069 /* line-separator-side-menu.png */,
-			);
-			name = SideMenu;
 			sourceTree = "<group>";
 		};
 		E7A00F9D1E8E81FF0050EDD3 = {
@@ -335,6 +341,7 @@
 		E7A00FA81E8E81FF0050EDD3 /* Project-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				E7C2CC881F02852800A12EF3 /* Project-Swift.entitlements */,
 				E7A00FD71E8E82150050EDD3 /* Project-Entitlements */,
 				E7E829E11EC63CA300D834DB /* Playground */,
 				E7A00FD81E8E822E0050EDD3 /* Delegate */,
@@ -559,6 +566,7 @@
 		E7B91A031EFBEF2000DB1950 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E7C55E8E1EFD48B900E0624D /* Resources */,
 				E7B91A041EFBEF3800DB1950 /* SideMenuVC.swift */,
 			);
 			name = SideMenu;
@@ -570,6 +578,24 @@
 				E7BD21561EF9639D005F55ED /* NotificationManager.swift */,
 			);
 			name = NotificationManager;
+			sourceTree = "<group>";
+		};
+		E7C55E8E1EFD48B900E0624D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7C55E8F1EFD4AAD00E0624D /* sidemenu-icon-arrow-down@2x.png */,
+				E7C55E901EFD4AAD00E0624D /* sidemenu-icon-arrow-down@3x.png */,
+				E7C55E911EFD4AAD00E0624D /* sidemenu-icon-arrow-left@2x.png */,
+				E7C55E921EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png */,
+				E7C55E931EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png */,
+				E7C55E941EFD4AAD00E0624D /* sidemenu-icon-arrow-right@3x.png */,
+				E7C55E951EFD4AAD00E0624D /* sidemenu-icon-arrow-up@2x.png */,
+				E7C55E961EFD4AAD00E0624D /* sidemenu-icon-arrow-up@3x.png */,
+				E73AC19F1EFC335100A54069 /* sidemenu-icon-menubutton@2x.png */,
+				E73AC1A01EFC335100A54069 /* sidemenu-icon-menubutton@3x.png */,
+				E73AC19C1EFC2AE100A54069 /* sidemenu-line-separator.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E7C646FC1EE96DF70008A8F3 /* CustomPickerView */ = {
@@ -803,6 +829,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 659DAQWD6V;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					E7A00FB91E8E81FF0050EDD3 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -844,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7FD7ABC1E8EDA5100772AF0 /* alert.m4a in Resources */,
+				E7C55E9E1EFD4AAD00E0624D /* sidemenu-icon-arrow-up@3x.png in Resources */,
 				E7AEC75E1E93E1C500581632 /* ChangeProjectNameTutorial.strings in Resources */,
 				E7ED1CA51E952F4D00D26C7B /* flame_a_0001.png in Resources */,
 				E7B1053B1E92A7C9000A65D6 /* InfoPlist.strings in Resources */,
@@ -857,9 +889,11 @@
 				E7C647151EE96F3E0008A8F3 /* loadingview_watermark_processing.png in Resources */,
 				E7A96C731ECDD103003F2E79 /* SFDisplay-Semibold.otf in Resources */,
 				E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */,
+				E7C55E981EFD4AAD00E0624D /* sidemenu-icon-arrow-down@3x.png in Resources */,
 				E7FD7ACE1E8EDA5100772AF0 /* tic.m4a in Resources */,
 				E7FD7AC01E8EDA5100772AF0 /* cutting_package.m4a in Resources */,
 				E7A00FB41E8E81FF0050EDD3 /* LaunchScreen.storyboard in Resources */,
+				E7C55E9D1EFD4AAD00E0624D /* sidemenu-icon-arrow-up@2x.png in Resources */,
 				E7ED1CA81E952F4D00D26C7B /* flame_a_0004.png in Resources */,
 				E7FD7AC41E8EDA5100772AF0 /* error.m4a in Resources */,
 				E7C647181EE96F3E0008A8F3 /* loadingview_watermark_sending.png in Resources */,
@@ -872,23 +906,27 @@
 				E7A96C741ECDD103003F2E79 /* SFDisplay-Thin.otf in Resources */,
 				E7FD7AC61E8EDA5100772AF0 /* ok.m4a in Resources */,
 				E7ED1CA61E952F4D00D26C7B /* flame_a_0002.png in Resources */,
+				E7C55E9C1EFD4AAD00E0624D /* sidemenu-icon-arrow-right@3x.png in Resources */,
 				E7FD7AC71E8EDA5100772AF0 /* page_next.m4a in Resources */,
+				E7C55E991EFD4AAD00E0624D /* sidemenu-icon-arrow-left@2x.png in Resources */,
 				E7C647001EE96E850008A8F3 /* CustomPickerView.xib in Resources */,
 				E7FD7ACB1E8EDA5100772AF0 /* success.m4a in Resources */,
 				E7FD7AC11E8EDA5100772AF0 /* cutting_paper.m4a in Resources */,
 				E7FD7AC51E8EDA5100772AF0 /* great.m4a in Resources */,
 				E7FD7A961E8ED82500772AF0 /* mask.png in Resources */,
 				E7A96C711ECDD103003F2E79 /* SFDisplay-Medium.otf in Resources */,
-				E73AC1A11EFC335100A54069 /* icon-menu-hamburguer@2x.png in Resources */,
+				E73AC1A11EFC335100A54069 /* sidemenu-icon-menubutton@2x.png in Resources */,
 				E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */,
 				E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */,
 				E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */,
 				E7FD7AC81E8EDA5100772AF0 /* page_previus.m4a in Resources */,
 				E7C6472B1EE974A70008A8F3 /* PMAlertView.xib in Resources */,
 				E7ED1CA71E952F4D00D26C7B /* flame_a_0003.png in Resources */,
+				E7C55E9A1EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png in Resources */,
 				E7FD7AA51E8EDA4000772AF0 /* MyriadPro-Bold.otf in Resources */,
 				E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */,
 				E7C6471A1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png in Resources */,
+				E7C55E9B1EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png in Resources */,
 				E7C647211EE96FF50008A8F3 /* PMAlertViewLocalizable.strings in Resources */,
 				E7A96C6F1ECDD103003F2E79 /* SFDisplay-Heavy.otf in Resources */,
 				E7A96C701ECDD103003F2E79 /* SFDisplay-Light.otf in Resources */,
@@ -902,9 +940,10 @@
 				E7FD7ABD1E8EDA5100772AF0 /* chrome_slipping.m4a in Resources */,
 				E7FD7AD21E8EDB0700772AF0 /* Localizable.strings in Resources */,
 				E7C647161EE96F3E0008A8F3 /* loadingview_watermark_saving.png in Resources */,
-				E73AC1A21EFC335100A54069 /* icon-menu-hamburguer@3x.png in Resources */,
+				E7C55E971EFD4AAD00E0624D /* sidemenu-icon-arrow-down@2x.png in Resources */,
+				E73AC1A21EFC335100A54069 /* sidemenu-icon-menubutton@3x.png in Resources */,
 				E7FD7AC31E8EDA5100772AF0 /* dum.m4a in Resources */,
-				E73AC19D1EFC2AE100A54069 /* line-separator-side-menu.png in Resources */,
+				E73AC19D1EFC2AE100A54069 /* sidemenu-line-separator.png in Resources */,
 				E7FD7ABE1E8EDA5100772AF0 /* clap.m4a in Resources */,
 				E7B035D91EC4A6A300C669C9 /* LoadingView.xib in Resources */,
 				E7A96C721ECDD103003F2E79 /* SFDisplay-Regular.otf in Resources */,
