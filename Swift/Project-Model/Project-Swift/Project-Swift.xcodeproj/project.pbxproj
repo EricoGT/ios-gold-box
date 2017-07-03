@@ -12,6 +12,8 @@
 		E73AC1A11EFC335100A54069 /* sidemenu-icon-menubutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC19F1EFC335100A54069 /* sidemenu-icon-menubutton@2x.png */; };
 		E73AC1A21EFC335100A54069 /* sidemenu-icon-menubutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73AC1A01EFC335100A54069 /* sidemenu-icon-menubutton@3x.png */; };
 		E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */; };
+		E76CEF381F0A570900BCA6CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEF371F0A570900BCA6CF /* User.swift */; };
+		E76CEF3A1F0A589500BCA6CF /* beep.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E76CEF391F0A589500BCA6CF /* beep.m4a */; };
 		E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */; };
 		E7A00FAC1E8E81FF0050EDD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */; };
 		E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A00FAD1E8E81FF0050EDD3 /* Main.storyboard */; };
@@ -140,6 +142,8 @@
 		E73AC19F1EFC335100A54069 /* sidemenu-icon-menubutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-menubutton@2x.png"; sourceTree = "<group>"; };
 		E73AC1A01EFC335100A54069 /* sidemenu-icon-menubutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu-icon-menubutton@3x.png"; sourceTree = "<group>"; };
 		E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectProtocol.swift; sourceTree = "<group>"; };
+		E76CEF371F0A570900BCA6CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E76CEF391F0A589500BCA6CF /* beep.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = beep.m4a; sourceTree = "<group>"; };
 		E7A00FA61E8E81FF0050EDD3 /* Project-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A00FAB1E8E81FF0050EDD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A00FF41E8E853B0050EDD3 /* Reference */,
+				E76CEF371F0A570900BCA6CF /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -733,6 +738,7 @@
 		E7FD7ACF1E8EDA9D00772AF0 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				E76CEF391F0A589500BCA6CF /* beep.m4a */,
 				E7FD7AA91E8EDA5100772AF0 /* alert.m4a */,
 				E7FD7AAA1E8EDA5100772AF0 /* chrome_slipping.m4a */,
 				E7FD7AAB1E8EDA5100772AF0 /* clap.m4a */,
@@ -925,6 +931,7 @@
 				E7C55E9A1EFD4AAD00E0624D /* sidemenu-icon-arrow-left@3x.png in Resources */,
 				E7FD7AA51E8EDA4000772AF0 /* MyriadPro-Bold.otf in Resources */,
 				E7FD7A941E8ED82500772AF0 /* animal.jpg in Resources */,
+				E76CEF3A1F0A589500BCA6CF /* beep.m4a in Resources */,
 				E7C6471A1EE96F3E0008A8F3 /* loadingview_watermark_synchronizing.png in Resources */,
 				E7C55E9B1EFD4AAD00E0624D /* sidemenu-icon-arrow-right@2x.png in Resources */,
 				E7C647211EE96FF50008A8F3 /* PMAlertViewLocalizable.strings in Resources */,
@@ -1022,6 +1029,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76CEF381F0A570900BCA6CF /* User.swift in Sources */,
 				E7A00FEC1E8E84A30050EDD3 /* ConnectionManager.swift in Sources */,
 				E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */,
 				E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */,

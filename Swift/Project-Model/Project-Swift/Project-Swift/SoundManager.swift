@@ -30,6 +30,7 @@ enum SoundMedia:Int {
     case DumEffect          = 17
     case DamEffect          = 18
     case Great              = 19
+    case Beep               = 20
 }
 
 class SoundManager:AnyObject{
@@ -292,6 +293,18 @@ class SoundManager:AnyObject{
         }
         playerControlList.append(sound_19)
         
+        //[20] Beep =========================================================
+        let sound_20:SoundItem = SoundItem.init()
+        sound_20.soundName = SoundMedia.Beep
+        sound_20.fileURL = Bundle.main.url(forResource: "beep", withExtension: "m4a")
+        do{
+            try sound_20.audioPlayer = AVAudioPlayer.init(contentsOf: sound_20.fileURL!)
+            sound_20.audioPlayer?.prepareToPlay()
+        }catch{
+            print("Loading Error: great")
+        }
+        playerControlList.append(sound_20)
+        
     }
     
     //MARK: - Methods:
@@ -304,11 +317,10 @@ class SoundManager:AnyObject{
             
             if (soundItem.audioPlayer?.isPlaying)!{
                 soundItem.audioPlayer?.currentTime = 0
-            }else{
-                soundItem.audioPlayer?.volume = volume
-                soundItem.audioPlayer?.play()
             }
             
+            soundItem.audioPlayer?.volume = volume
+            soundItem.audioPlayer?.play()
         }
     }
     
