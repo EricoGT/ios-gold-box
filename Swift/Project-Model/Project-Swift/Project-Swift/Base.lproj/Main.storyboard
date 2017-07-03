@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2VT-r5-0RI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2VT-r5-0RI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,8 +64,20 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vEG-OS-hSd">
-                                <rect key="frame" x="16" y="268" width="343" height="383"/>
+                                <rect key="frame" x="16" y="268" width="343" height="309"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XAi-mP-yg2" customClass="ASTextField" customModule="Project_Swift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="afW-GD-cwO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Pwc-TI-GbJ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,16 +87,22 @@
                             <constraint firstAttribute="trailing" secondItem="jcb-Py-9wl" secondAttribute="trailing" constant="16" id="NGY-RG-WUi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5TN-ev-tGj" secondAttribute="trailing" id="SLu-AN-BXz"/>
                             <constraint firstItem="vEG-OS-hSd" firstAttribute="top" secondItem="rU0-ny-LNR" secondAttribute="bottom" constant="20" id="TsU-LT-2qH"/>
+                            <constraint firstAttribute="trailing" secondItem="XAi-mP-yg2" secondAttribute="trailing" constant="20" id="UTh-hH-vwC"/>
                             <constraint firstItem="jcb-Py-9wl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Uj6-8x-xwn"/>
+                            <constraint firstItem="XAi-mP-yg2" firstAttribute="top" secondItem="vEG-OS-hSd" secondAttribute="bottom" constant="20" id="XWN-Nz-xwl"/>
                             <constraint firstItem="5TN-ev-tGj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ycb-qx-EuK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vEG-OS-hSd" secondAttribute="bottom" constant="16" id="Yl5-3s-U9f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XAi-mP-yg2" secondAttribute="bottom" constant="20" id="ZDb-VX-JJJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vEG-OS-hSd" secondAttribute="trailing" id="ZfO-qF-sie"/>
                             <constraint firstAttribute="trailing" secondItem="rU0-ny-LNR" secondAttribute="trailing" constant="16" id="kHi-HP-dyR"/>
                             <constraint firstItem="jcb-Py-9wl" firstAttribute="top" secondItem="5TN-ev-tGj" secondAttribute="bottom" constant="16" id="pGr-Yt-CEJ"/>
+                            <constraint firstItem="XAi-mP-yg2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="wpJ-qo-Xs5"/>
                             <constraint firstItem="rU0-ny-LNR" firstAttribute="top" secondItem="jcb-Py-9wl" secondAttribute="bottom" constant="16" id="xWo-vt-4cK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Okw-U0-KK5"/>
+                    <connections>
+                        <outlet property="txtCPF" destination="XAi-mP-yg2" id="F44-1s-EwW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

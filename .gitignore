@@ -102,3 +102,6 @@ Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorV
 Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-umbrella.h
 Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap
 Swift/Project-Model/Project-Swift/Pods/Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.xcconfig
+Swift/Project-Model/Project-Swift/Pods/NVActivityIndicatorView/NVActivityIndicatorView/NVActivityIndicatorShape.swift
+Swift/Project-Model/Project-Swift/Pods/Pods.xcodeproj/xcuserdata/lordesire.xcuserdatad/xcschemes/Kingfisher.xcscheme
+Swift/Project-Model/Project-Swift/Pods/Pods.xcodeproj/xcuserdata/lordesire.xcuserdatad/xcschemes/NVActivityIndicatorView.xcscheme

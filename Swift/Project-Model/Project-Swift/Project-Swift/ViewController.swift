@@ -9,10 +9,12 @@
 import UIKit
 import UserNotifications
 
-class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDelegate {
+class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDelegate, UITextFieldDelegate {
 
     var soundManager:SoundManager?
     var locationManager:LocationServiceControl?
+    //
+    @IBOutlet weak var txtCPF:ASTextField!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
         self.soundManager = SoundManager.init()
@@ -60,6 +62,30 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         super.viewWillAppear(animated)
         
         locationManager = LocationServiceControl.initAndStartMonitoringLocation()
+        
+        
+        self.updateLayout(textField: &txtCPF)
+        txtCPF.placeholder = "Digite o CPF"
+        txtCPF.inputAccessoryView = App.Style.createAccessoryView(targetView: txtCPF, selector: #selector(UIResponder.resignFirstResponder))
+        txtCPF.showError(message: "Campo obrigatório.")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (textField == txtCPF) {
+            let strValidated:String? = txtCPF.validateText(inputMask: "###.###.###-##", maxLenght:0, range: range, textFieldString:textField.text ?? "", replacementString: string, charactersRestriction: nil)
+            if let str:String = strValidated {
+                textField.text = str
+            }
+            return false
+        }
+        
+        return true
     }
     
     @IBAction func actionPlaySound(sender:UIButton) {
@@ -195,6 +221,44 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         //
         App.Delegate.activityView?.stopActivity(nil)
         
+    }
+    
+    func updateLayout(textField: inout ASTextField!){
+        
+        textField.canShowBorder = true
+        textField.asLayer.borderColor = App.Style.colorView_Normal.cgColor
+        textField.asLayer.borderWidth = 1.0
+        textField.asLayer.cornerRadius = 0.0
+        //Padding
+        textField.paddingYFloatLabel = 8.0
+        textField.extraPaddingForBottomConstrait = 2.0
+        //Colors
+        textField.textColor = App.Style.colorText_GrayDark
+        textField.errorColorView = App.Style.colorText_RedDefault
+        textField.normalColorView = App.Style.colorView_Normal
+        //Placeholder
+        textField.floatPlaceholderFont = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_MINI)!
+        textField.placeholderColor = UIColor.gray
+        textField.floatPlaceholderColor = UIColor.gray
+        //Font
+        textField.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
+        //Ajustando o tamanho dos textos:
+        textField.minimumFontSize = App.Constants.FONT_SIZE_TEXT_FIELDS / 2.0
+        textField.adjustsFontSizeToFitWidth = true
+        //Ajustando o tamanho para o placeholder:
+        for  subView in textField.subviews {
+            if let label = subView as? UILabel {
+                
+                label.adjustsFontSizeToFitWidth = true
+                if (label.tag == 101) {
+                    //floating placeholder
+                    label.minimumScaleFactor = 0.5
+                }else{
+                    //normal placeholder
+                    label.minimumScaleFactor = 0.5
+                }
+            }
+        }
     }
 }
 
