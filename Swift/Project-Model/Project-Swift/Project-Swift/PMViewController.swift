@@ -117,9 +117,14 @@ public class PMViewController: UIViewController {
             if let i:Int = to {
                 if i == 0 {
                     self.navigationController?.popToRootViewController(animated: true)
-                }else{
+                }else if (i > 0){
                     if (i < (self.navigationController?.viewControllers.count)!) {
                         self.navigationController?.popToViewController((self.navigationController?.viewControllers[i])!, animated: true)
+                    }
+                }else{
+                    let index:Int = (self.navigationController?.viewControllers.count)! - 1
+                    if ((index + i) >= 0) {
+                        self.navigationController?.popToViewController((self.navigationController?.viewControllers[index + i])!, animated: true)
                     }
                 }
             }else{
