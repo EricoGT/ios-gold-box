@@ -47,7 +47,9 @@ class ViewController: UIViewController, InternetHelperDelegate, LoadingViewDeleg
         
         let alert:SCLAlertViewPlus = SCLAlertViewPlus.createRichAlert(bodyMessage: "Este aplicativo é um projeto modelo para Swift 3.1. Várias classes, frameworks e pods já constam no projeto, prontas para uso.\n\nBasta fazer uma cópia e renomear para um novo projeto!", images: arrayImages, animationTimePerFrame: 0.1)
         alert.addButton(title: "OK", type: SCLAlertButtonType.Default) {
-            //
+            
+            App.Utils.graphicHelper_ApplyHeartBeatAnimation(view: self.txtCPF, scale: 1.5)
+            
         }
         alert.showSuccess("Bem vindo!", subTitle: "")
     

@@ -394,7 +394,7 @@ final class LoadingView: UIView {
     
     private func scaleAnimation(_ view:UIView){
         
-        let scaleAnima:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        let scaleAnima:CABasicAnimation = CABasicAnimation(keyPath: "transform")
         scaleAnima.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
         scaleAnima.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(1.05, 1.05, 1))
         scaleAnima.duration = 0.1
