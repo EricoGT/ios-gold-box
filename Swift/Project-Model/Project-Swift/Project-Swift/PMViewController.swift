@@ -105,7 +105,7 @@ public class PMViewController: UIViewController {
         
         //Navigation Controller
         self.navigationItem.title = screenName
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false

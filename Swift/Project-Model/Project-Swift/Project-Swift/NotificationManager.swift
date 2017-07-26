@@ -76,14 +76,14 @@ class NotificationManager:NSObject
             content.attachments = [attachment!]
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+       // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         
         var dComponents:DateComponents = DateComponents.init()
         dComponents.timeZone = TimeZone.current
         dComponents.hour = 20
         let triggerCalendar = UNCalendarNotificationTrigger.init(dateMatching: dComponents, repeats: true)
         
-        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: triggerCalendar)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
             

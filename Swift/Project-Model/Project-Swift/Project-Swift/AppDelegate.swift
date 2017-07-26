@@ -265,8 +265,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
     }
     
-    /*
-    public func layoutTabBarController() {
+    public func updateTabBarController() {
         
         // Assign tab bar item with titles:
         let tabBarController:UITabBarController = self.window?.rootViewController as! UITabBarController
@@ -276,30 +275,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let tabBarItem2 = tabBar.items?[1]
         let tabBarItem3 = tabBar.items?[2]
         let tabBarItem4 = tabBar.items?[3]
+        let tabBarItem5 = tabBar.items?[4]
         //
-        tabBarItem1?.title = "Item_1"
-        tabBarItem2?.title = "Item_2"
-        tabBarItem3?.title = "Item_3"
-        tabBarItem4?.title = "Item_4"
+        tabBarItem1?.title = "Main Menu"
+        tabBarItem2?.title = "Tela A"
+        tabBarItem3?.title = "Tela B"
+        tabBarItem4?.title = "Tela C"
+        tabBarItem5?.title = "Tela D"
         //
-        tabBarItem1?.selectedImage = UIImage.init(named: "Sample1")?.withRenderingMode(.alwaysOriginal)
-        tabBarItem1?.image = UIImage.init(named: "Sample1")?.withRenderingMode(.alwaysOriginal)
-        //etc, etc...
+        tabBarItem1?.selectedImage = UIImage.init(named: "tabbar-icon-1")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem1?.image = UIImage.init(named: "tabbar-icon-1")
+        tabBarItem2?.selectedImage = UIImage.init(named: "tabbar-icon-2")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem2?.image = UIImage.init(named: "tabbar-icon-2")
+        tabBarItem3?.selectedImage = UIImage.init(named: "tabbar-icon-3")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem3?.image = UIImage.init(named: "tabbar-icon-3")
+        tabBarItem4?.selectedImage = UIImage.init(named: "tabbar-icon-4")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem4?.image = UIImage.init(named: "tabbar-icon-4")
+        tabBarItem5?.selectedImage = UIImage.init(named: "tabbar-icon-5")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem5?.image = UIImage.init(named: "tabbar-icon-5")
+        
         
         // Change the tab bar background
-        tabBar.backgroundImage = UIImage.init(named: "tabbar.png") ?? UIImage.init()
-        tabBar.backgroundColor = UIColor.yellow
-        tabBar.selectionIndicatorImage = UIImage.init(named: "tabbar_selected.png") ?? UIImage.init()
+        tabBar.backgroundImage = UIImage.init(named: "tabbar.png")?.resizableImage(withCapInsets: UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0), resizingMode: .tile) ?? UIImage.init()
+        tabBar.shadowImage = UIImage.init()
+        tabBar.backgroundColor = UIColor.clear
+        //tabBar.selectionIndicatorImage = UIImage.init(named: "tabbar_selected.png") ?? UIImage.init()
         
         // Change the title color of tab bar items
-        tabBarItem1?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem2?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem3?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem4?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem1?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem2?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem3?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem4?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem5?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.gray, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        //
+        tabBarItem1?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem2?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem3?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem4?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem5?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
         
-        //OBS: Preferencialmente chame este método uma vez no viewWillAppear do primeiro controller da aplicação
     }
-    */
 
     //MARK: - FAKE-FACTORY
     
