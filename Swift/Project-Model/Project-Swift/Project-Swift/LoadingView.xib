@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -55,7 +55,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-yJ-JUm">
-                    <rect key="frame" x="77" y="379" width="220" height="20.5"/>
+                    <rect key="frame" x="77" y="376" width="220" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -68,6 +68,12 @@
                         <constraint firstAttribute="width" constant="50" id="Sl6-DK-U5J"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aprox. 5 minutos restantes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9y-3G-zSQ">
+                    <rect key="frame" x="87" y="421.5" width="200" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -92,15 +98,23 @@
                         <action selector="actionCancelWithSender:" destination="dGK-4J-NHn" eventType="touchUpInside" id="37H-1P-S05"/>
                     </connections>
                 </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-i5-XV9">
+                    <rect key="frame" x="87" y="404.5" width="200" height="2"/>
+                    <color key="progressTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="trackTintColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                </progressView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="OzC-4s-aml" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="0Hw-dS-trL"/>
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="height" secondItem="ayU-9p-K5U" secondAttribute="height" id="1yC-HO-Mpe"/>
+                <constraint firstItem="F9y-3G-zSQ" firstAttribute="top" secondItem="sLi-i5-XV9" secondAttribute="bottom" constant="15" id="2LI-QV-cJ6"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="top" secondItem="dGK-4J-NHn" secondAttribute="top" id="4Kn-NS-aXd"/>
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="4pu-qw-DMd"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="6hj-tP-2tJ"/>
+                <constraint firstItem="sLi-i5-XV9" firstAttribute="centerX" secondItem="7Vm-p2-RRf" secondAttribute="centerX" id="7B4-LO-g5S"/>
                 <constraint firstAttribute="trailing" secondItem="E1x-m2-C1b" secondAttribute="trailing" id="7vS-co-Hax"/>
+                <constraint firstItem="F9y-3G-zSQ" firstAttribute="width" secondItem="sLi-i5-XV9" secondAttribute="width" id="8bv-IF-Mbk"/>
                 <constraint firstAttribute="bottom" secondItem="E1x-m2-C1b" secondAttribute="bottom" id="8g5-2x-jHt"/>
                 <constraint firstItem="ayU-9p-K5U" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="8wh-e8-RR9"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="centerY" secondItem="ayU-9p-K5U" secondAttribute="centerY" constant="20" id="Ca7-0o-NL4"/>
@@ -113,16 +127,19 @@
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="Mu7-0D-TaN"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="top" secondItem="MLy-sQ-tAx" secondAttribute="bottom" constant="20" id="Poo-j1-xJW"/>
                 <constraint firstItem="OzC-4s-aml" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" constant="-24" id="W2Z-ze-GKY"/>
-                <constraint firstItem="oMk-yJ-JUm" firstAttribute="top" secondItem="OxC-At-a67" secondAttribute="bottom" constant="15" id="X7u-8F-WCP"/>
+                <constraint firstItem="oMk-yJ-JUm" firstAttribute="top" secondItem="OxC-At-a67" secondAttribute="bottom" constant="12" id="X7u-8F-WCP"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="height" secondItem="OxC-At-a67" secondAttribute="height" id="Ypr-BL-9gR"/>
                 <constraint firstItem="7Vm-p2-RRf" firstAttribute="centerX" secondItem="ayU-9p-K5U" secondAttribute="centerX" id="akP-fL-XrG"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="width" secondItem="OxC-At-a67" secondAttribute="width" id="fVL-la-RTg"/>
+                <constraint firstItem="F9y-3G-zSQ" firstAttribute="centerX" secondItem="7Vm-p2-RRf" secondAttribute="centerX" id="fri-DQ-fwh"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="height" secondItem="dGK-4J-NHn" secondAttribute="height" id="hxs-je-hqT"/>
                 <constraint firstItem="E1x-m2-C1b" firstAttribute="leading" secondItem="dGK-4J-NHn" secondAttribute="leading" id="iJ3-6v-egx"/>
                 <constraint firstItem="zFW-Nv-Jz8" firstAttribute="top" secondItem="ayU-9p-K5U" secondAttribute="bottom" constant="10" id="lbL-To-Dp6"/>
                 <constraint firstItem="YMz-nP-wCb" firstAttribute="centerY" secondItem="dGK-4J-NHn" secondAttribute="centerY" id="mSn-IQ-hee"/>
                 <constraint firstItem="oMk-yJ-JUm" firstAttribute="centerX" secondItem="dGK-4J-NHn" secondAttribute="centerX" id="nRX-xP-BzJ"/>
+                <constraint firstItem="sLi-i5-XV9" firstAttribute="top" secondItem="oMk-yJ-JUm" secondAttribute="bottom" constant="8" id="nyF-1d-HF7"/>
                 <constraint firstItem="OxC-At-a67" firstAttribute="width" secondItem="ayU-9p-K5U" secondAttribute="width" id="ony-JD-Yf0"/>
+                <constraint firstItem="sLi-i5-XV9" firstAttribute="width" secondItem="7Vm-p2-RRf" secondAttribute="width" constant="-20" id="pOS-cr-0XY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
@@ -133,10 +150,12 @@
                 <outlet property="imvWaterMark" destination="7Vm-p2-RRf" id="wh3-QQ-YJq"/>
                 <outlet property="indicatorView" destination="OzC-4s-aml" id="NIz-iA-wYL"/>
                 <outlet property="lblAccessory" destination="oMk-yJ-JUm" id="66n-VI-hvl"/>
+                <outlet property="lblNote" destination="F9y-3G-zSQ" id="gm4-LD-O0Q"/>
                 <outlet property="lblProgress" destination="MLy-sQ-tAx" id="qg2-Vc-Xz1"/>
                 <outlet property="lblTitle" destination="OxC-At-a67" id="asp-vR-NMT"/>
+                <outlet property="viewProgress" destination="sLi-i5-XV9" id="8gz-YP-3j6"/>
             </connections>
-            <point key="canvasLocation" x="-616" y="61"/>
+            <point key="canvasLocation" x="-616.5" y="60.5"/>
         </view>
     </objects>
     <resources>

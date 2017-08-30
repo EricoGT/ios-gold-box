@@ -78,7 +78,27 @@ class MainMenuVC: PMViewController{
                                           UIImage(named:"flame_a_0006.png")!]
         
         let alert:SCLAlertViewPlus = SCLAlertViewPlus.createRichAlert(bodyMessage: "Este aplicativo é um projeto modelo para Swift 3.1. Várias classes, frameworks e pods já constam no projeto, prontas para uso.\n\nBasta fazer uma cópia e renomear para um novo projeto!", images: arrayImages, animationTimePerFrame: 0.1)
-        alert.addButton(title: "OK", type: SCLAlertButtonType.Default){}
+        alert.addButton(title: "OK", type: SCLAlertButtonType.Default){
+        
+            App.Delegate.activityView?.startActivity(.downloading, true, nil, nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                App.Delegate.activityView?.setProgressViewVisible(visible: true)
+                App.Delegate.activityView?.useCancelButton = true
+                App.Delegate.activityView?.updateProgressView(progress: 0.3)
+                App.Delegate.activityView?.updateNoteLabel("Inicio do Processo")
+            })
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                App.Delegate.activityView?.updateLabels("Criando dados...", "Meio do Processo")
+            })
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
+                App.Delegate.activityView?.updateProgressView(progress: 0.85)
+                App.Delegate.activityView?.updateNoteLabel("34,7 %")
+            })
+        
+        }
         alert.showSuccess("Bem vindo!", subTitle: "")
         
     }

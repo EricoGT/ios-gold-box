@@ -80,6 +80,7 @@ final class LoadingView: UIView {
     private var isVisible:Bool = false;
     private var isCanceled:Bool = false;
     private var totalSecondsToHide:Int = 0;
+    private var showProgressView:Bool = false;
     //
     @IBOutlet private var indicatorView:NVActivityIndicatorView!
     @IBOutlet private var imvBackground:UIImageView!
@@ -90,8 +91,9 @@ final class LoadingView: UIView {
     @IBOutlet private var lblAccessory:UILabel!
     @IBOutlet private var lblProgress:UILabel!
     @IBOutlet private var btnCancel:UIButton!
+    @IBOutlet private var lblNote:UILabel!
+    @IBOutlet private var viewProgress:UIProgressView!
     //
-    
     
     //MARK: - • INITIALISERS
     
@@ -311,6 +313,42 @@ final class LoadingView: UIView {
         }
     }
     
+    public func setProgressViewVisible(visible:Bool){
+        
+        showProgressView = visible;
+        DispatchQueue.main.async {
+            self.viewProgress.alpha = self.showProgressView ? 1.0 : 0.0;
+        }
+    }
+    
+    public func updateProgressView(progress:Float){
+        
+        if (showProgressView) {
+            DispatchQueue.main.async {
+                self.viewProgress.progress = progress 
+            }
+        }
+    }
+    
+    public func updateNoteLabel(_ message:String){
+        
+        DispatchQueue.main.async {
+            self.lblNote?.alpha = 1.0
+            self.lblNote?.text = message
+        }
+    }
+    
+    public func updateLabels(_ accessorymMessage:String, _ noteMessage:String){
+        
+        DispatchQueue.main.async {
+            self.lblAccessory?.alpha = 1.0
+            self.lblAccessory?.text = accessorymMessage
+            //
+            self.lblNote?.alpha = 1.0
+            self.lblNote?.text = noteMessage
+        }
+    }
+    
     //MARK: - • ACTION METHODS
     
     @IBAction func actionCancel(sender:AnyObject){
@@ -340,6 +378,16 @@ final class LoadingView: UIView {
         self.lblProgress?.backgroundColor = UIColor.clear
         self.lblProgress?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_SEMIBOLD, size: App.Constants.FONT_SIZE_TEXT_FIELDS)
         self.lblProgress?.textColor = App.Style.colorView_SuperDark
+        //
+        self.lblNote?.backgroundColor = UIColor.clear
+        self.lblNote?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_MINI)
+        self.lblNote?.textColor = App.Style.colorView_Dark
+        self.lblNote?.alpha = 0.0
+        //
+        self.viewProgress.backgroundColor = UIColor.clear
+        self.viewProgress.trackTintColor = App.Style.colorView_Light
+        self.viewProgress.progressTintColor = UIColor.blue
+        self.viewProgress?.alpha = 0.0
         //
         self.imvBackground?.backgroundColor = UIColor.init(white: 0.0, alpha: 0.4)
         self.imvBackground?.alpha = 1.0
