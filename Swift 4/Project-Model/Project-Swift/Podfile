@@ -1,0 +1,13 @@
+platform :ios, “9.0”
+use_frameworks!
+
+target 'Project-Swift' do
+  
+pod 'Alamofire', ‘4’
+pod 'SwiftyJSON'
+pod 'SCLAlertView'
+pod 'GzipSwift', :git => 'https://github.com/1024jp/GzipSwift.git', :branch => 'swift4'
+pod 'Kingfisher', '~> 3.0'
+pod 'NVActivityIndicatorView', '~> 3.6'
+
+end

@@ -1,0 +1,20 @@
+/* 
+  PMAlertViewLocalizable.strings
+  Project-Swift
+
+  Created by Erico GT on 08/06/17.
+  Copyright © 2017 Atlantic Solutions. All rights reserved.
+*/
+
+/* enum ASAlertViewType */
+"PMALERTVIEW_TYPE_CUSTOM" = "Custom";
+"PMALERTVIEW_TYPE_AUTHENTICATION" = "Authentication";
+"PMALERTVIEW_TYPE_SUCCESS" = "Success";
+"PMALERTVIEW_TYPE_ERROR" = "Error";
+"PMALERTVIEW_TYPE_INFO" = "Info";
+"PMALERTVIEW_TYPE_WARNING" = "Warning";
+"PMALERTVIEW_TYPE_QUESTION" = "Question";
+"PMALERTVIEW_TYPE_EDIT" = "Edit";
+"PMALERTVIEW_TYPE_EXCLUSION" = "Exclusion";
+"PMALERTVIEW_TYPE_SHARE" = "Share";
+"PMALERTVIEW_TYPE_NO_CONNECTION" = "No Connection";
