@@ -107,6 +107,9 @@ class MainMenuVC: PMViewController{
         }
         alert.showSuccess("Bem vindo!", subTitle: "")
         
+        
+        
+        
     }
     
     //MARK: - • INTERFACE/PROTOCOL METHODS

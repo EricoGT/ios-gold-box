@@ -78,7 +78,11 @@ private extension UIDevice {
             case "iPhone9,2":    return  "iPhone 7 Plus"
             case "iPhone9,3":    return  "iPhone 7"
             case "iPhone9,4":    return  "iPhone 7 Plus"
-                
+            //
+            case "iPhone10,1", "iPhone10,4": return "iPhone 8"
+            case "iPhone10,2", "iPhone10,5": return "iPhone 8 Plus"
+            case "iPhone10,3", "iPhone10,6": return "iPhone X"
+            
             //iPod
             case "iPod1,1":      return  "iPod Touch 1G"
             case "iPod2,1":      return  "iPod Touch 2G"
@@ -125,10 +129,17 @@ private extension UIDevice {
             case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
             case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
             case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
+            //
+            case "iPad7,1", "iPad7,2": return "iPad Pro (12 inch 2)"
+            case "iPad7,3", "iPad7,4": return "iPad Pro (10 inch)"
                 
             //simulador
             case "i386":         return  "Simulator"
             case "x86_64":       return  "Simulator"
+            
+            //apple tv
+            case "AppleTV5,3": return "apple TV 4"
+            case "AppleTV6,2": return "apple TV 4K"
             
             //other
             default:             return identifier
@@ -1671,18 +1682,14 @@ final class ToolBoxValidation{
     }
     
     /** Verifica se todos os caracteres de um texto pertencem ou não a uma dada lista de caracteres.*/
-    class func textCheck(text:String, validationList:Array<Character>, restrictForList:Bool) -> ToolBoxValidationResult{
+    class func textCheck(text:String, validationCharacters:String, restrictForList:Bool) -> ToolBoxValidationResult{
         
         if(restrictForList) //somente aceita caracteres da lista
         {
-            for char in text.characters {
-                
+            for char in text {
                 var ok:Bool = false
-                
-                for vChar in validationList {
-                    
+                for vChar in validationCharacters {
                     if (char == vChar){
-                        
                         ok = true
                         break
                     }
@@ -1698,15 +1705,10 @@ final class ToolBoxValidation{
         }
         else //rejeita todos caracteres da lista
         {
-            
-            for char in text.characters {
-                
+            for char in text {
                 var ok:Bool = true
-                
-                for vChar in validationList {
-                    
+                for vChar in validationCharacters {
                     if (char == vChar){
-                        
                         ok = false
                         break
                     }
@@ -1850,7 +1852,7 @@ final class ToolBoxValidation{
         
         
         //VERIFICA SE CPF TEM 11 DIGITOS
-        if (CPF!.characters.count != 11 || CPF! == ""){
+        if (CPF!.count != 11 || CPF! == ""){
             
             return ToolBoxValidationResult.Disapproved
         }
@@ -1991,7 +1993,7 @@ final class ToolBoxValidation{
     class func validate(CreditCard:String) -> Bool{
         
         let numbers = ToolBoxPrivateHelper.onlyNumbers(string: CreditCard)
-        if numbers.characters.count < 9 {
+        if numbers.count < 9 {
             return false
         }
         
@@ -2003,7 +2005,7 @@ final class ToolBoxValidation{
         }
         
         var oddSum = 0, evenSum = 0
-        let reversedArray = reversedString.characters
+        let reversedArray = reversedString
         
         for (i, s) in reversedArray.enumerated() {
             
@@ -2030,7 +2032,7 @@ class ToolBoxGraphic{
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
@@ -2188,8 +2190,8 @@ class ToolBoxGraphic{
                 print("*** error: image must be backed by a CGImage: \(self)")
                 return nil
             }
-            if maskImage != nil && maskImage!.cgImage == nil {
-                print("*** error: maskImage must be backed by a CGImage: \(maskImage)")
+            if  maskImage != nil && maskImage!.cgImage == nil {
+                print("*** error: maskImage must be backed by a CGImage: \(maskImage!)")
                 return nil
             }
             
@@ -3121,9 +3123,9 @@ final class ToolBoxConverter{
         tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_VOLUME_SOLID, with: "")
         tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_DISTANCE, with: "")
         
-        let value:NSDecimalNumber = NSDecimalNumber(string: tempVE)
+        let value:Double? = Double.init(tempVE)
         
-        return Double(value)
+        return (value ?? 0.0)
     }
     
     /** Formata um valor para texto, aplicando opcionalmente o símbolo monetário (localizado pt-BR).*/
@@ -3276,7 +3278,7 @@ fileprivate final class ToolBoxPrivateHelper{
          2 - CNPJ não permitido: Sequencia de números
          */
         
-        if (cnpj.characters.count != 14 || cnpj == ""){
+        if (cnpj.count != 14 || cnpj == ""){
             return 1
         }else if (cnpj == "00000000000000"
             || cnpj == "11111111111111"

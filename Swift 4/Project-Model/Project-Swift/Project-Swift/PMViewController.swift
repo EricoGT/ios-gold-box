@@ -177,6 +177,7 @@ public class PMViewController: UIViewController {
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
+    @objc
     func keyboardWillShow(notification:Notification) {
         guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
         scrollViewBackground.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight.height, 0)
@@ -186,6 +187,7 @@ public class PMViewController: UIViewController {
         self.keyboardWillAppearAlert()
     }
     
+    @objc
     func keyboardWillHide(notification:Notification) {
         scrollViewBackground.contentInset = .zero
         //

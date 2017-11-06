@@ -238,7 +238,7 @@ public class ASTextField: UITextField {
     public func validateText(inputMask:String?, maxLenght:Int, range:NSRange, textFieldString:String, replacementString:String, charactersRestriction:String?) -> String? {
         
         // Prevent crashing undo bug
-        if (range.length + range.location > textFieldString.characters.count) {
+        if (range.length + range.location > textFieldString.count) {
             return nil
         }
         
@@ -252,9 +252,9 @@ public class ASTextField: UITextField {
             let subString:String = (textFieldString as NSString).substring(with: range)
             let rangeSub:Range? = subString.rangeOfCharacter(from: CharacterSet.init(charactersIn: "0123456789"))
             
-            if ((range.length == 1) && (replacementString.characters.count < range.length) && (rangeSub == nil)) {
+            if ((range.length == 1) && (replacementString.count < range.length) && (rangeSub == nil)) {
                 
-                var location:Int = changedString.characters.count - 1
+                var location:Int = changedString.count - 1
                 
                 if (location > 0) {
                     
@@ -283,7 +283,7 @@ public class ASTextField: UITextField {
             //Max lenght validation:
             if (maxLenght > 0) {
                 
-                let newLength:Int = textFieldString.characters.count + replacementString.characters.count - range.length
+                let newLength:Int = textFieldString.count + replacementString.count - range.length
                 if (newLength > maxLenght) {
                     return nil
                 }

@@ -2,16 +2,6 @@
 
 import UIKit
 
-class User{
-    var name:String
-    var idade:Int
-    
-    init(n:String, i:Int){
-        name = n
-        idade = i
-    }
-}
-
 //TESTES DE REFERÊNCIA: **********************************
 //var user1:User = User.init(n: "João", i: 10)
 //let user2:User = User.init(n: "Maria", i: 20)

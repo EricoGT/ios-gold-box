@@ -278,7 +278,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 //Message
                 let text:NSMutableAttributedString = NSMutableAttributedString.init(string: message)
                 let font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_NORMAL)
-                text.addAttributes([NSAttributedStringKey.font : font as Any], range: NSRange.init(location: 0, length: message.characters.count))
+                text.addAttributes([NSAttributedStringKey.font : font as Any], range: NSRange.init(location: 0, length: message.count))
                 self.txtMessage.attributedText = text
                 self.txtMessage.textAlignment = .center
                 self.txtMessage.textColor = App.Style.colorText_GrayDark
@@ -548,7 +548,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
         //Message
         let text:NSMutableAttributedString = NSMutableAttributedString.init(string: txtMessage.text)
         let font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_NORMAL)
-        text.addAttributes([NSAttributedStringKey.font : font as Any], range: NSRange.init(location: 0, length: self.txtMessage.text.characters.count))
+        text.addAttributes([NSAttributedStringKey.font : font as Any], range: NSRange.init(location: 0, length: self.txtMessage.text.count))
         self.txtMessage.attributedText = text
         self.txtMessage.textAlignment = .center
         self.txtMessage.textColor = App.Style.colorText_GrayDark
