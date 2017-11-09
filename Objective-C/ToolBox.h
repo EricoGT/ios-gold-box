@@ -264,6 +264,12 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 /** Cria uma cor RGB através de um texto.*/
 + (UIColor*)graphicHelper_colorWithHexString:(NSString*)string;
 
+/** Cria uma cor hex (representação texto, padrão '#000000') através de uma UIColor.*/
++ (NSString*)graphicHelper_hexStringFromUIColor:(UIColor*)uiColor;
+
+/** Normaliza a orientação de uma imagem para 'UIImageOrientationUp'.*/
++ (UIImage*)graphicHelper_NormalizeImageOrientationToUp:(UIImage*)image;
+
 /** Reduz o tamanho de uma imagem, aplicando compressão JPEG para otimizar o tamanho da mesma. [Ver também método 'graphicHelper_CompressImage:usingQuality:']*/
 + (UIImage*)graphicHelper_NormalizeImage:(UIImage*)image maximumDimension:(int)maxDimension quality:(float)quality;
 
