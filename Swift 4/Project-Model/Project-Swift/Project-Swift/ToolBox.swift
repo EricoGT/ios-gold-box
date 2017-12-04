@@ -282,6 +282,10 @@ final class ToolBox: NSObject{
         return ToolBoxMessure.self
     }
     
+    class var Text:ToolBoxText.Type{
+        return ToolBoxText.self
+    }
+    
     class var Validation:ToolBoxValidation.Type{
         return ToolBoxValidation.self
     }
@@ -308,8 +312,9 @@ final class ToolBox: NSObject{
         //return "Version: 4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
         //return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
         //return "Version: 5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
+        //return "Version: 6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
         //
-        return "Version: 6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
+        return "Version: 7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -2019,6 +2024,71 @@ final class ToolBoxValidation{
         }
         return (oddSum + evenSum) % 10 == 0
         
+    }
+}
+
+//MARK: - • TEXT HELPER =======================================================================
+final class ToolBoxText{
+    
+    class func applyMask(toText:NSString, mask:NSString) -> String{
+        
+        var onOriginal:Int = 0
+        var onFilter:Int = 0
+        var onOutput:Int = 0
+        var outputString = [Character](repeating: "\0", count:mask.length)
+        var done:Bool = false
+        
+        while (onFilter < mask.length && !done) {
+            
+            let filterChar:Character = Character(UnicodeScalar(mask.character(at: onFilter))!)
+            let originalChar:Character = onOriginal >= toText.length ? "\0" : Character(UnicodeScalar(toText.character(at: onOriginal))!)
+            
+            switch filterChar {
+            case "#":
+                
+                if (originalChar == "\0") {
+                    // We have no more input numbers for the filter.  We're done.
+                    done = true
+                    break
+                }
+                
+                if (CharacterSet.init(charactersIn: "0123456789").contains(UnicodeScalar(originalChar.unicodeScalarCodePoint())!)) {
+                    outputString[onOutput] = originalChar;
+                    onOriginal += 1
+                    onFilter += 1
+                    onOutput += 1
+                }else{
+                    onOriginal += 1
+                }
+                
+            default:
+                // Any other character will automatically be inserted for the user as they type (spaces, - etc..) or deleted as they delete if there are more numbers to come.
+                outputString[onOutput] = filterChar;
+                onOutput += 1
+                onFilter += 1
+                if(originalChar == filterChar) {
+                    onOriginal += 1
+                }
+            }
+        }
+        
+        if (onOutput < outputString.count){
+            outputString[onOutput] = "\0" // Cap the output string
+        }
+        
+        return String(outputString).replacingOccurrences(of: "\0", with: "")
+    }
+    
+    class func removeMask(fromText:String, charsMask:String) -> String{
+        
+        var resultString = fromText;
+        //
+        for character in charsMask {
+            let str:String = String(character)
+            resultString = resultString.replacingOccurrences(of: str, with: "")
+        }
+        //
+        return resultString;
     }
 }
 

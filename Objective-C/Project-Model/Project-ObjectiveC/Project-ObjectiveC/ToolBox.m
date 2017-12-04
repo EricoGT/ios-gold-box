@@ -29,8 +29,9 @@
     //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
     //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     //return @"Version: 10.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
+    //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
     
-    return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
+    return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -2071,6 +2072,69 @@
     }
     
     return false;
+}
+
++(NSString*)textHelper_ApplyMaskToText:(NSString*)text usingMask:(NSString*)mask
+{
+    NSUInteger onOriginal = 0, onFilter = 0, onOutput = 0;
+    char outputString[([mask length])];
+    BOOL done = NO;
+    
+    while(onFilter < [mask length] && !done)
+    {
+        char filterChar = [mask characterAtIndex:onFilter];
+        char originalChar = onOriginal >= text.length ? '\0' : [text characterAtIndex:onOriginal];
+        switch (filterChar) {
+            case '#':
+            {
+                if(originalChar=='\0')
+                {
+                    // We have no more input numbers for the filter.  We're done.
+                    done = YES;
+                    break;
+                }
+                if(isdigit(originalChar))
+                {
+                    outputString[onOutput] = originalChar;
+                    onOriginal++;
+                    onFilter++;
+                    onOutput++;
+                }
+                else
+                {
+                    onOriginal++;
+                }
+            }break;
+            default:
+            {
+                // Any other character will automatically be inserted for the user as they type (spaces, - etc..) or deleted as they delete if there are more numbers to come.
+                outputString[onOutput] = filterChar;
+                onOutput++;
+                onFilter++;
+                if(originalChar == filterChar)
+                    onOriginal++;
+            }break;
+        }
+    }
+    outputString[onOutput] = '\0'; // Cap the output string
+    NSString *result = [NSString stringWithUTF8String:outputString];
+    return result;
+}
+
++(NSString*)textHelper_RemoveMaskToText:(NSString*)text usingCharacters:(NSString*)charactersString
+{
+    if (text != nil && charactersString != nil){
+        NSString *resultString = [NSString stringWithFormat:@"%@", text];
+        //
+        for (int i = 0; i < [charactersString length]; i++) {
+            NSString *ch = [charactersString substringWithRange:NSMakeRange(i, 1)];
+            resultString = [resultString stringByReplacingOccurrencesOfString:ch withString:@""];
+        }
+        //
+        return resultString;
+    }else{
+        return text;
+    }
 }
 
 #pragma mark - • GRAPHIC HELPER

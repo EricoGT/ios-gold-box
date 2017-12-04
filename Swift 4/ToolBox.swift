@@ -54,95 +54,95 @@ private extension UIDevice {
         }
         
         switch identifier {
-            //iPhone
-            case "iPhone1,1":    return  "iPhone 1G"
-            case "iPhone1,2":    return  "iPhone 3G"
-            case "iPhone2,1":    return  "iPhone 3GS"
-            case "iPhone3,1":    return  "iPhone 4"
-            case "iPhone3,2":    return  "iPhone 4 (GSM)"
-            case "iPhone3,3":    return  "iPhone 4 (CDMA)"
-            case "iPhone4,1":    return  "iPhone 4S"
-            case "iPhone5,1":    return  "iPhone 5 (GSM)"
-            case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
-            case "iPhone5,3":    return  "iPhone 5C (GSM)"
-            case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
-            case "iPhone6,1":    return  "iPhone 5S (GSM)"
-            case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
-            case "iPhone7,1":    return  "iPhone 6 Plus"
-            case "iPhone7,2":    return  "iPhone 6"
-            case "iPhone8,1":    return  "iPhone 6S"
-            case "iPhone8,2":    return  "iPhone 6S Plus"
-            case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
-            case "iPhone8,4":    return  "iPhone SE (GSM)"
-            case "iPhone9,1":    return  "iPhone 7"
-            case "iPhone9,2":    return  "iPhone 7 Plus"
-            case "iPhone9,3":    return  "iPhone 7"
-            case "iPhone9,4":    return  "iPhone 7 Plus"
-            //
-            case "iPhone10,1", "iPhone10,4": return "iPhone 8"
-            case "iPhone10,2", "iPhone10,5": return "iPhone 8 Plus"
-            case "iPhone10,3", "iPhone10,6": return "iPhone X"
+        //iPhone
+        case "iPhone1,1":    return  "iPhone 1G"
+        case "iPhone1,2":    return  "iPhone 3G"
+        case "iPhone2,1":    return  "iPhone 3GS"
+        case "iPhone3,1":    return  "iPhone 4"
+        case "iPhone3,2":    return  "iPhone 4 (GSM)"
+        case "iPhone3,3":    return  "iPhone 4 (CDMA)"
+        case "iPhone4,1":    return  "iPhone 4S"
+        case "iPhone5,1":    return  "iPhone 5 (GSM)"
+        case "iPhone5,2":    return  "iPhone 5 (GSM+CDMA)"
+        case "iPhone5,3":    return  "iPhone 5C (GSM)"
+        case "iPhone5,4":    return  "iPhone 5C (GSM+CDMA)"
+        case "iPhone6,1":    return  "iPhone 5S (GSM)"
+        case "iPhone6,2":    return  "iPhone 5S (GSM+CDMA)"
+        case "iPhone7,1":    return  "iPhone 6 Plus"
+        case "iPhone7,2":    return  "iPhone 6"
+        case "iPhone8,1":    return  "iPhone 6S"
+        case "iPhone8,2":    return  "iPhone 6S Plus"
+        case "iPhone8,3":    return  "iPhone SE (GSM+CDMA)"
+        case "iPhone8,4":    return  "iPhone SE (GSM)"
+        case "iPhone9,1":    return  "iPhone 7"
+        case "iPhone9,2":    return  "iPhone 7 Plus"
+        case "iPhone9,3":    return  "iPhone 7"
+        case "iPhone9,4":    return  "iPhone 7 Plus"
+        //
+        case "iPhone10,1", "iPhone10,4": return "iPhone 8"
+        case "iPhone10,2", "iPhone10,5": return "iPhone 8 Plus"
+        case "iPhone10,3", "iPhone10,6": return "iPhone X"
             
-            //iPod
-            case "iPod1,1":      return  "iPod Touch 1G"
-            case "iPod2,1":      return  "iPod Touch 2G"
-            case "iPod3,1":      return  "iPod Touch 3G"
-            case "iPod4,1":      return  "iPod Touch 4G"
-            case "iPod5,1":      return  "iPod Touch 5G"
-            case "iPod6,1":      return  "iPod Touch 6G"
-                
-            //iPad
-            case "iPad1,1":      return  "iPad"
-            case "iPad2,1":      return  "iPad 2 (WiFi)"
-            case "iPad2,2":      return  "iPad 2 (GSM)"
-            case "iPad2,3":      return  "iPad 2 (CDMA)"
-            case "iPad2,4":      return  "iPad 2 (WiFi)"
-            case "iPad3,1":      return  "iPad 3 (WiFi)"
-            case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
-            case "iPad3,3":      return  "iPad 3 (GSM)"
-            case "iPad3,4":      return  "iPad 4 (WiFi)"
-            case "iPad3,5":      return  "iPad 4 (GSM)"
-            case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
-                
-            //iPad Mini
-            case "iPad2,5":      return  "iPad Mini (WiFi)"
-            case "iPad2,6":      return  "iPad Mini (GSM)"
-            case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
-            case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
-            case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
-            case "iPad4,6":      return  "iPad Mini 2"
-            case "iPad4,7":      return  "iPad Mini 3"
-            case "iPad4,8":      return  "iPad Mini 3"
-            case "iPad4,9":      return  "iPad Mini 3"
-            case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
-            case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
-                
-            //iPad Air
-            case "iPad4,1":      return  "iPad Air (WiFi)"
-            case "iPad4,2":      return  "iPad Air (Cellular)"
-            case "iPad4,3":      return  "iPad Air"
-            case "iPad5,3":      return  "iPad Air 2 (WiFi)"
-            case "iPad5,4":      return  "iPad Air 2 (Cellular)"
-                
-            //iPad Pro
-            case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
-            case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
-            case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
-            case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
-            //
-            case "iPad7,1", "iPad7,2": return "iPad Pro (12 inch 2)"
-            case "iPad7,3", "iPad7,4": return "iPad Pro (10 inch)"
-                
-            //simulador
-            case "i386":         return  "Simulator"
-            case "x86_64":       return  "Simulator"
+        //iPod
+        case "iPod1,1":      return  "iPod Touch 1G"
+        case "iPod2,1":      return  "iPod Touch 2G"
+        case "iPod3,1":      return  "iPod Touch 3G"
+        case "iPod4,1":      return  "iPod Touch 4G"
+        case "iPod5,1":      return  "iPod Touch 5G"
+        case "iPod6,1":      return  "iPod Touch 6G"
             
-            //apple tv
-            case "AppleTV5,3": return "apple TV 4"
-            case "AppleTV6,2": return "apple TV 4K"
+        //iPad
+        case "iPad1,1":      return  "iPad"
+        case "iPad2,1":      return  "iPad 2 (WiFi)"
+        case "iPad2,2":      return  "iPad 2 (GSM)"
+        case "iPad2,3":      return  "iPad 2 (CDMA)"
+        case "iPad2,4":      return  "iPad 2 (WiFi)"
+        case "iPad3,1":      return  "iPad 3 (WiFi)"
+        case "iPad3,2":      return  "iPad 3 (GSM+CDMA)"
+        case "iPad3,3":      return  "iPad 3 (GSM)"
+        case "iPad3,4":      return  "iPad 4 (WiFi)"
+        case "iPad3,5":      return  "iPad 4 (GSM)"
+        case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
             
-            //other
-            default:             return identifier
+        //iPad Mini
+        case "iPad2,5":      return  "iPad Mini (WiFi)"
+        case "iPad2,6":      return  "iPad Mini (GSM)"
+        case "iPad2,7":      return  "iPad Mini (GSM+CDMA)"
+        case "iPad4,4":      return  "iPad Mini 2 (WiFi)"
+        case "iPad4,5":      return  "iPad Mini 2 (Cellular)"
+        case "iPad4,6":      return  "iPad Mini 2"
+        case "iPad4,7":      return  "iPad Mini 3"
+        case "iPad4,8":      return  "iPad Mini 3"
+        case "iPad4,9":      return  "iPad Mini 3"
+        case "iPad5,1":      return  "iPad Mini 4 (WiFi)"
+        case "iPad5,2":      return  "iPad Mini 4 (Cellular)"
+            
+        //iPad Air
+        case "iPad4,1":      return  "iPad Air (WiFi)"
+        case "iPad4,2":      return  "iPad Air (Cellular)"
+        case "iPad4,3":      return  "iPad Air"
+        case "iPad5,3":      return  "iPad Air 2 (WiFi)"
+        case "iPad5,4":      return  "iPad Air 2 (Cellular)"
+            
+        //iPad Pro
+        case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
+        case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
+        case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
+        case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
+        //
+        case "iPad7,1", "iPad7,2": return "iPad Pro (12 inch 2)"
+        case "iPad7,3", "iPad7,4": return "iPad Pro (10 inch)"
+            
+        //simulador
+        case "i386":         return  "Simulator"
+        case "x86_64":       return  "Simulator"
+            
+        //apple tv
+        case "AppleTV5,3": return "apple TV 4"
+        case "AppleTV6,2": return "apple TV 4K"
+            
+        //other
+        default:             return identifier
         }
     }
 }
@@ -154,40 +154,40 @@ private extension Calendar{
         
         switch identifier {
             
-            case Identifier.gregorian:              return "gregorian"
-                
-            case Identifier.buddhist:               return "buddhist"
-                
-            case Identifier.chinese:                return "chinese"
-                
-            case Identifier.coptic:                 return "coptic"
-                
-            case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
-                
-            case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
-                
-            case Identifier.hebrew:                 return "hebrew"
-                
-            case Identifier.iso8601:                return "iso8601"
-                
-            case Identifier.indian:                 return "indian"
-                
-            case Identifier.islamic:                return "islamic"
-                
-            case Identifier.islamicCivil:           return "islamicCivil"
-                
-            case Identifier.japanese:               return "japanese"
-                
-            case Identifier.persian:                return "persian"
-                
-            case Identifier.republicOfChina:        return "republicOfChina"
-                
-            /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
-            case Identifier.islamicTabular:         return "islamicTabular"
-                
-            /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
-            case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
-                
+        case Identifier.gregorian:              return "gregorian"
+            
+        case Identifier.buddhist:               return "buddhist"
+            
+        case Identifier.chinese:                return "chinese"
+            
+        case Identifier.coptic:                 return "coptic"
+            
+        case Identifier.ethiopicAmeteMihret:    return "ethiopicAmeteMihret"
+            
+        case Identifier.ethiopicAmeteAlem:      return "ethiopicAmeteAlem"
+            
+        case Identifier.hebrew:                 return "hebrew"
+            
+        case Identifier.iso8601:                return "iso8601"
+            
+        case Identifier.indian:                 return "indian"
+            
+        case Identifier.islamic:                return "islamic"
+            
+        case Identifier.islamicCivil:           return "islamicCivil"
+            
+        case Identifier.japanese:               return "japanese"
+            
+        case Identifier.persian:                return "persian"
+            
+        case Identifier.republicOfChina:        return "republicOfChina"
+            
+        /// A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
+        case Identifier.islamicTabular:         return "islamicTabular"
+            
+        /// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
+        case Identifier.islamicUmmAlQura:       return "islamicUmmAlQura"
+            
             //default:                                return ""
         }
     }
@@ -282,6 +282,10 @@ final class ToolBox: NSObject{
         return ToolBoxMessure.self
     }
     
+    class var Text:ToolBoxText.Type{
+        return ToolBoxText.self
+    }
+    
     class var Validation:ToolBoxValidation.Type{
         return ToolBoxValidation.self
     }
@@ -308,8 +312,9 @@ final class ToolBox: NSObject{
         //return "Version: 4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
         //return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
         //return "Version: 5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
+        //return "Version: 6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
         //
-        return "Version: 6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
+        return "Version: 7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -324,7 +329,7 @@ final class ToolBox: NSObject{
 
 //MARK: - • APPLICATION HELPER =======================================================================
 final class ToolBoxApplication:NSObject{
-   
+    
     /** Versão do aplicativo.*/
     class func versionBundle() -> String!{
         
@@ -494,7 +499,7 @@ final class ToolBoxApplication:NSObject{
 
 //MARK: - • DEVICE HELPER =======================================================================
 final class ToolBoxDevice{
-   
+    
     /** Retorna o tamanho da tela do dispositivo (em points).*/
     class func screenSize() -> CGRect{
         
@@ -579,7 +584,7 @@ final class ToolBoxDevice{
 
 //MARK: - • DATE HELPER =======================================================================
 final class ToolBoxDate{
-   
+    
     /** Converte texto para data. Utilizar constantes definidas na classe 'ToolBox'.*/
     class func dateFromString(dateString:String?, stringFormat:String!) -> Date?{
         
@@ -2019,6 +2024,71 @@ final class ToolBoxValidation{
         }
         return (oddSum + evenSum) % 10 == 0
         
+    }
+}
+
+//MARK: - • TEXT HELPER =======================================================================
+final class ToolBoxText{
+    
+    class func applyMask(toText:NSString, mask:NSString) -> String{
+        
+        var onOriginal:Int = 0
+        var onFilter:Int = 0
+        var onOutput:Int = 0
+        var outputString = [Character](repeating: "\0", count:mask.length)
+        var done:Bool = false
+        
+        while (onFilter < mask.length && !done) {
+            
+            let filterChar:Character = Character(UnicodeScalar(mask.character(at: onFilter))!)
+            let originalChar:Character = onOriginal >= toText.length ? "\0" : Character(UnicodeScalar(toText.character(at: onOriginal))!)
+            
+            switch filterChar {
+            case "#":
+                
+                if (originalChar == "\0") {
+                    // We have no more input numbers for the filter.  We're done.
+                    done = true
+                    break
+                }
+                
+                if (CharacterSet.init(charactersIn: "0123456789").contains(UnicodeScalar(originalChar.unicodeScalarCodePoint())!)) {
+                    outputString[onOutput] = originalChar;
+                    onOriginal += 1
+                    onFilter += 1
+                    onOutput += 1
+                }else{
+                    onOriginal += 1
+                }
+                
+            default:
+                // Any other character will automatically be inserted for the user as they type (spaces, - etc..) or deleted as they delete if there are more numbers to come.
+                outputString[onOutput] = filterChar;
+                onOutput += 1
+                onFilter += 1
+                if(originalChar == filterChar) {
+                    onOriginal += 1
+                }
+            }
+        }
+        
+        if (onOutput < outputString.count){
+            outputString[onOutput] = "\0" // Cap the output string
+        }
+        
+        return String(outputString).replacingOccurrences(of: "\0", with: "")
+    }
+    
+    class func removeMask(fromText:String, charsMask:String) -> String{
+        
+        var resultString = fromText;
+        //
+        for character in charsMask {
+            let str:String = String(character)
+            resultString = resultString.replacingOccurrences(of: str, with: "")
+        }
+        //
+        return resultString;
     }
 }
 

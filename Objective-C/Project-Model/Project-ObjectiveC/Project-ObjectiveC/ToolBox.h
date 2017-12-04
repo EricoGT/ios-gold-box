@@ -259,6 +259,12 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 /** Verifica se um dado text possui o caracter parâmetro.*/
 + (bool)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options;
 
+/** Aplica máscara no texto referência. Utilize o caracter '#' como curinga.*/
++(NSString*)textHelper_ApplyMaskToText:(NSString*)text usingMask:(NSString*)mask;
+
+/** Remove as ocorrências dos caracteres parâmetro, para 'limpar' máscara de textos.*/
++(NSString*)textHelper_RemoveMaskToText:(NSString*)text usingCharacters:(NSString*)charactersString;
+
 #pragma mark - • GRAPHIC HELPER
 
 /** Cria uma cor RGB através de um texto.*/

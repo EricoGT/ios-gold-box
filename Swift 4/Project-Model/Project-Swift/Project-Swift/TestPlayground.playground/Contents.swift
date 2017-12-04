@@ -38,6 +38,3 @@ import UIKit
 //user5.idade = 99
 //list
 
-
-
-
