@@ -44,6 +44,9 @@ class App{
 //    class final var Sounds:SoundManager{
 //        return SoundManager.init()
 //    }
+    class final var Sounds:SoundControl{
+        return SoundControl.init()
+    }
     
     //Style
     class final var Style:LayoutStyleManager{

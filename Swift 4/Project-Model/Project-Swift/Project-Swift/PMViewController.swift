@@ -106,6 +106,7 @@ public class PMViewController: UIViewController {
         self.navigationItem.title = screenName
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }

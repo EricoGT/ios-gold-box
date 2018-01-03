@@ -83,6 +83,8 @@ class MainMenuVC: PMViewController{
         alert.addButton(title: "OK", type: SCLAlertButtonType.Default){
         
             App.Delegate.activityView?.startActivity(.downloading, true, nil, nil)
+            //
+            App.Sounds.playBackgroundMusic(.Victory)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                 App.Delegate.activityView?.setProgressViewVisible(visible: true)
@@ -93,6 +95,8 @@ class MainMenuVC: PMViewController{
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                 App.Delegate.activityView?.updateLabels("Criando dados...", "Meio do Processo")
+                //
+                App.Sounds.setBackgroundMusicVolume(0.5)
             })
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
@@ -102,13 +106,13 @@ class MainMenuVC: PMViewController{
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
                 App.Delegate.activityView?.stopActivity(title: nil, message: nil, timeToHide: 0.0, completionHandler: nil)
+                //
+                App.Sounds.stopBackgroundMusic()
+                App.Sounds.playSoundEffect(.Success)
             })
         
         }
         alert.showSuccess("Bem vindo!", subTitle: "")
-        
-        
-        
         
     }
     
