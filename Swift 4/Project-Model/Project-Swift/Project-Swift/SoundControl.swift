@@ -50,7 +50,7 @@ class AudioPlayer:AVAudioPlayer {
 
 //MARK: - • MAIN CLASS
 
-class SoundControl:NSObject{
+class SoundControl:NSObject, AVAudioPlayerDelegate{
 
     //MARK: - Properties:
     public private(set) var volumeBackgroundMusic:Float
@@ -59,7 +59,7 @@ class SoundControl:NSObject{
     private var cachedSoundEffects:Bool
     private var musicPlayer:AVAudioPlayer?
     private var soundEffectList:Array<AudioPlayer>?
-    
+    private var temporaryPlayers:Array<AudioPlayer>?
     
     //MARK: - Initializer:
     required override init(){
@@ -69,6 +69,8 @@ class SoundControl:NSObject{
         volumeSoundEffects = 1.0
         cachedSoundEffects = false
         musicPlayer = nil
+        soundEffectList = nil
+        temporaryPlayers = Array.init()
         
         //AVAudioPlayerCategory
         do{
@@ -272,8 +274,11 @@ class SoundControl:NSObject{
                 let audio:AudioPlayer = try AudioPlayer.init(contentsOf: url)
                 audio.setVolume(self.volumeSoundEffects, fadeDuration: 0.0)
                 audio.soundType = soundID
-                audio.prepareToPlay()
+                audio.numberOfLoops = 0
+                audio.delegate = self
                 audio.play()
+                //
+                temporaryPlayers?.append(audio)
             }catch{
                 print("SoundEffectLoadError: " + error.localizedDescription)
             }
@@ -297,8 +302,6 @@ class SoundControl:NSObject{
             return URL.init(fileURLWithPath: Bundle.main.resourcePath! + "/victory.mp3")
         case .Defeat:
             return URL.init(fileURLWithPath: Bundle.main.resourcePath! + "/defeat.mp3")
-//        default:
-//            return nil
         }
     }
     
@@ -311,8 +314,35 @@ class SoundControl:NSObject{
             return URL.init(fileURLWithPath: Bundle.main.resourcePath! + "/success.m4a")
         case .Error:
             return URL.init(fileURLWithPath: Bundle.main.resourcePath! + "/error.m4a")
-//        default:
-//            return nil
+        }
+    }
+
+    //MARK: - AVAudioPlayerDelegate
+    
+    public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        self.removeFromTemporaryList(player)
+        print("audioPlayerDidFinishPlaying")
+    }
+
+    public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?){
+        self.removeFromTemporaryList(player)
+        print("audioPlayerDecodeErrorDidOccur")
+    }
+
+    public func audioPlayerBeginInterruption(_ player: AVAudioPlayer){
+        self.removeFromTemporaryList(player)
+        print("audioPlayerBeginInterruption")
+    }
+
+    public func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int){
+        self.removeFromTemporaryList(player)
+        print("audioPlayerEndInterruption")
+    }
+    
+    private func removeFromTemporaryList(_ player: AVAudioPlayer){
+        let ap = player as! AudioPlayer
+        if let index = temporaryPlayers?.index(of: ap){
+            temporaryPlayers?.remove(at: index)
         }
     }
 }

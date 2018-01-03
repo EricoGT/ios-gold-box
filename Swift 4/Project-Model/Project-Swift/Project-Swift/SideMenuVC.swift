@@ -281,9 +281,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 }, completion: nil)
             }
             
-            //Som:
-            App.Delegate.soundPlayer.play(sound: .DumEffect, volume: 1.0)
-            
             //Resolução de seleção:
             let option:SideMenuOption = filteredList![indexPath.row]
             

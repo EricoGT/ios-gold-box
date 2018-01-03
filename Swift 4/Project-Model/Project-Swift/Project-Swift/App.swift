@@ -40,13 +40,13 @@ class App{
         return NotificationManager.self
     }
     
-    //Sounds
+    //Sounds (é melhor ser uma propriedade do AppDelegate)
 //    class final var Sounds:SoundManager{
 //        return SoundManager.init()
 //    }
-    class final var Sounds:SoundControl{
-        return SoundControl.init()
-    }
+//    class final var Sounds:SoundControl{
+//        return SoundControl.init()
+//    }
     
     //Style
     class final var Style:LayoutStyleManager{

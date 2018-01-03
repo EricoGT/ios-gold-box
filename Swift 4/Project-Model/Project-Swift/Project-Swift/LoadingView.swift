@@ -354,7 +354,8 @@ final class LoadingView: UIView {
     @IBAction func actionCancel(sender:AnyObject){
         
         isCanceled = true;
-        //lblProgress?.alpha = 0.0
+        //
+        self.stopActivity(nil)
         //
         controlDelegate?.loadingViewCanceled(lV: self)
     }
