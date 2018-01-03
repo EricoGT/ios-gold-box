@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //
     var activityView:LoadingView? = nil
     var viewSideMenu:SideMenuVC? = nil
-    var soundPlayer:SoundManager = SoundManager.init()
+    var soundControl:SoundControl = SoundControl.init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

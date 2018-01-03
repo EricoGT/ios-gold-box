@@ -83,32 +83,39 @@ class MainMenuVC: PMViewController{
         alert.addButton(title: "OK", type: SCLAlertButtonType.Default){
         
             App.Delegate.activityView?.startActivity(.downloading, true, nil, nil)
+            //
+            App.Delegate.soundControl.setBackgroundMusicVolume(0.5)
+            App.Delegate.soundControl.playBackgroundMusic(.Victory)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                 App.Delegate.activityView?.setProgressViewVisible(visible: true)
-                App.Delegate.activityView?.useCancelButton = true
+                App.Delegate.activityView?.useCancelButton = false
                 App.Delegate.activityView?.updateProgressView(progress: 0.3)
                 App.Delegate.activityView?.updateNoteLabel("Inicio do Processo")
             })
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
                 App.Delegate.activityView?.updateLabels("Criando dados...", "Meio do Processo")
+                //
+                App.Delegate.soundControl.setBackgroundMusicVolume(0.25)
             })
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
                 App.Delegate.activityView?.updateProgressView(progress: 0.85)
-                App.Delegate.activityView?.updateNoteLabel("34,7 %")
+                App.Delegate.activityView?.updateNoteLabel("85,1 %")
             })
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 8.0, execute: {
                 App.Delegate.activityView?.stopActivity(title: nil, message: nil, timeToHide: 0.0, completionHandler: nil)
+                App.Delegate.activityView?.setProgressViewVisible(visible: false)
+                App.Delegate.activityView?.updateProgressView(progress: 0.0)
+                //
+                App.Delegate.soundControl.stopBackgroundMusic()
+                App.Delegate.soundControl.playSoundEffect(.Success)
             })
         
         }
         alert.showSuccess("Bem vindo!", subTitle: "")
-        
-        
-        
         
     }
     
