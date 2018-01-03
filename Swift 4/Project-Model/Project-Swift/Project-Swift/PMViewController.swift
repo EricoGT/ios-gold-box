@@ -106,6 +106,10 @@ public class PMViewController: UIViewController {
         self.navigationItem.title = screenName
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_BOLD, size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)]
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
