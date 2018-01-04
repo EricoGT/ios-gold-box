@@ -20,25 +20,41 @@ enum VME_MessageOptionType:Int {
     case Destructive       = 2
 }
 
-//***********************************************
+enum VME_EventType:Int {
+    case Report               = 0
+    case BackgroundAction     = 1
+    case Interruption         = 2
+    case Navigation           = 3
+    case Exception            = 4
+}
 
-class VME_DataManager:NSObject, VME_DataManagerDelegate{
-    
-    weak var viewController:VME_ViewControllerDelegate?
-    
-    func getData(_ parameterName:String) -> Any?{
-        return nil
-    }
-    
-    func setData(_ parameterName:String, _ parameterValue:Any){
-        
-    }
-    
+enum VME_ViewCoordinatorState:Int {
+    case Load                   = 0
+    case WillAppear             = 1
+    case DidAppear              = 2
+    case WillDisappear          = 3
+    case DidDisappear           = 4
+    case Operational            = 5
+    case EnterBackground        = 6
+    case EnterForeground        = 7
 }
 
 //***********************************************
 
-
+protocol VME_DataManager:NSObjectProtocol{
+    
+    //Propertie getter
+    weak var viewController:(UIViewController&VME_ViewCoordinatorDelegate)? { get }
+    
+    //Coordinator State Change
+    func reportStateChange(state: VME_ViewCoordinatorState)
+    
+    //Data Provider
+    func getData(parameterID:String, handler:@escaping (_ data:Any?, _ message:VME_Message) -> ())
+    
+    //Data Processing
+    func setData(parameterID:String, parameterValue:Any, handler:@escaping (_ message:VME_Message) -> ())
+}
 
 //***********************************************
 
@@ -57,7 +73,7 @@ class VME_Message:NSObject
         code = ""
         type = .Generic
         otions = Array.init()
-        userInteration = true
+        userInteration = false
     }
 }
 
@@ -82,18 +98,38 @@ class VME_MessageOption:NSObject
         //
         super.init()
     }
-    
 }
 
 //***********************************************
 
-protocol VME_ViewControllerDelegate:NSObjectProtocol
+class VME_Event:NSObject
 {
-    func processMessage(_ message:VME_Message)
+    var code:String
+    weak var sender:UIView?
+    var type:VME_EventType
+    var message:VME_Message?
+    var data:Any?
+    var action:(() -> Void)?
+    
+    override init(){
+        self.code = ""
+        self.sender = nil
+        self.type = .Report
+        self.message = nil
+        self.action = nil
+        self.data = nil
+        //
+        super.init()
+    }
 }
 
-protocol VME_DataManagerDelegate
+//***********************************************
+
+protocol VME_ViewCoordinatorDelegate:NSObjectProtocol
 {
-    func getData(_ parameterName:String) -> Any?
-    func setData(_ parameterName:String, _ parameterValue:Any)
+    var dataManagerDelegate:VME_DataManager{ get }
+    //
+    func processMessage(_ message:VME_Message)
+    func processEvent(_ event:VME_Event)
+    func currentState() -> VME_ViewCoordinatorState
 }
