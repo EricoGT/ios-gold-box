@@ -17,7 +17,38 @@ class User{
     }
 }
 
-//TESTES DE REFERÊNCIA: **********************************
+//TESTES DE REFERÊNCIA **********************************
+
+var alunosNotas = [4, 5, 7, 9, 6, 10, 3]
+
+//Map:
+//O Map faz um loop sobre uma coleção (um array por exemplo) e aplica a mesma operação a cada elemento da coleção.
+var alunosNotasMap = alunosNotas.map {$0 + 1}
+alunosNotasMap
+
+//Filter:
+//Faz um loop sobre uma coleção e retorna uma coleção que contém elementos que atendem a uma condição.
+var alunosNotasFilter = alunosNotas.filter { $0 >= 5 }
+alunosNotasFilter
+
+//Reduce:
+//Combina todos os itens de uma coleção para criar um único valor.
+var alunosNotasReduce:Float = Float.init(alunosNotas.reduce(0, +))/Float.init(alunosNotas.count)
+alunosNotasReduce
+
+//Order:
+//Ordena a coleção de elementos
+var alunosNotasOrder = alunosNotas
+alunosNotasOrder.sort{ $0 < $1 }
+alunosNotasOrder
+//
+var alunosNomes = ["PEdro", "Maria", "JoSé", "Paulo", "Ana"]
+var alunosNomesOrder = alunosNomes
+alunosNomesOrder = alunosNomes.sorted{$0.caseInsensitiveCompare($1) == .orderedAscending}
+alunosNomesOrder
+
+
+//REFERÊNCIA E VALOR **********************************
 
 /*
 var user1:User = User.init(n: "João", i: 10)
