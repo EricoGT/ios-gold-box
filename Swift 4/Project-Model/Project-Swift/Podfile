@@ -2,7 +2,8 @@ platform :ios, “9.0”
 use_frameworks!
 
 target 'Project-Swift' do
-  
+ 
+pod 'ToolBox-Swift', '~> 1.0.0'
 pod 'Alamofire', ‘4’
 pod 'SwiftyJSON'
 pod 'SCLAlertView'
