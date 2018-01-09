@@ -11,7 +11,7 @@ import Accelerate
 
 //MARK: - • EXTENSIONS
 
-private extension String {
+extension String {
     
     var lastPathComponent: String {
         return (self as NSString).lastPathComponent
@@ -42,7 +42,18 @@ private extension String {
     }
 }
 
-private extension UIDevice {
+extension Character
+{
+    func unicodeScalarCodePoint() -> UInt32
+    {
+        let characterString = String(self)
+        let scalars = characterString.unicodeScalars
+        
+        return scalars[scalars.startIndex].value
+    }
+}
+
+extension UIDevice {
     
     var modelName: String {
         var systemInfo = utsname()
@@ -148,7 +159,7 @@ private extension UIDevice {
 }
 
 
-private extension Calendar{
+extension Calendar{
     
     var identifierString:String{
         
@@ -304,17 +315,18 @@ final class ToolBox: NSObject{
     class func classVersionInfo() -> String!{
         
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
-        //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
-        //return "Version: 2.0  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
-        //return "Version: 3.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
-        //return "Version: 3.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
-        //return "Version: 4.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
-        //return "Version: 4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
-        //return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
-        //return "Version: 5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
-        //return "Version: 6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
+        //return "Version: 0.1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
+        //return "Version: 0.2.0  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //return "Version: 0.3.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        //return "Version: 0.3.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
+        //return "Version: 0.4.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
+        //return "Version: 0.4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
+        //return "Version: 0.5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
+        //return "Version: 0.5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
+        //return "Version: 0.6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
+        //return "Version: 0.7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
         //
-        return "Version: 7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
+        return "Version: 0.7.1  |  Date: 04/01/2018  |  Autor: EricoGT  |  Note: Fix nas extensions da classe.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
