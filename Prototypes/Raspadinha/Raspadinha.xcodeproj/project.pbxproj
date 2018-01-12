@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23C3420CEAB67DC9572F4A7B /* libPods-Raspadinha.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C2612B95226141321DBE03 /* libPods-Raspadinha.a */; };
+		E551749D2006BA1900E3D735 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E551749C2006BA1900E3D735 /* AppDelegate.m */; };
+		E55174A32006BA1900E3D735 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55174A12006BA1900E3D735 /* Main.storyboard */; };
+		E55174A52006BA1900E3D735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55174A42006BA1900E3D735 /* Assets.xcassets */; };
+		E55174A82006BA1900E3D735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55174A62006BA1900E3D735 /* LaunchScreen.storyboard */; };
+		E55174AB2006BA1900E3D735 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E55174AA2006BA1900E3D735 /* main.m */; };
+		E55174B32006BA5900E3D735 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55174B22006BA5900E3D735 /* CoreGraphics.framework */; };
+		E55174B92006BA9D00E3D735 /* MDMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = E55174B62006BA9D00E3D735 /* MDMatrix.m */; };
+		E55174BA2006BA9D00E3D735 /* MDScratchImageView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E55174B82006BA9D00E3D735 /* MDScratchImageView.mm */; };
+		E55174BF2006C83400E3D735 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = E55174BC2006C83300E3D735 /* cat.png */; };
+		E55174C02006C83400E3D735 /* clover.png in Resources */ = {isa = PBXBuildFile; fileRef = E55174BD2006C83300E3D735 /* clover.png */; };
+		E55174C12006C83400E3D735 /* complete-set.png in Resources */ = {isa = PBXBuildFile; fileRef = E55174BE2006C83300E3D735 /* complete-set.png */; };
+		E55174C32006C92600E3D735 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E55174C22006C92600E3D735 /* texture.png */; };
+		E55174C62006CA4500E3D735 /* ViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E55174C52006CA4500E3D735 /* ViewControllerBase.m */; };
+		E709DAE920076ACF00052095 /* item-0.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE220076ACE00052095 /* item-0.png */; };
+		E709DAEA20076ACF00052095 /* item-back.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE320076ACE00052095 /* item-back.png */; };
+		E709DAEB20076ACF00052095 /* item-3.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE420076ACE00052095 /* item-3.png */; };
+		E709DAEC20076ACF00052095 /* background-image.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE520076ACE00052095 /* background-image.png */; };
+		E709DAED20076ACF00052095 /* item-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE620076ACF00052095 /* item-2.png */; };
+		E709DAEE20076ACF00052095 /* launch-image.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE720076ACF00052095 /* launch-image.png */; };
+		E709DAEF20076ACF00052095 /* item-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DAE820076ACF00052095 /* item-1.png */; };
+		E709DAF220076EC500052095 /* ViewControllerRaspadinha.m in Sources */ = {isa = PBXBuildFile; fileRef = E709DAF120076EC500052095 /* ViewControllerRaspadinha.m */; };
+		E709DAF52007785D00052095 /* ToolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E709DAF32007785D00052095 /* ToolBox.m */; };
+		E709DAFB20077B9A00052095 /* ScrapeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E709DAFA20077B9A00052095 /* ScrapeCollectionViewCell.m */; };
+		E709DAFE20077F0300052095 /* ScrathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E709DAFD20077F0300052095 /* ScrathItem.m */; };
+		E709DB0020078B0B00052095 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E709DAFF20078B0B00052095 /* Info.plist */; };
+		E709DB0320078B7800052095 /* SCLAlertViewPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = E709DB0120078B7700052095 /* SCLAlertViewPlus.m */; };
+		E709DB052007987000052095 /* gold-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DB042007987000052095 /* gold-bar.png */; };
+		E709DB072007A04A00052095 /* item-4.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DB062007A04A00052095 /* item-4.png */; };
+		E709DB092007A32D00052095 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = E709DB082007A32D00052095 /* hand.png */; };
+		E7ABB5F52008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m in Sources */ = {isa = PBXBuildFile; fileRef = E7ABB5F42008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m */; };
+		E7ABB5F720090EBE00DAC5D3 /* items-collection.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ABB5F620090EBE00DAC5D3 /* items-collection.png */; };
+		E7ABB5FA200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m in Sources */ = {isa = PBXBuildFile; fileRef = E7ABB5F9200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m */; };
+		E7ABB5FD20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m in Sources */ = {isa = PBXBuildFile; fileRef = E7ABB5FC20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52C2612B95226141321DBE03 /* libPods-Raspadinha.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Raspadinha.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7E4538B234FC79FE9492E7 /* Pods-Raspadinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raspadinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raspadinha/Pods-Raspadinha.debug.xcconfig"; sourceTree = "<group>"; };
+		BE8556528F9440B42B14C2C5 /* Pods-Raspadinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raspadinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raspadinha/Pods-Raspadinha.release.xcconfig"; sourceTree = "<group>"; };
+		E55174982006BA1900E3D735 /* Raspadinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raspadinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E551749B2006BA1900E3D735 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E551749C2006BA1900E3D735 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E55174A22006BA1900E3D735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E55174A42006BA1900E3D735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E55174A72006BA1900E3D735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E55174AA2006BA1900E3D735 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E55174B22006BA5900E3D735 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E55174B52006BA9D00E3D735 /* MDMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMatrix.h; sourceTree = "<group>"; };
+		E55174B62006BA9D00E3D735 /* MDMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMatrix.m; sourceTree = "<group>"; };
+		E55174B72006BA9D00E3D735 /* MDScratchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDScratchImageView.h; sourceTree = "<group>"; };
+		E55174B82006BA9D00E3D735 /* MDScratchImageView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDScratchImageView.mm; sourceTree = "<group>"; };
+		E55174BC2006C83300E3D735 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
+		E55174BD2006C83300E3D735 /* clover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clover.png; sourceTree = "<group>"; };
+		E55174BE2006C83300E3D735 /* complete-set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "complete-set.png"; sourceTree = "<group>"; };
+		E55174C22006C92600E3D735 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		E55174C42006CA4500E3D735 /* ViewControllerBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerBase.h; sourceTree = "<group>"; };
+		E55174C52006CA4500E3D735 /* ViewControllerBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerBase.m; sourceTree = "<group>"; };
+		E709DAE220076ACE00052095 /* item-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-0.png"; sourceTree = "<group>"; };
+		E709DAE320076ACE00052095 /* item-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-back.png"; sourceTree = "<group>"; };
+		E709DAE420076ACE00052095 /* item-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-3.png"; sourceTree = "<group>"; };
+		E709DAE520076ACE00052095 /* background-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image.png"; sourceTree = "<group>"; };
+		E709DAE620076ACF00052095 /* item-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-2.png"; sourceTree = "<group>"; };
+		E709DAE720076ACF00052095 /* launch-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-image.png"; sourceTree = "<group>"; };
+		E709DAE820076ACF00052095 /* item-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-1.png"; sourceTree = "<group>"; };
+		E709DAF020076EC500052095 /* ViewControllerRaspadinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerRaspadinha.h; sourceTree = "<group>"; };
+		E709DAF120076EC500052095 /* ViewControllerRaspadinha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRaspadinha.m; sourceTree = "<group>"; };
+		E709DAF32007785D00052095 /* ToolBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolBox.m; sourceTree = "<group>"; };
+		E709DAF42007785D00052095 /* ToolBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBox.h; sourceTree = "<group>"; };
+		E709DAF920077B9A00052095 /* ScrapeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrapeCollectionViewCell.h; sourceTree = "<group>"; };
+		E709DAFA20077B9A00052095 /* ScrapeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrapeCollectionViewCell.m; sourceTree = "<group>"; };
+		E709DAFC20077F0300052095 /* ScrathItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrathItem.h; sourceTree = "<group>"; };
+		E709DAFD20077F0300052095 /* ScrathItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrathItem.m; sourceTree = "<group>"; };
+		E709DAFF20078B0B00052095 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E709DB0120078B7700052095 /* SCLAlertViewPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewPlus.m; sourceTree = "<group>"; };
+		E709DB0220078B7700052095 /* SCLAlertViewPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewPlus.h; sourceTree = "<group>"; };
+		E709DB042007987000052095 /* gold-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-bar.png"; sourceTree = "<group>"; };
+		E709DB062007A04A00052095 /* item-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-4.png"; sourceTree = "<group>"; };
+		E709DB082007A32D00052095 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		E7ABB5F32008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerCompleteRaspadinha.h; sourceTree = "<group>"; };
+		E7ABB5F42008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCompleteRaspadinha.m; sourceTree = "<group>"; };
+		E7ABB5F620090EBE00DAC5D3 /* items-collection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "items-collection.png"; sourceTree = "<group>"; };
+		E7ABB5F8200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerRaspadinhaCompleta.h; sourceTree = "<group>"; };
+		E7ABB5F9200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRaspadinhaCompleta.m; sourceTree = "<group>"; };
+		E7ABB5FB20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerAutoRaspadinha.h; sourceTree = "<group>"; };
+		E7ABB5FC20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAutoRaspadinha.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E55174952006BA1900E3D735 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55174B32006BA5900E3D735 /* CoreGraphics.framework in Frameworks */,
+				23C3420CEAB67DC9572F4A7B /* libPods-Raspadinha.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E551748F2006BA1900E3D735 = {
+			isa = PBXGroup;
+			children = (
+				E551749A2006BA1900E3D735 /* Raspadinha */,
+				E55174992006BA1900E3D735 /* Products */,
+				E55174B12006BA5800E3D735 /* Frameworks */,
+				F2F6B999CAE628384BE6C7D6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		E55174992006BA1900E3D735 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E55174982006BA1900E3D735 /* Raspadinha.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E551749A2006BA1900E3D735 /* Raspadinha */ = {
+			isa = PBXGroup;
+			children = (
+				E709DAFF20078B0B00052095 /* Info.plist */,
+				E709DAF620077B3B00052095 /* Classes */,
+				E55174BB2006C82500E3D735 /* Images */,
+				E55174B42006BA6A00E3D735 /* MDScratchImageView */,
+				E709DAF720077B4800052095 /* Controllers */,
+				E709DAF820077B6B00052095 /* Resources */,
+			);
+			path = Raspadinha;
+			sourceTree = "<group>";
+		};
+		E55174B12006BA5800E3D735 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E55174B22006BA5900E3D735 /* CoreGraphics.framework */,
+				52C2612B95226141321DBE03 /* libPods-Raspadinha.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E55174B42006BA6A00E3D735 /* MDScratchImageView */ = {
+			isa = PBXGroup;
+			children = (
+				E709DAFC20077F0300052095 /* ScrathItem.h */,
+				E709DAFD20077F0300052095 /* ScrathItem.m */,
+				E55174B52006BA9D00E3D735 /* MDMatrix.h */,
+				E55174B62006BA9D00E3D735 /* MDMatrix.m */,
+				E55174B72006BA9D00E3D735 /* MDScratchImageView.h */,
+				E55174B82006BA9D00E3D735 /* MDScratchImageView.mm */,
+			);
+			path = MDScratchImageView;
+			sourceTree = "<group>";
+		};
+		E55174BB2006C82500E3D735 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E7ABB5F620090EBE00DAC5D3 /* items-collection.png */,
+				E709DB082007A32D00052095 /* hand.png */,
+				E709DB042007987000052095 /* gold-bar.png */,
+				E709DAE520076ACE00052095 /* background-image.png */,
+				E709DAE220076ACE00052095 /* item-0.png */,
+				E709DAE820076ACF00052095 /* item-1.png */,
+				E709DAE620076ACF00052095 /* item-2.png */,
+				E709DAE420076ACE00052095 /* item-3.png */,
+				E709DB062007A04A00052095 /* item-4.png */,
+				E709DAE320076ACE00052095 /* item-back.png */,
+				E709DAE720076ACF00052095 /* launch-image.png */,
+				E55174C22006C92600E3D735 /* texture.png */,
+				E55174BC2006C83300E3D735 /* cat.png */,
+				E55174BD2006C83300E3D735 /* clover.png */,
+				E55174BE2006C83300E3D735 /* complete-set.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E709DAF620077B3B00052095 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E709DB0220078B7700052095 /* SCLAlertViewPlus.h */,
+				E709DB0120078B7700052095 /* SCLAlertViewPlus.m */,
+				E551749B2006BA1900E3D735 /* AppDelegate.h */,
+				E551749C2006BA1900E3D735 /* AppDelegate.m */,
+				E709DAF42007785D00052095 /* ToolBox.h */,
+				E709DAF32007785D00052095 /* ToolBox.m */,
+				E709DAF920077B9A00052095 /* ScrapeCollectionViewCell.h */,
+				E709DAFA20077B9A00052095 /* ScrapeCollectionViewCell.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E709DAF720077B4800052095 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E55174A12006BA1900E3D735 /* Main.storyboard */,
+				E55174A62006BA1900E3D735 /* LaunchScreen.storyboard */,
+				E55174C42006CA4500E3D735 /* ViewControllerBase.h */,
+				E55174C52006CA4500E3D735 /* ViewControllerBase.m */,
+				E709DAF020076EC500052095 /* ViewControllerRaspadinha.h */,
+				E709DAF120076EC500052095 /* ViewControllerRaspadinha.m */,
+				E7ABB5F32008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.h */,
+				E7ABB5F42008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m */,
+				E7ABB5F8200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.h */,
+				E7ABB5F9200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m */,
+				E7ABB5FB20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.h */,
+				E7ABB5FC20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E709DAF820077B6B00052095 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E55174A42006BA1900E3D735 /* Assets.xcassets */,
+				E55174AA2006BA1900E3D735 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2F6B999CAE628384BE6C7D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E7E4538B234FC79FE9492E7 /* Pods-Raspadinha.debug.xcconfig */,
+				BE8556528F9440B42B14C2C5 /* Pods-Raspadinha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E55174972006BA1900E3D735 /* Raspadinha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E55174AE2006BA1900E3D735 /* Build configuration list for PBXNativeTarget "Raspadinha" */;
+			buildPhases = (
+				AF94860302D6009F24D33099 /* [CP] Check Pods Manifest.lock */,
+				E55174942006BA1900E3D735 /* Sources */,
+				E55174952006BA1900E3D735 /* Frameworks */,
+				E55174962006BA1900E3D735 /* Resources */,
+				035D724A93ED26B16DC37FD9 /* [CP] Embed Pods Frameworks */,
+				5D86576335025A8F2C7BE271 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Raspadinha;
+			productName = Raspadinha;
+			productReference = E55174982006BA1900E3D735 /* Raspadinha.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E55174902006BA1900E3D735 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = lordesire;
+				TargetAttributes = {
+					E55174972006BA1900E3D735 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E55174932006BA1900E3D735 /* Build configuration list for PBXProject "Raspadinha" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E551748F2006BA1900E3D735;
+			productRefGroup = E55174992006BA1900E3D735 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E55174972006BA1900E3D735 /* Raspadinha */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E55174962006BA1900E3D735 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55174A82006BA1900E3D735 /* LaunchScreen.storyboard in Resources */,
+				E709DAE920076ACF00052095 /* item-0.png in Resources */,
+				E709DB092007A32D00052095 /* hand.png in Resources */,
+				E709DAEF20076ACF00052095 /* item-1.png in Resources */,
+				E709DAEB20076ACF00052095 /* item-3.png in Resources */,
+				E709DAED20076ACF00052095 /* item-2.png in Resources */,
+				E55174C32006C92600E3D735 /* texture.png in Resources */,
+				E55174A52006BA1900E3D735 /* Assets.xcassets in Resources */,
+				E709DB052007987000052095 /* gold-bar.png in Resources */,
+				E709DB072007A04A00052095 /* item-4.png in Resources */,
+				E7ABB5F720090EBE00DAC5D3 /* items-collection.png in Resources */,
+				E55174BF2006C83400E3D735 /* cat.png in Resources */,
+				E709DB0020078B0B00052095 /* Info.plist in Resources */,
+				E709DAEA20076ACF00052095 /* item-back.png in Resources */,
+				E709DAEE20076ACF00052095 /* launch-image.png in Resources */,
+				E55174C12006C83400E3D735 /* complete-set.png in Resources */,
+				E55174C02006C83400E3D735 /* clover.png in Resources */,
+				E709DAEC20076ACF00052095 /* background-image.png in Resources */,
+				E55174A32006BA1900E3D735 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		035D724A93ED26B16DC37FD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raspadinha/Pods-Raspadinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D86576335025A8F2C7BE271 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raspadinha/Pods-Raspadinha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF94860302D6009F24D33099 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Raspadinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E55174942006BA1900E3D735 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7ABB5FD20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m in Sources */,
+				E709DAF220076EC500052095 /* ViewControllerRaspadinha.m in Sources */,
+				E709DAFE20077F0300052095 /* ScrathItem.m in Sources */,
+				E709DB0320078B7800052095 /* SCLAlertViewPlus.m in Sources */,
+				E7ABB5F52008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m in Sources */,
+				E7ABB5FA200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m in Sources */,
+				E55174AB2006BA1900E3D735 /* main.m in Sources */,
+				E709DAF52007785D00052095 /* ToolBox.m in Sources */,
+				E551749D2006BA1900E3D735 /* AppDelegate.m in Sources */,
+				E709DAFB20077B9A00052095 /* ScrapeCollectionViewCell.m in Sources */,
+				E55174B92006BA9D00E3D735 /* MDMatrix.m in Sources */,
+				E55174BA2006BA9D00E3D735 /* MDScratchImageView.mm in Sources */,
+				E55174C62006CA4500E3D735 /* ViewControllerBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E55174A12006BA1900E3D735 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E55174A22006BA1900E3D735 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E55174A62006BA1900E3D735 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E55174A72006BA1900E3D735 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E55174AC2006BA1900E3D735 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E55174AD2006BA1900E3D735 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E55174AF2006BA1900E3D735 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E7E4538B234FC79FE9492E7 /* Pods-Raspadinha.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6SQG7XCNV;
+				INFOPLIST_FILE = Raspadinha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lab360.prototipo.raspadinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E55174B02006BA1900E3D735 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8556528F9440B42B14C2C5 /* Pods-Raspadinha.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6SQG7XCNV;
+				INFOPLIST_FILE = Raspadinha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lab360.prototipo.raspadinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E55174932006BA1900E3D735 /* Build configuration list for PBXProject "Raspadinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E55174AC2006BA1900E3D735 /* Debug */,
+				E55174AD2006BA1900E3D735 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E55174AE2006BA1900E3D735 /* Build configuration list for PBXNativeTarget "Raspadinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E55174AF2006BA1900E3D735 /* Debug */,
+				E55174B02006BA1900E3D735 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E55174902006BA1900E3D735 /* Project object */;
+}

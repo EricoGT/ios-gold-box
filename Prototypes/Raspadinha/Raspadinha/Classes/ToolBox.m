@@ -19,15 +19,15 @@
     //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
     //***********************************************************************************
     
-    //return @"Version: 1.0  |  Date: 09/12/2016  |  Autor: EricoGT  |  Note: Primeiro registro de versão.";
-    //return @"Version: 2.0  |  Date: 22/12/2016  |  Autor: EricoGT  |  Note: Vários métodos adicionados ao grupo 'graphics'.";
-    //return @"Version: 3.0  |  Date: 16/02/2017  |  Autor: EricoGT  |  Note: Adição de novos métodos (date/converter/GZIP).";
-    //return @"Version: 4.0  |  Date: 17/02/2017  |  Autor: EricoGT  |  Note: CopyImage.";
-    //return @"Version: 5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
-    //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
-    //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
-    //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
-    //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
+    //return @"Version:  1.0  |  Date: 09/12/2016  |  Autor: EricoGT  |  Note: Primeiro registro de versão.";
+    //return @"Version:  2.0  |  Date: 22/12/2016  |  Autor: EricoGT  |  Note: Vários métodos adicionados ao grupo 'graphics'.";
+    //return @"Version:  3.0  |  Date: 16/02/2017  |  Autor: EricoGT  |  Note: Adição de novos métodos (date/converter/GZIP).";
+    //return @"Version:  4.0  |  Date: 17/02/2017  |  Autor: EricoGT  |  Note: CopyImage.";
+    //return @"Version:  5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
+    //return @"Version:  6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
+    //return @"Version:  7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
+    //return @"Version:  8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
+    //return @"Version:  9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     //return @"Version: 10.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
     //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
     
@@ -919,55 +919,55 @@
     return [dateComponent valueForComponent:calendarUnit];
     
     /*
-    switch (calendarUnit)
-    {
-        case NSCalendarUnitYear:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitYear fromDate:date];
-            return (int)[dateComponent year];
-        }break;
-            
-        case NSCalendarUnitMonth:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMonth fromDate:date];
-            return (int)[dateComponent month];
-        }break;
-            
-        case NSCalendarUnitDay:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitDay fromDate:date];
-            return (int)[dateComponent day];
-        }break;
-            
-        case NSCalendarUnitHour:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:date];
-            return (int)[dateComponent hour];
-        }break;
-            
-        case NSCalendarUnitMinute:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMinute fromDate:date];
-            return (int)[dateComponent minute];
-        }break;
-            
-        case NSCalendarUnitSecond:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitSecond fromDate:date];
-            return (int)[dateComponent second];
-        }break;
-            
-        case NSCalendarUnitWeekday:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitWeekday fromDate:date];
-            return (int)[dateComponent weekday];
-        }break;
-            
-        default:
-        {
-            return -1;
-        }break;
-    }
+     switch (calendarUnit)
+     {
+     case NSCalendarUnitYear:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitYear fromDate:date];
+     return (int)[dateComponent year];
+     }break;
+     
+     case NSCalendarUnitMonth:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMonth fromDate:date];
+     return (int)[dateComponent month];
+     }break;
+     
+     case NSCalendarUnitDay:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitDay fromDate:date];
+     return (int)[dateComponent day];
+     }break;
+     
+     case NSCalendarUnitHour:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:date];
+     return (int)[dateComponent hour];
+     }break;
+     
+     case NSCalendarUnitMinute:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMinute fromDate:date];
+     return (int)[dateComponent minute];
+     }break;
+     
+     case NSCalendarUnitSecond:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitSecond fromDate:date];
+     return (int)[dateComponent second];
+     }break;
+     
+     case NSCalendarUnitWeekday:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitWeekday fromDate:date];
+     return (int)[dateComponent weekday];
+     }break;
+     
+     default:
+     {
+     return -1;
+     }break;
+     }
      */
 }
 
@@ -1331,7 +1331,7 @@
 {
     
     NSDateComponents *final = [[NSDateComponents alloc] init];
-
+    
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [gregorian setLocale: [NSLocale currentLocale]];
     NSDateComponents *refDate = [gregorian components:  NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
@@ -1460,9 +1460,9 @@
 + (CGFloat) messureHelper_HeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh textFont:(UIFont*)font
 {
     CGRect textRect = [text boundingRectWithSize:CGSizeMake(cWitdh, CGFLOAT_MAX)
-                                                          options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
-                                                       attributes:@{NSFontAttributeName:font}
-                                                          context:nil];
+                                         options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                      attributes:@{NSFontAttributeName:font}
+                                         context:nil];
     
     return textRect.size.height;
 }

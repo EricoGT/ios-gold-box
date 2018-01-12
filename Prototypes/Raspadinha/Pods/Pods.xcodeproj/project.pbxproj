@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		042167F03F1A555B1208776AEDFFF9BB /* SCLTimerDisplay.h in Headers */ = {isa = PBXBuildFile; fileRef = EBE282B2ACA4809EB6D7DFAFD86A57EE /* SCLTimerDisplay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		055276F6C927C3B408B5775552055AE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944C2CE7783B3119D5A38115A6BE920E /* Foundation.framework */; };
+		09B8A13F198074E42915391639D55F1A /* SCLAlertViewStyleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D886C3041D5232ACBFC8E4B35D849DE /* SCLAlertViewStyleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2904E9A07C37F196CE9AB789C3813AD0 /* SCLAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = F349D9ADC8B8F55E1380379654A04670 /* SCLAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F64F05A92340ABC63E4A51333833D3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2859BC85402AEDE24DB74F79B83A8F38 /* Accelerate.framework */; };
+		3CEE44C6BBD5DA8138F756A483E3F57E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF03D30385E2DF6C66213D07797EF8B /* UIKit.framework */; };
+		4A47C8D71089702856DF6D018EB8B3DA /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 532C8F246577922A5E39D38405DF9224 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509FDBBBC88520795C3A282C00679D79 /* SCLAlertViewResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 15E1EC7E8D1454B89CD21C75050446AA /* SCLAlertViewResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AC73A72A75CDB35E0B4689CB32EF4AF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 161ED92E21EE37ED9F0300EBDE4D30A7 /* UIImage+ImageEffects.m */; };
+		636EAB600C80B8D0544BE5B44A347323 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944C2CE7783B3119D5A38115A6BE920E /* Foundation.framework */; };
+		6C948C21B96DF2134C0AF1EEE9B71114 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C9C2FF1AC01B7E9642B30086A16F6 /* SCLTimerDisplay.m */; };
+		6E887D7BF9A9B09782E513EB0B98DF29 /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A315575B2F546C0DA1DB5D0DCE2B3AF7 /* SCLButton.m */; };
+		76BCD21248666EE415752403E1049A15 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD285CB068F95848D3F7A6304A1DE3FC /* SCLAlertView.m */; };
+		8A1E41E79AB39F7D4704DDD450D346B5 /* SCLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2205FAD471B9EBC7C8D2737C669DD09C /* SCLTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97009CE43332538DD6019D352BBC046C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C370011DCAEDB8D4D4FBD87D2949710F /* CoreGraphics.framework */; };
+		99EE8377FC924FA8D972F8930DEB6857 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FDC0D8FD3D22925FA4A248594E05BE /* SCLAlertViewResponder.m */; };
+		9BAC6BAE6FAE35663F598509ABF566EC /* SCLAlertView-Objective-C-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA98B93EF8CDC58448D285E83952AD /* SCLAlertView-Objective-C-dummy.m */; };
+		AD364EFA7365BE9B0F42F08CE7B1CBBC /* Pods-Raspadinha-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0548C3680FDF04E0BF45234BE8D4DCC2 /* Pods-Raspadinha-dummy.m */; };
+		B39BE7FB071E9A6FC0960E66561235EB /* SCLMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 96CA308FB74F5D8EF9F3887EC28E2EB1 /* SCLMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B953E3375B3B5E4BBEA131E95DF6CD76 /* SCLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0768A31F3065E2473B3595ABC1ED2ABE /* SCLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C155B4E6B9EC393D70244441C2AB7C59 /* SCLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCC464697B5278FD9F9D8F74666FCA /* SCLTextView.m */; };
+		D338AC8B7C5A70BB247BB943CC92BC82 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D4001578DDE105797FE0D50A36CBFF5B /* SCLAlertViewStyleKit.m */; };
+		EB29B61A19D39EB30C488963D3F397D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC3E6E558B22227E3FE77DD43D38E54 /* AudioToolbox.framework */; };
+		F0C8F1615A54A95E68E76DE080A598D6 /* SCLSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FE5007093594CDF978EAEAC09B9A33 /* SCLSwitchView.m */; };
+		FA790F43C90080B8F9249A1DBB9804ED /* SCLSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D9D60BFB4301CFC329E6C587834B485 /* SCLSwitchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AA579ED7FD93FB3F79F48DBDAF263FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3074159A393D53F5CE065694F66881D9;
+			remoteInfo = "SCLAlertView-Objective-C";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0548C3680FDF04E0BF45234BE8D4DCC2 /* Pods-Raspadinha-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Raspadinha-dummy.m"; sourceTree = "<group>"; };
+		0768A31F3065E2473B3595ABC1ED2ABE /* SCLButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLButton.h; path = SCLAlertView/SCLButton.h; sourceTree = "<group>"; };
+		0AFA98B93EF8CDC58448D285E83952AD /* SCLAlertView-Objective-C-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-Objective-C-dummy.m"; sourceTree = "<group>"; };
+		15E1EC7E8D1454B89CD21C75050446AA /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLAlertViewResponder.h; path = SCLAlertView/SCLAlertViewResponder.h; sourceTree = "<group>"; };
+		161ED92E21EE37ED9F0300EBDE4D30A7 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "SCLAlertView/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		163D1ABB7A74ACCC29F3F946FE7F1F99 /* libSCLAlertView-Objective-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libSCLAlertView-Objective-C.a"; path = "libSCLAlertView-Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16A875F95BCC4D5995EE5D310E79DF91 /* SCLAlertView-Objective-C.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SCLAlertView-Objective-C.xcconfig"; sourceTree = "<group>"; };
+		215C9C2FF1AC01B7E9642B30086A16F6 /* SCLTimerDisplay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLTimerDisplay.m; path = SCLAlertView/SCLTimerDisplay.m; sourceTree = "<group>"; };
+		2205FAD471B9EBC7C8D2737C669DD09C /* SCLTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLTextView.h; path = SCLAlertView/SCLTextView.h; sourceTree = "<group>"; };
+		2859BC85402AEDE24DB74F79B83A8F38 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		34B2D9084DD8C18FADF0C280D94326B8 /* Pods-Raspadinha-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Raspadinha-acknowledgements.plist"; sourceTree = "<group>"; };
+		4136EF20C9F8BFC14E52F1CC30A271E8 /* Pods-Raspadinha-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Raspadinha-acknowledgements.markdown"; sourceTree = "<group>"; };
+		47DCC464697B5278FD9F9D8F74666FCA /* SCLTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLTextView.m; path = SCLAlertView/SCLTextView.m; sourceTree = "<group>"; };
+		4D886C3041D5232ACBFC8E4B35D849DE /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLAlertViewStyleKit.h; path = SCLAlertView/SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		4D9D60BFB4301CFC329E6C587834B485 /* SCLSwitchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLSwitchView.h; path = SCLAlertView/SCLSwitchView.h; sourceTree = "<group>"; };
+		532C8F246577922A5E39D38405DF9224 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "SCLAlertView/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		59FDC0D8FD3D22925FA4A248594E05BE /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLAlertViewResponder.m; path = SCLAlertView/SCLAlertViewResponder.m; sourceTree = "<group>"; };
+		6B722968E6320552AF8AA45E816D8DF6 /* Pods-Raspadinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Raspadinha.debug.xcconfig"; sourceTree = "<group>"; };
+		6FC3E6E558B22227E3FE77DD43D38E54 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		944C2CE7783B3119D5A38115A6BE920E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		96CA308FB74F5D8EF9F3887EC28E2EB1 /* SCLMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLMacros.h; path = SCLAlertView/SCLMacros.h; sourceTree = "<group>"; };
+		99EDFA0981036DBF2E065826ECCB0310 /* libPods-Raspadinha.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Raspadinha.a"; path = "libPods-Raspadinha.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A315575B2F546C0DA1DB5D0DCE2B3AF7 /* SCLButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLButton.m; path = SCLAlertView/SCLButton.m; sourceTree = "<group>"; };
+		B15CD5797753D6B36795E5816D20AB5A /* Pods-Raspadinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Raspadinha.release.xcconfig"; sourceTree = "<group>"; };
+		BCFC9EAAF6E36D1E0E704B562FB65E89 /* SCLAlertView-Objective-C-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-Objective-C-prefix.pch"; sourceTree = "<group>"; };
+		BD285CB068F95848D3F7A6304A1DE3FC /* SCLAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLAlertView.m; path = SCLAlertView/SCLAlertView.m; sourceTree = "<group>"; };
+		C370011DCAEDB8D4D4FBD87D2949710F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		D0FE5007093594CDF978EAEAC09B9A33 /* SCLSwitchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLSwitchView.m; path = SCLAlertView/SCLSwitchView.m; sourceTree = "<group>"; };
+		D4001578DDE105797FE0D50A36CBFF5B /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SCLAlertViewStyleKit.m; path = SCLAlertView/SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		D536D643F3F935872A8D1B9C805DADF7 /* Pods-Raspadinha-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Raspadinha-frameworks.sh"; sourceTree = "<group>"; };
+		E9D6B436243D9457D4A2412B2A8FDF16 /* Pods-Raspadinha-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Raspadinha-resources.sh"; sourceTree = "<group>"; };
+		EBE282B2ACA4809EB6D7DFAFD86A57EE /* SCLTimerDisplay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLTimerDisplay.h; path = SCLAlertView/SCLTimerDisplay.h; sourceTree = "<group>"; };
+		EEF03D30385E2DF6C66213D07797EF8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F349D9ADC8B8F55E1380379654A04670 /* SCLAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCLAlertView.h; path = SCLAlertView/SCLAlertView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39AFA1B0BCA2718F8AC4FFAF2B8D12C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F64F05A92340ABC63E4A51333833D3 /* Accelerate.framework in Frameworks */,
+				EB29B61A19D39EB30C488963D3F397D4 /* AudioToolbox.framework in Frameworks */,
+				97009CE43332538DD6019D352BBC046C /* CoreGraphics.framework in Frameworks */,
+				636EAB600C80B8D0544BE5B44A347323 /* Foundation.framework in Frameworks */,
+				3CEE44C6BBD5DA8138F756A483E3F57E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC6E640E951B1826029572690832C4D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055276F6C927C3B408B5775552055AE8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09D11C21D0673AC758665D2FE814CC33 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				16A875F95BCC4D5995EE5D310E79DF91 /* SCLAlertView-Objective-C.xcconfig */,
+				0AFA98B93EF8CDC58448D285E83952AD /* SCLAlertView-Objective-C-dummy.m */,
+				BCFC9EAAF6E36D1E0E704B562FB65E89 /* SCLAlertView-Objective-C-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SCLAlertView-Objective-C";
+			sourceTree = "<group>";
+		};
+		0BA44F9848F88F17C1E876719BD132FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99EDFA0981036DBF2E065826ECCB0310 /* libPods-Raspadinha.a */,
+				163D1ABB7A74ACCC29F3F946FE7F1F99 /* libSCLAlertView-Objective-C.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10945FAAF83DE68CE1A444FFBC9DD46D /* Pods-Raspadinha */ = {
+			isa = PBXGroup;
+			children = (
+				4136EF20C9F8BFC14E52F1CC30A271E8 /* Pods-Raspadinha-acknowledgements.markdown */,
+				34B2D9084DD8C18FADF0C280D94326B8 /* Pods-Raspadinha-acknowledgements.plist */,
+				0548C3680FDF04E0BF45234BE8D4DCC2 /* Pods-Raspadinha-dummy.m */,
+				D536D643F3F935872A8D1B9C805DADF7 /* Pods-Raspadinha-frameworks.sh */,
+				E9D6B436243D9457D4A2412B2A8FDF16 /* Pods-Raspadinha-resources.sh */,
+				6B722968E6320552AF8AA45E816D8DF6 /* Pods-Raspadinha.debug.xcconfig */,
+				B15CD5797753D6B36795E5816D20AB5A /* Pods-Raspadinha.release.xcconfig */,
+			);
+			name = "Pods-Raspadinha";
+			path = "Target Support Files/Pods-Raspadinha";
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3C66894D42C79764FC9C81DED875921 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26C4CD8F0BE615B9BB4969E9DA41BFB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8320C79EA85761C449A1210F931A3D0A /* SCLAlertView-Objective-C */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68151C1FEA8B3CB647B60F6E6B1F97E0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10945FAAF83DE68CE1A444FFBC9DD46D /* Pods-Raspadinha */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				26C4CD8F0BE615B9BB4969E9DA41BFB3 /* Pods */,
+				0BA44F9848F88F17C1E876719BD132FE /* Products */,
+				68151C1FEA8B3CB647B60F6E6B1F97E0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8320C79EA85761C449A1210F931A3D0A /* SCLAlertView-Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				F349D9ADC8B8F55E1380379654A04670 /* SCLAlertView.h */,
+				BD285CB068F95848D3F7A6304A1DE3FC /* SCLAlertView.m */,
+				15E1EC7E8D1454B89CD21C75050446AA /* SCLAlertViewResponder.h */,
+				59FDC0D8FD3D22925FA4A248594E05BE /* SCLAlertViewResponder.m */,
+				4D886C3041D5232ACBFC8E4B35D849DE /* SCLAlertViewStyleKit.h */,
+				D4001578DDE105797FE0D50A36CBFF5B /* SCLAlertViewStyleKit.m */,
+				0768A31F3065E2473B3595ABC1ED2ABE /* SCLButton.h */,
+				A315575B2F546C0DA1DB5D0DCE2B3AF7 /* SCLButton.m */,
+				96CA308FB74F5D8EF9F3887EC28E2EB1 /* SCLMacros.h */,
+				4D9D60BFB4301CFC329E6C587834B485 /* SCLSwitchView.h */,
+				D0FE5007093594CDF978EAEAC09B9A33 /* SCLSwitchView.m */,
+				2205FAD471B9EBC7C8D2737C669DD09C /* SCLTextView.h */,
+				47DCC464697B5278FD9F9D8F74666FCA /* SCLTextView.m */,
+				EBE282B2ACA4809EB6D7DFAFD86A57EE /* SCLTimerDisplay.h */,
+				215C9C2FF1AC01B7E9642B30086A16F6 /* SCLTimerDisplay.m */,
+				532C8F246577922A5E39D38405DF9224 /* UIImage+ImageEffects.h */,
+				161ED92E21EE37ED9F0300EBDE4D30A7 /* UIImage+ImageEffects.m */,
+				09D11C21D0673AC758665D2FE814CC33 /* Support Files */,
+			);
+			name = "SCLAlertView-Objective-C";
+			path = "SCLAlertView-Objective-C";
+			sourceTree = "<group>";
+		};
+		F3C66894D42C79764FC9C81DED875921 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2859BC85402AEDE24DB74F79B83A8F38 /* Accelerate.framework */,
+				6FC3E6E558B22227E3FE77DD43D38E54 /* AudioToolbox.framework */,
+				C370011DCAEDB8D4D4FBD87D2949710F /* CoreGraphics.framework */,
+				944C2CE7783B3119D5A38115A6BE920E /* Foundation.framework */,
+				EEF03D30385E2DF6C66213D07797EF8B /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A2546D140D1C04F8B4361F29472F6DC5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2904E9A07C37F196CE9AB789C3813AD0 /* SCLAlertView.h in Headers */,
+				509FDBBBC88520795C3A282C00679D79 /* SCLAlertViewResponder.h in Headers */,
+				09B8A13F198074E42915391639D55F1A /* SCLAlertViewStyleKit.h in Headers */,
+				B953E3375B3B5E4BBEA131E95DF6CD76 /* SCLButton.h in Headers */,
+				B39BE7FB071E9A6FC0960E66561235EB /* SCLMacros.h in Headers */,
+				FA790F43C90080B8F9249A1DBB9804ED /* SCLSwitchView.h in Headers */,
+				8A1E41E79AB39F7D4704DDD450D346B5 /* SCLTextView.h in Headers */,
+				042167F03F1A555B1208776AEDFFF9BB /* SCLTimerDisplay.h in Headers */,
+				4A47C8D71089702856DF6D018EB8B3DA /* UIImage+ImageEffects.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		112E1CFE54EC0EC8D0D9C7A2ADF4FCA8 /* Pods-Raspadinha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEB7A7655D4463E0A880B6CC1D059370 /* Build configuration list for PBXNativeTarget "Pods-Raspadinha" */;
+			buildPhases = (
+				E10C571BD90B33A705C091BF67D80374 /* Sources */,
+				CC6E640E951B1826029572690832C4D2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A46CFEA59C52BA523FD84B20FF6458E /* PBXTargetDependency */,
+			);
+			name = "Pods-Raspadinha";
+			productName = "Pods-Raspadinha";
+			productReference = 99EDFA0981036DBF2E065826ECCB0310 /* libPods-Raspadinha.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3074159A393D53F5CE065694F66881D9 /* SCLAlertView-Objective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E94B091B7014F88767E00A8DA76E4C0E /* Build configuration list for PBXNativeTarget "SCLAlertView-Objective-C" */;
+			buildPhases = (
+				9F6A38BA51CC68D993BD31988A50CCF9 /* Sources */,
+				39AFA1B0BCA2718F8AC4FFAF2B8D12C3 /* Frameworks */,
+				A2546D140D1C04F8B4361F29472F6DC5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SCLAlertView-Objective-C";
+			productName = "SCLAlertView-Objective-C";
+			productReference = 163D1ABB7A74ACCC29F3F946FE7F1F99 /* libSCLAlertView-Objective-C.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0BA44F9848F88F17C1E876719BD132FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				112E1CFE54EC0EC8D0D9C7A2ADF4FCA8 /* Pods-Raspadinha */,
+				3074159A393D53F5CE065694F66881D9 /* SCLAlertView-Objective-C */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F6A38BA51CC68D993BD31988A50CCF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BAC6BAE6FAE35663F598509ABF566EC /* SCLAlertView-Objective-C-dummy.m in Sources */,
+				76BCD21248666EE415752403E1049A15 /* SCLAlertView.m in Sources */,
+				99EE8377FC924FA8D972F8930DEB6857 /* SCLAlertViewResponder.m in Sources */,
+				D338AC8B7C5A70BB247BB943CC92BC82 /* SCLAlertViewStyleKit.m in Sources */,
+				6E887D7BF9A9B09782E513EB0B98DF29 /* SCLButton.m in Sources */,
+				F0C8F1615A54A95E68E76DE080A598D6 /* SCLSwitchView.m in Sources */,
+				C155B4E6B9EC393D70244441C2AB7C59 /* SCLTextView.m in Sources */,
+				6C948C21B96DF2134C0AF1EEE9B71114 /* SCLTimerDisplay.m in Sources */,
+				5AC73A72A75CDB35E0B4689CB32EF4AF /* UIImage+ImageEffects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10C571BD90B33A705C091BF67D80374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD364EFA7365BE9B0F42F08CE7B1CBBC /* Pods-Raspadinha-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A46CFEA59C52BA523FD84B20FF6458E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SCLAlertView-Objective-C";
+			target = 3074159A393D53F5CE065694F66881D9 /* SCLAlertView-Objective-C */;
+			targetProxy = 5AA579ED7FD93FB3F79F48DBDAF263FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16BD36A3EA03423061839CA7F73CF976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15CD5797753D6B36795E5816D20AB5A /* Pods-Raspadinha.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		337F64F348FA9B3191EBE37F34B1BA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A875F95BCC4D5995EE5D310E79DF91 /* SCLAlertView-Objective-C.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView-Objective-C/SCLAlertView-Objective-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47110ECF89FA2465490EBAC1B9267AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B722968E6320552AF8AA45E816D8DF6 /* Pods-Raspadinha.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6F9224530522DD3C735EC96CF142642E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B57951D085A1B98A97F8A1062A5E5C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BAAF7A9DF14687F05AD8E9DDCD8821D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A875F95BCC4D5995EE5D310E79DF91 /* SCLAlertView-Objective-C.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView-Objective-C/SCLAlertView-Objective-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B57951D085A1B98A97F8A1062A5E5C5B /* Debug */,
+				6F9224530522DD3C735EC96CF142642E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEB7A7655D4463E0A880B6CC1D059370 /* Build configuration list for PBXNativeTarget "Pods-Raspadinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47110ECF89FA2465490EBAC1B9267AAE /* Debug */,
+				16BD36A3EA03423061839CA7F73CF976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E94B091B7014F88767E00A8DA76E4C0E /* Build configuration list for PBXNativeTarget "SCLAlertView-Objective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAAF7A9DF14687F05AD8E9DDCD8821D6 /* Debug */,
+				337F64F348FA9B3191EBE37F34B1BA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

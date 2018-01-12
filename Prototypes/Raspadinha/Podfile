@@ -1,0 +1,7 @@
+platform :ios, '9.0'
+
+target “Raspadinha” do
+
+pod 'SCLAlertView-Objective-C', '~> 1.0'
+
+end
