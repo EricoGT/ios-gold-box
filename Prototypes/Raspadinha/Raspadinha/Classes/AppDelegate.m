@@ -49,7 +49,7 @@
 
 - (SCLAlertViewPlus*)createDefaultAlert
 {
-    SCLAlertViewPlus *alert = [[SCLAlertViewPlus alloc] initWithNewWindowWidth:[UIScreen mainScreen].bounds.size.width - 160.0];
+    SCLAlertViewPlus *alert = [[SCLAlertViewPlus alloc] initWithNewWindow]; //initWithNewWindowWidth:[UIScreen mainScreen].bounds.size.width - 160.0];
     [alert.labelTitle setFont:[UIFont boldSystemFontOfSize:20.0]];
     [alert.viewText setFont:[UIFont systemFontOfSize:16.0]];
     [alert setButtonsTextFontFamily:[UIFont boldSystemFontOfSize:16.0].fontName withSize:16.0];

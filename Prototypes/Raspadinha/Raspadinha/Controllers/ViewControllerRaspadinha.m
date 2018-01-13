@@ -266,7 +266,6 @@
 //                    }];
                     //
                     SCLAlertViewPlus *alert = [AppD createDefaultAlert];
-                    [alert setBackgroundType:SCLAlertViewBackgroundTransparent];
                     alert.iconTintColor = [UIColor whiteColor];
                     UIImage *icon =  [SCLAlertViewStyleKit imageOfWarning];
                     [alert showCustom:icon color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"" subTitle:@"Não foi desta vez, quem sabe no próximo pagamento." closeButtonTitle:@"OK" duration:0.0];

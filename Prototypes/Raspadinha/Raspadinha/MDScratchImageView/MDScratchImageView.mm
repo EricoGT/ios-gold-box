@@ -297,9 +297,9 @@ inline CGPoint scalePoint(CGPoint point, CGSize previousSize, CGSize currentSize
         touchPoint = fromUItoQuartz(touchPoint, self.bounds.size);
         touchPoint = scalePoint(touchPoint, self.bounds.size, size);
         
-        if(UITouchPhaseBegan == touch.phase){
+        if(UITouchPhaseBegan == touch.phase || UITouchPhaseEnded == touch.phase || UITouchPhaseCancelled == touch.phase){
             
-            NSLog(@"UITouchPhaseBegan");
+            NSLog(@"UITouchPhaseBegan || UITouchPhaseEnded || UITouchPhaseCancelled");
             
             [self.touchPoints removeAllObjects];
             [self.touchPoints addObject:[NSValue valueWithCGPoint:touchPoint]];
@@ -357,6 +357,7 @@ inline CGPoint scalePoint(CGPoint point, CGSize previousSize, CGSize currentSize
             
             static const FillTileWithTwoPointsFunc fillTileFunc = (FillTileWithTwoPointsFunc) [self methodForSelector:@selector(fillTileWithTwoPoints:end:)];
             (*fillTileFunc)(self,@selector(fillTileWithTwoPoints:end:),touchPoint, prevPoint);
+        
         }
     }
     

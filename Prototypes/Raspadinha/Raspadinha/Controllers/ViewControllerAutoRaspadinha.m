@@ -18,13 +18,14 @@
 //
 @property (nonatomic, strong) NSMutableArray *scratchList;
 @property (nonatomic, assign) bool blockInteraction;
+@property (nonatomic, assign) bool isAnimating;
 @property (nonatomic, assign) bool goodPlay;
 
 @end
 
 @implementation ViewControllerAutoRaspadinha
 
-@synthesize collectionViewMenu, imvReward, lblResult, scratchList, blockInteraction, goodPlay, forcePremium;
+@synthesize collectionViewMenu, imvReward, lblResult, scratchList, blockInteraction, goodPlay, forcePremium, isAnimating;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +38,7 @@
     
     blockInteraction = false;
     goodPlay = false;
+    isAnimating=  false;
     imvReward.alpha = 0.0;
     
     [self createScratchList];
@@ -100,12 +102,24 @@
 {
     ScrathItem *item = [scratchList objectAtIndex:indexPath.row];
     
-    [UIView animateWithDuration:0.2 animations:^{
-        item.scrathView.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        [item.scrathView setHidden:YES];
-        [self processRaspadinhaResultForIndex:indexPath.row];
-    }];
+    if (!isAnimating && !item.scrathView.marked){
+        
+        isAnimating = true;
+        ScrapeCollectionViewCell *cell = (ScrapeCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+        
+        
+        [UIView transitionFromView:item.scrathView toView:cell.imvItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromLeft|UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+            [self processRaspadinhaResultForIndex:indexPath.row];
+        }];
+    }
+    
+    
+//    [UIView animateWithDuration:0.2 animations:^{
+//        item.scrathView.alpha = 0.0;
+//    } completion:^(BOOL finished) {
+//        [item.scrathView setHidden:YES];
+//        [self processRaspadinhaResultForIndex:indexPath.row];
+//    }];
 
 }
 
@@ -223,45 +237,45 @@
     //Buscando o momento de exibir a mensagem
     
     if (!blockInteraction){
- 
+        
         if (goodPlay){
             
             //O usuário está com uma raspadinha premiada
             
             ScrathItem *item = [scratchList objectAtIndex:index];
-            if (item.isPremium){
-                item.scrathView.marked = true;
-                
-                int markedCount = 0;
-                for (ScrathItem *item in scratchList){
-                    if (item.scrathView.marked){
-                        markedCount += 1;
-                    }
-                }
-                
-                if (markedCount == 3){
-                    
-                    blockInteraction = true;
-                    lblResult.text = @"Resultado";
-                    //
-                    //                        [UIView animateWithDuration:0.3 animations:^{
-                    //                            imvReward.alpha = 1.0;
-                    //                            collectionViewMenu.alpha = 0.0;
-                    //                        }];
-                    //
-                    SCLAlertViewPlus *alert = [SCLAlertViewPlus createRichAlertWithMessage:@"Você ganhou R$1.000,00!" imagesArray:@[[UIImage imageNamed:@"gold-bar.png"]] animationTimePerFrame:0.2];
-                    [alert showCustom:[UIImage imageNamed:@"item-back"] color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"Parabéns!" subTitle:@"" closeButtonTitle:@"OK" duration:0.0];
-                    
+            item.scrathView.marked = true;
+            
+            int markedCount = 0;
+            for (ScrathItem *item in scratchList){
+                if (item.scrathView.marked && item.isPremium){
+                    markedCount += 1;
                 }
             }
             
+            if (markedCount == 3){
+
+                blockInteraction = true;
+                lblResult.text = @"Resultado";
+                //
+                //                        [UIView animateWithDuration:0.3 animations:^{
+                //                            imvReward.alpha = 1.0;
+                //                            collectionViewMenu.alpha = 0.0;
+                //                        }];
+                //
+                SCLAlertViewPlus *alert = [SCLAlertViewPlus createRichAlertWithMessage:@"Você ganhou R$1.000,00!" imagesArray:@[[UIImage imageNamed:@"gold-bar.png"]] animationTimePerFrame:0.2];
+                [alert showCustom:[UIImage imageNamed:@"item-back"] color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"Parabéns!" subTitle:@"" closeButtonTitle:@"OK" duration:0.0];
+            
+            }
         }else{
             
             //O raspadinha não é premiada
             
+            ScrathItem *item = [scratchList objectAtIndex:index];
+            item.scrathView.marked = true;
+        
             int markedCount = 0;
             for (ScrathItem *item in scratchList){
-                if (item.scrathView.maskingProgress > 0.75){
+                if (item.scrathView.marked){
                     markedCount += 1;
                 }
             }
@@ -277,16 +291,16 @@
                 //                    }];
                 //
                 SCLAlertViewPlus *alert = [AppD createDefaultAlert];
-                [alert setBackgroundType:SCLAlertViewBackgroundTransparent];
                 alert.iconTintColor = [UIColor whiteColor];
                 UIImage *icon =  [SCLAlertViewStyleKit imageOfWarning];
                 [alert showCustom:icon color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"" subTitle:@"Não foi desta vez, quem sabe no próximo pagamento." closeButtonTitle:@"OK" duration:0.0];
                 
             }
-            
         }
-        
     }
+    
+    isAnimating = false;
+
 }
 
 @end

@@ -271,7 +271,6 @@
                     //                    }];
                     //
                     SCLAlertViewPlus *alert = [AppD createDefaultAlert];
-                    [alert setBackgroundType:SCLAlertViewBackgroundTransparent];
                     alert.iconTintColor = [UIColor whiteColor];
                     UIImage *icon =  [SCLAlertViewStyleKit imageOfWarning];
                     [alert showCustom:icon color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"" subTitle:@"Não foi desta vez, quem sabe no próximo pagamento." closeButtonTitle:@"OK" duration:0.0];
@@ -287,14 +286,18 @@
 - (void)mdScratchImageViewTouchesBegan:(MDScratchImageView *)scratchImageView touches:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     if (mainItem.scrathView == scratchImageView){
-        
-        for (UITouch *t in touches){
-            for (ScrathItem *i in scratchList){
-                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
-                    [i.scrathView processTouches:[NSSet setWithObject:t]];
-                }
-            }
+
+        for (ScrathItem *i in scratchList){
+            [i.scrathView processTouches:touches];
         }
+        
+//        for (UITouch *t in touches){
+//            for (ScrathItem *i in scratchList){
+//                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
+//                    [i.scrathView processTouches:[NSSet setWithObject:t]];
+//                }
+//            }
+//        }
         
     }
     
@@ -305,13 +308,17 @@
 {
     if (mainItem.scrathView == scratchImageView){
         
-        for (UITouch *t in touches){
-            for (ScrathItem *i in scratchList){
-                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
-                    [i.scrathView processTouches:[NSSet setWithObject:t]];
-                }
-            }
+        for (ScrathItem *i in scratchList){
+            [i.scrathView processTouches:touches];
         }
+        
+//        for (UITouch *t in touches){
+//            for (ScrathItem *i in scratchList){
+//                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
+//                    [i.scrathView processTouches:[NSSet setWithObject:t]];
+//                }
+//            }
+//        }
         
     }
     
@@ -322,13 +329,17 @@
 {
     if (mainItem.scrathView == scratchImageView){
         
-        for (UITouch *t in touches){
-            for (ScrathItem *i in scratchList){
-                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
-                    [i.scrathView processTouches:[NSSet setWithObject:t]];
-                }
-            }
+        for (ScrathItem *i in scratchList){
+            [i.scrathView processTouches:touches];
         }
+        
+//        for (UITouch *t in touches){
+//            for (ScrathItem *i in scratchList){
+//                if ([i.scrathView hitTest:[t locationInView:i.scrathView] withEvent:event]){
+//                    [i.scrathView processTouches:[NSSet setWithObject:t]];
+//                }
+//            }
+//        }
         
     }
     
