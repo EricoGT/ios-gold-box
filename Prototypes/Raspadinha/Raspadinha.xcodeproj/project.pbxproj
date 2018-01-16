@@ -41,6 +41,9 @@
 		E7ABB5F720090EBE00DAC5D3 /* items-collection.png in Resources */ = {isa = PBXBuildFile; fileRef = E7ABB5F620090EBE00DAC5D3 /* items-collection.png */; };
 		E7ABB5FA200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m in Sources */ = {isa = PBXBuildFile; fileRef = E7ABB5F9200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m */; };
 		E7ABB5FD20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m in Sources */ = {isa = PBXBuildFile; fileRef = E7ABB5FC20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m */; };
+		E7BF5C09200D17E100A8F1FC /* GameParticleEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BF5C08200D17E100A8F1FC /* GameParticleEmitter.m */; };
+		E7BF5C0C200D180800A8F1FC /* CoinRain.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7BF5C0A200D180800A8F1FC /* CoinRain.sks */; };
+		E7BF5C0D200D180800A8F1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7BF5C0B200D180800A8F1FC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,10 @@
 		E7ABB5F9200918A900DAC5D3 /* ViewControllerRaspadinhaCompleta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRaspadinhaCompleta.m; sourceTree = "<group>"; };
 		E7ABB5FB20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerAutoRaspadinha.h; sourceTree = "<group>"; };
 		E7ABB5FC20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerAutoRaspadinha.m; sourceTree = "<group>"; };
+		E7BF5C07200D17E100A8F1FC /* GameParticleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameParticleEmitter.h; sourceTree = "<group>"; };
+		E7BF5C08200D17E100A8F1FC /* GameParticleEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameParticleEmitter.m; sourceTree = "<group>"; };
+		E7BF5C0A200D180800A8F1FC /* CoinRain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinRain.sks; sourceTree = "<group>"; };
+		E7BF5C0B200D180800A8F1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +193,8 @@
 		E709DAF620077B3B00052095 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E7BF5C07200D17E100A8F1FC /* GameParticleEmitter.h */,
+				E7BF5C08200D17E100A8F1FC /* GameParticleEmitter.m */,
 				E709DB0220078B7700052095 /* SCLAlertViewPlus.h */,
 				E709DB0120078B7700052095 /* SCLAlertViewPlus.m */,
 				E551749B2006BA1900E3D735 /* AppDelegate.h */,
@@ -194,6 +203,8 @@
 				E709DAF32007785D00052095 /* ToolBox.m */,
 				E709DAF920077B9A00052095 /* ScrapeCollectionViewCell.h */,
 				E709DAFA20077B9A00052095 /* ScrapeCollectionViewCell.m */,
+				E7BF5C0A200D180800A8F1FC /* CoinRain.sks */,
+				E7BF5C0B200D180800A8F1FC /* Assets.xcassets */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -300,12 +311,14 @@
 				E709DAE920076ACF00052095 /* item-0.png in Resources */,
 				E709DB092007A32D00052095 /* hand.png in Resources */,
 				E709DAEF20076ACF00052095 /* item-1.png in Resources */,
+				E7BF5C0D200D180800A8F1FC /* Assets.xcassets in Resources */,
 				E709DAEB20076ACF00052095 /* item-3.png in Resources */,
 				E709DAED20076ACF00052095 /* item-2.png in Resources */,
 				E55174C32006C92600E3D735 /* texture.png in Resources */,
 				E55174A52006BA1900E3D735 /* Assets.xcassets in Resources */,
 				E709DB052007987000052095 /* gold-bar.png in Resources */,
 				E709DB072007A04A00052095 /* item-4.png in Resources */,
+				E7BF5C0C200D180800A8F1FC /* CoinRain.sks in Resources */,
 				E7ABB5F720090EBE00DAC5D3 /* items-collection.png in Resources */,
 				E55174BF2006C83400E3D735 /* cat.png in Resources */,
 				E709DB0020078B0B00052095 /* Info.plist in Resources */,
@@ -378,6 +391,7 @@
 			files = (
 				E7ABB5FD20092ED700DAC5D3 /* ViewControllerAutoRaspadinha.m in Sources */,
 				E709DAF220076EC500052095 /* ViewControllerRaspadinha.m in Sources */,
+				E7BF5C09200D17E100A8F1FC /* GameParticleEmitter.m in Sources */,
 				E709DAFE20077F0300052095 /* ScrathItem.m in Sources */,
 				E709DB0320078B7800052095 /* SCLAlertViewPlus.m in Sources */,
 				E7ABB5F52008EAFE00DAC5D3 /* ViewControllerCompleteRaspadinha.m in Sources */,
