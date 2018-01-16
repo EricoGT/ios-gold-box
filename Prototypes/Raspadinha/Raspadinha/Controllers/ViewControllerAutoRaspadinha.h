@@ -12,6 +12,7 @@
 #import "ScrathItem.h"
 #import "AppDelegate.h"
 #import "SCLAlertViewStyleKit.h"
+#import "GameParticleEmitter.h"
 
 @interface ViewControllerAutoRaspadinha : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MDScratchImageViewDelegate>
 

@@ -20,12 +20,14 @@
 @property (nonatomic, assign) bool blockInteraction;
 @property (nonatomic, assign) bool isAnimating;
 @property (nonatomic, assign) bool goodPlay;
+//
+@property (nonatomic, strong) GameParticleEmitter *particleEmitter;
 
 @end
 
 @implementation ViewControllerAutoRaspadinha
 
-@synthesize collectionViewMenu, imvReward, lblResult, scratchList, blockInteraction, goodPlay, forcePremium, isAnimating;
+@synthesize collectionViewMenu, imvReward, lblResult, scratchList, blockInteraction, goodPlay, forcePremium, isAnimating, particleEmitter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,6 +62,12 @@
     [collectionViewMenu reloadData];
     
     [ToolBox graphicHelper_ApplyShadowToView:collectionViewMenu withColor:[UIColor blackColor] offSet:CGSizeMake(2.0, 2.0) radius:2.0 opacity:0.65];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self finalizeEmitter];
 }
 
 #pragma mark - CollectionView Delegates
@@ -263,6 +271,7 @@
                 //                        }];
                 //
                 SCLAlertViewPlus *alert = [SCLAlertViewPlus createRichAlertWithMessage:@"Você ganhou R$1.000,00!" imagesArray:@[[UIImage imageNamed:@"gold-bar.png"]] animationTimePerFrame:0.2];
+                [self startEmitter];
                 [alert showCustom:[UIImage imageNamed:@"item-back"] color:[UIColor colorWithRed:41.0/255.0 green:0.0/255.0 blue:102.0/255.0 alpha:1.0] title:@"Parabéns!" subTitle:@"" closeButtonTitle:@"OK" duration:0.0];
             
             }
@@ -301,6 +310,30 @@
     
     isAnimating = false;
 
+}
+
+#pragma mark - Particles Animation
+
+- (void)startEmitter
+{
+    particleEmitter = [GameParticleEmitter new];
+    [particleEmitter addParticleEmitterToView:self.view];
+}
+
+- (void)finalizeEmitter
+{
+    [particleEmitter finalizeEmitter];
+    particleEmitter = nil;
+}
+
+- (void)pauseEmitter
+{
+    [particleEmitter pauseEmitterAnimation];
+}
+
+- (void)continueEmitter
+{
+    [particleEmitter continueEmitterAnimation];
 }
 
 @end
