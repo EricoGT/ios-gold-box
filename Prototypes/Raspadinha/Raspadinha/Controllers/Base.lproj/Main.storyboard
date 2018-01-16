@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Raspadinha-->
+        <!--Protótipo Raspadinha-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewControllerBase" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Raspadinha" id="wzf-cH-HXS">
+                    <navigationItem key="navigationItem" title="Protótipo Raspadinha" id="wzf-cH-HXS">
                         <barButtonItem key="backBarButtonItem" title=" " id="HT9-l3-lDz"/>
                     </navigationItem>
                     <connections>
