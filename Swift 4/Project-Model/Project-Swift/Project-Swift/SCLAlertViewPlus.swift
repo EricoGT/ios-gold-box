@@ -22,31 +22,6 @@ enum SCLAlertButtonType: Int {
     case Wait            = 8
 }
 
-extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
-        
-        return boundingBox.height
-    }
-}
-
-extension NSAttributedString {
-    func height(withConstrainedWidth width: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
-        
-        return boundingBox.height
-    }
-    
-    func width(withConstrainedHeight height: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
-        
-        return boundingBox.width
-    }
-}
-
 //MARK: - SCLAlertViewPlus
 class SCLAlertViewPlus:SCLAlertView{
     
