@@ -26,6 +26,7 @@
 		E74E5A041F28D65800F2F6FA /* tabbar-icon-5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E74E59FA1F28D65800F2F6FA /* tabbar-icon-5@3x.png */; };
 		E76CEF381F0A570900BCA6CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEF371F0A570900BCA6CF /* User.swift */; };
 		E76CEF3A1F0A589500BCA6CF /* beep.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E76CEF391F0A589500BCA6CF /* beep.m4a */; };
+		E771BBE5201B354F0065AB69 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E771BBE4201B354F0065AB69 /* EdgeInsetLabel.swift */; };
 		E7A00FAA1E8E81FF0050EDD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */; };
 		E7A00FAF1E8E81FF0050EDD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A00FAD1E8E81FF0050EDD3 /* Main.storyboard */; };
 		E7A00FB41E8E81FF0050EDD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A00FB21E8E81FF0050EDD3 /* LaunchScreen.storyboard */; };
@@ -171,6 +172,7 @@
 		E74E59FA1F28D65800F2F6FA /* tabbar-icon-5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-icon-5@3x.png"; sourceTree = "<group>"; };
 		E76CEF371F0A570900BCA6CF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E76CEF391F0A589500BCA6CF /* beep.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = beep.m4a; sourceTree = "<group>"; };
+		E771BBE4201B354F0065AB69 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
 		E7A00FA61E8E81FF0050EDD3 /* Project-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A00FA91E8E81FF0050EDD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7A00FAE1E8E81FF0050EDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -367,6 +369,14 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
+		E771BBE3201B353E0065AB69 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				E771BBE4201B354F0065AB69 /* EdgeInsetLabel.swift */,
+			);
+			name = UILabel;
+			sourceTree = "<group>";
+		};
 		E7A00F9D1E8E81FF0050EDD3 = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +484,7 @@
 		E7A00FDE1E8E82D30050EDD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E771BBE3201B353E0065AB69 /* UILabel */,
 				E7C647011EE96ED20008A8F3 /* TextField */,
 				E7C646FC1EE96DF70008A8F3 /* CustomPickerView */,
 				E7B035DD1EC4D23F00C669C9 /* AlertView */,
@@ -1138,6 +1149,7 @@
 				E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */,
 				E7A00FDA1E8E828A0050EDD3 /* App.swift in Sources */,
 				E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */,
+				E771BBE5201B354F0065AB69 /* EdgeInsetLabel.swift in Sources */,
 				E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */,
 				E7A00FED1E8E84A30050EDD3 /* Reachability.swift in Sources */,
 				E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */,
