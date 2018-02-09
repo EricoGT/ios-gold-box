@@ -39,6 +39,9 @@
 		E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */; };
 		E7A00FF61E8E85490050EDD3 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */; };
 		E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */; };
+		E7A3E9E9202DC1C70083CA2E /* PickUpVariableContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E9E7202DC1C70083CA2E /* PickUpVariableContainerVC.swift */; };
+		E7A3E9EA202DC1C70083CA2E /* VariableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3E9E8202DC1C70083CA2E /* VariableContainerView.swift */; };
+		E7A3E9EC202DF3000083CA2E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A3E9EB202DF3000083CA2E /* Test.storyboard */; };
 		E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C621ECDD075003F2E79 /* LoadingViewLocalizable.strings */; };
 		E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C641ECDD103003F2E79 /* SFDisplay-Black.otf */; };
 		E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7A96C651ECDD103003F2E79 /* SFDisplay-Bold.otf */; };
@@ -193,6 +196,9 @@
 		E7A00FEF1E8E84D10050EDD3 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		E7A00FF51E8E85490050EDD3 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		E7A00FF71E8E85800050EDD3 /* ConstantsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsManager.swift; sourceTree = "<group>"; };
+		E7A3E9E7202DC1C70083CA2E /* PickUpVariableContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpVariableContainerVC.swift; sourceTree = "<group>"; };
+		E7A3E9E8202DC1C70083CA2E /* VariableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableContainerView.swift; sourceTree = "<group>"; };
+		E7A3E9EB202DF3000083CA2E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		E7A96C621ECDD075003F2E79 /* LoadingViewLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LoadingViewLocalizable.strings; sourceTree = "<group>"; };
 		E7A96C641ECDD103003F2E79 /* SFDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Black.otf"; sourceTree = "<group>"; };
 		E7A96C651ECDD103003F2E79 /* SFDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFDisplay-Bold.otf"; sourceTree = "<group>"; };
@@ -460,6 +466,7 @@
 		E7A00FDB1E8E82A40050EDD3 /* StoryboardsAndXibs */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3E9EB202DF3000083CA2E /* Test.storyboard */,
 				E74E59EE1F28BF8C00F2F6FA /* Another.storyboard */,
 				E7A00FAD1E8E81FF0050EDD3 /* Main.storyboard */,
 				E7B91A011EFBEEEF00DB1950 /* SideMenu.storyboard */,
@@ -489,6 +496,7 @@
 		E7A00FDE1E8E82D30050EDD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3E9E6202DC1AF0083CA2E /* VariableContainerView */,
 				E771BBE3201B353E0065AB69 /* UILabel */,
 				E7C647011EE96ED20008A8F3 /* TextField */,
 				E7C646FC1EE96DF70008A8F3 /* CustomPickerView */,
@@ -592,6 +600,15 @@
 				E741BBE41EC9D43500DBC300 /* ObjectProtocol.swift */,
 			);
 			name = Reference;
+			sourceTree = "<group>";
+		};
+		E7A3E9E6202DC1AF0083CA2E /* VariableContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3E9E7202DC1C70083CA2E /* PickUpVariableContainerVC.swift */,
+				E7A3E9E8202DC1C70083CA2E /* VariableContainerView.swift */,
+			);
+			name = VariableContainerView;
 			sourceTree = "<group>";
 		};
 		E7AEC75F1E93E2D400581632 /* Help */ = {
@@ -1024,6 +1041,7 @@
 				E7FD7A961E8ED82500772AF0 /* mask.png in Resources */,
 				E7A96C711ECDD103003F2E79 /* SFDisplay-Medium.otf in Resources */,
 				E73AC1A11EFC335100A54069 /* sidemenu-icon-menubutton@2x.png in Resources */,
+				E7A3E9EC202DF3000083CA2E /* Test.storyboard in Resources */,
 				E7A96C631ECDD075003F2E79 /* LoadingViewLocalizable.strings in Resources */,
 				E7A96C6E1ECDD103003F2E79 /* SFDisplay-Bold.otf in Resources */,
 				E7A96C6D1ECDD103003F2E79 /* SFDisplay-Black.otf in Resources */,
@@ -1157,12 +1175,14 @@
 			files = (
 				E76CEF381F0A570900BCA6CF /* User.swift in Sources */,
 				E7D4A31B1FFCF7E000E4C0B4 /* SoundControl.swift in Sources */,
+				E7A3E9EA202DC1C70083CA2E /* VariableContainerView.swift in Sources */,
 				E7A00FEC1E8E84A30050EDD3 /* ConnectionManager.swift in Sources */,
 				E741BBE51EC9D43500DBC300 /* ObjectProtocol.swift in Sources */,
 				E7A00FF01E8E84D10050EDD3 /* SoundManager.swift in Sources */,
 				E7B5A6C21E9287A400C18CCC /* LocationServiceControl.swift in Sources */,
 				E7A00FDA1E8E828A0050EDD3 /* App.swift in Sources */,
 				E7AEC75C1E93CA6300581632 /* InternetHelper.swift in Sources */,
+				E7A3E9E9202DC1C70083CA2E /* PickUpVariableContainerVC.swift in Sources */,
 				E771BBE5201B354F0065AB69 /* EdgeInsetLabel.swift in Sources */,
 				E7BD21571EF9639D005F55ED /* NotificationManager.swift in Sources */,
 				E7A00FED1E8E84A30050EDD3 /* Reachability.swift in Sources */,
