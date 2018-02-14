@@ -92,7 +92,7 @@ class PickUpVariableContainerVC: PMViewController{
     
     @IBAction func actionCompress(sender:Any){
         
-        viewC.compressVertically(factor: 0.01, animated: false)
+        viewC.compressVertically(factor: 0.15, animated: false)
         
     }
     

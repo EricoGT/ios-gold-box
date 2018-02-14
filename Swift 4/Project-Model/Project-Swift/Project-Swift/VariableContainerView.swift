@@ -51,9 +51,7 @@ class VariableContainerView: UIScrollView {
                     cPlus.oldConstant = constraint.constant
                     superConstraints.append(cPlus)
                 }
-                
             }
-            
         }
         
         for constraint in self.constraints {
@@ -78,7 +76,12 @@ class VariableContainerView: UIScrollView {
         if (isRegistered){
             self.isHidden = true
             //
-            //viewWidth.constant = originalExpandedWidth * (factor > 1.0 ? 1.0 : (factor < 0.0 ? 0.0 : factor))
+            for c in selfConstraints{
+                if (c.constraint.firstAttribute == .width){
+                    c.constraint.constant =  c.oldConstant * (factor > 1.0 ? 1.0 : (factor < 0.0 ? 0.0 : factor))
+                    break
+                }
+            }
             //
             self.updateConstraintsValues(animated)
         }
@@ -90,7 +93,12 @@ class VariableContainerView: UIScrollView {
         if (isRegistered){
             self.isHidden = true
             //
-            //viewHeight.constant = originalExpandedHeight * (factor > 1.0 ? 1.0 : (factor < 0.0 ? 0.0 : factor))
+            for c in selfConstraints{
+                if (c.constraint.firstAttribute == .height){
+                    c.constraint.constant =  c.oldConstant * (factor > 1.0 ? 1.0 : (factor < 0.0 ? 0.0 : factor))
+                    break
+                }
+            }
             //
             self.updateConstraintsValues(animated)
         }
@@ -102,13 +110,13 @@ class VariableContainerView: UIScrollView {
             self.isHidden = false
 
             for c in superConstraints{
-                if c.constraint.firstAttribute == .left || c.constraint.firstAttribute == .leftMargin || c.constraint.secondAttribute == .left || c.constraint.secondAttribute == .leftMargin || c.constraint.firstAttribute == .leading || c.constraint.firstAttribute == .leadingMargin || c.constraint.secondAttribute == .leading || c.constraint.secondAttribute == .leadingMargin{
-                    c.constraint.constant = c.oldConstant
-                }
-                if c.constraint.firstAttribute == .right || c.constraint.firstAttribute == .rightMargin || c.constraint.secondAttribute == .right || c.constraint.secondAttribute == .rightMargin || c.constraint.firstAttribute == .trailing || c.constraint.firstAttribute == .trailingMargin || c.constraint.secondAttribute == .trailing || c.constraint.secondAttribute == .trailingMargin{
-                    c.constraint.constant = c.oldConstant
+                if (c.constraint.firstItem as? VariableContainerView) == self{
+                    if c.constraint.firstAttribute == .left || c.constraint.firstAttribute == .leftMargin || c.constraint.firstAttribute == .leading || c.constraint.firstAttribute == .leadingMargin{
+                        c.constraint.constant = c.oldConstant
+                    }
                 }
             }
+            
             for c in selfConstraints{
                 if c.constraint.firstAttribute == .width{
                     c.constraint.constant = c.oldConstant
@@ -125,15 +133,13 @@ class VariableContainerView: UIScrollView {
             self.isHidden = false
 
             for c in superConstraints{
-                if c.constraint.firstAttribute == .top || c.constraint.firstAttribute == .topMargin{
-                    c.constraint.constant = c.oldConstant
-                }else{
-                    if c.constraint.secondAttribute == .bottom || c.constraint.secondAttribute == .bottomMargin{
+                if (c.constraint.firstItem as? VariableContainerView) == self{
+                    if c.constraint.firstAttribute == .top || c.constraint.firstAttribute == .topMargin{
                         c.constraint.constant = c.oldConstant
                     }
                 }
-                
             }
+            
             for sc in selfConstraints{
                 if sc.constraint.firstAttribute == .height{
                     sc.constraint.constant = sc.oldConstant
@@ -149,15 +155,16 @@ class VariableContainerView: UIScrollView {
         if (isRegistered){
 
             for c in superConstraints{
-                if c.constraint.firstAttribute == .left || c.constraint.firstAttribute == .leftMargin || c.constraint.secondAttribute == .left || c.constraint.secondAttribute == .leftMargin || c.constraint.firstAttribute == .leading || c.constraint.firstAttribute == .leadingMargin || c.constraint.secondAttribute == .leading || c.constraint.secondAttribute == .leadingMargin{
-                    c.oldConstant = c.constraint.constant
-                    c.constraint.constant = 0.0
+                //Esconde o componente anulando as left constants
+                if (c.constraint.firstItem as? VariableContainerView) == self{
+                    if c.constraint.firstAttribute == .left || c.constraint.firstAttribute == .leftMargin || c.constraint.firstAttribute == .leading || c.constraint.firstAttribute == .leadingMargin{
+                        c.oldConstant = c.constraint.constant
+                        c.constraint.constant = 0.0
+                    }
                 }
-                if c.constraint.firstAttribute == .right || c.constraint.firstAttribute == .rightMargin || c.constraint.secondAttribute == .right || c.constraint.secondAttribute == .rightMargin || c.constraint.firstAttribute == .trailing || c.constraint.firstAttribute == .trailingMargin || c.constraint.secondAttribute == .trailing || c.constraint.secondAttribute == .trailingMargin{
-                    c.oldConstant = c.constraint.constant
-                    c.constraint.constant = 0.0
-                }
+                //Para esconder o bottom é preciso varrer 'c.constraint.secondItem'
             }
+            
             for c in selfConstraints{
                 if c.constraint.firstAttribute == .width{
                     c.oldConstant = c.constraint.constant
@@ -174,17 +181,16 @@ class VariableContainerView: UIScrollView {
         if (isRegistered){
             
             for c in superConstraints{
-                if c.constraint.firstAttribute == .top || c.constraint.firstAttribute == .topMargin{
-                    c.oldConstant = c.constraint.constant
-                    c.constraint.constant = 0.0
-                }else{
-                    if c.constraint.secondAttribute == .bottom || c.constraint.secondAttribute == .bottomMargin{
+                //Esconde o componente anulando as top constants
+                if (c.constraint.firstItem as? VariableContainerView) == self{
+                    if c.constraint.firstAttribute == .top || c.constraint.firstAttribute == .topMargin{
                         c.oldConstant = c.constraint.constant
-                        //c.constraint.constant = 0.0
+                        c.constraint.constant = 0.0
                     }
                 }
-                
+                //Para esconder o bottom é preciso varrer 'c.constraint.secondItem'
             }
+            
             for sc in selfConstraints{
                 if sc.constraint.firstAttribute == .height{
                     sc.oldConstant = sc.constraint.constant
@@ -209,23 +215,14 @@ class VariableContainerView: UIScrollView {
     }
     
     private func updateConstraintsValues(_ animated:Bool){
-//        DispatchQueue.main.async {
-            if animated {
-                UIView.animate(withDuration: self.animationTime(), animations: {
-                    self.superview?.layoutIfNeeded()
-                })
-            }else{
+
+        if animated {
+            UIView.animate(withDuration: self.animationTime(), animations: {
                 self.superview?.layoutIfNeeded()
-            }
-//        }
+            })
+        }else{
+            self.superview?.layoutIfNeeded()
+        }
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
