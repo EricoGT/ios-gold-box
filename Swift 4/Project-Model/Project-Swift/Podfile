@@ -3,12 +3,11 @@ use_frameworks!
 
 target 'Project-Swift' do
  
-pod 'ToolBox-Swift', '~> 1.0.0'
 pod 'Alamofire', ‘4’
 pod 'SwiftyJSON'
-pod 'SCLAlertView'
-pod 'GzipSwift', :git => 'https://github.com/1024jp/GzipSwift.git', :branch => 'swift4'
-pod 'Kingfisher', '~> 3.0'
-pod 'NVActivityIndicatorView', '~> 3.6'
+pod 'SCLAlertView',:git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
+pod 'GzipSwift'
+pod 'Kingfisher', '~> 4.0'
+pod 'NVActivityIndicatorView', '~> 4.0'
 
 end

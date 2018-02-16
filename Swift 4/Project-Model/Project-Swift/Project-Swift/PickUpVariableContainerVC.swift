@@ -42,7 +42,7 @@ class PickUpVariableContainerVC: PMViewController{
     
     override func setupLayout(screenName:String){
         
-        super.setupLayout(screenName: "Tela de Exemplo")
+        super.setupLayout(screenName: "Exemplo Componente")
         
         //Caso seja preciso delegação para o alertView (a classe deve implmentar 'ASAlertViewDelegate' e 'ASAlertViewDataSource'):
         //self.alertView.setDelegate(self)

@@ -125,7 +125,7 @@ class SCLAlertViewPlus:SCLAlertView{
                 color = self.UIColorFromRGB(0xD62DA5)
         }
 
-        super.addButton(title, backgroundColor: color, textColor: UIColor.white, showDurationStatus: false) {
+        super.addButton(title, backgroundColor: color, textColor: UIColor.white, showTimeout: nil) {
             action()
         }
     }
