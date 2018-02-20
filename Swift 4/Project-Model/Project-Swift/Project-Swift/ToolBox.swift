@@ -305,6 +305,18 @@ final class ToolBox: NSObject{
     public static let SYMBOL_VOLUME_LIQUID:String = "L"
     public static let SYMBOL_VOLUME_SOLID:String = "m³"
     public static let SYMBOL_DISTANCE:String = "KM"
+    //
+    public static let TEXT_MASK_DEFAULT_WILD_SYMBOL:String = "#"
+    public static let TEXT_MASK_DEFAULT_CHARS_SET:String = "()/.:-_|+ "
+    public static let TEXT_MASK_CEP:String = "#####-###"
+    public static let TEXT_MASK_PHONE:String = "(##) ####-####"
+    public static let TEXT_MASK_CELLPHONE:String = "(##) #####-####"
+    public static let TEXT_MASK_GENERIC_PHONE:String = "(##) #########"
+    public static let TEXT_MASK_CPF:String = "###.###.###-##"
+    public static let TEXT_MASK_CNPJ:String = "##.###.###/####-##"
+    public static let TEXT_MASK_BIRTHDATE:String = "##/##/####"
+    public static let TEXT_MASK_HOUR:String = "##:##"
+    public static let TEXT_MASK_CREDIT_CARD_NUMBER:String = "#### #### #### ####"
     
     //MARK: - • PROPERTIES (DYNAMICS)
     class var Application:ToolBoxApplication.Type{
@@ -356,8 +368,9 @@ final class ToolBox: NSObject{
         //return "Version: 0.6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
         //return "Version: 0.7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
         //return "Version: 0.7.1  |  Date: 04/01/2018  |  Autor: EricoGT  |  Note: Fix nas extensions da classe.";
+        //return "Version: 0.7.2  |  Date: 23/01/2018  |  Autor: EricoGT  |  Note: Novas extensions para String e NSAttributedString.";
         //
-        return "Version: 0.7.2  |  Date: 23/01/2018  |  Autor: EricoGT  |  Note: Novas extensions para String e NSAttributedString.";
+        return "Version: 0.8.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: A classe ToolBoxText teve os métodos de máscara atualizados.";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -2072,6 +2085,17 @@ final class ToolBoxValidation{
 
 //MARK: - • TEXT HELPER =======================================================================
 final class ToolBoxText{
+    
+    class func updateMask(text:String?, mask:String) -> String{
+    
+        if let str = text{
+            let strNoMask =  ToolBoxText.removeMask(fromText: str, charsMask: ToolBox.TEXT_MASK_DEFAULT_CHARS_SET)
+            let strYesMask = ToolBoxText.applyMask(toText: NSString.init(string: strNoMask), mask: NSString.init(string: mask))
+            return strYesMask
+        }else{
+            return ""
+        }
+    }
     
     class func applyMask(toText:NSString, mask:NSString) -> String{
         
