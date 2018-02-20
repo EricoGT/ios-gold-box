@@ -30,8 +30,9 @@
     //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     //return @"Version: 10.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
     //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
+    //return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
     
-    return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
+    return @"Version: 13.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: Melhorias do tratamento de máscaras.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -2072,6 +2073,23 @@
     }
     
     return false;
+}
+
++(NSString*)textHelper_UpdateMaskToText:(NSString*)text usingMask:(NSString*)mask
+{
+    if (text != nil){
+        if (mask != nil){
+            
+            NSString *clearText = [ToolBox textHelper_RemoveMaskToText:text usingCharacters:TOOLBOX_TEXT_MASK_DEFAULT_CHARS_SET];
+            NSString *newText = [ToolBox textHelper_ApplyMaskToText:clearText usingMask:mask];
+            return newText;
+            
+        }else{
+            return text;
+        }
+    }else{
+        return nil;
+    }
 }
 
 +(NSString*)textHelper_ApplyMaskToText:(NSString*)text usingMask:(NSString*)mask

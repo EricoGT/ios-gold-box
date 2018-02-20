@@ -259,6 +259,9 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 /** Verifica se um dado text possui o caracter parâmetro.*/
 + (bool)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options;
 
+/** A atualização de máscara remove resquícios de máscaras antigas, se existir, antes de aplicar a nova. Utilize o caracter '#' como curinga.*/
++(NSString*)textHelper_UpdateMaskToText:(NSString*)text usingMask:(NSString*)mask;
+
 /** Aplica máscara no texto referência. Utilize o caracter '#' como curinga.*/
 +(NSString*)textHelper_ApplyMaskToText:(NSString*)text usingMask:(NSString*)mask;
 
@@ -452,6 +455,18 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 #define TOOLBOX_DATA_AHK_yyyyMMddHHmmss @"yyyyMMddHHmmss"
 #define TOOLBOX_DATA_GSMD_yyyyMMdd_HHmmssSSS @"yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 #define TOOLBOX_DATA_GSMD_ddMMyyyy_HHmmssZ @"dd/MM/yyyy HH:mm:sszzzz"
+//
+#define TOOLBOX_TEXT_MASK_DEFAULT_WILD_SYMBOL @"#"
+#define TOOLBOX_TEXT_MASK_DEFAULT_CHARS_SET @"()/.:-_|+ "
+#define TOOLBOX_TEXT_MASK_CEP @"#####-###"
+#define TOOLBOX_TEXT_MASK_PHONE @"(##) ####-####"
+#define TOOLBOX_TEXT_MASK_CELLPHONE @"(##) #####-####"
+#define TOOLBOX_TEXT_MASK_GENERIC_PHONE @"(##) #########"
+#define TOOLBOX_TEXT_MASK_CPF @"###.###.###-##"
+#define TOOLBOX_TEXT_MASK_CNPJ @"##.###.###/####-##"
+#define TOOLBOX_TEXT_MASK_BIRTHDATE @"##/##/####"
+#define TOOLBOX_TEXT_MASK_HOUR @"##:##"
+#define TOOLBOX_TEXT_MASK_CREDIT_CARD_NUMBER @"#### #### #### ####"
 
 //Symbols ************************************************************************************
 #define TOOLBOX_SYMBOL_DEFAULT_MONETARY @"R$"
