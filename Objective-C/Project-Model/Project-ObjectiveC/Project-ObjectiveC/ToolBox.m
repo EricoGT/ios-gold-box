@@ -31,8 +31,9 @@
     //return @"Version: 10.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
     //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
     //return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
+    //return @"Version: 13.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: Melhorias do tratamento de máscaras.";
     
-    return @"Version: 13.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: Melhorias do tratamento de máscaras.";
+    return @"Version: 14.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -337,17 +338,25 @@
         if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
         if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
         if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
+        if ([deviceModel isEqualToString:@"iPhone10,1"])    return @"iPhone 8";
+        if ([deviceModel isEqualToString:@"iPhone10,2"])    return @"iPhone 8 Plus";
+        if ([deviceModel isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
+        if ([deviceModel isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
+        if ([deviceModel isEqualToString:@"iPhone10,3"])    return @"iPhone X";
+        if ([deviceModel isEqualToString:@"iPhone10,6"])    return @"iPhone X";
         
         //iPod
-        if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
-        if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
-        if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
-        if ([deviceModel isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
-        if ([deviceModel isEqualToString:@"iPod5,1"])      return @"iPod Touch 5G";
-        if ([deviceModel isEqualToString:@"iPod6,1"])      return @"iPod Touch 6G";
+        if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1";
+        if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2";
+        if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3";
+        if ([deviceModel isEqualToString:@"iPod4,1"])      return @"iPod Touch 4";
+        if ([deviceModel isEqualToString:@"iPod5,1"])      return @"iPod Touch 5";
+        //if ([deviceModel isEqualToString:@"iPod6,1"])      return @"iPod Touch 6";
+        if ([deviceModel isEqualToString:@"iPod7,1"])      return @"iPod Touch 6";
         
         //iPad
         if ([deviceModel isEqualToString:@"iPad1,1"])      return @"iPad";
+        if ([deviceModel isEqualToString:@"iPad1,2"])      return @"iPad 3G";
         if ([deviceModel isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
         if ([deviceModel isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
         if ([deviceModel isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
@@ -358,6 +367,8 @@
         if ([deviceModel isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
         if ([deviceModel isEqualToString:@"iPad3,5"])      return @"iPad 4 (GSM)";
         if ([deviceModel isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
+        if ([deviceModel isEqualToString:@"iPad6,11"])      return @"iPad (2017)";
+        if ([deviceModel isEqualToString:@"iPad6,12"])      return @"iPad (2017)";
         
         //iPad Mini
         if ([deviceModel isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
@@ -384,6 +395,22 @@
         if ([deviceModel isEqualToString:@"iPad6,4"])      return @"iPad Pro (9.7 inch, Wi-Fi+LTE)";
         if ([deviceModel isEqualToString:@"iPad6,7"])      return @"iPad Pro (12.9 inch, Wi-Fi)";
         if ([deviceModel isEqualToString:@"iPad6,8"])      return @"iPad Pro (12.9 inch, Wi-Fi+LTE)";
+        if ([deviceModel isEqualToString:@"iPad7,1"])      return @"iPad Pro 2G";
+        if ([deviceModel isEqualToString:@"iPad7,2"])      return @"iPad Pro 2G";
+        if ([deviceModel isEqualToString:@"iPad7,3"])      return @"iPad Pro (10.5 inch)";
+        if ([deviceModel isEqualToString:@"iPad7,4"])      return @"iPad Pro (10.5 inch)";
+        
+        //Watch
+        if ([deviceModel isEqualToString:@"Watch1,1"])      return @"Apple Watch 38mm case";
+        if ([deviceModel isEqualToString:@"Watch1,2"])      return @"Apple Watch 42mm case";
+        if ([deviceModel isEqualToString:@"Watch2,6"])      return @"Apple Watch Series 1 38mm case";
+        if ([deviceModel isEqualToString:@"Watch2,7"])      return @"Apple Watch Series 1 42mm case";
+        if ([deviceModel isEqualToString:@"Watch2,3"])      return @"Apple Watch Series 2 38mm case";
+        if ([deviceModel isEqualToString:@"Watch2,4"])      return @"Apple Watch Series 2 42mm case";
+        if ([deviceModel isEqualToString:@"Watch3,1"])      return @"Apple Watch Series 3 38mm case";
+        if ([deviceModel isEqualToString:@"Watch3,2"])      return @"Apple Watch Series 3 42mm case";
+        if ([deviceModel isEqualToString:@"Watch3,3"])      return @"Apple Watch Series 3 38mm case";
+        if ([deviceModel isEqualToString:@"Watch3,4"])      return @"Apple Watch Series 3 42mm case";
         
         //simulador
         if ([deviceModel isEqualToString:@"i386"])         return @"Simulator";
