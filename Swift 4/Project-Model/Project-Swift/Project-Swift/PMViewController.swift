@@ -98,6 +98,9 @@ public class PMViewController: UIViewController {
     
     public func setupLayout(screenName:String){
         
+        //Layout
+        self.view.layoutIfNeeded()
+        
         //Colors
         self.view.backgroundColor = UIColor.white
         self.scrollViewBackground.backgroundColor = UIColor.clear

@@ -38,18 +38,15 @@
 //        [sqliteM executeScriptFromFile:@"script_sqlite"];
 //    }
     
-    long n1 = RandomNumber(-10, 10);
-    long n2 = RandomNumber(0, 10);
-    long n3 = RandomNumber(-10, 0);
-    long n4 = RandomNumber(10, 100);
-    long n5 = RandomNumber(10, -10);
-    long n6 = RandomNumber(10, 10);
-    long n7 = RandomNumber(0, 100);
-    
+//    long n1 = RandomNumber(-10, 10);
+//    long n2 = RandomNumber(0, 10);
+//    long n3 = RandomNumber(-10, 0);
+//    long n4 = RandomNumber(10, 100);
+//    long n5 = RandomNumber(10, -10);
+//    long n6 = RandomNumber(10, 10);
+//    long n7 = RandomNumber(0, 100);
     
 }
-
-
 
 /*
 #pragma mark - Image picker
