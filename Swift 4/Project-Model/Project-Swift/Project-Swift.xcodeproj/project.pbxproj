@@ -98,7 +98,6 @@
 		E7D4A31B1FFCF7E000E4C0B4 /* SoundControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A31A1FFCF7E000E4C0B4 /* SoundControl.swift */; };
 		E7D4A31F1FFD11E700E4C0B4 /* victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7D4A31D1FFD11E600E4C0B4 /* victory.mp3 */; };
 		E7D4A3201FFD11E700E4C0B4 /* defeat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7D4A31E1FFD11E700E4C0B4 /* defeat.mp3 */; };
-		E7D4A3271FFD498200E4C0B4 /* VME_DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A3261FFD498200E4C0B4 /* VME_DataManager.swift */; };
 		E7DC1848202B619400E34AE5 /* DataSourceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC1847202B619400E34AE5 /* DataSourceResponse.swift */; };
 		E7DC184A202B61E700E34AE5 /* ExampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC1849202B61E700E34AE5 /* ExampleDataSource.swift */; };
 		E7E829E01EC5D9E600D834DB /* README_LoadingView.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */; };
@@ -258,7 +257,6 @@
 		E7D4A31A1FFCF7E000E4C0B4 /* SoundControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundControl.swift; sourceTree = "<group>"; };
 		E7D4A31D1FFD11E600E4C0B4 /* victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = victory.mp3; sourceTree = "<group>"; };
 		E7D4A31E1FFD11E700E4C0B4 /* defeat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = defeat.mp3; sourceTree = "<group>"; };
-		E7D4A3261FFD498200E4C0B4 /* VME_DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VME_DataManager.swift; sourceTree = "<group>"; };
 		E7DC1847202B619400E34AE5 /* DataSourceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceResponse.swift; sourceTree = "<group>"; };
 		E7DC1849202B61E700E34AE5 /* ExampleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataSource.swift; sourceTree = "<group>"; };
 		E7E829DF1EC5D9E600D834DB /* README_LoadingView.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = README_LoadingView.strings; sourceTree = "<group>"; };
@@ -412,7 +410,6 @@
 		E7A00FA81E8E81FF0050EDD3 /* Project-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				E7D4A3251FFD495A00E4C0B4 /* VME */,
 				E7C2CC881F02852800A12EF3 /* Project-Swift.entitlements */,
 				E7A00FD71E8E82150050EDD3 /* Project-Entitlements */,
 				E7E829E11EC63CA300D834DB /* Playground */,
@@ -737,14 +734,6 @@
 				E7D4A31D1FFD11E600E4C0B4 /* victory.mp3 */,
 			);
 			name = Musics;
-			sourceTree = "<group>";
-		};
-		E7D4A3251FFD495A00E4C0B4 /* VME */ = {
-			isa = PBXGroup;
-			children = (
-				E7D4A3261FFD498200E4C0B4 /* VME_DataManager.swift */,
-			);
-			name = VME;
 			sourceTree = "<group>";
 		};
 		E7DC1846202B616100E34AE5 /* DataSources */ = {
@@ -1198,7 +1187,6 @@
 				E7A00FE81E8E84830050EDD3 /* ToolBox.swift in Sources */,
 				E7C647041EE96EF00008A8F3 /* ASTextField.swift in Sources */,
 				E7C647051EE96EF00008A8F3 /* DesignableUITextField.swift in Sources */,
-				E7D4A3271FFD498200E4C0B4 /* VME_DataManager.swift in Sources */,
 				E7C6471E1EE96FAB0008A8F3 /* PMAlertView.swift in Sources */,
 				E7A00FF81E8E85800050EDD3 /* ConstantsManager.swift in Sources */,
 				E7C646FE1EE96E3A0008A8F3 /* CustomPickerView.swift in Sources */,
