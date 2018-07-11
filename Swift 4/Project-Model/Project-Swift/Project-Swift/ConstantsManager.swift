@@ -93,7 +93,7 @@ class ConstantsManager{
         return UIDevice.current.userInterfaceIdiom == .phone
     }
     
-    public final var ScreenSize:CGSize{
+    public final var screenSize:CGSize{
         return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
     
