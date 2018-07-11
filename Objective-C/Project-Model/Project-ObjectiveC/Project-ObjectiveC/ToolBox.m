@@ -32,8 +32,9 @@
     //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
     //return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
     //return @"Version: 13.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: Melhorias do tratamento de máscaras.";
+    //return @"Version: 14.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
     
-    return @"Version: 14.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
+    return @"Version: 14.1  |  Date: 11/07/2018  |  Autor: EricoGT  |  Note: Pequena melhoria no método de conversão de dicionários 'converterHelper_NewDictionaryRemovingNullValuesFromDictionary'.";
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -3259,7 +3260,6 @@
 {
     if (oldDictionary != nil){
         NSMutableDictionary *replaced = [NSMutableDictionary dictionaryWithDictionary:oldDictionary];
-        
         for (NSString *key in [replaced allKeys]) {
             id object = [replaced objectForKey:key];
             if ([object isKindOfClass:[NSString class]]){
@@ -3268,6 +3268,8 @@
                 }
             }else if ([object isKindOfClass:[NSNull class]]){
                 [replaced setObject:newString forKey:key];
+            }else if ([object isKindOfClass:[NSDictionary class]]) {
+                [replaced setObject:[ToolBox converterHelper_NewDictionaryRemovingNullValuesFromDictionary:object withString:newString] forKey:key];
             }
         }
         return [NSDictionary dictionaryWithDictionary:replaced];
