@@ -69,7 +69,7 @@ class SCLAlertViewPlus:SCLAlertView{
         //UIImageView
         let imageView = UIImageView(frame: CGRect(x: 0.0, y: (label.frame.size.height + 20.0), width: alertWidth, height: 100))
         imageView.backgroundColor = nil
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         imageView.clipsToBounds = true
         //imageView.image = UIImage(named: "animal.jpg")
         imageView.animationImages = images

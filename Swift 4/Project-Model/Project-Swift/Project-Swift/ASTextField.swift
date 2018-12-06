@@ -101,8 +101,7 @@ public class ASTextField: UITextField {
     public var placeholderColor:UIColor?{
         didSet{
             guard let color = placeholderColor else { return }
-            attributedPlaceholder = NSAttributedString(string: placeholderFinal,
-                                                       attributes: [NSAttributedStringKey.foregroundColor:color])
+            attributedPlaceholder = NSAttributedString(string: placeholderFinal, attributes: [NSAttributedString.Key.foregroundColor:color])
         }
     }
     
@@ -181,7 +180,7 @@ public class ASTextField: UITextField {
         }
     }
     
-    override public var borderStyle: UITextBorderStyle{
+    override public var borderStyle: UITextField.BorderStyle{
         didSet{
             guard borderStyle != oldValue else { return }
             borderStyle = .none
@@ -200,7 +199,7 @@ public class ASTextField: UITextField {
                 return
             }
             attributedPlaceholder = NSAttributedString(string: placeholderFinal,
-                                                       attributes: [NSAttributedStringKey.foregroundColor:color])
+                                                       attributes: [NSAttributedString.Key.foregroundColor:color])
         }
     }
     

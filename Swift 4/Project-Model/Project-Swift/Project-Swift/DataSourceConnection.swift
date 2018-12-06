@@ -1,33 +1,34 @@
 //
-//  InternetHelper.swift
+//  DataSourceConnection.swift
 //  Project-Swift
 //
-//  Created by Erico GT on 04/04/17.
-//  Copyright © 2017 Atlantic Solutions. All rights reserved.
+//  Created by Erico GT on 06/12/18.
+//  Copyright © 2018 Atlantic Solutions. All rights reserved.
 //
 
-//MARK: - • INTERFACE HEADERS
-
-//MARK: - • FRAMEWORK HEADERS
 import UIKit
 
-//MARK: - • OTHERS IMPORTS
-
-//MARK: - • PROTOCOLS
-
-@objc protocol InternetHelperDelegate: NSObjectProtocol {
-    
-    @objc optional func didFinishTaskWithSuccess(resultData:Dictionary<String, Any>)
-    @objc optional func didFinishTaskWithError(error:NSError)
+public enum InternetActiveConnectionType:Int {
+    case unknown = 0
+    case none = 1
+    case wifi = 2
+    case celldata = 3
 }
 
-//MARK: - • CLASSES
+class DataSourceConnection: NSObject {
 
-class InternetHelper: NSObject {
-    
-    //MARK: - • LOCAL DEFINES
-    
-    //MARK: - • PUBLIC PROPERTIES
+    //properties
+    public var activeConnectionType:InternetActiveConnectionType {
+        let r:Reachability = Reachability()!
+        switch r.currentReachabilityStatus {
+        case .notReachable:
+            return .none
+        case .reachableViaWiFi:
+            return .wifi
+        case .reachableViaWWAN:
+            return .celldata
+        }
+    }
     
     var isConnectionReachable:Bool{
         return (Reachability()?.isReachable)!
@@ -37,37 +38,11 @@ class InternetHelper: NSObject {
         return (Reachability()?.isReachableViaWiFi)!
     }
     
-    //MARK: - • PRIVATE PROPERTIES
-    
-    
-    //MARK: - • INITIALISERS
-    override init(){
-        super.init()
-    }
-    
-    //MARK: - • CUSTOM ACCESSORS (SETS & GETS)
-    
-    
-    //MARK: - • DEALLOC
-    
-    deinit {
-        // NSNotificationCenter no longer needs to be cleaned up!
-    }
-    
-    //MARK: - • SUPER CLASS OVERRIDES
-    
-    
-    //MARK: - • INTERFACE/PROTOCOL METHODS
-    
-    
-    //MARK: - • PUBLIC METHODS
-    
-    //MARK: - GET
-    
-    @discardableResult func get(toURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Any?, _ statusCode:Int, _ error:NSError?) -> ()) -> URLSessionDataTask? {
+    //MARK: • GET:
+    @discardableResult func get(fromURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Any?, _ statusCode:Int, _ error:NSError?) -> ()) -> DataSourceRequest? {
         
         //endpoint:
-        guard let url = URL(string: toURL.replacingOccurrences(of: " ", with: "%20")) else {
+        guard let url = URL(string: fromURL.replacingOccurrences(of: " ", with: "%20")) else {
             
             completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
             return nil
@@ -139,7 +114,7 @@ class InternetHelper: NSObject {
                     completionHandler(jsonResult, statusCodeResult, nil)
                 }
                 
-                print("POST result: %@", jsonResult)
+                print("GET result: %@", jsonResult)
                 
             } catch  {
                 
@@ -150,19 +125,20 @@ class InternetHelper: NSObject {
             }
         }
         
+        let dsr:DataSourceRequest = DataSourceRequest.newRequest(task)
+        
         task.resume()
         
-        return task
+        return dsr
     }
     
-    @discardableResult func get(toURL:String, httpBodyData:Dictionary<String, Any>?, delegate:InternetHelperDelegate?) -> URLSessionDataTask? {
+    //MARK: • POST:
+    @discardableResult func post(toURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Any?, _ statusCode:Int, _ error:NSError?) -> ()) -> DataSourceRequest? {
         
         //endpoint:
-        guard let url = URL(string: toURL) else {
+        guard let url = URL(string: toURL.replacingOccurrences(of: " ", with: "%20")) else {
             
-            if (delegate != nil && delegate!.responds(to: Selector.init(("didFinishTaskWithError:")))){
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
-            }
+            completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
             return nil
         }
         
@@ -177,180 +153,7 @@ class InternetHelper: NSObject {
             do{
                 try urlRequest.httpBody = JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
             }catch{
-                if (delegate != nil && delegate!.responds(to: Selector.init(("didFinishTaskWithError:")))){
-                    delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
-                }
-                return nil
-            }
-        }
-        
-        //method:
-        urlRequest.httpMethod = "GET"
-        
-        //session configuration:
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 30.0
-        //config.requestCachePolicy = .useProtocolCachePolicy
-        let session = URLSession(configuration: config)
-        
-        //call:
-        let task = session.dataTask(with: urlRequest) { (data, urlResponse, error) in
-            
-            //            var statusCodeResult:Int
-            //
-            //            if let urlR:HTTPURLResponse = (urlResponse as? HTTPURLResponse){
-            //                statusCodeResult = urlR.statusCode
-            //            }
-            
-            guard error == nil else {
-                
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: DataTask", code: 0, userInfo: ["message": error!.localizedDescription]))
-                return
-            }
-            
-            guard let responseData = data else {
-                
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: No Data", code: 0, userInfo: ["message": "Did not receive data."]))
-                return
-            }
-            
-            do {
-                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String:AnyObject] else{
-                    
-                    delegate?.didFinishTaskWithError!(error: NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
-                    return
-                }
-                print()
-                //Success:
-                delegate?.didFinishTaskWithSuccess!(resultData: jsonResult)
-                
-                print("POST result: %@", jsonResult)
-                
-            } catch  {
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
-                return
-            }
-        }
-        
-        task.resume()
-        
-        return task
-    }
-    
-    //MARK: -
-    
-    @discardableResult func getCUSTOM(toURL:String, header:Dictionary<String, String>?, timeInterval:TimeInterval, completionHandler:@escaping (_ response:Dictionary<String, Any>?, _ statusCode:Int, _ error:NSError?) -> ()) -> URLSessionDataTask? {
-        
-        //endpoint:
-        guard let url = URL(string: toURL) else {
-            
-            OperationQueue.main.addOperation{
-                completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
-            }
-            return nil
-        }
-        
-        //request:
-        var urlRequest = URLRequest(url: url)
-        
-        //headers:
-        if let h = header {
-            urlRequest.allHTTPHeaderFields = h
-        }else{
-            urlRequest.allHTTPHeaderFields = self.createDefaultHeader()
-        }
-        
-        //method:
-        urlRequest.httpMethod = "GET"
-        
-        //session configuration:
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = timeInterval
-        //config.requestCachePolicy = .useProtocolCachePolicy
-        
-        let session = URLSession(configuration: config)
-        
-        //call:
-        let task = session.dataTask(with: urlRequest) { (data, urlResponse, error) in
-            
-            var statusCodeResult:Int = 0
-            
-            if let urlR:HTTPURLResponse = (urlResponse as? HTTPURLResponse){
-                statusCodeResult = urlR.statusCode
-            }
-            
-            guard error == nil else {
-                
-                OperationQueue.main.addOperation{
-                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: DataTask", code: 0, userInfo: ["message": error!.localizedDescription]))
-                }
-                return
-            }
-            
-            guard let responseData = data else {
-                
-                OperationQueue.main.addOperation{
-                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: No Data", code: 0, userInfo: ["message": "Did not receive data."]))
-                }
-                return
-            }
-            
-            do {
-                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String:AnyObject] else{
-                    
-                    OperationQueue.main.addOperation{
-                        completionHandler(nil, statusCodeResult, NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
-                    }
-                    return
-                }
-                
-                //Success:
-                OperationQueue.main.addOperation{
-                    completionHandler(jsonResult, statusCodeResult, nil)
-                }
-                
-                print("POST result: %@", jsonResult)
-                
-            } catch  {
-                OperationQueue.main.addOperation{
-                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
-                }
-                return
-            }
-        }
-        
-        task.resume()
-        
-        return task
-    }
-    
-    //MARK: - POST
-    
-    @discardableResult func post(toURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Dictionary<String, Any>?, _ statusCode:Int, _ error:NSError?) -> ()) -> URLSessionDataTask? {
-        
-        //endpoint:
-        guard let url = URL(string: toURL) else {
-            
-            OperationQueue.main.addOperation{
-                completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
-            }
-            return nil
-        }
-        
-        //request:
-        var urlRequest = URLRequest(url: url)
-        
-        //headers:
-        urlRequest.allHTTPHeaderFields = self.createDefaultHeader()
-        
-        //body:
-        if let body = httpBodyData{
-            do{
-                try urlRequest.httpBody = JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
-            }catch{
-                OperationQueue.main.addOperation{
-                    completionHandler(nil, 0, NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
-                }
+                completionHandler(nil, 0, NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
                 return nil
             }
         }
@@ -391,7 +194,8 @@ class InternetHelper: NSObject {
             }
             
             do {
-                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String:AnyObject] else{
+                
+                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as Any? else{
                     
                     OperationQueue.main.addOperation{
                         completionHandler(nil, statusCodeResult, NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
@@ -407,6 +211,7 @@ class InternetHelper: NSObject {
                 print("POST result: %@", jsonResult)
                 
             } catch  {
+                
                 OperationQueue.main.addOperation{
                     completionHandler(nil, statusCodeResult, NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
                 }
@@ -414,20 +219,20 @@ class InternetHelper: NSObject {
             }
         }
         
+        let dsr:DataSourceRequest = DataSourceRequest.newRequest(task)
+        
         task.resume()
         
-        return task
+        return dsr
     }
     
-    
-    @discardableResult func post(toURL:String, httpBodyData:Dictionary<String, Any>?, delegate:InternetHelperDelegate?) -> URLSessionDataTask? {
+    //MARK: • PUT:
+    @discardableResult func put(toURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Any?, _ statusCode:Int, _ error:NSError?) -> ()) -> DataSourceRequest? {
         
         //endpoint:
-        guard let url = URL(string: toURL) else {
+        guard let url = URL(string: toURL.replacingOccurrences(of: " ", with: "%20")) else {
             
-            if (delegate != nil && delegate!.responds(to: Selector.init(("didFinishTaskWithError:")))){
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
-            }
+            completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
             return nil
         }
         
@@ -442,72 +247,174 @@ class InternetHelper: NSObject {
             do{
                 try urlRequest.httpBody = JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
             }catch{
-                if (delegate != nil && delegate!.responds(to: Selector.init(("didFinishTaskWithError:")))){
-                    delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
-                }
+                completionHandler(nil, 0, NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
                 return nil
             }
         }
         
         //method:
-        urlRequest.httpMethod = "POST"
+        urlRequest.httpMethod = "PUT"
         
         //session configuration:
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30.0
         //config.requestCachePolicy = .useProtocolCachePolicy
+        
         let session = URLSession(configuration: config)
         
         //call:
         let task = session.dataTask(with: urlRequest) { (data, urlResponse, error) in
             
-            //            var statusCodeResult:Int = 0
-            //
-            //            if let urlR:HTTPURLResponse = (urlResponse as? HTTPURLResponse){
-            //                statusCodeResult = urlR.statusCode
-            //            }
+            var statusCodeResult:Int = 0
+            
+            if let urlR:HTTPURLResponse = (urlResponse as? HTTPURLResponse){
+                statusCodeResult = urlR.statusCode
+            }
             
             guard error == nil else {
                 
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: DataTask", code: 0, userInfo: ["message": error!.localizedDescription]))
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: DataTask", code: 0, userInfo: ["message": error!.localizedDescription]))
+                }
                 return
             }
             
             guard let responseData = data else {
                 
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Error: No Data", code: 0, userInfo: ["message": "Did not receive data."]))
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: No Data", code: 0, userInfo: ["message": "Did not receive data."]))
+                }
                 return
             }
             
             do {
-                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableLeaves) as? [String:AnyObject] else{
+                
+                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as Any? else{
                     
-                    delegate?.didFinishTaskWithError!(error: NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
+                    OperationQueue.main.addOperation{
+                        completionHandler(nil, statusCodeResult, NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
+                    }
                     return
                 }
-                print()
-                //Success:
-                delegate?.didFinishTaskWithSuccess!(resultData: jsonResult)
                 
-                print("POST result: %@", jsonResult)
+                //Success:
+                OperationQueue.main.addOperation{
+                    completionHandler(jsonResult, statusCodeResult, nil)
+                }
+                
+                print("PUT result: %@", jsonResult)
                 
             } catch  {
-                delegate?.didFinishTaskWithError!(error: NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
+                
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
+                }
                 return
             }
         }
         
+        let dsr:DataSourceRequest = DataSourceRequest.newRequest(task)
+        
         task.resume()
         
-        return task
+        return dsr
     }
-
     
-    //MARK: - • ACTION METHODS
+    //MARK: • PACTH:
+    @discardableResult func patch(toURL:String, httpBodyData:Dictionary<String, Any>?, completionHandler:@escaping (_ response:Any?, _ statusCode:Int, _ error:NSError?) -> ()) -> DataSourceRequest? {
+        
+        //endpoint:
+        guard let url = URL(string: toURL.replacingOccurrences(of: " ", with: "%20")) else {
+            
+            completionHandler(nil, 0, NSError.init(domain: "Error: Invalid URL", code: 0, userInfo: ["message": "Cannot create valid URL for 'toURL' parameter."]))
+            return nil
+        }
+        
+        //request:
+        var urlRequest = URLRequest(url: url)
+        
+        //headers:
+        urlRequest.allHTTPHeaderFields = self.createDefaultHeader()
+        
+        //body:
+        if let body = httpBodyData{
+            do{
+                try urlRequest.httpBody = JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
+            }catch{
+                completionHandler(nil, 0, NSError.init(domain: "Error: JSONSerialization", code: 0, userInfo: ["message": error.localizedDescription]))
+                return nil
+            }
+        }
+        
+        //method:
+        urlRequest.httpMethod = "PATCH"
+        
+        //session configuration:
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 30.0
+        //config.requestCachePolicy = .useProtocolCachePolicy
+        
+        let session = URLSession(configuration: config)
+        
+        //call:
+        let task = session.dataTask(with: urlRequest) { (data, urlResponse, error) in
+            
+            var statusCodeResult:Int = 0
+            
+            if let urlR:HTTPURLResponse = (urlResponse as? HTTPURLResponse){
+                statusCodeResult = urlR.statusCode
+            }
+            
+            guard error == nil else {
+                
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: DataTask", code: 0, userInfo: ["message": error!.localizedDescription]))
+                }
+                return
+            }
+            
+            guard let responseData = data else {
+                
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Error: No Data", code: 0, userInfo: ["message": "Did not receive data."]))
+                }
+                return
+            }
+            
+            do {
+                
+                guard let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as Any? else{
+                    
+                    OperationQueue.main.addOperation{
+                        completionHandler(nil, statusCodeResult, NSError.init(domain: "JSONSerialization", code: 0, userInfo: ["message": "Error trying to convert data to JSON."]))
+                    }
+                    return
+                }
+                
+                //Success:
+                OperationQueue.main.addOperation{
+                    completionHandler(jsonResult, statusCodeResult, nil)
+                }
+                
+                print("PATCH result: %@", jsonResult)
+                
+            } catch  {
+                
+                OperationQueue.main.addOperation{
+                    completionHandler(nil, statusCodeResult, NSError.init(domain: "Exception", code: 0, userInfo: ["message": error.localizedDescription]))
+                }
+                return
+            }
+        }
+        
+        let dsr:DataSourceRequest = DataSourceRequest.newRequest(task)
+        
+        task.resume()
     
+        return dsr
+    }
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
-    
     private func getDeviceInfo() ->  Dictionary<String, String>{
         
         var deviceDic:Dictionary<String, String> =  Dictionary.init()
@@ -538,4 +445,5 @@ class InternetHelper: NSObject {
         //
         return headerDic
     }
+    
 }

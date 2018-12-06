@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var viewSideMenu:SideMenuVC? = nil
     var soundControl:SoundControl = SoundControl.init()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         NSLog("%@", ToolBox.Application.instalationDataForSimulator())
@@ -237,7 +237,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func registerNotifications() {
         
-        if #available(iOS 10.0, *) {
+        //if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
                 
                 if (granted) {
@@ -252,14 +252,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     //}
                 }
             })
-        } else {
-            
+        //}
+        
+        /*
+        else {
             // Fallback on earlier versions:
             let types:UIUserNotificationType = [.badge, .sound, .alert]
             let settings = UIUserNotificationSettings.init(types: types, categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
             UIApplication.shared.registerForRemoteNotifications()
         }
+        */
         
         //UIApplication.shared.applicationIconBadgeNumber = 0
         
@@ -302,17 +305,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //tabBar.selectionIndicatorImage = UIImage.init(named: "tabbar_selected.png") ?? UIImage.init()
         
         // Change the title color of tab bar items
-        tabBarItem1?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem2?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem3?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem4?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
-        tabBarItem5?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.gray, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem1?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem2?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem3?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem4?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
+        tabBarItem5?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.gray, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .normal)
         //
-        tabBarItem1?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
-        tabBarItem2?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
-        tabBarItem3?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
-        tabBarItem4?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
-        tabBarItem5?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem1?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem2?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem3?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem4?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
+        tabBarItem5?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)], for: .highlighted)
         
     }
 

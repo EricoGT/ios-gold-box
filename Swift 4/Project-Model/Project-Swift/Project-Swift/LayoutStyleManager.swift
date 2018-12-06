@@ -168,7 +168,7 @@ class LayoutStyleManager:NSObject{
     
     func createActivityIndicatorImageView(color:UIColor, position:ActivityIndicatorImageView.IndicatorPosition, parentImageView:UIImageView) -> ActivityIndicatorImageView{
         
-        let aiiv:ActivityIndicatorImageView = ActivityIndicatorImageView.init(activityIndicatorStyle: .whiteLarge)
+        let aiiv:ActivityIndicatorImageView = ActivityIndicatorImageView.init(style: .whiteLarge)
         aiiv.color = color
         aiiv.parentIV = parentImageView
         aiiv.positionInImageView = position
@@ -184,7 +184,7 @@ class LayoutStyleManager:NSObject{
         let btnApply:UIButton = UIButton.init(frame: CGRect.init(x: view.frame.size.width/2, y: 0.0, width: view.frame.size.width/2, height: 44.0))
         btnApply.contentHorizontalAlignment = .right
         btnApply.addTarget(targetView, action: selector, for: .touchUpInside)
-        btnApply.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 14)
+        btnApply.titleEdgeInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: 0.0, right: 14.0)
         btnApply.setTitleColor(self.colorText_BlueDefault, for: .normal)
         btnApply.titleLabel?.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
         btnApply.setTitle(App.STR("BUTTON_TITLE_ACCESSORY_VIEW_DONE"), for: .normal)
@@ -217,8 +217,8 @@ class ActivityIndicatorImageView:UIActivityIndicatorView, Indicator{
         self.commonInit()
     }
     
-    override init(activityIndicatorStyle style: UIActivityIndicatorViewStyle) {
-        super.init(activityIndicatorStyle: style)
+    override init(style: UIActivityIndicatorView.Style) {
+        super.init(style: style)
         self.commonInit()
     }
     

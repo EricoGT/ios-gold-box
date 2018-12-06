@@ -62,7 +62,7 @@ class NotificationManager:NSObject
         content.subtitle = "– Thomas Edison"
         content.body = "Nossa maior fraqueza está em desistir. O caminho mais certo de vencer é tentar mais uma vez."
         content.badge = 1
-        content.sound = UNNotificationSound.init(named: "alert.m4a")
+        content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("alert.m4a"))
         
         var contentInfo:Dictionary = [String : Any]()
         contentInfo["identifier"] = "remedio"

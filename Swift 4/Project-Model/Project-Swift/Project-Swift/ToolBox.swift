@@ -121,7 +121,12 @@ extension UIDevice {
             case "iPhone9,4":    return  "iPhone 7 Plus"
             case "iPhone10,1", "iPhone10,4": return "iPhone 8"
             case "iPhone10,2", "iPhone10,5": return "iPhone 8 Plus"
-            case "iPhone10,3", "iPhone10,6": return "iPhone X"
+            case "iPhone10,3":    return "iPhone X Global"
+            case "iPhone10,6":    return  "iPhone X (GSM)"
+            case "iPhone11,2":    return  "iPhone XS"
+            case "iPhone11,4":    return  "iPhone XS Max (China)"
+            case "iPhone11,6":    return  "iPhone XS Max"
+            case "iPhone11,8":    return  "iPhone XR"
             
             //iPod
             case "iPod1,1":      return  "iPod Touch 1"
@@ -129,7 +134,7 @@ extension UIDevice {
             case "iPod3,1":      return  "iPod Touch 3"
             case "iPod4,1":      return  "iPod Touch 4"
             case "iPod5,1":      return  "iPod Touch 5"
-            case "iPod6,1":      return  "iPod Touch 6"
+            case "iPod6,1", "iPod7,1":      return  "iPod Touch 6"
                 
             //iPad
             case "iPad1,1":      return  "iPad"
@@ -166,12 +171,20 @@ extension UIDevice {
             case "iPad5,4":      return  "iPad Air 2 (Cellular)"
                 
             //iPad Pro
-            case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
-            case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
-            case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
-            case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
+            case "iPad6,3":      return  "iPad Pro (9.7 inch, WiFi)"
+            case "iPad6,4":      return  "iPad Pro (9.7 inch, WiFi+LTE)"
+            case "iPad6,7":      return  "iPad Pro (12.9 inch, WiFi)"
+            case "iPad6,8":      return  "iPad Pro (12.9 inch, WiFi+LTE)"
             case "iPad7,1", "iPad7,2": return "iPad Pro (12.9 inch 2)"
             case "iPad7,3", "iPad7,4": return "iPad Pro (10.5 inch)"
+            case "iPad8,1":      return  "iPad Pro 3rd Gen (11 inch, WiFi)"
+            case "iPad8,2":      return  "iPad Pro 3rd Gen (11 inch, 1TB, WiFi)"
+            case "iPad8,3":      return  "iPad Pro 3rd Gen (11 inch, WiFi+LTE)"
+            case "iPad8,4":      return  "iPad Pro 3rd Gen (11 inch, 1TB, WiFi+LTE)"
+            case "iPad8,5":      return  "iPad Pro 3rd Gen (12.9 inch, WiFi)"
+            case "iPad8,6":      return  "iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)"
+            case "iPad8,7":      return  "iPad Pro 3rd Gen (12.9 inch, WiFi+LTE)"
+            case "iPad8,8":      return  "iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+LTE)"
             
             //Watch
             case "Watch1,1":      return  "Apple Watch 38mm case"
@@ -182,14 +195,18 @@ extension UIDevice {
             case "Watch2,4":      return  "Apple Watch Series 2 42mm case"
             case "Watch3,1" , "Watch3,3":      return  "Apple Watch Series 3 38mm case"
             case "Watch3,2" , "Watch3,4":      return  "Apple Watch Series 3 42mm case"
+            case "Watch4,1":      return  "Apple Watch Series 4 40mm case (GPS)"
+            case "Watch4,2":      return  "Apple Watch Series 4 44mm case (GPS)"
+            case "Watch4,3":      return  "Apple Watch Series 4 40mm case (GPS+LTE)"
+            case "Watch4,4":      return  "Apple Watch Series 4 44mm case (GPS+LTE)"
             
             //simulador
             case "i386":         return  "Simulator"
             case "x86_64":       return  "Simulator"
             
             //apple tv
-            case "AppleTV5,3": return "apple TV 4"
-            case "AppleTV6,2": return "apple TV 4K"
+            case "AppleTV5,3": return "Apple TV 4"
+            case "AppleTV6,2": return "Apple TV 4K"
             
             //other
             default:             return identifier
@@ -379,8 +396,9 @@ final class ToolBox: NSObject{
         //return "Version: 0.7.1  |  Date: 04/01/2018  |  Autor: EricoGT  |  Note: Fix nas extensions da classe.";
         //return "Version: 0.7.2  |  Date: 23/01/2018  |  Autor: EricoGT  |  Note: Novas extensions para String e NSAttributedString.";
         //return "Version: 0.8.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: A classe ToolBoxText teve os métodos de máscara atualizados.";
+        //return "Version: 0.9.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
         //
-        return "Version: 0.9.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
+        return "Version: 0.10.0  |  Date: 06/12/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -1673,7 +1691,7 @@ final class ToolBoxMessure{
     class func heightForText(text:String, constrainedWidth:CGFloat, font:UIFont) -> CGFloat{
         
         let constraintRect = CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude)
-        let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return boundingBox.height
     }
     
@@ -2195,12 +2213,12 @@ class ToolBoxGraphic{
     
     
     /** Reduz o tamanho de uma imagem, aplicando compressão JPEG para otimizar o tamanho da mesma. [Ver também método 'graphicHelper_CompressImage:usingQuality:']*/
-    class func normalizeImage(image:UIImage, maximumDimension:CGFloat, quality:Float) -> UIImage{
+    class func normalizeImage(image:UIImage, maximumDimension:CGFloat, quality:CGFloat) -> UIImage{
         
         let qualityI = quality < 0 ? 0 : (quality > 1 ? 1 : quality)
         
         //Convertendo outros formatos para JPEG
-        let iData:Data = UIImageJPEGRepresentation(image, CGFloat(qualityI))!
+        let iData:Data = image.jpegData(compressionQuality: qualityI)!
         let imageR:UIImage = UIImage.init(data: iData)!
         let max:CGFloat = imageR.size.width > imageR.size.height ? imageR.size.width : imageR.size.height
         
@@ -2246,7 +2264,7 @@ class ToolBoxGraphic{
     class func encodeToBase64String(image:UIImage?) -> String{
         
         if let img:UIImage = image{
-            return UIImageJPEGRepresentation(img, 1.0)!.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed)
+            return (img.jpegData(compressionQuality: 1.0)!.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed))
         }else{
             return ""
         }
@@ -2272,7 +2290,7 @@ class ToolBoxGraphic{
             
             if let tImage:UIImage = templateImage{
                 
-                var newImage:UIImage? = tImage.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                var newImage:UIImage? = tImage.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 UIGraphicsBeginImageContextWithOptions(tImage.size, false, newImage!.scale)
                 tColor.set()
                 newImage?.draw(in: CGRect.init(x: 0.0, y: 0.0, width: (newImage?.size.width)!, height: (newImage?.size.height)!))
@@ -2348,7 +2366,7 @@ class ToolBoxGraphic{
             var effectImage = rImage
             
             let hasBlur = radius > __FLT_EPSILON__
-            let hasSaturationChange = fabs(saturationDeltaFactor - 1.0) > __FLT_EPSILON__
+            let hasSaturationChange = abs(saturationDeltaFactor - 1.0) > __FLT_EPSILON__
             
             if hasBlur || hasSaturationChange {
                 func createEffectBuffer(_ context: CGContext) -> vImage_Buffer {
@@ -2549,7 +2567,7 @@ class ToolBoxGraphic{
         animation.toValue = 2 * Double.pi
         animation.duration = duration
         animation.repeatCount = Float(repeatCount)
-        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.linear)
         //
         view.layer.add(animation, forKey: "transform.rotation.y")
     }
@@ -2558,8 +2576,8 @@ class ToolBoxGraphic{
     /** Adiciona efeito parallax na View parâmetro.*/
     class func applyParallaxEffect(view:UIView, deep:CGFloat){
         
-        let effectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
-        let effectY:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
+        let effectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
+        let effectY:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
         //
         effectX.maximumRelativeValue = deep
         effectX.minimumRelativeValue = -deep
@@ -2629,7 +2647,7 @@ class ToolBoxGraphic{
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = duration
         animationGroup.repeatCount = 0.0
-        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
         circleShape.add(animationGroup, forKey: "ripple")
     }
@@ -2661,7 +2679,7 @@ class ToolBoxGraphic{
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = duration
         animationGroup.repeatCount = 0.0
-        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
         circleShape.add(animationGroup, forKey: "ripple")
     }
@@ -2676,13 +2694,13 @@ class ToolBoxGraphic{
         let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation.toValue = scale
         scaleAnimation.duration = 0.3
-        scaleAnimation.fillMode = kCAFillModeForwards
+        scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation)
         //
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.toValue = 1.0
         alphaAnimation.duration = 0.3
-        alphaAnimation.fillMode = kCAFillModeForwards
+        alphaAnimation.fillMode = CAMediaTimingFillMode.forwards
         animations.append(alphaAnimation)
         
         // Step 2
@@ -2690,7 +2708,7 @@ class ToolBoxGraphic{
         scaleAnimation2.toValue = 1
         scaleAnimation2.beginTime = 0.3
         scaleAnimation2.duration = 0.1
-        scaleAnimation2.fillMode = kCAFillModeForwards
+        scaleAnimation2.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation2)
         
         // Step 3
@@ -2698,21 +2716,21 @@ class ToolBoxGraphic{
         scaleAnimation3.toValue = scale
         scaleAnimation3.beginTime = 0.4
         scaleAnimation3.duration = 0.3
-        scaleAnimation3.fillMode = kCAFillModeForwards
+        scaleAnimation3.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation3)
         //
         let alphaAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation3.toValue = 0.0
         alphaAnimation3.beginTime = 0.4
         alphaAnimation3.duration = 0.3
-        alphaAnimation3.fillMode = kCAFillModeForwards
+        alphaAnimation3.fillMode = CAMediaTimingFillMode.forwards
         animations.append(alphaAnimation3)
         
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = animations;
         animationGroup.duration = 0.7
         animationGroup.repeatCount = 0.0
-        animationGroup.fillMode = kCAFillModeBoth
+        animationGroup.fillMode = CAMediaTimingFillMode.both
         
         view.layer.add(animationGroup, forKey: "heart-beat")
     }
@@ -2725,19 +2743,19 @@ class ToolBoxGraphic{
         scaleAnimation.fromValue = 1.0
         scaleAnimation.toValue = scale
         scaleAnimation.duration = 0.5
-        scaleAnimation.fillMode = kCAFillModeForwards
+        scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.fromValue = 1.0
         alphaAnimation.toValue = 0.0
         alphaAnimation.duration = 0.5
-        alphaAnimation.fillMode = kCAFillModeForwards
+        alphaAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = 0.5
         animationGroup.repeatCount = Float(repeatCount)
-        animationGroup.fillMode = kCAFillModeBoth
+        animationGroup.fillMode = CAMediaTimingFillMode.both
         
         view.layer.add(animationGroup, forKey: "scale-beat")
     }
@@ -3006,7 +3024,7 @@ class ToolBoxGraphic{
             
             let q:CGFloat = (quality < 0.0) ? 0.0 : (quality > 1.0 ? 1.0 : quality)
             
-            if let data:Data = UIImageJPEGRepresentation(originalImage, q){
+            if let data:Data = originalImage.jpegData(compressionQuality: q){
                 let resultImage:UIImage = UIImage(data: data)!
                 return resultImage
             }else{
@@ -3024,11 +3042,11 @@ class ToolBoxGraphic{
         if let originalImage:UIImage = image{
             
             if (quality >= 1.0){
-                let img:UIImage? = UIImage.init(data: UIImagePNGRepresentation(originalImage)!, scale: UIScreen.main.scale)
+                let img:UIImage? = UIImage.init(data: originalImage.pngData()!, scale: UIScreen.main.scale)
                 return img
             }else{
                 
-                let img2:UIImage? = UIImage.init(data: UIImageJPEGRepresentation(originalImage, quality)!, scale: UIScreen.main.scale)
+                let img2:UIImage? = UIImage.init(data: originalImage.jpegData(compressionQuality: quality)!, scale: UIScreen.main.scale)
                 return img2
             }
         }else{

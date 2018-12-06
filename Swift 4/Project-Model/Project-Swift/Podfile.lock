@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.0.0)
   - GzipSwift (4.0.4)
-  - Kingfisher (4.6.1)
-  - NVActivityIndicatorView (4.1.1):
-    - NVActivityIndicatorView/Presenter (= 4.1.1)
-  - NVActivityIndicatorView/Presenter (4.1.1)
-  - SCLAlertView (0.8)
-  - SwiftyJSON (4.0.0)
+  - Kingfisher (4.10.1)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
+  - SCLAlertView (0.8.1)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (= 4)
@@ -16,23 +16,31 @@ DEPENDENCIES:
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`)
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - GzipSwift
+    - Kingfisher
+    - NVActivityIndicatorView
+    - SwiftyJSON
+
 EXTERNAL SOURCES:
   SCLAlertView:
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
 
 CHECKOUT OPTIONS:
   SCLAlertView:
-    :commit: b35ae9e2e0d5fda161237bcf1f730251a02fb8a1
+    :commit: 86ea7613c99cd4896765fabfa773b39b40bc8590
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
-  SCLAlertView: 03a1aa8093c11bf880f46c6aeedc9da91f1093ad
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  SCLAlertView: 9fea8ac145c0bd4989ef6abe1d3859b48f458986
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: e3c6e1229545d8e1713cbf705cc3ba80a061e3af
+PODFILE CHECKSUM: 08058e7534f6c0e976f678f1beb99426f185b217
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

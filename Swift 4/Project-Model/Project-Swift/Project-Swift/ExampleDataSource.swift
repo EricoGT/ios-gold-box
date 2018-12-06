@@ -8,57 +8,43 @@
 
 import UIKit
 
-class CheckoutDataSource: NSObject, DataSourceResponseProtocol {
+class ExampleDataSource: NSObject, DataSourceResponseProtocol {
     
     // GET AVAILABLE STORES ====================================================================================
     
-    @discardableResult func getRandomExampleData(handler:@escaping (_ data:Dictionary<String,Any>?, _ response:DataSourceResponse) -> ()) -> ConnectionManager{
+    @discardableResult func getRandomExampleData(handler:@escaping (_ data:Dictionary<String,Any>?, _ response:DataSourceResponse) -> ()) -> DataSourceRequest?{
         
-        let connectionmanager:ConnectionManager =  ConnectionManager.init()
+        let internectConnection:DataSourceConnection = DataSourceConnection.init()
         
-        if (connectionmanager.isConnectionReachable){
+        if (internectConnection.isConnectionReachable){
             
-            //Chamada de exemplo
-            connectionmanager.getDataFromServer(userID: 100, handler: { (response, statusCode, error) in
+            let url:String = "www.qualquer.coisa.com.br"
+            return internectConnection.get(fromURL: url, httpBodyData: nil) { (object, statusCode, error) in
                 
                 if let _:NSError = error {
-                    
-                    print(error?.localizedDescription ?? "Error>>getUserOrders")
-                    //
+                    print(error?.localizedDescription ?? "Error >> getRandomExampleData")
                     let dsr:DataSourceResponse = DataSourceResponse.new(.error, statusCode, self.errorMessage(.connection_error, ""), .connection_error)
                     handler(nil, dsr)
-                    
                 } else {
-                    
-                    if let r = response{
-                        
+                    if let r = object as? Dictionary<String,Any>{
                         print(r)
-                        
                         //sucesso:
                         let dsr:DataSourceResponse = DataSourceResponse.new(.success, statusCode, self.errorMessage(.none, ""), .none)
                         handler(r, dsr)
-                        
                     }else{
-                        
                         //erro:
                         let dsr:DataSourceResponse = DataSourceResponse.new(.error, statusCode, self.errorMessage(.invalid_data, ""), .invalid_data)
                         handler(nil, dsr)
-                        
                     }
                 }
-            })
-            
-            return connectionmanager
+            }
             
         }else{
-            
             //erro:
             let dsr:DataSourceResponse = DataSourceResponse.new(.error, 0, self.errorMessage(.no_connection, ""), .no_connection)
             handler(nil, dsr)
-            //
-            return connectionmanager
+            return nil
         }
-        
     }
     
     // PROTOCOL METHOD ====================================================================================

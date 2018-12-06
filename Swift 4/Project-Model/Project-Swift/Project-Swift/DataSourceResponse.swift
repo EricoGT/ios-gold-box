@@ -46,7 +46,6 @@ class DataSourceResponse: NSObject {
     class func new(_ status:DataSourceResponseStatus, _ code:Int, _ message:String, _ error:DataSourceResponseErrorType) -> DataSourceResponse{
         
         let dsr:DataSourceResponse = DataSourceResponse.init()
-        //
         dsr.status = status
         dsr.code = code
         dsr.message = message

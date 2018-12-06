@@ -48,7 +48,7 @@ class SoundManager:NSObject{
         
         //AVAudioPlayerCategory
         do{
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, with: AVAudioSessionCategoryOptions.duckOthers)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: .default, options: .duckOthers)
         }catch{
             NSLog("AVAudioPlayerCategory Error: \(error.localizedDescription)")
         }

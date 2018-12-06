@@ -149,7 +149,7 @@ final class CustomPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSour
             isVisible = true
             
             self.frame = CGRect.init(x: 0.0, y: self.superview!.frame.size.height, width: self.frame.size.width, height: self.frame.size.height)
-            self.superview?.bringSubview(toFront: self)
+            self.superview?.bringSubviewToFront(self)
             
             if (animated){
                 UIView.animate(withDuration: App.Constants.ANIMA_TIME_FAST, delay: 0.0, options: [.allowUserInteraction, .curveEaseInOut], animations: { 
@@ -221,13 +221,13 @@ final class CustomPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSour
         btnClear.backgroundColor = UIColor.clear
         //
         btnConfirm.contentHorizontalAlignment = .right;
-        btnConfirm.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 14)
+        btnConfirm.titleEdgeInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: 0.0, right: 14.0)
         btnConfirm.setTitleColor(App.Style.colorText_BlueDefault, for: .normal)
         btnConfirm.titleLabel?.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
         btnConfirm.setTitle(App.STR("BUTTON_TITLE_CUSTOMPICKERVIEW_SELECT"), for: .normal)
         //
         btnClear.contentHorizontalAlignment = .left;
-        btnClear.titleEdgeInsets = UIEdgeInsetsMake(0, 14, 0, 0)
+        btnClear.titleEdgeInsets = UIEdgeInsets.init(top: 0.0, left: 14.0, bottom: 0.0, right: 0.0)
         btnClear.setTitleColor(App.Style.colorText_BlueDefault, for: .normal)
         btnClear.titleLabel?.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
         btnClear.setTitle(App.STR("BUTTON_TITLE_CUSTOMPICKERVIEW_CLOSE"), for: .normal)
