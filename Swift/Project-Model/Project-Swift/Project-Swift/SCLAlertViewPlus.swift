@@ -22,40 +22,15 @@ enum SCLAlertButtonType: Int {
     case Wait            = 8
 }
 
-extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-        
-        return boundingBox.height
-    }
-}
-
-extension NSAttributedString {
-    func height(withConstrainedWidth width: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
-        
-        return boundingBox.height
-    }
-    
-    func width(withConstrainedHeight height: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
-        
-        return boundingBox.width
-    }
-}
-
 //MARK: - SCLAlertViewPlus
 class SCLAlertViewPlus:SCLAlertView{
     
     required init() {
         
         let appearance = SCLAlertView.SCLAppearance(
-            kTitleFont: UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium),
-            kTextFont: UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular),
-            kButtonFont: UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium),
+            kTitleFont: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium),
+            kTextFont: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular),
+            kButtonFont: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.medium),
             showCloseButton: false
         )
         
@@ -79,7 +54,7 @@ class SCLAlertViewPlus:SCLAlertView{
         
         let alert:SCLAlertViewPlus = SCLAlertViewPlus.init()
         
-        let font:UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)
+        let font:UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
         
         let alertWidth:CGFloat = 216 //fixo pela superclass
         
@@ -94,7 +69,7 @@ class SCLAlertViewPlus:SCLAlertView{
         //UIImageView
         let imageView = UIImageView(frame: CGRect(x: 0.0, y: (label.frame.size.height + 20.0), width: alertWidth, height: 100))
         imageView.backgroundColor = nil
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         imageView.clipsToBounds = true
         //imageView.image = UIImage(named: "animal.jpg")
         imageView.animationImages = images
@@ -150,7 +125,7 @@ class SCLAlertViewPlus:SCLAlertView{
                 color = self.UIColorFromRGB(0xD62DA5)
         }
 
-        super.addButton(title, backgroundColor: color, textColor: UIColor.white, showDurationStatus: false) {
+        super.addButton(title, backgroundColor: color, textColor: UIColor.white, showTimeout: nil) {
             action()
         }
     }

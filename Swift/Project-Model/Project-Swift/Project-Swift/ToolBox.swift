@@ -11,7 +11,7 @@ import Accelerate
 
 //MARK: - • EXTENSIONS
 
-private extension String {
+extension String {
     
     var lastPathComponent: String {
         return (self as NSString).lastPathComponent
@@ -40,9 +40,50 @@ private extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
+    //
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        
+        return ceil(boundingBox.width)
+    }
 }
 
-private extension UIDevice {
+extension NSAttributedString {
+    func height(withConstrainedWidth width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func width(withConstrainedHeight height: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+}
+
+extension Character
+{
+    func unicodeScalarCodePoint() -> UInt32
+    {
+        let characterString = String(self)
+        let scalars = characterString.unicodeScalars
+        
+        return scalars[scalars.startIndex].value
+    }
+}
+
+extension UIDevice {
     
     var modelName: String {
         var systemInfo = utsname()
@@ -78,14 +119,22 @@ private extension UIDevice {
             case "iPhone9,2":    return  "iPhone 7 Plus"
             case "iPhone9,3":    return  "iPhone 7"
             case "iPhone9,4":    return  "iPhone 7 Plus"
-                
+            case "iPhone10,1", "iPhone10,4": return "iPhone 8"
+            case "iPhone10,2", "iPhone10,5": return "iPhone 8 Plus"
+            case "iPhone10,3":    return "iPhone X Global"
+            case "iPhone10,6":    return  "iPhone X (GSM)"
+            case "iPhone11,2":    return  "iPhone XS"
+            case "iPhone11,4":    return  "iPhone XS Max (China)"
+            case "iPhone11,6":    return  "iPhone XS Max"
+            case "iPhone11,8":    return  "iPhone XR"
+            
             //iPod
-            case "iPod1,1":      return  "iPod Touch 1G"
-            case "iPod2,1":      return  "iPod Touch 2G"
-            case "iPod3,1":      return  "iPod Touch 3G"
-            case "iPod4,1":      return  "iPod Touch 4G"
-            case "iPod5,1":      return  "iPod Touch 5G"
-            case "iPod6,1":      return  "iPod Touch 6G"
+            case "iPod1,1":      return  "iPod Touch 1"
+            case "iPod2,1":      return  "iPod Touch 2"
+            case "iPod3,1":      return  "iPod Touch 3"
+            case "iPod4,1":      return  "iPod Touch 4"
+            case "iPod5,1":      return  "iPod Touch 5"
+            case "iPod6,1", "iPod7,1":      return  "iPod Touch 6"
                 
             //iPad
             case "iPad1,1":      return  "iPad"
@@ -99,6 +148,7 @@ private extension UIDevice {
             case "iPad3,4":      return  "iPad 4 (WiFi)"
             case "iPad3,5":      return  "iPad 4 (GSM)"
             case "iPad3,6":      return  "iPad 4 (GSM+CDMA)"
+            case "iPad6,11", "iPad6,12": return  "iPad (2017)"
                 
             //iPad Mini
             case "iPad2,5":      return  "iPad Mini (WiFi)"
@@ -121,14 +171,42 @@ private extension UIDevice {
             case "iPad5,4":      return  "iPad Air 2 (Cellular)"
                 
             //iPad Pro
-            case "iPad6,3":      return  "iPad Pro (9.7 inch, Wi-Fi)"
-            case "iPad6,4":      return  "iPad Pro (9.7 inch, Wi-Fi+LTE)"
-            case "iPad6,7":      return  "iPad Pro (12.9 inch, Wi-Fi)"
-            case "iPad6,8":      return  "iPad Pro (12.9 inch, Wi-Fi+LTE)"
-                
+            case "iPad6,3":      return  "iPad Pro (9.7 inch, WiFi)"
+            case "iPad6,4":      return  "iPad Pro (9.7 inch, WiFi+LTE)"
+            case "iPad6,7":      return  "iPad Pro (12.9 inch, WiFi)"
+            case "iPad6,8":      return  "iPad Pro (12.9 inch, WiFi+LTE)"
+            case "iPad7,1", "iPad7,2": return "iPad Pro (12.9 inch 2)"
+            case "iPad7,3", "iPad7,4": return "iPad Pro (10.5 inch)"
+            case "iPad8,1":      return  "iPad Pro 3rd Gen (11 inch, WiFi)"
+            case "iPad8,2":      return  "iPad Pro 3rd Gen (11 inch, 1TB, WiFi)"
+            case "iPad8,3":      return  "iPad Pro 3rd Gen (11 inch, WiFi+LTE)"
+            case "iPad8,4":      return  "iPad Pro 3rd Gen (11 inch, 1TB, WiFi+LTE)"
+            case "iPad8,5":      return  "iPad Pro 3rd Gen (12.9 inch, WiFi)"
+            case "iPad8,6":      return  "iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)"
+            case "iPad8,7":      return  "iPad Pro 3rd Gen (12.9 inch, WiFi+LTE)"
+            case "iPad8,8":      return  "iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+LTE)"
+            
+            //Watch
+            case "Watch1,1":      return  "Apple Watch 38mm case"
+            case "Watch1,2":      return  "Apple Watch 42mm case"
+            case "Watch2,6":      return  "Apple Watch Series 1 38mm case"
+            case "Watch2,7":      return  "Apple Watch Series 1 42mm case"
+            case "Watch2,3":      return  "Apple Watch Series 2 38mm case"
+            case "Watch2,4":      return  "Apple Watch Series 2 42mm case"
+            case "Watch3,1" , "Watch3,3":      return  "Apple Watch Series 3 38mm case"
+            case "Watch3,2" , "Watch3,4":      return  "Apple Watch Series 3 42mm case"
+            case "Watch4,1":      return  "Apple Watch Series 4 40mm case (GPS)"
+            case "Watch4,2":      return  "Apple Watch Series 4 44mm case (GPS)"
+            case "Watch4,3":      return  "Apple Watch Series 4 40mm case (GPS+LTE)"
+            case "Watch4,4":      return  "Apple Watch Series 4 44mm case (GPS+LTE)"
+            
             //simulador
             case "i386":         return  "Simulator"
             case "x86_64":       return  "Simulator"
+            
+            //apple tv
+            case "AppleTV5,3": return "Apple TV 4"
+            case "AppleTV6,2": return "Apple TV 4K"
             
             //other
             default:             return identifier
@@ -137,7 +215,7 @@ private extension UIDevice {
 }
 
 
-private extension Calendar{
+extension Calendar{
     
     var identifierString:String{
         
@@ -205,7 +283,7 @@ enum ToolBoxGrayScaleEffect:Int {
     case Tonal = 2
 }
 
-class ToolBox: NSObject{
+final class ToolBox: NSObject{
     
     //MARK: - • DEFINES (STATIC PROPERTIES)
     
@@ -253,22 +331,74 @@ class ToolBox: NSObject{
     public static let SYMBOL_VOLUME_LIQUID:String = "L"
     public static let SYMBOL_VOLUME_SOLID:String = "m³"
     public static let SYMBOL_DISTANCE:String = "KM"
+    //
+    public static let TEXT_MASK_DEFAULT_WILD_SYMBOL:String = "#"
+    public static let TEXT_MASK_DEFAULT_CHARS_SET:String = "()/.:-_|+ "
+    public static let TEXT_MASK_CEP:String = "#####-###"
+    public static let TEXT_MASK_PHONE:String = "(##) ####-####"
+    public static let TEXT_MASK_CELLPHONE:String = "(##) #####-####"
+    public static let TEXT_MASK_GENERIC_PHONE:String = "(##) #########"
+    public static let TEXT_MASK_CPF:String = "###.###.###-##"
+    public static let TEXT_MASK_CNPJ:String = "##.###.###/####-##"
+    public static let TEXT_MASK_BIRTHDATE:String = "##/##/####"
+    public static let TEXT_MASK_HOUR:String = "##:##"
+    public static let TEXT_MASK_CREDIT_CARD_NUMBER:String = "#### #### #### ####"
+    
+    //MARK: - • PROPERTIES (DYNAMICS)
+    class var Application:ToolBoxApplication.Type{
+        return ToolBoxApplication.self
+    }
+    
+    class var Device:ToolBoxDevice.Type{
+        return ToolBoxDevice.self
+    }
+    
+    class var Date:ToolBoxDate.Type{
+        return ToolBoxDate.self
+    }
+    
+    class var Messure:ToolBoxMessure.Type{
+        return ToolBoxMessure.self
+    }
+    
+    class var Text:ToolBoxText.Type{
+        return ToolBoxText.self
+    }
+    
+    class var Validation:ToolBoxValidation.Type{
+        return ToolBoxValidation.self
+    }
+    
+    class var Graphic:ToolBoxGraphic.Type{
+        return ToolBoxGraphic.self
+    }
+    
+    class var Converter:ToolBoxConverter.Type{
+        return ToolBoxConverter.self
+    }
     
     //MARK: - • TOOL BOX =======================================================================
     
     /** Retorna dados informativos sobre a versão corrente do utilitário 'ToolBox'.*/
-    class func toolBoxHelper_classVersionInfo() -> String!{
+    class func classVersionInfo() -> String!{
         
         //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
-        //return "Version: 1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
-        //return "Version: 2.0  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
-        //return "Version: 3.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
-        //return "Version: 3.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
-        //return "Version: 4.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
-        //return "Version: 4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
-        //return "Version: 5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
+        //return "Version: 0.1.0  |  Date: 21/03/2017  |  Autor: EricoGT  |  Note: Primeira versão em Swift.";
+        //return "Version: 0.2.0  |  Date: 23/03/2017  |  Autor: EricoGT  |  Note: Acrescentados métodos até o grupo 'ValidationHelper'.";
+        //return "Version: 0.3.0  |  Date: 30/03/2017  |  Autor: EricoGT  |  Note: Inclusão do grupo 'GRAPHIC'. Mescla do grupo 'CONVERTER', feito pelo Lucas.";
+        //return "Version: 0.3.1  |  Date: 04/04/2017  |  Autor: EricoGT  |  Note: Correções e adequações para swift.";
+        //return "Version: 0.4.0  |  Date: 05/04/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo messureHelper.";
+        //return "Version: 0.4.1  |  Date: 11/05/2017  |  Autor: EricoGT  |  Note: Correção de método de conversão color HEX.";
+        //return "Version: 0.5.0  |  Date: 24/05/2017  |  Autor: EricoGT  |  Note: Inclusão de método no grupo 'validationHelper' e correção da validação CNPJ.";
+        //return "Version: 0.5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
+        //return "Version: 0.6.0  |  Date: 31/10/2017  |  Autor: EricoGT  |  Note: Agrupamento de métodos em sub-classes.";
+        //return "Version: 0.7.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novo grupo adicionado 'Text', para tratamento de máscaras.";
+        //return "Version: 0.7.1  |  Date: 04/01/2018  |  Autor: EricoGT  |  Note: Fix nas extensions da classe.";
+        //return "Version: 0.7.2  |  Date: 23/01/2018  |  Autor: EricoGT  |  Note: Novas extensions para String e NSAttributedString.";
+        //return "Version: 0.8.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: A classe ToolBoxText teve os métodos de máscara atualizados.";
+        //return "Version: 0.9.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
         //
-        return "Version: 5.1  |  Date: 31/05/2017  |  Autor: EricoGT  |  Note: Correções em métodos do grupo 'date'.";
+        return "Version: 0.10.0  |  Date: 06/12/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
     }
     
     /** Verifica se o parâmetro referência é nulo.*/
@@ -279,11 +409,13 @@ class ToolBox: NSObject{
             return true
         }
     }
-    
-    //MARK: - • APPLICATION HELPER =======================================================================
-    
+}
+
+//MARK: - • APPLICATION HELPER =======================================================================
+final class ToolBoxApplication:NSObject{
+   
     /** Versão do aplicativo.*/
-    class func applicationHelper_VersionBundle() -> String!{
+    class func versionBundle() -> String!{
         
         let dictionary = Bundle.main.infoDictionary!
         let version = dictionary["CFBundleShortVersionString"] as! String
@@ -291,20 +423,20 @@ class ToolBox: NSObject{
         return "\(version) - \(build)"
     }
     
-
+    
     /** Retorna o caminho de instalação do app (útil para testes com simulador). Preferencialmente utilize no 'didFinishLaunchingWithOptions' do AppDelegate.*/
-    class func applicationHelper_InstalationDataForSimulator() -> String!{
+    class func instalationDataForSimulator() -> String!{
         
         return String.init(format: "\n\n---------- Logs ----------\nClasse: %@\nMétodo: %@\nLinha: %d\nDescrição: LOCAL SIMULATOR: %@\n---------- Logs ----------\n\n",
                            arguments: [String(describing: type(of: self)),
-                            #function,
-                            #line,
-                            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
+                                       #function,
+                                       #line,
+                                       NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]])
     }
     
     
     /** Informa o tamanho de um dado arquivo (da pasta de documentos do usuário). Utiliza formatos: bytes, KB, MB, GB, TB, conforme necessidade.*/
-    class func applicationHelper_FileSize(fileName: String!) -> String?{
+    class func fileSize(fileName: String!) -> String?{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -315,7 +447,7 @@ class ToolBox: NSObject{
             let attr = try FileManager.default.attributesOfItem(atPath: filePath)
             fileSize = attr[FileAttributeKey.size] as! UInt64
             //
-            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
+            return ToolBoxMessure.formatedStringToDataSize(dataSize: fileSize)
             
         } catch {
             print("Error >> applicationHelper_FileSize: \(error)")
@@ -326,7 +458,7 @@ class ToolBox: NSObject{
     
     
     /** Verifica se um dado arquivo existe na pasta de documentos do usuário.*/
-    class func applicationHelper_VerifyFile(fileName:String!) -> Bool{
+    class func verifyFile(fileName:String!) -> Bool{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -338,7 +470,7 @@ class ToolBox: NSObject{
     
     
     /** Salva arquivo (imagem, texto) na pasta de documentos do usuário.*/
-    class func applicationHelper_SaveFile(data:NSData!, fileName:String!) -> Bool{
+    class func saveFile(data:NSData!, fileName:String!) -> Bool{
         
         let url:URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
         let filePath:String = url.absoluteString.stringByAppendingPathComponent(path: fileName)
@@ -348,7 +480,7 @@ class ToolBox: NSObject{
     
     
     /** Carrega dados de um arquivo da pasta de documentos do usuário. Utilize extensão do arquivo, se existir.*/
-    class func applicationHelper_LoadDataFromFile(fileName:String!) -> NSData?{
+    class func loadDataFromFile(fileName:String!) -> NSData?{
         
         let url:URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
         let filePath:String = url.absoluteString.stringByAppendingPathComponent(path: fileName)
@@ -366,7 +498,7 @@ class ToolBox: NSObject{
     
     
     /** Renomeia um arquivo existente na pasta de documentos do usuário.*/
-    class func applicationHelper_RenameFile(oldFileName:String!, newFileName:String!) -> Bool!{
+    class func renameFile(oldFileName:String!, newFileName:String!) -> Bool!{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -386,7 +518,7 @@ class ToolBox: NSObject{
     
     
     /** Deleta um arquivo existente na pasta de documentos do usuário.*/
-    class func applicationHelper_DeleteFile(fileName:String!) -> Bool{
+    class func deleteFile(fileName:String!) -> Bool{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -410,7 +542,7 @@ class ToolBox: NSObject{
     
     
     /** Copia um dado arquivo com um novo nome.*/
-    class func applicationHelper_CopyFile(originalFileName:String!, copyFileName:String!) -> Bool{
+    class func copyFile(originalFileName:String!, copyFileName:String!) -> Bool{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -430,7 +562,7 @@ class ToolBox: NSObject{
     
     
     /** Clona um arquivo da aplicação para a pasta de documentos do usuário.*/
-    class func applicationHelper_CloneFileFromBundleToUserDirectory(fileName:String!) -> Bool{
+    class func cloneFileFromBundleToUserDirectory(fileName:String!) -> Bool{
         
         let paths:Array = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDir:String = paths.first!
@@ -447,67 +579,68 @@ class ToolBox: NSObject{
             return false
         }
     }
-    
-    
-    //MARK: - • DEVICE HELPER =======================================================================
-    
+}
+
+//MARK: - • DEVICE HELPER =======================================================================
+final class ToolBoxDevice{
+   
     /** Retorna o tamanho da tela do dispositivo (em points).*/
-    class func deviceHelper_ScreenSize() -> CGRect{
+    class func screenSize() -> CGRect{
         
         return UIScreen.main.bounds
     }
     
     
     /** Retorna o modelo do dispositivo.*/
-    class func deviceHelper_Model() -> String{
+    class func model() -> String{
         
         return UIDevice.current.modelName
     }
     
     
     /** Retorna o nome do dispositivo.*/
-    class func deviceHelper_Name() -> String{
+    class func name() -> String{
         
         return UIDevice.current.name
     }
     
     /** Busca o tamanho total de memória interna do dispositivo.*/
-    class func deviceHelper_StorageCapacity() -> String{
+    class func storageCapacity() -> String{
         
         do{
             let attr = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             let fileSize:UInt64 = attr[FileAttributeKey.systemSize] as! UInt64
             //
-            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
+            return ToolBoxMessure.formatedStringToDataSize(dataSize: fileSize)
         }catch{
-            return self.messureHelper_FormatedStringToDataSize(dataSize: 0)
+            return ToolBoxMessure.formatedStringToDataSize(dataSize: 0)
         }
     }
     
-
+    
     /** Busca o tamanho da memória livre disponível no dispositivo.*/
-    class func deviceHelper_FreeMemorySpace() -> String{
+    class func freeMemorySpace() -> String{
         
         do{
             let attr = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
             let fileSize:UInt64 = attr[FileAttributeKey.systemFreeSize] as! UInt64
             //
-            return self.messureHelper_FormatedStringToDataSize(dataSize: fileSize)
+            return ToolBoxMessure.formatedStringToDataSize(dataSize: fileSize)
         }catch{
-            return self.messureHelper_FormatedStringToDataSize(dataSize: 0)
+            return ToolBoxMessure.formatedStringToDataSize(dataSize: 0)
         }
     }
     
     
     /** Retorna a versão do SO.*/
-    class func deviceHelper_SystemVersion() -> String{
+    class func systemVersion() -> String{
         
         return UIDevice.current.systemVersion
     }
     
     
     /** Retorna a língua atual  do sistema.*/
-    class func deviceHelper_SystemLanguage() -> String{
+    class func systemLanguage() -> String{
         
         let lang:String = NSLocale.current.languageCode!
         //
@@ -516,7 +649,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o calendário atual do sistema.*/
-    class func deviceHelper_SystemCalendar() -> String{
+    class func systemCalendar() -> String{
         
         let calendar:String = NSLocale.current.calendar.identifierString
         //
@@ -525,18 +658,19 @@ class ToolBox: NSObject{
     
     
     /** Retorna o código UUID.*/
-    class func deviceHelper_IdentifierForVendor() -> String{
+    class func identifierForVendor() -> String{
         
         let uuid:String = (UIDevice.current.identifierForVendor?.uuidString)!
         //
         return uuid
     }
-    
-    //MARK: - • DATE HELPER =======================================================================
-    
-    
+}
+
+//MARK: - • DATE HELPER =======================================================================
+final class ToolBoxDate{
+   
     /** Converte texto para data. Utilizar constantes definidas na classe 'ToolBox'.*/
-    class func dateHelper_DateFromString(dateString:String?, stringFormat:String!) -> Date?{
+    class func dateFromString(dateString:String?, stringFormat:String!) -> Date?{
         
         if let str = dateString {
             
@@ -562,14 +696,14 @@ class ToolBox: NSObject{
     
     
     /** Converte um valor timestamp para data.*/
-    class func dateHelper_DateFromTimeStamp(interval:TimeInterval) -> Date{
+    class func dateFromTimeStamp(interval:TimeInterval) -> Date{
         
         return Date.init(timeIntervalSince1970: interval)
     }
     
     
     /** Converte data para texto. Utilizar constantes definidas na classe 'ToolBox'.*/
-    class func dateHelper_StringFromDate(date:Date?, stringFormat:String!) -> String{
+    class func stringFromDate(date:Date?, stringFormat:String!) -> String{
         
         if let d = date {
             
@@ -591,7 +725,7 @@ class ToolBox: NSObject{
     }
     
     /** Converte data para texto, considerando um TimeZone específico. Utilizar constantes definidas na classe 'ToolBox'.*/
-    class func dateHelper_StringFromDate(date:Date?, stringFormat:String!, timeZone:TimeZone?) -> String{
+    class func stringFromDate(date:Date?, stringFormat:String!, timeZone:TimeZone?) -> String{
         
         if let d = date {
             
@@ -620,12 +754,12 @@ class ToolBox: NSObject{
     
     
     /** Simplifica uma data, removendo hora, minuto e segundos (time resetado para zero).*/
-    class func dateHelper_SimplifyDate(date:Date?) -> Date?{
+    class func simplifyDate(date:Date?) -> Date?{
         
         if let d:Date = date {
             
-            let strDate:String = self.dateHelper_StringFromDate(date: d, stringFormat: self.DATE_BAR_ddMMyyyy)
-            let newDate:Date? = self.dateHelper_DateFromString(dateString: strDate, stringFormat: self.DATE_BAR_ddMMyyyy)
+            let strDate:String = self.stringFromDate(date: d, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
+            let newDate:Date? = self.dateFromString(dateString: strDate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
             //
             return newDate
             
@@ -636,7 +770,7 @@ class ToolBox: NSObject{
     
     
     /** Cria um novo objeto, cópia da data.*/
-    class func dateHelper_CopyDate(date:Date?) -> Date?{
+    class func copyDate(date:Date?) -> Date?{
         
         if let d:Date = date{
             let copyDate:Date = Date.init(timeInterval: 0, since: d)
@@ -649,15 +783,15 @@ class ToolBox: NSObject{
     
     
     /** Calcula a idade (texto localizado pt-BR), baseando-se nas datas parâmetro.*/
-    class func dateHelper_CalculateAgeFromDate(initialDate:Date?, finalDate:Date?) -> String{
+    class func calculateAgeFromDate(initialDate:Date?, finalDate:Date?) -> String{
         
         
         if var iDate:Date = initialDate{
             
             if var fDate:Date = finalDate{
                 
-                iDate = self.dateHelper_DateFromString(dateString: (self.dateHelper_StringFromDate(date: iDate, stringFormat: self.DATE_BAR_ddMMyyyy)), stringFormat: self.DATE_BAR_ddMMyyyy)!
-                fDate = self.dateHelper_DateFromString(dateString: (self.dateHelper_StringFromDate(date: fDate, stringFormat: self.DATE_BAR_ddMMyyyy)), stringFormat: self.DATE_BAR_ddMMyyyy)!
+                iDate = self.dateFromString(dateString: (self.stringFromDate(date: iDate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)), stringFormat: ToolBox.DATE_BAR_ddMMyyyy)!
+                fDate = self.dateFromString(dateString: (self.stringFromDate(date: fDate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)), stringFormat: ToolBox.DATE_BAR_ddMMyyyy)!
                 
                 let gregorianCalendar:Calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
                 //
@@ -872,7 +1006,7 @@ class ToolBox: NSObject{
     
     
     /** Calcula o tempo transcorrido (texto localizado pt-BR), baseando-se nas datas parâmetro.*/
-    class func dateHelper_CalculateTimeFromDate(initialDate:Date?, finalDate:Date?) -> String{
+    class func calculateTimeFromDate(initialDate:Date?, finalDate:Date?) -> String{
         
         if let iDate:Date = initialDate{
             
@@ -929,7 +1063,7 @@ class ToolBox: NSObject{
                     {
                         return String.init(format: "%d horas e %lu minutos", [hoursBetweenDates, minutesLeft])
                     }
-                }                
+                }
             }else{
                 return ""
             }
@@ -941,7 +1075,7 @@ class ToolBox: NSObject{
     
     
     /** Calcula a quantidade de dias baseando-se nas datas parâmetro.*/
-    class func dateHelper_CalculateTotalDaysBetweenInitialDate(initialDate:Date?, finalDate:Date?) -> Int{
+    class func calculateTotalDaysBetweenInitialDate(initialDate:Date?, finalDate:Date?) -> Int{
         
         if let iDate:Date = initialDate{
             
@@ -964,7 +1098,7 @@ class ToolBox: NSObject{
     
     
     /** Calcula a quantidade de horas baseando-se nas datas parâmetro.*/
-    class func dateHelper_CalculateTotalHoursBetweenInitialDate(initialDate:Date?, finalDate:Date?) -> Int{
+    class func calculateTotalHoursBetweenInitialDate(initialDate:Date?, finalDate:Date?) -> Int{
         
         if let iDate:Date = initialDate{
             
@@ -984,10 +1118,10 @@ class ToolBox: NSObject{
             return 0
         }
     }
-
+    
     
     /** Retorna uma nova data, utilizando uma data base deslocada de 'n' unidades de calendário (ex.: dias, horas, minutos).*/
-    class func dateHelper_NewDateForReferenceDate(referenceDate:Date?, offSet:Int, unitCalendar:Calendar.Component) -> Date?{
+    class func newDateForReferenceDate(referenceDate:Date?, offSet:Int, unitCalendar:Calendar.Component) -> Date?{
         
         if let rDate:Date = referenceDate{
             
@@ -1006,7 +1140,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o primeiro dia do mês para uma determinada data referência.*/
-    class func dateHelper_FirtsDayOfMonthForReferenceDate(referenceDate:Date?) -> Date?{
+    class func firtsDayOfMonthForReferenceDate(referenceDate:Date?) -> Date?{
         
         if let rDate:Date = referenceDate{
             
@@ -1029,7 +1163,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o último dia do mês para uma determinada data referência.*/
-    class func dateHelper_LastDayOfMonthForReferenceDate(referenceDate:Date?) -> Date?{
+    class func lastDayOfMonthForReferenceDate(referenceDate:Date?) -> Date?{
         
         if let rDate:Date = referenceDate{
             
@@ -1055,7 +1189,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o ano vigente .*/
-    class func dateHelper_ActualYear() -> Int{
+    class func actualYear() -> Int{
         
         let actualDate:Date = Date.init()
         let calendar:Calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
@@ -1066,7 +1200,7 @@ class ToolBox: NSObject{
     
     
     /** Encontra o valor absoluto de uma unidade de calendário (ano, mês, dia, etc) numa determinada data referência.*/
-    class func dateHelper_ValueForUnit(calendarUnit:Calendar.Component, referenceDate:Date?) -> Int{
+    class func valueForUnit(calendarUnit:Calendar.Component, referenceDate:Date?) -> Int{
         
         if let rDate = referenceDate{
             
@@ -1081,7 +1215,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o timeStamp da data referência em segundos (apenas a parte inteira no número).*/
-    class func dateHelper_TimeStampInSecondsFromDate(date:Date?) -> Int{
+    class func timeStampInSecondsFromDate(date:Date?) -> Int{
         
         if let d:Date = date{
             
@@ -1096,7 +1230,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o timeInterval da data referência completa.*/
-    class func dateHelper_TimeStampFromDate(date:Date?) -> TimeInterval{
+    class func timeStampFromDate(date:Date?) -> TimeInterval{
         
         if let d:Date = date{
             
@@ -1111,7 +1245,7 @@ class ToolBox: NSObject{
     
     
     /** Retorna o timeStamp textual completo do sistema iOS, sem pontuação.*/
-    class func dateHelper_TimeStampCompleteIOSfromDate(date:Date?) -> String{
+    class func timeStampCompleteIOSfromDate(date:Date?) -> String{
         
         if let d:Date = date{
             
@@ -1129,7 +1263,7 @@ class ToolBox: NSObject{
     
     
     /** Compara duas datas. Utiliza o typedef enum 'ToolBoxComparationRules' da classe 'ToolBox'. */
-    class func dateHelper_CompareDates(date1:Date?, date2:Date?, rule:ToolBoxComparationRule) -> Bool{
+    class func compareDates(date1:Date?, date2:Date?, rule:ToolBoxComparationRule) -> Bool{
         
         if let d1:Date = date1{
             if let d2:Date = date2{
@@ -1145,90 +1279,90 @@ class ToolBox: NSObject{
                 let dateComponents2:DateComponents = calendar.dateComponents(setComponents, from: d2)
                 
                 for i in 1...7 {
-                
+                    
                     switch (i)
                     {
-                        case 1: //Ano Maior
+                    case 1: //Ano Maior
+                        
+                        if (dateComponents1.year! > dateComponents2.year!){
                             
-                            if (dateComponents1.year! > dateComponents2.year!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 2: //Ano Menor
+                        
+                        if (dateComponents1.year! < dateComponents2.year!){
                             
-                        case 2: //Ano Menor
-                            
-                            if (dateComponents1.year! < dateComponents2.year!){
-                            
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
-                           
+                        }
+                        
+                        
+                    case 3: //Ano Igual / Mês Menor
+                        
+                        if (dateComponents1.month! > dateComponents2.month!){
                             
-                        case 3: //Ano Igual / Mês Menor
-                            
-                            if (dateComponents1.month! > dateComponents2.month!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 4: //Ano Igual / Mês Maior
+                        
+                        if (dateComponents1.month! < dateComponents2.month!){
                             
-                        case 4: //Ano Igual / Mês Maior
-                            
-                            if (dateComponents1.month! < dateComponents2.month!){
-                                
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 5: //Ano Igual / Mês Igual / Dia Menor
+                        
+                        if (dateComponents1.day! > dateComponents2.day!){
                             
-                        case 5: //Ano Igual / Mês Igual / Dia Menor
-                            
-                            if (dateComponents1.day! > dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Greater || rule == ToolBoxComparationRule.GreaterOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 6: //Ano Igual / Mês Igual / Dia Meior
+                        
+                        if (dateComponents1.day! < dateComponents2.day!){
                             
-                        case 6: //Ano Igual / Mês Igual / Dia Meior
-                            
-                            if (dateComponents1.day! < dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Less || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
+                        }
+                        
+                    case 7: //Ano Igual / Mês Igual / Dia Igual
+                        
+                        if (dateComponents1.day! == dateComponents2.day!){
                             
-                        case 7: //Ano Igual / Mês Igual / Dia Igual
-                            
-                            if (dateComponents1.day! == dateComponents2.day!){
-                                
-                                if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
-                                    return true;
-                                }else{
-                                    return false;
-                                }
+                            if(rule == ToolBoxComparationRule.Equal || rule == ToolBoxComparationRule.GreaterOrEqual || rule == ToolBoxComparationRule.LessOrEqual){
+                                return true;
+                            }else{
+                                return false;
                             }
-                           
-                        default:
-                            
-                            return false
+                        }
+                        
+                    default:
+                        
+                        return false
                     }
                 }
                 return false
@@ -1243,8 +1377,8 @@ class ToolBox: NSObject{
     
     
     /** Retorna um texto no formato Mês/Ano (localizado pt-BR) para uma data referência. Ex.: JAN/2016. */
-    class func dateHelper_MonthAndYearForReferenceDate(referenceDate:Date?, abbreviation:Bool) -> String{
-    
+    class func monthAndYearForReferenceDate(referenceDate:Date?, abbreviation:Bool) -> String{
+        
         if let date:Date = referenceDate{
             
             let calendar:Calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
@@ -1254,7 +1388,7 @@ class ToolBox: NSObject{
             setComponents.insert(Calendar.Component.month)
             let dateComponents:DateComponents = calendar.dateComponents(setComponents, from: date)
             //
-            let strResult:String =   String.init(format: "%@/%d", [(self.dateHelper_MonthNameForIndex(index:dateComponents.month!, abbreviation:true)), dateComponents.year!])
+            let strResult:String =   String.init(format: "%@/%d", [(self.monthNameForIndex(index:dateComponents.month!, abbreviation:true)), dateComponents.year!])
             //
             return strResult
             
@@ -1266,41 +1400,41 @@ class ToolBox: NSObject{
     
     
     /** Retorna o texto correspondente (localizado pt-BR) ao referido mês (com opção de abreviação). */
-    class func dateHelper_MonthNameForIndex(index:Int, abbreviation:Bool) -> String{
+    class func monthNameForIndex(index:Int, abbreviation:Bool) -> String{
         
         switch index {
-            case 1:
-                return (abbreviation ? "JAN" : "Janeiro")
-            case 2:
-                return (abbreviation ? "FEV" : "Fevereiro")
-            case 3:
-                return (abbreviation ? "MAR" : "Março")
-            case 4:
-                return (abbreviation ? "ABR" : "Abril")
-            case 5:
-                return (abbreviation ? "MAI" : "Maio")
-            case 6:
-                return (abbreviation ? "JUN" : "Junho")
-            case 7:
-                return (abbreviation ? "JUL" : "Julho")
-            case 8:
-                return (abbreviation ? "AGO" : "Agosto")
-            case 9:
-                return (abbreviation ? "SET" : "Setembro")
-            case 10:
-                return (abbreviation ? "OUT" : "Outubro")
-            case 11:
-                return (abbreviation ? "NOV" : "Novembro")
-            case 12:
-                return (abbreviation ? "DEZ" : "Dezembro")
-            default:
-                return (abbreviation ? "-" : "-")
+        case 1:
+            return (abbreviation ? "JAN" : "Janeiro")
+        case 2:
+            return (abbreviation ? "FEV" : "Fevereiro")
+        case 3:
+            return (abbreviation ? "MAR" : "Março")
+        case 4:
+            return (abbreviation ? "ABR" : "Abril")
+        case 5:
+            return (abbreviation ? "MAI" : "Maio")
+        case 6:
+            return (abbreviation ? "JUN" : "Junho")
+        case 7:
+            return (abbreviation ? "JUL" : "Julho")
+        case 8:
+            return (abbreviation ? "AGO" : "Agosto")
+        case 9:
+            return (abbreviation ? "SET" : "Setembro")
+        case 10:
+            return (abbreviation ? "OUT" : "Outubro")
+        case 11:
+            return (abbreviation ? "NOV" : "Novembro")
+        case 12:
+            return (abbreviation ? "DEZ" : "Dezembro")
+        default:
+            return (abbreviation ? "-" : "-")
         }
     }
     
     /** Encontra o nome do dia da semana para determinado indice (localizado pt-BR). */
-    class func dateHelper_DayOfTheWeekNameForIndex(indexDay:Int, abbreviation:Bool) -> String{
-    
+    class func dayOfTheWeekNameForIndex(indexDay:Int, abbreviation:Bool) -> String{
+        
         switch indexDay {
         case 1:
             return (abbreviation ? "DOM" : "Domingo")
@@ -1321,12 +1455,12 @@ class ToolBox: NSObject{
         }
     }
     
-
+    
     /** Formata uma dada data para texto com máscara 'EEEE, dd 'de' MMMM 'de' yyyy, HH:mm:ss. */
-    class func dateHelper_CompleteStringFromDate(referenceDay:Date?) -> String{
+    class func completeStringFromDate(referenceDay:Date?) -> String{
         
         if let rDate:Date = referenceDay{
-         
+            
             let dateFormatter:DateFormatter = DateFormatter.init()
             dateFormatter.dateFormat = "EEEE, dd 'de' MMMM 'de' yyyy, kk:mm:ss."
             //
@@ -1341,7 +1475,7 @@ class ToolBox: NSObject{
     
     
     /** Este método retorna 'Ontem', 'Hoje', 'Amanhã' para uma data referência no intervalo, vazio ("") para datas inválidas e o texto conforme 'stringFormat' para demais datas.*/
-    class func dateHelper_IdentifiesYesterdayTodayTomorrowFromDate(referenceDate:Date?, stringFormat:String!) -> String{
+    class func identifiesYesterdayTodayTomorrowFromDate(referenceDate:Date?, stringFormat:String!) -> String{
         
         if let rDate:Date = referenceDate{
             
@@ -1382,7 +1516,7 @@ class ToolBox: NSObject{
     
     
     /** Este método retorna 'Madrugada', 'Manhã', 'Tarde' ou 'Noite' para um horário referência. */
-    class func dateHelper_IdentifiesDayPeriodFromDate(referenceDate:Date?) -> String{
+    class func identifiesDayPeriodFromDate(referenceDate:Date?) -> String{
         
         if let rDate:Date = referenceDate{
             
@@ -1408,7 +1542,7 @@ class ToolBox: NSObject{
             }else if (dateComponents.hour! >= 12){
                 
                 return "Tarde"
-            
+                
             }else if (dateComponents.hour! >= 6){
                 
                 return "Dia"
@@ -1424,7 +1558,7 @@ class ToolBox: NSObject{
     
     
     /** Este método retorna o formato de horário de acordo com o utilizado pelo sistema no momento ('HH:mm:ss' para 24 horas ou 'h:mm:ss a' para 12 horas). */
-    class func dateHelper_SystemTimeUsingMask() -> String{
+    class func systemTimeUsingMask() -> String{
         
         let dateFormatter:DateFormatter = DateFormatter.init()
         dateFormatter.dateStyle = DateFormatter.Style.none
@@ -1446,7 +1580,7 @@ class ToolBox: NSObject{
     
     
     /** Este método retorna uma data que é composta por outras duas datas. A primeira para 'dd/MM/yyyy' e a segunda para 'HH:mm:ss'.*/
-    class func dateHelper_CombinedDateFromDates(dateReference:Date?, timeReference:Date?) -> Date?{
+    class func combinedDateFromDates(dateReference:Date?, timeReference:Date?) -> Date?{
         
         if let dRef:Date = dateReference{
             
@@ -1490,13 +1624,13 @@ class ToolBox: NSObject{
     
     
     /** Retorna um texto amigável para a data referência. Ex.: 'hoje, 08:15', 'ontem, 11:30', '12/09/2016, 17:11'.*/
-    class func dateHelper_FriendlyStringFromDate(referenceDate:Date?, stringFormatForDate:String!) -> String{
+    class func friendlyStringFromDate(referenceDate:Date?, stringFormatForDate:String!) -> String{
         
         if let rDate = referenceDate{
             
-            var strFriendly:String = self.dateHelper_IdentifiesYesterdayTodayTomorrowFromDate(referenceDate: rDate, stringFormat:stringFormatForDate)
+            var strFriendly:String = self.identifiesYesterdayTodayTomorrowFromDate(referenceDate: rDate, stringFormat:stringFormatForDate)
             strFriendly = strFriendly.appending(", ")
-            strFriendly = strFriendly.appending(self.dateHelper_StringFromDate(date: rDate, stringFormat: self.DATE_TIME_HHmm))
+            strFriendly = strFriendly.appending(self.stringFromDate(date: rDate, stringFormat: ToolBox.DATE_TIME_HHmm))
             //
             return strFriendly
             
@@ -1507,21 +1641,21 @@ class ToolBox: NSObject{
     
     
     /** Converte o formato de uma data textual para outro formato.*/
-    class func dateHelper_NewStringDateForText(originalDateText:String!, oldStringFormat:String!, newStringFormat:String!) -> String{
+    class func newStringDateForText(originalDateText:String!, oldStringFormat:String!, newStringFormat:String!) -> String{
         
-        let date:Date = self.dateHelper_DateFromString(dateString: originalDateText, stringFormat: oldStringFormat)!
-        let strDate:String = self.dateHelper_StringFromDate(date: date, stringFormat: newStringFormat)
+        let date:Date = self.dateFromString(dateString: originalDateText, stringFormat: oldStringFormat)!
+        let strDate:String = self.stringFromDate(date: date, stringFormat: newStringFormat)
         //
         return strDate
         
     }
-    
-    
-    //MARK: - • MESSURE HELPER =======================================================================
-    
+}
+
+//MARK: - • MESSURE HELPER =======================================================================
+final class ToolBoxMessure{
     
     /** Normaliza um valor para uma determinada precisão.*/
-    class func messureHelper_NormalizeValue(value:Double, decimalPrecision:Int) -> Double{
+    class func normalizeValue(value:Double, decimalPrecision:Int) -> Double{
         
         let normalizador:Double = Double(powf(10, Float(decimalPrecision)));
         let result:Double = (ceil(value * normalizador))/normalizador;
@@ -1531,7 +1665,7 @@ class ToolBox: NSObject{
     
     
     /** Verifica se dois números são iguais, utilizando uma precisão parâmetro como limitador.*/
-    class func messureHelper_CheckEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int, rounding:Bool) -> Bool{
+    class func checkEqualityFromValues(value1:Double, value2:Double, decimalPrecision:Int, rounding:Bool) -> Bool{
         
         if (rounding){
             let formatter = NumberFormatter()
@@ -1544,7 +1678,7 @@ class ToolBox: NSObject{
             let str2:String? = formatter.string(from: NSNumber(value: value2))
             //
             return str1 == str2
-        
+            
         }else{
             let str1:String? = String.init(value1)
             let str2:String? = String.init(value2)
@@ -1554,15 +1688,15 @@ class ToolBox: NSObject{
     }
     
     /** Retorna a altura (em pts) adequada para um frame, considerando o texto e fonte parâmetros.*/
-    class func messureHelper_HeightForText(text:String, constrainedWidth:CGFloat, font:UIFont) -> CGFloat{
+    class func heightForText(text:String, constrainedWidth:CGFloat, font:UIFont) -> CGFloat{
         
         let constraintRect = CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude)
-        let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let boundingBox = text.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return boundingBox.height
     }
     
     /** Retorna a altura ou largura (em pts) adequada para um frame, considerando o texto e fonte parâmetros. Para altura, passe 0 (zero) para 'constrainedWidth'. Para largura, passe 0 (zero) para 'constrainedHeight'.*/
-    class func messureHelper_WidthOrHeightForAttributedText(text:String, constrainedWidth:CGFloat, constrainedHeight:CGFloat, font:UIFont) -> CGFloat{
+    class func widthOrHeightForAttributedText(text:String, constrainedWidth:CGFloat, constrainedHeight:CGFloat, font:UIFont) -> CGFloat{
         
         if (constrainedWidth != 0.0 && constrainedHeight != 0.0){
             //Ambos os parâmetros não podem ser usados ao mesmo tempo
@@ -1587,7 +1721,7 @@ class ToolBox: NSObject{
     }
     
     /** Formata um tamanho para a unidade mais apropriada, relacionada ao tamanho em 'bytes'.*/
-    class func messureHelper_FormatedStringToDataSize(dataSize:UInt64) -> String{
+    class func formatedStringToDataSize(dataSize:UInt64) -> String{
         
         var convertedValue:Double  = Double(dataSize)
         var multiplyFactor:Int = 0;
@@ -1601,12 +1735,13 @@ class ToolBox: NSObject{
         return String(format: "%.2f %@", convertedValue, tokens[multiplyFactor])
     }
     
+}
 
-    //MARK: - • VALIDATION HELPER =======================================================================
-    
+//MARK: - • VALIDATION HELPER =======================================================================
+final class ToolBoxValidation{
     
     /** Verifica se um email é compatível segundo o regex utilizado por padrão. Para saber mais: 'http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/'.*/
-    class func validationHelper_EmailChecker(email:String!) -> ToolBoxValidationResult{
+    class func emailChecker(email:String!) -> ToolBoxValidationResult{
         
         // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
         //let stricterFilter:Bool = true
@@ -1621,11 +1756,11 @@ class ToolBox: NSObject{
             return ToolBoxValidationResult.Disapproved
         }else{
             return ToolBoxValidationResult.Approved
-        }        
+        }
     }
     
     /** Verifica se um determinado texto possui caracteres válidos apenas dos passados como parâmetro.*/
-    class func validationHelper_TextCheckForValidChars(text:String, validCharacterSetString:String) -> ToolBoxValidationResult{
+    class func textCheckForValidChars(text:String, validCharacterSetString:String) -> ToolBoxValidationResult{
         
         let characterset = CharacterSet(charactersIn: validCharacterSetString)
         if text.rangeOfCharacter(from: characterset.inverted) != nil {
@@ -1636,19 +1771,14 @@ class ToolBox: NSObject{
     }
     
     /** Verifica se todos os caracteres de um texto pertencem ou não a uma dada lista de caracteres.*/
-    class func validationHelper_TextCheck(text:String, validationList:Array<Character>, restrictForList:Bool) -> ToolBoxValidationResult{
+    class func textCheck(text:String, validationCharacters:String, restrictForList:Bool) -> ToolBoxValidationResult{
         
         if(restrictForList) //somente aceita caracteres da lista
         {
-            
-            for char in text.characters {
-                
+            for char in text {
                 var ok:Bool = false
-                
-                for vChar in validationList {
-                    
+                for vChar in validationCharacters {
                     if (char == vChar){
-                        
                         ok = true
                         break
                     }
@@ -1664,15 +1794,10 @@ class ToolBox: NSObject{
         }
         else //rejeita todos caracteres da lista
         {
-            
-            for char in text.characters {
-                
+            for char in text {
                 var ok:Bool = true
-                
-                for vChar in validationList {
-                    
+                for vChar in validationCharacters {
                     if (char == vChar){
-                        
                         ok = false
                         break
                     }
@@ -1686,8 +1811,6 @@ class ToolBox: NSObject{
             return ToolBoxValidationResult.Approved
         }
     }
-   
-    
     
     /**
      * Cria uma lista de caracteres, contendo os elementos selecionados.
@@ -1698,7 +1821,7 @@ class ToolBox: NSObject{
      * @param control     Acrescenta caracteres de controle a lista [\a, \b, \t, \n, \v, \f, \r, \e].
      * @return     Retorna uma lista vazia caso todos os paramêtros estejam negados.
      */
-    class func validationHelper_NewListOfCharactersWith(numbers:Bool, capsLetters:Bool, minusLetters:Bool, symbols:Bool, controlCharacters:Bool) -> Array<Character>{
+    class func newListOfCharactersWith(numbers:Bool, capsLetters:Bool, minusLetters:Bool, symbols:Bool, controlCharacters:Bool) -> Array<Character>{
         
         var finalList:Array<Character> = Array()
         
@@ -1729,16 +1852,16 @@ class ToolBox: NSObject{
         
         return finalList
     }
-  
-    /** Verifica o MIMEType para um determinado arquivo com extensão conhecida.*/
-    class func validationHelper_MIMETypeForWebContent(url:String) -> String{
     
+    /** Verifica o MIMEType para um determinado arquivo com extensão conhecida.*/
+    class func MIMETypeForWebContent(url:String) -> String{
+        
         let strArray:Array = url.components(separatedBy: ".")
         
         if (strArray.count > 0){
             
             let strMIME:String = strArray.last!
-                
+            
             if strMIME.uppercased() == "JPE" {return "image/jpeg"}
             if strMIME.uppercased() == "JPEG" {return "image/jpeg"}
             if strMIME.uppercased() == "JPG" {return "image/jpeg"}
@@ -1754,8 +1877,8 @@ class ToolBox: NSObject{
     
     
     /** Verifica se o texto equivale a verdadeiro ou falso.*/
-    class func validationHelper_ValidateBolean(text:String?, comparingBoolean:Bool) ->Bool{
-    
+    class func validateBolean(text:String?, comparingBoolean:Bool) ->Bool{
+        
         guard text != nil else {
             return false
         }
@@ -1810,15 +1933,15 @@ class ToolBox: NSObject{
     
     
     /** Verifica se um CPF é válido.*/
-    class func validationHelper_Validate(CPF:String?) -> ToolBoxValidationResult{
-    
+    class func validate(CPF:String?) -> ToolBoxValidationResult{
+        
         guard CPF != nil else {
             return ToolBoxValidationResult.Undefined
         }
         
         
         //VERIFICA SE CPF TEM 11 DIGITOS
-        if (CPF!.characters.count != 11 || CPF! == ""){
+        if (CPF!.count != 11 || CPF! == ""){
             
             return ToolBoxValidationResult.Disapproved
         }
@@ -1884,7 +2007,7 @@ class ToolBox: NSObject{
             digit_11_correct = 11 - (soma % 11);
         }
         
-                
+        
         //Retorno
         if (digit_10_correct == digit_10 && digit_11_correct == digit_11){
             return ToolBoxValidationResult.Approved;
@@ -1896,7 +2019,7 @@ class ToolBox: NSObject{
     
     
     /** Encapsula campos de um dicionário com '<![CDATA[]]>'.*/
-    class func validationHelper_NormalizeDictionaryForCDATA(originalDictionary:Dictionary<String, Any>?, encapsulating:Bool) -> Dictionary<String, Any>?{
+    class func normalizeDictionaryForCDATA(originalDictionary:Dictionary<String, Any>?, encapsulating:Bool) -> Dictionary<String, Any>?{
         
         if var oDic:Dictionary<String, Any> = originalDictionary{
             
@@ -1909,7 +2032,7 @@ class ToolBox: NSObject{
                     if (oDic[key] is String){
                         
                         let str:String = oDic[key] as! String
-                        oDic[key] = validationHelper_AddCDATA(string: str) //addCDATA
+                        oDic[key] = ToolBoxPrivateHelper.addCDATA(string: str) //addCDATA
                     }
                     
                 }else{
@@ -1917,7 +2040,7 @@ class ToolBox: NSObject{
                     if (oDic[key] is String){
                         
                         let str:String = oDic[key] as! String
-                        oDic[key] = validationHelper_RemoveCDATA(string: str) //removeCDATA
+                        oDic[key] = ToolBoxPrivateHelper.removeCDATA(string: str) //removeCDATA
                     }
                 }
             }
@@ -1931,20 +2054,20 @@ class ToolBox: NSObject{
     
     
     /** Valida um CNPJ digitado*/
-    class func validationHelper_Validate(CNPJ:String?) -> ToolBoxValidationResult{
+    class func validate(CNPJ:String?) -> ToolBoxValidationResult{
         
         guard CNPJ != nil else {
             return ToolBoxValidationResult.Undefined
         }
         
-        let checkComums:Int = validationHelper_ComumsCNPJ(cnpj: CNPJ!)
+        let checkComums:Int = ToolBoxPrivateHelper.comumsCNPJ(cnpj: CNPJ!)
         
         if (checkComums != 0){
             
             return ToolBoxValidationResult.Disapproved
         }else{
             
-            let checkValidate:Bool = validationHelper_ValidateDigits(cnpj: CNPJ!)
+            let checkValidate:Bool = ToolBoxPrivateHelper.validateDigits(cnpj: CNPJ!)
             
             if (checkValidate){
                 return ToolBoxValidationResult.Approved
@@ -1956,10 +2079,10 @@ class ToolBox: NSObject{
     
     
     /** Verifica se um cartão de crédito é válido */
-    class func validationHelper_Validate(CreditCard:String) -> Bool{
+    class func validate(CreditCard:String) -> Bool{
         
-        let numbers = validationHelper_OnlyNumbers(string: CreditCard)
-        if numbers.characters.count < 9 {
+        let numbers = ToolBoxPrivateHelper.onlyNumbers(string: CreditCard)
+        if numbers.count < 9 {
             return false
         }
         
@@ -1971,7 +2094,7 @@ class ToolBox: NSObject{
         }
         
         var oddSum = 0, evenSum = 0
-        let reversedArray = reversedString.characters
+        let reversedArray = reversedString
         
         for (i, s) in reversedArray.enumerated() {
             
@@ -1984,22 +2107,97 @@ class ToolBox: NSObject{
             }
         }
         return (oddSum + evenSum) % 10 == 0
+        
+    }
+}
 
+//MARK: - • TEXT HELPER =======================================================================
+final class ToolBoxText{
+    
+    class func updateMask(text:String?, mask:String) -> String{
+    
+        if let str = text{
+            let strNoMask =  ToolBoxText.removeMask(fromText: str, charsMask: ToolBox.TEXT_MASK_DEFAULT_CHARS_SET)
+            let strYesMask = ToolBoxText.applyMask(toText: NSString.init(string: strNoMask), mask: NSString.init(string: mask))
+            return strYesMask
+        }else{
+            return ""
+        }
     }
     
+    class func applyMask(toText:NSString, mask:NSString) -> String{
+        
+        var onOriginal:Int = 0
+        var onFilter:Int = 0
+        var onOutput:Int = 0
+        var outputString = [Character](repeating: "\0", count:mask.length)
+        var done:Bool = false
+        
+        while (onFilter < mask.length && !done) {
+            
+            let filterChar:Character = Character(UnicodeScalar(mask.character(at: onFilter))!)
+            let originalChar:Character = onOriginal >= toText.length ? "\0" : Character(UnicodeScalar(toText.character(at: onOriginal))!)
+            
+            switch filterChar {
+            case "#":
+                
+                if (originalChar == "\0") {
+                    // We have no more input numbers for the filter.  We're done.
+                    done = true
+                    break
+                }
+                
+                if (CharacterSet.init(charactersIn: "0123456789").contains(UnicodeScalar(originalChar.unicodeScalarCodePoint())!)) {
+                    outputString[onOutput] = originalChar;
+                    onOriginal += 1
+                    onFilter += 1
+                    onOutput += 1
+                }else{
+                    onOriginal += 1
+                }
+                
+            default:
+                // Any other character will automatically be inserted for the user as they type (spaces, - etc..) or deleted as they delete if there are more numbers to come.
+                outputString[onOutput] = filterChar;
+                onOutput += 1
+                onFilter += 1
+                if(originalChar == filterChar) {
+                    onOriginal += 1
+                }
+            }
+        }
+        
+        if (onOutput < outputString.count){
+            outputString[onOutput] = "\0" // Cap the output string
+        }
+        
+        return String(outputString).replacingOccurrences(of: "\0", with: "")
+    }
     
-    
-    //MARK: - • GRAPHIC HELPER =======================================================================
-    
+    class func removeMask(fromText:String, charsMask:String) -> String{
+        
+        var resultString = fromText;
+        //
+        for character in charsMask {
+            let str:String = String(character)
+            resultString = resultString.replacingOccurrences(of: str, with: "")
+        }
+        //
+        return resultString;
+    }
+}
+
+//MARK: - • GRAPHIC HELPER =======================================================================
+class ToolBoxGraphic{
     
     /** Cria uma cor RGB através de um texto HEX.*/
-    class func graphicHelper_ColorWithHexString(string:String) -> UIColor{
+    class func colorWithHexString(string:String) -> UIColor{
         
         let hex = string.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
@@ -2015,12 +2213,12 @@ class ToolBox: NSObject{
     
     
     /** Reduz o tamanho de uma imagem, aplicando compressão JPEG para otimizar o tamanho da mesma. [Ver também método 'graphicHelper_CompressImage:usingQuality:']*/
-    class func graphicHelper_NormalizeImage(image:UIImage, maximumDimension:CGFloat, quality:Float) -> UIImage{
+    class func normalizeImage(image:UIImage, maximumDimension:CGFloat, quality:CGFloat) -> UIImage{
         
         let qualityI = quality < 0 ? 0 : (quality > 1 ? 1 : quality)
         
         //Convertendo outros formatos para JPEG
-        let iData:Data = UIImageJPEGRepresentation(image, CGFloat(qualityI))!
+        let iData:Data = image.jpegData(compressionQuality: qualityI)!
         let imageR:UIImage = UIImage.init(data: iData)!
         let max:CGFloat = imageR.size.width > imageR.size.height ? imageR.size.width : imageR.size.height
         
@@ -2037,7 +2235,7 @@ class ToolBox: NSObject{
         var novaLargura:CGFloat = 0;
         var novaAltura:CGFloat = 0;
         
-       // maxDimension = abs(maxDimension);
+        // maxDimension = abs(maxDimension);
         
         //Imagem de retorno:
         var newImage:UIImage
@@ -2063,18 +2261,18 @@ class ToolBox: NSObject{
     
     
     /** Converte uma imagem para sua representação base64 string.*/
-    class func graphicHelper_EncodeToBase64String(image:UIImage?) -> String{
+    class func encodeToBase64String(image:UIImage?) -> String{
         
         if let img:UIImage = image{
-            return UIImageJPEGRepresentation(img, 1.0)!.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed)
+            return (img.jpegData(compressionQuality: 1.0)!.base64EncodedString(options: Data.Base64EncodingOptions.endLineWithLineFeed))
         }else{
             return ""
         }
     }
-
-
+    
+    
     /** Converte um texto base64 para a imagem correspondente.*/
-    class func graphicHelper_DecodeBase64ToImage(strEncodeData:String?) -> UIImage?{
+    class func decodeBase64ToImage(strEncodeData:String?) -> UIImage?{
         
         if let str:String = strEncodeData{
             let data:Data = Data.init(base64Encoded: str, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
@@ -2083,16 +2281,16 @@ class ToolBox: NSObject{
             return nil
         }
     }
-
+    
     
     /** Cria uma cópia de uma imagem fazendo sobreposição de cor.*/
-    class func graphicHelper_TintImage(tintColor:UIColor?, templateImage:UIImage?) -> UIImage?{
+    class func tintImage(tintColor:UIColor?, templateImage:UIImage?) -> UIImage?{
         
         if let tColor:UIColor = tintColor{
             
             if let tImage:UIImage = templateImage{
                 
-                var newImage:UIImage? = tImage.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                var newImage:UIImage? = tImage.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 UIGraphicsBeginImageContextWithOptions(tImage.size, false, newImage!.scale)
                 tColor.set()
                 newImage?.draw(in: CGRect.init(x: 0.0, y: 0.0, width: (newImage?.size.width)!, height: (newImage?.size.height)!))
@@ -2110,9 +2308,9 @@ class ToolBox: NSObject{
         }
     }
     
- 
+    
     /** Retorna uma imagem representação do Layer parâmetro.*/
-    class func graphicHelper_Snapshot(layer:CALayer?) -> UIImage?{
+    class func snapshot(layer:CALayer?) -> UIImage?{
         
         if let iLayer:CALayer = layer{
             
@@ -2130,21 +2328,21 @@ class ToolBox: NSObject{
     
     
     /** Retorna uma imagem representação da View parâmetro.*/;
-    class func graphicHelper_Snapshot(view:UIView?) -> UIImage?{
+    class func snapshot(view:UIView?) -> UIImage?{
         
-        return graphicHelper_Snapshot(layer:view?.layer)
+        return self.snapshot(layer:view?.layer)
     }
     
     
     /** Retorna uma imagem representação do ViewController parâmetro.*/
-    class func graphicHelper_Snapshot(viewController:UIViewController?) -> UIImage?{
+    class func snapshot(viewController:UIViewController?) -> UIImage?{
         
-        return graphicHelper_Snapshot(layer:viewController?.view?.layer)
+        return self.snapshot(layer:viewController?.view?.layer)
     }
     
     
     /** Adiciona o efeito BLUR em uma imagem referência.*/
-    class func graphicHelper_ApplyBlurEffect(image:UIImage?, radius:CGFloat, tintColor: UIColor?, saturationDeltaFactor: CGFloat, maskImage: UIImage?) -> UIImage?{
+    class func applyBlurEffect(image:UIImage?, radius:CGFloat, tintColor: UIColor?, saturationDeltaFactor: CGFloat, maskImage: UIImage?) -> UIImage?{
         
         if let rImage:UIImage = image{
             
@@ -2157,8 +2355,8 @@ class ToolBox: NSObject{
                 print("*** error: image must be backed by a CGImage: \(self)")
                 return nil
             }
-            if maskImage != nil && maskImage!.cgImage == nil {
-                print("*** error: maskImage must be backed by a CGImage: \(maskImage)")
+            if  maskImage != nil && maskImage!.cgImage == nil {
+                print("*** error: maskImage must be backed by a CGImage: \(maskImage!)")
                 return nil
             }
             
@@ -2168,7 +2366,7 @@ class ToolBox: NSObject{
             var effectImage = rImage
             
             let hasBlur = radius > __FLT_EPSILON__
-            let hasSaturationChange = fabs(saturationDeltaFactor - 1.0) > __FLT_EPSILON__
+            let hasSaturationChange = abs(saturationDeltaFactor - 1.0) > __FLT_EPSILON__
             
             if hasBlur || hasSaturationChange {
                 func createEffectBuffer(_ context: CGContext) -> vImage_Buffer {
@@ -2305,7 +2503,7 @@ class ToolBox: NSObject{
     
     
     /** Adiciona o efeito Branco e Preto em uma imagem referência.*/
-    class func graphicHelper_ApplyGrayScaleEffect(image:UIImage?, type:ToolBoxGrayScaleEffect) -> UIImage?{
+    class func applyGrayScaleEffect(image:UIImage?, type:ToolBoxGrayScaleEffect) -> UIImage?{
         
         if let nImage:UIImage = image{
             
@@ -2335,7 +2533,7 @@ class ToolBox: NSObject{
     
     
     /** Adiciona o efeito DISTORTION (CIGlassDistortion) em uma imagem referência.*/
-    class func graphicHelper_ApplyGlassDistortionEffect(image:UIImage?, maskImage:UIImage?) -> UIImage?{
+    class func applyGlassDistortionEffect(image:UIImage?, maskImage:UIImage?) -> UIImage?{
         
         if let nImage:UIImage = image{
             
@@ -2362,24 +2560,24 @@ class ToolBox: NSObject{
     
     
     /** Adiciona o efeito ROTATION em uma view.*/
-    class func graphicHelper_ApplyRotationEffect(view:UIView, duration:TimeInterval, repeatCount:Int){
+    class func applyRotationEffect(view:UIView, duration:TimeInterval, repeatCount:Int){
         
         let animation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.rotation.y")
         animation.fromValue = 0
         animation.toValue = 2 * Double.pi
         animation.duration = duration
         animation.repeatCount = Float(repeatCount)
-        animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.linear)
         //
         view.layer.add(animation, forKey: "transform.rotation.y")
     }
-
+    
     
     /** Adiciona efeito parallax na View parâmetro.*/
-    class func graphicHelper_ApplyParallaxEffect(view:UIView, deep:CGFloat){
+    class func applyParallaxEffect(view:UIView, deep:CGFloat){
         
-        let effectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
-        let effectY:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
+        let effectX:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
+        let effectY:UIInterpolatingMotionEffect = UIInterpolatingMotionEffect.init(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
         //
         effectX.maximumRelativeValue = deep
         effectX.minimumRelativeValue = -deep
@@ -2392,7 +2590,7 @@ class ToolBox: NSObject{
     
     
     /** Remove todos efeitos parallax da View parâmetro.*/
-    class func graphicHelper_RemoveParallaxEffect(view:UIView, recursive:Bool){
+    class func removeParallaxEffect(view:UIView, recursive:Bool){
         
         let motionsList:Array = Array.init(view.motionEffects)
         for me in motionsList{
@@ -2409,9 +2607,9 @@ class ToolBox: NSObject{
         }
     }
     
-
+    
     /** Adiciona uma animação de efeito ripple circular na View parâmetro.*/
-    class func graphicHelper_ApplyCircleRippleEffectAnimation(view:UIView, color:UIColor, radius:CGFloat, duration:TimeInterval){
+    class func applyCircleRippleEffectAnimation(view:UIView, color:UIColor, radius:CGFloat, duration:TimeInterval){
         
         let m:CGFloat = radius == 0 ? (view.bounds.size.width < view.bounds.size.height ? view.bounds.size.width : view.bounds.size.height) : radius
         
@@ -2428,36 +2626,36 @@ class ToolBox: NSObject{
         
         let path:UIBezierPath = UIBezierPath.init(roundedRect: pathFrame, cornerRadius: m/2)
         let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
-            
+        
         let circleShape:CAShapeLayer = CAShapeLayer.init()
         circleShape.path = path.cgPath
         circleShape.position = shapePosition
         circleShape.fillColor = color.cgColor
         circleShape.opacity = 0
-            
+        
         view.layer.addSublayer(circleShape)
-            
+        
         let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation.fromValue = NSValue.init(caTransform3D: CATransform3DIdentity)
         scaleAnimation.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(2.0, 2.0, 1.0))
-            
+        
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.fromValue = 1
         alphaAnimation.toValue = 0
-            
+        
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = duration
         animationGroup.repeatCount = 0.0
-        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
-            
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
+        
         circleShape.add(animationGroup, forKey: "ripple")
     }
     
     
     /** Adiciona uma animação de efeito ripple na View parâmetro.*/
-    class func graphicHelper_ApplyRippleEffectAnimationForBounds(view:UIView, color:UIColor, sizeScale:CGFloat, duration:TimeInterval){
-    
+    class func applyRippleEffectAnimationForBounds(view:UIView, color:UIColor, sizeScale:CGFloat, duration:TimeInterval){
+        
         let path:UIBezierPath = UIBezierPath.init(rect: view.frame)
         let shapePosition:CGPoint = CGPoint(x: view.bounds.size.width / 2, y: view.bounds.size.height / 2)
         
@@ -2481,14 +2679,14 @@ class ToolBox: NSObject{
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = duration
         animationGroup.repeatCount = 0.0
-        animationGroup.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        animationGroup.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         
-        circleShape.add(animationGroup, forKey: "ripple")    
+        circleShape.add(animationGroup, forKey: "ripple")
     }
     
     
     /** Adiciona uma animação de batida de coração na View parâmetro.*/
-    class func graphicHelper_ApplyHeartBeatAnimation(view:UIView, scale:CGFloat){
+    class func applyHeartBeatAnimation(view:UIView, scale:CGFloat){
         
         var animations:Array = [CABasicAnimation]()
         
@@ -2496,13 +2694,13 @@ class ToolBox: NSObject{
         let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation.toValue = scale
         scaleAnimation.duration = 0.3
-        scaleAnimation.fillMode = kCAFillModeForwards
+        scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation)
         //
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.toValue = 1.0
         alphaAnimation.duration = 0.3
-        alphaAnimation.fillMode = kCAFillModeForwards
+        alphaAnimation.fillMode = CAMediaTimingFillMode.forwards
         animations.append(alphaAnimation)
         
         // Step 2
@@ -2510,61 +2708,61 @@ class ToolBox: NSObject{
         scaleAnimation2.toValue = 1
         scaleAnimation2.beginTime = 0.3
         scaleAnimation2.duration = 0.1
-        scaleAnimation2.fillMode = kCAFillModeForwards
+        scaleAnimation2.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation2)
-
+        
         // Step 3
         let scaleAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation3.toValue = scale
         scaleAnimation3.beginTime = 0.4
         scaleAnimation3.duration = 0.3
-        scaleAnimation3.fillMode = kCAFillModeForwards
+        scaleAnimation3.fillMode = CAMediaTimingFillMode.forwards
         animations.append(scaleAnimation3)
         //
         let alphaAnimation3:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation3.toValue = 0.0
         alphaAnimation3.beginTime = 0.4
         alphaAnimation3.duration = 0.3
-        alphaAnimation3.fillMode = kCAFillModeForwards
+        alphaAnimation3.fillMode = CAMediaTimingFillMode.forwards
         animations.append(alphaAnimation3)
         
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = animations;
         animationGroup.duration = 0.7
         animationGroup.repeatCount = 0.0
-        animationGroup.fillMode = kCAFillModeBoth
+        animationGroup.fillMode = CAMediaTimingFillMode.both
         
         view.layer.add(animationGroup, forKey: "heart-beat")
     }
     
-
+    
     /** Adiciona uma animação de incremento/decremento de tamanho na View parâmetro.*/
-    class func graphicHelper_ApplyScaleBeatAnimation(view:UIView, scale:CGFloat, repeatCount:Int){
+    class func applyScaleBeatAnimation(view:UIView, scale:CGFloat, repeatCount:Int){
         
         let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
         scaleAnimation.fromValue = 1.0
         scaleAnimation.toValue = scale
         scaleAnimation.duration = 0.5
-        scaleAnimation.fillMode = kCAFillModeForwards
+        scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         let alphaAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "opacity")
         alphaAnimation.fromValue = 1.0
         alphaAnimation.toValue = 0.0
         alphaAnimation.duration = 0.5
-        alphaAnimation.fillMode = kCAFillModeForwards
+        alphaAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         let animationGroup = CAAnimationGroup.init()
         animationGroup.animations = [scaleAnimation, alphaAnimation];
         animationGroup.duration = 0.5
         animationGroup.repeatCount = Float(repeatCount)
-        animationGroup.fillMode = kCAFillModeBoth
+        animationGroup.fillMode = CAMediaTimingFillMode.both
         
-       view.layer.add(animationGroup, forKey: "scale-beat")
+        view.layer.add(animationGroup, forKey: "scale-beat")
     }
     
     
     /** Adiciona borda na image parâmetro.*/
-    class func graphicHelper_ApplyBorder(image:UIImage?, borderColor:UIColor, borderWidth:CGFloat) -> UIImage?{
+    class func applyBorder(image:UIImage?, borderColor:UIColor, borderWidth:CGFloat) -> UIImage?{
         
         if let oImage:UIImage = image{
             
@@ -2578,7 +2776,7 @@ class ToolBox: NSObject{
             var red:CGFloat = 0.0
             var green:CGFloat = 0.0
             var blue:CGFloat = 0.0
-
+            
             borderColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
             context.setStrokeColor(red: red, green: green, blue: blue, alpha: alpha)
             context.setLineWidth(borderWidth)
@@ -2595,9 +2793,9 @@ class ToolBox: NSObject{
         
     }
     
-
+    
     /** Cria uma imagem flat num tamanho específico.*/
-    class func graphicHelper_CreateFlatImage(size:CGSize, corners:UIRectCorner, cornerRadius:CGSize, color:UIColor) -> UIImage{
+    class func createFlatImage(size:CGSize, corners:UIRectCorner, cornerRadius:CGSize, color:UIColor) -> UIImage{
         
         let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
         let path:UIBezierPath = UIBezierPath.init(roundedRect: rect , byRoundingCorners: corners, cornerRadii: cornerRadius)
@@ -2612,7 +2810,7 @@ class ToolBox: NSObject{
     
     
     /** Adiciona sombra a View parâmetro.*/
-    class func graphicHelper_ApplyShadow(view:UIView, color:UIColor, offSet:CGSize, radius:CGFloat, opacity:Float){
+    class func applyShadow(view:UIView, color:UIColor, offSet:CGSize, radius:CGFloat, opacity:Float){
         
         view.layer.shadowColor = color.cgColor
         view.layer.shadowOffset = offSet
@@ -2625,7 +2823,7 @@ class ToolBox: NSObject{
     
     
     /** Remove sombra da View parâmetro.*/
-    class func graphicHelper_RemoveShadow(view:UIView){
+    class func removeShadow(view:UIView){
         
         view.layer.shadowColor = UIColor.clear.cgColor
         view.layer.shadowOffset = CGSize.zero
@@ -2636,7 +2834,7 @@ class ToolBox: NSObject{
     
     
     /** Corta e redimensiona circularmente uma imagem.*/
-    class func graphicHelper_CircularScaleAndCrop(image:UIImage?, frame:CGRect) -> UIImage?{
+    class func circularScaleAndCrop(image:UIImage?, frame:CGRect) -> UIImage?{
         
         if let cImage:UIImage = image{
             
@@ -2657,7 +2855,7 @@ class ToolBox: NSObject{
             
             let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
-
+            
             return newImage
         }else{
             return nil
@@ -2666,13 +2864,13 @@ class ToolBox: NSObject{
     
     
     /** Corta parte da imagem deferência.*/
-    class func graphicHelper_Crop(image:UIImage?, frame:CGRect) -> UIImage?{
+    class func crop(image:UIImage?, frame:CGRect) -> UIImage?{
         
         if let cImage:UIImage = image{
             
             let imageRef:CGImage = cImage.cgImage!.cropping(to: frame)!
             let croppedImage:UIImage = UIImage(cgImage:imageRef)
-            return croppedImage            
+            return croppedImage
             
         }else{
             return nil
@@ -2681,21 +2879,21 @@ class ToolBox: NSObject{
     
     
     /** Aplica uma máscara na imagem base, gerando uma nova imagem 'vazada'. A máscara deve ser uma imagem sem alpha, em escala de cinza (o branco define a transparência, preto solidez).*/
-    class func graphicHelper_ApplyMask(image:UIImage?, mask:UIImage?, opaque:Bool) -> UIImage?{
+    class func applyMask(image:UIImage?, mask:UIImage?, opaque:Bool) -> UIImage?{
         
         if let originalImage:UIImage = image{
             
             if let maskImage:UIImage = mask{
-             
+                
                 let cgOriginalImage:CGImage = originalImage.cgImage!
                 let cgMaskImage:CGImage = maskImage.cgImage!
                 let imageMask:CGImage = CGImage.init(maskWidth: cgMaskImage.width,
-                                                height: cgMaskImage.height,
-                                                bitsPerComponent: cgMaskImage.bitsPerComponent,
-                                                bitsPerPixel: cgMaskImage.bitsPerPixel,
-                                                bytesPerRow: cgMaskImage.bytesPerRow,
-                                                provider: cgMaskImage.dataProvider!, decode: nil, shouldInterpolate: true)!
-            
+                                                     height: cgMaskImage.height,
+                                                     bitsPerComponent: cgMaskImage.bitsPerComponent,
+                                                     bitsPerPixel: cgMaskImage.bitsPerPixel,
+                                                     bytesPerRow: cgMaskImage.bytesPerRow,
+                                                     provider: cgMaskImage.dataProvider!, decode: nil, shouldInterpolate: true)!
+                
                 let maskedImage:CGImage = cgOriginalImage.masking(imageMask)!
                 let newImage:UIImage = UIImage.init(cgImage: maskedImage)
                 //
@@ -2713,10 +2911,10 @@ class ToolBox: NSObject{
             return nil
         }
     }
-
+    
     
     /** Mescla duas imagens (a 'top' sobre a 'bottom'). É possível definir posição, mistura, transparência e escala para a imagem superior (top).*/
-    class func graphicHelper_MergeImages(bottomImage:UIImage?, topImage:UIImage?, position:CGPoint, blendMode:CGBlendMode, alpha:CGFloat, topImageScale:Float) -> UIImage?{
+    class func mergeImages(bottomImage:UIImage?, topImage:UIImage?, position:CGPoint, blendMode:CGBlendMode, alpha:CGFloat, topImageScale:Float) -> UIImage?{
         
         if let bImage:UIImage = bottomImage{
             
@@ -2747,10 +2945,10 @@ class ToolBox: NSObject{
     
     
     /** Redimensiona a imagem parâmetro para um tamanho específico.*/
-    class func graphicHelper_ResizeScaleToFill(image:UIImage?, newSize:CGSize) -> UIImage?{
+    class func resizeScaleToFill(image:UIImage?, newSize:CGSize) -> UIImage?{
         
         if let originalImage:UIImage = image{
-         
+            
             UIGraphicsBeginImageContext(newSize)
             originalImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newSize.width, height: newSize.height))
             let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -2763,9 +2961,9 @@ class ToolBox: NSObject{
         }
     }
     
-
+    
     /** Redimensiona a imagem parâmetro baseando-se numa escala. Escala 0 (zero) ou negativa será ignorada.*/
-    class func graphicHelper_ResizeAspectFit(image:UIImage?, scale:CGFloat) -> UIImage? {
+    class func resizeAspectFit(image:UIImage?, scale:CGFloat) -> UIImage? {
         
         if let originalImage:UIImage = image{
             
@@ -2784,7 +2982,7 @@ class ToolBox: NSObject{
     
     
     /** Redimensiona a imagem parâmetro para caiba num dado tamanho, mantendo o aspecto original. O tamanho parâmetro 'rectSize' deve ser dado em points, conforme tamanho do componente (ex.: <UIImageView>.frame.size).*/
-    class func graphicHelper_ResizeProportional(image:UIImage?, rectSizeView:CGSize) -> UIImage?{
+    class func resizeProportional(image:UIImage?, rectSizeView:CGSize) -> UIImage?{
         
         if let originalImage:UIImage = image{
             
@@ -2818,15 +3016,15 @@ class ToolBox: NSObject{
         }
     }
     
-
+    
     /** Comprime uma imagem para reduzir sua qualidade. O parâmetro 'image' é transformado no formato JPEG ,na qualidade correspondente.*/
-    class func graphicHelper_Compress(image:UIImage?, quality:CGFloat) -> UIImage?{
+    class func compress(image:UIImage?, quality:CGFloat) -> UIImage?{
         
         if let originalImage:UIImage = image{
             
             let q:CGFloat = (quality < 0.0) ? 0.0 : (quality > 1.0 ? 1.0 : quality)
             
-            if let data:Data = UIImageJPEGRepresentation(originalImage, q){
+            if let data:Data = originalImage.jpegData(compressionQuality: q){
                 let resultImage:UIImage = UIImage(data: data)!
                 return resultImage
             }else{
@@ -2839,16 +3037,16 @@ class ToolBox: NSObject{
     
     
     /** Copia uma imagem, opcionalmente modificando sua qualidade. Para 'quality' 1, é utilizado PNG, inferior JPG.*/
-    class func graphicHelper_Copy(image:UIImage?, quality:CGFloat) -> UIImage? {
+    class func copy(image:UIImage?, quality:CGFloat) -> UIImage? {
         
         if let originalImage:UIImage = image{
             
             if (quality >= 1.0){
-                let img:UIImage? = UIImage.init(data: UIImagePNGRepresentation(originalImage)!, scale: UIScreen.main.scale)
+                let img:UIImage? = UIImage.init(data: originalImage.pngData()!, scale: UIScreen.main.scale)
                 return img
             }else{
                 
-                let img2:UIImage? = UIImage.init(data: UIImageJPEGRepresentation(originalImage, quality)!, scale: UIScreen.main.scale)
+                let img2:UIImage? = UIImage.init(data: originalImage.jpegData(compressionQuality: quality)!, scale: UIScreen.main.scale)
                 return img2
             }
         }else{
@@ -2857,7 +3055,7 @@ class ToolBox: NSObject{
     }
     
     /** Aplica filtro na imagem parâmetro. Certos filtros exigem parâmetros adicionais que devem ser passados pelo dicionário. Visitar o endereço para ver as opções: https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/#//apple_ref/doc/uid/TP30000136-SW29.*/
-    class func graphicHelper_ApplyFilter(filterName:String?, image:UIImage?, parameters:[String : Any]?, scale:Float) -> UIImage?{
+    class func applyFilter(filterName:String?, image:UIImage?, parameters:[String : Any]?, scale:Float) -> UIImage?{
         
         if (ToolBox.isNil(filterName)){
             return nil
@@ -2889,11 +3087,13 @@ class ToolBox: NSObject{
             return nil
         }
     }
-    
-    //MARK: - • CONVERTER HELPER =======================================================================
+}
+
+//MARK: - • CONVERTER HELPER =======================================================================
+final class ToolBoxConverter{
     
     /** Converte um dicionário JSON em texto.*/
-    class func converterHelper_StringJsonFromDictionary(dictionary:NSDictionary?, prettyPrinted:Bool) -> String
+    class func stringJsonFromDictionary(dictionary:NSDictionary?, prettyPrinted:Bool) -> String
     {
         if let dic:NSDictionary = dictionary
         {
@@ -2926,7 +3126,7 @@ class ToolBox: NSObject{
     }
     
     /** Converte um texto em dicionário JSON.*/
-    class func converterHelper_DictionaryFromStringJson(string:String?) -> NSDictionary?
+    class func dictionaryFromStringJson(string:String?) -> NSDictionary?
     {
         if let strJSON:String = string{
             
@@ -2957,7 +3157,7 @@ class ToolBox: NSObject{
     }
     
     /** Remove valores textuais '<null>', '(null)', 'null' do dicionário parâmetro, substituindo pela por um termo escolhido.*/
-    class func converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary?, withString newString:String?) -> NSDictionary?
+    class func newDictionaryRemovingNullValuesFromDictionary(oldDictionary:NSDictionary?, withString newString:String?) -> NSDictionary?
     {
         if let dic:NSDictionary = oldDictionary
         {
@@ -2987,16 +3187,16 @@ class ToolBox: NSObject{
     }
     
     /** Substitui o símbolo '+' do texto de um dicionário referência.*/
-    class func converterHelper_NewDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary?) -> NSDictionary?
+    class func newDictionaryReplacingPlusSymbolFromDictionary(refDictionary:NSDictionary?) -> NSDictionary?
     {
         if let dic:NSDictionary = refDictionary
         {
             let replaced:NSMutableDictionary = NSMutableDictionary.init(dictionary: dic)
-            var dicString = converterHelper_StringJsonFromDictionary(dictionary: replaced, prettyPrinted: false)
+            var dicString = self.stringJsonFromDictionary(dictionary: replaced, prettyPrinted: false)
             
             dicString = dicString.removingPercentEncoding!
             
-            let resultDic = converterHelper_DictionaryFromStringJson(string: dicString)
+            let resultDic = self.dictionaryFromStringJson(string: dicString)
             return resultDic
         }
         else
@@ -3006,7 +3206,7 @@ class ToolBox: NSObject{
     }
     
     /** Retorna uma url normalizada baseada em uma string.*/
-    class func converterHelper_NormalizedURLString(string:String?) -> NSURL?
+    class func normalizedURLString(string:String?) -> NSURL?
     {
         if let paramString:String = string
         {
@@ -3021,14 +3221,15 @@ class ToolBox: NSObject{
     }
     
     /** Retorna o texto 'limpo' de uma html.*/
-    class func converterHelper_PlainStringFromHTMLString(htmlString:String?) -> String?
+    class func plainStringFromHTMLString(htmlString:String?) -> String?
     {
         if let paramString:String = htmlString
         {
             var aString:NSAttributedString = NSAttributedString()
             
             do{
-                aString = try NSAttributedString.init(data: paramString.data(using: String.Encoding.utf8)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSNumber.init(value: String.Encoding.utf8.rawValue)], documentAttributes: nil)
+                aString = try NSAttributedString.init(data: paramString.data(using: String.Encoding.utf8)!, options: [.documentType : NSAttributedString.DocumentType.html, .characterEncoding : String.Encoding.utf8.rawValue], documentAttributes: nil)
+                //aString = try NSAttributedString.init(data: paramString.data(using: String.Encoding.utf8)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute : NSNumber.init(value: String.Encoding.utf8.rawValue)], documentAttributes: nil)
             }
             catch
             {
@@ -3044,7 +3245,7 @@ class ToolBox: NSObject{
     }
     
     /** Formata um valor numérico para seu equivalente monetário. Utiliza a localidade padrão do sistema.*/
-    class func converterHelper_MonetaryStringForValue(value:Double) -> String?
+    class func monetaryStringForValue(value:Double) -> String?
     {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -3052,48 +3253,48 @@ class ToolBox: NSObject{
     }
     
     /** Converte graus em radianos.*/
-    class func converterHelper_DegreeToRadian(degree:CGFloat) -> CGFloat
+    class func degreeToRadian(degree:CGFloat) -> CGFloat
     {
         return degree * CGFloat(Double.pi) / 180.0
     }
     
     /** Converte radianos em graus.*/
-    class func converterHelper_RadianToDegree(radius:CGFloat) -> CGFloat
+    class func radianToDegree(radius:CGFloat) -> CGFloat
     {
         return radius * 180.0 / CGFloat(Double.pi)
     }
     
     /** Converte grau celsius para fahenheit.*/
-    class func converterHelper_CelsiusToFahenheit(celcius:CGFloat) -> CGFloat
+    class func celsiusToFahenheit(celcius:CGFloat) -> CGFloat
     {
         return (celcius-32.0) / 1.8
     }
     
     /** Converte fahenheit para grau celsius.*/
-    class func converterHelper_FahenheitToCelsius(fahenheit:CGFloat) -> CGFloat
+    class func fahenheitToCelsius(fahenheit:CGFloat) -> CGFloat
     {
         return (fahenheit*1.8)+32.0
     }
     
     /** Retorna o equivalente numérico para um dado texto (localizado pt-BR). Ex: "R$ 50,00", "2,3 L", "5 m³" etc.*/
-    class func converterHelper_DecimalValueFromText(text:String) -> Double
+    class func decimalValueFromText(text:String) -> Double
     {
         var tempVE = text
         tempVE = tempVE.replacingOccurrences(of: ".", with: "")
         tempVE = tempVE.replacingOccurrences(of: " ", with: "")
         tempVE = tempVE.replacingOccurrences(of: ",", with: ".")
-        tempVE = tempVE.replacingOccurrences(of: SYMBOL_MONETARY, with: "")
-        tempVE = tempVE.replacingOccurrences(of: SYMBOL_VOLUME_LIQUID, with: "")
-        tempVE = tempVE.replacingOccurrences(of: SYMBOL_VOLUME_SOLID, with: "")
-        tempVE = tempVE.replacingOccurrences(of: SYMBOL_DISTANCE, with: "")
+        tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_MONETARY, with: "")
+        tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_VOLUME_LIQUID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_VOLUME_SOLID, with: "")
+        tempVE = tempVE.replacingOccurrences(of: ToolBox.SYMBOL_DISTANCE, with: "")
         
-        let value:NSDecimalNumber = NSDecimalNumber(string: tempVE)
+        let value:Double? = Double.init(tempVE)
         
-        return Double(value)
+        return (value ?? 0.0)
     }
     
     /** Formata um valor para texto, aplicando opcionalmente o símbolo monetário (localizado pt-BR).*/
-    class func converterHelper_StringFromValue(value:Double, monetaryFormat monetary:Bool, decimalPrecision precision:Int) -> String
+    class func stringFromValue(value:Double, monetaryFormat monetary:Bool, decimalPrecision precision:Int) -> String
     {
         var texto:String
         
@@ -3113,19 +3314,21 @@ class ToolBox: NSObject{
         //
         if(monetary)
         {
-            return String("\(SYMBOL_MONETARY) \(texto)")
+            return String("\(ToolBox.SYMBOL_MONETARY) \(texto)")
         }
         else
         {
             return texto
         }
     }
-    
-    //MARK: - • DATA HELPER =======================================================================
+}
+
+
+fileprivate final class ToolBoxPrivateHelper{
     
     //MARK: - • PRIVATE FUNCTIONS =======================================================================
-
-    private class func graphicHelper_ColorComponentFrom(str:String, start:Int, length:Int) -> CGFloat{
+    
+    class func colorComponentFrom(str:String, start:Int, length:Int) -> CGFloat{
         
         let string:NSString = str as NSString
         let substring:NSString = string.substring(with: NSRange.init(location: start, length: length)) as NSString
@@ -3139,8 +3342,8 @@ class ToolBox: NSObject{
         
         return CGFloat(hexComponent) / 255.0
     }
-
-    private class func validationHelper_ValidateDigits(cnpj:String) -> Bool{
+    
+    class func validateDigits(cnpj:String) -> Bool{
         
         var sum:Int = 0
         var weight:Int = 0
@@ -3201,20 +3404,20 @@ class ToolBox: NSObject{
         }
     }
     
-    private class func validationHelper_OnlyNumbers(string: String) -> String {
+    class func onlyNumbers(string: String) -> String {
         let set = CharacterSet.decimalDigits.inverted
         let numbers = string.components(separatedBy: set)
         return numbers.joined(separator: "")
     }
     
-    private class func validationHelper_AddCDATA(string:String) -> String{
+    class func addCDATA(string:String) -> String{
         
         let newSTR:String = String.init(format: "%@%@%@", [ToolBox.CDATA_START, string, ToolBox.CDATA_END])
         
         return newSTR
     }
     
-    private class func validationHelper_RemoveCDATA(string:String) -> String{
+    class func removeCDATA(string:String) -> String{
         
         var newSTR = string
         
@@ -3232,7 +3435,7 @@ class ToolBox: NSObject{
         return newSTR
     }
     
-    private class func validationHelper_ComumsCNPJ(cnpj:String) -> Int{
+    class func comumsCNPJ(cnpj:String) -> Int{
         
         /*
          0 - Validado
@@ -3240,7 +3443,7 @@ class ToolBox: NSObject{
          2 - CNPJ não permitido: Sequencia de números
          */
         
-        if (cnpj.characters.count != 14 || cnpj == ""){
+        if (cnpj.count != 14 || cnpj == ""){
             return 1
         }else if (cnpj == "00000000000000"
             || cnpj == "11111111111111"
@@ -3257,6 +3460,4 @@ class ToolBox: NSObject{
             return 0
         }
     }
-    
-
 }

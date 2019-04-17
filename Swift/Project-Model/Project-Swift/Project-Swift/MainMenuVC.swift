@@ -56,6 +56,8 @@ class MainMenuVC: PMViewController{
         
         App.Delegate.updateTabBarController()
         
+        //pod 'SCLAlertView'
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,7 +68,9 @@ class MainMenuVC: PMViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.rightBarButtonItem = App.Delegate.createSideMenuItem()
+        self.navigationItem.leftBarButtonItem = App.Delegate.createSideMenuItem()
+        
+        self.navigationItem.rightBarButtonItem  = UIBarButtonItem.init(barButtonSystemItem: .fastForward, target: self, action: #selector(actionOpenVariableContainerSample(sender:)))
         
         self.view.backgroundColor = App.Style.colorView_Light
         
@@ -77,26 +81,10 @@ class MainMenuVC: PMViewController{
                                           UIImage(named:"flame_a_0005.png")!,
                                           UIImage(named:"flame_a_0006.png")!]
         
-        let alert:SCLAlertViewPlus = SCLAlertViewPlus.createRichAlert(bodyMessage: "Este aplicativo é um projeto modelo para Swift 3.1. Várias classes, frameworks e pods já constam no projeto, prontas para uso.\n\nBasta fazer uma cópia e renomear para um novo projeto!", images: arrayImages, animationTimePerFrame: 0.1)
+        let alert:SCLAlertViewPlus = SCLAlertViewPlus.createRichAlert(bodyMessage: "Este aplicativo é um projeto modelo para Swift 4.0.\nVárias classes, frameworks e pods já constam no projeto, prontas para uso.\n\nBasta fazer uma cópia e renomear para um novo projeto!", images: arrayImages, animationTimePerFrame: 0.1)
         alert.addButton(title: "OK", type: SCLAlertButtonType.Default){
         
-            App.Delegate.activityView?.startActivity(.downloading, true, nil, nil)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-                App.Delegate.activityView?.setProgressViewVisible(visible: true)
-                App.Delegate.activityView?.useCancelButton = true
-                App.Delegate.activityView?.updateProgressView(progress: 0.3)
-                App.Delegate.activityView?.updateNoteLabel("Inicio do Processo")
-            })
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
-                App.Delegate.activityView?.updateLabels("Criando dados...", "Meio do Processo")
-            })
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 6.0, execute: {
-                App.Delegate.activityView?.updateProgressView(progress: 0.85)
-                App.Delegate.activityView?.updateNoteLabel("34,7 %")
-            })
+            print("OK")
         
         }
         alert.showSuccess("Bem vindo!", subTitle: "")
@@ -113,4 +101,15 @@ class MainMenuVC: PMViewController{
     
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
+    
+    @objc private func actionOpenVariableContainerSample(sender:Any){
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: " ", style: .plain, target: nil, action: nil);
+        //
+        let storyboard:UIStoryboard = UIStoryboard.init(name: "Test", bundle: Bundle.main)
+        let vcProd:PickUpVariableContainerVC = storyboard.instantiateViewController(withIdentifier: "PickUpVariableContainerVC") as! PickUpVariableContainerVC
+        vcProd.awakeFromNib()
+        self.navigationController?.pushViewController(vcProd, animated: true)
+        
+    }
 }

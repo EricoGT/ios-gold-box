@@ -281,9 +281,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 }, completion: nil)
             }
             
-            //Som:
-            App.Delegate.soundPlayer.play(sound: .DumEffect, volume: 1.0)
-            
             //Resolução de seleção:
             let option:SideMenuOption = filteredList![indexPath.row]
             
@@ -524,7 +521,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         //
         self.lblAppVersion.backgroundColor = UIColor.white
         self.lblAppVersion.textColor = UIColor.gray
-        self.lblAppVersion.text = "Versão App: " + ToolBox.applicationHelper_VersionBundle()
+        self.lblAppVersion.text = "Versão App: " + ToolBox.Application.versionBundle()
         self.lblAppVersion.font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_MEDIUM, size: 12.0)
         //
         self.imvLogo.backgroundColor = UIColor.clear
@@ -536,7 +533,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tvMenu.reloadData()
         
         //Shadow
-        ToolBox.graphicHelper_ApplyShadow(view: viewMenu, color: UIColor.black, offSet: CGSize.init(width: 3.0, height: 0.0), radius: 5.0, opacity: 0.5)
+        ToolBox.Graphic.applyShadow(view: viewMenu, color: UIColor.black, offSet: CGSize.init(width: 3.0, height: 0.0), radius: 5.0, opacity: 0.5)
         
         self.view.layoutIfNeeded()
     }

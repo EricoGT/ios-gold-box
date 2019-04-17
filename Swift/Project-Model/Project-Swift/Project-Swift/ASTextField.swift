@@ -35,16 +35,16 @@ public extension String {
     }
 }
 
-extension Character
-{
-    func unicodeScalarCodePoint() -> UInt32
-    {
-        let characterString = String(self)
-        let scalars = characterString.unicodeScalars
-        
-        return scalars[scalars.startIndex].value
-    }
-}
+//extension Character
+//{
+//    func unicodeScalarCodePoint() -> UInt32
+//    {
+//        let characterString = String(self)
+//        let scalars = characterString.unicodeScalars
+//        
+//        return scalars[scalars.startIndex].value
+//    }
+//}
 
 public class ASTextField: UITextField {
     
@@ -101,8 +101,7 @@ public class ASTextField: UITextField {
     public var placeholderColor:UIColor?{
         didSet{
             guard let color = placeholderColor else { return }
-            attributedPlaceholder = NSAttributedString(string: placeholderFinal,
-                                                       attributes: [NSForegroundColorAttributeName:color])
+            attributedPlaceholder = NSAttributedString(string: placeholderFinal, attributes: [NSAttributedString.Key.foregroundColor:color])
         }
     }
     
@@ -181,7 +180,7 @@ public class ASTextField: UITextField {
         }
     }
     
-    override public var borderStyle: UITextBorderStyle{
+    override public var borderStyle: UITextField.BorderStyle{
         didSet{
             guard borderStyle != oldValue else { return }
             borderStyle = .none
@@ -200,7 +199,7 @@ public class ASTextField: UITextField {
                 return
             }
             attributedPlaceholder = NSAttributedString(string: placeholderFinal,
-                                                       attributes: [NSForegroundColorAttributeName:color])
+                                                       attributes: [NSAttributedString.Key.foregroundColor:color])
         }
     }
     
@@ -238,7 +237,7 @@ public class ASTextField: UITextField {
     public func validateText(inputMask:String?, maxLenght:Int, range:NSRange, textFieldString:String, replacementString:String, charactersRestriction:String?) -> String? {
         
         // Prevent crashing undo bug
-        if (range.length + range.location > textFieldString.characters.count) {
+        if (range.length + range.location > textFieldString.count) {
             return nil
         }
         
@@ -252,9 +251,9 @@ public class ASTextField: UITextField {
             let subString:String = (textFieldString as NSString).substring(with: range)
             let rangeSub:Range? = subString.rangeOfCharacter(from: CharacterSet.init(charactersIn: "0123456789"))
             
-            if ((range.length == 1) && (replacementString.characters.count < range.length) && (rangeSub == nil)) {
+            if ((range.length == 1) && (replacementString.count < range.length) && (rangeSub == nil)) {
                 
-                var location:Int = changedString.characters.count - 1
+                var location:Int = changedString.count - 1
                 
                 if (location > 0) {
                     
@@ -283,7 +282,7 @@ public class ASTextField: UITextField {
             //Max lenght validation:
             if (maxLenght > 0) {
                 
-                let newLength:Int = textFieldString.characters.count + replacementString.characters.count - range.length
+                let newLength:Int = textFieldString.count + replacementString.count - range.length
                 if (newLength > maxLenght) {
                     return nil
                 }
@@ -492,7 +491,10 @@ public class ASTextField: UITextField {
     
     fileprivate func insetRectForBounds(rect:CGRect) -> CGRect {
         
-        guard !lblFloatPlaceholder.text!.isEmptyStr else { return insetRectForEmptyBounds(rect: rect) }
+        guard let _ = lblFloatPlaceholder.text else {
+            return insetRectForEmptyBounds(rect: rect)
+        }
+        //guard !lblFloatPlaceholder.text.isEmptyStr else { return insetRectForEmptyBounds(rect: rect) }
         
         if floatingDisplayStatus == .never {
             return insetRectForEmptyBounds(rect: rect)

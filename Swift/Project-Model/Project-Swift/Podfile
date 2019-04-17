@@ -1,13 +1,13 @@
-platform :ios, “9.0”
+platform :ios, “11.0”
 use_frameworks!
 
 target 'Project-Swift' do
-  
+ 
 pod 'Alamofire', ‘4’
 pod 'SwiftyJSON'
-pod 'SCLAlertView', '~> 0.7'
+pod 'SCLAlertView',:git => 'https://github.com/vikmeup/SCLAlertView-Swift.git'
 pod 'GzipSwift'
-pod 'Kingfisher', '~> 3.0'
-pod 'NVActivityIndicatorView', '~> 3.6'
+pod 'Kingfisher', '~> 4.0'
+pod 'NVActivityIndicatorView', '~> 4.0'
 
 end

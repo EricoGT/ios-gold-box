@@ -56,7 +56,6 @@ public class PMViewController: UIViewController {
     
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -80,15 +79,15 @@ public class PMViewController: UIViewController {
         }
 
         //
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     //MARK: - • INTERFACE/PROTOCOL METHODS
@@ -99,6 +98,9 @@ public class PMViewController: UIViewController {
     
     public func setupLayout(screenName:String){
         
+        //Layout
+        self.view.layoutIfNeeded()
+        
         //Colors
         self.view.backgroundColor = UIColor.white
         self.scrollViewBackground.backgroundColor = UIColor.clear
@@ -107,6 +109,10 @@ public class PMViewController: UIViewController {
         self.navigationItem.title = screenName
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_BOLD, size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)]
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
@@ -155,9 +161,7 @@ public class PMViewController: UIViewController {
     
     public func connectionAvailable(silenceFeedback:Bool, executionBlock: @escaping () -> Void) {
         
-        let connection:InternetHelper = InternetHelper.init()
-        if connection.isConnectionReachable {
-            
+        if (Reachability()?.isReachable)!{
             executionBlock()
         }else{
             if (!silenceFeedback) {
@@ -178,15 +182,17 @@ public class PMViewController: UIViewController {
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
+    @objc
     func keyboardWillShow(notification:Notification) {
-        guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        scrollViewBackground.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight.height, 0)
+        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        scrollViewBackground.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardHeight.height, right: 0.0)
         //
         self.view.layoutIfNeeded()
         //
         self.keyboardWillAppearAlert()
     }
     
+    @objc
     func keyboardWillHide(notification:Notification) {
         scrollViewBackground.contentInset = .zero
         //

@@ -194,8 +194,8 @@ public class PMAlertView: UIView, UITextFieldDelegate {
             switch optType {
             case .normal:
                 
-                button.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_RedDefault), for: .normal)
-                button.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_RedDark), for: .highlighted)
+                button.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_RedDefault), for: .normal)
+                button.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_RedDark), for: .highlighted)
                 button.layer.borderColor = App.Style.colorView_RedDark.cgColor
                 button.setTitleColor(App.Style.colorText_White, for: .normal)
                 if (optIcon != .none) {
@@ -206,8 +206,8 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 
             case .extra:
                 
-                button.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_Dark), for: .normal)
-                button.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_Dark), for: .highlighted)
+                button.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_Dark), for: .normal)
+                button.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: button.frame.size, corners: .allCorners, cornerRadius: CGSize.zero, color: App.Style.colorView_Dark), for: .highlighted)
                 button.layer.borderColor = App.Style.colorView_Dark.cgColor
                 button.setTitleColor(App.Style.colorText_White, for: .normal)
                 if (optIcon != .none) {
@@ -265,8 +265,8 @@ public class PMAlertView: UIView, UITextFieldDelegate {
             if (!self.isVisible){
                 
                 //Keyboard Notifications:
-                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
                 
                 //Icon
                 self.imvIcon.image = self.alertIconImage(type: type, color: App.Style.colorText_GrayDark)
@@ -278,7 +278,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 //Message
                 let text:NSMutableAttributedString = NSMutableAttributedString.init(string: message)
                 let font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_NORMAL)
-                text.addAttributes([NSFontAttributeName : font as Any], range: NSRange.init(location: 0, length: message.characters.count))
+                text.addAttributes([NSAttributedString.Key.font : font as Any], range: NSRange.init(location: 0, length: message.count))
                 self.txtMessage.attributedText = text
                 self.txtMessage.textAlignment = .center
                 self.txtMessage.textColor = App.Style.colorText_GrayDark
@@ -335,7 +335,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 }
                 
                 App.Delegate.window?.addSubview(self)
-                App.Delegate.window?.bringSubview(toFront: self)
+                App.Delegate.window?.bringSubviewToFront(self)
                 self.isVisible = true
                 //
                 self.scaleAnimation(self)
@@ -414,8 +414,8 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 }
             })
             
-            NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-            NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         }
 
     }
@@ -463,7 +463,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
         scaleAnima.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(1.05, 1.05, 1))
         scaleAnima.duration = ANIMA_TIME / 2.0
         scaleAnima.autoreverses = true
-        scaleAnima.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        scaleAnima.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         scaleAnima.isRemovedOnCompletion = true
         //
         view.layer.add(scaleAnima, forKey: "ScaleAnimation")
@@ -485,16 +485,16 @@ public class PMAlertView: UIView, UITextFieldDelegate {
             }
             
         case .check:
-            return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "CheckMark"))!
+            return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "CheckMark"))!
             
         case .cart:
-            return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
+            return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
         
         case .money:
-            return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
+            return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
             
         case .menu:
-            return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
+            return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-place"))!
         }
     }
     
@@ -511,34 +511,34 @@ public class PMAlertView: UIView, UITextFieldDelegate {
                 }
                 
             case .authentication:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-authentication"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-authentication"))!
                 
             case .success:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-success"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-success"))!
                 
             case .error:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-error"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-error"))!
                 
             case .info:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-info"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-info"))!
                 
             case .warning:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-warning"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-warning"))!
                 
             case .question:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-question"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-question"))!
                 
             case .edit:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-edit"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-edit"))!
                 
             case .exclusion:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-exclusion"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-exclusion"))!
                 
             case .share:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-share"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-share"))!
             
             case .no_connection:
-                return ToolBox.graphicHelper_TintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-no_connection"))!
+                return ToolBox.Graphic.tintImage(tintColor: color, templateImage: UIImage.init(named: "icon-alert-no_connection"))!
             
         }
     }
@@ -548,7 +548,7 @@ public class PMAlertView: UIView, UITextFieldDelegate {
         //Message
         let text:NSMutableAttributedString = NSMutableAttributedString.init(string: txtMessage.text)
         let font = UIFont.init(name: App.Constants.FONT_SAN_FRANCISCO_REGULAR, size: App.Constants.FONT_SIZE_LABEL_NORMAL)
-        text.addAttributes([NSFontAttributeName : font as Any], range: NSRange.init(location: 0, length: txtMessage.text.characters.count))
+        text.addAttributes([NSAttributedString.Key.font : font as Any], range: NSRange.init(location: 0, length: self.txtMessage.text.count))
         self.txtMessage.attributedText = text
         self.txtMessage.textAlignment = .center
         self.txtMessage.textColor = App.Style.colorText_GrayDark
@@ -606,8 +606,8 @@ public class PMAlertView: UIView, UITextFieldDelegate {
     }
     
     @objc private func keyboardWillShow(notification:Notification) {
-        guard let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        scrollViewBackground.contentInset = UIEdgeInsetsMake(0, 0, keyboardHeight.height, 0)
+        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        scrollViewBackground.contentInset = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardHeight.height, right: 0.0)
     }
     
     @objc private func keyboardWillHide(notification:Notification) {

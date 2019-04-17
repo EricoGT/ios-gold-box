@@ -159,15 +159,15 @@ class User: ObjectProtocol {
                 if (keysList.contains(k.user_password)){newUser.password = dic[k.user_password] as? String}
                 //acceptNewsByEmail:
                 if (keysList.contains(k.user_news_email)){
-                    newUser.acceptNewsByEmail = ToolBox.validationHelper_ValidateBolean(text: (dic[k.user_news_email] as? String), comparingBoolean: true)
+                    newUser.acceptNewsByEmail = ToolBox.Validation.validateBolean(text: (dic[k.user_news_email] as? String), comparingBoolean: true)
                 }
                 //acceptNewsBySMS:
                 if (keysList.contains(k.user_news_sms)){
-                    newUser.acceptNewsBySMS = ToolBox.validationHelper_ValidateBolean(text: (dic[k.user_news_sms] as? String), comparingBoolean: true)
+                    newUser.acceptNewsBySMS = ToolBox.Validation.validateBolean(text: (dic[k.user_news_sms] as? String), comparingBoolean: true)
                 }
                 //deliverySameAddress:
                 if (keysList.contains(k.user_delivery_same_address)){
-                    newUser.deliverySameAddress = ToolBox.validationHelper_ValidateBolean(text: (dic[k.user_delivery_same_address] as? String), comparingBoolean: true)
+                    newUser.deliverySameAddress = ToolBox.Validation.validateBolean(text: (dic[k.user_delivery_same_address] as? String), comparingBoolean: true)
                 }
                 
                 //PHYSICAL: *******************************************************************************
@@ -317,7 +317,7 @@ class PhysicalUser:ObjectProtocol {
                 //birthdate:
                 if (keysList.contains(k.physicaluser_dateOfBirth)){
                     let bDate:String? = dic[k.physicaluser_dateOfBirth] as? String
-                    newPhysicalUser.birthdate = ToolBox.dateHelper_DateFromString(dateString: bDate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
+                    newPhysicalUser.birthdate = ToolBox.Date.dateFromString(dateString: bDate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
                 }
                 //gender:
                 if (keysList.contains(k.physicaluser_gender)){
@@ -349,7 +349,7 @@ class PhysicalUser:ObjectProtocol {
         copyObject.lastName = self.lastName
         copyObject.nickname = self.nickname
         copyObject.gender = self.gender
-        copyObject.birthdate = ToolBox.dateHelper_CopyDate(date:self.birthdate)
+        copyObject.birthdate = ToolBox.Date.copyDate(date:self.birthdate)
         copyObject.cpf = self.cpf
         //
         return copyObject
@@ -376,7 +376,7 @@ class PhysicalUser:ObjectProtocol {
         dic[k.physicaluser_firstName] = self.firstName == nil ? "" : self.firstName!
         dic[k.physicaluser_lastName] = self.lastName == nil ? "" : self.lastName!
         dic[k.physicaluser_nickName] = self.nickname == nil ? "" : self.nickname!
-        dic[k.physicaluser_dateOfBirth] = self.birthdate == nil ? "" : ToolBox.dateHelper_StringFromDate(date: self.birthdate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
+        dic[k.physicaluser_dateOfBirth] = self.birthdate == nil ? "" : ToolBox.Date.stringFromDate(date: self.birthdate, stringFormat: ToolBox.DATE_BAR_ddMMyyyy)
         dic[k.physicaluser_gender] = self.gender == .male ? "M" : "F"
         dic[k.physicaluser_cpf] = self.cpf == nil ? "" : self.cpf!
         //

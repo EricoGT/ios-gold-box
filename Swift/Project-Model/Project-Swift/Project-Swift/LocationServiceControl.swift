@@ -134,7 +134,7 @@ class LocationServiceControl: NSObject, CLLocationManagerDelegate{
             }
             
             self.name = placemark?.name
-            self.addressDictionary = placemark?.addressDictionary
+            self.addressDictionary = Dictionary() //placemark?.addressDictionary >> 'addressDictionary' was deprecated in iOS 11.0: Use @properties
             self.ISOcountryCode = placemark?.isoCountryCode
             self.country = placemark?.country
             self.postalCode = placemark?.postalCode

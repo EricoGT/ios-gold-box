@@ -19,7 +19,7 @@ class DataFileManager{
         
         if var dicToSave:Dictionary = dictionaryData{
             
-            dicToSave = App.Utils.converterHelper_NewDictionaryRemovingNullValuesFromDictionary(oldDictionary: dicToSave as NSDictionary, withString: "") as! Dictionary<String, Any>
+            dicToSave = App.Utils.Converter.newDictionaryRemovingNullValuesFromDictionary(oldDictionary: dicToSave as NSDictionary, withString: "") as! Dictionary<String, Any>
             
             var baseURL:URL? = nil
             

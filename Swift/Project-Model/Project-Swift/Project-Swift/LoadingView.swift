@@ -197,7 +197,7 @@ final class LoadingView: UIView {
                     let circularProgress:RPCircularProgress? = RPCircularProgress()
                     circularProgress?.thicknessRatio = 0.15
                     circularProgress?.trackTintColor = UIColor.init(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0) // -> cinzinha sem vergonha!
-                    circularProgress?.progressTintColor = ToolBox.graphicHelper_ColorWithHexString(string: "#31B74D") //-> verdinho maroto!
+                    circularProgress?.progressTintColor = ToolBox.Graphic.colorWithHexString(string: "#31B74D") //-> verdinho maroto!
                     circularProgress?.frame = CGRect.init(x: 0.0, y: 0.0, width: (self.lblProgress?.frame.size.width)!, height: (self.lblProgress?.frame.size.height)!)
                     //
                     self.lblProgress?.addSubview(circularProgress!)
@@ -212,7 +212,7 @@ final class LoadingView: UIView {
                 }
                 
                 //Reinserindo o componente:
-                App.Delegate.window?.bringSubview(toFront: self)
+                App.Delegate.window?.bringSubviewToFront(self)
                 self.isVisible = true
                 //
                 self.controlDelegate?.loadingViewWillShow(lV: self)
@@ -354,7 +354,8 @@ final class LoadingView: UIView {
     @IBAction func actionCancel(sender:AnyObject){
         
         isCanceled = true;
-        //lblProgress?.alpha = 0.0
+        //
+        self.stopActivity(nil)
         //
         controlDelegate?.loadingViewCanceled(lV: self)
     }
@@ -396,15 +397,15 @@ final class LoadingView: UIView {
         self.imvBlurEffectBackground?.isHidden = false
         //
         self.imvCenter?.backgroundColor = UIColor.clear
-        self.imvCenter?.image = ToolBox.graphicHelper_CreateFlatImage(size: (imvCenter?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white)
-        ToolBox.graphicHelper_ApplyShadow(view: self.imvCenter!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
+        self.imvCenter?.image = ToolBox.Graphic.createFlatImage(size: (imvCenter?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white)
+        ToolBox.Graphic.applyShadow(view: self.imvCenter!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
         //
         self.btnCancel?.backgroundColor = UIColor.clear
-        self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white), for: UIControlState.normal)
-        self.btnCancel?.setBackgroundImage(ToolBox.graphicHelper_CreateFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.lightGray), for: UIControlState.highlighted)
-        self.btnCancel?.setTitleColor(App.Style.colorText_RedDark, for: UIControlState.normal)
+        self.btnCancel?.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.white), for: UIControl.State.normal)
+        self.btnCancel?.setBackgroundImage(ToolBox.Graphic.createFlatImage(size: (btnCancel?.frame.size)!, corners: UIRectCorner.allCorners, cornerRadius: CGSize.init(width: 6.0, height: 6.0), color: UIColor.lightGray), for: UIControl.State.highlighted)
+        self.btnCancel?.setTitleColor(App.Style.colorText_RedDark, for: UIControl.State.normal)
         self.btnCancel?.titleLabel?.font = UIFont.init(name: App.Constants.FONT_MYRIAD_PRO_REGULAR, size: App.Constants.FONT_SIZE_BUTTON_TITLE)
-        ToolBox.graphicHelper_ApplyShadow(view: self.btnCancel!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
+        ToolBox.Graphic.applyShadow(view: self.btnCancel!, color: UIColor.black, offSet: CGSize.init(width: 2.0, height: 2.0), radius: 2.0, opacity: 0.5)
         //
         self.tag = 666
         //
@@ -447,7 +448,7 @@ final class LoadingView: UIView {
         scaleAnima.toValue = NSValue.init(caTransform3D: CATransform3DMakeScale(1.05, 1.05, 1))
         scaleAnima.duration = 0.1
         scaleAnima.autoreverses = true
-        scaleAnima.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        scaleAnima.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         scaleAnima.isRemovedOnCompletion = true
         //
         view.layer.add(scaleAnima, forKey: "ScaleAnimation")

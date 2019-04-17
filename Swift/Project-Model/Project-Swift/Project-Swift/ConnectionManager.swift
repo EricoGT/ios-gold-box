@@ -110,14 +110,14 @@ class ConnectionManager
         
         var deviceDic:Dictionary<String, String> =  Dictionary.init()
         //
-        deviceDic["name"] = ToolBox.deviceHelper_Name()
-        deviceDic["model"] = String.init(format: "Apple - %@", arguments: [ToolBox.deviceHelper_Model()])
-        deviceDic["system_version"] = ToolBox.deviceHelper_SystemVersion()
-        deviceDic["system_language"] = ToolBox.deviceHelper_SystemLanguage()
-        deviceDic["storage_capacity"] = ToolBox.deviceHelper_StorageCapacity()
-        deviceDic["free_memory_space"] = ToolBox.deviceHelper_FreeMemorySpace()
-        deviceDic["identifier_for_vendor"] = ToolBox.deviceHelper_IdentifierForVendor()
-        deviceDic["app_version"] = ToolBox.applicationHelper_VersionBundle()
+        deviceDic["name"] = ToolBox.Device.name()
+        deviceDic["model"] = String.init(format: "Apple - %@", arguments: [ToolBox.Device.model()])
+        deviceDic["system_version"] = ToolBox.Device.systemVersion()
+        deviceDic["system_language"] = ToolBox.Device.systemLanguage()
+        deviceDic["storage_capacity"] = ToolBox.Device.storageCapacity()
+        deviceDic["free_memory_space"] = ToolBox.Device.freeMemorySpace()
+        deviceDic["identifier_for_vendor"] = ToolBox.Device.identifierForVendor()
+        deviceDic["app_version"] = ToolBox.Application.versionBundle()
         //
         return deviceDic
     }
@@ -129,7 +129,7 @@ class ConnectionManager
             "Content-Type": "application/json",
             "Accept": "application/json",
             "idiom": NSLocalizedString("LANGUAGE_APP", comment: ""),
-            "device_info": ToolBox.converterHelper_StringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary, prettyPrinted: false),
+            "device_info": ToolBox.Converter.stringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary, prettyPrinted: false),
             "token": ToolBox.isNil(token as AnyObject?) ? "" :  token!
         ]
         return header

@@ -28,7 +28,7 @@ THE SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2016 1024jp
+Copyright (c) 2014-2017 1024jp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,7 +54,7 @@ SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Wei Wang
+Copyright (c) 2018 Wei Wang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -128,7 +128,7 @@ THE SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Ruoyu Fu
+Copyright (c) 2017 Ruoyu Fu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

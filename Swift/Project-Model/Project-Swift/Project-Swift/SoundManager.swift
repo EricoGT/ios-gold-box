@@ -33,7 +33,7 @@ enum SoundMedia:Int {
     case Beep               = 20
 }
 
-class SoundManager:AnyObject{
+class SoundManager:NSObject{
     
     //MARK: - Properties:
     var playerControlList:[SoundItem]
@@ -41,14 +41,14 @@ class SoundManager:AnyObject{
     var synthesizer:AVSpeechSynthesizer
     
     //MARK: - Initializer:
-    required init(){
+    required override init(){
         playerControlList = Array.init()
         soundON = true
         synthesizer = AVSpeechSynthesizer.init()
         
         //AVAudioPlayerCategory
         do{
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, with: AVAudioSessionCategoryOptions.duckOthers)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient, mode: .default, options: .duckOthers)
         }catch{
             NSLog("AVAudioPlayerCategory Error: \(error.localizedDescription)")
         }
