@@ -52,25 +52,25 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (NSString*) applicationHelper_FileSize:(NSString*)fileName;
 
 /** Verifica se um dado arquivo existe na pasta de documentos do usuário.*/
-+ (bool) applicationHelper_VerifyFile:(NSString*)fileName;
++ (BOOL) applicationHelper_VerifyFile:(NSString*)fileName;
 
 /** Salva arquivo (imagem, texto) na pasta de documentos do usuário.*/
-+ (bool) applicationHelper_SaveFile:(NSData*)data WithName:(NSString*)fileName;
++ (BOOL) applicationHelper_SaveFile:(NSData*)data WithName:(NSString*)fileName;
 
 /** Carrega dados de um arquivo da pasta de documentos do usuário. Utilize extensão do arquivo, se existir.*/
 + (NSData*) applicationHelper_LoadDataFromFile:(NSString*)fileName;
 
 /** Renomeia um arquivo existente na pasta de documentos do usuário.*/
-+ (bool) applicationHelper_RenameFile:(NSString*)oldFileName To:(NSString*)newFileName;
++ (BOOL) applicationHelper_RenameFile:(NSString*)oldFileName To:(NSString*)newFileName;
 
 /** Deleta um arquivo existente na pasta de documentos do usuário.*/
-+ (bool) applicationHelper_DeleteFile:(NSString*)fileName;
++ (BOOL) applicationHelper_DeleteFile:(NSString*)fileName;
 
 /** Copia um dado arquivo com um novo nome.*/
-+ (bool) applicationHelper_CopyFile:(NSString*)fileName WithName:(NSString*)copyFileName;
++ (BOOL) applicationHelper_CopyFile:(NSString*)fileName WithName:(NSString*)copyFileName;
 
 /** Clona um arquivo da aplicação para a pasta de documentos do usuário.*/
-+ (bool) applicationHelper_CloneFileFromBundleToUserDirectory:(NSString*)fileName;
++ (BOOL) applicationHelper_CloneFileFromBundleToUserDirectory:(NSString*)fileName;
 
 #pragma mark - • DEVICE HELPER
 
@@ -158,16 +158,16 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (NSString*)dateHelper_TimeStampCompleteIOSfromDate:(NSDate*)date;
 
 /** Compara duas datas. Utiliza o typedef enum 'enumComparationRules' da classe 'ToolBox'. */
-+ (bool)dateHelper_CompareDate:(NSDate*)date1 withDate:(NSDate*)date2 usingRule:(enumComparationRules)rule;
++ (BOOL)dateHelper_CompareDate:(NSDate*)date1 withDate:(NSDate*)date2 usingRule:(enumComparationRules)rule;
 
 /** Retorna um texto no formato Mês/Ano (localizado pt-BR) para uma data referência. Ex.: JAN/2016. */
-+ (NSString*)dateHelper_MonthAndYearForReferenceDate:(NSDate*)referenceDate usingAbbreviation:(bool)abbreviation;
++ (NSString*)dateHelper_MonthAndYearForReferenceDate:(NSDate*)referenceDate usingAbbreviation:(BOOL)abbreviation;
 
 /** Encontra o nome do dia da semana para determinado indice (localizado pt-BR). */
-+ (NSString*)dateHelper_DayOfTheWeekNameForIndex:(int)indexDay usingAbbreviation:(bool)abbreviation;
++ (NSString*)dateHelper_DayOfTheWeekNameForIndex:(int)indexDay usingAbbreviation:(BOOL)abbreviation;
 
 /** Encontra o nome do mês para determinado indice (localizado pt-BR). */
-+ (NSString*)dateHelper_MonthNameForIndex:(int)indexMonth usingAbbreviation:(bool)abbreviation;
++ (NSString*)dateHelper_MonthNameForIndex:(int)indexMonth usingAbbreviation:(BOOL)abbreviation;
 
 /** Formata uma dada data para texto com máscara 'EEEE, dd 'de' MMMM 'de' yyyy, HH:mm:ss. */
 + (NSString*)dateHelper_CompleteStringFromDate:(NSDate*)referenceDate;
@@ -196,7 +196,7 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (double)messureHelper_NormalizeValue:(double)value decimalPrecision:(int)precision;
 
 /** Verifica se dois números são iguais, utilizando uma precisão parâmetro como limitador.*/
-+ (bool)messureHelper_CheckEqualityFromValue:(double)value1 andValue:(double)value2 decimalPrecision:(int)precision;
++ (BOOL)messureHelper_CheckEqualityFromValue:(double)value1 andValue:(double)value2 decimalPrecision:(int)precision;
 
 /** Formata um tamanho pata texto adicionando a unidade mais apropriada.*/
 + (NSString*)messureHelper_FormatSizeString:(double)size;
@@ -224,19 +224,19 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
  * @param control     Acrescenta caracteres de controle a lista [\a, \b, \t, \n, \v, \f, \r, \e].
  * @return     Retorna uma lista vazia caso todos os paramêtros estejam negados.
  */
-+ (NSArray*)validationHelper_NewListOfCharactersWithNumbers:(bool)numbers capsLetters:(bool)capsLetters minusLetters:(bool)minusLetters symbols:(bool)symbols controlCharacters:(bool)control;
++ (NSArray*)validationHelper_NewListOfCharactersWithNumbers:(BOOL)numbers capsLetters:(BOOL)capsLetters minusLetters:(BOOL)minusLetters symbols:(BOOL)symbols controlCharacters:(BOOL)control;
 
 /** Verifica o MIMEType para um determinado arquivo com extensão conhecida.*/
 + (NSString*)validationHelper_MIMETypeForWebContent:(NSString*)url;
 
 /** Verifica se o texto equivale a verdadeiro ou falso.*/
-+ (bool)validationHelper_ValidateBoleanForText:(NSString*)text comparing:(bool)comparationValue;
++ (BOOL)validationHelper_ValidateBoleanForText:(NSString*)text comparing:(BOOL)comparationValue;
 
 /** Verifica se um CPF é válido.*/
 + (enumValidationResult)validationHelper_ValidateCPF:(NSString*)cpfText;
 
 /** Encapsula campos de um dicionário com '<![CDATA[]]>'.*/
-+ (NSDictionary*)validationHelper_NormalizeDictionaryForCDATA:(NSDictionary*)dictionary encapsulating:(bool)encapsulating;
++ (NSDictionary*)validationHelper_NormalizeDictionaryForCDATA:(NSDictionary*)dictionary encapsulating:(BOOL)encapsulating;
 
 /** Valida um CNPJ digitado*/
 +(BOOL)validationHelper_validateCNPJ:(NSString *)cnpj;
@@ -253,13 +253,13 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (NSString*)textHelper_HashSHA512forText:(NSString*)text;
 
 /** Verifica se um dado texto é vazio.*/
-+ (bool)textHelper_CheckRelevantContentInString:(NSString*)text;
++ (BOOL)textHelper_CheckRelevantContentInString:(NSString*)text;
 
 /** Inverte um texto parâmetro.*/
 + (NSString*)textHelper_Inverter:(NSString*)text;
 
 /** Verifica se um dado text possui o caracter parâmetro.*/
-+ (bool)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options;
++ (BOOL)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options;
 
 /** A atualização de máscara remove resquícios de máscaras antigas, se existir, antes de aplicar a nova. Utilize o caracter '#' como curinga.*/
 +(NSString*)textHelper_UpdateMaskToText:(NSString*)text usingMask:(NSString*)mask;
@@ -416,7 +416,7 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (double)converterHelper_DecimalValueFromText:(NSString*)text;
 
 /** Formata um valor para texto, aplicando opcionalmente o símbolo monetário (localizado pt-BR).*/
-+ (NSString*)converterHelper_StringFromValue:(double)value monetaryFormat:(bool)monetary decimalPrecision:(int)precision;
++ (NSString*)converterHelper_StringFromValue:(double)value monetaryFormat:(BOOL)monetary decimalPrecision:(int)precision;
 
 #pragma mark - • DATA HELPER
 
@@ -427,7 +427,7 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 + (NSData*)dataHelper_GUnzipDataFromData:(NSData*)data;
 
 /** Verifica se um dado está comprimido com 'gzip'.*/
-+ (bool)dataHelper_GZipCheckForData:(NSData*)data;
++ (BOOL)dataHelper_GZipCheckForData:(NSData*)data;
 
 /** Ordena uma lista segundo os descriptors parâmetro.*/
 + (void)dataHelper_SortArray:(NSArray*)objectsArray usingKey:(NSString*)objectParameterKey ascendingOrder:(BOOL)ascending;

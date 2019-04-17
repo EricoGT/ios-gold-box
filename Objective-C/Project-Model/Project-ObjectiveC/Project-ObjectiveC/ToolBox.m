@@ -85,11 +85,11 @@
 }
 
 
-+ (bool) applicationHelper_VerifyFile:(NSString*)fileName
++ (BOOL) applicationHelper_VerifyFile:(NSString*)fileName
 {
     if(fileName == nil || [fileName isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     else
     {
@@ -103,9 +103,9 @@
     }
 }
 
-+ (bool) applicationHelper_SaveFile:(NSData*)data WithName:(NSString*)fileName
++ (BOOL) applicationHelper_SaveFile:(NSData*)data WithName:(NSString*)fileName
 {
-    bool result = false;
+    BOOL result = NO;
     
     if(data && fileName != nil && ![fileName isEqualToString:@""])
     {
@@ -118,7 +118,7 @@
         @catch (NSException *exception)
         {
             NSLog(@"Erro ao salvar arquivo: %@.", exception.description);
-            result = false;
+            result = NO;
         }
         @finally {
             NSLog(@"Arquivo salvo: %i.", result);
@@ -144,15 +144,15 @@
     }
 }
 
-+ (bool) applicationHelper_RenameFile:(NSString*)oldFileName To:(NSString*)newFileName
++ (BOOL) applicationHelper_RenameFile:(NSString*)oldFileName To:(NSString*)newFileName
 {
     if(oldFileName == nil || [oldFileName isEqualToString:@""] || newFileName == nil || [newFileName isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     else
     {
-        bool ok = true;
+        BOOL ok = YES;
         
         @try
         {
@@ -172,7 +172,7 @@
         }
         @catch (NSException *exception)
         {
-            ok = false;
+            ok = NO;
             NSLog(@"Exception: %@", exception.description);
         }
         
@@ -180,11 +180,11 @@
     }
 }
 
-+ (bool) applicationHelper_DeleteFile:(NSString*)fileName
++ (BOOL) applicationHelper_DeleteFile:(NSString*)fileName
 {
     if(fileName == nil || [fileName isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     else
     {
@@ -218,15 +218,15 @@
     }
 }
 
-+ (bool) applicationHelper_CopyFile:(NSString*)fileName WithName:(NSString*)copyFileName
++ (BOOL) applicationHelper_CopyFile:(NSString*)fileName WithName:(NSString*)copyFileName
 {
     if(fileName == nil || [fileName isEqualToString:@""] || copyFileName == nil || [copyFileName isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     else
     {
-        bool ok = true;
+        bool ok = YES;
         
         @try
         {
@@ -246,7 +246,7 @@
         }
         @catch (NSException *exception)
         {
-            ok = false;
+            ok = NO;
             NSLog(@"Exception: %@", exception.description);
         }
         
@@ -254,15 +254,15 @@
     }
 }
 
-+ (bool) applicationHelper_CloneFileFromBundleToUserDirectory:(NSString*)fileName
++ (BOOL) applicationHelper_CloneFileFromBundleToUserDirectory:(NSString*)fileName
 {
     if(fileName == nil || [fileName isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     else
     {
-        bool copiado = false;
+        bool copiado = NO;
         //
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
@@ -278,7 +278,7 @@
         
         if (success)
         {
-            copiado = true;
+            copiado = YES;
         }
         else
         {
@@ -326,131 +326,6 @@
         NSString *strModel = [dM valueForKey:deviceModel];
         //
         return (strModel != nil ? strModel : deviceModel);
-        
-        /*
-         //iPhone
-         if ([deviceModel isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
-         if ([deviceModel isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
-         if ([deviceModel isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
-         if ([deviceModel isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
-         if ([deviceModel isEqualToString:@"iPhone3,2"])    return @"iPhone 4 (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
-         if ([deviceModel isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
-         if ([deviceModel isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPhone5,3"])    return @"iPhone 5C (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone5,4"])    return @"iPhone 5C (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPhone6,1"])    return @"iPhone 5S (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
-         if ([deviceModel isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
-         if ([deviceModel isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
-         if ([deviceModel isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
-         if ([deviceModel isEqualToString:@"iPhone8,3"])    return @"iPhone SE (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPhone8,4"])    return @"iPhone SE (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
-         if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
-         if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
-         if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
-         if ([deviceModel isEqualToString:@"iPhone10,1"])    return @"iPhone 8";
-         if ([deviceModel isEqualToString:@"iPhone10,2"])    return @"iPhone 8 Plus";
-         if ([deviceModel isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
-         if ([deviceModel isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
-         if ([deviceModel isEqualToString:@"iPhone10,3"])    return @"iPhone X Global";
-         if ([deviceModel isEqualToString:@"iPhone10,6"])    return @"iPhone X (GSM)";
-         if ([deviceModel isEqualToString:@"iPhone11,2"])    return @"iPhone XS";
-         if ([deviceModel isEqualToString:@"iPhone11,4"])    return @"iPhone XS Max (China)";
-         if ([deviceModel isEqualToString:@"iPhone11,6"])    return @"iPhone XS Max";
-         if ([deviceModel isEqualToString:@"iPhone11,8"])    return @"iPhone XR";
-         
-         
-         //iPod
-         if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1";
-         if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2";
-         if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3";
-         if ([deviceModel isEqualToString:@"iPod4,1"])      return @"iPod Touch 4";
-         if ([deviceModel isEqualToString:@"iPod5,1"])      return @"iPod Touch 5";
-         //if ([deviceModel isEqualToString:@"iPod6,1"])      return @"iPod Touch 6";
-         if ([deviceModel isEqualToString:@"iPod7,1"])      return @"iPod Touch 6";
-         
-         //iPad
-         if ([deviceModel isEqualToString:@"iPad1,1"])      return @"iPad";
-         if ([deviceModel isEqualToString:@"iPad1,2"])      return @"iPad 3G";
-         if ([deviceModel isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
-         if ([deviceModel isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
-         if ([deviceModel isEqualToString:@"iPad2,4"])      return @"iPad 2 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad3,2"])      return @"iPad 3 (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPad3,3"])      return @"iPad 3 (GSM)";
-         if ([deviceModel isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad3,5"])      return @"iPad 4 (GSM)";
-         if ([deviceModel isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPad6,11"])      return @"iPad (2017)";
-         if ([deviceModel isEqualToString:@"iPad6,12"])      return @"iPad (2017)";
-         
-         //iPad Mini
-         if ([deviceModel isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad2,6"])      return @"iPad Mini (GSM)";
-         if ([deviceModel isEqualToString:@"iPad2,7"])      return @"iPad Mini (GSM+CDMA)";
-         if ([deviceModel isEqualToString:@"iPad4,4"])      return @"iPad Mini 2 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad4,5"])      return @"iPad Mini 2 (Cellular)";
-         if ([deviceModel isEqualToString:@"iPad4,6"])      return @"iPad Mini 2";
-         if ([deviceModel isEqualToString:@"iPad4,7"])      return @"iPad Mini 3";
-         if ([deviceModel isEqualToString:@"iPad4,8"])      return @"iPad Mini 3";
-         if ([deviceModel isEqualToString:@"iPad4,9"])      return @"iPad Mini 3";
-         if ([deviceModel isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (Cellular)";
-         
-         //iPad Air
-         if ([deviceModel isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad4,2"])      return @"iPad Air (Cellular)";
-         if ([deviceModel isEqualToString:@"iPad4,3"])      return @"iPad Air";
-         if ([deviceModel isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
-         if ([deviceModel isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
-         
-         //iPad Pro
-         if ([deviceModel isEqualToString:@"iPad6,3"])      return @"iPad Pro (9.7 inch, Wi-Fi)";
-         if ([deviceModel isEqualToString:@"iPad6,4"])      return @"iPad Pro (9.7 inch, Wi-Fi+LTE)";
-         if ([deviceModel isEqualToString:@"iPad6,7"])      return @"iPad Pro (12.9 inch, Wi-Fi)";
-         if ([deviceModel isEqualToString:@"iPad6,8"])      return @"iPad Pro (12.9 inch, Wi-Fi+LTE)";
-         if ([deviceModel isEqualToString:@"iPad7,1"])      return @"iPad Pro 2G";
-         if ([deviceModel isEqualToString:@"iPad7,2"])      return @"iPad Pro 2G";
-         if ([deviceModel isEqualToString:@"iPad7,3"])      return @"iPad Pro (10.5 inch)";
-         if ([deviceModel isEqualToString:@"iPad7,4"])      return @"iPad Pro (10.5 inch)";
-         if ([deviceModel isEqualToString:@"iPad8,1"])      return @"iPad Pro 3rd Gen (11 inch, WiFi)";
-         if ([deviceModel isEqualToString:@"iPad8,2"])      return @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi)";
-         if ([deviceModel isEqualToString:@"iPad8,3"])      return @"iPad Pro 3rd Gen (11 inch, WiFi+LTE)";
-         if ([deviceModel isEqualToString:@"iPad8,4"])      return @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi+LTE)";
-         if ([deviceModel isEqualToString:@"iPad8,5"])      return @"iPad Pro 3rd Gen (12.9 inch, WiFi)";
-         if ([deviceModel isEqualToString:@"iPad8,6"])      return @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)";
-         if ([deviceModel isEqualToString:@"iPad8,7"])      return @"iPad Pro 3rd Gen (12.9 inch, WiFi+LTE)";
-         if ([deviceModel isEqualToString:@"iPad8,8"])      return @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+LTE)";
-         
-         //Watch
-         if ([deviceModel isEqualToString:@"Watch1,1"])      return @"Apple Watch 38mm case";
-         if ([deviceModel isEqualToString:@"Watch1,2"])      return @"Apple Watch 42mm case";
-         if ([deviceModel isEqualToString:@"Watch2,6"])      return @"Apple Watch Series 1 38mm case";
-         if ([deviceModel isEqualToString:@"Watch2,7"])      return @"Apple Watch Series 1 42mm case";
-         if ([deviceModel isEqualToString:@"Watch2,3"])      return @"Apple Watch Series 2 38mm case";
-         if ([deviceModel isEqualToString:@"Watch2,4"])      return @"Apple Watch Series 2 42mm case";
-         if ([deviceModel isEqualToString:@"Watch3,1"])      return @"Apple Watch Series 3 38mm case";
-         if ([deviceModel isEqualToString:@"Watch3,2"])      return @"Apple Watch Series 3 42mm case";
-         if ([deviceModel isEqualToString:@"Watch3,3"])      return @"Apple Watch Series 3 38mm case";
-         if ([deviceModel isEqualToString:@"Watch3,4"])      return @"Apple Watch Series 3 42mm case";
-         if ([deviceModel isEqualToString:@"Watch4,1"])      return @"Apple Watch Series 4 40mm case (GPS)";
-         if ([deviceModel isEqualToString:@"Watch4,2"])      return @"Apple Watch Series 4 44mm case (GPS)";
-         if ([deviceModel isEqualToString:@"Watch4,3"])      return @"Apple Watch Series 4 40mm case (GPS+LTE)";
-         if ([deviceModel isEqualToString:@"Watch4,4"])      return @"Apple Watch Series 4 44mm case (GPS+LTE)";
-         
-         //simulador
-         if ([deviceModel isEqualToString:@"i386"])         return @"Simulator";
-         if ([deviceModel isEqualToString:@"x86_64"])       return @"Simulator";
-         
-         //apple tv
-         if ([deviceModel isEqualToString:@"AppleTV5,3"])     return @"Apple TV 4";
-         if ([deviceModel isEqualToString:@"AppleTV6,2"])     return @"Apple TV 4K";
-         */
     }
     
     return deviceModel;
@@ -1202,24 +1077,24 @@
 }
 
 //--------------------------------------------------------------------------------------------
-+ (bool)dateHelper_CompareDate:(NSDate*)date1 withDate:(NSDate*)date2 usingRule:(enumComparationRules)rule
++ (BOOL)dateHelper_CompareDate:(NSDate*)date1 withDate:(NSDate*)date2 usingRule:(enumComparationRules)rule
 {
     if(date1 == nil)
     {
         if(date2 == nil)
         {
-            return true;
+            return YES;
         }
         else
         {
-            return false;
+            return NO;
         }
     }
     else
     {
         if(date2 == nil)
         {
-            return false;
+            return NO;
         }
         else
         {
@@ -1349,12 +1224,12 @@
 }
 
 //--------------------------------------------------------------------------------------------
-+ (NSString*)dateHelper_MonthAndYearForReferenceDate:(NSDate*)referenceDate usingAbbreviation:(bool)abbreviation
++ (NSString*)dateHelper_MonthAndYearForReferenceDate:(NSDate*)referenceDate usingAbbreviation:(BOOL)abbreviation
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMonth|NSCalendarUnitYear fromDate:referenceDate];
     
-    return [NSString stringWithFormat:@"%@/%d",[self dateHelper_StringMonthForIndex:[dateComponent month] abbreviation:abbreviation], (int)[dateComponent year]];
+    return [NSString stringWithFormat:@"%@/%d", [self dateHelper_StringMonthForIndex:[dateComponent month] abbreviation:abbreviation], (int)[dateComponent year]];
 }
 
 //--------------------------------------------------------------------------------------------
@@ -1379,7 +1254,7 @@
 }
 
 //--------------------------------------------------------------------------------------------
-+ (NSString*)dateHelper_DayOfTheWeekNameForIndex:(int)indexDay usingAbbreviation:(bool)abbreviation
++ (NSString*)dateHelper_DayOfTheWeekNameForIndex:(int)indexDay usingAbbreviation:(BOOL)abbreviation
 {
     switch (indexDay)
     {
@@ -1395,7 +1270,7 @@
 }
 
 //--------------------------------------------------------------------------------------------
-+ (NSString*)dateHelper_MonthNameForIndex:(int)indexMonth usingAbbreviation:(bool)abbreviation
++ (NSString*)dateHelper_MonthNameForIndex:(int)indexMonth usingAbbreviation:(BOOL)abbreviation
 {
     return [self dateHelper_StringMonthForIndex:indexMonth abbreviation:abbreviation];
 }
@@ -1627,7 +1502,7 @@
     return result;
 }
 
-+ (bool)messureHelper_CheckEqualityFromValue:(double)value1 andValue:(double)value2 decimalPrecision:(int)precision
++ (BOOL)messureHelper_CheckEqualityFromValue:(double)value1 andValue:(double)value2 decimalPrecision:(int)precision
 {
     NSString *vString1 = [self converterHelper_StringFromValue:value1 monetaryFormat:true decimalPrecision:precision];
     NSString *vString2 = [self converterHelper_StringFromValue:value2 monetaryFormat:true decimalPrecision:precision];
@@ -1778,7 +1653,7 @@
     }
 }
 
-+ (NSArray*)validationHelper_NewListOfCharactersWithNumbers:(bool)numbers capsLetters:(bool)capsLetters minusLetters:(bool)minusLetters symbols:(bool)symbols controlCharacters:(bool)control
++ (NSArray*)validationHelper_NewListOfCharactersWithNumbers:(BOOL)numbers capsLetters:(BOOL)capsLetters minusLetters:(BOOL)minusLetters symbols:(BOOL)symbols controlCharacters:(BOOL)control
 {
     NSMutableArray *lista = [NSMutableArray new];
     
@@ -1841,70 +1716,70 @@
     return @"";
 }
 
-+ (bool)validationHelper_ValidateBoleanForText:(NSString*)text comparing:(bool)comparationValue
++ (BOOL)validationHelper_ValidateBoleanForText:(NSString*)text comparing:(BOOL)comparationValue
 {
     if(text == nil || [text isEqualToString:@""])
     {
-        return false;
+        return NO;
     }
     
     if(comparationValue)
     {
-        if([[text uppercaseString] isEqualToString:@"1"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"1"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"TRUE"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"TRUE"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"YES"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"YES"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"ON"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"ON"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"ENABLE"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"ENABLE"]){return YES;}
         
         
-        if([[text uppercaseString] isEqualToString:@"VERDADEIRO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"VERDADEIRO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"SIM"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"SIM"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"LIGADO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"LIGADO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"ATIVO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"ATIVO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"ATIVADO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"ATIVADO"]){return YES;}
         
         
-        if([[text uppercaseString] isEqualToString:@"T"]){return true;}
-        if([[text uppercaseString] isEqualToString:@"Y"]){return true;}
-        if([[text uppercaseString] isEqualToString:@"S"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"T"]){return YES;}
+        if([[text uppercaseString] isEqualToString:@"Y"]){return YES;}
+        if([[text uppercaseString] isEqualToString:@"S"]){return YES;}
     }
     else
     {
-        if([[text uppercaseString] isEqualToString:@"0"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"0"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"FALSE"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"FALSE"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"NO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"NO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"OFF"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"OFF"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"DISABLE"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"DISABLE"]){return YES;}
         
         
-        if([[text uppercaseString] isEqualToString:@"FALSO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"FALSO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"NÃO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"NÃO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"NAO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"NAO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"DESLIGADO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"DESLIGADO"]){return YES;}
         //
-        if([[text uppercaseString] isEqualToString:@"DESATIVADO"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"DESATIVADO"]){return YES;}
         
         
-        if([[text uppercaseString] isEqualToString:@"F"]){return true;}
-        if([[text uppercaseString] isEqualToString:@"N"]){return true;}
+        if([[text uppercaseString] isEqualToString:@"F"]){return YES;}
+        if([[text uppercaseString] isEqualToString:@"N"]){return YES;}
     }
     
-    return false;
+    return NO;
 }
 
 + (enumValidationResult)validationHelper_ValidateCPF:(NSString*)cpfText
@@ -1979,7 +1854,7 @@
     }
 }
 
-+ (NSDictionary*)validationHelper_NormalizeDictionaryForCDATA:(NSDictionary*)dictionary encapsulating:(bool)encapsulating
++ (NSDictionary*)validationHelper_NormalizeDictionaryForCDATA:(NSDictionary*)dictionary encapsulating:(BOOL)encapsulating
 {
     if(dictionary == nil || [dictionary isKindOfClass:[NSNull class]])
     {
@@ -2203,10 +2078,10 @@
     return output;
 }
 
-+ (bool)textHelper_CheckRelevantContentInString:(NSString*)text
++ (BOOL)textHelper_CheckRelevantContentInString:(NSString*)text
 {
     if(text == nil || [text isEqualToString:@""]){
-        return false;
+        return NO;
     }
     
     NSCharacterSet *inverted1 = [[NSCharacterSet whitespaceAndNewlineCharacterSet] invertedSet];
@@ -2214,7 +2089,7 @@
     
     if (range.location == NSNotFound){
         
-        return false;
+        return NO;
     }else{
         
         NSCharacterSet *inverted2 = [[NSCharacterSet illegalCharacterSet] invertedSet];
@@ -2222,10 +2097,10 @@
         
         if (range2.location == NSNotFound){
             
-            return false;
+            return NO;
             
         }else{
-            return true;
+            return YES;
         }
     }
 }
@@ -2254,19 +2129,19 @@
     return outputString;
 }
 
-+ (bool)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options
++ (BOOL)textHelper_CheckOccurrencesOfChar:(char)character inText:(NSString*)text usingOptions:(NSStringCompareOptions)options
 {
     if (text == nil || [text isEqualToString:@""]){
-        return false;
+        return NO;
     }
     
     NSRange range = [text rangeOfString:[NSString stringWithFormat:@"%c",character] options:options];
     if (range.location != NSNotFound)
     {
-        return true;
+        return YES;
     }
     
-    return false;
+    return NO;
 }
 
 +(NSString*)textHelper_UpdateMaskToText:(NSString*)text usingMask:(NSString*)mask
@@ -3537,7 +3412,7 @@
     return [value doubleValue];
 }
 
-+ (NSString*)converterHelper_StringFromValue:(double)value monetaryFormat:(bool)monetary decimalPrecision:(int)precision
++ (NSString*)converterHelper_StringFromValue:(double)value monetaryFormat:(BOOL)monetary decimalPrecision:(int)precision
 {
     NSString *texto;
     NSNumber *v = [[NSNumber alloc] initWithDouble:value];
@@ -3661,7 +3536,7 @@
     return output;
 }
 
-+ (bool)dataHelper_GZipCheckForData:(NSData*)data
++ (BOOL)dataHelper_GZipCheckForData:(NSData*)data
 {
     const UInt8 *bytes = (const UInt8 *)data.bytes;
     return (data.length >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b);

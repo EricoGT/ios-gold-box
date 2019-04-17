@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BasicViewController.h"
 
 @interface ViewController ()
 
@@ -46,6 +47,39 @@
 //    long n6 = RandomNumber(10, 10);
 //    long n7 = RandomNumber(0, 100);
     
+}
+
+- (IBAction)actionNextScreenPush:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    BasicViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BasicViewController"];
+    vc.showAppMenu = NO;
+    [vc awakeFromNib];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)actionNextScreenModal:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    BasicViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BasicViewController"];
+    vc.showAppMenu = NO;
+    [vc awakeFromNib];
+    //
+    [vc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+    [vc setModalPresentationCapturesStatusBarAppearance:YES];
+    //
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (IBAction)actionSeguePush:(id)sender
+{
+    [self performSegueWithIdentifier:@"SeguePUSH" sender:nil];
+}
+
+- (IBAction)actionSegueModal:(id)sender
+{
+    [self performSegueWithIdentifier:@"SegueMODAL" sender:nil];
 }
 
 /*
