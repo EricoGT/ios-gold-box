@@ -1,9 +1,8 @@
 //
 //  ToolBox.m
-//  AdAliveStore
 //
 //  Created by Erico GT on 9/22/16.
-//  Copyright © 2016 Atlantic Solutions. All rights reserved.
+//  Copyright © 2019 EricoGT. All rights reserved.
 //
 
 #import "ToolBox.h"
@@ -19,22 +18,24 @@
     //OBS: Favor não apagar as linhas anteriores. Apenas comente para referência futura.
     //***********************************************************************************
     
-    //return @"Version: 1.0  |  Date: 09/12/2016  |  Autor: EricoGT  |  Note: Primeiro registro de versão.";
-    //return @"Version: 2.0  |  Date: 22/12/2016  |  Autor: EricoGT  |  Note: Vários métodos adicionados ao grupo 'graphics'.";
-    //return @"Version: 3.0  |  Date: 16/02/2017  |  Autor: EricoGT  |  Note: Adição de novos métodos (date/converter/GZIP).";
-    //return @"Version: 4.0  |  Date: 17/02/2017  |  Autor: EricoGT  |  Note: CopyImage.";
-    //return @"Version: 5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
-    //return @"Version: 6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
-    //return @"Version: 7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
-    //return @"Version: 8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
-    //return @"Version: 9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
+    //return @"Version:  1.0  |  Date: 09/12/2016  |  Autor: EricoGT  |  Note: Primeiro registro de versão.";
+    //return @"Version:  2.0  |  Date: 22/12/2016  |  Autor: EricoGT  |  Note: Vários métodos adicionados ao grupo 'graphics'.";
+    //return @"Version:  3.0  |  Date: 16/02/2017  |  Autor: EricoGT  |  Note: Adição de novos métodos (date/converter/GZIP).";
+    //return @"Version:  4.0  |  Date: 17/02/2017  |  Autor: EricoGT  |  Note: CopyImage.";
+    //return @"Version:  5.0  |  Date: 20/02/2017  |  Autor: EricoGT  |  Note: Modelos devices atualizados.";
+    //return @"Version:  6.0  |  Date: 07/03/2017  |  Autor: EricoGT  |  Note: Inclusão de método pata aplicação de CIFilter.";
+    //return @"Version:  7.0  |  Date: 15/03/2017  |  Autor: EricoGT  |  Note: É possível inserir borda na imagem referência.";
+    //return @"Version:  8.0  |  Date: 07/04/2017  |  Autor: EricoGT  |  Note: Novos itens no grupo messureHelper.";
+    //return @"Version:  9.0  |  Date: 27/04/2017  |  Autor: EricoGT  |  Note: Aplicação de efeito PB (escala de cinza) substituído.";
     //return @"Version: 10.0  |  Date: 05/05/2017  |  Autor: EricoGT  |  Note: Inclusão de métodos no grupo 'data'.";
     //return @"Version: 11.0  |  Date: 09/11/2017  |  Autor: EricoGT  |  Note: Inclusão do método para converter UIColor em Hex.";
     //return @"Version: 12.0  |  Date: 04/12/2017  |  Autor: EricoGT  |  Note: Novos métodos no grupo 'text' para inserção e remoção de máscaras.";
     //return @"Version: 13.0  |  Date: 20/02/2018  |  Autor: EricoGT  |  Note: Melhorias do tratamento de máscaras.";
     //return @"Version: 14.0  |  Date: 10/04/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
+    //return @"Version: 15.0  |  Date: 06/12/2018  |  Autor: EricoGT  |  Note: Inclusão de novos modelos de dispositivos (deviceModels).";
     
-    return @"Version: 14.1  |  Date: 11/07/2018  |  Autor: EricoGT  |  Note: Pequena melhoria no método de conversão de dicionários 'converterHelper_NewDictionaryRemovingNullValuesFromDictionary'.";
+    return @"Version: 15.1  |  Date: 15/01/2019  |  Autor: EricoGT  |  Note: Correção do método 'textHelper_ApplyMaskToText:usingMask:'.";
+    
 }
 
 #pragma mark - • APPLICATION HELPER
@@ -42,6 +43,12 @@
 + (NSString*) applicationHelper_VersionBundle
 {
     return [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+}
+
++ (NSString *) applicationHelper_AppName {
+    return [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleExecutable"]];
+    //    NSBundle *bundle = [NSBundle mainBundle];
+    //    return [bundle objectForInfoDictionaryKey:@"CFBundleExecutable"];
 }
 
 + (NSString*) applicationHelper_InstalationDataForSimulator
@@ -315,110 +322,269 @@
     
     if(![deviceModel isEqualToString:@"<unknown>"])
     {
-        //iPhone
-        if ([deviceModel isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
-        if ([deviceModel isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
-        if ([deviceModel isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
-        if ([deviceModel isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
-        if ([deviceModel isEqualToString:@"iPhone3,2"])    return @"iPhone 4 (GSM)";
-        if ([deviceModel isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
-        if ([deviceModel isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
-        if ([deviceModel isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
-        if ([deviceModel isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPhone5,3"])    return @"iPhone 5C (GSM)";
-        if ([deviceModel isEqualToString:@"iPhone5,4"])    return @"iPhone 5C (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPhone6,1"])    return @"iPhone 5S (GSM)";
-        if ([deviceModel isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
-        if ([deviceModel isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
-        if ([deviceModel isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
-        if ([deviceModel isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
-        if ([deviceModel isEqualToString:@"iPhone8,3"])    return @"iPhone SE (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPhone8,4"])    return @"iPhone SE (GSM)";
-        if ([deviceModel isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
-        if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
-        if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
-        if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
-        if ([deviceModel isEqualToString:@"iPhone10,1"])    return @"iPhone 8";
-        if ([deviceModel isEqualToString:@"iPhone10,2"])    return @"iPhone 8 Plus";
-        if ([deviceModel isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
-        if ([deviceModel isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
-        if ([deviceModel isEqualToString:@"iPhone10,3"])    return @"iPhone X";
-        if ([deviceModel isEqualToString:@"iPhone10,6"])    return @"iPhone X";
+        NSDictionary *dM = [ToolBox deviceModels];
+        NSString *strModel = [dM valueForKey:deviceModel];
+        //
+        return (strModel != nil ? strModel : deviceModel);
         
-        //iPod
-        if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1";
-        if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2";
-        if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3";
-        if ([deviceModel isEqualToString:@"iPod4,1"])      return @"iPod Touch 4";
-        if ([deviceModel isEqualToString:@"iPod5,1"])      return @"iPod Touch 5";
-        //if ([deviceModel isEqualToString:@"iPod6,1"])      return @"iPod Touch 6";
-        if ([deviceModel isEqualToString:@"iPod7,1"])      return @"iPod Touch 6";
-        
-        //iPad
-        if ([deviceModel isEqualToString:@"iPad1,1"])      return @"iPad";
-        if ([deviceModel isEqualToString:@"iPad1,2"])      return @"iPad 3G";
-        if ([deviceModel isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
-        if ([deviceModel isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
-        if ([deviceModel isEqualToString:@"iPad2,4"])      return @"iPad 2 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad3,2"])      return @"iPad 3 (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPad3,3"])      return @"iPad 3 (GSM)";
-        if ([deviceModel isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad3,5"])      return @"iPad 4 (GSM)";
-        if ([deviceModel isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPad6,11"])      return @"iPad (2017)";
-        if ([deviceModel isEqualToString:@"iPad6,12"])      return @"iPad (2017)";
-        
-        //iPad Mini
-        if ([deviceModel isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad2,6"])      return @"iPad Mini (GSM)";
-        if ([deviceModel isEqualToString:@"iPad2,7"])      return @"iPad Mini (GSM+CDMA)";
-        if ([deviceModel isEqualToString:@"iPad4,4"])      return @"iPad Mini 2 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad4,5"])      return @"iPad Mini 2 (Cellular)";
-        if ([deviceModel isEqualToString:@"iPad4,6"])      return @"iPad Mini 2";
-        if ([deviceModel isEqualToString:@"iPad4,7"])      return @"iPad Mini 3";
-        if ([deviceModel isEqualToString:@"iPad4,8"])      return @"iPad Mini 3";
-        if ([deviceModel isEqualToString:@"iPad4,9"])      return @"iPad Mini 3";
-        if ([deviceModel isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (Cellular)";
-        
-        //iPad Air
-        if ([deviceModel isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad4,2"])      return @"iPad Air (Cellular)";
-        if ([deviceModel isEqualToString:@"iPad4,3"])      return @"iPad Air";
-        if ([deviceModel isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
-        if ([deviceModel isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
-        
-        //iPad Pro
-        if ([deviceModel isEqualToString:@"iPad6,3"])      return @"iPad Pro (9.7 inch, Wi-Fi)";
-        if ([deviceModel isEqualToString:@"iPad6,4"])      return @"iPad Pro (9.7 inch, Wi-Fi+LTE)";
-        if ([deviceModel isEqualToString:@"iPad6,7"])      return @"iPad Pro (12.9 inch, Wi-Fi)";
-        if ([deviceModel isEqualToString:@"iPad6,8"])      return @"iPad Pro (12.9 inch, Wi-Fi+LTE)";
-        if ([deviceModel isEqualToString:@"iPad7,1"])      return @"iPad Pro 2G";
-        if ([deviceModel isEqualToString:@"iPad7,2"])      return @"iPad Pro 2G";
-        if ([deviceModel isEqualToString:@"iPad7,3"])      return @"iPad Pro (10.5 inch)";
-        if ([deviceModel isEqualToString:@"iPad7,4"])      return @"iPad Pro (10.5 inch)";
-        
-        //Watch
-        if ([deviceModel isEqualToString:@"Watch1,1"])      return @"Apple Watch 38mm case";
-        if ([deviceModel isEqualToString:@"Watch1,2"])      return @"Apple Watch 42mm case";
-        if ([deviceModel isEqualToString:@"Watch2,6"])      return @"Apple Watch Series 1 38mm case";
-        if ([deviceModel isEqualToString:@"Watch2,7"])      return @"Apple Watch Series 1 42mm case";
-        if ([deviceModel isEqualToString:@"Watch2,3"])      return @"Apple Watch Series 2 38mm case";
-        if ([deviceModel isEqualToString:@"Watch2,4"])      return @"Apple Watch Series 2 42mm case";
-        if ([deviceModel isEqualToString:@"Watch3,1"])      return @"Apple Watch Series 3 38mm case";
-        if ([deviceModel isEqualToString:@"Watch3,2"])      return @"Apple Watch Series 3 42mm case";
-        if ([deviceModel isEqualToString:@"Watch3,3"])      return @"Apple Watch Series 3 38mm case";
-        if ([deviceModel isEqualToString:@"Watch3,4"])      return @"Apple Watch Series 3 42mm case";
-        
-        //simulador
-        if ([deviceModel isEqualToString:@"i386"])         return @"Simulator";
-        if ([deviceModel isEqualToString:@"x86_64"])       return @"Simulator";
+        /*
+         //iPhone
+         if ([deviceModel isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
+         if ([deviceModel isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
+         if ([deviceModel isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
+         if ([deviceModel isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
+         if ([deviceModel isEqualToString:@"iPhone3,2"])    return @"iPhone 4 (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
+         if ([deviceModel isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
+         if ([deviceModel isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPhone5,3"])    return @"iPhone 5C (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone5,4"])    return @"iPhone 5C (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPhone6,1"])    return @"iPhone 5S (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
+         if ([deviceModel isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+         if ([deviceModel isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
+         if ([deviceModel isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
+         if ([deviceModel isEqualToString:@"iPhone8,3"])    return @"iPhone SE (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPhone8,4"])    return @"iPhone SE (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
+         if ([deviceModel isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
+         if ([deviceModel isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
+         if ([deviceModel isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
+         if ([deviceModel isEqualToString:@"iPhone10,1"])    return @"iPhone 8";
+         if ([deviceModel isEqualToString:@"iPhone10,2"])    return @"iPhone 8 Plus";
+         if ([deviceModel isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
+         if ([deviceModel isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
+         if ([deviceModel isEqualToString:@"iPhone10,3"])    return @"iPhone X Global";
+         if ([deviceModel isEqualToString:@"iPhone10,6"])    return @"iPhone X (GSM)";
+         if ([deviceModel isEqualToString:@"iPhone11,2"])    return @"iPhone XS";
+         if ([deviceModel isEqualToString:@"iPhone11,4"])    return @"iPhone XS Max (China)";
+         if ([deviceModel isEqualToString:@"iPhone11,6"])    return @"iPhone XS Max";
+         if ([deviceModel isEqualToString:@"iPhone11,8"])    return @"iPhone XR";
+         
+         
+         //iPod
+         if ([deviceModel isEqualToString:@"iPod1,1"])      return @"iPod Touch 1";
+         if ([deviceModel isEqualToString:@"iPod2,1"])      return @"iPod Touch 2";
+         if ([deviceModel isEqualToString:@"iPod3,1"])      return @"iPod Touch 3";
+         if ([deviceModel isEqualToString:@"iPod4,1"])      return @"iPod Touch 4";
+         if ([deviceModel isEqualToString:@"iPod5,1"])      return @"iPod Touch 5";
+         //if ([deviceModel isEqualToString:@"iPod6,1"])      return @"iPod Touch 6";
+         if ([deviceModel isEqualToString:@"iPod7,1"])      return @"iPod Touch 6";
+         
+         //iPad
+         if ([deviceModel isEqualToString:@"iPad1,1"])      return @"iPad";
+         if ([deviceModel isEqualToString:@"iPad1,2"])      return @"iPad 3G";
+         if ([deviceModel isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
+         if ([deviceModel isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
+         if ([deviceModel isEqualToString:@"iPad2,4"])      return @"iPad 2 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad3,2"])      return @"iPad 3 (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPad3,3"])      return @"iPad 3 (GSM)";
+         if ([deviceModel isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad3,5"])      return @"iPad 4 (GSM)";
+         if ([deviceModel isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPad6,11"])      return @"iPad (2017)";
+         if ([deviceModel isEqualToString:@"iPad6,12"])      return @"iPad (2017)";
+         
+         //iPad Mini
+         if ([deviceModel isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad2,6"])      return @"iPad Mini (GSM)";
+         if ([deviceModel isEqualToString:@"iPad2,7"])      return @"iPad Mini (GSM+CDMA)";
+         if ([deviceModel isEqualToString:@"iPad4,4"])      return @"iPad Mini 2 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad4,5"])      return @"iPad Mini 2 (Cellular)";
+         if ([deviceModel isEqualToString:@"iPad4,6"])      return @"iPad Mini 2";
+         if ([deviceModel isEqualToString:@"iPad4,7"])      return @"iPad Mini 3";
+         if ([deviceModel isEqualToString:@"iPad4,8"])      return @"iPad Mini 3";
+         if ([deviceModel isEqualToString:@"iPad4,9"])      return @"iPad Mini 3";
+         if ([deviceModel isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (Cellular)";
+         
+         //iPad Air
+         if ([deviceModel isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad4,2"])      return @"iPad Air (Cellular)";
+         if ([deviceModel isEqualToString:@"iPad4,3"])      return @"iPad Air";
+         if ([deviceModel isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
+         if ([deviceModel isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
+         
+         //iPad Pro
+         if ([deviceModel isEqualToString:@"iPad6,3"])      return @"iPad Pro (9.7 inch, Wi-Fi)";
+         if ([deviceModel isEqualToString:@"iPad6,4"])      return @"iPad Pro (9.7 inch, Wi-Fi+LTE)";
+         if ([deviceModel isEqualToString:@"iPad6,7"])      return @"iPad Pro (12.9 inch, Wi-Fi)";
+         if ([deviceModel isEqualToString:@"iPad6,8"])      return @"iPad Pro (12.9 inch, Wi-Fi+LTE)";
+         if ([deviceModel isEqualToString:@"iPad7,1"])      return @"iPad Pro 2G";
+         if ([deviceModel isEqualToString:@"iPad7,2"])      return @"iPad Pro 2G";
+         if ([deviceModel isEqualToString:@"iPad7,3"])      return @"iPad Pro (10.5 inch)";
+         if ([deviceModel isEqualToString:@"iPad7,4"])      return @"iPad Pro (10.5 inch)";
+         if ([deviceModel isEqualToString:@"iPad8,1"])      return @"iPad Pro 3rd Gen (11 inch, WiFi)";
+         if ([deviceModel isEqualToString:@"iPad8,2"])      return @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi)";
+         if ([deviceModel isEqualToString:@"iPad8,3"])      return @"iPad Pro 3rd Gen (11 inch, WiFi+LTE)";
+         if ([deviceModel isEqualToString:@"iPad8,4"])      return @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi+LTE)";
+         if ([deviceModel isEqualToString:@"iPad8,5"])      return @"iPad Pro 3rd Gen (12.9 inch, WiFi)";
+         if ([deviceModel isEqualToString:@"iPad8,6"])      return @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)";
+         if ([deviceModel isEqualToString:@"iPad8,7"])      return @"iPad Pro 3rd Gen (12.9 inch, WiFi+LTE)";
+         if ([deviceModel isEqualToString:@"iPad8,8"])      return @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+LTE)";
+         
+         //Watch
+         if ([deviceModel isEqualToString:@"Watch1,1"])      return @"Apple Watch 38mm case";
+         if ([deviceModel isEqualToString:@"Watch1,2"])      return @"Apple Watch 42mm case";
+         if ([deviceModel isEqualToString:@"Watch2,6"])      return @"Apple Watch Series 1 38mm case";
+         if ([deviceModel isEqualToString:@"Watch2,7"])      return @"Apple Watch Series 1 42mm case";
+         if ([deviceModel isEqualToString:@"Watch2,3"])      return @"Apple Watch Series 2 38mm case";
+         if ([deviceModel isEqualToString:@"Watch2,4"])      return @"Apple Watch Series 2 42mm case";
+         if ([deviceModel isEqualToString:@"Watch3,1"])      return @"Apple Watch Series 3 38mm case";
+         if ([deviceModel isEqualToString:@"Watch3,2"])      return @"Apple Watch Series 3 42mm case";
+         if ([deviceModel isEqualToString:@"Watch3,3"])      return @"Apple Watch Series 3 38mm case";
+         if ([deviceModel isEqualToString:@"Watch3,4"])      return @"Apple Watch Series 3 42mm case";
+         if ([deviceModel isEqualToString:@"Watch4,1"])      return @"Apple Watch Series 4 40mm case (GPS)";
+         if ([deviceModel isEqualToString:@"Watch4,2"])      return @"Apple Watch Series 4 44mm case (GPS)";
+         if ([deviceModel isEqualToString:@"Watch4,3"])      return @"Apple Watch Series 4 40mm case (GPS+LTE)";
+         if ([deviceModel isEqualToString:@"Watch4,4"])      return @"Apple Watch Series 4 44mm case (GPS+LTE)";
+         
+         //simulador
+         if ([deviceModel isEqualToString:@"i386"])         return @"Simulator";
+         if ([deviceModel isEqualToString:@"x86_64"])       return @"Simulator";
+         
+         //apple tv
+         if ([deviceModel isEqualToString:@"AppleTV5,3"])     return @"Apple TV 4";
+         if ([deviceModel isEqualToString:@"AppleTV6,2"])     return @"Apple TV 4K";
+         */
     }
     
     return deviceModel;
+}
+
++ (NSDictionary*)deviceModels
+{
+    NSDictionary *dm = [[NSDictionary alloc] initWithObjectsAndKeys:
+                        
+                        //iPhone
+                        @"iPhone 1G", @"iPhone1,1",
+                        @"iPhone 3G", @"iPhone1,2",
+                        @"iPhone 3GS", @"iPhone2,1",
+                        @"iPhone 4", @"iPhone3,1",
+                        @"iPhone 4 (GSM)", @"iPhone3,2",
+                        @"iPhone 4 (CDMA)", @"iPhone3,3",
+                        @"iPhone 4S", @"iPhone4,1",
+                        @"iPhone 5 (GSM)", @"iPhone5,1",
+                        @"iPhone 5 (GSM+CDMA)", @"iPhone5,2",
+                        @"iPhone 5C (GSM)", @"iPhone5,3",
+                        @"iPhone 5C (GSM+CDMA)", @"iPhone5,4",
+                        @"iPhone 5S (GSM)", @"iPhone6,1",
+                        @"iPhone 5S (GSM+CDMA)", @"iPhone6,2",
+                        @"iPhone 6 Plus", @"iPhone7,1",
+                        @"iPhone 6", @"iPhone7,2",
+                        @"iPhone 6S", @"iPhone8,1",
+                        @"iPhone 6S Plus", @"iPhone8,2",
+                        @"iPhone SE (GSM+CDMA)", @"iPhone8,3",
+                        @"iPhone SE (GSM)", @"iPhone8,4",
+                        @"iPhone 7", @"iPhone9,1",
+                        @"iPhone 7 Plus", @"iPhone9,2",
+                        @"iPhone 7", @"iPhone9,3",
+                        @"iPhone 7 Plus", @"iPhone9,4",
+                        @"iPhone 8", @"iPhone10,1",
+                        @"iPhone 8 Plus", @"iPhone10,2",
+                        @"iPhone 8", @"iPhone10,4",
+                        @"iPhone 8 Plus", @"iPhone10,5",
+                        @"iPhone X Global", @"iPhone10,3",
+                        @"iPhone X (GSM)", @"iPhone10,6",
+                        @"iPhone XS", @"iPhone11,2",
+                        @"iPhone XS Max (China)", @"iPhone11,4",
+                        @"iPhone XS Max", @"iPhone11,6",
+                        @"iPhone XR", @"iPhone11,8",
+                        
+                        //iPod
+                        @"iPod Touch 1", @"iPod1,1",
+                        @"iPod Touch 2", @"iPod2,1",
+                        @"iPod Touch 3", @"iPod3,1",
+                        @"iPod Touch 4", @"iPod4,1",
+                        @"iPod Touch 5", @"iPod5,1",
+                        @"iPod Touch 6", @"iPod6,1",
+                        @"iPod Touch 6", @"iPod7,1",
+                        
+                        //iPad
+                        @"iPad", @"iPad1,1",
+                        @"iPad 3G", @"iPad1,2",
+                        @"iPad 2 (WiFi)", @"iPad2,1",
+                        @"iPad 2 (GSM)", @"iPad2,2",
+                        @"iPad 2 (CDMA)", @"iPad2,3",
+                        @"iPad 2 (WiFi)", @"iPad2,4",
+                        @"iPad 3 (WiFi)", @"iPad3,1",
+                        @"iPad 3 (GSM+CDMA)", @"iPad3,2",
+                        @"iPad 3 (GSM)", @"iPad3,3",
+                        @"iPad 4 (WiFi)", @"iPad3,4",
+                        @"iPad 4 (GSM)", @"iPad3,5",
+                        @"iPad 4 (GSM+CDMA)", @"iPad3,6",
+                        @"iPad (2017)", @"iPad6,11",
+                        @"iPad (2017)", @"iPad6,12",
+                        
+                        //iPad Mini
+                        @"iPad Mini (WiFi)", @"iPad2,5",
+                        @"iPad Mini (GSM)", @"iPad2,6",
+                        @"iPad Mini (GSM+CDMA)", @"iPad2,7",
+                        @"iPad Mini 2 (WiFi)", @"iPad4,4",
+                        @"iPad Mini 2 (Cellular)", @"iPad4,5",
+                        @"iPad Mini 2", @"iPad4,6",
+                        @"iPad Mini 3", @"iPad4,7",
+                        @"iPad Mini 3", @"iPad4,8",
+                        @"iPad Mini 3", @"iPad4,9",
+                        @"iPad Mini 4 (WiFi)", @"iPad5,1",
+                        @"iPad Mini 4 (Cellular)", @"iPad5,2",
+                        
+                        //iPad Air
+                        @"iPad Air (WiFi)", @"iPad4,1",
+                        @"iPad Air (Cellular)", @"iPad4,2",
+                        @"iPad Air", @"iPad4,3",
+                        @"iPad Air 2 (WiFi)", @"iPad5,3",
+                        @"iPad Air 2 (Cellular)", @"iPad5,4",
+                        
+                        //iPad Pro
+                        @"iPad Pro (9.7 inch, Wi-Fi)", @"iPad6,3",
+                        @"iPad Pro (9.7 inch, Wi-Fi+LTE)", @"iPad6,4",
+                        @"iPad Pro (12.9 inch, Wi-Fi)", @"iPad6,7",
+                        @"iPad Pro (12.9 inch, Wi-Fi+LTE)", @"iPad6,8",
+                        @"iPad Pro 2G", @"iPad7,1",
+                        @"iPad Pro 2G", @"iPad7,2",
+                        @"iPad Pro (10.5 inch)", @"iPad7,3",
+                        @"iPad Pro (10.5 inch)", @"iPad7,4",
+                        @"iPad Pro 3rd Gen (11 inch, WiFi)", @"iPad8,1",
+                        @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi)", @"iPad8,2",
+                        @"iPad Pro 3rd Gen (11 inch, WiFi+LTE)", @"iPad8,3",
+                        @"iPad Pro 3rd Gen (11 inch, 1TB, WiFi+LTE)", @"iPad8,4",
+                        @"iPad Pro 3rd Gen (12.9 inch, WiFi)", @"iPad8,5",
+                        @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)", @"iPad8,6",
+                        @"iPad Pro 3rd Gen (12.9 inch, WiFi+LTE)", @"iPad8,7",
+                        @"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+LTE)", @"iPad8,8",
+                        
+                        //Watch
+                        @"Apple Watch 38mm case", @"Watch1,1",
+                        @"Apple Watch 42mm case", @"Watch1,2",
+                        @"Apple Watch Series 1 38mm case", @"Watch2,6",
+                        @"Apple Watch Series 1 42mm case", @"Watch2,7",
+                        @"Apple Watch Series 2 38mm case", @"Watch2,3",
+                        @"Apple Watch Series 2 42mm case", @"Watch2,4",
+                        @"Apple Watch Series 3 38mm case", @"Watch3,1",
+                        @"Apple Watch Series 3 42mm case", @"Watch3,2",
+                        @"Apple Watch Series 3 38mm case", @"Watch3,3",
+                        @"Apple Watch Series 3 42mm case", @"Watch3,4",
+                        @"Apple Watch Series 4 40mm case (GPS)", @"Watch4,1",
+                        @"Apple Watch Series 4 44mm case (GPS)", @"Watch4,2",
+                        @"Apple Watch Series 4 40mm case (GPS+LTE)", @"Watch4,3",
+                        @"Apple Watch Series 4 44mm case (GPS+LTE)", @"Watch4,4",
+                        
+                        //Simulador
+                        @"Simulator", @"i386",
+                        @"Simulator", @"x86_64",
+                        
+                        //Apple TV
+                        @"Apple TV 4", @"AppleTV5,3",
+                        @"Apple TV 4K", @"AppleTV6,2",
+                        
+                        nil];
+    
+    return dm;
 }
 
 + (NSString*)deviceHelper_Name
@@ -948,55 +1114,55 @@
     return [dateComponent valueForComponent:calendarUnit];
     
     /*
-    switch (calendarUnit)
-    {
-        case NSCalendarUnitYear:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitYear fromDate:date];
-            return (int)[dateComponent year];
-        }break;
-            
-        case NSCalendarUnitMonth:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMonth fromDate:date];
-            return (int)[dateComponent month];
-        }break;
-            
-        case NSCalendarUnitDay:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitDay fromDate:date];
-            return (int)[dateComponent day];
-        }break;
-            
-        case NSCalendarUnitHour:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:date];
-            return (int)[dateComponent hour];
-        }break;
-            
-        case NSCalendarUnitMinute:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMinute fromDate:date];
-            return (int)[dateComponent minute];
-        }break;
-            
-        case NSCalendarUnitSecond:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitSecond fromDate:date];
-            return (int)[dateComponent second];
-        }break;
-            
-        case NSCalendarUnitWeekday:
-        {
-            NSDateComponents *dateComponent = [calendar components:NSCalendarUnitWeekday fromDate:date];
-            return (int)[dateComponent weekday];
-        }break;
-            
-        default:
-        {
-            return -1;
-        }break;
-    }
+     switch (calendarUnit)
+     {
+     case NSCalendarUnitYear:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitYear fromDate:date];
+     return (int)[dateComponent year];
+     }break;
+     
+     case NSCalendarUnitMonth:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMonth fromDate:date];
+     return (int)[dateComponent month];
+     }break;
+     
+     case NSCalendarUnitDay:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitDay fromDate:date];
+     return (int)[dateComponent day];
+     }break;
+     
+     case NSCalendarUnitHour:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:date];
+     return (int)[dateComponent hour];
+     }break;
+     
+     case NSCalendarUnitMinute:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitMinute fromDate:date];
+     return (int)[dateComponent minute];
+     }break;
+     
+     case NSCalendarUnitSecond:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitSecond fromDate:date];
+     return (int)[dateComponent second];
+     }break;
+     
+     case NSCalendarUnitWeekday:
+     {
+     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitWeekday fromDate:date];
+     return (int)[dateComponent weekday];
+     }break;
+     
+     default:
+     {
+     return -1;
+     }break;
+     }
      */
 }
 
@@ -1360,7 +1526,7 @@
 {
     
     NSDateComponents *final = [[NSDateComponents alloc] init];
-
+    
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [gregorian setLocale: [NSLocale currentLocale]];
     NSDateComponents *refDate = [gregorian components:  NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
@@ -1489,9 +1655,9 @@
 + (CGFloat) messureHelper_HeightForText:(NSString*)text constrainedWidth:(CGFloat)cWitdh textFont:(UIFont*)font
 {
     CGRect textRect = [text boundingRectWithSize:CGSizeMake(cWitdh, CGFLOAT_MAX)
-                                                          options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
-                                                       attributes:@{NSFontAttributeName:font}
-                                                          context:nil];
+                                         options:NSStringDrawingUsesLineFragmentOrigin| NSStringDrawingUsesFontLeading
+                                      attributes:@{NSFontAttributeName:font}
+                                         context:nil];
     
     return textRect.size.height;
 }
@@ -2122,6 +2288,10 @@
 
 +(NSString*)textHelper_ApplyMaskToText:(NSString*)text usingMask:(NSString*)mask
 {
+    if ([text isEqualToString:@""]){
+        return @"";
+    }
+    
     NSUInteger onOriginal = 0, onFilter = 0, onOutput = 0;
     char outputString[([mask length])];
     BOOL done = NO;
@@ -2813,6 +2983,25 @@
     return image;
 }
 
++ (UIImage*) graphicHelper_CreateFlatImageWithSize:(CGSize)size backgroundColor:(UIColor*)backColor borderWidth:(CGFloat)bWidth borderColor:(UIColor*)borderColor byRoundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)radius
+{
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) byRoundingCorners:corners cornerRadii:radius];
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    //
+    [rounded setLineWidth:bWidth];
+    //
+    [backColor setFill];
+    [borderColor setStroke];
+    //
+    [rounded fill];
+    [rounded stroke];
+    //
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //
+    return image;
+}
+
 + (void) graphicHelper_ApplyShadowToView:(UIView*)view withColor:(UIColor*)color offSet:(CGSize)offSet radius:(CGFloat)radius opacity:(CGFloat)opacity
 {
     view.layer.shadowColor = color.CGColor;
@@ -2887,7 +3076,7 @@
     if (image != nil && frame.size.height > 0 && frame.size.width > 0){
         
         CGImageRef imageRef = CGImageCreateWithImageInRect(image.CGImage, frame);
-        UIImage* outImage = [UIImage imageWithCGImage:imageRef scale:image.scale orientation:image.imageOrientation];
+        UIImage* outImage = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:image.imageOrientation];
         CGImageRelease(imageRef);
         //
         return outImage;
@@ -3548,3 +3737,4 @@ static void *libzOpen()
 }
 
 @end
+

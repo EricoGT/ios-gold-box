@@ -1,9 +1,8 @@
 //
 //  ToolBox.h
-//  AdAliveStore
 //
 //  Created by Erico GT on 9/22/16.
-//  Copyright © 2016 Atlantic Solutions. All rights reserved.
+//  Copyright © 2019 EricoGT. All rights reserved.
 //
 
 #import "math.h"
@@ -42,6 +41,9 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 
 /** Versão do aplicativo.*/
 + (NSString*) applicationHelper_VersionBundle;
+
+/** Nome do aplicativo.*/
++ (NSString*) applicationHelper_AppName;
 
 /** Retorna o caminho de instalação do app (útil para testes com simulador). Preferencialmente utilize no 'didFinishLaunchingWithOptions' do AppDelegate.*/
 + (NSString*) applicationHelper_InstalationDataForSimulator;
@@ -336,6 +338,9 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 /** Cria uma imagem flat num tamanho específico.*/
 + (UIImage*) graphicHelper_CreateFlatImageWithSize:(CGSize)size byRoundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)radius andColor:(UIColor*)color;
 
+/** Cria uma imagem flat num tamanho específico, com bordas.*/
++ (UIImage*) graphicHelper_CreateFlatImageWithSize:(CGSize)size backgroundColor:(UIColor*)backColor borderWidth:(CGFloat)bWidth borderColor:(UIColor*)borderColor byRoundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)radius;
+
 /** Adiciona sombra a View parâmetro.*/
 + (void) graphicHelper_ApplyShadowToView:(UIView*)view withColor:(UIColor*)color offSet:(CGSize)offSet radius:(CGFloat)radius opacity:(CGFloat)opacity;
 
@@ -488,5 +493,6 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 #define RandomPositiveNumber(min, max) min + arc4random_uniform(max - min + 1)
 
 @end
+
 
 

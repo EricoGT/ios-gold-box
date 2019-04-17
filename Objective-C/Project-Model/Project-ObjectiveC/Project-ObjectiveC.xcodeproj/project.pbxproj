@@ -790,8 +790,6 @@
 				E723FE721EA4D28300C44B28 /* Sources */,
 				E723FE731EA4D28300C44B28 /* Frameworks */,
 				E723FE741EA4D28300C44B28 /* Resources */,
-				08E79467D1E3CC267BCED5A8 /* [CP] Embed Pods Frameworks */,
-				B4E23FF40664188394E4185B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -849,7 +847,7 @@
 				TargetAttributes = {
 					E723FE751EA4D28300C44B28 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 659DAQWD6V;
+						DevelopmentTeam = 55585KEBRM;
 						ProvisioningStyle = Automatic;
 					};
 					E723FE8E1EA4D28300C44B28 = {
@@ -871,6 +869,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"pt-BR",
@@ -943,49 +942,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08E79467D1E3CC267BCED5A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-ObjectiveC/Pods-Project-ObjectiveC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B4E23FF40664188394E4185B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project-ObjectiveC/Pods-Project-ObjectiveC-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F30BDDD6AF04D72B4EEA76C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project-ObjectiveC-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1218,11 +1190,11 @@
 			baseConfigurationReference = 09ADA005F585BEA5B61F1E21 /* Pods-Project-ObjectiveC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 659DAQWD6V;
+				DEVELOPMENT_TEAM = 55585KEBRM;
 				INFOPLIST_FILE = "Project-ObjectiveC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.atlantic.Project-ObjectiveC";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ericogt.Project-ObjectiveC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1232,11 +1204,11 @@
 			baseConfigurationReference = D992224815D3217D3BADD3DE /* Pods-Project-ObjectiveC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 659DAQWD6V;
+				DEVELOPMENT_TEAM = 55585KEBRM;
 				INFOPLIST_FILE = "Project-ObjectiveC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.atlantic.Project-ObjectiveC";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ericogt.Project-ObjectiveC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
