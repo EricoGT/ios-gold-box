@@ -76,6 +76,9 @@
 		DA480EE3226799B1002DD005 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480EE1226799B1002DD005 /* SoundManager.m */; };
 		DA480EE4226799B1002DD005 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480EE1226799B1002DD005 /* SoundManager.m */; };
 		DA480EE5226799B1002DD005 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480EE1226799B1002DD005 /* SoundManager.m */; };
+		DAAACC0A2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
+		DAAACC0B2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
+		DAAACC0C2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
 		E723FE7B1EA4D28300C44B28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E723FE7A1EA4D28300C44B28 /* main.m */; };
 		E723FE7E1EA4D28300C44B28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E723FE7D1EA4D28300C44B28 /* AppDelegate.m */; };
 		E723FE811EA4D28300C44B28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E723FE801EA4D28300C44B28 /* ViewController.m */; };
@@ -198,6 +201,8 @@
 		DA480EA022678C83002DD005 /* ok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ok.mp3; sourceTree = "<group>"; };
 		DA480EE1226799B1002DD005 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		DA480EE2226799B1002DD005 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		DAAACC082268A81E003CE0E6 /* VIPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPhotoView.h; sourceTree = "<group>"; };
+		DAAACC092268A81E003CE0E6 /* VIPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPhotoView.m; sourceTree = "<group>"; };
 		E723FE761EA4D28300C44B28 /* Project-ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-ObjectiveC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E723FE7A1EA4D28300C44B28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E723FE7C1EA4D28300C44B28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -402,6 +407,15 @@
 			name = SoundManager;
 			sourceTree = "<group>";
 		};
+		DAAACC072268A806003CE0E6 /* VIPhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				DAAACC082268A81E003CE0E6 /* VIPhotoView.h */,
+				DAAACC092268A81E003CE0E6 /* VIPhotoView.m */,
+			);
+			name = VIPhotoView;
+			sourceTree = "<group>";
+		};
 		E723FE6D1EA4D28300C44B28 = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +542,7 @@
 		E723FEB21EA4D4A700C44B28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DAAACC072268A806003CE0E6 /* VIPhotoView */,
 				DA480EE02267998C002DD005 /* SoundManager */,
 				E723FFAF1EA51B3400C44B28 /* LayoutManager */,
 				E723FF9B1EA4E74800C44B28 /* SQLiteManager */,
@@ -1070,6 +1085,7 @@
 				E723FF931EA4E68800C44B28 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				E723FF7D1EA4E68800C44B28 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				E723FF7A1EA4E68800C44B28 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
+				DAAACC0A2268A81F003CE0E6 /* VIPhotoView.m in Sources */,
 				E723FFB71EA51F1D00C44B28 /* AsyncImageDownloader.m in Sources */,
 				DA480EE3226799B1002DD005 /* SoundManager.m in Sources */,
 				E723FF801EA4E68800C44B28 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
@@ -1128,6 +1144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAACC0B2268A81F003CE0E6 /* VIPhotoView.m in Sources */,
 				DA480E8B22678407002DD005 /* ToolBoxTests.m in Sources */,
 				DA480EE4226799B1002DD005 /* SoundManager.m in Sources */,
 			);
@@ -1137,6 +1154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAACC0C2268A81F003CE0E6 /* VIPhotoView.m in Sources */,
 				E723FE9F1EA4D28300C44B28 /* Project_ObjectiveCUITests.m in Sources */,
 				DA480EE5226799B1002DD005 /* SoundManager.m in Sources */,
 			);

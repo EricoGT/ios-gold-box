@@ -8,16 +8,30 @@
 
 #import "ViewController.h"
 #import "BasicViewController.h"
+#import "VIPhotoView.h"
+#import "ConstantsManager.h"
+#import "AppDelegate.h"
 
-@interface ViewController ()
+@interface ViewController ()<VIPhotoViewDelegate>
+
+@property(nonatomic, weak) IBOutlet UIImageView *imvLogo;
 
 @end
 
 @implementation ViewController
 
+@synthesize imvLogo;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionLogoTouch:)];
+    tap.numberOfTapsRequired = 1;
+    tap.numberOfTouchesRequired = 1;
+    
+    [imvLogo addGestureRecognizer:tap];
+    [imvLogo setUserInteractionEnabled:YES];
 }
 
 
@@ -80,6 +94,25 @@
 - (IBAction)actionSegueModal:(id)sender
 {
     [self performSegueWithIdentifier:@"SegueMODAL" sender:nil];
+}
+
+#pragma mark -
+
+- (void)actionLogoTouch:(UITapGestureRecognizer*)gesture
+{
+    VIPhotoView *photoView = [[VIPhotoView alloc] initWithFrame:[UIScreen mainScreen].bounds image:imvLogo.image backgroundImage:nil andDelegate:self];
+    photoView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.75];
+    photoView.autoresizingMask = (1 << 6) -1;
+    photoView.alpha = 0.0;
+    //
+    [AppD.window addSubview:photoView];
+    [AppD.window bringSubviewToFront:photoView];
+    //
+    [UIView animateWithDuration:ANIMA_TIME_NORMAL animations:^{
+        photoView.alpha = 1.0;
+    }];
+    
+    
 }
 
 /*
@@ -229,5 +262,19 @@
     }
 }
 */
+
+#pragma mark - VIPhotoViewDelegate
+
+- (void)photoViewDidHide:(VIPhotoView *)photoView
+{
+    __block id pv = photoView;
+    
+    [UIView animateWithDuration:ANIMA_TIME_NORMAL animations:^{
+        photoView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [pv removeFromSuperview];
+        pv = nil;
+    }];
+}
 
 @end

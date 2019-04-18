@@ -21,12 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mrc-cR-kJb">
-                                <rect key="frame" x="16" y="84" width="343" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconWhatsapp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrc-cR-kJb">
+                                <rect key="frame" x="10" y="84" width="355" height="100"/>
                                 <color key="backgroundColor" red="0.19221890489999999" green="0.71838942309999998" blue="0.30002985049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="G9c-JJ-Iui"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPl-D3-5ub">
                                 <rect key="frame" x="10" y="204" width="355" height="40"/>
@@ -38,6 +44,11 @@
                                 <state key="normal" title="Próxima Tela PUSH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionNextScreenPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPI-mv-lVY"/>
                                 </connections>
@@ -52,6 +63,11 @@
                                 <state key="normal" title="Próxima Tela MODAL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionNextScreenModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tx3-C7-hVQ"/>
                                 </connections>
@@ -66,6 +82,11 @@
                                 <state key="normal" title="Segue PUSH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionSeguePush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OyV-9F-rhb"/>
                                 </connections>
@@ -80,12 +101,17 @@
                                 <state key="normal" title="Segue MODAL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionSegueModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fcj-2l-JKH"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Hvu-4i-las" firstAttribute="top" secondItem="lRl-lO-Cgt" secondAttribute="bottom" constant="20" id="3uL-5v-DAU"/>
                             <constraint firstItem="E6E-Pl-5zJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="5QX-eq-1KT"/>
@@ -100,12 +126,13 @@
                             <constraint firstAttribute="trailing" secondItem="xPl-D3-5ub" secondAttribute="trailing" constant="10" id="sEz-bt-4RG"/>
                             <constraint firstItem="lRl-lO-Cgt" firstAttribute="top" secondItem="E6E-Pl-5zJ" secondAttribute="bottom" constant="20" id="sn3-uR-3ZL"/>
                             <constraint firstAttribute="trailing" secondItem="Hvu-4i-las" secondAttribute="trailing" constant="10" id="yxC-Jg-oPP"/>
-                            <constraint firstItem="mrc-cR-kJb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z98-Bu-CfU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mrc-cR-kJb" secondAttribute="trailing" id="zGN-af-tym"/>
+                            <constraint firstItem="mrc-cR-kJb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="z98-Bu-CfU"/>
+                            <constraint firstAttribute="trailing" secondItem="mrc-cR-kJb" secondAttribute="trailing" constant="10" id="zGN-af-tym"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nsf-Gr-pis"/>
                     <connections>
+                        <outlet property="imvLogo" destination="mrc-cR-kJb" id="s9y-xI-0Cq"/>
                         <segue destination="uIu-ox-7MG" kind="show" identifier="SeguePUSH" id="rET-vX-dHG"/>
                         <segue destination="uIu-ox-7MG" kind="presentation" identifier="SegueMODAL" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2hj-Fj-rEq"/>
                     </connections>
@@ -172,6 +199,9 @@
             <point key="canvasLocation" x="322" y="-155"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IconWhatsapp" width="384" height="384"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2hj-Fj-rEq"/>
     </inferredMetricsTieBreakers>
