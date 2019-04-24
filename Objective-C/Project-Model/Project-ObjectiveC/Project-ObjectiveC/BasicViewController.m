@@ -9,6 +9,8 @@
 #pragma mark - • HEADER IMPORT
 #import "BasicViewController.h"
 #import "AppDelegate.h"
+//
+#import "UIImage+Smart.h"
 
 #pragma mark - • INTERFACE PRIVATE PROPERTIES
 @interface BasicViewController()
@@ -16,6 +18,9 @@
 //Data:
 
 //Layout:
+@property(nonatomic, weak) IBOutlet UIImageView *imvAnimated1;
+@property(nonatomic, weak) IBOutlet UIImageView *imvAnimated2;
+@property(nonatomic, weak) IBOutlet UIImageView *imvAnimated3;
 
 @end
 
@@ -29,7 +34,8 @@
 }
 
 #pragma mark - • SYNTESIZES
-//@synthesize
+
+@synthesize imvAnimated1, imvAnimated2, imvAnimated3;
 
 #pragma mark - • CLASS METHODS
 
@@ -56,7 +62,56 @@
 {
     [super viewWillAppear:animated];
     
-    [self setupLayout:@"Nome da Tela"];
+    [self setupLayout:@"Imagem Animada"];    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //Lists:
+    UIImage *img1 = [UIImage imageNamed:@"frame1.png"];
+    UIImage *img2 = [UIImage imageNamed:@"frame2.png"];
+    UIImage *img3 = [UIImage imageNamed:@"frame3.png"];
+    UIImage *img4 = [UIImage imageNamed:@"frame4.png"];
+    UIImage *img5 = [UIImage imageNamed:@"frame5.png"];
+    UIImage *img6 = [UIImage imageNamed:@"frame6.png"];
+    UIImage *img7 = [UIImage imageNamed:@"frame7.png"];
+    UIImage *img8 = [UIImage imageNamed:@"frame8.png"];
+    //
+    NSArray *imgList = [NSArray arrayWithObjects:img1, img2, img3, img4, img5, img6, img7, img8, nil];
+    NSArray *timeList = [NSArray arrayWithObjects:@(90), @(10), @(10), @(10), @(10), @(10),@(10), @(10), nil]; //80 é o tempo total de 1 ciclo
+    
+    //Single Object:
+    UIImage *imgSO = [UIImage animatedImageWithImages:imgList durations:timeList];
+    imvAnimated1.image = [imgSO clone];
+    
+    //GIF:
+    UIImage *imgGIF = [UIImage animatedImageWithAnimatedGIFURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"banana" ofType:@"gif"]]];
+    imvAnimated2.image = [imgGIF clone];
+    
+    //UIImageView:
+    [imvAnimated3 setAnimationImages:imgList];
+    [imvAnimated3 setAnimationDuration:imgGIF.duration];
+    [imvAnimated3 setAnimationRepeatCount:0];
+    [imvAnimated3 startAnimating];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSLog(@"imvAnimated1 >> %i", [imvAnimated1.image isAnimated]);
+        NSLog(@"imvAnimated2 >> %i", [imvAnimated2.image isAnimated]);
+        NSLog(@"imvAnimated3 >> %i", [imvAnimated3 isAnimating]);
+        
+    });
+    
+
+    UIImage *i1 = [img1 maskWithImage:[UIImage imageNamed:@"mask.jpg"]];
+    
+    
+    int x = 8;
+   
+    
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

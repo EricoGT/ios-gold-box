@@ -494,5 +494,54 @@ typedef enum {tbGrayScaleEffect_Noir, tbGrayScaleEffect_Mono, tbGrayScaleEffect_
 
 @end
 
-
+/** First line text.
+ 
+ Putting \\n doesn't create a new line.\n One way to create a newline is by making sure nothing is on that line. Not even a single space character!
+ 
+ @a Italic text @em with @@a or @@em.
+ 
+ @b Bold text with @@b.
+ 
+ @p Typewritter font @c with @@p or @@c.
+ 
+ Backslashes and must be escaped: C:\\foo.
+ 
+ And so do @@ signs: user@@example.com
+ 
+ Some more text.
+ @brief brief text
+ @attention attention text
+ @author author text
+ @bug bug text
+ @copyright copyright text
+ @date date text
+ @invariant invariant text
+ @note note text
+ @post post text
+ @pre pre text
+ @remarks remarks text
+ @sa sa text
+ @see see text
+ @since since text
+ @todo todo text
+ @version version text
+ @warning warning text
+ 
+ @result result text
+ @return return text
+ @returns returns text
+ 
+ 
+ @code
+ // code text
+ while (someCondition) {
+ NSLog(@"Hello");
+ doSomething();
+ }@endcode
+ Last line text.
+ 
+ @param param param text
+ @tparam tparam tparam text
+ */
+//- (void)myMethod {}
 
