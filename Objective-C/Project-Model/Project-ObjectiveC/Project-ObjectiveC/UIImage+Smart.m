@@ -859,6 +859,35 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     });
 }
 
+- (void) detectQRCodeMessageWithCompletionHandler:(void(^_Nonnull)(NSArray<NSString*>* _Nullable detectedMessages)) handler
+{
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0) || [self isAnimated]) {
+        handler(nil);
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        CIContext *context = [CIContext context];
+        NSDictionary *opts = @{ CIDetectorAccuracy : CIDetectorAccuracyHigh };
+        CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:context options:opts];
+        
+        opts = @{ CIDetectorImageOrientation : @(self.imageOrientation)};
+        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:self.CGImage] options:opts];
+        
+        NSMutableArray *iMessages = [NSMutableArray new];
+        
+        for (CIQRCodeFeature *feature in features){
+            if (feature.messageString){
+                [iMessages addObject:feature.messageString];
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            handler([NSArray arrayWithArray:iMessages]);
+        });
+    });
+}
+
 #pragma mark - Utils
 
 - (CGFloat)DegreesToRadians:(CGFloat)degree{

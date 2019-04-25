@@ -190,5 +190,15 @@
  */
 - (void) detectFacesImagesWithCompletionHandler:(void(^_Nonnull)(NSArray<UIImage*>* _Nullable detectedFaces)) handler;
 
+/**
+ * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
+ *
+ * @brief Detecta mensagem de texto na imagem, representados por QRCodes.
+ * @warning Não é executado em imagens animadas.
+ * @param handler Bloco de código que será executado ao fim da busca.
+ * @note Por ser um processo potencialmente demorado, este método executa a detecção em background. Não há limite no tamanho da imagem para a busca nem na quantidade de mensagens que podem ser reportadas.
+ */
+- (void) detectQRCodeMessageWithCompletionHandler:(void(^_Nonnull)(NSArray<NSString*>* _Nullable detectedMessages)) handler;
+
 @end
 

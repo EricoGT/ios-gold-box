@@ -78,6 +78,7 @@
 		DA480EE5226799B1002DD005 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480EE1226799B1002DD005 /* SoundManager.m */; };
 		DA95353A227229A70018FFB3 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = DA953538227229A70018FFB3 /* UIImage+GIF.m */; };
 		DA95353C22722B0C0018FFB3 /* banana2.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA95353B22722B0C0018FFB3 /* banana2.gif */; };
+		DA95353E227235340018FFB3 /* qrcodes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA95353D227235340018FFB3 /* qrcodes.jpg */; };
 		DAAACC0A2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
 		DAAACC0B2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
 		DAAACC0C2268A81F003CE0E6 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAACC092268A81E003CE0E6 /* VIPhotoView.m */; };
@@ -220,6 +221,7 @@
 		DA953538227229A70018FFB3 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		DA953539227229A70018FFB3 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		DA95353B22722B0C0018FFB3 /* banana2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = banana2.gif; sourceTree = "<group>"; };
+		DA95353D227235340018FFB3 /* qrcodes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qrcodes.jpg; sourceTree = "<group>"; };
 		DAAACC082268A81E003CE0E6 /* VIPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPhotoView.h; sourceTree = "<group>"; };
 		DAAACC092268A81E003CE0E6 /* VIPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPhotoView.m; sourceTree = "<group>"; };
 		DABC54E02270801500FF72E5 /* UIImage+Smart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Smart.h"; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 		E723FEB91EA4D4E900C44B28 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA95353D227235340018FFB3 /* qrcodes.jpg */,
 				DADB0DCD2271F14C000A7CBF /* faces1.jpg */,
 				DADB0DCE2271F14C000A7CBF /* faces2.jpg */,
 				DADB0DCA2271EDC6000A7CBF /* alpha_mask.png */,
@@ -1048,6 +1051,7 @@
 				DABC54F52270C5E800FF72E5 /* frame6.png in Resources */,
 				DABC54F92270C5E800FF72E5 /* frame8.png in Resources */,
 				DA480EB922678C83002DD005 /* slap_chrome.mp3 in Resources */,
+				DA95353E227235340018FFB3 /* qrcodes.jpg in Resources */,
 				DA480ED122678C83002DD005 /* dam.mp3 in Resources */,
 				E723FEBC1EA4D53F00C44B28 /* ChangeProjectNameTutorial.strings in Resources */,
 				E723FEF61EA4D74900C44B28 /* MyriadPro-It.otf in Resources */,
