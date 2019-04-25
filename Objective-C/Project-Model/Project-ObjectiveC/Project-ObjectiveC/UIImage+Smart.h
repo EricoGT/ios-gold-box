@@ -149,7 +149,7 @@
 - (UIImage * _Nullable) cropImageUsingFrame:(CGRect)frame;
 
 /** Cria uma nova imagem, baseando-se numa dada área circular da imagem original. */
-//- (UIImage * _Nullable) circularCropImageUsingFrame:(CGRect)frame;
+- (UIImage * _Nullable) circularCropImageUsingFrame:(CGRect)frame;
 
 #pragma mark - Effects
 
@@ -166,13 +166,29 @@
 - (UIImage * _Nullable) mergeImageBelow:(UIImage * _Nonnull)belowImage inPosition:(CGPoint)position blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha scale:(CGFloat)superImageScale;
 
 /** Aplica uma máscara na imagem base, gerando uma nova imagem 'vazada'. A máscara deve ser uma imagem sem alpha, em escala de cinza (o branco define a transparência, preto solidez). */
-//- (UIImage * _Nullable) maskWithImage:(UIImage * _Nonnull)maskImage;
+- (UIImage * _Nullable) maskWithGrayscaleImage:(UIImage * _Nonnull)grayscaleMaskImage;
 
-- (UIImage * _Nullable) applyBorderWithColor:(UIColor * _Nonnull)borderColor blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha andWidth:(CGFloat)borderWidth;
+/** Aplica uma máscara na imagem base, gerando uma nova imagem 'vazada'. A máscara deve conter canal alpha, que definirá a visibilidade final da imagem resultante. */
+- (UIImage * _Nullable) maskWithAlphaImage:(UIImage * _Nonnull)alphaMaskImage;
 
+/** Cria uma nova imagem aplicando uma borda com os parâmetros. */
+- (UIImage * _Nullable) applyBorderWithColor:(UIColor * _Nonnull)borderColor andWidth:(CGFloat)borderWidth;
+
+/** Cria uma cópia de uma imagem fazendo sobreposição de cor.*/
 - (UIImage * _Nullable) tintImageWithColor:(UIColor * _Nonnull)color;
 
-- (UIImage * _Nullable) bluredImageWithRadius:(CGFloat)radius;
+/** Adiciona o efeito GaussianBlur em uma nova instância da imagem. */
+- (UIImage * _Nullable) bluredImageWithRadius:(CGFloat)radius tintColor:(UIColor * _Nullable)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage * _Nullable)maskImage;
+
+/**
+ * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
+ *
+ * @brief Detecta faces na imagem origem, criando uma lista a partir desta contendo subimagens dessas faces.
+ * @warning Não é executado em imagens animadas.
+ * @param handler Bloco de código que será executado ao fim da busca.
+ * @note Por ser um processo potencialmente demorado, este método executa a detecção em background. Não há limite no tamanho da imagem para a busca nem na quantidade de faces que podem ser reportadas.
+ */
+- (void) detectFacesImagesWithCompletionHandler:(void(^_Nonnull)(NSArray<UIImage*>* _Nullable detectedFaces)) handler;
 
 @end
 

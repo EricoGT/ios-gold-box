@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 //
 #import "UIImage+Smart.h"
+#import "UIImage+GIF.h"
 
 #pragma mark - • INTERFACE PRIVATE PROPERTIES
 @interface BasicViewController()
@@ -21,6 +22,7 @@
 @property(nonatomic, weak) IBOutlet UIImageView *imvAnimated1;
 @property(nonatomic, weak) IBOutlet UIImageView *imvAnimated2;
 @property(nonatomic, weak) IBOutlet UIImageView *imvAnimated3;
+@property(nonatomic, weak) IBOutlet UIImageView *imvAnimated4;
 
 @end
 
@@ -35,7 +37,7 @@
 
 #pragma mark - • SYNTESIZES
 
-@synthesize imvAnimated1, imvAnimated2, imvAnimated3;
+@synthesize imvAnimated1, imvAnimated2, imvAnimated3, imvAnimated4;
 
 #pragma mark - • CLASS METHODS
 
@@ -80,15 +82,19 @@
     UIImage *img8 = [UIImage imageNamed:@"frame8.png"];
     //
     NSArray *imgList = [NSArray arrayWithObjects:img1, img2, img3, img4, img5, img6, img7, img8, nil];
-    NSArray *timeList = [NSArray arrayWithObjects:@(90), @(10), @(10), @(10), @(10), @(10),@(10), @(10), nil]; //80 é o tempo total de 1 ciclo
+    NSArray *timeList = [NSArray arrayWithObjects:@(10), @(10), @(10), @(100), @(10), @(10),@(10), @(10), nil]; //80 é o tempo total de 1 ciclo
     
     //Single Object:
     UIImage *imgSO = [UIImage animatedImageWithImages:imgList durations:timeList];
     imvAnimated1.image = [imgSO clone];
     
     //GIF:
-    UIImage *imgGIF = [UIImage animatedImageWithAnimatedGIFURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"banana" ofType:@"gif"]]];
+    UIImage *imgGIF = [UIImage animatedImageWithAnimatedGIFURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"banana2" ofType:@"gif"]]];
     imvAnimated2.image = [imgGIF clone];
+    
+    //UIImage+GIF (sem considerar tempos individuais de frames)
+    UIImage *imgGIF2 = [UIImage sd_animatedGIFNamed:@"banana2"];
+    imvAnimated4.image = imgGIF2;
     
     //UIImageView:
     [imvAnimated3 setAnimationImages:imgList];
@@ -105,12 +111,7 @@
         
     });
     
-
-    UIImage *i1 = [img1 maskWithImage:[UIImage imageNamed:@"mask.jpg"]];
     
-    
-    int x = 8;
-   
     
 }
 

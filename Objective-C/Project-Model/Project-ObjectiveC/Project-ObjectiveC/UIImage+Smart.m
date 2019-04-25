@@ -8,6 +8,7 @@
 
 #import "UIImage+Smart.h"
 #import <ImageIO/ImageIO.h>
+#import <Accelerate/Accelerate.h>
 
 #if __has_feature(objc_arc)
 #define toCF (__bridge CFTypeRef)
@@ -419,43 +420,35 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable) circularCropImageUsingFrame:(CGRect)frame
 {
-    // This function returns a newImage, based on image, that has been:
-    // - scaled to fit in (CGRect) rect
-    // - and cropped within a circle of radius: rectWidth/2
+    UIImage *cropedImage = [self cropImageUsingFrame:frame];
+    
+    if (cropedImage == self || cropedImage == nil){
+        return self;
+    }
     
     //Create the bitmap graphics context
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(frame.size.width, frame.size.height), NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(cropedImage.size.width, cropedImage.size.height), NO, self.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //Get the width and heights
-    CGFloat imageWidth = self.size.width;
-    CGFloat imageHeight = self.size.height;
-    CGFloat rectWidth = frame.size.width;
-    CGFloat rectHeight = frame.size.height;
-    
-    //Calculate the scale factor
-    CGFloat scaleFactorX = rectWidth/imageWidth;
-    CGFloat scaleFactorY = rectHeight/imageHeight;
+    CGFloat rectWidth = cropedImage.size.width;
+    CGFloat rectHeight = cropedImage.size.height;
     
     //Calculate the centre of the circle
-    CGFloat imageCentreX = rectWidth/2;
-    CGFloat imageCentreY = rectHeight/2;
+    CGFloat imageCentreX = rectWidth/2.0;
+    CGFloat imageCentreY = rectHeight/2.0;
     
     // Create and CLIP to a CIRCULAR Path
     // (This could be replaced with any closed path if you want a different shaped clip)
-    CGFloat radius = rectWidth/2;
+    CGFloat radius = MIN(rectWidth, rectHeight)/2.0;
     CGContextBeginPath (context);
     CGContextAddArc (context, imageCentreX, imageCentreY, radius, 0, 2*M_PI, 0);
     CGContextClosePath (context);
     CGContextClip (context);
     
-    //Set the SCALE factor for the graphics context
-    //All future draw calls will be scaled by this factor
-    CGContextScaleCTM (context, scaleFactorX, scaleFactorY);
-    
     // Draw the IMAGE
-    CGRect myRect = CGRectMake(0, 0, imageWidth, imageHeight);
-    [self drawInRect:myRect];
+    CGRect myRect = CGRectMake(0, 0, cropedImage.size.width, cropedImage.size.height);
+    [cropedImage drawInRect:myRect];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -475,6 +468,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     CIContext *context = [CIContext contextWithOptions:nil];
     //
     CIFilter *ciFilter = [CIFilter filterWithName:filterName];
+    //In case no parameter is passed, the input image will already be in the filter by default:
     [ciFilter setValue:ciImage forKey:kCIInputImageKey];
     //
     if(parameters){
@@ -563,32 +557,306 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     return newImage;
 }
 
-- (UIImage * _Nullable) maskWithImage:(UIImage * _Nonnull)maskImage
+- (UIImage * _Nullable) maskWithGrayscaleImage:(UIImage * _Nonnull)grayscaleMaskImage
 {
-    if (self.CGImage == nil || maskImage.CGImage == nil) {
+    if (self.CGImage == nil || grayscaleMaskImage.CGImage == nil){
         return self;
     }
     
-    CGImageRef imageReference = self.CGImage;
-    CGImageRef maskReference = maskImage.CGImage;
+    NSString *filterName = @"CIBlendWithMask";
     
-    CGImageRef imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
-                                             CGImageGetHeight(maskReference),
-                                             CGImageGetBitsPerComponent(maskReference),
-                                             CGImageGetBitsPerPixel(maskReference),
-                                             CGImageGetBytesPerRow(maskReference),
-                                             CGImageGetDataProvider(maskReference),
-                                             NULL, // Decode is null
-                                             YES // Should interpolate
-                                             );
+    CIImage* inputImage = [CIImage imageWithCGImage:self.CGImage];
+    //CIImage* inputBackgroundImage = [CIImage imageWithCGImage:[self imageRotatedClockwise].CGImage];
+    CIImage* inputMaskImage = [CIImage imageWithCGImage:grayscaleMaskImage.CGImage];
     
-    CGImageRef maskedReference = CGImageCreateWithMask(imageReference, imageMask);
-    CGImageRelease(imageMask);
+    CIContext *context = [CIContext contextWithOptions:nil];
+    //
+    CIFilter *ciFilter = [CIFilter filterWithName:filterName];
+    [ciFilter setValue:inputImage forKey:kCIInputImageKey];
+    //[ciFilter setValue:inputBackgroundImage forKey:kCIInputBackgroundImageKey];
+    [ciFilter setValue:inputMaskImage forKey:kCIInputMaskImageKey];
+    //
+    CIImage *outputImage = [ciFilter outputImage];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:self.scale orientation:self.imageOrientation];
+    CGImageRelease(cgimg);
+    context = nil;
+    //
+    return newImage;
+}
+
+- (UIImage * _Nullable) maskWithAlphaImage:(UIImage * _Nonnull)alphaMaskImage
+{
+    if (self.CGImage == nil || alphaMaskImage.CGImage == nil){
+        return self;
+    }
     
-    UIImage *maskedImage = [UIImage imageWithCGImage:maskedReference];
-    CGImageRelease(maskedReference);
+    NSString *filterName = @"CIBlendWithAlphaMask";
     
-    return maskedImage;
+    CIImage* inputImage = [CIImage imageWithCGImage:self.CGImage];
+    //CIImage* inputBackgroundImage = [CIImage imageWithCGImage:[self imageRotatedClockwise].CGImage];
+    CIImage* inputMaskImage = [CIImage imageWithCGImage:alphaMaskImage.CGImage];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    //
+    CIFilter *ciFilter = [CIFilter filterWithName:filterName];
+    [ciFilter setValue:inputImage forKey:kCIInputImageKey];
+    //[ciFilter setValue:inputBackgroundImage forKey:kCIInputBackgroundImageKey];
+    [ciFilter setValue:inputMaskImage forKey:kCIInputMaskImageKey];
+    //
+    CIImage *outputImage = [ciFilter outputImage];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:self.scale orientation:self.imageOrientation];
+    CGImageRelease(cgimg);
+    context = nil;
+    //
+    return newImage;
+}
+
+- (CGImageRef)createMaskWithImage:(CGImageRef)image
+{
+    size_t maskWidth               = CGImageGetWidth(image);
+    size_t maskHeight              = CGImageGetHeight(image);
+    //  round bytesPerRow to the nearest 16 bytes, for performance's sake
+    size_t bytesPerRow             = (maskWidth + 15) & 0xfffffff0;
+    size_t bufferSize              = bytesPerRow * maskHeight;
+    
+    //  allocate memory for the bits
+    CFMutableDataRef dataBuffer = CFDataCreateMutable(kCFAllocatorDefault, 0);
+    CFDataSetLength(dataBuffer, bufferSize);
+    
+    //  the data will be 8 bits per pixel, no alpha
+    CGColorSpaceRef colourSpace = CGColorSpaceCreateDeviceGray();
+    CGContextRef ctx            = CGBitmapContextCreate(CFDataGetMutableBytePtr(dataBuffer),
+                                                        maskWidth, maskHeight,
+                                                        8, bytesPerRow, colourSpace, kCGImageAlphaNone);
+    //  drawing into this context will draw into the dataBuffer.
+    CGContextDrawImage(ctx, CGRectMake(0, 0, maskWidth, maskHeight), image);
+    CGContextRelease(ctx);
+    
+    //  now make a mask from the data.
+    CGDataProviderRef dataProvider  = CGDataProviderCreateWithCFData(dataBuffer);
+    CGImageRef mask                 = CGImageMaskCreate(maskWidth, maskHeight, 8, 8, bytesPerRow,
+                                                        dataProvider, NULL, FALSE);
+    
+    CGDataProviderRelease(dataProvider);
+    CGColorSpaceRelease(colourSpace);
+    CFRelease(dataBuffer);
+    
+    return mask;
+}
+
+- (UIImage * _Nullable) applyBorderWithColor:(UIColor * _Nonnull)borderColor andWidth:(CGFloat)borderWidth
+{
+    CGSize size = [self size];
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [self drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    //
+    CGFloat red, green, blue, alpha;
+    [borderColor getRed:&red green:&green blue:&blue alpha:&alpha];
+    CGContextSetRGBStrokeColor(context, red, green, blue, alpha);
+    //
+    CGContextSetLineWidth(context, borderWidth);
+    //
+    CGContextStrokeRect(context, rect);
+    UIImage *resultImage =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //
+    return resultImage;
+}
+
+- (UIImage * _Nullable) tintImageWithColor:(UIColor * _Nonnull)color
+{
+    UIImage *newImage = [self imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, newImage.scale);
+    [color set];
+    [newImage drawInRect:CGRectMake(0, 0, self.size.width, newImage.size.height)];
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //
+    return newImage;
+}
+
+- (UIImage * _Nullable) bluredImageWithRadius:(CGFloat)radius tintColor:(UIColor * _Nullable)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage * _Nullable)maskImage
+{
+    // Check pre-conditions.
+    if (self.size.width < 1 || self.size.height < 1) {
+        return nil;
+    }
+    if (!self.CGImage) {
+        return nil;
+    }
+    if (maskImage && !maskImage.CGImage) {
+        return nil;
+    }
+    if ([self isAnimated]){
+        return nil;
+    }
+    
+    CGRect imageRect = { CGPointZero, self.size };
+    UIImage *effectImage = [self clone];
+    
+    BOOL hasBlur = radius > __FLT_EPSILON__;
+    BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > __FLT_EPSILON__;
+    if (hasBlur || hasSaturationChange) {
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
+        CGContextRef effectInContext = UIGraphicsGetCurrentContext();
+        CGContextScaleCTM(effectInContext, 1.0, -1.0);
+        CGContextTranslateCTM(effectInContext, 0, -self.size.height);
+        CGContextDrawImage(effectInContext, imageRect, self.CGImage);
+        
+        vImage_Buffer effectInBuffer;
+        effectInBuffer.data     = CGBitmapContextGetData(effectInContext);
+        effectInBuffer.width    = CGBitmapContextGetWidth(effectInContext);
+        effectInBuffer.height   = CGBitmapContextGetHeight(effectInContext);
+        effectInBuffer.rowBytes = CGBitmapContextGetBytesPerRow(effectInContext);
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
+        CGContextRef effectOutContext = UIGraphicsGetCurrentContext();
+        vImage_Buffer effectOutBuffer;
+        effectOutBuffer.data     = CGBitmapContextGetData(effectOutContext);
+        effectOutBuffer.width    = CGBitmapContextGetWidth(effectOutContext);
+        effectOutBuffer.height   = CGBitmapContextGetHeight(effectOutContext);
+        effectOutBuffer.rowBytes = CGBitmapContextGetBytesPerRow(effectOutContext);
+        
+        if (hasBlur) {
+            // A description of how to compute the box kernel width from the Gaussian
+            // radius (aka standard deviation) appears in the SVG spec:
+            // http://www.w3.org/TR/SVG/filters.html#feGaussianBlurElement
+            //
+            // For larger values of 's' (s >= 2.0), an approximation can be used: Three
+            // successive box-blurs build a piece-wise quadratic convolution kernel, which
+            // approximates the Gaussian kernel to within roughly 3%.
+            //
+            // let d = floor(s * 3*sqrt(2*pi)/4 + 0.5)
+            //
+            // ... if d is odd, use three box-blurs of size 'd', centered on the output pixel.
+            //
+            CGFloat inputRadius = radius * [[UIScreen mainScreen] scale];
+            uint32_t radius = floor(inputRadius * 3. * sqrt(2 * M_PI) / 4 + 0.5);
+            if (radius % 2 != 1) {
+                radius += 1; // force radius to be odd so that the three box-blur methodology works.
+            }
+            vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
+            vImageBoxConvolve_ARGB8888(&effectOutBuffer, &effectInBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
+            vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, NULL, 0, 0, radius, radius, 0, kvImageEdgeExtend);
+        }
+        BOOL effectImageBuffersAreSwapped = NO;
+        if (hasSaturationChange) {
+            CGFloat s = saturationDeltaFactor;
+            CGFloat floatingPointSaturationMatrix[] = {
+                0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
+                0.7152 - 0.7152 * s,  0.7152 + 0.2848 * s,  0.7152 - 0.7152 * s,  0,
+                0.2126 - 0.2126 * s,  0.2126 - 0.2126 * s,  0.2126 + 0.7873 * s,  0,
+                0,                    0,                    0,  1,
+            };
+            const int32_t divisor = 256;
+            NSUInteger matrixSize = sizeof(floatingPointSaturationMatrix)/sizeof(floatingPointSaturationMatrix[0]);
+            int16_t saturationMatrix[matrixSize];
+            for (NSUInteger i = 0; i < matrixSize; ++i) {
+                saturationMatrix[i] = (int16_t)roundf(floatingPointSaturationMatrix[i] * divisor);
+            }
+            if (hasBlur) {
+                vImageMatrixMultiply_ARGB8888(&effectOutBuffer, &effectInBuffer, saturationMatrix, divisor, NULL, NULL, kvImageNoFlags);
+                effectImageBuffersAreSwapped = YES;
+            }
+            else {
+                vImageMatrixMultiply_ARGB8888(&effectInBuffer, &effectOutBuffer, saturationMatrix, divisor, NULL, NULL, kvImageNoFlags);
+            }
+        }
+        if (!effectImageBuffersAreSwapped)
+            effectImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        if (effectImageBuffersAreSwapped)
+            effectImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    
+    // Set up output context.
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
+    CGContextRef outputContext = UIGraphicsGetCurrentContext();
+    CGContextScaleCTM(outputContext, 1.0, -1.0);
+    CGContextTranslateCTM(outputContext, 0, -self.size.height);
+    
+    // Draw base image.
+    CGContextDrawImage(outputContext, imageRect, self.CGImage);
+    
+    // Draw effect image.
+    if (hasBlur) {
+        CGContextSaveGState(outputContext);
+        if (maskImage) {
+            CGContextClipToMask(outputContext, imageRect, maskImage.CGImage);
+        }
+        CGContextDrawImage(outputContext, imageRect, effectImage.CGImage);
+        CGContextRestoreGState(outputContext);
+    }
+    
+    // Add in color tint.
+    if (tintColor) {
+        CGContextSaveGState(outputContext);
+        CGContextSetFillColorWithColor(outputContext, tintColor.CGColor);
+        CGContextFillRect(outputContext, imageRect);
+        CGContextRestoreGState(outputContext);
+    }
+    
+    // Output image is ready.
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
+}
+
+//- (NSArray<UIImage*>* _Nullable) detectedFacesImages
+- (void) detectFacesImagesWithCompletionHandler:(void(^_Nonnull)(NSArray<UIImage*>* _Nullable detectedFaces)) handler
+{
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0) || [self isAnimated]) {
+        handler(nil);
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        CIContext *context = [CIContext context];
+        NSDictionary *opts = @{ CIDetectorAccuracy : CIDetectorAccuracyHigh };
+        CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeFace context:context options:opts];
+        
+        opts = @{ CIDetectorImageOrientation : @(self.imageOrientation)};
+        NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:self.CGImage] options:opts];
+        
+        NSMutableArray *iFaces = [NSMutableArray new];
+        
+        for (CIFaceFeature *feature in features){
+            CGRect originalBounds = feature.bounds;
+            CGRect extendedBounds = originalBounds;
+            
+            //face rect realign
+            if (feature.hasLeftEyePosition && feature.hasRightEyePosition){
+                CGFloat dEyes = feature.rightEyePosition.x - feature.leftEyePosition.x;
+                CGFloat side = dEyes * 3.5;
+                //
+                CGFloat minX = MIN(feature.leftEyePosition.x, feature.rightEyePosition.x);
+                CGFloat maxX = MAX(feature.leftEyePosition.x, feature.rightEyePosition.x);
+                CGFloat minY = MIN(feature.leftEyePosition.y, feature.rightEyePosition.y);
+                CGFloat maxY = MAX(feature.leftEyePosition.y, feature.rightEyePosition.y);
+                //
+                CGPoint centerEyes = CGPointMake(minX + ((maxX - minX) / 2.0), minY + ((maxY - minY) / 2.0));
+                extendedBounds = CGRectMake(centerEyes.x - (side / 2.0), centerEyes.y - (side / 2.0), side, side);
+            }else{
+                extendedBounds = CGRectMake(originalBounds.origin.x - ((originalBounds.size.width * 1.4 - originalBounds.size.width) / 2.0), originalBounds.origin.y, originalBounds.size.width * 1.4, originalBounds.size.height * 2.0);
+            }
+            
+            UIImage *faceImage = [self cropImageUsingFrame:extendedBounds];
+            if (faceImage != self && faceImage != nil){
+                [iFaces addObject:faceImage];
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            handler([NSArray arrayWithArray:iFaces]);
+        });
+    });
 }
 
 #pragma mark - Utils
