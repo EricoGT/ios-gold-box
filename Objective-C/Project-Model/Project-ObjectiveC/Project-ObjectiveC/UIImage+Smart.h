@@ -200,5 +200,19 @@
  */
 - (void) detectQRCodeMessageWithCompletionHandler:(void(^_Nonnull)(NSArray<NSString*>* _Nullable detectedMessages)) handler;
 
+/**
+ * Substituí uma cor por outra na imagem, dentro de uma área determinada.
+ *
+ * @brief Substituí um cor alvo por outra, dentro de uma área determinada.
+ * @warning Não é executado em imagens animadas.
+ * @param baseColor Cor que se deseja substituir. O canal alpha é ignorado.
+ * @param newColor Cor para a qual se deseja fazer a substituição. O canal alpha é ignorado. Quando não for passada, o pixel destino será automaticamente transformado num ponto transparente sem cor.
+ * @param tolerance Valor entre 0.0 e 1.0 que representa a porcentagem, por canal, da tolerância na busca pela cor alvo. Passando 0.0 será executada uma busca exata.
+ * @param interestRect Área na imagem onde a busca será executada. Para executar o método na imagem toda passe CGRectMake(0.0, 0.0, image.size.width, image.size,height);
+ * @return O retorno será uma cópia da imagem original, tendo todos os pixels afetados com suas cores substituídas.
+ * @note Este método não processa a imagem pelo 'hue'. Os canais RGB são verificados per pixel.
+ */
+- (UIImage * _Nullable) imageReplacingColor:(UIColor * _Nonnull)baseColor toColor:(UIColor * _Nullable)newColor usingTolerance:(CGFloat)tolerance andInteretRect:(CGRect)interestRect;
+
 @end
 

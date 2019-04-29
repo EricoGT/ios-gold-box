@@ -39,6 +39,10 @@
 
 - (NSString * _Nullable) encodeImageToBase64String
 {
+    if ([self isAnimated]){
+        return nil;
+    }
+    
     NSData *iData = UIImagePNGRepresentation(self);
     NSString *base64;
     @try {
@@ -52,9 +56,11 @@
 - (UIImage *_Nonnull)clone
 {
     if (self.images.count > 1){
+        //copiando animações
         UIImage *animationImage = [UIImage animatedImageWithImages:self.images duration:self.duration];
         return animationImage;
     }else{
+        //copiando imagem única
         NSData *iData = UIImagePNGRepresentation(self);
         UIImage *image = [UIImage imageWithData:iData];
         return image;
@@ -212,7 +218,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable)imageOrientedToUP
 {
-    if (self.imageOrientation == UIImageOrientationUp || self.CGImage == nil || (self.size.width == 0 || self.size.height == 0)) {
+    if (self.imageOrientation == UIImageOrientationUp || self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
         return self;
     }
     
@@ -292,7 +298,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable)imageRotatedByDegrees:(CGFloat)degrees
 {
-    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0)) {
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
         return self;
     }
     
@@ -320,7 +326,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable)imageFlippedHorizontally
 {
-    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0)) {
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
         return self;
     }
     
@@ -339,7 +345,7 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable)imageFlippedVertically
 {
-    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0)) {
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
         return self;
     }
     
@@ -358,23 +364,64 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (UIImage * _Nullable) resizedImageToSize:(CGSize)newSize
 {
-    UIGraphicsBeginImageContext(newSize);
-    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    //
-    return newImage;
+    if ([self isAnimated]){
+        
+        //Imagem animada
+        NSMutableArray *iList = [NSMutableArray new];
+        for (UIImage *image in self.images){
+            UIGraphicsBeginImageContext(newSize);
+            [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+            UIImage *frame = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            //
+            [iList addObject:frame];
+        }
+        UIImage *newImage = [UIImage animatedImageWithImages:iList duration:self.duration];
+        //
+        return newImage;
+        
+    }else{
+        
+        //Imagem simples
+        UIGraphicsBeginImageContext(newSize);
+        [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //
+        return newImage;
+    }
 }
 
 - (UIImage * _Nullable) resizedImageToScale:(CGFloat)newScale
 {
-    CGSize newSize = CGSizeMake(self.size.width * newScale, self.size.height * newScale);
-    UIGraphicsBeginImageContext(newSize);
-    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    //
-    return newImage;
+     if ([self isAnimated]){
+         
+         //Imagem animada
+         NSMutableArray *iList = [NSMutableArray new];
+         for (UIImage *image in self.images){
+             CGSize newSize = CGSizeMake(self.size.width * newScale, self.size.height * newScale);
+             UIGraphicsBeginImageContext(newSize);
+             [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+             UIImage *frame = UIGraphicsGetImageFromCurrentImageContext();
+             UIGraphicsEndImageContext();
+             //
+             [iList addObject:frame];
+         }
+         UIImage *newImage = [UIImage animatedImageWithImages:iList duration:self.duration];
+         //
+         return newImage;
+         
+     }else{
+         
+         //Imagem simples
+         CGSize newSize = CGSizeMake(self.size.width * newScale, self.size.height * newScale);
+         UIGraphicsBeginImageContext(newSize);
+         [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+         UIGraphicsEndImageContext();
+         //
+         return newImage;
+     }
 }
 
 
@@ -395,19 +442,41 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
         height = maxHeight;
         width = height * ratio;
     }
-    //
-    CGSize newSize = CGSizeMake(width, height);
-    UIGraphicsBeginImageContext(newSize);
-    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    //
-    return newImage;
+    
+    if ([self isAnimated]){
+        
+        //Imagem animada
+        NSMutableArray *iList = [NSMutableArray new];
+        for (UIImage *image in self.images){
+            CGSize newSize = CGSizeMake(width, height);
+            UIGraphicsBeginImageContext(newSize);
+            [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+            UIImage *frame = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            //
+            [iList addObject:frame];
+        }
+        UIImage *newImage = [UIImage animatedImageWithImages:iList duration:self.duration];
+        //
+        return newImage;
+        
+    }else{
+        
+        //Imagem simples
+        CGSize newSize = CGSizeMake(width, height);
+        UIGraphicsBeginImageContext(newSize);
+        [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //
+        return newImage;
+    }
+    
 }
 
 - (UIImage * _Nullable) cropImageUsingFrame:(CGRect)frame
 {
-    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0)) {
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
         return self;
     }
     
@@ -888,6 +957,88 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     });
 }
 
+- (UIImage * _Nullable) filterImageColorWithHueMin:(CGFloat)minHue andHueMax:(CGFloat)maxHue
+{
+    CIImage *ciImage = [[CIImage alloc] initWithImage:self];
+    
+    // 1
+    const unsigned int size = 64; 
+    const size_t cubeDataSize = size * size * size * 4;
+    NSMutableData* cubeData = [[NSMutableData alloc] initWithCapacity:(cubeDataSize * sizeof(float))];
+    
+    // 2
+    for (int z = 0; z < size; z++) {
+        CGFloat blue = ((double)z)/(size-1);
+        for (int y = 0; y < size; y++) {
+            CGFloat green = ((double)y)/(size-1);
+            for (int x = 0; x < size; x++) {
+                CGFloat red = ((double)x)/(size-1);
+                
+                // 3
+                CGFloat hue = [self hueFromRed:red green:green blue:blue];
+                float alpha = (hue >= minHue && hue <= maxHue) ? 0 : 1;
+                
+                // 4
+//                float premultipliedRed = red * alpha;
+//                float premultipliedGreen = green * alpha;
+//                float premultipliedBlue = blue * alpha;
+//                [cubeData appendBytes:&premultipliedRed length:sizeof(float)];
+//                [cubeData appendBytes:&premultipliedGreen length:sizeof(float)];
+//                [cubeData appendBytes:&premultipliedBlue length:sizeof(float)];
+//                [cubeData appendBytes:&alpha length:sizeof(float)];
+                
+               
+                
+                float premultipliedRed = red * 0.299f + green * 0.587f + blue * 0.114f;
+                float premultipliedGreen = red * 0.299f + green * 0.587f + blue * 0.114f;
+                float premultipliedBlue = red * 0.299f + green * 0.587f + blue * 0.114f;
+                [cubeData appendBytes:&premultipliedRed length:sizeof(float)];
+                [cubeData appendBytes:&premultipliedGreen length:sizeof(float)];
+                [cubeData appendBytes:&premultipliedBlue length:sizeof(float)];
+                [cubeData appendBytes:&alpha length:sizeof(float)];
+                
+            }
+        }
+    }
+    
+    // 5
+    CIFilter* chromaKeyFilter = [CIFilter filterWithName:@"CIColorCube"];
+    [chromaKeyFilter setValue:@(size) forKey:@"inputCubeDimension"];
+    [chromaKeyFilter setValue:cubeData forKey:@"inputCubeData"];
+    [chromaKeyFilter setValue:ciImage forKey:kCIInputImageKey];
+    
+    //6
+    CIImage *outputImage = [chromaKeyFilter outputImage];
+    if (outputImage){
+        CIContext *context = [CIContext contextWithOptions:nil];
+        CGImageRef cgimg = [context createCGImage:outputImage fromRect:[ciImage extent]];
+        UIImage *uiImage = [UIImage imageWithCGImage:cgimg scale:self.scale orientation:self.imageOrientation];
+        return uiImage;
+    }else{
+        return nil;
+    }
+}
+
+- (UIImage * _Nullable) filterImageColorWithBaseColor:(UIColor * _Nonnull)baseColor andDelta:(CGFloat)delta
+{
+    CGFloat hue = [UIImage hueFromColor:baseColor];
+    delta = delta < 0.0 ? 0.0 : (delta > 1.0 ? 1.0 : delta);
+    CGFloat minHue = hue - (hue * delta);
+    CGFloat maxHue = hue + (hue * delta);
+    minHue = minHue < 0.0 ? 0.0 : (minHue > 1.0 ? 1.0 : minHue);
+    maxHue = maxHue < 0.0 ? 0.0 : (maxHue > 1.0 ? 1.0 : maxHue);
+    //
+    return [self filterImageColorWithHueMin:minHue andHueMax:maxHue];
+}
+
++ (CGFloat)hueFromColor:(UIColor * _Nonnull)color
+{
+    CGFloat hue, saturation, brightness;
+    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:nil];
+    //
+    return hue;
+}
+
 #pragma mark - Utils
 
 - (CGFloat)DegreesToRadians:(CGFloat)degree{
@@ -896,6 +1047,161 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
 
 - (CGFloat)RadiansToDegrees:(CGFloat)radius{
     return radius * 180 / M_PI;
+}
+
+- (CGFloat) hueFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue{
+    UIColor* color = [UIColor colorWithRed:red green:green blue:blue alpha:1];
+    CGFloat hue, saturation, brightness;
+    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:nil];
+    return hue;
+}
+
+- (CGFloat)clamp255:(CGFloat)value{
+    return value < 0.0 ? 0.0 : (value > 255.0 ? 255.0 : value);
+}
+
+- (BOOL)compareValue:(CGFloat)v1 withValue:(CGFloat)v2 andDelta:(CGFloat)delta{
+    
+    CGFloat minV2 = v2 - (v2 * delta);
+    CGFloat maxV2 = v2 + (v2 * delta);
+    //
+    return (v1 >= minV2 && v1 <= maxV2);
+}
+
+- (UIImage * _Nullable) imageReplacingColor:(UIColor * _Nonnull)baseColor toColor:(UIColor * _Nullable)newColor usingTolerance:(CGFloat)tolerance andInteretRect:(CGRect)interestRect
+{
+    if ([self isAnimated]){
+        return self;
+    }
+    
+    UIImage *pngImage = [UIImage imageWithData:UIImagePNGRepresentation(self)];
+    
+    CGImageRef imageRef = [pngImage CGImage];
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(rawData, width, height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(context);
+    
+    //base color
+    CGFloat baseRed = 0.0;
+    CGFloat baseGreen = 0.0;
+    CGFloat baseBlue = 0.0;
+    CGFloat baseAlpha = 0.0;
+    [baseColor getRed:&baseRed green:&baseGreen blue:&baseBlue alpha:&baseAlpha];
+    baseRed = baseRed * 255.0;
+    baseGreen = baseGreen * 255.0;
+    baseBlue = baseBlue * 255.0;
+    baseAlpha = baseAlpha * 255.0;
+    if (baseAlpha != 0.0){
+        baseRed = baseRed / baseAlpha;
+        baseGreen = baseGreen / baseAlpha;
+        baseBlue = baseBlue/ baseAlpha;
+    }
+    
+    //new color
+    CGFloat newRed = 0.0;
+    CGFloat newGreen = 0.0;
+    CGFloat newBlue = 0.0;
+    CGFloat newAlpha = 0.0;
+    BOOL useNewColor = NO;
+    if (newColor){
+        [newColor getRed:&newRed green:&newGreen blue:&newBlue alpha:&newAlpha];
+        newRed = newRed * 255.0;
+        newGreen = newGreen * 255.0;
+        newBlue = newBlue * 255.0;
+        newAlpha = newAlpha * 255.0;
+        if (newAlpha != 0.0){
+            newRed = newRed / newAlpha;
+            newGreen = newGreen / newAlpha;
+            newBlue = newBlue/ newAlpha;
+        }
+        
+        useNewColor = YES;
+    }
+    
+    NSUInteger byteIndex = 0;
+
+    for (int i = 0 ; i < width * height ; ++i)
+    {
+        CGPoint actualPixel = CGPointMake(i / width, i % width); //converting array to line and column
+        if (CGRectContainsPoint(interestRect, actualPixel)){
+            
+            //Red
+            CGFloat red = ((CGFloat) rawData[byteIndex]     );
+            
+            //Green
+            CGFloat green = ((CGFloat) rawData[byteIndex + 1] );
+            
+            //Blue
+            CGFloat blue  = ((CGFloat) rawData[byteIndex + 2] );
+            
+            //Alpha
+            CGFloat alpha = ((CGFloat) rawData[byteIndex + 3] ); // /255.0f
+            
+            if (alpha != 0.0){
+                
+                //Red
+                red = red / alpha;
+                
+                //Green
+                green = green / alpha;
+                
+                //Blue
+                blue  = blue / alpha;
+                
+            }
+            
+            if ([self compareValue:baseRed withValue:red andDelta:tolerance] && [self compareValue:baseGreen withValue:green andDelta:tolerance] && [self compareValue:baseBlue withValue:blue andDelta:tolerance]){
+                
+                if (useNewColor){
+                    
+                    //R:
+                    rawData[byteIndex] = (unsigned char)(newRed * alpha);
+                    //G:
+                    rawData[byteIndex+1] = (unsigned char)(newGreen * alpha);
+                    //B:
+                    rawData[byteIndex+2] = (unsigned char)(newBlue * alpha);
+                    //A:
+                    //rawData[byteIndex+3] = (int)newAlpha;
+                    
+                }
+                else{
+                    
+                    rawData[byteIndex+3] = (unsigned char)(0);
+                    
+                }
+                
+            }
+            
+        }
+
+        byteIndex += bytesPerPixel;
+    }
+    
+    CGContextRef ctx = CGBitmapContextCreate(rawData,
+                                CGImageGetWidth( imageRef ),
+                                CGImageGetHeight( imageRef ),
+                                bitsPerComponent,
+                                bytesPerRow,
+                                colorSpace,
+                                kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    
+    imageRef = CGBitmapContextCreateImage (ctx);
+    UIImage* rawImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    CGContextRelease(ctx);
+    free(rawData);
+    
+    return rawImage;
 }
 
 @end

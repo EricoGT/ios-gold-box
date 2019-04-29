@@ -111,11 +111,7 @@
         
     });
     
-    
-    UIImage *qrcodeI = [UIImage imageNamed:@"qrcodes.jpg"];
-    [qrcodeI detectQRCodeTextInImageWithCompletionHandler:^(NSArray<NSString *> * _Nullable detectedMessages) {
-         NSArray *msg = detectedMessages;
-    }];
+    //TODO: samples here...
     
 }
 

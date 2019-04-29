@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D35CAB1EF71222BFCC18A983 /* libPods-Project-ObjectiveC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C482761EF7E184402DB913E5 /* libPods-Project-ObjectiveC.a */; };
+		DA3D8D822273871000F630C9 /* alpha_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3D8D812273870F00F630C9 /* alpha_frame.png */; };
 		DA480E8922674BC0002DD005 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480E8822674BC0002DD005 /* BasicViewController.m */; };
 		DA480E8B22678407002DD005 /* ToolBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA480E8A22678407002DD005 /* ToolBoxTests.m */; };
 		DA480EA122678C83002DD005 /* page_next.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA480E8C22678C82002DD005 /* page_next.mp3 */; };
@@ -192,6 +193,8 @@
 		09ADA005F585BEA5B61F1E21 /* Pods-Project-ObjectiveC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ObjectiveC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-ObjectiveC/Pods-Project-ObjectiveC.debug.xcconfig"; sourceTree = "<group>"; };
 		C482761EF7E184402DB913E5 /* libPods-Project-ObjectiveC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project-ObjectiveC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D992224815D3217D3BADD3DE /* Pods-Project-ObjectiveC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ObjectiveC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-ObjectiveC/Pods-Project-ObjectiveC.release.xcconfig"; sourceTree = "<group>"; };
+		DA3D8D7422731F1A00F630C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA3D8D812273870F00F630C9 /* alpha_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alpha_frame.png; sourceTree = "<group>"; };
 		DA480E8722674BC0002DD005 /* BasicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		DA480E8822674BC0002DD005 /* BasicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		DA480E8A22678407002DD005 /* ToolBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBoxTests.m; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 		727120D0C6C6235740C55E90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA3D8D7422731F1A00F630C9 /* QuartzCore.framework */,
 				E723FFA61EA4F28E00C44B28 /* libsqlite3.tbd */,
 				E723FFA41EA4F27600C44B28 /* libz.1.2.8.tbd */,
 				E723FF1A1EA4E34D00C44B28 /* CoreMedia.framework */,
@@ -660,6 +664,7 @@
 		E723FEB91EA4D4E900C44B28 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA3D8D812273870F00F630C9 /* alpha_frame.png */,
 				DA95353D227235340018FFB3 /* qrcodes.jpg */,
 				DADB0DCD2271F14C000A7CBF /* faces1.jpg */,
 				DADB0DCE2271F14C000A7CBF /* faces2.jpg */,
@@ -1026,6 +1031,7 @@
 			files = (
 				DA480EA722678C83002DD005 /* great.mp3 in Resources */,
 				DA480EB322678C83002DD005 /* cutting_paper.mp3 in Resources */,
+				DA3D8D822273871000F630C9 /* alpha_frame.png in Resources */,
 				E723FFA31EA4EAE200C44B28 /* script_sqlite in Resources */,
 				DABC54FC2270EDB400FF72E5 /* grayscale_mask.jpg in Resources */,
 				DA480EAA22678C83002DD005 /* beep.mp3 in Resources */,
