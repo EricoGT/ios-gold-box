@@ -151,6 +151,12 @@
 /** Cria uma nova imagem, baseando-se numa dada área circular da imagem original. */
 - (UIImage * _Nullable) circularCropImageUsingFrame:(CGRect)frame;
 
+/** Cria uma nova imagem, com bordas arredondadas conforme parâmetro. */
+- (UIImage * _Nullable) roundedCornerImageWithCornerRadius:(CGFloat)radius andCorners:(UIRectCorner)corners;
+
+/** Utiliza um CGPath para cortar a imagem. */
+- (UIImage * _Nullable) imageByClippingPath:(CGPathRef _Nonnull)path;
+
 #pragma mark - Effects
 
 /** Aplica filtro na imagem parâmetro. Certos filtros exigem parâmetros adicionais que devem ser passados pelo dicionário. Visitar o endereço para ver as opções: https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/#//apple_ref/doc/uid/TP30000136-SW29. */

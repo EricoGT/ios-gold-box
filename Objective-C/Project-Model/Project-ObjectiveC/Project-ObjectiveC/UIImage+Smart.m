@@ -525,6 +525,58 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     return newImage;
 }
 
+- (UIImage * _Nullable) roundedCornerImageWithCornerRadius:(CGFloat)radius andCorners:(UIRectCorner)corners
+{
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || radius <= 1.0 || [self isAnimated])) {
+        return self;
+    }
+    
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.size.width, self.size.height) byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.size.width, self.size.height), NO, self.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextBeginPath (context);
+    CGContextAddPath(context, rounded.CGPath);
+    CGContextClosePath (context);
+    CGContextClip (context);
+   
+    CGRect iRect = CGRectMake(0, 0, self.size.width, self.size.height);
+    [self drawInRect:iRect];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+    
+}
+
+- (UIImage * _Nullable) imageByClippingPath:(CGPathRef _Nonnull)path
+{
+    if (self.CGImage == nil || (self.size.width == 0 || self.size.height == 0 || [self isAnimated])) {
+        return self;
+    }
+    
+    CGRect boxPath = CGPathGetBoundingBox(path);
+    UIImage *workImage = [UIImage imageWithData:UIImagePNGRepresentation(self)];
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(workImage.size.width, workImage.size.height), NO, workImage.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextBeginPath (context);
+    CGContextAddPath(context, path);
+    CGContextClosePath (context);
+    CGContextClip (context);
+    
+    CGRect iRect = CGRectMake(0, 0, workImage.size.width, workImage.size.height);
+    [workImage drawInRect:iRect];
+    
+    UIImage *tempImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImage *finalImage = [tempImage cropImageUsingFrame:boxPath];
+    
+    return finalImage;
+}
+
 #pragma mark - Effects
 
 - (UIImage * _Nullable) applyFilter:(NSString * _Nonnull)filterName usingParameters:(NSDictionary * _Nullable)parameters

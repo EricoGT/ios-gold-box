@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Project-ObjectiveC/UIImage+Smart.m"
-            timestampString = "578237784.115833"
+            timestampString = "578258342.7469079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "900"
-            endingLineNumber = "900"
+            startingLineNumber = "952"
+            endingLineNumber = "952"
             landmarkName = "-detectFacesImagesWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
