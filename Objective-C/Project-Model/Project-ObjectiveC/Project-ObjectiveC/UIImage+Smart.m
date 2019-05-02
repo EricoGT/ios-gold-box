@@ -597,6 +597,8 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
             [ciFilter setValuesForKeysWithDictionary:parameters];
         } @catch (NSException *exception) {
             NSLog(@"UIImage+Smart >> Error >> applyFilter:usingParameters: >> %@", [exception reason]);
+            //
+            return self;
         }
     }
     //

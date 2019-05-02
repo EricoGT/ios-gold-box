@@ -110,8 +110,7 @@
         NSLog(@"imvAnimated3 >> %i", [imvAnimated3 isAnimating]);
         
     });
-    
-    
+        
     
 }
 
