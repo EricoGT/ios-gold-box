@@ -12,6 +12,8 @@
 //
 #import "UIImage+Smart.h"
 #import "UIImage+GIF.h"
+//
+#import <CoreLocation/CoreLocation.h>
 
 #pragma mark - • INTERFACE PRIVATE PROPERTIES
 @interface BasicViewController()
@@ -161,7 +163,7 @@
 - (IBAction)actionReturn:(id)sender
 {
     [self showActivityIndicatorView];
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self pop:1];
     });

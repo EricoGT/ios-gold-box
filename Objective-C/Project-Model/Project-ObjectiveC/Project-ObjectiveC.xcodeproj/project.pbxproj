@@ -985,7 +985,7 @@
 				TargetAttributes = {
 					E723FE751EA4D28300C44B28 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 55585KEBRM;
+						DevelopmentTeam = G6SQG7XCNV;
 						ProvisioningStyle = Automatic;
 					};
 					E723FE8E1EA4D28300C44B28 = {
@@ -1396,11 +1396,11 @@
 			baseConfigurationReference = 09ADA005F585BEA5B61F1E21 /* Pods-Project-ObjectiveC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55585KEBRM;
+				DEVELOPMENT_TEAM = G6SQG7XCNV;
 				INFOPLIST_FILE = "Project-ObjectiveC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ericogt.Project-ObjectiveC";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lab360.sample.tesr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1410,11 +1410,11 @@
 			baseConfigurationReference = D992224815D3217D3BADD3DE /* Pods-Project-ObjectiveC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55585KEBRM;
+				DEVELOPMENT_TEAM = G6SQG7XCNV;
 				INFOPLIST_FILE = "Project-ObjectiveC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.ericogt.Project-ObjectiveC";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.lab360.sample.tesr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
