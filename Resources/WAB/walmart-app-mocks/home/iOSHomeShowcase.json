@@ -1,0 +1,73 @@
+{
+    "showcases":[
+                 {
+                 "id":"App_Home_Ios",
+                 "type":"mock",
+                 "orderId":0,
+                 "name":"Mock iOS",
+                 "icon":"ic_trophy_bf.png",
+                 "shelfItems":[
+                               {
+                               "productId":2867119,
+                               "skuId":978122,
+                               "title": "Camisa Polo Aleatory Lisa Piquet Peru",
+                               "imageId":"3919815",
+                               "totalColors": 8,
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"aleatory",
+                               "price":{
+                               "sellPrice":109
+                               },
+                               "instalment":22,
+                               "instalmentValue":4.95
+                               },
+                               {
+                               "productId":2036037,
+                               "skuId":38063,
+                               "title":"Advantage Max 3 Cães  - Bayer",
+                               "imageId":"2099520",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"vtex_prod_meuamigopet",
+                               "price":{
+                               "listPrice":11,
+                               "sellPrice":10
+                               },
+                               "instalment":22,
+                               "instalmentValue":0.45
+                               },
+                               {
+                               "productId":2137851,
+                               "skuId":161218,
+                               "title":"Liquidificador Mondial Pro Master 1500 Premium",
+                               "imageId":"2609284",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":450.09,
+                               "sellPrice":427.59
+                               },
+                               "stampImage":"https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png"
+                               },
+                               {
+                               "productId":2370838,
+                               "skuId":436519,
+                               "title": "Calcinha Tanga Renda Marcyn com Elástico Liso com Brilho",
+                               "imageId":"3107094",
+                               "totalColors": 4,
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"marcyn",
+                               "price":{
+                               "listPrice":39.99,
+                               "sellPrice":29.99
+                               },
+                               "instalment":22,
+                               "instalmentValue":1.36
+                               }
+                               ]
+                 }
+                 ]
+}

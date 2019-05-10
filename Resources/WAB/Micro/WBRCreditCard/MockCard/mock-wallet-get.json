@@ -1,0 +1,71 @@
+{
+    "creditCards": [
+                    {
+                    "tokenId": "7d8deb66-c81e-4569-bd7e-27d50392938f",
+                    "completeName": "Test Antonio",
+                    "brand": "MASTERCARD",
+                    "lastDigitsOfCard": "6167",
+                    "maskDigits": "545301******6167",
+                    "expirationDate": "03/2022",
+                    "expired": false,
+                    "pending": false,
+                    "paymentSystem": "MASTERCARD",
+                    "hipercard": false,
+                    "default": true
+                    },
+                    {
+                    "tokenId": "d7bd1571-647f-4835-a31a-227d793c59b6",
+                    "completeName": "Fulano de tal",
+                    "brand": "VISA",
+                    "lastDigitsOfCard": "3335",
+                    "maskDigits": "401200******3335",
+                    "expirationDate": "02/2023",
+                    "expired": true,
+                    "pending": false,
+                    "paymentSystem": "VISA",
+                    "hipercard": false,
+                    "default": false
+                    },
+                    {
+                    "tokenId": "edde738f-8e51-4d2e-9806-0a5f564286ba",
+                    "completeName": "Fulano Neves Jr",
+                    "brand": "MASTERCARD",
+                    "lastDigitsOfCard": "8884",
+                    "maskDigits": "555566******8884",
+                    "expirationDate": "10/2024",
+                    "expired": false,
+                    "pending": false,
+                    "paymentSystem": "MASTERCARD",
+                    "hipercard": false,
+                    "default": false
+                    },
+                    {
+                    "tokenId": "5c2bcbd7-395e-420e-ab73-08ea944252c0",
+                    "completeName": "Fulano Teste Oi",
+                    "brand": "AMEX",
+                    "lastDigitsOfCard": "3005",
+                    "maskDigits": "376449******3005",
+                    "expirationDate": "05/2026",
+                    "expired": false,
+                    "pending": false,
+                    "paymentSystem": "AMEX",
+                    "hipercard": false,
+                    "default": false
+                    },
+                    {
+                    "tokenId": "3c57bf58-bd64-4f57-af15-11e6b29374a9",
+                    "completeName": "Fulano Teste",
+                    "brand": "HIPERCARD",
+                    "lastDigitsOfCard": "4001",
+                    "maskDigits": "606282******4001",
+                    "expirationDate": "04/2025",
+                    "expired": false,
+                    "pending": false,
+                    "paymentSystem": "HIPERCARD",
+                    "hipercard": false,
+                    "default": false
+                    }
+                    ],
+    "maxCards": 10,
+    "totalCards": 5
+}

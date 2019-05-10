@@ -1,0 +1,95 @@
+{
+  "product": {
+    "imagesIds": [
+      "2477181",
+      "2477184",
+      "2477186"
+    ],
+    "productId": 2029676,
+    "skuId": 30640,
+    "title": "Mini Lavadora de Roupas 1Kg Mini Washer Eggo Função O3 BWI01A - Brastemp - 220V",
+    "departmentId": 144,
+    "categoryId": 151,
+    "subCategoryId": 451,
+    "stampUrl": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png",
+    "stampDescription": "*válido apenas para produtos vendidos e entregues diretamente pelo Walmart.com",
+    "stampFullDescription": "https://qa.webstore.waldev.com.br/busca/?ft=bola&amp;PS=20",
+    "rating": {
+      "value": 3,
+      "total": 1
+    },
+    "offers": [
+      {
+        "sku": 30640,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "1",
+          "name": "Walmart"
+        },
+        "price": {
+          "listPrice": 700,
+          "sellPrice": 690,
+          "installmentAmount": 22,
+          "valuePerInstallment": 31.36
+        },
+        "available": true
+      },
+      {
+        "sku": 30640,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "UZ Games",
+          "name": "UZ Games"
+        },
+        "price": {
+          "listPrice": 710,
+          "sellPrice": 701,
+          "installmentAmount": 2,
+          "valuePerInstallment": 350.50
+        },
+        "available": true
+      },
+
+      {
+        "sku": 30640,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "UZ Games 3",
+          "name": "UZ Games 3"
+        },
+        "price": {
+          "sellPrice": 703,
+          "installmentAmount": 4,
+          "valuePerInstallment": 175.75
+        },
+        "available": true
+      },
+      {
+        "sku": 30640,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "UZ Games 4",
+          "name": "UZ Games 4"
+        },
+        "price": {
+          "sellPrice": 70000.32,
+          "installmentAmount": 1,
+          "valuePerInstallment": 70000.32
+        },
+        "available": true
+      }
+
+
+
+    ],
+    "optionsType": "Selecione",
+    "variations": [
+
+      {
+        "name": "220V",
+        "sku": 30640,
+        "imageId": "2477181"
+      }
+    ]
+  }
+}

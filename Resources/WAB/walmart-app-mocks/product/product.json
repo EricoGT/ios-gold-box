@@ -1,0 +1,59 @@
+{
+  "count":1,
+  "product":{
+    "imagesIds":[
+      "5013271"
+    ],
+    "productId":3068520,
+    "skuId":1194541,
+    "title":"Stargate",
+    "departmentId":650,
+    "categoryId":696,
+    "subCategoryId":2831,
+    "stampUrl":"https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+    "stampTitle":"selo app teste",
+    "stampDescription":"Esta é a descrição da Campanha",
+    "stampFullDescription":"https://qa.webstore.waldev.com.br/busca/?ft=bola&amp;PS=20",
+    "deliveryStampUrl":"",
+    "offers":[
+      {
+        "sku":1194541,
+        "hasExtendedWarranty":true,
+        "seller":{
+          "id":"vtex_prod_meuamigopet",
+          "name":"Meu Amigo Pet"
+        },
+        "price":{
+          "listPrice":119.5,
+          "sellPrice":119.49,
+          "installmentAmount":10,
+          "valuePerInstallment":5
+        },
+        "available":true
+      },
+      {
+        "sku":38066,
+        "hasExtendedWarranty":false,
+        "seller":{
+          "id":"1",
+          "name":"Walmart"
+        },
+        "price":{
+          "listPrice":139.5,
+          "sellPrice":98.01,
+          "installmentAmount":10,
+          "valuePerInstallment":9.8
+        },
+        "available":true
+      }
+    ],
+    "rating":{
+      "value":0,
+      "total":0
+    },
+    "optionsType":"",
+    "variations":[
+
+    ]
+  }
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WBRCreditCardCellIdentifier" rowHeight="238" id="KGk-i7-Jjw" customClass="WBRCreditCardCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="147.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-Fl-EgB">
+                        <rect key="frame" x="15" y="10" width="290" height="127.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visa - Final 4228" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqI-xb-fE2">
+                                <rect key="frame" x="15" y="15" width="112" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favoriteAddress" translatesAutoresizingMaskIntoConstraints="NO" id="scJ-JB-nrC">
+                                <rect key="frame" x="132" y="17" width="15" height="15"/>
+                                <accessibility key="accessibilityConfiguration" identifier="defaultCardImage" label="defaultCardImage">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo S Martignon Gustavo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSm-JW-eVf">
+                                <rect key="frame" x="15" y="43" width="267" height="16"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Válido até 09/2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnj-1g-Qvf" userLabel="Expire Date Label">
+                                <rect key="frame" x="15" y="69" width="260" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="9v3-yz-gcl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_amex" translatesAutoresizingMaskIntoConstraints="NO" id="cVI-cw-ij1">
+                                <rect key="frame" x="228" y="15" width="47" height="18"/>
+                                <accessibility key="accessibilityConfiguration" identifier="bankFlagImage" label="bankFlagImage">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="4d2-J1-R6L"/>
+                                    <constraint firstAttribute="width" constant="47" id="Zf9-iq-iuW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartão vencido" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN2-8D-HRY" userLabel="Information Label">
+                                <rect key="frame" x="15" y="100" width="255" height="13"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.37254901960784315" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNk-3d-uIK" userLabel="Excluir Button">
+                                <rect key="frame" x="229" y="91" width="52.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GvO-MY-IN0"/>
+                                    <constraint firstAttribute="width" constant="52.5" id="hi4-X3-X2Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                                <state key="normal" title="Excluir">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.078431372550000003" green="0.47058823529999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeCardTouch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r2b-xj-aZz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-bE-Xck" userLabel="Set Defaults Button">
+                                <rect key="frame" x="8" y="95" width="123" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="LhX-ph-umZ"/>
+                                    <constraint firstAttribute="width" constant="123" id="Mfz-Hq-8d7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                                <state key="normal" title="Definir como principal">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.078431372550000003" green="0.47058823529999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="setDefaultCardTouch:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JMI-TW-D7z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dN2-8D-HRY" firstAttribute="top" secondItem="hnj-1g-Qvf" secondAttribute="bottom" constant="15" id="23J-dt-MIy"/>
+                            <constraint firstItem="BSm-JW-eVf" firstAttribute="top" secondItem="YqI-xb-fE2" secondAttribute="bottom" constant="10" id="5Rk-wG-B8K"/>
+                            <constraint firstItem="cVI-cw-ij1" firstAttribute="top" secondItem="pzi-Fl-EgB" secondAttribute="top" constant="15" id="6NV-mD-Loq"/>
+                            <constraint firstItem="scJ-JB-nrC" firstAttribute="leading" secondItem="YqI-xb-fE2" secondAttribute="trailing" constant="5" id="8Hv-eh-fZJ"/>
+                            <constraint firstItem="BSm-JW-eVf" firstAttribute="leading" secondItem="pzi-Fl-EgB" secondAttribute="leading" constant="15" id="CHx-r9-cKV"/>
+                            <constraint firstItem="dN2-8D-HRY" firstAttribute="leading" secondItem="pzi-Fl-EgB" secondAttribute="leading" constant="15" id="ChX-x3-gkd"/>
+                            <constraint firstItem="scJ-JB-nrC" firstAttribute="centerY" secondItem="YqI-xb-fE2" secondAttribute="centerY" id="FPV-1d-brQ"/>
+                            <constraint firstItem="YqI-xb-fE2" firstAttribute="top" secondItem="pzi-Fl-EgB" secondAttribute="top" constant="15" id="G6S-Hg-w2K"/>
+                            <constraint firstAttribute="trailing" secondItem="BSm-JW-eVf" secondAttribute="trailing" constant="8" id="GQz-aI-Pkg"/>
+                            <constraint firstItem="hnj-1g-Qvf" firstAttribute="leading" secondItem="pzi-Fl-EgB" secondAttribute="leading" constant="15" id="JAq-G8-K9d"/>
+                            <constraint firstAttribute="bottom" secondItem="SNk-3d-uIK" secondAttribute="bottom" constant="6.5" id="MIq-Lg-7II"/>
+                            <constraint firstItem="YqI-xb-fE2" firstAttribute="leading" secondItem="pzi-Fl-EgB" secondAttribute="leading" constant="15" id="NZ1-nY-VKE"/>
+                            <constraint firstAttribute="trailing" secondItem="hnj-1g-Qvf" secondAttribute="trailing" constant="15" id="VT0-4k-1Mf"/>
+                            <constraint firstAttribute="trailing" secondItem="dN2-8D-HRY" secondAttribute="trailing" constant="20" id="Z78-Dz-2Xz"/>
+                            <constraint firstItem="hnj-1g-Qvf" firstAttribute="top" secondItem="BSm-JW-eVf" secondAttribute="bottom" constant="10" id="plG-oi-k8I"/>
+                            <constraint firstAttribute="trailing" secondItem="SNk-3d-uIK" secondAttribute="trailing" constant="8.5" id="rHY-nQ-IXp"/>
+                            <constraint firstAttribute="bottom" secondItem="ZZn-bE-Xck" secondAttribute="bottom" constant="9.5" id="s21-B6-v2B"/>
+                            <constraint firstAttribute="bottom" secondItem="dN2-8D-HRY" secondAttribute="bottom" constant="14.5" id="wJj-sm-zAe"/>
+                            <constraint firstItem="ZZn-bE-Xck" firstAttribute="leading" secondItem="pzi-Fl-EgB" secondAttribute="leading" constant="8" id="yPd-Gq-YR6"/>
+                            <constraint firstAttribute="trailing" secondItem="cVI-cw-ij1" secondAttribute="trailing" constant="15" id="zrU-MY-2Bq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="pzi-Fl-EgB" secondAttribute="trailing" constant="15" id="8e8-Xn-bMf"/>
+                    <constraint firstItem="pzi-Fl-EgB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gSP-cl-RKV"/>
+                    <constraint firstAttribute="bottom" secondItem="pzi-Fl-EgB" secondAttribute="bottom" constant="10" id="h08-4Z-6v5"/>
+                    <constraint firstItem="pzi-Fl-EgB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="reb-8n-7HX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bankFlagImageView" destination="cVI-cw-ij1" id="77j-FD-8Vo"/>
+                <outlet property="cardTitleLabel" destination="YqI-xb-fE2" id="MQL-iU-FU7"/>
+                <outlet property="cardView" destination="pzi-Fl-EgB" id="ZJK-c0-Yfu"/>
+                <outlet property="creditCardFlagWidthConstraint" destination="Zf9-iq-iuW" id="n3s-Ur-1Zf"/>
+                <outlet property="defaultCardImageView" destination="scJ-JB-nrC" id="NpF-6e-FMq"/>
+                <outlet property="disclaimerLabel" destination="dN2-8D-HRY" id="WFf-ua-q4H"/>
+                <outlet property="holderLabel" destination="BSm-JW-eVf" id="tGU-9Q-T10"/>
+                <outlet property="removeCardButton" destination="SNk-3d-uIK" id="u82-vm-Ewx"/>
+                <outlet property="setDefaultButton" destination="ZZn-bE-Xck" id="eer-yr-6L0"/>
+                <outlet property="validityDateLabel" destination="hnj-1g-Qvf" id="Skg-lm-ZJU"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="204"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="favoriteAddress" width="15" height="15"/>
+        <image name="img_amex" width="47" height="30"/>
+    </resources>
+</document>

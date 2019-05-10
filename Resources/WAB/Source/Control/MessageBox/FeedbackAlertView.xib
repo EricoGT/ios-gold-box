@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackAlertView">
+            <connections>
+                <outlet property="imageView" destination="BG1-Pw-bJW" id="yZT-aQ-EaZ"/>
+                <outlet property="lbMessage" destination="00M-f2-jDK" id="dCN-uU-SAi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_alert_warning" translatesAutoresizingMaskIntoConstraints="NO" id="BG1-Pw-bJW">
+                    <rect key="frame" x="15" y="14" width="26" height="26"/>
+                    <accessibility key="accessibilityConfiguration" label="feedback-alert-3">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="67l-M6-bdM"/>
+                        <constraint firstAttribute="height" constant="26" id="XYe-hk-IhN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensagem" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="00M-f2-jDK">
+                    <rect key="frame" x="52" y="15" width="253" height="24"/>
+                    <accessibility key="accessibilityConfiguration" label="feedback-alert-2"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="feedbackalerta"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.4823529411764706" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="feedbackAlert" label="feedback-alert-1">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="00M-f2-jDK" firstAttribute="leading" secondItem="BG1-Pw-bJW" secondAttribute="trailing" constant="11" id="4NX-24-Yba"/>
+                <constraint firstItem="00M-f2-jDK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="6uG-K4-heS"/>
+                <constraint firstItem="ocJ-e6-ajh" firstAttribute="bottom" secondItem="00M-f2-jDK" secondAttribute="bottom" constant="15" id="LvN-iJ-x5k"/>
+                <constraint firstAttribute="trailing" secondItem="00M-f2-jDK" secondAttribute="trailing" constant="15" id="MM0-hP-GqE"/>
+                <constraint firstItem="BG1-Pw-bJW" firstAttribute="centerY" secondItem="00M-f2-jDK" secondAttribute="centerY" id="bgW-OW-eop"/>
+                <constraint firstItem="BG1-Pw-bJW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="c3K-37-h4I"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ocJ-e6-ajh"/>
+            <point key="canvasLocation" x="290" y="509"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_alert_warning" width="26" height="26"/>
+    </resources>
+</document>

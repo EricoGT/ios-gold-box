@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchSortTableViewController">
+            <connections>
+                <outlet property="sortViewBottomConstraint" destination="58n-2E-kQ5" id="3ko-5d-p01"/>
+                <outlet property="tableView" destination="jmi-9a-c0z" id="H5D-sk-gVX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jmi-9a-c0z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="faS-c9-j5e"/>
+                        <outlet property="delegate" destination="-1" id="3h2-aA-Jfz"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jmi-9a-c0z" firstAttribute="bottom" secondItem="GXF-Is-f5T" secondAttribute="bottom" constant="-40" id="58n-2E-kQ5"/>
+                <constraint firstItem="jmi-9a-c0z" firstAttribute="leading" secondItem="GXF-Is-f5T" secondAttribute="leading" id="9w7-fo-AQZ"/>
+                <constraint firstItem="jmi-9a-c0z" firstAttribute="trailing" secondItem="GXF-Is-f5T" secondAttribute="trailing" id="B9j-U0-vC8"/>
+                <constraint firstItem="jmi-9a-c0z" firstAttribute="top" secondItem="GXF-Is-f5T" secondAttribute="top" id="oMs-He-N2v"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="GXF-Is-f5T"/>
+        </view>
+    </objects>
+</document>

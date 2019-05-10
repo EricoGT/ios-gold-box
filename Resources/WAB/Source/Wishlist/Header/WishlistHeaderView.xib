@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WishlistHeaderView">
+            <connections>
+                <outlet property="nameLabel" destination="erK-gn-Ybk" id="vUo-Kf-Y5q"/>
+                <outlet property="sortPicker" destination="vUb-fX-l1a" id="asT-9C-PbF"/>
+                <outlet property="toViewPicker" destination="5V2-ES-oXn" id="Vys-g9-BLd"/>
+                <outlet property="totalItemsLabel" destination="Lke-Bi-HSn" id="Oj3-hh-zRN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hWy-qb-1T0">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_heart_red" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-bg-hOt">
+                    <rect key="frame" x="5" y="13" width="50" height="40"/>
+                    <accessibility key="accessibilityConfiguration" identifier="HeartButton">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="fxE-zF-Vas"/>
+                        <constraint firstAttribute="height" constant="40" id="y25-nG-uoX"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmI-s8-Xts">
+                    <rect key="frame" x="54" y="15" width="251" height="37"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="erK-gn-Ybk" userLabel="Username Label">
+                            <rect key="frame" x="0.0" y="0.0" width="251" height="25"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você tem n itens na sua lista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lke-Bi-HSn">
+                            <rect key="frame" x="0.0" y="20" width="251" height="17"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="erK-gn-Ybk" firstAttribute="top" secondItem="gmI-s8-Xts" secondAttribute="top" id="2NB-zU-Hmo"/>
+                        <constraint firstItem="Lke-Bi-HSn" firstAttribute="top" secondItem="erK-gn-Ybk" secondAttribute="bottom" constant="-5" id="3dj-5Q-LQU"/>
+                        <constraint firstItem="Lke-Bi-HSn" firstAttribute="leading" secondItem="gmI-s8-Xts" secondAttribute="leading" id="CCM-VW-Kzp"/>
+                        <constraint firstItem="erK-gn-Ybk" firstAttribute="leading" secondItem="gmI-s8-Xts" secondAttribute="leading" id="NgG-rn-kBL"/>
+                        <constraint firstAttribute="trailing" secondItem="Lke-Bi-HSn" secondAttribute="trailing" id="ljs-A3-l3E"/>
+                        <constraint firstAttribute="trailing" secondItem="erK-gn-Ybk" secondAttribute="trailing" id="s7i-ca-dKm"/>
+                        <constraint firstAttribute="bottom" secondItem="Lke-Bi-HSn" secondAttribute="bottom" id="slV-th-GFG"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Visualizar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V2-ES-oXn" customClass="WMPickerTextField">
+                    <rect key="frame" x="12" y="67" width="140.5" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oDu-aj-0qC"/>
+                    </constraints>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ordenar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUb-fX-l1a" customClass="WMPickerTextField">
+                    <rect key="frame" x="167.5" y="67" width="140.5" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="7oI-N4-9nT"/>
+                    </constraints>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tcR-bg-hOt" firstAttribute="leading" secondItem="hWy-qb-1T0" secondAttribute="leading" constant="5" id="2st-x2-J35"/>
+                <constraint firstAttribute="bottom" secondItem="5V2-ES-oXn" secondAttribute="bottom" constant="15" id="CrL-DJ-7Mk"/>
+                <constraint firstItem="gmI-s8-Xts" firstAttribute="leading" secondItem="hWy-qb-1T0" secondAttribute="leading" constant="54" id="Cyf-lA-o4N"/>
+                <constraint firstItem="5V2-ES-oXn" firstAttribute="leading" secondItem="hWy-qb-1T0" secondAttribute="leading" constant="12" id="Fjp-T8-SaG"/>
+                <constraint firstItem="vUb-fX-l1a" firstAttribute="leading" secondItem="5V2-ES-oXn" secondAttribute="trailing" constant="15" id="KCS-cH-WxT"/>
+                <constraint firstItem="vUb-fX-l1a" firstAttribute="width" secondItem="5V2-ES-oXn" secondAttribute="width" id="UOh-eD-p81"/>
+                <constraint firstAttribute="trailing" secondItem="vUb-fX-l1a" secondAttribute="trailing" constant="12" id="Zvh-W7-5ct"/>
+                <constraint firstItem="vUb-fX-l1a" firstAttribute="top" secondItem="gmI-s8-Xts" secondAttribute="bottom" constant="15" id="cFU-gt-PXU"/>
+                <constraint firstItem="5V2-ES-oXn" firstAttribute="top" secondItem="gmI-s8-Xts" secondAttribute="bottom" constant="15" id="e7Y-An-ELJ"/>
+                <constraint firstAttribute="trailing" secondItem="gmI-s8-Xts" secondAttribute="trailing" constant="15" id="eds-0d-8so"/>
+                <constraint firstItem="gmI-s8-Xts" firstAttribute="top" secondItem="hWy-qb-1T0" secondAttribute="top" constant="15" id="n6j-4d-YlE"/>
+                <constraint firstItem="tcR-bg-hOt" firstAttribute="centerY" secondItem="gmI-s8-Xts" secondAttribute="centerY" id="rMe-Uf-X3K"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-51" y="63"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_heart_red" width="21" height="18"/>
+    </resources>
+</document>

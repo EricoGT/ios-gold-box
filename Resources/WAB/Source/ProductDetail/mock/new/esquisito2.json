@@ -1,0 +1,54 @@
+{
+   "product":{
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "hasExtendedWarranty":false,
+      "id":"2103505",
+      "rating":0,
+      "standardSku":120391,
+      "title":"Advantage Max 3 Combo Leve 3 Pague 2 Bayer de 4 A 10 Kg - 1 Ml",
+      "imageIds":[
+         "2444868",
+         "0"
+      ],
+      "sellerOptions":[
+         {
+            "currency":"R$ ",
+            "discountPrice":87.6,
+            "formattedListPrice":"87,60",
+            "formattedSellPrice":"87,60",
+            "instalment":2,
+            "instalmentValue":43.8,
+            "name":"1 ml",
+            "originalPrice":87.6,
+            "price":87.6,
+            "quantityAvailable":1,
+            "saveAmount":"0,00",
+            "savePercentage":0,
+            "sku":120391,
+            "seller":"Meu Amigo Pet",
+            "sellerId":"vtex_prod_meuamigopet",
+            "active":true,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            },
+            "available":true,
+            "supplierStock":false
+         }
+      ],
+      "optionsType":"Dosagem",
+      "variations":[
+         {
+            "name":"1,0 ml",
+            "optionsType":"Peso Recomendado",
+            "options":[
+               {
+                  "name":"4 a 10 Kg",
+                  "sku":120391,
+                  "imageId":"2444868"
+               }
+            ]
+         }
+      ]
+   }
+}

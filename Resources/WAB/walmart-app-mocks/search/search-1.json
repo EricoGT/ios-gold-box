@@ -1,0 +1,91 @@
+{
+  "count": 1,
+  "products": [
+    {
+      "productId": 2947933,
+      "skuId": 1061631,
+      "title": "Ginásio de Atividades Hippo Gym Colorido Chicco",
+      "imageId": "4006407",
+      "hasMoreOffers": false,
+      "hasSkuOptions": false,
+      "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 179,
+        "sellPrice": 169,
+        "installmentAmount": 17,
+        "valuePerInstallment": 9.94
+      }
+    },
+    {
+      "productId": 2704652,
+      "skuId": 806009,
+      "title": "Jogo Fifa 15 para Playstation 3",
+      "imageId": "3733424",
+      "hasMoreOffers": true,
+      "hasSkuOptions": false,
+      "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+      "rating": {
+        "value": 3,
+        "total": 2
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 350,
+        "sellPrice": 290,
+        "installmentAmount": 17,
+        "valuePerInstallment": 9.94
+      },
+      "suggestion": {
+        "price": {
+          "current": 290,
+          "discountedPrice": 50
+        },
+        "paymentMethod": "BANK_SLIP"
+      }
+    }
+  ],
+  "filters": {
+    "departments": [
+      {
+        "name": "Brinquedos e Diversão",
+        "count": 0,
+        "filterValue": "?fq=C:586&ft=2947933&PS=20&mm=100",
+        "selected": false,
+        "categories": [
+          {
+            "name": "Tapetes e Ginásios",
+            "count": 1,
+            "url": "automacao filtro 2",
+            "selected": false,
+            "countSubCategories": 0,
+            "subCategories": []
+          }
+        ]
+      }
+    ],
+    "brands": [
+      {
+        "name": "Chicco",
+        "count": 1,
+        "url": "automacao filtro 2",
+        "selected": false
+      }
+    ],
+    "specs": [],
+    "pricesRange": [
+      {
+        "name": "De R$100,00 até R$199,90",
+        "count": 1,
+        "url": "?fq=C:580/586/618/&amp;fq=P:[100.00 TO 199.90]&amp;ft=2947933&amp;PS=20&amp;mm=100",
+        "selected": false
+      }
+    ]
+  }
+}

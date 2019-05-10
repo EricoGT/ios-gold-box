@@ -1,0 +1,114 @@
+{
+  "product": {
+    "imagesIds": [
+      "4255568",
+      "2761065"
+    ],
+    "productId": 2036037,
+    "skuId": 38063,
+    "title": "Advantage Max 3 Cães  - Bayer",
+    "departmentId": 4423,
+    "categoryId": 4424,
+    "subCategoryId": 4436,
+    "stampUrl": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+    "stampTitle": "Campanha Liquida Geral",
+    "stampDescription": "Esta é a descrição da Campanha",
+    "stampFullDescription": "https://qa.webstore.waldev.com.br/busca/?ft=bola&amp;PS=20",
+    "deliveryStampUrl": "",
+    "mainOffer": [
+      {
+        "sku": 38063,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "vtex_prod_meuamigopet",
+          "name": "Meu Amigo Pet"
+        },
+        "price": {
+          "listPrice": 119.5,
+          "sellPrice": 110.83,
+          "instalment": 10,
+          "instalmentValue": 11.08
+        },
+        "available": true
+      },
+      {
+        "sku": 38066,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "1",
+          "name": "Walmart"
+        },
+        "price": {
+          "listPrice": 139.5,
+          "sellPrice": 98,
+          "instalment": 10,
+          "instalmentValue": 9.8
+        },
+        "available": true
+      }
+    ],
+    "rating": {
+      "value": 0,
+      "total": 0
+    },
+    "optionsType": "Cor",
+    "variations": [
+      {
+        "name": "Único",
+        "optionsType": "Dosagem",
+        "options": [
+          {
+            "name": "Único",
+            "optionsType": "Peso Recomendado",
+            "options": [
+              {
+                "name": "10 a 25 Kg",
+                "optionsType": "Quantidade",
+                "options": [
+                  {
+                    "name": "Único",
+                    "sku": 38088,
+                    "imageId": "2142931"
+                  }
+                ]
+              },
+              {
+                "name": "4 a 10 Kg",
+                "optionsType": "Quantidade",
+                "options": [
+                  {
+                    "name": "Único",
+                    "sku": 38135,
+                    "imageId": "2144374"
+                  }
+                ]
+              },
+              {
+                "name": "Acima de 25 Kg",
+                "optionsType": "Quantidade",
+                "options": [
+                  {
+                    "name": "Único",
+                    "sku": 38136,
+                    "imageId": "2144377"
+                  }
+                ]
+              },
+              {
+                "name": "Até 4 Kg",
+                "optionsType": "Quantidade",
+                "options": [
+                  {
+                    "name": "Único",
+                    "sku": 38063,
+                    "imageId": "2099520"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMAlertView">
+            <connections>
+                <outlet property="alertLeadingConstraint" destination="wBC-0c-k8W" id="31g-pU-ftB"/>
+                <outlet property="alertTrailingConstraint" destination="zU4-nf-afR" id="n4Q-bs-EZK"/>
+                <outlet property="dismissButton" destination="3ad-jW-MnI" id="rvx-Mb-z1s"/>
+                <outlet property="imageHeightConstraint" destination="Hkx-WO-euu" id="a6S-cf-ANl"/>
+                <outlet property="imageTopSpaceConstraint" destination="lhW-DD-AXO" id="Mto-Sj-YmK"/>
+                <outlet property="imageView" destination="oL0-lb-Ow3" id="lmq-1A-XgP"/>
+                <outlet property="imageWidthConstraint" destination="BLr-3o-POC" id="uOD-2i-yqh"/>
+                <outlet property="messageLabel" destination="Onn-mW-Ild" id="R2v-cu-b4Y"/>
+                <outlet property="titleLabel" destination="DRr-Nz-JQ3" id="jHd-18-pXP"/>
+                <outlet property="titleLabelTopSpaceConstraint" destination="peu-I0-dNQ" id="leV-ux-DXA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-cy-Upy" userLabel="Box View">
+                    <rect key="frame" x="15" y="235.5" width="345" height="196.5"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ops!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="DRr-Nz-JQ3">
+                            <rect key="frame" x="15" y="74" width="315" height="18"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="Onn-mW-Ild">
+                            <rect key="frame" x="15" y="107" width="315" height="15.5"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-jW-MnI" customClass="WMButtonRounded">
+                            <rect key="frame" x="20" y="142.5" width="305" height="34"/>
+                            <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="LqY-qF-1HC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <state key="normal" title="OK"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressedDismiss:" destination="-1" eventType="touchUpInside" id="N5b-B0-HMw"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-lb-Ow3">
+                            <rect key="frame" x="150.5" y="15" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="BLr-3o-POC"/>
+                                <constraint firstAttribute="height" constant="44" id="Hkx-WO-euu"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="3ad-jW-MnI" firstAttribute="top" secondItem="Onn-mW-Ild" secondAttribute="bottom" constant="20" id="3Jf-I2-MM1"/>
+                        <constraint firstItem="DRr-Nz-JQ3" firstAttribute="leading" secondItem="DcR-cy-Upy" secondAttribute="leading" constant="15" id="5Ny-Re-jRK"/>
+                        <constraint firstItem="3ad-jW-MnI" firstAttribute="leading" secondItem="DcR-cy-Upy" secondAttribute="leading" constant="20" id="808-pj-ZBh"/>
+                        <constraint firstItem="oL0-lb-Ow3" firstAttribute="centerX" secondItem="DcR-cy-Upy" secondAttribute="centerX" id="9mT-t3-sWp"/>
+                        <constraint firstItem="Onn-mW-Ild" firstAttribute="leading" secondItem="DcR-cy-Upy" secondAttribute="leading" constant="15" id="E1g-ek-dch"/>
+                        <constraint firstAttribute="trailing" secondItem="Onn-mW-Ild" secondAttribute="trailing" constant="15" id="Hdz-Ay-ew7"/>
+                        <constraint firstAttribute="trailing" secondItem="3ad-jW-MnI" secondAttribute="trailing" constant="20" id="KKW-bz-u5e"/>
+                        <constraint firstItem="Onn-mW-Ild" firstAttribute="top" secondItem="DRr-Nz-JQ3" secondAttribute="bottom" constant="15" id="Wl5-pt-BQd"/>
+                        <constraint firstAttribute="trailing" secondItem="DRr-Nz-JQ3" secondAttribute="trailing" constant="15" id="aKr-T0-eBf"/>
+                        <constraint firstItem="oL0-lb-Ow3" firstAttribute="top" secondItem="DcR-cy-Upy" secondAttribute="top" constant="15" id="lhW-DD-AXO"/>
+                        <constraint firstAttribute="bottom" secondItem="3ad-jW-MnI" secondAttribute="bottom" constant="20" id="mld-hK-nE0"/>
+                        <constraint firstItem="DRr-Nz-JQ3" firstAttribute="top" secondItem="oL0-lb-Ow3" secondAttribute="bottom" constant="15" id="peu-I0-dNQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DcR-cy-Upy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fGU-DP-Ofc"/>
+                <constraint firstItem="DcR-cy-Upy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="wBC-0c-k8W"/>
+                <constraint firstAttribute="trailing" secondItem="DcR-cy-Upy" secondAttribute="trailing" constant="15" id="zU4-nf-afR"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

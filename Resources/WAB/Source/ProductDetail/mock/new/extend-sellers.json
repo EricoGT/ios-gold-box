@@ -1,0 +1,80 @@
+{
+   "message":{
+      "type":"",
+      "message":"",
+      "title":"",
+      "buttonOk":"",
+      "buttonCancel":"",
+      "url":"",
+      "status":0
+   },
+   "product":{
+      "id":"2014940",
+      "standardSku":15132,
+      "title":"Cama Carros Disney Happy 3A, Branco e Vermelho - Pura Magia",
+      "rating":0,
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "imageIds":[
+         "2894488",
+         "0"
+      ],
+      "stampUrl":"",
+      "stampTitle":"",
+      "deliveryStampUrl":"",
+      "priceVariations":true,
+      "sellerOptions":[
+         {
+            "sku":15132,
+            "name":"Cama Carros Disney Happy 3A, Branco e Vermelho - Pura Magia",
+            "hasExtendedWarranty":true,
+            "currency":"R$ ",
+            "originalPrice":505,
+            "discountPrice":454.41,
+            "price":454.41,
+            "saveAmount":"50,59",
+            "savePercentage":10,
+            "formattedListPrice":"505,00",
+            "formattedSellPrice":"454,41",
+            "instalment":15,
+            "instalmentValue":30.29,
+            "quantityAvailable":64,
+            "seller":"Casa Tema",
+            "sellerId":"casatema",
+            "active":true,
+            "available":true,
+            "supplierStock":false,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            }
+         },
+         {
+            "hasExtendedWarranty":false,
+            "currency":"R$ ",
+            "originalPrice":579,
+            "discountPrice":502.7,
+            "price":502.7,
+            "saveAmount":"76,30",
+            "savePercentage":13,
+            "formattedListPrice":"579,00",
+            "formattedSellPrice":"502,70",
+            "instalment":15,
+            "instalmentValue":33.51,
+            "quantityAvailable":21,
+            "seller":"Walmart",
+            "sellerId":"1",
+            "active":true,
+            "available":true,
+            "supplierStock":false,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            }
+         }
+      ],
+      "optionsType":"",
+      "variations":[
+
+      ]
+   }
+}

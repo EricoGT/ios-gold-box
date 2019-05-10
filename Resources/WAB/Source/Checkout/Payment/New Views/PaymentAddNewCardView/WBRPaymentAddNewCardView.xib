@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRPaymentAddNewCardView">
+            <connections>
+                <outlet property="addNewCardButton" destination="8TF-in-2ng" id="oIK-El-X0j"/>
+                <outlet property="addNewCardButtonHeightConstraint" destination="CKS-Tp-QfW" id="MpA-9K-h8G"/>
+                <outlet property="addNewCardViewBottomConstraint" destination="TfK-MZ-X4P" id="3mN-k7-cXT"/>
+                <outlet property="cardReaderButton" destination="8uw-kN-R7F" id="0rU-au-KdV"/>
+                <outlet property="clientDocument" destination="QSr-s4-7Ar" id="Vtv-wV-zhv"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="9qQ-uf-FES"/>
+                <outlet property="creditCardCvv" destination="X6j-YY-luZ" id="PQq-Mk-k09"/>
+                <outlet property="creditCardExpirationDate" destination="wBf-ya-zmF" id="xvZ-5P-0iu"/>
+                <outlet property="creditCardFlagImage" destination="iY8-lg-YG6" id="fKW-0V-jAy"/>
+                <outlet property="creditCardName" destination="7UV-TH-mhb" id="14Y-Dm-F8q"/>
+                <outlet property="creditCardNumber" destination="hiz-DS-N95" id="oMB-jo-SKA"/>
+                <outlet property="installmentSelectedTextField" destination="y8n-12-aWf" id="5iY-JA-NqU"/>
+                <outlet property="rateLabel" destination="2pG-6A-3gj" id="Gbt-KY-uIV"/>
+                <outlet property="rateLabelTopContraint" destination="YC0-Qd-eUG" id="8cr-U5-Ghx"/>
+                <outlet property="saveCardToggleButton" destination="DJ8-s8-8Ww" id="jyp-3U-3Wr"/>
+                <outlet property="saveCardView" destination="vfg-RJ-2Hn" id="PWd-ak-nKp"/>
+                <outlet property="titleLabel" destination="wsZ-Gp-6Sd" id="sci-sH-yzd"/>
+                <outlet property="titleLabelBottomConstraint" destination="79R-6c-JNb" id="QxF-ve-YNi"/>
+                <outlet property="titleLabelHeightConstraint" destination="Y6b-mh-nl3" id="SYl-Rw-3DX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="564"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-in-2ng" customClass="WMBDottedBorderButton">
+                    <rect key="frame" x="0.0" y="5" width="300" height="70"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="800" constant="70" id="CKS-Tp-QfW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <state key="normal" title="+ Adicionar novo cartão">
+                        <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="paintedSize">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="notPaintedSize">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addNewCardAction:" destination="-1" eventType="touchUpInside" id="8cW-9z-7Gx"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xM-IB-jBV">
+                    <rect key="frame" x="0.0" y="75" width="300" height="489"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novo cartão de crédito" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-Gp-6Sd">
+                            <rect key="frame" x="0.0" y="0.0" width="153" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="18" id="Y6b-mh-nl3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlQ-DF-7Eu" userLabel="Card Flags Container">
+                            <rect key="frame" x="0.0" y="38" width="300" height="26"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_visa" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-bC-S5s">
+                                    <rect key="frame" x="0.0" y="0.0" width="43" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="RXi-f5-RGh"/>
+                                        <constraint firstAttribute="width" priority="800" constant="43" id="auc-qM-YRd"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ih-Xb-kSN">
+                                    <rect key="frame" x="43" y="0.0" width="0.5" height="26"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="Afy-hl-uoc"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_amex" translatesAutoresizingMaskIntoConstraints="NO" id="F3e-PH-DvF">
+                                    <rect key="frame" x="43.5" y="0.0" width="43" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="43" id="IaS-Ce-fW1"/>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="hsq-gc-Cfx"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8z-ay-gUj">
+                                    <rect key="frame" x="86.5" y="0.0" width="0.5" height="26"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="sZV-Zp-Obc"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_card_elo" translatesAutoresizingMaskIntoConstraints="NO" id="Yf8-Im-BHn">
+                                    <rect key="frame" x="87" y="0.0" width="43" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="43" id="qUk-mG-JHh"/>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="w8S-1O-xBM"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riH-EK-3gG">
+                                    <rect key="frame" x="130" y="0.0" width="0.0" height="26"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="csb-mQ-i46"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_master" translatesAutoresizingMaskIntoConstraints="NO" id="8rb-jB-erD">
+                                    <rect key="frame" x="130" y="0.0" width="43" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="2vQ-dZ-keP"/>
+                                        <constraint firstAttribute="width" priority="800" constant="43" id="cSI-2S-SfQ"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ia-Bh-O52">
+                                    <rect key="frame" x="173" y="0.0" width="0.5" height="26"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="IhJ-mL-YeW"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_diners" translatesAutoresizingMaskIntoConstraints="NO" id="4Qd-ap-Z7h">
+                                    <rect key="frame" x="173.5" y="0.0" width="43" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="43" id="UiD-GU-W1j"/>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="ZiR-Mk-vAz"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-wi-7sr">
+                                    <rect key="frame" x="216.5" y="0.0" width="0.5" height="26"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="UhL-Ke-XC6"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_card_hiper" translatesAutoresizingMaskIntoConstraints="NO" id="iP6-IW-MQH">
+                                    <rect key="frame" x="217" y="0.0" width="83" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="83" id="Ts0-gX-QzZ"/>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="q35-HV-H92"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="sgl-bC-S5s" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="1RE-7T-Tcq"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="3VN-sp-SKd"/>
+                                <constraint firstItem="4Ia-Bh-O52" firstAttribute="leading" secondItem="8rb-jB-erD" secondAttribute="trailing" priority="800" id="3bq-My-6sd"/>
+                                <constraint firstItem="iP6-IW-MQH" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="9Im-xm-uq4"/>
+                                <constraint firstItem="Yf8-Im-BHn" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="Cxn-fD-DOd"/>
+                                <constraint firstItem="4Qd-ap-Z7h" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="IEH-o1-0kX"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="leading" secondItem="sgl-bC-S5s" secondAttribute="trailing" priority="800" id="Ieo-qM-P0K"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="width" secondItem="4Ia-Bh-O52" secondAttribute="width" priority="800" id="Lvp-gl-Qu8"/>
+                                <constraint firstAttribute="height" priority="800" constant="26" id="RQI-qb-ErB"/>
+                                <constraint firstItem="riH-EK-3gG" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="SsZ-NE-c3p"/>
+                                <constraint firstItem="Yf8-Im-BHn" firstAttribute="leading" secondItem="X8z-ay-gUj" secondAttribute="trailing" priority="800" id="TSu-Cu-OHQ"/>
+                                <constraint firstItem="F3e-PH-DvF" firstAttribute="leading" secondItem="6ih-Xb-kSN" secondAttribute="trailing" priority="800" id="Ta8-tz-jGR"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="width" secondItem="riH-EK-3gG" secondAttribute="width" priority="800" id="UYj-c2-1Ri"/>
+                                <constraint firstItem="gDa-wi-7sr" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="Y3o-bs-11P"/>
+                                <constraint firstItem="gDa-wi-7sr" firstAttribute="leading" secondItem="4Qd-ap-Z7h" secondAttribute="trailing" priority="800" id="Yxn-eF-dIx"/>
+                                <constraint firstItem="iP6-IW-MQH" firstAttribute="leading" secondItem="gDa-wi-7sr" secondAttribute="trailing" priority="800" id="ZpV-hc-zpq"/>
+                                <constraint firstItem="sgl-bC-S5s" firstAttribute="leading" secondItem="NlQ-DF-7Eu" secondAttribute="leading" priority="800" id="aRB-VO-0mo"/>
+                                <constraint firstItem="X8z-ay-gUj" firstAttribute="leading" secondItem="F3e-PH-DvF" secondAttribute="trailing" priority="800" id="cuX-xS-GTI"/>
+                                <constraint firstAttribute="trailing" secondItem="iP6-IW-MQH" secondAttribute="trailing" priority="800" id="dCE-63-6RC"/>
+                                <constraint firstItem="riH-EK-3gG" firstAttribute="leading" secondItem="Yf8-Im-BHn" secondAttribute="trailing" priority="800" id="gTc-I8-oM8"/>
+                                <constraint firstItem="F3e-PH-DvF" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="hgC-jR-nRA"/>
+                                <constraint firstItem="8rb-jB-erD" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="kNh-cc-k2t"/>
+                                <constraint firstItem="4Ia-Bh-O52" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="mRE-If-2gc"/>
+                                <constraint firstItem="X8z-ay-gUj" firstAttribute="centerY" secondItem="NlQ-DF-7Eu" secondAttribute="centerY" priority="800" id="qd0-ay-95d"/>
+                                <constraint firstItem="8rb-jB-erD" firstAttribute="leading" secondItem="riH-EK-3gG" secondAttribute="trailing" priority="800" id="tFT-lg-AkC"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="width" secondItem="X8z-ay-gUj" secondAttribute="width" priority="800" id="tut-tW-6Lq"/>
+                                <constraint firstItem="4Qd-ap-Z7h" firstAttribute="leading" secondItem="4Ia-Bh-O52" secondAttribute="trailing" priority="800" id="v40-Dd-OwS"/>
+                                <constraint firstItem="6ih-Xb-kSN" firstAttribute="width" secondItem="gDa-wi-7sr" secondAttribute="width" priority="800" id="y0T-8W-6OS"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sk5-lC-Xga" userLabel="Card Reader Button Container">
+                            <rect key="frame" x="15" y="85" width="270" height="62"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-kN-R7F" customClass="WMButtonRounded">
+                                    <rect key="frame" x="27.5" y="9" width="216" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="216" id="VC2-fA-IUI"/>
+                                        <constraint firstAttribute="height" priority="800" constant="44" id="ZIz-hW-me3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <state key="normal" title="Utilizar leitor de cartão" image="creditCardReader"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="presentCameraToScanCreditCard" destination="-1" eventType="touchUpInside" id="S8J-P1-A5B"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="8uw-kN-R7F" firstAttribute="centerY" secondItem="sk5-lC-Xga" secondAttribute="centerY" priority="800" id="cee-4l-UN9"/>
+                                <constraint firstAttribute="height" priority="800" constant="62" id="hLO-ZW-say"/>
+                                <constraint firstItem="8uw-kN-R7F" firstAttribute="centerX" secondItem="sk5-lC-Xga" secondAttribute="centerX" priority="800" id="ofy-at-Kf0"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Número do seu cartão de crédito" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-DS-N95" userLabel="Card Number" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="0.0" y="168" width="300" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="0M1-Xw-f7O"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iY8-lg-YG6" userLabel="Card Flag">
+                            <rect key="frame" x="202" y="175" width="83" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="800" constant="83" id="aXI-4J-aZj"/>
+                                <constraint firstAttribute="height" priority="800" constant="30" id="tb1-S1-y5k"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Seu nome como está impresso no cartão" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7UV-TH-mhb" userLabel="Card User Name" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="0.0" y="227" width="300" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="N8K-Hc-rST"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Validade (mm/aa)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-ya-zmF" userLabel="Card Expiration Date" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="0.0" y="286" width="120" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="SWo-gb-RoF"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditCardCvv" translatesAutoresizingMaskIntoConstraints="NO" id="464-r9-kQ0" userLabel="Card CVV Location">
+                            <rect key="frame" x="135" y="294" width="42" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="800" constant="42" id="ncZ-Jf-kFJ"/>
+                                <constraint firstAttribute="height" priority="800" constant="28" id="vDo-O8-NaN"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Código CVV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6j-YY-luZ" userLabel="Card CVV Code" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="192" y="286" width="108" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="800" constant="108" id="LYv-BG-4SI"/>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="Ygy-KV-gK2"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantidade de parcelas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8n-12-aWf" userLabel="Number" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="0.0" y="345" width="300" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="6pC-Md-rRi"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at0-va-O5K">
+                            <rect key="frame" x="0.0" y="345" width="300" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="dBB-uO-6fp"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
+                            <state key="normal" image="ic_arrow_right"/>
+                            <connections>
+                                <action selector="openPaymentOptions:" destination="-1" eventType="touchUpInside" id="XhG-wc-1de"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pG-6A-3gj">
+                            <rect key="frame" x="0.0" y="397" width="300" height="0.0"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF ou CNPJ do titular" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSr-s4-7Ar" userLabel="CPF CNPJ" customClass="WMFloatLabelMaskedTextField">
+                            <rect key="frame" x="0.0" y="412" width="300" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="44" id="Raz-b9-Fg3"/>
+                            </constraints>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtUser"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfg-RJ-2Hn" userLabel="Save Card View">
+                            <rect key="frame" x="0.0" y="469" width="300" height="20"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJ8-s8-8Ww" userLabel="Default Card Button">
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="800" constant="20" id="GXi-L4-dxt"/>
+                                        <constraint firstAttribute="height" priority="800" constant="20" id="Rv3-T7-mto"/>
+                                    </constraints>
+                                    <state key="normal" image="btn_checkbox_on">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtMainAddress"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveCardPressed:" destination="-1" eventType="touchUpInside" id="vzs-ML-8Tq"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salvar este cartão para as próximas compras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S1-ZI-lkU">
+                                    <rect key="frame" x="25" y="2" width="261" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="15" id="ERb-sP-xPZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="7S1-ZI-lkU" firstAttribute="centerY" secondItem="vfg-RJ-2Hn" secondAttribute="centerY" priority="800" id="6Oy-A4-TF1"/>
+                                <constraint firstItem="7S1-ZI-lkU" firstAttribute="leading" secondItem="DJ8-s8-8Ww" secondAttribute="trailing" priority="800" constant="5" id="AW8-8n-EII"/>
+                                <constraint firstItem="DJ8-s8-8Ww" firstAttribute="leading" secondItem="vfg-RJ-2Hn" secondAttribute="leading" priority="800" id="CTH-Vp-DEq"/>
+                                <constraint firstAttribute="bottom" secondItem="DJ8-s8-8Ww" secondAttribute="bottom" priority="800" id="LeW-lh-rvo"/>
+                                <constraint firstItem="DJ8-s8-8Ww" firstAttribute="top" secondItem="vfg-RJ-2Hn" secondAttribute="top" priority="800" id="ym5-hR-dYf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="QSr-s4-7Ar" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="1D6-xd-z4s"/>
+                        <constraint firstItem="at0-va-O5K" firstAttribute="top" secondItem="X6j-YY-luZ" secondAttribute="bottom" priority="800" constant="15" id="41k-es-pug"/>
+                        <constraint firstItem="NlQ-DF-7Eu" firstAttribute="top" secondItem="wsZ-Gp-6Sd" secondAttribute="bottom" priority="800" constant="20" id="79R-6c-JNb"/>
+                        <constraint firstItem="wsZ-Gp-6Sd" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="Dgt-8I-31V"/>
+                        <constraint firstItem="464-r9-kQ0" firstAttribute="leading" secondItem="wBf-ya-zmF" secondAttribute="trailing" priority="800" constant="15" id="Dtm-bC-OSv"/>
+                        <constraint firstItem="at0-va-O5K" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="FhP-c3-dfk"/>
+                        <constraint firstItem="y8n-12-aWf" firstAttribute="top" secondItem="X6j-YY-luZ" secondAttribute="bottom" priority="800" constant="15" id="Gyu-v0-KoM"/>
+                        <constraint firstAttribute="trailing" secondItem="NlQ-DF-7Eu" secondAttribute="trailing" id="Hqh-XA-hZ3"/>
+                        <constraint firstAttribute="trailing" secondItem="sk5-lC-Xga" secondAttribute="trailing" priority="800" constant="15" id="Ih5-OX-l1M"/>
+                        <constraint firstAttribute="trailing" secondItem="y8n-12-aWf" secondAttribute="trailing" priority="800" id="Jkf-MD-rE0"/>
+                        <constraint firstItem="NlQ-DF-7Eu" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" id="JyG-NN-NnB"/>
+                        <constraint firstAttribute="trailing" secondItem="iY8-lg-YG6" secondAttribute="trailing" priority="800" constant="15" id="Klh-Gc-CYz"/>
+                        <constraint firstItem="wBf-ya-zmF" firstAttribute="top" secondItem="7UV-TH-mhb" secondAttribute="bottom" priority="800" constant="15" id="OkI-go-PWl"/>
+                        <constraint firstItem="vfg-RJ-2Hn" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="OyP-ww-N7N"/>
+                        <constraint firstItem="X6j-YY-luZ" firstAttribute="top" secondItem="7UV-TH-mhb" secondAttribute="bottom" priority="800" constant="15" id="PIE-mV-RwI"/>
+                        <constraint firstItem="7UV-TH-mhb" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="Plk-k7-uGo"/>
+                        <constraint firstItem="wBf-ya-zmF" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="R9L-B3-Hr0"/>
+                        <constraint firstAttribute="trailing" secondItem="vfg-RJ-2Hn" secondAttribute="trailing" priority="800" id="TXY-af-ecH"/>
+                        <constraint firstItem="X6j-YY-luZ" firstAttribute="leading" secondItem="464-r9-kQ0" secondAttribute="trailing" priority="800" constant="15" id="Upu-xk-rdb"/>
+                        <constraint firstItem="QSr-s4-7Ar" firstAttribute="top" secondItem="2pG-6A-3gj" secondAttribute="bottom" priority="800" constant="15" id="V4D-i4-VZf"/>
+                        <constraint firstItem="2pG-6A-3gj" firstAttribute="top" secondItem="at0-va-O5K" secondAttribute="bottom" priority="800" constant="8" id="YC0-Qd-eUG"/>
+                        <constraint firstItem="hiz-DS-N95" firstAttribute="top" secondItem="sk5-lC-Xga" secondAttribute="bottom" priority="800" constant="21" id="Zq5-Mm-rvs"/>
+                        <constraint firstItem="sk5-lC-Xga" firstAttribute="top" secondItem="NlQ-DF-7Eu" secondAttribute="bottom" priority="800" constant="21" id="Zsk-az-4nx"/>
+                        <constraint firstItem="464-r9-kQ0" firstAttribute="centerY" secondItem="wBf-ya-zmF" secondAttribute="centerY" priority="800" id="aTV-5y-zwk"/>
+                        <constraint firstAttribute="trailing" secondItem="at0-va-O5K" secondAttribute="trailing" priority="800" id="aWp-4H-u4B"/>
+                        <constraint firstItem="2pG-6A-3gj" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="ajm-Fn-7VE"/>
+                        <constraint firstItem="iY8-lg-YG6" firstAttribute="centerY" secondItem="hiz-DS-N95" secondAttribute="centerY" priority="800" id="dlP-Be-CuB"/>
+                        <constraint firstItem="wsZ-Gp-6Sd" firstAttribute="top" secondItem="7xM-IB-jBV" secondAttribute="top" priority="800" id="e7i-KS-ZN6"/>
+                        <constraint firstItem="sk5-lC-Xga" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" constant="15" id="fFq-D5-iuS"/>
+                        <constraint firstItem="hiz-DS-N95" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" id="fsM-L5-Jm5"/>
+                        <constraint firstAttribute="trailing" secondItem="QSr-s4-7Ar" secondAttribute="trailing" priority="800" id="hLZ-Iz-Hmj"/>
+                        <constraint firstAttribute="trailing" secondItem="2pG-6A-3gj" secondAttribute="trailing" priority="800" id="mYr-5Q-FZG"/>
+                        <constraint firstItem="y8n-12-aWf" firstAttribute="leading" secondItem="7xM-IB-jBV" secondAttribute="leading" priority="800" id="qaY-8T-5Gx"/>
+                        <constraint firstItem="vfg-RJ-2Hn" firstAttribute="top" secondItem="QSr-s4-7Ar" secondAttribute="bottom" priority="800" constant="13" id="rtr-za-eB2"/>
+                        <constraint firstAttribute="trailing" secondItem="7UV-TH-mhb" secondAttribute="trailing" priority="800" id="rzQ-KF-YLm"/>
+                        <constraint firstAttribute="trailing" secondItem="hiz-DS-N95" secondAttribute="trailing" id="teN-Kc-0fg"/>
+                        <constraint firstItem="7UV-TH-mhb" firstAttribute="top" secondItem="hiz-DS-N95" secondAttribute="bottom" priority="800" constant="15" id="uFs-dH-D7o"/>
+                        <constraint firstAttribute="trailing" secondItem="X6j-YY-luZ" secondAttribute="trailing" priority="800" id="xB9-8e-504"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8TF-in-2ng" secondAttribute="trailing" priority="800" id="03m-dP-6HZ"/>
+                <constraint firstItem="7xM-IB-jBV" firstAttribute="top" secondItem="8TF-in-2ng" secondAttribute="bottom" priority="800" id="0OU-jN-Ulh"/>
+                <constraint firstItem="7xM-IB-jBV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5hf-X0-JUq"/>
+                <constraint firstItem="8TF-in-2ng" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="800" id="L8n-GK-lld"/>
+                <constraint firstAttribute="trailing" secondItem="7xM-IB-jBV" secondAttribute="trailing" id="NKW-aX-FNT"/>
+                <constraint firstAttribute="bottom" secondItem="7xM-IB-jBV" secondAttribute="bottom" priority="800" id="TfK-MZ-X4P"/>
+                <constraint firstItem="8TF-in-2ng" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="800" constant="5" id="fA3-TQ-jyM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-34" y="70"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_checkbox_on" width="20" height="20"/>
+        <image name="creditCardCvv" width="45" height="30"/>
+        <image name="creditCardReader" width="20" height="17"/>
+        <image name="ic_arrow_right" width="10" height="15"/>
+        <image name="img_amex" width="47" height="30"/>
+        <image name="img_card_elo" width="42" height="26"/>
+        <image name="img_card_hiper" width="83" height="26"/>
+        <image name="img_diners" width="47" height="30"/>
+        <image name="img_master" width="47" height="30"/>
+        <image name="img_visa" width="47" height="30"/>
+    </resources>
+</document>

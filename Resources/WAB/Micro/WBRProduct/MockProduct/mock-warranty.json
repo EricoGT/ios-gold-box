@@ -1,0 +1,37 @@
+{
+    "warranties":[
+                  {
+                  "id":531085,
+                  "type":"WARRANTY_REPAIR",
+                  "period":12,
+                  "name":"checkout garantia 12",
+                  "price":{
+                  "sellPrice":45.9,
+                  "installmentAmount":10,
+                  "valuePerInstallment":4.59
+                  }
+                  },
+                  {
+                  "id":531085,
+                  "type":"WARRANTY_REPAIR",
+                  "period":12,
+                  "name":"mobile NAO APAGAR 12",
+                  "price":{
+                  "sellPrice":61.99,
+                  "installmentAmount":5,
+                  "valuePerInstallment":12.39
+                  }
+                  },
+                  {
+                  "id":531105,
+                  "type":"WARRANTY_REPAIR",
+                  "period":24,
+                  "name":"mobile  NAO APAGAR 24",
+                  "price":{
+                  "sellPrice":99.94,
+                  "installmentAmount":10,
+                  "valuePerInstallment":9.99
+                  }
+                  }
+                  ]
+}

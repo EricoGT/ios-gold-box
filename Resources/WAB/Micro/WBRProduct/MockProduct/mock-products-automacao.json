@@ -1,0 +1,227 @@
+{
+    "count": 2,
+    "products":[
+                {
+                "productId":2704652,
+                "skuId":806009,
+                "title":"Jogo Fifa 15 para Playstation 3",
+                "imageId":"3733424",
+                "hasMoreOffers":true,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":199.9,
+                "sellPrice":119.9,
+                "installmentAmount": 22,
+                "valuePerInstallment": 5.45
+                },
+                "rating": {
+                "value": 2,
+                "total": 4
+                },
+                "instalment":22,
+                "instalmentValue":5.45,
+                "suggestion": {
+                "paymentMethod": "BANK_SLIP",
+                "price": {
+                "current": 290,
+                "discountedPrice": 123
+                }
+                }
+                },
+                {
+                "productId":2033685,
+                "skuId":35351,
+                "title":"Grade de Porta Easy Fit - Lenox",
+                "imageId":"2507999",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":400,
+                "sellPrice":267.89
+                },
+                "rating": {
+                "value": 3,
+                "total": 5
+                }
+                },
+                {
+                "productId":2032802,
+                "skuId":34269,
+                "title":"Fogão 4 Bocas Chef Timer Branco 52SRB  Bivolt -  Electrolux ",
+                "imageId":"2522988",
+                "totalColors": 8,
+                "hasMoreOffers":true,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"laranja.com",
+                "price":{
+                "listPrice":819.72,
+                "sellPrice":819.72
+                },
+                "instalment":1,
+                "instalmentValue":819.72,
+                "stampImage":"https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+                }
+                ],
+    "filters":{
+        "departments":[
+                       {
+                       "name":"Eletrodomésticos",
+                       "count":235,
+                       "url":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Fogões",
+                                     "count":121,
+                                     "url": "?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "filterValue": "?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "categoryId": 443,
+                                                      "name":"Piso até 4 bocas",
+                                                      "count":53,
+                                                      "url":"?fq=C:144/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      },
+                                                      {
+                                                      "categoryId": 444,
+                                                      "name":"Embutir 4 Bocas",
+                                                      "count":2,
+                                                      "url":"?fq=C:144/155/446/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      }
+                                                      ]
+                                     },
+                                     {
+                                     "name":"Cooktops",
+                                     "count":44,
+                                     "url":"?fq=C:144/3083/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Dominós",
+                                                      "count":1,
+                                                      "url":"?fq=C:144/3083/432/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      },
+                                                      {
+                                                      "name":"Cooktop 4 Bocas",
+                                                      "count":43,
+                                                      "url":"?fq=C:144/3083/3084/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Livros",
+                       "count":7,
+                       "filterValue":"?fq=C:5235&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Literatura Infanto-Juvenil",
+                                     "count":7,
+                                     "url":"?fq=C:5235/5267/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Infantil - 4 a 10 Anos",
+                                                      "count":7,
+                                                      "url":"?fq=C:5235/5267/5797/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Móveis e Decoração",
+                       "count":6,
+                       "filterValue":"?fq=C:755&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Cozinha",
+                                     "count":6,
+                                     "url":"?fq=C:755/784/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Armários de Cozinha",
+                                                      "count":6,
+                                                      "url":"?fq=C:755/784/826/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Acabaram de chegar",
+                       "count":2,
+                       "filterValue":"?fq=C:6381&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Móveis e Decoração",
+                                     "count":2,
+                                     "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Móveis e Decoração",
+                                                      "count":2,
+                                                      "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Esporte e Lazer",
+                       "count":1,
+                       "filterValue":"?fq=C:345&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Skate e Patins",
+                                     "count":1,
+                                     "url":"?fq=C:345/373/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Skates",
+                                                      "count":1,
+                                                      "url":"?fq=C:345/373/4887/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       }
+                       ],
+        "brands":[
+        
+        ],
+        "specs":[
+        
+        ],
+        "pricesRange":[
+        
+        ]
+    }
+}

@@ -1,0 +1,347 @@
+{
+    "name":"ValidationError",
+    "propagatable":true,
+    "responseCode":400,
+    "message":"Invalid arguments.",
+    "errors":[
+              {
+              "message":{
+              "errorCode":"cart:simulation:loadCart",
+              "systemErrorId":"CHK0500",
+              "errorMessage":"Partial errors during seller simulation",
+              "errorMap":{
+              "sellerErrors":{
+              "marcyn":{
+              "errorCode":"GENERAL_ERROR",
+              "systemErrorId":"NOT_FOUND",
+              "errorLevel":"ITEM_LEVEL"
+              }
+              },
+              "loggerKey":"c8ejuhp9jp6jze8ms1i9yetgl",
+              "cart":{
+              "id":"217cab78-c5ee-4eab-ba75-0964f466c0fa",
+              "postalCode":"06460000",
+              "loggerKey":"c8ejuhp9jp6jze8ms1i9yetgl",
+              "items":[
+                       {
+                       "shippingValue":0,
+                       "imageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+                       "originalImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+                       "cartImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+                       "detailUrl":"/produto/2704652/pr",
+                       "listPrice":19990,
+                       "unavailableProduct":false,
+                       "suggestion": {
+                       "paymentMethod": "BANK_SLIP",
+                       "price": {
+                       "current": 290,
+                       "discountedPrice": 789
+                       }
+                       },
+                       "services":[
+                       
+                       ],
+                       "deliveryTypes":[
+                                        {
+                                        "price":200,
+                                        "id":"1",
+                                        "name":"Normal",
+                                        "shippingEstimate":{
+                                        "amountInDays":5,
+                                        "timeUnitEnum":"BUSINESS_DAY",
+                                        "legacyUnit":"bd",
+                                        "amount":"5",
+                                        "timeUnit":"BUSINESS_DAY"
+                                        },
+                                        "importFees":0,
+                                        "extras":{
+                                        
+                                        },
+                                        "deliveryWindowMap":{
+                                        
+                                        },
+                                        "isDefault":false,
+                                        "shippingEstimateInDays":5,
+                                        "shippingEstimateTimeUnit":"BUSINESS_DAY"
+                                        }
+                                        ],
+                       "sellerName":"Walmart",
+                       "stockBalance":12,
+                       "markedToRemove":false,
+                       "sku":806009,
+                       "marketPlaceSku":806009,
+                       "giftWrappable":false,
+                       "estimatedBestShippingPrice":200,
+                       "estimatedBestShippingEstimate":{
+                       "amountInDays":5,
+                       "timeUnitEnum":"BUSINESS_DAY",
+                       "legacyUnit":"bd",
+                       "amount":"5",
+                       "timeUnit":"BUSINESS_DAY"
+                       },
+                       "currentMaxQuantityBySellerAndSku":1,
+                       "brandName":"EA",
+                       "productId":2704652,
+                       "kit":false,
+                       "skuName":"Jogo Fifa 15 para Playstation 3",
+                       "kitItems":[
+                       
+                       ],
+                       "categories":[
+                                     {
+                                     "id":401,
+                                     "name":"Games"
+                                     },
+                                     {
+                                     "id":413,
+                                     "name":"Playstation 3"
+                                     },
+                                     {
+                                     "id":415,
+                                     "name":"Jogos para PS3"
+                                     }
+                                     ],
+                       "fullDescription":"Jogo Fifa 15 para Playstation 3",
+                       "sellerId":"1",
+                       "description":"Jogo Fifa 15 para Playstation 3",
+                       "quantity":1,
+                       "price":11990,
+                       "priceWithoutDiscountCurrent":11990,
+                       "priceWithoutDiscountOriginal":11990,
+                       "key":"7lck9npjp709p4tqowqcpwnq9",
+                       "departmentId":401,
+                       "categoryId":413,
+                       "subCategoryId":415,
+                       "itemUnavailable":false,
+                       "pageContext":{
+                       "categoryId":null,
+                       "categoryName":null,
+                       "departmentId":null,
+                       "departmentName":null,
+                       "subcategoryId":null,
+                       "subcategoryName":null
+                       },
+                       "defaultContext":{
+                       "categoryId":null,
+                       "categoryName":null,
+                       "departmentId":null,
+                       "departmentName":null,
+                       "subcategoryId":null,
+                       "subcategoryName":null
+                       },
+                       "priceDivergentToHigh":false,
+                       "service":false,
+                       "priceDivergentToLow":false,
+                       "servicesIds":[
+                       
+                       ],
+                       "createDateTime":1503609462249,
+                       "isGiftWrapper":false,
+                       "importFee":0,
+                       "priceDivergent":false
+                       },
+                       {
+                       "shippingValue":0,
+                       "imageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3107067",
+                       "originalImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3107067",
+                       "cartImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3107067",
+                       "detailUrl":"/produto/2370838/pr",
+                       "listPrice":0,
+                       "unavailableProduct":false,
+                       "services":[
+                       
+                       ],
+                       "deliveryTypes":[
+                       
+                       ],
+                       "sellerName":"Marcyn",
+                       "markedToRemove":true,
+                       "sku":436510,
+                       "marketPlaceSku":436510,
+                       "giftWrappable":false,
+                       "currentMaxQuantityBySellerAndSku":1,
+                       "brandName":"Marcyn",
+                       "productId":2370838,
+                       "kit":false,
+                       "skuName":"M - Branco",
+                       "kitItems":[
+                       
+                       ],
+                       "categories":[
+                                     {
+                                     "id":4901,
+                                     "name":"Moda"
+                                     },
+                                     {
+                                     "id":4903,
+                                     "name":"Moda íntima"
+                                     },
+                                     {
+                                     "id":4921,
+                                     "name":"Calcinhas"
+                                     }
+                                     ],
+                       "fullDescription":"Calcinha Tanga Renda Marcyn com Elástico Liso com Brilho",
+                       "sellerId":"marcyn",
+                       "description":"Calcinha Tanga Renda Marcyn com Elástico Liso com Brilho - Branco - M",
+                       "quantity":1,
+                       "price":2999,
+                       "priceWithoutDiscountCurrent":0,
+                       "key":"9iwvw9nz53av58x8kqdqamr8m",
+                       "departmentId":4901,
+                       "categoryId":4903,
+                       "subCategoryId":4921,
+                       "itemUnavailable":false,
+                       "errorCode":{
+                       "errorCode":"GENERAL_ERROR",
+                       "systemErrorId":"NOT_FOUND",
+                       "errorLevel":"ITEM_LEVEL"
+                       },
+                       "pageContext":{
+                       "categoryId":null,
+                       "categoryName":null,
+                       "departmentId":null,
+                       "departmentName":null,
+                       "subcategoryId":null,
+                       "subcategoryName":null
+                       },
+                       "defaultContext":{
+                       "categoryId":null,
+                       "categoryName":null,
+                       "departmentId":null,
+                       "departmentName":null,
+                       "subcategoryId":null,
+                       "subcategoryName":null
+                       },
+                       "priceDivergentToHigh":false,
+                       "service":false,
+                       "priceDivergentToLow":false,
+                       "servicesIds":[
+                       
+                       ],
+                       "createDateTime":1503609717409,
+                       "isGiftWrapper":false,
+                       "importFee":0,
+                       "priceDivergent":false
+                       }
+                       ],
+              "gifts":[
+              
+              ],
+              "hasProductImported":false,
+              "removedGiftCards":[
+              
+              ],
+              "voucherStatus":[
+              
+              ],
+              "giftCards":[
+              
+              ],
+              "bestInstallment":{
+              "valuePerInstallment":12.66,
+              "installmentAmount":12,
+              "formattedValuePerInstallment":"12,66",
+              "valuePerInstallmentCents":1266
+              },
+              "userProfile":{
+              "fullName":"Jose API Rnxc",
+              "firstName":"Jose",
+              "lastName":"API Rnxc",
+              "pid":"a5a8643b-481c-48b7-a1a8-84c8ba31b3d1",
+              "guid":"217cab78-c5ee-4eab-ba75-0964f466c0fa",
+              "email":"wmteste@mobile.com",
+              "document":"05264103887",
+              "corporate":false,
+              "phones":[
+                        {
+                        "areaCode":"19",
+                        "number":"996031655",
+                        "type":"MOBILE"
+                        },
+                        {
+                        "areaCode":"19",
+                        "number":"33017788",
+                        "type":"RESIDENTIAL"
+                        }
+                        ],
+              "dateBirth":"2002-09-02",
+              "gender":"MALE",
+              "visitorIdentity":"SMHpKOqw8TSxTqiHUmuMQEKhWJs8nLEQTLlEH0rSAKi9ANzShE24GOoyxoBHW1oZzQItzgGSR0KotyrCuKl7sScDnzqsvKSmUljrnzJNCiA=",
+              "preferences":{
+              "email":false,
+              "sms":false,
+              "acceptedTerm":false
+              },
+              "dateBirthAsDate":1030935600000
+              },
+              "chaordicInfo":{
+              "cartSource":"cart",
+              "apiKey":"walmart-marketplace",
+              "cartCryptoContent":"/qqxX4HZGg7mP+bzNbOyhclib10bnCXbKHybxSbiA0h4dBuuZJAN3kjvVr+K7uSwDbRMg1ZLdw3shzogJY/RHPYuTs263ucyMFSZgMjStZneO297alkF+KBQH2dA78/1hGC2XbYt/demPxUjBsKMVQwOQkHPgA8uYCs/tExrnpMnGBRn72WRp3NS0lauqSAteJk2hQ0BgAQBDWY1y1E1JFSNT1EmDWzHYKNSAHVlx/6EjNHH1vTGvvYm2ROYvgOsTlOk443hsSyKEWxFCQmnWqyyqJgn6Gl3ZEM/Y6Vp+z7luzRp6rpRYVLIicldGEiPuNwePsIUtSRHJtVoMZp3PqRA4DijSP2zL4r6+tSuBq6AWueBLSWgatQpr1In7WmPdkvbDDWGliPVNjMYdkTL6PevC08OG9NrdU6rIMj1PKzpCrZFgveJucj46nzpjPDleAIXgxoAFK8CS5ja2hX9ymvGwJ5JhFx8VdSnemfKoa0F/KhhXG6Y1nGHBE7DoeSb"
+              },
+              "locale":{
+              "locale":"pt-BR",
+              "country":"BRA",
+              "currencyCode":"BRL",
+              "notBrazil":false,
+              "brazil":true,
+              "countryCOL":false,
+              "notCountryCOL":true
+              },
+              "hasError":true,
+              "subtotal":14989,
+              "freightPriceLocal":0,
+              "freightPriceImported":0,
+              "servicesPrice":0,
+              "totalPrice":15189,
+              "totalPriceWithEstimatedBestShipping":15189,
+              "amounts":{
+              "productsAmount":14989,
+              "servicesAmount":0,
+              "deliveriesAmount":0,
+              "deliveriesAmountLocal":0,
+              "deliveriesAmountImported":0,
+              "nominalDiscount":0,
+              "totalNominalDiscount":0,
+              "usedNominalDiscount":0,
+              "giftCardDiscountAmount":0,
+              "giftCardsAmount":0,
+              "usedGiftCardsAmount":0,
+              "remainingGiftCardsAmount":0,
+              "estimatedBestShippingAmount":200,
+              "estimatedBestShippingAmountLocal":200,
+              "estimatedBestShippingAmountImported":0,
+              "couponAmount":0,
+              "giftWrapperServicesAmount":0,
+              "importFeesAmount":0,
+              "nominalFromCoupon":false,
+              "totalAmount":15189,
+              "totalAmountWithEstimatedBestShipping":15189,
+              "discountsAmount":0,
+              "totalAmountPlusGiftCardDiscountAmount":15189,
+              "totalAmountWithEstimatedBestShippingPlusGiftCardDiscountAmount":15189,
+              "nominalDifference":0
+              },
+              "servicesPriceWithGiftWrapper":0,
+              "loadOrderParams":"1,806009;marcyn,436510",
+              "userLogged":true,
+              "giftCardsAmount":0,
+              "freightPrice":0,
+              "nominalDiscount":0,
+              "estimatedBestShippingPrice":200,
+              "discountsAmount":0,
+              "couponAmount":0,
+              "usedGiftCardsAmount":0,
+              "remainingGiftCardsAmount":0,
+              "giftCardDiscountAmount":0,
+              "giftWrapperServicesAmount":0
+              }
+              }
+              }
+              }
+              ],
+    "code":null,
+    "moduleName":"Cart V1",
+    "serviceName":"Load Cart"
+}

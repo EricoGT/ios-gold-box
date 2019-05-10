@@ -1,0 +1,341 @@
+{
+  "items": [
+    {
+      "type": "Buy",
+      "label": "Como comprar",
+      "generic": true,
+      "authentication": false,
+      "subjects": [
+        {
+          "label": "Dúvidas sobre o site",
+          "id": 1338,
+          "disclaimer": false,
+          "type": "Buy"
+        },
+        {
+          "label": "Dúvidas sobre preços e frete",
+          "id": 1339,
+          "disclaimer": false,
+          "type": "Buy"
+        },
+        {
+          "label": "Não consigo finalizar a compra",
+          "id": 1340,
+          "disclaimer": false,
+          "type": "Buy"
+        },
+        {
+          "label": "Dúvidas sobre serviços",
+          "id": 1376,
+          "disclaimer": false,
+          "type": "Buy"
+        },
+        {
+          "label": "Como se cadastrar/comprar pelo aplicativo?",
+          "id": 1377,
+          "disclaimer": false,
+          "type": "Buy"
+        }
+      ]
+    },
+    {
+      "type": "Register",
+      "label": "Meu Cadastro",
+      "generic": true,
+      "authentication": false,
+      "subjects": [
+        {
+          "label": "Alterar meu e-mail",
+          "id": 1368,
+          "disclaimer": false,
+          "type": "Register"
+        },
+        {
+          "label": "Problemas com meu cadastro",
+          "id": 1369,
+          "disclaimer": false,
+          "type": "Register"
+        },
+        {
+          "label": "Não reconheço a compra",
+          "id": 1370,
+          "disclaimer": false,
+          "type": "Register"
+        },
+        {
+          "label": "Quero me descadastrar",
+          "id": 1371,
+          "disclaimer": false,
+          "type": "Register"
+        },
+        {
+          "label": "Como faço para alterar minha senha?",
+          "id": 1375,
+          "disclaimer": false,
+          "type": "Register"
+        }
+      ]
+    },
+    {
+      "type": "Order",
+      "label": "Meus Pedidos",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Nota Fiscal",
+          "id": 1341,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Problemas com Assistência Técnica do produto",
+          "id": 1342,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Problemas com o frete",
+          "id": 1343,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Vendedor não resolveu meu problema",
+          "id": 1383,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Preciso alterar dados do meu pedido",
+          "id": 1345,
+          "disclaimer": true,
+          "message": "Não fazemos alteração de pedidos. Você pode solicitar o cancelamento do pedido e efetuar uma nova compra.",
+          "type": "Order"
+        },
+        {
+          "label": "Recebi só parte do pedido",
+          "id": 1347,
+          "disclaimer": false,
+          "type": "Delivery"
+        },
+        {
+          "label": "Onde está meu pedido?",
+          "id": 1348,
+          "disclaimer": false,
+          "type": "Delivery"
+        },
+        {
+          "label": "Minha entrega está atrasada",
+          "id": 1346,
+          "disclaimer": false,
+          "type": "Delivery"
+        },
+        {
+          "label": "A entrega está em desacordo com o pedido",
+          "id": 1380,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Recebi duas vezes o produto",
+          "id": 1381,
+          "disclaimer": false,
+          "type": "Order"
+        },
+        {
+          "label": "Me acidentei com o produto comprado",
+          "id": 1382,
+          "disclaimer": false,
+          "type": "Order"
+        }
+      ]
+    },
+    {
+      "type": "Payments",
+      "label": "Meus Pagamentos",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Preciso da 2ª via de boleto",
+          "id": 1354,
+          "disclaimer": false,
+          "type": "Payments"
+        },
+        {
+          "label": "Recebi cobrança indevida",
+          "id": 1355,
+          "disclaimer": false,
+          "type": "Payments"
+        },
+        {
+          "label": "Meu pagamento não foi confirmado",
+          "id": 1356,
+          "disclaimer": false,
+          "type": "Payments"
+        },
+        {
+          "label": "Meu pedido foi cancelado sem minha solicitação",
+          "id": 1378,
+          "disclaimer": false,
+          "type": "Payments"
+        },
+        {
+          "label": "Não recebi minha pontuação do programa de fidelidade",
+          "id": 1379,
+          "disclaimer": false,
+          "type": "Payments"
+        }
+      ]
+    },
+    {
+      "type": "Cancellation",
+      "label": "Quero Cancelar ou Trocar",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Me arrependi da compra",
+          "id": 1349,
+          "disclaimer": false,
+          "type": "Cancellation"
+        },
+        {
+          "label": "Comprei Errado",
+          "id": 1350,
+          "disclaimer": false,
+          "type": "Cancellation"
+        },
+        {
+          "label": "Cadastrei dados errados",
+          "id": 1351,
+          "disclaimer": false,
+          "type": "Cancellation"
+        },
+        {
+          "label": "Comprei em duplicidade",
+          "id": 1352,
+          "disclaimer": false,
+          "type": "Cancellation"
+        },
+        {
+          "label": "Produto chegou com defeito/avaria",
+          "id": 1360,
+          "disclaimer": false,
+          "type": "Exchange"
+        },
+        {
+          "label": "Produto chegou diferente do que comprei",
+          "id": 1361,
+          "disclaimer": false,
+          "type": "Exchange"
+        }
+      ]
+    },
+    {
+      "type": "Status",
+      "label": "Status do meu Estorno ou Troca",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Não recebi meu estorno/reembolso",
+          "id": 1373,
+          "disclaimer": false,
+          "type": "Status"
+        },
+        {
+          "label": "Não recebi minha troca",
+          "id": 1374,
+          "disclaimer": false,
+          "type": "Status"
+        }
+      ]
+    },
+    {
+      "type": "Warranty",
+      "label": "Garantia Estendida",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Dados diferentes no meu certificado",
+          "id": 1363,
+          "disclaimer": false,
+          "type": "Warranty"
+        },
+        {
+          "label": "Não consigo usar a garantia estendida",
+          "id": 1364,
+          "disclaimer": false,
+          "type": "Warranty"
+        },
+        {
+          "label": "Quero a 2ª via da Garantia Estendida",
+          "id": 1365,
+          "disclaimer": false,
+          "type": "Warranty"
+        },
+        {
+          "label": "Dúvidas de como usar a garantia estendida",
+          "id": 1366,
+          "disclaimer": false,
+          "type": "Warranty"
+        },
+        {
+          "label": "Quero cancelar a Garantia Estendida",
+          "id": 1367,
+          "disclaimer": false,
+          "type": "Warranty"
+        }
+      ]
+    },
+    {
+      "type": "Service",
+      "label": "Demais serviços",
+      "generic": false,
+      "authentication": true,
+      "subjects": [
+        {
+          "label": "Dúvidas sobre os serviços que adquiri",
+          "id": 1344,
+          "disclaimer": false,
+          "type": "Service"
+        },
+        {
+          "label": "Dificuldade em agendar meu serviço",
+          "id": 1384,
+          "disclaimer": false,
+          "type": "Service"
+        },
+        {
+          "label": "Atraso na liberação do meu serviço",
+          "id": 1385,
+          "disclaimer": false,
+          "type": "Service"
+        },
+        {
+          "label": "Estou insatisfeito(a) com a prestação do serviço",
+          "id": 1386,
+          "disclaimer": false,
+          "type": "Service"
+        }
+      ]
+    },
+    {
+      "type": "Store",
+      "label": "Lojas Físicas",
+      "generic": true,
+      "authentication": false,
+      "subjects": [
+        {
+          "label": "Assuntos da Loja Física",
+          "id": 1372,
+          "disclaimer": false,
+          "type": "Store"
+        }
+      ]
+    }
+  ]
+}

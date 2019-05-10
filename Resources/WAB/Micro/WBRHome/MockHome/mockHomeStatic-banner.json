@@ -1,0 +1,206 @@
+{
+    "showcases":[
+                 {
+                 "id":"App_Home_ReducaoPreco",
+                 "type":"retargeting",
+                 "orderId":8,
+                 "name":"Diminuiu o preço",
+                 "icon":"ic_pricedown_bf.png",
+                 "shelfItems":[
+                               {
+                               "productId":2032203,
+                               "skuId":35041,
+                               "title":"Máquina de Cortar Cabelo HomePro Basic - Wahl",
+                               "imageId":"2498100",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":79.9,
+                               "sellPrice":53.91
+                               },
+                               "instalment":5,
+                               "instalmentValue":10.78,
+                               "stampImage":"https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+                               },
+                               {
+                               "productId":2028564,
+                               "skuId":29504,
+                               "title":"Balança Digital Eletrônica Camry EB9013",
+                               "imageId":"2544024",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":59.9,
+                               "sellPrice":44.9
+                               }
+                               },
+                               {
+                               "productId":2249520,
+                               "skuId":288214,
+                               "title":"Home Theater Samsung HT-F5525WK&#x2F;ZD 5.1 Canais com Blu-ray 3D, Função Futebol, Karaokê, Módulo Wireless, Entrada USB e Cabo HDMI - 1000 W",
+                               "imageId":"3231781",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":500,
+                               "sellPrice":400
+                               },
+                               "stampImage":"https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+                               },
+                               {
+                               "productId":3016858,
+                               "skuId":1141996,
+                               "title":"Secante Abrilhantador para Máquinas de Lavar Louça Limpol Bombril 100ml",
+                               "imageId":"4165081",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "sellPrice":6.49
+                               },
+                               "instalment":1,
+                               "instalmentValue":6.49
+                               },
+                               {
+                               "productId":2983088,
+                               "skuId":1105172,
+                               "title":"Climatizador e Umidificador de Ar Frio Midea Liva AKAF Painel Digital",
+                               "imageId":"4142686",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":328,
+                               "sellPrice":313.2
+                               }
+                               },
+                               {
+                               "productId":3016194,
+                               "skuId":1141220,
+                               "title":"iPhone 5s Apple 16GB Prata Espacial ME433BR&#x2F;A",
+                               "imageId":"4211574",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "sellPrice":2499
+                               }
+                               },
+                               {
+                               "productId":3068491,
+                               "skuId":1197038,
+                               "title":"Stargate Match Automatico",
+                               "imageId":"4261793",
+                               "hasMoreOffers":true,
+                               "hasSkuOptions":false,
+                               "sellerId":"cale19105528445",
+                               "price":{
+                               "listPrice":1.31,
+                               "sellPrice":1.3
+                               }
+                               },
+                               {
+                               "productId":3068600,
+                               "skuId":1197202,
+                               "title":"Roteador D-Link DIR-615 Wireless N ( 300 Mbps &#x2F; 5 dBi )",
+                               "imageId":"4261987",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"gigantechomol",
+                               "price":{
+                               "sellPrice":88.9
+                               },
+                               "instalment":2,
+                               "instalmentValue":44.45
+                               },
+                               {
+                               "productId":3068616,
+                               "skuId":1197218,
+                               "title":"pista elétrica - rally fever - carrera 6947",
+                               "imageId":"4262000",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"softvarhomol",
+                               "price":{
+                               "sellPrice":1
+                               }
+                               },
+                               {
+                               "productId":2104123,
+                               "skuId":126401,
+                               "title":"Kit Berço Quarto Compacto meu Fofinho branco + Roupeiro Quarto Compacto Rosa - Art in Móveis",
+                               "imageId":"2548068",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "sellPrice":728.01
+                               }
+                               }
+                               ]
+                 },
+                 {
+                 "id":"App_Home_MaisBuscadosHora",
+                 "type":"retargeting",
+                 "orderId":9,
+                 "name":"Mais buscados",
+                 "icon":"ic_book_bf.png",
+                 "shelfItems":[
+                               {
+                               "productId":2032162,
+                               "skuId":33504,
+                               "title":"Sensor Kinect Xbox 360 - Edição Especial",
+                               "imageId":"2531614",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "sellPrice":499
+                               },
+                               "installmentAmount":10,
+                               "valuePerInstallment":49.9,
+                               "stampImage":"https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+                               },
+                               {
+                               "productId":2109276,
+                               "skuId":33554,
+                               "title":"Chapinha Taiff Look com Íons Alisa e Enrola Bivolt",
+                               "imageId":"2558960",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":true,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":350.1,
+                               "sellPrice":344.97
+                               },
+                               "installmentAmount":10,
+                               "valuePerInstallment":34.5
+                               },
+                               {
+                               "productId":2003171,
+                               "skuId":3190,
+                               "title":"Armário Itaim 3 Gavetas Vidro Branco - Politorno",
+                               "imageId":"2470156",
+                               "hasMoreOffers":false,
+                               "hasSkuOptions":false,
+                               "sellerId":"1",
+                               "price":{
+                               "listPrice":407,
+                               "sellPrice":366.9
+                               },
+                               "installmentAmount":12,
+                               "valuePerInstallment":30.58
+                               }
+                               ]
+                 }
+                 ],
+    "errata":{
+        "urlImage":"",
+        "title":"Errata TESTE",
+        "message":"Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago. Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago.",
+        "url":"http://m.walmart.com.br"
+    }
+}

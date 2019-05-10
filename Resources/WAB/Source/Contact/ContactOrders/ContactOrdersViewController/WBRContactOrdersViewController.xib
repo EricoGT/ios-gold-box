@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBROrdersViewController">
+            <connections>
+                <outlet property="ordersTableView" destination="0bA-b2-Lrh" id="OND-tN-bEt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meus pedidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-2p-nwB">
+                    <rect key="frame" x="16" y="40" width="95" height="18"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-b2-Lrh">
+                    <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="elm-GF-O45" firstAttribute="bottom" secondItem="0bA-b2-Lrh" secondAttribute="bottom" id="4ii-6x-rhU"/>
+                <constraint firstItem="0bA-b2-Lrh" firstAttribute="top" secondItem="OZL-2p-nwB" secondAttribute="bottom" constant="20" id="AHA-Xq-TlE"/>
+                <constraint firstItem="OZL-2p-nwB" firstAttribute="top" secondItem="elm-GF-O45" secondAttribute="top" constant="20" id="Dal-ee-D9g"/>
+                <constraint firstItem="OZL-2p-nwB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="FXo-oC-Zbn"/>
+                <constraint firstAttribute="trailing" secondItem="0bA-b2-Lrh" secondAttribute="trailing" id="GT3-Sv-JGn"/>
+                <constraint firstItem="0bA-b2-Lrh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kq6-1q-giY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="elm-GF-O45"/>
+        </view>
+    </objects>
+</document>

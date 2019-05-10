@@ -1,0 +1,58 @@
+{  
+   "skuItem":{  
+      "skuId":35173,
+      "productId":2033536,
+      "active":true,
+      "kit":false,
+      "extendedWarranties":[  
+         {  
+            "id":272369,
+            "idSku":281567,
+            "type":"GARANTIA_ESTENDIDA",
+            "name":"Garantia Estendida de 12 meses.",
+            "price":89,
+            "isAtive":true,
+            "warrantyType":"GC",
+            "months":12,
+            "instalment":2,
+            "instalmentValue":44.5
+         },
+         {  
+            "id":272370,
+            "idSku":281567,
+            "type":"GARANTIA_ESTENDIDA",
+            "name":"Garantia Estendida de 24 meses.",
+            "price":129,
+            "isAtive":true,
+            "warrantyType":"GC",
+            "months":24,
+            "instalment":4,
+            "instalmentValue":32.25
+         },
+         {  
+            "id":272370,
+            "idSku":281567,
+            "type":"GARANTIA_ESTENDIDA",
+            "name":"Garantia Estendida de 36 meses.",
+            "price":169,
+            "isAtive":true,
+            "warrantyType":"GC",
+            "months":36,
+            "instalment":5,
+            "instalmentValue":33.8
+         },
+         {
+             "id":272370,
+             "idSku":281567,
+             "type":"GARANTIA_ESTENDIDA",
+             "name":"Garantia Estendida de 48 meses.",
+             "price":209,
+             "isAtive":true,
+             "warrantyType":"GC",
+             "months":48,
+             "instalment":6,
+             "instalmentValue":34.83
+                            }
+      ]
+   }
+}

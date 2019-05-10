@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OFShipAddressViewController">
+            <connections>
+                <outlet property="buttonNewAddress" destination="CXW-Bm-7nS" id="dVU-iK-Dzd"/>
+                <outlet property="continueButton" destination="09U-L8-EhZ" id="6q4-qq-kZz"/>
+                <outlet property="headerView" destination="43j-JM-7bv" id="ubN-f5-Ix9"/>
+                <outlet property="tableView" destination="GWp-TC-La3" id="Gmx-fb-mBX"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="viewBottom" destination="0eb-KJ-ZeQ" id="FDE-Dz-uXF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GWp-TC-La3">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="529"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eb-KJ-ZeQ">
+                    <rect key="frame" x="0.0" y="529" width="375" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09U-L8-EhZ" customClass="WMButtonRounded">
+                            <rect key="frame" x="15" y="15" width="345" height="44"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Continuar">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="1Ms-sy-dZP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="09U-L8-EhZ" secondAttribute="trailing" constant="15" id="2kt-XP-D4s"/>
+                        <constraint firstAttribute="height" constant="74" id="IVO-Fj-nZX"/>
+                        <constraint firstItem="09U-L8-EhZ" firstAttribute="leading" secondItem="0eb-KJ-ZeQ" secondAttribute="leading" constant="15" id="SFN-0q-Ne0"/>
+                        <constraint firstItem="09U-L8-EhZ" firstAttribute="top" secondItem="0eb-KJ-ZeQ" secondAttribute="top" constant="15" id="cKF-CJ-w76"/>
+                        <constraint firstAttribute="bottom" secondItem="09U-L8-EhZ" secondAttribute="bottom" constant="15" id="du6-bN-kkN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0eb-KJ-ZeQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="6Uc-B2-VWc"/>
+                <constraint firstAttribute="trailing" secondItem="0eb-KJ-ZeQ" secondAttribute="trailing" id="6zG-3f-P4M"/>
+                <constraint firstItem="Z67-Ei-tOi" firstAttribute="bottom" secondItem="0eb-KJ-ZeQ" secondAttribute="bottom" id="e13-BH-YX9"/>
+                <constraint firstItem="GWp-TC-La3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="lM8-Fc-Gng"/>
+                <constraint firstItem="GWp-TC-La3" firstAttribute="top" secondItem="Z67-Ei-tOi" secondAttribute="top" id="s5b-iP-ZYr"/>
+                <constraint firstAttribute="trailing" secondItem="GWp-TC-La3" secondAttribute="trailing" id="tgQ-oW-ndx"/>
+                <constraint firstItem="0eb-KJ-ZeQ" firstAttribute="top" secondItem="GWp-TC-La3" secondAttribute="bottom" id="uLd-G7-qkB"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="Z67-Ei-tOi"/>
+            <point key="canvasLocation" x="-455" y="332"/>
+        </view>
+        <view tag="888" contentMode="scaleToFill" id="43j-JM-7bv" userLabel="Header View">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXW-Bm-7nS" userLabel="btNewAddress" customClass="WMBDottedBorderButton">
+                    <rect key="frame" x="15" y="20" width="290" height="73"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <state key="normal" title="+ Adicionar novo endereço">
+                        <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="bt_newaddress_normal"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="paintedSize">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="notPaintedSize">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="newAddressAction:" destination="-1" eventType="touchUpInside" id="urk-N4-NLz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereços salvos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvV-3H-nB4">
+                    <rect key="frame" x="15" y="113" width="290" height="18"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UvV-3H-nB4" firstAttribute="leading" secondItem="43j-JM-7bv" secondAttribute="leading" constant="15" id="56K-NL-xdO"/>
+                <constraint firstItem="CXW-Bm-7nS" firstAttribute="leading" secondItem="43j-JM-7bv" secondAttribute="leading" constant="15" id="6bZ-de-oqt"/>
+                <constraint firstAttribute="trailing" secondItem="CXW-Bm-7nS" secondAttribute="trailing" constant="15" id="N0V-bu-Jfw"/>
+                <constraint firstAttribute="trailing" secondItem="UvV-3H-nB4" secondAttribute="trailing" constant="15" id="Ry4-pI-iDP"/>
+                <constraint firstItem="CXW-Bm-7nS" firstAttribute="top" secondItem="43j-JM-7bv" secondAttribute="top" constant="20" id="s8T-oy-yL5"/>
+                <constraint firstItem="UvV-3H-nB4" firstAttribute="top" secondItem="CXW-Bm-7nS" secondAttribute="bottom" constant="20" id="vTB-t2-sLc"/>
+                <constraint firstAttribute="bottom" secondItem="UvV-3H-nB4" secondAttribute="bottom" constant="13" id="w12-Y6-s8x"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="jjR-7V-OcF"/>
+            <point key="canvasLocation" x="-47" y="114.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bt_newaddress_normal" width="285" height="48"/>
+    </resources>
+</document>

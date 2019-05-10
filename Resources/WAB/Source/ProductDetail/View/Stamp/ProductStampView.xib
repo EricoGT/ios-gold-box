@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductStampView">
+            <connections>
+                <outlet property="indicator" destination="7gx-Es-bMj" id="e1h-D4-EKr"/>
+                <outlet property="separator" destination="HMo-2i-9Wl" id="vgY-ny-OTn"/>
+                <outlet property="stampImageView" destination="aVY-68-I3e" id="Icy-VN-2eP"/>
+                <outlet property="stampTitleLabel" destination="EdN-wD-1hb" id="A45-Vy-0bf"/>
+                <outlet property="viewHeightConstraint" destination="bwI-Ds-73h" id="Xbq-0h-gIQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0s2-Et-lVD">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxp-ik-ouv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTc-uU-hWf" userLabel="Stamp View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parcelamento em até 24x com juros nos cartões Walmart Itaucard e Hipercard com parcela mínima de R$ 10. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="EdN-wD-1hb" userLabel="Title">
+                                    <rect key="frame" x="83" y="6" width="277" height="53"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bUC-Hd-74A"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7gx-Es-bMj">
+                                    <rect key="frame" x="34" y="21" width="20" height="20"/>
+                                    <color key="color" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </activityIndicatorView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-68-I3e">
+                                    <rect key="frame" x="15" y="2" width="58" height="58"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="stampImage">
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="58" id="AdQ-bZ-2W1"/>
+                                        <constraint firstAttribute="width" constant="58" id="IY7-Oy-iHj"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="EdN-wD-1hb" firstAttribute="leading" secondItem="aVY-68-I3e" secondAttribute="trailing" constant="10" id="Alp-Kd-IR9"/>
+                                <constraint firstAttribute="bottom" secondItem="aVY-68-I3e" secondAttribute="bottom" constant="5" id="Sn6-Kd-Mc2"/>
+                                <constraint firstItem="EdN-wD-1hb" firstAttribute="centerY" secondItem="fTc-uU-hWf" secondAttribute="centerY" id="bwN-bk-1MA"/>
+                                <constraint firstItem="7gx-Es-bMj" firstAttribute="centerY" secondItem="aVY-68-I3e" secondAttribute="centerY" id="ck6-Zn-oEc"/>
+                                <constraint firstItem="aVY-68-I3e" firstAttribute="top" secondItem="fTc-uU-hWf" secondAttribute="top" constant="2" id="edV-eL-DhO"/>
+                                <constraint firstItem="7gx-Es-bMj" firstAttribute="centerX" secondItem="aVY-68-I3e" secondAttribute="centerX" id="lni-9Y-4dN"/>
+                                <constraint firstAttribute="trailing" secondItem="EdN-wD-1hb" secondAttribute="trailing" constant="15" id="tP7-8J-Cll"/>
+                                <constraint firstItem="aVY-68-I3e" firstAttribute="leading" secondItem="fTc-uU-hWf" secondAttribute="leading" constant="15" placeholder="YES" id="vnT-6K-VNv"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-2i-9Wl" userLabel="separator">
+                            <rect key="frame" x="15" y="69" width="360" height="1"/>
+                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="YbE-Ph-Vpr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="bwI-Ds-73h"/>
+                        <constraint firstItem="HMo-2i-9Wl" firstAttribute="leading" secondItem="Nxp-ik-ouv" secondAttribute="leading" constant="15" id="cFg-Z5-dJW"/>
+                        <constraint firstAttribute="trailing" secondItem="HMo-2i-9Wl" secondAttribute="trailing" id="dBJ-y8-6ow"/>
+                        <constraint firstAttribute="bottom" secondItem="HMo-2i-9Wl" secondAttribute="bottom" id="lka-ex-nxM"/>
+                        <constraint firstItem="HMo-2i-9Wl" firstAttribute="top" secondItem="EdN-wD-1hb" secondAttribute="bottom" constant="10" id="p7e-LR-6hW"/>
+                        <constraint firstItem="fTc-uU-hWf" firstAttribute="leading" secondItem="Nxp-ik-ouv" secondAttribute="leading" id="pHN-Ih-arp"/>
+                        <constraint firstItem="fTc-uU-hWf" firstAttribute="top" secondItem="Nxp-ik-ouv" secondAttribute="top" id="vSw-nn-Kac"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Nxp-ik-ouv" secondAttribute="trailing" id="DqE-FH-SUW"/>
+                <constraint firstItem="fTc-uU-hWf" firstAttribute="width" secondItem="0s2-Et-lVD" secondAttribute="width" id="PRU-6W-Cgo"/>
+                <constraint firstAttribute="bottom" secondItem="Nxp-ik-ouv" secondAttribute="bottom" id="WRU-Qf-Nd4"/>
+                <constraint firstItem="Nxp-ik-ouv" firstAttribute="top" secondItem="0s2-Et-lVD" secondAttribute="top" id="gal-KF-01c"/>
+                <constraint firstItem="Nxp-ik-ouv" firstAttribute="leading" secondItem="0s2-Et-lVD" secondAttribute="leading" id="puf-ch-EaK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="133.59999999999999" y="154.27286356821591"/>
+        </view>
+    </objects>
+</document>

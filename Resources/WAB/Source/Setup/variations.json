@@ -1,0 +1,55 @@
+{
+    "product":{
+        "baseImageUrl":"https://static.wmobjects.com.br/imgres/arquivos/ids/",
+        "hasExtendedWarranty":false,
+        "id":"2033529",
+        "imageIds":[
+                    "2530136",
+                    "2530148",
+                    "2530161",
+                    "2530172",
+                    "2530184",
+                    "2530194",
+                    "2530209",
+                    "0"
+                    ],
+        "kit":false,
+        "productVariations":[
+                             {
+                             "currency":"R$ ",
+                             "discountPrice":1483.1,
+                             "formattedListPrice":"1.648,00",
+                             "formattedSellPrice":"1.483,10",
+                             "instalment":10,
+                             "instalmentValue":148.31,
+                             "name":"110V",
+                             "originalPrice":1648,
+                             "price":1483.1,
+                             "quantityAvailable":0,
+                             "saveAmount":"164,90",
+                             "savePercentage":10,
+                             "sku":35159,
+                             "supplierStock":"true"
+                             },
+                             {
+                             "currency":"R$ ",
+                             "discountPrice":2483.1,
+                             "formattedListPrice":"2.648,00",
+                             "formattedSellPrice":"2.483,10",
+                             "instalment":10,
+                             "instalmentValue":248.31,
+                             "name":"220V",
+                             "originalPrice":2648,
+                             "price":1483.1,
+                             "quantityAvailable":10,
+                             "saveAmount":"164,90",
+                             "savePercentage":20,
+                             "sku":35160,
+                             "supplierStock":"true"
+                             }
+                             ],
+        "rating":40,
+        "standardSku":35159,
+        "title":"Geladeira&#x2F;Refrigerador 2 Portas Electrolux Cycle Defrost 462L DC49A Branco"
+    }
+}

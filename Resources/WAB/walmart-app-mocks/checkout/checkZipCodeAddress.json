@@ -1,0 +1,15 @@
+{
+  "zipcode": {
+    "id": "01311200",
+    "postalCode": "01311200",
+    "city": "São Paulo",
+    "state": "São Paulo",
+    "stateAcronym": "SP",
+    "streetType": "Avenida",
+    "street": "Paulista",
+    "isActive": true,
+    "neighborhood": "Bela Vista",
+    "country": "Brazil",
+    "idcountry": "BRA"
+  }
+}

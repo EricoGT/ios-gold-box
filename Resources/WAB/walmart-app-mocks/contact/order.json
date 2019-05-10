@@ -1,0 +1,115 @@
+{
+  "id": "51459257",
+  "cancelable": false,
+  "canceled": false,
+  "allowCreateBankSlipTicket": true,
+  "approvedPayment": false,
+  "expiredBankSlip": false,
+  "creationDate": 1521563095517,
+  "kits": [
+  ],
+  "deliveries": [
+    {
+      "shippingEstimateDate": null,
+      "expectedDeliveryDate": null,
+      "messageDate": "",
+      "items": [
+        {
+          "id": "24782",
+          "description": "Armário Multiuso Branco BS 34 - BRV",
+          "originCountry": "pt-BR",
+          "value": 50,
+          "currency": "BRL",
+          "urlImage": "http://static.wmobjects.com.br/imgres/arquivos/ids/2517723",
+          "acquiredQuantity": 1,
+          "canceledQuantity": 0,
+          "parentId": "",
+          "totalAmount": 50
+        }
+      ],
+      "groupedTracking": {
+        "alert": "",
+        "groups": [
+          {
+            "status": "ic_order_received",
+            "description": "Pedido Realizado",
+            "checked": true,
+            "eventId": "ORC",
+            "alert": "",
+            "tracking": [
+            ]
+          },
+          {
+            "status": "ic_payment",
+            "description": "Pagamento aprovado",
+            "checked": false,
+            "eventId": "",
+            "alert": "",
+            "tracking": [
+            ]
+          },
+          {
+            "status": "ic_delivery_disabled",
+            "description": "Entrega está na transportadora",
+            "checked": false,
+            "eventId": "",
+            "alert": "",
+            "tracking": [
+            ]
+          }
+        ]
+      },
+      "seller": {
+        "sellerId": "madmad",
+        "sellerName": "MadMad"
+      },
+      "hasInvoice": false,
+      "invoiceUrl": "",
+      "address": {
+        "addressLine1": "Rua Michigan",
+        "addressLine2": "",
+        "country": {
+          "code": "BRA"
+        },
+        "state": {
+          "code": "SP"
+        },
+        "city": "São Paulo",
+        "zipcode": "04566002",
+        "billing": false,
+        "default": false,
+        "number": "536",
+        "neighborhood": "Cidade Monções",
+        "owner": {
+          "completeName": "franciele garcia"
+        }
+      }
+    }
+  ],
+  "payment": {
+    "orderTotal": {
+      "currencyAmount": 54,
+      "currencyUnit": "BRL",
+      "itemsPrice": 50,
+      "shipping": 4,
+      "discount": 0,
+      "warranty": 0,
+      "services": 0,
+      "taxImport": 0
+    },
+    "paymentMethods": [
+      {
+        "method": "BARCODE",
+        "lastDigitsOfCard": "",
+        "brand": "",
+        "completeName": "",
+        "parcelAmount": "",
+        "valueWithInterest": "",
+        "interestRate": "",
+        "maxCET": "",
+        "parcelValue": 54,
+        "paymentUrl": ""
+      }
+    ]
+  }
+}

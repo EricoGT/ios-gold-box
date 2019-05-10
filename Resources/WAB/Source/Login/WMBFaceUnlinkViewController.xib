@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+        <array key="OpenSans.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMBFaceUnlinkViewController">
+            <connections>
+                <outlet property="btCancel" destination="qhZ-xt-1nM" id="L9e-oa-Wx7"/>
+                <outlet property="btUnlink" destination="GhE-To-FGP" id="fS3-8i-ZcU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewWarning" destination="BFX-CG-xhm" id="HfU-dt-PBG"/>
+                <outlet property="viewWidthConstraint" destination="dK9-6v-dQ1" id="hYf-cg-wOr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKz-qM-6pC">
+                    <rect key="frame" x="0.0" y="642" width="375" height="25"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="gzN-I4-Y48"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFX-CG-xhm">
+                    <rect key="frame" x="0.0" y="336" width="375" height="311"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você realmente quer desvincular sua conta do Facebook?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyt-3c-j77">
+                            <rect key="frame" x="15" y="20" width="345" height="49"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="E0X-Jn-sSj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-Ll-1jP">
+                            <rect key="frame" x="15" y="89" width="345" height="142"/>
+                            <string key="text">Ao fazer isso, sua experiência no Walmart será um pouco menos personalizada, pois deixaremos de recomendar produtos e serviços baseados no seu perfil da rede social. 
+
+Se mesmo assim quiser continuar, não se preocupe, você continuará com sua conta do Walmart: seus pedidos e outras informações continuarão como antes.</string>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-xt-1nM" customClass="WMButtonRounded">
+                            <rect key="frame" x="15" y="251" width="164.5" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="6KB-QK-uBZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Cancelar">
+                                <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnCancel"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="close:" destination="-1" eventType="touchUpInside" id="H2X-vY-NVM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhE-To-FGP" customClass="WMButtonRounded">
+                            <rect key="frame" x="195.5" y="251" width="164.5" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="UV7-w1-zW8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Desvincular">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnSend"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="unlinkFace:" destination="-1" eventType="touchUpInside" id="3ps-1j-KCb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="GhE-To-FGP" firstAttribute="leading" secondItem="qhZ-xt-1nM" secondAttribute="trailing" constant="16" id="2wd-5h-rMR"/>
+                        <constraint firstItem="qhZ-xt-1nM" firstAttribute="top" secondItem="6FQ-Ll-1jP" secondAttribute="bottom" constant="20" id="6iz-ew-pb0"/>
+                        <constraint firstItem="Qyt-3c-j77" firstAttribute="top" secondItem="BFX-CG-xhm" secondAttribute="top" constant="20" id="IFf-ub-Odl"/>
+                        <constraint firstAttribute="trailing" secondItem="GhE-To-FGP" secondAttribute="trailing" constant="15" id="LxD-Bu-N6c"/>
+                        <constraint firstItem="6FQ-Ll-1jP" firstAttribute="leading" secondItem="BFX-CG-xhm" secondAttribute="leading" constant="15" id="Or0-C9-dux"/>
+                        <constraint firstItem="6FQ-Ll-1jP" firstAttribute="top" secondItem="Qyt-3c-j77" secondAttribute="bottom" constant="20" id="SAk-nN-tih"/>
+                        <constraint firstItem="Qyt-3c-j77" firstAttribute="leading" secondItem="BFX-CG-xhm" secondAttribute="leading" constant="15" id="SHn-YP-W18"/>
+                        <constraint firstAttribute="trailing" secondItem="Qyt-3c-j77" secondAttribute="trailing" constant="15" id="Vf3-xp-JpE"/>
+                        <constraint firstItem="GhE-To-FGP" firstAttribute="baseline" secondItem="qhZ-xt-1nM" secondAttribute="firstBaseline" id="ZZZ-3F-0CK"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="306" id="a7n-zM-S8k"/>
+                        <constraint firstItem="qhZ-xt-1nM" firstAttribute="leading" secondItem="BFX-CG-xhm" secondAttribute="leading" constant="15" id="aeA-Xo-Lu5"/>
+                        <constraint firstItem="qhZ-xt-1nM" firstAttribute="top" secondItem="GhE-To-FGP" secondAttribute="top" id="c4b-bw-S8Z"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="dK9-6v-dQ1"/>
+                        <constraint firstItem="GhE-To-FGP" firstAttribute="width" secondItem="qhZ-xt-1nM" secondAttribute="width" id="hFN-hV-MwH"/>
+                        <constraint firstAttribute="trailing" secondItem="6FQ-Ll-1jP" secondAttribute="trailing" constant="15" id="ky5-C5-Mvx"/>
+                        <constraint firstItem="qhZ-xt-1nM" firstAttribute="baseline" secondItem="GhE-To-FGP" secondAttribute="firstBaseline" id="lik-kd-7i2"/>
+                        <constraint firstAttribute="bottom" secondItem="qhZ-xt-1nM" secondAttribute="bottom" constant="22" id="tFq-Ah-g0O"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.80784313725490198" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qhT-G4-enD" firstAttribute="bottom" secondItem="BFX-CG-xhm" secondAttribute="bottom" constant="20" id="ADR-hk-V2l"/>
+                <constraint firstAttribute="trailing" secondItem="BFX-CG-xhm" secondAttribute="trailing" id="Lb0-Ra-Wjv"/>
+                <constraint firstItem="TKz-qM-6pC" firstAttribute="leading" secondItem="qhT-G4-enD" secondAttribute="leading" id="Z5f-tP-IX7"/>
+                <constraint firstItem="BFX-CG-xhm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d0u-XK-kxb"/>
+                <constraint firstItem="TKz-qM-6pC" firstAttribute="bottom" secondItem="qhT-G4-enD" secondAttribute="bottom" id="mXS-Mz-bpZ"/>
+                <constraint firstItem="TKz-qM-6pC" firstAttribute="trailing" secondItem="qhT-G4-enD" secondAttribute="trailing" id="rId-sS-4JH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="qhT-G4-enD"/>
+            <point key="canvasLocation" x="-64.5" y="-731.5"/>
+        </view>
+    </objects>
+</document>

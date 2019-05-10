@@ -1,0 +1,155 @@
+{
+    "count": 0,
+    "products":[],
+    "filters":{
+        "departments":[
+                       {
+                       "name":"Eletrodomésticos",
+                       "count":99,
+                       "filterValue":"?fq=C:144&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Fogões",
+                                     "count":55,
+                                     "url":"?fq=C:144/155/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "categoryId": 443,
+                                                      "name":"Piso até 4 bocas",
+                                                      "count":53,
+                                                      "url":"?fq=C:144/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100"
+                                                      },
+                                                      {
+                                                      "categoryId": 444,
+                                                      "name":"Embutir 4 Bocas",
+                                                      "count":2,
+                                                      "url":"?fq=C:144/155/446/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100"
+                                                      }
+                                                      ]
+                                     },
+                                     {
+                                     "name":"Cooktops",
+                                     "count":44,
+                                     "url":"?fq=C:144/3083/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Dominós",
+                                                      "count":1,
+                                                      "url":"?fq=C:144/3083/432/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      },
+                                                      {
+                                                      "name":"Cooktop 4 Bocas",
+                                                      "count":43,
+                                                      "url":"?fq=C:144/3083/3084/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Livros",
+                       "count":7,
+                       "filterValue":"?fq=C:5235&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Literatura Infanto-Juvenil",
+                                     "count":7,
+                                     "url":"?fq=C:5235/5267/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Infantil - 4 a 10 Anos",
+                                                      "count":7,
+                                                      "url":"?fq=C:5235/5267/5797/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Móveis e Decoração",
+                       "count":6,
+                       "filterValue":"?fq=C:755&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Cozinha",
+                                     "count":6,
+                                     "url":"?fq=C:755/784/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Armários de Cozinha",
+                                                      "count":6,
+                                                      "url":"?fq=C:755/784/826/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Acabaram de chegar",
+                       "count":2,
+                       "filterValue":"?fq=C:6381&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Móveis e Decoração",
+                                     "count":2,
+                                     "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Móveis e Decoração",
+                                                      "count":2,
+                                                      "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Esporte e Lazer",
+                       "count":1,
+                       "filterValue":"?fq=C:345&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Skate e Patins",
+                                     "count":1,
+                                     "url":"?fq=C:345/373/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Skates",
+                                                      "count":1,
+                                                      "url":"?fq=C:345/373/4887/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       }
+                       ],
+        "brands":[
+        
+        ],
+        "specs":[
+        
+        ],
+        "pricesRange":[
+        
+        ]
+    }
+}

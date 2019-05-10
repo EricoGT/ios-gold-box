@@ -1,0 +1,26 @@
+{
+  "warranties": [
+    {
+      "id": 531085,
+      "type": "WARRANTY_REPAIR",
+      "period": 12,
+      "name": "checkout garantia editator 12",
+      "price": {
+        "sellPrice": 87.29,
+        "installmentAmount": 22,
+        "valuePerInstallment": 3.97
+      }
+    },
+    {
+      "id": 531105,
+      "type": "WARRANTY_REPAIR",
+      "period": 24,
+      "name": "checkout garantia editator 24",
+      "price": {
+        "sellPrice": 140.19,
+        "installmentAmount": 22,
+        "valuePerInstallment": 6.37
+      }
+    }
+  ]
+}

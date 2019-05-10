@@ -1,0 +1,67 @@
+//
+// Prefix header for all source files of the 'Ofertas' target in the 'Ofertas' project
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "OFUrls.h"
+#import "PSLog.h"
+#import "WMDeviceType.h"
+#import "OFColors.h"
+#import "OFSkinInfo.h"
+#import "MDSSqlite.h"
+#import "FlurryController.h"
+#import "OFCartTemp.h"
+#import "OFTestMode.h"
+#import "OFSplashTemp.h"
+#import "JSONModel.h"
+#import "InternetTest.h"
+#import "FlurryWM.h"
+#import "OFLogService.h"
+#import "OFSetup.h"
+#import "WMTokens.h"
+#import "WMBTokenModel.h"
+#import "OFMessages.h"
+#import "UIImageView+WebCache.h"
+#import "WALMenuViewController.h"
+#import "WMOmniture.h"
+#import "WMUTMIManager.h"
+#import "UTMIModel.h"
+#import "WMButton.h"
+#import "WMButtonRounded.h"
+#import "WMBaseViewController.h"
+#import "WMBaseNavigationController.h"
+#import "NSString+Additions.h"
+#import "WMBSession.h"
+
+#import "UIViewController+Login.h"
+
+#import "UIView+Loading.h"
+#import "UIView+RetryView.h"
+#import "UIView+EmptyView.h"
+#import "UIView+Alert.h"
+#import "UILabel+Autolayout.h"
+#import "UIColor+Pallete.h"
+
+#import "WALSession.h"
+#import "WMExtendProduct.h"
+#import "MDSTime.h"
+#import "WMBCartManager.h"
+
+#define kWishlistNotificationName @"wishlistNotification"
+#define kLoginSuccessNotificationName @"loginSuccessNotification"
+#define kLogoutNotificationName @"logoutNotification"
+#define kSharedUserChangedNotificationName @"sharedUserChanged"
+
+#define kKeychainIdentifier @"walmartbr"
+#define kKeychainService @"com.walmartbr.Walmart"
+#define kUserKeychainKey @"kUserKeychainKey"
+#define kPassKeychainKey @"kPassKeychainKey"
+#define kGUIDkey @"kGUIDkey"
+#define kPIDkey @"kPIDkey"
+
+#endif

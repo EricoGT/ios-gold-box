@@ -1,0 +1,230 @@
+[
+  {
+    "id": "46554",
+    "creationDate": "15/08/2018 14:30",
+    "creationDateTimestamp": "1514764800000",
+    "text": "Oiee, meu tênis está descolando o bico. Vocês resolvem isso?",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client"
+  },
+  {
+    "id": "46555",
+    "creationDate": "15/08/2018 14:32",
+    "creationDateTimestamp": "1485907200000",
+    "text": "Ah é, que top 👌",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46556",
+    "creationDate": "15/08/2018 14:34",
+    "creationDateTimestamp": "1534343640000",
+    "text": "Vamos com calma amiguinhos",
+    "author": {
+      "name": "Walmart",
+      "nickname": "Walmart"
+
+    },
+    "origin": "walmart",
+    "attachments": [
+        {
+            "id": "122",
+            "fileName": "DogFilhote1.png",
+            "fileSize": "949258",
+            "contentType": "image/png",
+            "createdAt": "1544011184000"
+        }
+    ]
+  },
+  {
+    "id": "46557",
+    "creationDate": "15/08/2018 14:34",
+    "creationDateTimestamp": "1534343640000",
+    "text": "Seller vai resolver o problema SIM! 😡",
+    "author": {
+      "name": "Walmart",
+      "nickname": "Walmart"
+
+    },
+    "origin": "walmart"
+  },
+  {
+    "id": "46558",
+    "creationDate": "15/08/2018 14:35",
+    "creationDateTimestamp": "1534343700000",
+    "text": "Ok, vou resolver",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46559",
+    "creationDate": "15/08/2018 14:35",
+    "creationDateTimestamp": "1534343700000",
+    "text": "Qual o modelo do tênis?",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46560",
+    "creationDate": "15/08/2018 14:39",
+    "creationDateTimestamp": "1534343940000",
+    "text": "É um 373 que comprei na última vez",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client"
+  },
+  {
+    "id": "46561",
+    "creationDate": "15/08/2018 14:40",
+    "creationDateTimestamp": "1534344000000",
+    "text": "Azul marinho",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client"
+  },
+  {
+    "id": "46562",
+    "creationDate": "15/08/2018 14:43",
+    "creationDateTimestamp": "1534344180000",
+    "text": "É um problema comum mesmo, que triste 😟",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46563",
+    "creationDate": "15/08/2018 14:47",
+    "creationDateTimestamp": "1534344420000",
+    "text": "O processo para troca funciona da seguinte forma \n - Enviaremos um código de despacho nos correios via e-mail, lá terá todas as informações necessárias sobre como deve ser feito o despacho \n - Receberemos o produto, e encaminharemos para análise \n - Caso não for mal uso, enviaremos os modelos pelos quais você poderá efetuar a troca \n - O processo todo pode demorar até 20 dias úteis",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46564",
+    "creationDate": "15/08/2018 14:50",
+    "creationDateTimestamp": "1534344600000",
+    "text": "Certo, mas caso eu tiver problemas com este novo tênis. É possível efetuar a troca novamente?",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client"
+  },
+  {
+    "id": "46565",
+    "creationDate": "15/08/2018 15:00",
+    "creationDateTimestamp": "1534345200000",
+    "text": "Of course my dear",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller"
+  },
+  {
+    "id": "46566",
+    "creationDate": "16/08/2018 23:37",
+    "creationDateTimestamp": "1535025379000",
+    "text": "Uhul, então fico no aguardo do envio do e-mail",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client"
+  },
+  {
+    "id": "46567",
+    "creationDate": "16/08/2018 23:38",
+    "creationDateTimestamp": "1534462680000",
+    "text": "Obrigado!",
+    "author": {
+      "name": "Silvio Santos",
+      "nickname": "Rei do Bau"
+
+    },
+    "origin": "client",
+    "attachments": [
+        {
+            "id": "122",
+            "fileName": "DogFilhote1.png",
+            "fileSize": "949258",
+            "contentType": "image/png",
+            "createdAt": "1544011184000"
+        }
+    ]
+  },
+  {
+    "id": "46568",
+    "creationDate": "17/08/2018 11:10",
+    "creationDateTimestamp": "1534910400000",
+    "text": "Ok, te enviarei o e-mail e daremos sequência no atendimento",
+    "author": {
+      "name": "Novo Balanço",
+      "nickname": "New"
+
+    },
+    "origin": "seller",
+    "attachments": [
+        {
+            "id": "122",
+            "fileName": "DogFilhote1.png",
+            "fileSize": "949258",
+            "contentType": "image/png",
+            "createdAt": "1544011184000"
+        }
+    ]
+  },
+  {
+    "id": "46569",
+    "creationDate": "17/08/2018 12:03",
+    "creationDateTimestamp": "1534507380000",
+    "text": "Boooa, seller. Ótimo pós venda 🔝",
+    "author": {
+      "name": "Walmart",
+      "nickname": "Walmart"
+
+    },
+    "origin": "walmart",
+    "attachments": [
+        {
+            "id": "122",
+            "fileName": "DogFilhote1.png",
+            "fileSize": "949258",
+            "contentType": "image/png",
+            "createdAt": "1544011184000"
+        }
+    ]
+  }
+]

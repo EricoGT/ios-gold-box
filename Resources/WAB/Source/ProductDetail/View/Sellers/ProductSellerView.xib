@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductSellerView">
+            <connections>
+                <outlet property="lblPrice" destination="dPb-Wy-oJm" id="gxb-7v-dhm"/>
+                <outlet property="lblSupplier" destination="fEg-dw-9st" id="KnJ-Yd-35j"/>
+                <outlet property="sellerNameLabel" destination="2Qm-EF-7Oe" id="8kE-20-RAg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hkf-mJ-2HO">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="UZ Games" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="2Qm-EF-7Oe">
+                    <rect key="frame" x="15" y="9" width="246" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="R$ 9.999,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-Wy-oJm">
+                    <rect key="frame" x="15" y="33" width="246" height="15"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Vendido e entregue por UZ Games" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-dw-9st">
+                    <rect key="frame" x="15" y="50" width="246" height="15"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="11"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALo-Dv-8K2" customClass="WMButtonRounded">
+                    <rect key="frame" x="261" y="16.5" width="44" height="44"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.61568627450000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" identifier="secondBuyButton"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="SpT-Sk-fv5"/>
+                        <constraint firstAttribute="height" constant="44" id="XMy-tL-sOz"/>
+                    </constraints>
+                    <state key="normal" image="UIProductDetailBuyIcon">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" image="UIProductDetailBuyIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="pressedCart" destination="-1" eventType="touchUpInside" id="4TH-0Q-GE1"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oe-cd-bL6" userLabel="separator">
+                    <rect key="frame" x="15" y="76" width="290" height="1"/>
+                    <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="XsO-qH-RPb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2Qm-EF-7Oe" firstAttribute="top" secondItem="hkf-mJ-2HO" secondAttribute="top" constant="9" id="15a-rZ-Lak"/>
+                <constraint firstAttribute="trailing" secondItem="ALo-Dv-8K2" secondAttribute="trailing" constant="15" id="3NT-bd-ljC"/>
+                <constraint firstItem="fEg-dw-9st" firstAttribute="top" secondItem="dPb-Wy-oJm" secondAttribute="bottom" constant="2" id="8ql-td-AKi"/>
+                <constraint firstAttribute="trailing" secondItem="fEg-dw-9st" secondAttribute="trailing" constant="59" id="Ehk-Gw-bUc"/>
+                <constraint firstItem="fEg-dw-9st" firstAttribute="leading" secondItem="hkf-mJ-2HO" secondAttribute="leading" constant="15" id="EqT-jl-FDZ"/>
+                <constraint firstAttribute="trailing" secondItem="2Qm-EF-7Oe" secondAttribute="trailing" constant="59" id="Hqz-GC-EfL"/>
+                <constraint firstItem="dPb-Wy-oJm" firstAttribute="top" secondItem="2Qm-EF-7Oe" secondAttribute="bottom" constant="6" id="KN5-ES-413"/>
+                <constraint firstItem="2Qm-EF-7Oe" firstAttribute="leading" secondItem="hkf-mJ-2HO" secondAttribute="leading" constant="15" id="NqQ-Uz-klh"/>
+                <constraint firstAttribute="centerY" secondItem="ALo-Dv-8K2" secondAttribute="centerY" id="h1u-wd-djG"/>
+                <constraint firstItem="0Oe-cd-bL6" firstAttribute="leading" secondItem="hkf-mJ-2HO" secondAttribute="leading" constant="15" id="hqR-bk-ak6"/>
+                <constraint firstItem="dPb-Wy-oJm" firstAttribute="leading" secondItem="hkf-mJ-2HO" secondAttribute="leading" constant="15" id="hqy-C1-uS2"/>
+                <constraint firstAttribute="trailing" secondItem="0Oe-cd-bL6" secondAttribute="trailing" constant="15" id="sA2-u9-hu4"/>
+                <constraint firstAttribute="trailing" secondItem="dPb-Wy-oJm" secondAttribute="trailing" constant="59" id="ww8-37-v84"/>
+                <constraint firstItem="0Oe-cd-bL6" firstAttribute="top" secondItem="fEg-dw-9st" secondAttribute="bottom" constant="11" id="yP4-wY-qMy"/>
+                <constraint firstAttribute="bottom" secondItem="0Oe-cd-bL6" secondAttribute="bottom" id="z0c-fe-kEF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35" y="64"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="UIProductDetailBuyIcon" width="25" height="26"/>
+    </resources>
+</document>

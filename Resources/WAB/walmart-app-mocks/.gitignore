@@ -1,0 +1,65 @@
+# Android gitIgnore
+*/gen
+*/bin
+*/target
+*.class
+*.DS_Store
+*.log
+.classpath
+*/.gradle
+Walmart/local.properties
+Walmart/Walmart.iml
+
+# iOS gitIgnore
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+build/
+DerivedData
+xcuserdata/
+xcshareddata/IDEWorkspaceChecks.plist
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcbkptlist
+
+## WM
+*.gcda
+*.gcno
+features
+wmtiOS.fpr
+wmtiOS.pdf
+Docs
+.DS_Store
+upload_dsym_results
+fastlane
+
+## CardIO
+libCardIO.a
+libopencv_*
+
+## New Relic
+NewRelic*
+NRConstants*
+NRCustomMetrics*
+NRGC*
+NRLog*
+NRTimer*
+NRURLSession*
+
+Walmart.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist

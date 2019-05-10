@@ -1,0 +1,33 @@
+{
+    "lastModified": "2015-05-20T18:00:13.581Z",
+    "target": {
+        "clientCode": "",
+        "timeout": 5
+    },
+    "audienceManager": {
+        "server": ""
+    },
+    "acquisition": {
+        "server": "c00.adobe.com",
+        "appid": "eaf561c1040d384d09cc70af630a2e57d079ec5eea00b0556c6fff833cdda6fd"
+    },
+    "analytics": {
+        "rsids": "wmbmobile",
+        "server": "walmartbrasil.sc.omtrdc.net",
+        "ssl": false,
+        "offlineEnabled": false,
+        "charset": "UTF-8",
+        "lifecycleTimeout": 300,
+        "privacyDefault": "optedin",
+        "batchLimit": 0,
+        "timezone": "BST",
+        "timezoneOffset": -180,
+        "referrerTimeout": 0,
+        "poi": []
+    },
+    "messages": [],
+    "remotes": {
+        "analytics.poi": "https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-54a69be16439660015c00000.json",
+        "messages": "https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-54a69be16439660018640000.json"
+    }
+}

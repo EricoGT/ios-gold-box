@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="KGk-i7-Jjw" customClass="WBRThankYouPageProductTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIe-wr-zfB">
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="63.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1W-VS-Ekg">
+                                <rect key="frame" x="0.0" y="25.5" width="12" height="13"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPu-LD-Vgm">
+                                <rect key="frame" x="22" y="5" width="354" height="53.5"/>
+                                <string key="text">Fone de Ouvido Beats Solo 2 By Dr. Dree Sem Fio Com
+Cabo Auxiliar e Carregador USB</string>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XPu-LD-Vgm" firstAttribute="leading" secondItem="O1W-VS-Ekg" secondAttribute="trailing" constant="10" id="3CW-o1-NNN"/>
+                            <constraint firstItem="O1W-VS-Ekg" firstAttribute="centerY" secondItem="KIe-wr-zfB" secondAttribute="centerY" id="KKz-S0-wOr"/>
+                            <constraint firstAttribute="trailing" secondItem="XPu-LD-Vgm" secondAttribute="trailing" id="NV4-8d-bqX"/>
+                            <constraint firstItem="XPu-LD-Vgm" firstAttribute="top" secondItem="KIe-wr-zfB" secondAttribute="top" constant="5" id="dPO-Q5-jmR"/>
+                            <constraint firstAttribute="bottom" secondItem="XPu-LD-Vgm" secondAttribute="bottom" constant="5" id="eeJ-ha-M8B"/>
+                            <constraint firstItem="O1W-VS-Ekg" firstAttribute="leading" secondItem="KIe-wr-zfB" secondAttribute="leading" id="lTU-JC-G6p"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KIe-wr-zfB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="C0I-xK-kEk"/>
+                    <constraint firstAttribute="trailing" secondItem="KIe-wr-zfB" secondAttribute="trailing" id="Jmg-tF-Ygb"/>
+                    <constraint firstItem="KIe-wr-zfB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lXU-oB-HGf"/>
+                    <constraint firstAttribute="bottom" secondItem="KIe-wr-zfB" secondAttribute="bottom" id="yMh-wO-QKt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="productDescriptionLabel" destination="XPu-LD-Vgm" id="Nyp-mQ-ixY"/>
+                <outlet property="productQuantityLabel" destination="O1W-VS-Ekg" id="ShJ-zf-vFh"/>
+            </connections>
+            <point key="canvasLocation" x="48" y="134"/>
+        </tableViewCell>
+    </objects>
+</document>

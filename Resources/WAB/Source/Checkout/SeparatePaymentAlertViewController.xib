@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeparatePaymentAlertViewController">
+            <connections>
+                <outlet property="btNo" destination="lb7-Ck-YBY" id="yjp-Lx-ozA"/>
+                <outlet property="btShowLicense" destination="pjK-Gu-fth" id="jdj-Bt-BMA"/>
+                <outlet property="btYes" destination="zei-zz-PxO" id="IFg-fC-Rku"/>
+                <outlet property="view" destination="wUe-ra-Wz1" id="dRa-Vs-Vif"/>
+                <outlet property="viewAlert" destination="QQd-Xo-fRp" id="tNb-kk-QN4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wUe-ra-Wz1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-Xo-fRp" userLabel="View Background Alert">
+                    <rect key="frame" x="33" y="151.5" width="310" height="266"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pagamento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="nKk-b5-GDj">
+                            <rect key="frame" x="23" y="25" width="269" height="18"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-Ir-Qdq">
+                            <rect key="frame" x="20" y="68" width="270" height="61"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <string key="text">Autorizo que o pagamento do Seguro Garantia Estendida Original seja realizado em conjunto com o(s) pagamento(s) do(s) produto(s)/serviço(s) adquirido(s).</string>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb7-Ck-YBY" customClass="WMButtonRounded">
+                            <rect key="frame" x="15" y="154" width="135" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="hHD-gT-Qgh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <state key="normal" title="Não">
+                                <color key="titleColor" red="0.098039215686274508" green="0.46274509803921571" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="noPressed:" destination="-1" eventType="touchUpInside" id="AEa-ax-UUW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zei-zz-PxO" customClass="WMButtonRounded">
+                            <rect key="frame" x="160" y="154" width="135" height="37"/>
+                            <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <state key="normal" title="Sim">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="yesPressed:" destination="-1" eventType="touchUpInside" id="i72-xB-e5g"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao pagar em conjunto eu aceito os" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="bjy-HW-cnw">
+                            <rect key="frame" x="20" y="216" width="275" height="13"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjK-Gu-fth">
+                            <rect key="frame" x="20" y="229" width="113" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="113" id="Fle-0O-yk0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Termos de Autorização">
+                                <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.091796569526195526" green="0.36870548129081726" blue="0.76829028129577637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="pressedLicense:" destination="-1" eventType="touchUpInside" id="OxS-w2-VDD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="de pagamento." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="vYi-bV-Sj6">
+                            <rect key="frame" x="135" y="229" width="153" height="13"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="lb7-Ck-YBY" firstAttribute="leading" secondItem="QQd-Xo-fRp" secondAttribute="leading" constant="15" id="2OO-zJ-Aby"/>
+                        <constraint firstAttribute="trailing" secondItem="bjy-HW-cnw" secondAttribute="trailing" constant="15" id="6bN-B8-jN8"/>
+                        <constraint firstItem="zei-zz-PxO" firstAttribute="height" secondItem="lb7-Ck-YBY" secondAttribute="height" id="8XC-do-znH"/>
+                        <constraint firstItem="vYi-bV-Sj6" firstAttribute="top" secondItem="bjy-HW-cnw" secondAttribute="bottom" id="97n-Aw-aUX"/>
+                        <constraint firstItem="zei-zz-PxO" firstAttribute="leading" secondItem="lb7-Ck-YBY" secondAttribute="trailing" constant="10" id="9SW-uW-cyt"/>
+                        <constraint firstAttribute="trailing" secondItem="zei-zz-PxO" secondAttribute="trailing" constant="15" id="C5F-i3-BcD"/>
+                        <constraint firstItem="rB5-Ir-Qdq" firstAttribute="leading" secondItem="QQd-Xo-fRp" secondAttribute="leading" constant="20" id="CH7-ok-n4a"/>
+                        <constraint firstItem="nKk-b5-GDj" firstAttribute="top" secondItem="QQd-Xo-fRp" secondAttribute="top" constant="25" id="DZj-ce-QtM"/>
+                        <constraint firstAttribute="trailing" secondItem="vYi-bV-Sj6" secondAttribute="trailing" constant="22" id="Ftj-UE-6ru"/>
+                        <constraint firstItem="vYi-bV-Sj6" firstAttribute="leading" secondItem="pjK-Gu-fth" secondAttribute="trailing" constant="2" id="JXb-L8-yEg"/>
+                        <constraint firstItem="bjy-HW-cnw" firstAttribute="top" secondItem="zei-zz-PxO" secondAttribute="bottom" constant="25" id="KgK-7a-Vsg"/>
+                        <constraint firstAttribute="trailing" secondItem="nKk-b5-GDj" secondAttribute="trailing" constant="18" id="LK4-7R-FOi"/>
+                        <constraint firstItem="pjK-Gu-fth" firstAttribute="leading" secondItem="QQd-Xo-fRp" secondAttribute="leading" constant="20" id="MIN-Hr-BbC"/>
+                        <constraint firstItem="rB5-Ir-Qdq" firstAttribute="top" secondItem="nKk-b5-GDj" secondAttribute="bottom" constant="25" id="MWh-4O-zmn"/>
+                        <constraint firstItem="nKk-b5-GDj" firstAttribute="leading" secondItem="QQd-Xo-fRp" secondAttribute="leading" constant="23" id="c0C-25-fBg"/>
+                        <constraint firstAttribute="trailing" secondItem="rB5-Ir-Qdq" secondAttribute="trailing" constant="20" id="hGe-28-ohv"/>
+                        <constraint firstItem="bjy-HW-cnw" firstAttribute="leading" secondItem="QQd-Xo-fRp" secondAttribute="leading" constant="20" id="mPs-TQ-T2b"/>
+                        <constraint firstItem="lb7-Ck-YBY" firstAttribute="width" secondItem="zei-zz-PxO" secondAttribute="width" id="naW-wc-pjc"/>
+                        <constraint firstItem="pjK-Gu-fth" firstAttribute="top" secondItem="bjy-HW-cnw" secondAttribute="bottom" id="oOB-W0-r6q"/>
+                        <constraint firstAttribute="height" constant="266" id="s4R-lS-zIm"/>
+                        <constraint firstItem="zei-zz-PxO" firstAttribute="centerY" secondItem="lb7-Ck-YBY" secondAttribute="centerY" id="xpU-qT-uFj"/>
+                        <constraint firstItem="lb7-Ck-YBY" firstAttribute="top" secondItem="rB5-Ir-Qdq" secondAttribute="bottom" constant="25" id="znI-mE-wnn"/>
+                    </constraints>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QQd-Xo-fRp" secondAttribute="trailing" constant="32" id="VSR-Nr-5fm"/>
+                <constraint firstItem="QQd-Xo-fRp" firstAttribute="centerY" secondItem="wUe-ra-Wz1" secondAttribute="centerY" id="m6S-Bq-OCQ"/>
+                <constraint firstItem="QQd-Xo-fRp" firstAttribute="leading" secondItem="wUe-ra-Wz1" secondAttribute="leading" constant="33" id="yss-tb-x7u"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="303.5" y="276"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

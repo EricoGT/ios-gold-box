@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MultipleDeliveriesBlock">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="133"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPo-N3-0Uy">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="133"/>
+                    <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon_info" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-nc-ikG">
+                            <rect key="frame" x="21" y="34" width="45" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="59" id="ACV-M5-D3v"/>
+                                <constraint firstAttribute="width" constant="45" id="LXi-99-DTv"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Separamos o seu pedido em 2 entregas. Assim os produtos que estão mais próximos do endereço de entrega chegarão primeiro ;)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-TJ-Il8">
+                            <rect key="frame" x="90" y="15" width="194" height="96"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                            <color key="textColor" red="0.071332633495330811" green="0.54438096284866333" blue="0.15154102444648743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OeL-2T-RmZ">
+                            <rect key="frame" x="0.0" y="128" width="290" height="5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.81176470590000005" green="0.91372549020000005" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.85490196080000003" green="0.94901960780000005" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="iX2-nc-ikG" firstAttribute="top" secondItem="ZPo-N3-0Uy" secondAttribute="top" constant="34" id="05h-Tp-bGT"/>
+                        <constraint firstItem="ZxX-TJ-Il8" firstAttribute="top" secondItem="ZPo-N3-0Uy" secondAttribute="top" constant="15" id="OAO-Sc-mPd"/>
+                        <constraint firstItem="ZxX-TJ-Il8" firstAttribute="leading" secondItem="ZPo-N3-0Uy" secondAttribute="leading" constant="90" id="XPH-2t-tbf"/>
+                        <constraint firstAttribute="trailing" secondItem="ZxX-TJ-Il8" secondAttribute="trailing" constant="6" id="s34-fP-ee3"/>
+                        <constraint firstAttribute="bottom" secondItem="ZxX-TJ-Il8" secondAttribute="bottom" constant="22" id="sB4-H4-9cj"/>
+                        <constraint firstItem="iX2-nc-ikG" firstAttribute="leading" secondItem="ZPo-N3-0Uy" secondAttribute="leading" constant="21" id="yab-wh-Rdh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ZPo-N3-0Uy" secondAttribute="bottom" id="S0M-pZ-vCn"/>
+                <constraint firstAttribute="trailing" secondItem="ZPo-N3-0Uy" secondAttribute="trailing" id="URD-SR-wfs"/>
+                <constraint firstItem="ZPo-N3-0Uy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h9n-GT-0nR"/>
+                <constraint firstItem="ZPo-N3-0Uy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oYS-6h-wT0"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="ZPo-N3-0Uy" id="vTh-Hd-TOE"/>
+                <outlet property="messageLabel" destination="ZxX-TJ-Il8" id="LA5-wj-OmT"/>
+            </connections>
+            <point key="canvasLocation" x="-50" y="-8"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_info" width="45" height="59"/>
+    </resources>
+</document>

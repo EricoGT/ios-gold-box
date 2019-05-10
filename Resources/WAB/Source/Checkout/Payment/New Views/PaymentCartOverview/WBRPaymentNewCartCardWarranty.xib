@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellCartWarranty" rowHeight="148" id="KGk-i7-Jjw" customClass="WBRPaymentNewCartCardWarranty">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="447" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOT-HH-nCH">
+                        <rect key="frame" x="15" y="0.0" width="417" height="129.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14w-Yq-n4S" userLabel="viewWarning">
+                                <rect key="frame" x="0.0" y="0.0" width="417" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não é possível entregar no endereço informado. Por favor, remova o produto." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="387" translatesAutoresizingMaskIntoConstraints="NO" id="acd-eo-B6b">
+                                        <rect key="frame" x="15" y="5" width="387" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="acd-eo-B6b" secondAttribute="trailing" priority="800" constant="15" id="2eg-eQ-O8z"/>
+                                    <constraint firstItem="acd-eo-B6b" firstAttribute="top" secondItem="14w-Yq-n4S" secondAttribute="top" priority="800" constant="5" id="BfC-P6-Lv1"/>
+                                    <constraint firstAttribute="bottom" secondItem="acd-eo-B6b" secondAttribute="bottom" priority="800" constant="5" id="KGN-Bh-YaE"/>
+                                    <constraint firstItem="acd-eo-B6b" firstAttribute="leading" secondItem="14w-Yq-n4S" secondAttribute="leading" priority="800" constant="15" id="rkI-FZ-DMd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwG-FL-gl2" userLabel="fillet">
+                                <rect key="frame" x="0.0" y="127.5" width="417" height="1"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="800" constant="1" id="Ux9-HW-TPw"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="imgWarranty" translatesAutoresizingMaskIntoConstraints="NO" id="seF-sg-X7g">
+                                <rect key="frame" x="8" y="52.5" width="64" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="800" constant="64" id="NTt-Hn-AdW"/>
+                                    <constraint firstAttribute="height" priority="800" constant="52" id="wcD-Y2-ZU0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seguro Garantia" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-JP-tYE">
+                                <rect key="frame" x="90" y="52.5" width="327" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Console Xbox One " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="zvd-vX-dag">
+                                <rect key="frame" x="90" y="73" width="327" height="13"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantidade 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-Co-VWd">
+                                <rect key="frame" x="90" y="92" width="327" height="13"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="14w-Yq-n4S" firstAttribute="leading" secondItem="SOT-HH-nCH" secondAttribute="leading" priority="800" id="0xR-u0-WJ8"/>
+                            <constraint firstItem="zvd-vX-dag" firstAttribute="top" secondItem="cMa-JP-tYE" secondAttribute="bottom" priority="800" constant="5" id="3bP-Na-fkd"/>
+                            <constraint firstItem="zvd-vX-dag" firstAttribute="leading" secondItem="seF-sg-X7g" secondAttribute="trailing" priority="800" constant="18" id="GPk-AN-ec4"/>
+                            <constraint firstItem="Ebz-Co-VWd" firstAttribute="leading" secondItem="seF-sg-X7g" secondAttribute="trailing" priority="800" constant="18" id="Hkc-t0-D7c"/>
+                            <constraint firstAttribute="trailing" secondItem="zvd-vX-dag" secondAttribute="trailing" priority="800" id="KeH-dT-12E"/>
+                            <constraint firstAttribute="trailing" secondItem="ZwG-FL-gl2" secondAttribute="trailing" priority="800" id="NMm-9n-936"/>
+                            <constraint firstItem="Ebz-Co-VWd" firstAttribute="top" secondItem="zvd-vX-dag" secondAttribute="bottom" priority="800" constant="6" id="O4a-G4-iiC"/>
+                            <constraint firstItem="seF-sg-X7g" firstAttribute="leading" secondItem="SOT-HH-nCH" secondAttribute="leading" priority="800" constant="8" id="PF2-i0-yNw"/>
+                            <constraint firstItem="14w-Yq-n4S" firstAttribute="top" secondItem="SOT-HH-nCH" secondAttribute="top" priority="800" id="RgU-Ej-lkx"/>
+                            <constraint firstItem="ZwG-FL-gl2" firstAttribute="top" secondItem="Ebz-Co-VWd" secondAttribute="bottom" priority="800" constant="22.5" id="TAf-yx-DFZ"/>
+                            <constraint firstItem="cMa-JP-tYE" firstAttribute="top" secondItem="14w-Yq-n4S" secondAttribute="bottom" priority="800" constant="18.5" id="WBY-ie-ClE"/>
+                            <constraint firstItem="seF-sg-X7g" firstAttribute="top" secondItem="14w-Yq-n4S" secondAttribute="bottom" priority="800" constant="18.5" id="ZPS-9o-2Ah"/>
+                            <constraint firstItem="ZwG-FL-gl2" firstAttribute="leading" secondItem="SOT-HH-nCH" secondAttribute="leading" priority="800" id="a1h-x1-gjd"/>
+                            <constraint firstItem="cMa-JP-tYE" firstAttribute="leading" secondItem="seF-sg-X7g" secondAttribute="trailing" priority="800" constant="18" id="hZG-1J-85B"/>
+                            <constraint firstAttribute="trailing" secondItem="Ebz-Co-VWd" secondAttribute="trailing" priority="800" id="iCF-vg-8be"/>
+                            <constraint firstAttribute="bottom" secondItem="ZwG-FL-gl2" secondAttribute="bottom" priority="800" constant="1" id="kq7-T0-w3P"/>
+                            <constraint firstAttribute="trailing" secondItem="cMa-JP-tYE" secondAttribute="trailing" priority="800" id="ohx-pH-mbk"/>
+                            <constraint firstAttribute="trailing" secondItem="14w-Yq-n4S" secondAttribute="trailing" priority="800" id="yq7-oi-wo9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="SOT-HH-nCH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="800" constant="15" id="Vmm-Le-KjO"/>
+                    <constraint firstAttribute="trailing" secondItem="SOT-HH-nCH" secondAttribute="trailing" priority="800" constant="15" id="ZSq-0S-KdV"/>
+                    <constraint firstAttribute="bottom" secondItem="SOT-HH-nCH" secondAttribute="bottom" priority="800" id="ics-cq-Jvc"/>
+                    <constraint firstItem="SOT-HH-nCH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="800" id="kpO-o3-bSx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="lblMsgWarning" destination="acd-eo-B6b" id="X90-kG-kGR"/>
+                <outlet property="lblProductDescription" destination="zvd-vX-dag" id="0HX-w7-Q8f"/>
+                <outlet property="lblQuantity" destination="Ebz-Co-VWd" id="irW-PY-DHn"/>
+                <outlet property="lblWarrantyType" destination="cMa-JP-tYE" id="jtG-wK-Llu"/>
+                <outlet property="viewCard" destination="SOT-HH-nCH" id="LVs-yK-VKZ"/>
+                <outlet property="warningLabelBottomSpaceConstraint" destination="KGN-Bh-YaE" id="VFO-7C-JZt"/>
+                <outlet property="warningLabelTopSpaceConstraint" destination="BfC-P6-Lv1" id="oli-b5-2eo"/>
+            </connections>
+            <point key="canvasLocation" x="9.5" y="-17"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="imgWarranty" width="64" height="52"/>
+    </resources>
+</document>

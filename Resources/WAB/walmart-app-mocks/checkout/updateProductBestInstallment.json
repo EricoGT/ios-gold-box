@@ -1,0 +1,193 @@
+{
+  "id": "fe4656c5-bd0d-4414-bea1-7f14b1e84e83",
+  "loggerKey": "43fi3fdwsywkitiy3oi9rkwo4",
+  "items": [
+    {
+      "cartDiscountSuggestionApplicable": false,
+      "shippingValue": 0,
+      "imageUrl": "//static.wmobjects.com.br/imgres/arquivos/ids/4261962",
+      "originalImageUrl": "//static.wmobjects.com.br/imgres/arquivos/ids/4261962",
+      "cartImageUrl": "//static.wmobjects.com.br/imgres/arquivos/ids/4261962",
+      "detailUrl": "/produto/3068582/pr",
+      "listPrice": 5000,
+      "unavailableProduct": false,
+      "services": [],
+      "deliveryTypes": [],
+      "sellerName": "Cachaçaria Original",
+      "stockBalance": 12,
+      "markedToRemove": false,
+      "sku": 1197184,
+      "marketPlaceSku": 1197184,
+      "giftWrappable": false,
+      "currentMaxQuantityBySellerAndSku": 2,
+      "brandName": "Claudionor",
+      "productId": 3068582,
+      "kit": false,
+      "skuName": "Cachaça Claudionor 666ml",
+      "kitItems": [],
+      "categories": [
+        {
+          "id": 4373,
+          "name": "Adega"
+        },
+        {
+          "id": 6348,
+          "name": "Cervejas"
+        },
+        {
+          "id": 6349,
+          "name": "Clara"
+        }
+      ],
+      "fullDescription": "Cachaça Claudionor 666ml",
+      "sellerId": "cachacariaoriginal",
+      "description": "Cachaça Claudionor 666ml",
+      "quantity": 2,
+      "price": 5000,
+      "priceWithoutDiscountCurrent": 5000,
+      "priceWithoutDiscountOriginal": 5000,
+      "key": "7fhj5jzngfv7luk4xlavxv39k",
+      "departmentId": 4373,
+      "categoryId": 6348,
+      "subCategoryId": 6349,
+      "itemUnavailable": false,
+      "pageContext": {
+        "categoryId": null,
+        "categoryName": null,
+        "departmentId": null,
+        "departmentName": null,
+        "subcategoryId": null,
+        "subcategoryName": null
+      },
+      "defaultContext": {
+        "categoryId": null,
+        "categoryName": null,
+        "departmentId": null,
+        "departmentName": null,
+        "subcategoryId": null,
+        "subcategoryName": null
+      },
+      "createDateTime": 1529333718258,
+      "isGiftWrapper": false,
+      "importFee": 0,
+      "priceDivergent": false,
+      "service": false,
+      "priceDivergentToHigh": false,
+      "priceDivergentToLow": false,
+      "servicesIds": []
+    }
+  ],
+  "gifts": [],
+  "hasProductImported": false,
+  "removedGiftCards": [],
+  "voucherStatus": [],
+  "giftCards": [],
+  "bestInstallment": {
+    "valuePerInstallment": 5.56,
+    "installmentAmount": 18,
+    "formattedValuePerInstallment": "5,56",
+    "valuePerInstallmentCents": 556
+  },
+  "userProfile": {
+    "fullName": "Matheus silveira ",
+    "firstName": "Matheus",
+    "lastName": "silveira ",
+    "pid": "31fac86a-1c4a-42bd-b056-852e007a923d",
+    "guid": "fe4656c5-bd0d-4414-bea1-7f14b1e84e83",
+    "email": "silveira@ciandt.com",
+    "document": "37975992852",
+    "corporate": false,
+    "phones": [
+      {
+        "areaCode": "19",
+        "number": "991279969",
+        "type": "MOBILE"
+      }
+    ],
+    "dateBirth": "2017-09-21",
+    "gender": "MALE",
+    "visitorIdentity": "RORINk1KQi8yPqsGZYPBboQfEMl8Gtdyn4ItD2juuoJHSk0mgctyQ9lrn8nuZvRVzn4lIkvf3yV3P1KBbwq9uXA1/72HTHpHpJg6gxpvyZo=",
+    "preferences": {
+      "email": false,
+      "sms": false,
+      "acceptedTerm": false
+    },
+    "dateBirthAsDate": 1505962800000
+  },
+  "chaordicInfo": {
+    "cartSource": "cart",
+    "apiKey": "walmart-marketplace",
+    "cartCryptoContent": "/qqxX4HZGg7mP+bzNbOyhZC+/ATMg7PbjYNGxoJ2LakzW8l2ZZMcLa2pqKFI4h1ngcCKhfw0iGFIfJ6mj0TxAF1FEnEx4fZl8yR43a849fLuDOT2/bDxgicyexmFA3bz99+StJ6IfFwdtG8EbYznBSI6FMdzFtivsOdO21x3DJYyDpZvOkmWvk3AGOx6hUaAm/OjYUqTStHZY/SBDIZ9bNQTd2XsO/JjJf9B8mqPr3YILsDw+09ozvyd7HwJBUoMfiWhecUL7/pf/PF6pIoE07f2NX6SDL8f00mV9XezdaAp0SeJ89lPaeLj/YQU57++HrtiQsED4v9asZ7+CJHKx7vMXWJ1dI2ce58msiDnNMir9Vu/ilqSS1uCCZjudHSNecYSJTzTuxlEHNBwITvegw=="
+  },
+  "locale": {
+    "locale": "pt-BR",
+    "country": "BRA",
+    "currencyCode": "BRL",
+    "notBrazil": false,
+    "brazil": true,
+    "countryCOL": false,
+    "notCountryCOL": true
+  },
+  "hasError": false,
+  "giftCardsAmount": 0,
+  "freightPrice": 0,
+  "nominalDiscount": 0,
+  "estimatedBestShippingPrice": 0,
+  "discountsAmount": 0,
+  "couponAmount": 0,
+  "usedGiftCardsAmount": 0,
+  "remainingGiftCardsAmount": 0,
+  "giftCardDiscountAmount": 0,
+  "giftWrapperServicesAmount": 0,
+  "subtotal": 10000,
+  "freightPriceLocal": 0,
+  "freightPriceImported": 0,
+  "servicesPrice": 0,
+  "totalPrice": 10000,
+  "totalPriceWithEstimatedBestShipping": 10000,
+  "totalWithoutDiscounts": 10000,
+  "amounts": {
+    "productsAmount": 10000,
+    "servicesAmount": 0,
+    "deliveriesAmount": 0,
+    "deliveriesAmountLocal": 0,
+    "deliveriesAmountImported": 0,
+    "nominalDiscount": 0,
+    "totalNominalDiscount": 0,
+    "usedNominalDiscount": 0,
+    "giftCardDiscountAmount": 0,
+    "giftCardsAmount": 0,
+    "usedGiftCardsAmount": 0,
+    "remainingGiftCardsAmount": 0,
+    "estimatedBestShippingAmount": 0,
+    "estimatedBestShippingAmountLocal": 0,
+    "estimatedBestShippingAmountImported": 0,
+    "couponAmount": 0,
+    "giftWrapperServicesAmount": 0,
+    "importFeesAmount": 0,
+    "nominalFromCoupon": false,
+    "totalAmount": 10000,
+    "totalAmountWithEstimatedBestShipping": 10000,
+    "discountsAmount": 0,
+    "totalAmountWithoutDiscount": 10000,
+    "totalAmountPlusGiftCardDiscountAmount": 10000,
+    "totalAmountWithEstimatedBestShippingPlusGiftCardDiscountAmount": 10000,
+    "nominalDifference": 0
+  },
+  "bestInstallment": {
+    "price": 234,
+    "valuePerInstallment": 9.75,
+    "formattedPrice": "234,00",
+    "formattedValuePerInstallment": "9,75",
+    "currency": "R$ ",
+    "installmentAmount": 13,
+    "paymentTypes": ["MASTERCARD"]
+  },
+  "servicesPriceWithGiftWrapper": 0,
+  "loadOrderParams": "cachacariaoriginal,1197184",
+  "userLogged": true,
+  "cookies": [
+    "cart=fe4656c5-bd0d-4414-bea1-7f14b1e84e83;Version=1;Comment=;Path=/;Max-Age=0;HttpOnly",
+    "token=7o5ovomwr3npi3mq61xqpy91q;Version=1;Comment=;Path=/;Max-Age=1296000;HttpOnly"
+  ]
+}

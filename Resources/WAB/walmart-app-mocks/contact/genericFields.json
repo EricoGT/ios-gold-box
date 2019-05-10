@@ -1,0 +1,117 @@
+{
+  "fields": [
+    {
+      "label": "Embalagem",
+      "type": "PACKAGE",
+      "values": [
+        {
+          "label": "Original"
+        },
+        {
+          "label": "Similar"
+        },
+        {
+          "label": "Sem embalagem"
+        }
+      ]
+    },
+    {
+      "label": "Estado",
+      "type": "STATE",
+      "values": [
+        {
+          "label": "Aberta"
+        },
+        {
+          "label": "Danificada"
+        },
+        {
+          "label": "Lacrada"
+        }
+      ]
+    },
+    {
+      "label": "Acessórios",
+      "type": "ACCESSORY",
+      "values": [
+        {
+          "label": "Todos os acessórios"
+        },
+        {
+          "label": "Devolução parcial"
+        },
+        {
+          "label": "Perda dos acessórios"
+        }
+      ]
+    },
+    {
+      "label": "Produto montado",
+      "type": "MOUNTED",
+      "values": [
+        {
+          "label": "Produto montado"
+        },
+        {
+          "label": "Produto desmontado"
+        },
+        {
+          "label": "Não se aplica"
+        }
+      ]
+    },
+    {
+      "label": "Produto utilizado",
+      "type": "USED",
+      "values": [
+        {
+          "label": "Utilizado"
+        },
+        {
+          "label": "Não utilizado"
+        },
+        {
+          "label": "Não se aplica"
+        }
+      ]
+    },
+    {
+      "label": "Tipo de retorno",
+      "type": "RETURN",
+      "values": [
+        {
+          "label": "Coleta"
+        },
+        {
+          "label": "Postagem"
+        }
+      ]
+    },
+    {
+      "label": "Tipo de restituição",
+      "type": "REFUND",
+      "values": [
+        {
+          "label": "Reembolso",
+          "refund": true
+        },
+        {
+          "label": "Avaliar troca junto ao vendedor"
+        }
+      ]
+    }
+  ],
+  "customer": {
+    "document": "98148268630"
+  },
+  "paymentMethods": [
+    {
+      "method": "BARCODE",
+      "paymentUrl": ""
+    }
+  ],
+  "canceled": false,
+  "allowCreateBankSlipTicket": true,
+  "expiredBankSlip": false,
+  "approvedPayment": false
+}

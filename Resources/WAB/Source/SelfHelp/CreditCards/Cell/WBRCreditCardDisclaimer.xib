@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KWt-fz-38V" userLabel="Disclaimer View" customClass="WBRCreditCardDisclaimer">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIy-72-Hq2">
+                    <rect key="frame" x="15" y="0.0" width="345" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atenção! O seu cartão principal Final 1234 venceu!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP0-8b-Zt8">
+                            <rect key="frame" x="10" y="10" width="325" height="13"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="É preciso definir outro cartão como principal para efetuar suas compras rápidas :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-X5-xmu">
+                            <rect key="frame" x="9" y="29" width="329" height="26"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.97647058819999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="JP0-8b-Zt8" firstAttribute="leading" secondItem="zIy-72-Hq2" secondAttribute="leading" constant="10" id="AKt-GU-xHg"/>
+                        <constraint firstAttribute="trailing" secondItem="1pG-X5-xmu" secondAttribute="trailing" constant="7" id="Dtr-Gb-VGy"/>
+                        <constraint firstItem="1pG-X5-xmu" firstAttribute="leading" secondItem="zIy-72-Hq2" secondAttribute="leading" constant="9" id="Mdp-75-FLa"/>
+                        <constraint firstItem="JP0-8b-Zt8" firstAttribute="top" secondItem="zIy-72-Hq2" secondAttribute="top" constant="10" id="bSS-tm-WlL"/>
+                        <constraint firstAttribute="bottom" secondItem="1pG-X5-xmu" secondAttribute="bottom" constant="10" id="lq7-17-Ixs"/>
+                        <constraint firstItem="1pG-X5-xmu" firstAttribute="top" secondItem="JP0-8b-Zt8" secondAttribute="bottom" constant="6" id="ncC-f3-fop"/>
+                        <constraint firstAttribute="trailing" secondItem="JP0-8b-Zt8" secondAttribute="trailing" constant="10" id="yWB-Ct-iLz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zIy-72-Hq2" firstAttribute="leading" secondItem="KWt-fz-38V" secondAttribute="leading" constant="15" id="0UI-R1-s4s"/>
+                <constraint firstAttribute="bottom" secondItem="zIy-72-Hq2" secondAttribute="bottom" id="5EK-Iu-kV7"/>
+                <constraint firstAttribute="trailing" secondItem="zIy-72-Hq2" secondAttribute="trailing" constant="15" id="DBC-2H-wpS"/>
+                <constraint firstItem="zIy-72-Hq2" firstAttribute="top" secondItem="KWt-fz-38V" secondAttribute="top" id="ZE2-VZ-PEG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="disclaimerText" destination="1pG-X5-xmu" id="h12-5W-rgX"/>
+                <outlet property="disclaimerTitle" destination="JP0-8b-Zt8" id="ZyI-wU-knk"/>
+                <outlet property="disclaimerView" destination="zIy-72-Hq2" id="5tY-9i-LIk"/>
+            </connections>
+            <point key="canvasLocation" x="901" y="-221"/>
+        </view>
+    </objects>
+</document>

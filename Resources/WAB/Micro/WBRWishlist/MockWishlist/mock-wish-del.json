@@ -1,0 +1,174 @@
+{
+    "products": [
+                 {
+                 "productId": 2000307,
+                 "skuId": 25,
+                 "bought": false,
+                 "sellerId": "1",
+                 "date": 1495807508455,
+                 "statusPrice": 0,
+                 "quantity": 1412,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 25,
+                                   "name": "Monitor Pressão Arterial de Pulso Medeqco com Memória para 42 Medições + Balança Digital Camry EB9013 - Vidro e Prata",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 310.51,
+                                   "price": 310.51,
+                                   "quantityAvailable": 1412,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 14.11,
+                                   "sellerId": "1",
+                                   "seller": "Walmart",
+                                   "imageIds": [
+                                                "2520059"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2048467,
+                 "skuId": 123376,
+                 "bought": false,
+                 "sellerId": "nikkey",
+                 "date": 1495752248329,
+                 "statusPrice": 0,
+                 "quantity": 2,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 123376,
+                                   "name": "Chapa Taiff Cerâmica Bivolt",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 350,
+                                   "discountPrice": 116,
+                                   "price": 290,
+                                   "quantityAvailable": 457,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 5.27,
+                                   "sellerId": "nikkey",
+                                   "seller": "Nikkey Cosméticos",
+                                   "imageIds": [
+                                                "2459782"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2958074,
+                 "skuId": 1075445,
+                 "bought": false,
+                 "sellerId": "1",
+                 "date": 1495751741895,
+                 "statusPrice": 0,
+                 "quantity": 44,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 1075445,
+                                   "name": "Pneu Pirelli 165&#x2F;70R13 P400 78T",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 189,
+                                   "price": 189,
+                                   "quantityAvailable": 44,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 8.59,
+                                   "sellerId": "1",
+                                   "seller": "Walmart",
+                                   "imageIds": [
+                                                "4060604"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 3016844,
+                 "skuId": 1141977,
+                 "bought": true,
+                 "sellerId": "1",
+                 "date": 1495751567203,
+                 "statusPrice": 0,
+                 "quantity": 6,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 1141977,
+                                   "name": "Detergente para Máquina de Lavar Louças Limpol Bombril 1Kg",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 16.99,
+                                   "price": 16.99,
+                                   "quantityAvailable": 6,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 0.77,
+                                   "sellerId": "1",
+                                   "seller": "Walmart",
+                                   "imageIds": [
+                                                "4165032"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2000307,
+                 "skuId": 32859,
+                 "bought": false,
+                 "sellerId": "liberatti",
+                 "date": 1495750837351,
+                 "statusPrice": 0,
+                 "quantity": 6,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 32859,
+                                   "name": "Climatizador e Umidificador de Ar Frio Display Digital CL07F - Electrolux - 110V",
+                                   "rating": {
+                                   "value": 5,
+                                   "total": 1
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 419,
+                                   "discountPrice": 379,
+                                   "price": 379,
+                                   "quantityAvailable": 6,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 17.23,
+                                   "sellerId": "liberatti",
+                                   "seller": "Liberatti",
+                                   "imageIds": [
+                                                "3858731"
+                                                ]
+                                   }
+                                   ]
+                 }
+                 ]
+}

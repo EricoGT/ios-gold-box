@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMExtendProduct">
+            <connections>
+                <outlet property="imgProd" destination="mUL-pK-RKN" id="fZw-hG-kdj"/>
+                <outlet property="lblProduct" destination="P1q-6Z-afk" id="LNW-kN-DGV"/>
+                <outlet property="warrantiesOptionsContainerView" destination="NlC-MS-kXV" id="lWh-rh-EE9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="aYM-Qv-vrC">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tablet Philco Branco 9.7A-B111a 4.0, Android 4.0 ARM Cortex A8 1,20GHz, 1GB DDR3, 9&quot;, Wi-Fi, Mini HDMI e Web Cam - 110V" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-6Z-afk">
+                    <rect key="frame" x="75" y="16" width="230" height="30"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mUL-pK-RKN">
+                    <rect key="frame" x="15" y="10" width="40" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5lK-HW-Zu3"/>
+                        <constraint firstAttribute="width" constant="40" id="mwq-vB-78f"/>
+                    </constraints>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="fillet_top" translatesAutoresizingMaskIntoConstraints="NO" id="sRU-er-vdj">
+                    <rect key="frame" x="0.0" y="58" width="320" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="OGa-uo-xU5"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-MS-kXV">
+                    <rect key="frame" x="0.0" y="60" width="320" height="163"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sRU-er-vdj" secondAttribute="trailing" id="3f5-Vt-YOs"/>
+                <constraint firstItem="P1q-6Z-afk" firstAttribute="leading" secondItem="aYM-Qv-vrC" secondAttribute="leading" constant="75" id="5NO-1F-sEn"/>
+                <constraint firstItem="NlC-MS-kXV" firstAttribute="leading" secondItem="aYM-Qv-vrC" secondAttribute="leading" id="5mo-rY-8lx"/>
+                <constraint firstItem="P1q-6Z-afk" firstAttribute="top" secondItem="aYM-Qv-vrC" secondAttribute="top" constant="15.5" id="9Ix-yx-2r3"/>
+                <constraint firstItem="NlC-MS-kXV" firstAttribute="top" secondItem="sRU-er-vdj" secondAttribute="bottom" id="Euq-Zv-nR7"/>
+                <constraint firstItem="mUL-pK-RKN" firstAttribute="top" secondItem="aYM-Qv-vrC" secondAttribute="top" constant="10" id="FEJ-ia-Gi5"/>
+                <constraint firstItem="sRU-er-vdj" firstAttribute="top" secondItem="mUL-pK-RKN" secondAttribute="bottom" constant="8" id="Idz-cg-5kJ"/>
+                <constraint firstAttribute="trailing" secondItem="P1q-6Z-afk" secondAttribute="trailing" constant="15" id="j8W-kh-Eb4"/>
+                <constraint firstAttribute="trailing" secondItem="NlC-MS-kXV" secondAttribute="trailing" id="pzm-05-52S"/>
+                <constraint firstItem="sRU-er-vdj" firstAttribute="leading" secondItem="aYM-Qv-vrC" secondAttribute="leading" id="qHK-Bu-yqj"/>
+                <constraint firstAttribute="bottom" secondItem="NlC-MS-kXV" secondAttribute="bottom" id="r2H-K0-u7r"/>
+                <constraint firstItem="mUL-pK-RKN" firstAttribute="leading" secondItem="aYM-Qv-vrC" secondAttribute="leading" constant="15" id="vRx-pj-Frs"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="22" y="137.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fillet_top" width="1" height="2"/>
+    </resources>
+</document>

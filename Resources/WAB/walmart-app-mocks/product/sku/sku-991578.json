@@ -1,0 +1,49 @@
+{
+  "product": {
+    "imagesIds": [
+      "3934952",
+      "3934953",
+      "3934954"
+    ],
+    "productId": 2880215,
+    "skuId": 991578,
+    "title": "Anel Duplo Moustache Strass 1759 - 18&#x2F;19",
+    "departmentId": 4901,
+    "categoryId": 4935,
+    "subCategoryId": 5019,
+    "rating": {
+      "value": 0,
+      "total": 0
+    },
+    "offers": [
+      {
+        "sku": 991578,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "loucasporacessorios",
+          "name": "Loucas por Acessórios"
+        },
+        "price": {
+          "listPrice": 65.9,
+          "sellPrice": 46.9,
+          "installmentAmount": 12,
+          "valuePerInstallment": 3.91
+        },
+        "available": true
+      }
+    ],
+    "optionsType": "Cor",
+    "variations": [
+      {
+        "name": "Preto",
+        "sku": 991578,
+        "imageId": "3934952"
+      },
+      {
+        "name": "Preto",
+        "sku": 991579,
+        "imageId": "3934955"
+      }
+    ]
+  }
+}

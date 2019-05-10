@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMModalLoadingView">
+            <connections>
+                <outlet property="alertLeadingConstraint" destination="b86-zn-USl" id="qLa-r4-Oeu"/>
+                <outlet property="alertTrailingConstraint" destination="XQa-px-AbF" id="Msc-Bm-McW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTy-xg-Cc2" userLabel="View Background Alert">
+                    <rect key="frame" x="15" y="284" width="345" height="99"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Aguarde" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="1lP-Da-2Pm">
+                            <rect key="frame" x="15" y="15" width="315" height="18"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPn-lc-zA7" userLabel="Linha">
+                            <rect key="frame" x="15" y="48" width="315" height="1"/>
+                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="g1x-3h-xKU"/>
+                            </constraints>
+                        </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZi-6u-YZC">
+                            <rect key="frame" x="162.5" y="64" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="1lP-Da-2Pm" firstAttribute="leading" secondItem="CTy-xg-Cc2" secondAttribute="leading" constant="15" id="B3E-e0-xdz"/>
+                        <constraint firstAttribute="bottom" secondItem="TZi-6u-YZC" secondAttribute="bottom" constant="15" id="BTj-9s-ZbC"/>
+                        <constraint firstItem="TZi-6u-YZC" firstAttribute="top" secondItem="YPn-lc-zA7" secondAttribute="bottom" constant="15" id="JPg-QB-Zc2"/>
+                        <constraint firstAttribute="trailing" secondItem="YPn-lc-zA7" secondAttribute="trailing" constant="15" id="Yl9-RX-hBq"/>
+                        <constraint firstItem="YPn-lc-zA7" firstAttribute="leading" secondItem="CTy-xg-Cc2" secondAttribute="leading" constant="15" id="acO-Z7-e2X"/>
+                        <constraint firstItem="1lP-Da-2Pm" firstAttribute="top" secondItem="CTy-xg-Cc2" secondAttribute="top" constant="15" id="hCB-Be-Bfd"/>
+                        <constraint firstAttribute="trailing" secondItem="1lP-Da-2Pm" secondAttribute="trailing" constant="15" id="re7-Ov-se5"/>
+                        <constraint firstItem="TZi-6u-YZC" firstAttribute="centerX" secondItem="CTy-xg-Cc2" secondAttribute="centerX" id="tqf-oP-PEk"/>
+                        <constraint firstItem="YPn-lc-zA7" firstAttribute="top" secondItem="1lP-Da-2Pm" secondAttribute="bottom" constant="15" id="vD8-Ci-TBd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.70348261443661975" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CTy-xg-Cc2" secondAttribute="trailing" constant="15" id="XQa-px-AbF"/>
+                <constraint firstItem="CTy-xg-Cc2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="b86-zn-USl"/>
+                <constraint firstItem="CTy-xg-Cc2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tfF-FX-xA8"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

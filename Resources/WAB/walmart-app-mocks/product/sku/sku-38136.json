@@ -1,0 +1,101 @@
+{
+  "product":{
+    "imagesIds":[
+      "2142931"
+    ],
+    "productId":2036037,
+    "skuId":38135,
+    "title":"Advantage Max 3 Cães  - Bayer - 4 a 10 Kg",
+    "departmentId":4423,
+    "categoryId":4424,
+    "subCategoryId":4436,
+    "rating":{
+      "value":0,
+      "total":0
+    },
+    "offers":[
+      {
+        "sku":38063,
+        "hasExtendedWarranty":false,
+        "seller":{
+          "id":"vtex_prod_meuamigopet",
+          "name":"Meu Amigo Pet"
+        },
+        "price":{
+          "sellPrice":194,
+          "installmentAmount":1,
+          "valuePerInstallment":14,
+          "paymentTypes":[
+            "VISA",
+            "AMEX",
+            "MASTERCARD",
+            "DINERS",
+            "BOLETO_BANCARIO",
+            "HIPERCARD",
+            "ELO"
+          ]
+        },
+        "available":true
+      }
+    ],
+    "optionsType":"Cor",
+    "variations":[
+      {
+        "name":"Único",
+        "optionsType":"Dosagem",
+        "options":[
+          {
+            "name":"Único",
+            "optionsType":"Peso Recomendado",
+            "options":[
+              {
+                "name":"10 a 25 Kg",
+                "optionsType":"Quantidade",
+                "options":[
+                  {
+                    "name":"Único",
+                    "sku":38088,
+                    "imageId":"2142931"
+                  }
+                ]
+              },
+              {
+                "name":"4 a 10 Kg",
+                "optionsType":"Quantidade",
+                "options":[
+                  {
+                    "name":"Único",
+                    "sku":38135,
+                    "imageId":"2144374"
+                  }
+                ]
+              },
+              {
+                "name":"Acima de 25 Kg",
+                "optionsType":"Quantidade",
+                "options":[
+                  {
+                    "name":"Único",
+                    "sku":38136,
+                    "imageId":"2144377"
+                  }
+                ]
+              },
+              {
+                "name":"Até 4 Kg",
+                "optionsType":"Quantidade",
+                "options":[
+                  {
+                    "name":"Único",
+                    "sku":38063,
+                    "imageId":"2099520"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "skin": {
+    "bgColor": [
+      "205",
+      "205",
+      "205",
+      "255"
+    ],
+    "headerColor": [
+      "255",
+      "255",
+      "255",
+      "255"
+    ]
+  },
+  "errata": {
+    "urlImage": "https://static.wmobjects.com.br/arquivos/tvhome_campanha_festival_smarttv_4k.jpg",
+    "title": "*TESTE para verificar alteração final",
+    "message": "Para as condições do Dia.Cliente consulte o regulamento aqui.",
+    "url": "https://walmart.com.br"
+  },
+  "banners": {
+    "top": [
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_natal-1911.png",
+        "target": "ft=tv",
+        "name": "Primeiro Banner"
+      },
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_star-wars.jpg",
+        "target": "ft=geladeira",
+        "name": "Segundo Banner"
+      },
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_star-wars.jpg",
+        "target": "ft=tv",
+        "name": "Terceiro Banner"
+      },
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_star-wars.jpg",
+        "url": "www.walmart.com",
+        "name": "Quarto banner"
+      },
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_2309_verao-2310.png",
+        "url": "https://m.walmart.com.br/especial/batman-superman?utmi_pc=especialdestaque_batmanxsuperman_2103",
+        "name": "Quinto Banner"
+      }
+    ],
+    "bottom": [
+      {
+        "image": "https://static.wmobjects.com.br/arquivos/tv_star-wars.jpg",
+        "name": "teste qa"
+      }
+    ]
+  },
+  "showcases": [
+    {
+      "id": "21734",
+      "orderId": 3,
+      "name": "Mais ofertas",
+      "icon": "https://static-cms.waldev.com.br/app/images/showcases/ic_trophy.png",
+      "products": [
+        {
+          "productId": 2947933,
+          "skuId": 1061631,
+          "title": "Ginásio de Atividades Hippo Gym Colorido Chicco",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4006407",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 179,
+          "discountPrice": 169,
+          "instalment": 17,
+          "instalmentValue": 9.94
+        },
+        {
+          "productId": 2131703,
+          "skuId": 155379,
+          "title": "Kit Sensor de Estacionamento Super Tech",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/2600556",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 650,
+          "discountPrice": 503,
+          "instalment": 22,
+          "instalmentValue": 22.86
+        },
+        {
+          "productId": 2000307,
+          "skuId": 25,
+          "title": "Monitor Pressão Arterial de Pulso Medeqco com Memória para 42 Medições + Balança Digital Camry EB9013 - Vidro e Prata",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/2520059",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 0,
+          "discountPrice": 310.51,
+          "instalment": 22,
+          "instalmentValue": 14.11
+        },
+        {
+          "productId": 3064608,
+          "skuId": 1192497,
+          "title": "Lavadora de Roupas 6kg Mueller, Automática com 6 Programas de Lavagem - CLASS - 110V",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4250368",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "lojasmanica",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 899,
+          "discountPrice": 739,
+          "instalment": 17,
+          "instalmentValue": 43.47
+        },
+        {
+          "productId": 2031597,
+          "skuId": 32859,
+          "title": "Climatizador e Umidificador de Ar Frio Display Digital CL07F - Electrolux",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/3858731",
+          "priceVariations": true,
+          "hasVariations": true,
+          "sellerId": "liberatti",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 419,
+          "discountPrice": 379,
+          "instalment": 17,
+          "instalmentValue": 22.29
+        },
+        {
+          "productId": 3064598,
+          "skuId": 1192492,
+          "title": "Lavadora de Roupas 10 Kg Semi-Automática Bárbara Wanke - 110V",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4250363",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "lojasmanica",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 399,
+          "discountPrice": 329,
+          "instalment": 17,
+          "instalmentValue": 19.35
+        },
+        {
+          "productId": 3016619,
+          "skuId": 1141724,
+          "title": "Tênis Bouts Coliseum Azul Royal e Pink Feminino",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4201902",
+          "priceVariations": true,
+          "totalColors": 1,
+          "hasVariations": true,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 199.9,
+          "discountPrice": 129.9,
+          "instalment": 22,
+          "instalmentValue": 5.9
+        },
+        {
+          "productId": 3016858,
+          "skuId": 1141996,
+          "title": "Secante Abrilhantador para Máquinas de Lavar Louça Limpol Bombril 100ml",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4165081",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 0,
+          "discountPrice": 6.49,
+          "instalment": 6,
+          "instalmentValue": 1.08
+        },
+        {
+          "productId": 3016844,
+          "skuId": 1141977,
+          "title": "Detergente para Máquina de Lavar Louças Limpol Bombril 1Kg",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4165032",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 0,
+          "discountPrice": 16.99,
+          "instalment": 22,
+          "instalmentValue": 0.77
+        }
+      ]
+    },
+    {
+      "id": "App_Home_MaisVendidos",
+      "orderId": 7,
+      "name": "Mais vendidos",
+      "icon": "https://static-cms.waldev.com.br/app/images/showcases/asdad.jeg",
+      "products": [
+        {
+          "productId": 2032203,
+          "skuId": 33555,
+          "title": "Máquina de Cortar Cabelo HomePro Basic - Wahl",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/2498100",
+          "priceVariations": true,
+          "hasVariations": true,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 350,
+          "discountPrice": 290,
+          "instalment": 22,
+          "instalmentValue": 13.18
+        },
+        {
+          "productId": 2211436,
+          "skuId": 19768,
+          "title": "Aparador de Barba Groomsman Wahl para Barba, Bigode e Costeletas, Recarregável e Bivolt",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/2761065",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 350,
+          "discountPrice": 290,
+          "instalment": 22,
+          "instalmentValue": 13.18
+        },
+        {
+          "productId": 2032204,
+          "skuId": 33556,
+          "title": "Motosserra Gasolina Tekna Forest &amp; Garden 2.3 HP - CS41S Sabre 14&quot; 39.8CC ",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/3216799",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 599,
+          "discountPrice": 389.9,
+          "instalment": 22,
+          "instalmentValue": 17.72
+        },
+        {
+          "productId": 3016216,
+          "skuId": 1141246,
+          "title": "iPhone 5s Apple 16GB Ouro ME434BR&#x2F;A",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4165781",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 0,
+          "discountPrice": 2499,
+          "instalment": 22,
+          "instalmentValue": 113.59
+        },
+        {
+          "productId": 3066204,
+          "skuId": 1194541,
+          "title": "Nerf Usada",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4255568",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "omsseller",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 0,
+          "discountPrice": 50.51,
+          "instalment": 22,
+          "instalmentValue": 2.3
+        },
+        {
+          "productId": 2767954,
+          "skuId": 873045,
+          "title": "iPhone 6 Apple 16GB Cinza Espacial MG3A2BZ&#x2F;A",
+          "image": "https://static-cms.waldev.com.br/imgres/arquivos/ids/4006449",
+          "priceVariations": false,
+          "hasVariations": false,
+          "sellerId": "1",
+          "quantityAvailable": true,
+          "currency": "R$ ",
+          "price": 3999,
+          "discountPrice": 3199,
+          "instalment": 22,
+          "instalmentValue": 145.41
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeShowcaseTableViewCell" rowHeight="255" id="KGk-i7-Jjw" customClass="HomeShowcaseTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="280.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do Produto Walmart.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="utP-50-FyJ">
+                        <rect key="frame" x="12" y="24" width="363" height="28"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="omA-ml-3uI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
+                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="qHH-oM-UnV">
+                        <rect key="frame" x="177.5" y="150.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Ibp-D0-pCM"/>
+                            <constraint firstAttribute="width" constant="20" id="fIo-Dm-lxF"/>
+                        </constraints>
+                        <color key="color" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </activityIndicatorView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3xv-me-m0i">
+                        <rect key="frame" x="0.0" y="62" width="375" height="197"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="197" id="zcY-25-JVa"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nT6-hO-uI6">
+                            <size key="itemSize" width="375" height="197"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="D6l-Cz-gzh">
+                        <rect key="frame" x="168" y="255" width="39" height="37"/>
+                        <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="currentPageIndicatorTintColor" red="0.13725490196078433" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                    </pageControl>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="utP-50-FyJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="0P2-x6-adz"/>
+                    <constraint firstItem="D6l-Cz-gzh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BOY-hu-DSR"/>
+                    <constraint firstItem="3xv-me-m0i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CCa-Sr-jRm"/>
+                    <constraint firstItem="D6l-Cz-gzh" firstAttribute="top" secondItem="utP-50-FyJ" secondAttribute="bottom" constant="203" id="TaE-gz-MUI"/>
+                    <constraint firstItem="utP-50-FyJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="UvG-8I-YpX"/>
+                    <constraint firstAttribute="trailing" secondItem="utP-50-FyJ" secondAttribute="trailing" id="dhy-9v-a8f"/>
+                    <constraint firstItem="3xv-me-m0i" firstAttribute="top" secondItem="utP-50-FyJ" secondAttribute="bottom" constant="10" id="lNS-gC-IqK"/>
+                    <constraint firstItem="qHH-oM-UnV" firstAttribute="top" secondItem="utP-50-FyJ" secondAttribute="bottom" constant="98.5" id="urP-vD-RzG"/>
+                    <constraint firstItem="qHH-oM-UnV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="vhr-lg-FcS"/>
+                    <constraint firstAttribute="trailing" secondItem="3xv-me-m0i" secondAttribute="trailing" id="vwU-IU-vgY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="collectionView" destination="3xv-me-m0i" id="VbV-sL-O0l"/>
+                <outlet property="lblShowCase" destination="utP-50-FyJ" id="C1V-ch-Q52"/>
+                <outlet property="loader" destination="qHH-oM-UnV" id="Kba-Wl-c3X"/>
+                <outlet property="pageControl" destination="D6l-Cz-gzh" id="lh9-zk-1EN"/>
+            </connections>
+            <point key="canvasLocation" x="585.5" y="609.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRPaymentWarrantyView">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="cXv-sR-BwP"/>
+                <outlet property="paymentCreditCardView" destination="I2e-Fm-7dy" id="GKC-iT-3rQ"/>
+                <outlet property="titleViewHeightConstraint" destination="Luy-0d-49S" id="sKB-yq-CTy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-Wl-NHf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="900" constant="25" id="Luy-0d-49S"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2e-Fm-7dy" customClass="WBRPaymentCreditCardContent">
+                    <rect key="frame" x="0.0" y="25" width="375" height="135"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zAV-Wl-NHf" secondAttribute="trailing" priority="900" id="9Fl-QE-OEe"/>
+                <constraint firstItem="zAV-Wl-NHf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="900" id="9TI-xY-AQk"/>
+                <constraint firstItem="zAV-Wl-NHf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="900" id="JKy-lf-x4t"/>
+                <constraint firstAttribute="trailing" secondItem="I2e-Fm-7dy" secondAttribute="trailing" priority="900" id="Nqv-mS-tAP"/>
+                <constraint firstItem="I2e-Fm-7dy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="900" id="gbY-aw-q0T"/>
+                <constraint firstAttribute="bottom" secondItem="I2e-Fm-7dy" secondAttribute="bottom" priority="900" id="icw-Ge-pww"/>
+                <constraint firstItem="I2e-Fm-7dy" firstAttribute="top" secondItem="zAV-Wl-NHf" secondAttribute="bottom" priority="900" id="ykI-Ik-oAT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="54.5" y="-111"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExtendedWarrantyLicenseViewController">
+            <connections>
+                <outlet property="actInd" destination="JcA-1S-l5f" id="c7d-oJ-1VP"/>
+                <outlet property="view" destination="XfR-vw-z64" id="qve-xz-Ctq"/>
+                <outlet property="webView" destination="x1R-Em-nIh" id="DRW-d9-PDn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XfR-vw-z64">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1R-Em-nIh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="contentStretch" x="0.40000000000000002" y="0.39999999999999997" width="1" height="1"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                    <dataDetectorType key="dataDetectorTypes"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Dc4-qd-R8c"/>
+                    </connections>
+                </webView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JcA-1S-l5f">
+                    <rect key="frame" x="150" y="242" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="x1R-Em-nIh" firstAttribute="top" secondItem="XfR-vw-z64" secondAttribute="top" id="LdX-eH-KLQ"/>
+                <constraint firstItem="JcA-1S-l5f" firstAttribute="centerY" secondItem="XfR-vw-z64" secondAttribute="centerY" id="U9S-t0-CUF"/>
+                <constraint firstItem="x1R-Em-nIh" firstAttribute="leading" secondItem="XfR-vw-z64" secondAttribute="leading" id="hjE-Zb-4Nc"/>
+                <constraint firstItem="JcA-1S-l5f" firstAttribute="centerX" secondItem="XfR-vw-z64" secondAttribute="centerX" id="jbO-eY-Jeb"/>
+                <constraint firstAttribute="bottom" secondItem="x1R-Em-nIh" secondAttribute="bottom" id="m71-kg-b2b"/>
+                <constraint firstAttribute="trailing" secondItem="x1R-Em-nIh" secondAttribute="trailing" id="vUI-ZM-QUt"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="514" y="403"/>
+        </view>
+    </objects>
+</document>

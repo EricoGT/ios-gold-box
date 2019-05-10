@@ -1,0 +1,52 @@
+{
+    "product":{
+        "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+        "hasExtendedWarranty":false,
+        "id":"2036137",
+        "rating":0,
+        "standardSku":38220,
+        "title":"Ração Pro Plan Adult Optilife Complete Protection - Purina",
+        "imageIds":[
+                    "2145374",
+                    "0"
+                    ],
+        "productVariations":[
+                             {
+                             "currency":"R$ ",
+                             "discountPrice":29.3,
+                             "formattedListPrice":"29,30",
+                             "formattedSellPrice":"29,30",
+                             "instalment":1,
+                             "instalmentValue":29.3,
+                             "name":"1 Kg",
+                             "originalPrice":29.3,
+                             "price":29.3,
+                             "quantityAvailable":1,
+                             "saveAmount":"0,00",
+                             "savePercentage":0,
+                             "sku":38220,
+                             "seller":"Meu Amigo Pet",
+                             "supplierStock":""
+                             }
+                             ],
+        "optionsType":"Peso",
+        "variations":[
+                      {
+                      "name":"1 kg",
+                      "sku":38220,
+                      "imageId":"2145374"
+                      },
+                      {
+                      "name":"15 kg",
+                      "sku":40176,
+                      "imageId":"2247642"
+                      },
+                      {
+                      "name":"3 kg",
+                      "sku":38219,
+                      "imageId":"2145373"
+                      }
+                      ]
+    }
+    
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRContactTicketStatusView">
+            <connections>
+                <outlet property="statusContainer" destination="6Tn-H3-SCO" id="ged-Wo-aso"/>
+                <outlet property="statusDescription" destination="SIB-P9-GxU" id="YpS-WO-r05"/>
+                <outlet property="widthViewConstraint" destination="Pze-B1-AfV" id="XTg-AM-Cbx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="109" height="20"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tn-H3-SCO">
+                    <rect key="frame" x="0.0" y="0.0" width="109" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIB-P9-GxU">
+                            <rect key="frame" x="7" y="2.5" width="95" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="lIw-BN-9Cm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="SIB-P9-GxU" secondAttribute="trailing" constant="7" id="3y5-F2-xEQ"/>
+                        <constraint firstAttribute="width" constant="109" id="Pze-B1-AfV"/>
+                        <constraint firstItem="SIB-P9-GxU" firstAttribute="leading" secondItem="6Tn-H3-SCO" secondAttribute="leading" constant="7" id="RfL-nk-ZEU"/>
+                        <constraint firstItem="SIB-P9-GxU" firstAttribute="centerY" secondItem="6Tn-H3-SCO" secondAttribute="centerY" id="YFt-zm-POj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6Tn-H3-SCO" secondAttribute="bottom" id="Ah6-wu-jB1"/>
+                <constraint firstItem="6Tn-H3-SCO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BPY-kK-Hug"/>
+                <constraint firstAttribute="trailing" secondItem="6Tn-H3-SCO" secondAttribute="trailing" id="aJc-3j-Wvx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-12" y="297"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,126 @@
+{
+  "showcases":[
+    {
+      "id": "24278",
+      "type": "app",
+      "orderId": 5,
+      "name": "Mais ofertas",
+      "icon": "ic_book.png",
+      "shelfItems":[
+        {
+          "productId": 3068520,
+          "skuId": 1197117,
+          "title": "Teste EPS Stargate",
+          "imageId": "4261847",
+          "hasMoreOffers":false,
+          "hasSkuOptions":false,
+          "rating": {
+            "value": 0,
+            "total": 0
+          },
+          "sellerId": "stepbystep62",
+          "price":{
+            "sellPrice": 50
+          },
+          "instalment": 5,
+          "instalmentValue": 10,
+          "paymentTypes": [
+            "MASTERCARD"
+          ]
+        },
+        {
+          "productId": 3068582,
+          "skuId": 1197184,
+          "title": "Cachaça Claudionor 666ml",
+          "imageId": "4261962",
+          "hasMoreOffers":false,
+          "hasSkuOptions": false,
+          "rating": {
+            "value": 0,
+            "total": 0
+          },
+          "sellerId": "cachacariaoriginal",
+          "price":{
+            "sellPrice": 50
+          },
+          "instalment": 5,
+          "instalmentValue": 10,
+          "paymentTypes": [
+            "MASTERCARD"
+          ]
+        },
+        {
+          "productId": 2036037,
+          "skuId": 38063,
+          "title": "Advantage Max 3 Cães  - Bayer",
+          "imageId": "2099520",
+          "hasMoreOffers":false,
+          "hasSkuOptions":true,
+          "rating": {
+            "value": 0,
+            "total": 0
+          },
+          "totalColors": 1,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price":{
+            "listPrice": 11,
+            "sellPrice": 10
+          },
+          "instalment": 1,
+          "instalmentValue": 10,
+          "paymentTypes": [
+            "VISA",
+            "AMEX",
+            "MASTERCARD",
+            "DINERS",
+            "BOLETO_BANCARIO",
+            "HIPERCARD",
+            "ELO"
+          ]
+        },
+        {
+          "productId": 3068583,
+          "skuId": 1197185,
+          "title": "Cachaça Caribé 668ml",
+          "imageId": "4261964",
+          "hasMoreOffers":false,
+          "hasSkuOptions":false,
+          "rating": {
+            "value": 0,
+            "total": 0
+          },
+          "sellerId": "cachacariaoriginal",
+          "price":{
+            "sellPrice": 50
+          },
+          "instalment": 5,
+          "instalmentValue": 10,
+          "paymentTypes": [
+            "MASTERCARD"
+          ]
+        },
+        {
+          "productId": 2024092,
+          "skuId": 24782,
+          "title": "Armário Multiuso Branco BS 34 - BRV",
+          "imageId": "2517723",
+          "hasMoreOffers":false,
+          "hasSkuOptions":false,
+          "rating": {
+            "value": 0,
+            "total": 0
+          },
+          "sellerId": "madmad",
+          "price":{
+            "sellPrice": 250
+          },
+          "instalment": 9,
+          "instalmentValue": 27.78,
+          "paymentTypes": [
+            "MASTERCARD"
+          ]
+        }
+      ]
+    }
+  ]
+}

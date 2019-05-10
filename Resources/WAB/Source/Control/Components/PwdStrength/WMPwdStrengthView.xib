@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMPwdStrengthView">
+            <connections>
+                <outlet property="progressView" destination="tgI-5G-BSu" id="ODg-8t-uCt"/>
+                <outlet property="strengthLabel" destination="rXB-2J-CTK" id="raV-21-vvr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="16"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tgI-5G-BSu">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="N2m-7t-cQW"/>
+                    </constraints>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXB-2J-CTK">
+                    <rect key="frame" x="573" y="2" width="27" height="14"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tgI-5G-BSu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="COG-Ts-obz"/>
+                <constraint firstAttribute="trailing" secondItem="tgI-5G-BSu" secondAttribute="trailing" id="M1E-OH-lkm"/>
+                <constraint firstItem="tgI-5G-BSu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MR5-yr-3KE"/>
+                <constraint firstItem="rXB-2J-CTK" firstAttribute="top" secondItem="tgI-5G-BSu" secondAttribute="bottom" id="Y0D-6O-d1Z"/>
+                <constraint firstAttribute="bottom" secondItem="rXB-2J-CTK" secondAttribute="bottom" id="nvW-m1-ovZ"/>
+                <constraint firstAttribute="trailing" secondItem="rXB-2J-CTK" secondAttribute="trailing" id="ucb-zR-isl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="523" y="38"/>
+        </view>
+    </objects>
+</document>

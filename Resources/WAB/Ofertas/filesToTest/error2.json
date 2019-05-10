@@ -1,0 +1,29 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"cart:simulation:loadCart",
+            "errorMessage":"Partial errors during seller simulation",
+            "errorMap":{
+               "loggerKey":"001-3an6uiq99iuoavmmglvetzsjk",
+               "cart":{
+
+               },
+               "sellerErrors":{
+                  "1":{
+                     "errorCode":"DELIVERY_NOT_POSSIBLE",
+                     "errorLevel":"ITEM_LEVEL"
+                  }
+               }
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"Cart V1",
+   "serviceName":"Load Cart"
+}

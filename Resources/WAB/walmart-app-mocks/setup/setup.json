@@ -1,0 +1,96 @@
+{
+  "aboutInfo": "Wal-Mart Brasil LTDA, Com sede na Avenida Tucunaré, nº 125, Tamboré, Barueri/SP - CEP 06460-020, Inscrita no CNPJ/MF sob o nº 00.063.960/0001-09, Inscrição Estadual nº 206.228.672.119\nE-mail: atendimento@walmart.com.br",
+  "baseImages": {
+    "products": "https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+    "showcases": "https://static-cms.waldev.com.br/app/images/showcases/"
+  },
+  "services": {
+    "showDepartmentsOnMenu": true,
+    "paymentByBankSlip": true,
+    "isCouponEnabled": true,
+    "showWarranties": true,
+    "showDynamicHome": true,
+    "showDynamicHomeIos": true,
+    "isUserWriteReviewEnabled": true,
+    "isUserLikeReviewEnabled": true,
+    "showTickets": true,
+    "masterCampaign": true,
+    "installCampaign": true,
+    "ticketsCommentsVisible": true,
+    "fileTicketsCommentsVisible": true
+  },
+  "skin": {
+    "bgColor": {
+      "r": 151,
+      "g": 219,
+      "b": 244,
+      "a": 0.68
+    },
+    "textShowcaseColor": {
+      "r": 3,
+      "g": 22,
+      "b": 52,
+      "a": 1
+    }
+  },
+  "splash": {
+    "image": "https://cdn.corporate.walmart.com/9f/0c/c4f424744c50ad58e82e4989489e/walmart-foundation.png",
+    "bgColor": {
+      "r": 46,
+      "g": 217,
+      "b": 207,
+      "a": 1
+    }
+  },
+  "errata": {
+    "urlImage": "",
+    "title": "Errata TESTE",
+    "message": "Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago. Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago.",
+    "url": ""
+  },
+  "banners": {
+    "top": [
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvmobile_fgts.jpg",
+        "target": "fq=H:32718",
+        "name": "Campanha FGTS"
+      },
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvm_1603_notebooks.png",
+        "productId": 33555,
+        "name": "Notebooks com até 40% off"
+      },
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvmobile_esporte.jpg",
+        "url": "http://www.almart.com.br",
+        "name": "Semana do Esporte"
+      },
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvm_motog5_070317.png",
+        "name": "Lançamento Moto G5"
+      }
+    ],
+    "bottom": [
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvm_1603_notebooks.png",
+        "productId": 33555,
+        "name": "Notebooks com até 40% off"
+      },
+      {
+        "imageUrl": "https://static.wmobjects.com.br/arquivos/tvm_motog5_070317.png",
+        "name": "Lançamento Moto G5"
+      }
+    ]
+  },
+  "installCampaign": {
+    "imageUrl": "https://image.freepik.com/free-vector/illustration-of-circle-stamp-banner_53876-28464.jpg",
+    "minValue": 19.99,
+    "description": "O parcelamento é válido para todos os produtos vendidos no site walmart com parcela mínima de R$ 10,00. Esta oferta é por tempo limitado."
+  },
+  "stampCampaign": {
+    "imageUrl": "https://static.wmobjects.com.br/content/img/cms/app/installcamp.png",
+    "title": "Mastercard Campaign",
+    "disclaimer": "<h3>Acer Brasil Loja Oficial</h3><div><p><strong>CNPJ:</strong><br />11.068.167/0001-00</p><p><strong>Razão Social:</strong><br />AGP TECNOLOGIA EM INFO DO BRASIL LTDA.</p><p><strong>Endereço</strong><br />R FLORIDA, 1758<br />CIDADE MONCOES - SÃO PAULO/SP<br />CEP: 04565-001</p><p>Em mundo com tantas possibilidades, opiniões e diferentes estilos de vida, você precisa estar disposto a questionar. Seja curioso.</p></div>"
+  },
+  "masterCampaignInfo": "<h3>Acer Brasil Loja Oficial</h3><div><p><strong>CNPJ:</strong><br />11.068.167/0001-00</p><p><strong>Razão Social:</strong><br />AGP TECNOLOGIA EM INFO DO BRASIL LTDA.</p><p><strong>Endereço</strong><br />R FLORIDA, 1758<br />CIDADE MONCOES - SÃO PAULO/SP<br />CEP: 04565-001</p><p>Em mundo com tantas possibilidades, opiniões e diferentes estilos de vida, você precisa estar disposto a questionar. Seja curioso.</p></div>"
+}

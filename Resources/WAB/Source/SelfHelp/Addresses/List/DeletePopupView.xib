@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeletePopupView">
+            <connections>
+                <outlet property="messageLabel" destination="av3-AW-eGK" id="Veu-H0-4pY"/>
+                <outlet property="messageLabelAndButtonsVerticalSpaceConstraint" destination="egA-Z5-Bwo" id="btH-J3-PPL"/>
+                <outlet property="titleLabel" destination="Gsy-kp-dfR" id="lZS-0P-gyR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-pl-x2B" userLabel="Alert">
+                    <rect key="frame" x="15" y="238" width="345" height="191.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="212" translatesAutoresizingMaskIntoConstraints="NO" id="Gsy-kp-dfR" userLabel="Title Label">
+                            <rect key="frame" x="20" y="35" width="310" height="18"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Message" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="av3-AW-eGK" userLabel="Message Label">
+                            <rect key="frame" x="20" y="83" width="305" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN5-rO-kXy" userLabel="Cancel" customClass="WMButtonRounded">
+                            <rect key="frame" x="20" y="127.5" width="147.5" height="44"/>
+                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="wfz-oO-FLu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <state key="normal" title="Cancelar">
+                                <color key="titleColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnCancel"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="D58-m4-rel"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-MZ-B4h" userLabel="Delete" customClass="WMButtonRounded">
+                            <rect key="frame" x="177.5" y="127.5" width="147.5" height="44"/>
+                            <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="4ox-tX-am3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <state key="normal" title="Excluir">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnDelete"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="deletePressed:" destination="-1" eventType="touchUpInside" id="isI-aV-hEg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Gsy-kp-dfR" firstAttribute="top" secondItem="Clb-pl-x2B" secondAttribute="top" constant="35" id="6EX-WI-ddR"/>
+                        <constraint firstItem="sN5-rO-kXy" firstAttribute="leading" secondItem="Clb-pl-x2B" secondAttribute="leading" constant="20" id="OZG-v0-gbl"/>
+                        <constraint firstItem="N7Y-MZ-B4h" firstAttribute="leading" secondItem="sN5-rO-kXy" secondAttribute="trailing" constant="10" id="RgJ-66-Bow"/>
+                        <constraint firstAttribute="trailing" secondItem="N7Y-MZ-B4h" secondAttribute="trailing" constant="20" id="S5Z-Sr-Lts"/>
+                        <constraint firstAttribute="trailing" secondItem="av3-AW-eGK" secondAttribute="trailing" constant="20" id="Vie-Z5-cwK"/>
+                        <constraint firstItem="av3-AW-eGK" firstAttribute="top" secondItem="Clb-pl-x2B" secondAttribute="top" constant="83" id="bf4-2T-vPR"/>
+                        <constraint firstAttribute="trailing" secondItem="Gsy-kp-dfR" secondAttribute="trailing" constant="15" id="cAx-om-nHG"/>
+                        <constraint firstItem="sN5-rO-kXy" firstAttribute="top" secondItem="av3-AW-eGK" secondAttribute="bottom" constant="29" id="egA-Z5-Bwo"/>
+                        <constraint firstAttribute="bottom" secondItem="sN5-rO-kXy" secondAttribute="bottom" constant="20" id="f4J-ML-7In"/>
+                        <constraint firstItem="sN5-rO-kXy" firstAttribute="width" secondItem="N7Y-MZ-B4h" secondAttribute="width" id="gFd-Xm-NDD"/>
+                        <constraint firstItem="N7Y-MZ-B4h" firstAttribute="centerY" secondItem="sN5-rO-kXy" secondAttribute="centerY" id="mXW-Oi-gup"/>
+                        <constraint firstItem="av3-AW-eGK" firstAttribute="leading" secondItem="Clb-pl-x2B" secondAttribute="leading" constant="20" id="nvD-dy-fTP"/>
+                        <constraint firstItem="Gsy-kp-dfR" firstAttribute="leading" secondItem="Clb-pl-x2B" secondAttribute="leading" constant="20" id="uZ5-E6-1rj"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Clb-pl-x2B" secondAttribute="centerY" id="EQj-0x-A43"/>
+                <constraint firstAttribute="trailing" secondItem="Clb-pl-x2B" secondAttribute="trailing" constant="15" id="Jkh-AM-L3M"/>
+                <constraint firstItem="Clb-pl-x2B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="UD4-cj-TT2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="jy7-dD-nUu"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VariationPopup">
+            <connections>
+                <outlet property="actionButton" destination="txk-yw-Gaz" id="rom-nP-ZCW"/>
+                <outlet property="buttonsView" destination="weq-Ev-R9X" id="XJy-PA-3n7"/>
+                <outlet property="loadingView" destination="2Qc-VS-JaB" id="vHu-nz-zyD"/>
+                <outlet property="variationTreeView" destination="4qg-xi-Gb1" id="Cyg-oB-ocb"/>
+                <outlet property="variationsView" destination="7ny-BX-ZCH" id="oCW-Ed-C4z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-BX-ZCH" userLabel="Variations View">
+                    <rect key="frame" x="0.0" y="239" width="375" height="428"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione as opções abaixo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVV-Q2-a0t">
+                            <rect key="frame" x="15" y="20" width="345" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="GMO-1n-Qoc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtv-2a-BTM" userLabel="Separator View">
+                            <rect key="frame" x="15" y="58" width="345" height="1"/>
+                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="jkz-Tu-yCa"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSt-wb-797" userLabel="List View">
+                            <rect key="frame" x="0.0" y="60" width="375" height="368"/>
+                            <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-VS-JaB" userLabel="Loading View">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="294"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="UD3-jv-fDa">
+                                            <rect key="frame" x="178" y="166" width="20" height="20"/>
+                                            <color key="color" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="UD3-jv-fDa" firstAttribute="centerY" secondItem="2Qc-VS-JaB" secondAttribute="centerY" constant="29" id="CF7-z4-bOM"/>
+                                        <constraint firstItem="UD3-jv-fDa" firstAttribute="centerX" secondItem="2Qc-VS-JaB" secondAttribute="centerX" id="mu8-rt-zun"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-xi-Gb1" customClass="VariationTreeView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="294"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="height" secondItem="KSt-wb-797" secondAttribute="height" constant="-74" id="3qm-Pl-WYb"/>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="leading" secondItem="4qg-xi-Gb1" secondAttribute="leading" id="ESN-hd-8zj"/>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="width" secondItem="KSt-wb-797" secondAttribute="width" id="HNZ-Pi-fXO"/>
+                                <constraint firstItem="4qg-xi-Gb1" firstAttribute="top" secondItem="KSt-wb-797" secondAttribute="top" id="eIa-1M-5eb"/>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="trailing" secondItem="4qg-xi-Gb1" secondAttribute="trailing" id="gwp-gp-Njt"/>
+                                <constraint firstItem="4qg-xi-Gb1" firstAttribute="height" secondItem="KSt-wb-797" secondAttribute="height" constant="-74" id="sqo-3l-oMb"/>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="leading" secondItem="KSt-wb-797" secondAttribute="leading" id="z1V-ed-LBn"/>
+                                <constraint firstItem="2Qc-VS-JaB" firstAttribute="top" secondItem="KSt-wb-797" secondAttribute="top" id="zpg-2y-2AC"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weq-Ev-R9X" userLabel="Buttons View">
+                            <rect key="frame" x="0.0" y="354" width="375" height="74"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-dK-lhj" customClass="WMButtonRounded">
+                                    <rect key="frame" x="15" y="15" width="167.5" height="44"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="raM-cS-rMp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                    <state key="normal" title="Cancelar">
+                                        <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                            <integer key="value" value="9"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="pressedCancel:" destination="-1" eventType="touchUpInside" id="2cM-n2-uRr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txk-yw-Gaz" customClass="WMButtonRounded">
+                                    <rect key="frame" x="192.5" y="15" width="167.5" height="44"/>
+                                    <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="yjP-zl-8GN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                    <state key="normal" title="Confirmar">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="pressedAdd:" destination="-1" eventType="touchUpInside" id="hnh-HA-mJv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="txk-yw-Gaz" firstAttribute="width" secondItem="7nj-dK-lhj" secondAttribute="width" id="2qP-jX-nfb"/>
+                                <constraint firstItem="7nj-dK-lhj" firstAttribute="top" secondItem="weq-Ev-R9X" secondAttribute="top" constant="15" id="63h-fR-Vr5"/>
+                                <constraint firstItem="txk-yw-Gaz" firstAttribute="top" secondItem="weq-Ev-R9X" secondAttribute="top" constant="15" id="HKf-9u-dE1"/>
+                                <constraint firstAttribute="trailing" secondItem="txk-yw-Gaz" secondAttribute="trailing" constant="15" id="chU-cm-RgZ"/>
+                                <constraint firstAttribute="height" constant="74" id="h6B-Bm-YhF"/>
+                                <constraint firstItem="7nj-dK-lhj" firstAttribute="leading" secondItem="weq-Ev-R9X" secondAttribute="leading" constant="15" id="hbj-ff-pz2"/>
+                                <constraint firstItem="txk-yw-Gaz" firstAttribute="leading" secondItem="7nj-dK-lhj" secondAttribute="trailing" constant="10" id="nng-Hb-rzT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="GVV-Q2-a0t" firstAttribute="top" secondItem="7ny-BX-ZCH" secondAttribute="top" constant="20" id="2GX-AL-lEp"/>
+                        <constraint firstItem="KSt-wb-797" firstAttribute="leading" secondItem="7ny-BX-ZCH" secondAttribute="leading" id="507-zr-6h9"/>
+                        <constraint firstItem="GVV-Q2-a0t" firstAttribute="leading" secondItem="7ny-BX-ZCH" secondAttribute="leading" constant="15" id="7bL-nN-ggi"/>
+                        <constraint firstItem="KSt-wb-797" firstAttribute="top" secondItem="Mtv-2a-BTM" secondAttribute="bottom" constant="1" id="92f-GS-IYz"/>
+                        <constraint firstAttribute="trailing" secondItem="GVV-Q2-a0t" secondAttribute="trailing" constant="15" id="9Mg-a8-vac"/>
+                        <constraint firstAttribute="trailing" secondItem="Mtv-2a-BTM" secondAttribute="trailing" constant="15" id="9gb-4r-l4Y"/>
+                        <constraint firstItem="Mtv-2a-BTM" firstAttribute="leading" secondItem="7ny-BX-ZCH" secondAttribute="leading" constant="15" id="ecB-aX-Qgd"/>
+                        <constraint firstAttribute="bottom" secondItem="weq-Ev-R9X" secondAttribute="bottom" id="fLO-1e-4mO"/>
+                        <constraint firstItem="weq-Ev-R9X" firstAttribute="leading" secondItem="7ny-BX-ZCH" secondAttribute="leading" id="hQk-MQ-StO"/>
+                        <constraint firstItem="Mtv-2a-BTM" firstAttribute="top" secondItem="GVV-Q2-a0t" secondAttribute="bottom" constant="20" id="jVw-3Y-m1r"/>
+                        <constraint firstAttribute="trailing" secondItem="weq-Ev-R9X" secondAttribute="trailing" id="lLj-u5-tto"/>
+                        <constraint firstItem="KSt-wb-797" firstAttribute="height" secondItem="7ny-BX-ZCH" secondAttribute="height" constant="-60" id="rAJ-vi-CUQ"/>
+                        <constraint firstItem="KSt-wb-797" firstAttribute="width" secondItem="7ny-BX-ZCH" secondAttribute="width" id="sJM-7Z-p6J"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81176470588235294" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7ny-BX-ZCH" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" priority="250" constant="-39" id="feV-lA-ml4"/>
+                <constraint firstItem="SRG-4h-KQ7" firstAttribute="bottom" secondItem="7ny-BX-ZCH" secondAttribute="bottom" id="ixe-f1-hze"/>
+                <constraint firstAttribute="trailing" secondItem="7ny-BX-ZCH" secondAttribute="trailing" id="k9L-uG-Gke"/>
+                <constraint firstItem="7ny-BX-ZCH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lor-xW-K4P"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SRG-4h-KQ7"/>
+            <point key="canvasLocation" x="531.5" y="382.5"/>
+        </view>
+        <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="OoU-LV-BM8"/>
+    </objects>
+</document>

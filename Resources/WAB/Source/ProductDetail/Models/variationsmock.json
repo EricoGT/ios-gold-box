@@ -1,0 +1,244 @@
+{
+    "variations":[
+                  {
+                  "name":"A",
+                  "optionsType":"Tipo",
+                  "options":[
+                             {
+                             "name":"Avô A",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai A",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai B",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             },
+                             {
+                             "name":"Avô B",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai B",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai C",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             },
+                             {
+                             "name":"Avô C",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai C",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai D",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             }
+                             ]
+                  },
+                  {
+                  "name":"B",
+                  "optionsType":"Tipo",
+                  "options":[
+                             {
+                             "name":"Avô B",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai A",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai C",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             },
+                             {
+                             "name":"Avô C",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai A",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai D",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho B",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             },
+                             {
+                             "name":"Avô D",
+                             "optionsType":"Tipo",
+                             "options":[
+                                        {
+                                        "name":"Pai B",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho C",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        },
+                                        {
+                                        "name":"Pai D",
+                                        "optionsType":"Tipo",
+                                        "options":[
+                                                   {
+                                                   "name":"Filho D",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   },
+                                                   {
+                                                   "name":"Filho A",
+                                                   "sku":1234,
+                                                   "imageId": "2142931"
+                                                   }
+                                                   ]
+                                        }
+                                        ]
+                             }
+                             ]
+                  }
+                  ]
+}
