@@ -1,0 +1,295 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"cart:simulation:loadCart",
+            "errorMessage":"Partial errors during seller simulation",
+            "errorMap":{
+               "loggerKey":"001-cgplm4ioaupqdm4g56s55ya0i",
+               "cart":{
+                  "id":"app:bec3c997-5a4e-4566-ab4b-d470697d9e1b",
+                  "items":[
+                     {
+                        "sellerId":"1",
+                        "sku":2000017142,
+                        "description":"Multifuncional Xerox 3045/B  Mono A4 Phaser- Impressora, Copiadora + Suprimento  Toner 106R02180-NO - Preto",
+                        "quantity":1,
+                        "price":49900,
+                        "priceWithoutDiscountCurrent":49900,
+                        "key":"1ytmkf5ihak0ec3php8c9qvab",
+                        "shippingValue":0,
+                        "imageUrl":"//cms-cms.waldev.com.br/imgres/arquivos/ids/2873767",
+                        "cartImageUrl":"//static-cms.waldev.com.br/imgres/arquivos/ids/2873767",
+                        "detailUrl":"/produto/Informatica/Multifuncionais/Xerox/Multifuncional-Xerox-3045-B-Mono-A4-Phaser-Suprimento-Toner-106R02180-NO-Preto-Xerox",
+                        "listPrice":85800,
+                        "unavailableProduct":false,
+                        "services":[
+
+                        ],
+                        "deliveryTypes":[
+
+                        ],
+                        "sellerName":"Walmart",
+                        "markedToRemove":false,
+                        "marketPlaceSku":137861,
+                        "refId":100242979,
+                        "giftWrappable":true,
+                        "comission":0,
+                        "giftWrapperServiceId":320592,
+                        "giftWrapperPrice":149,
+                        "currentMaxQuantityBySellerAndSku":1,
+                        "brandName":"Xerox",
+                        "productId":2115373,
+                        "kit":true,
+                        "skuName":"Multifuncional Xerox 3045/B  Mono A4 Phaser- Impressora, Copiadora + Suprimento  Toner 106R02180-NO - Preto - Xerox",
+                        "kitItems":[
+                           {
+                              "SkuKitItemId":60312,
+                              "SkuId":331127,
+                              "Quantity":1,
+                              "UnitPrice":409
+                           },
+                           {
+                              "SkuKitItemId":60313,
+                              "SkuId":359755,
+                              "Quantity":1,
+                              "UnitPrice":90
+                           }
+                        ],
+                        "categories":[
+                           {
+                              "id":247,
+                              "name":"Informática"
+                           },
+                           {
+                              "id":263,
+                              "name":"Impressão e Imagem"
+                           },
+                           {
+                              "id":266,
+                              "name":"Multifuncionais"
+                           }
+                        ],
+                        "fullDescription":"Multifuncional Xerox 3045/B  Mono A4 Phaser- Impressora, Copiadora + Suprimento  Toner 106R02180-NO - Preto - Xerox",
+                        "service":false,
+                        "servicesIds":[
+
+                        ],
+                        "createDateTime":1403702914639,
+                        "priceDivergent":false,
+                        "priceDivergentToLow":false
+                     },
+                     {
+                        "sellerId":"saraiva",
+                        "sku":2226878,
+                        "description":"Aos Meus Amigos",
+                        "quantity":1,
+                        "price":1099,
+                        "priceWithoutDiscountCurrent":0,
+                        "key":"1u61r9fsg291sixj4ok1sveey",
+                        "shippingValue":0,
+                        "imageUrl":"//cms-cms.waldev.com.br/imgres/arquivos/ids/2942592",
+                        "cartImageUrl":"//static-cms.waldev.com.br/imgres/arquivos/ids/2942592",
+                        "detailUrl":"/produto/Games-NAO-ATIVAR/Acessorios--NAO-ATIVAR-/Globo-Editora/2300150m-aos_meus_amigos",
+                        "listPrice":1499,
+                        "unavailableProduct":false,
+                        "services":[
+
+                        ],
+                        "deliveryTypes":[
+
+                        ],
+                        "sellerName":"Livraria Saraiva",
+                        "stockBalance":45,
+                        "markedToRemove":true,
+                        "marketPlaceSku":334019,
+                        "giftWrappable":false,
+                        "comission":20,
+                        "currentMaxQuantityBySellerAndSku":1,
+                        "brandName":"Globo Editora",
+                        "productId":2300150,
+                        "kit":false,
+                        "skuName":"Aos Meus Amigos",
+                        "kitItems":[
+
+                        ],
+                        "categories":[
+                           {
+                              "id":4616,
+                              "name":"Games NÃO ATIVAR"
+                           },
+                           {
+                              "id":4628,
+                              "name":"PC e MAC NÃO ATIVAR"
+                           },
+                           {
+                              "id":4661,
+                              "name":"Acessórios (NÃO ATIVAR)"
+                           }
+                        ],
+                        "fullDescription":"Aos Meus Amigos",
+                        "service":false,
+                        "servicesIds":[
+
+                        ],
+                        "createDateTime":1403702947053,
+                        "priceDivergent":false,
+                        "priceDivergentToLow":false
+                     },
+                     {
+                        "sellerId":"vtex_prod_meuamigopet",
+                        "sku":5289,
+                        "description":"Pedra Mineral Para Roedores - Grande",
+                        "quantity":1,
+                        "price":1230,
+                        "priceWithoutDiscountCurrent":1230,
+                        "key":"1thfi0e0qgnhae47qh053qima",
+                        "shippingValue":0,
+                        "imageUrl":"//cms-cms.waldev.com.br/imgres/arquivos/ids/2274380",
+                        "cartImageUrl":"//static-cms.waldev.com.br/imgres/arquivos/ids/2274380",
+                        "detailUrl":"/produto/Pet-shop/Alimentos-e-Racoes/Pet-Pira/2041241-Pedra-Mineral-Para-Roedores---Pet-Pira",
+                        "listPrice":1230,
+                        "unavailableProduct":false,
+                        "services":[
+
+                        ],
+                        "deliveryTypes":[
+
+                        ],
+                        "sellerName":"Meu Amigo Pet",
+                        "markedToRemove":false,
+                        "marketPlaceSku":47760,
+                        "giftWrappable":false,
+                        "comission":12,
+                        "currentMaxQuantityBySellerAndSku":1,
+                        "brandName":"Pet Pira",
+                        "productId":2041241,
+                        "kit":false,
+                        "skuName":"Grande",
+                        "kitItems":[
+
+                        ],
+                        "categories":[
+                           {
+                              "id":4423,
+                              "name":"Pet shop"
+                           },
+                           {
+                              "id":4428,
+                              "name":"Roedores"
+                           },
+                           {
+                              "id":4463,
+                              "name":"Alimentos e Rações"
+                           }
+                        ],
+                        "fullDescription":"Pedra Mineral Para Roedores - Pet Pira",
+                        "service":false,
+                        "servicesIds":[
+
+                        ],
+                        "createDateTime":1403702968528,
+                        "priceDivergent":false,
+                        "priceDivergentToLow":false
+                     }
+                  ],
+                  "gifts":[
+
+                  ],
+                  "removedGiftCards":[
+
+                  ],
+                  "voucherStatus":[
+
+                  ],
+                  "giftCards":[
+
+                  ],
+                  "bestInstallment":{
+                     "valuePerInstallment":50.98,
+                     "installmentAmount":10,
+                     "formattedValuePerInstallment":"50,98",
+                     "valuePerInstallmentCents":5098
+                  },
+                  "userProfile":{
+                     "firstName":"Silvio",
+                     "lastName":"Luiz",
+                     "guid":"bec3c997-5a4e-4566-ab4b-d470697d9e1b",
+                     "email":"teste@mobile2.com",
+                     "document":"02858454620",
+                     "corporate":false,
+                     "phones":[
+                        {
+                           "areaCode":"11",
+                           "number":"554545454",
+                           "type":"RESIDENTIAL"
+                        }
+                     ],
+                     "visitorIdentity":"GfUgCHrLqKzinnUocn9ymYaj2FJY1kesnyfcQEEryxq3JxPnSt6A04pTsw0dvuzs8GoszppNpxUQLLQvy/xQM1uj+TIcqcOX55rS8C+AQ58=",
+                     "preferences":{
+                        "email":true,
+                        "sms":false,
+                        "acceptedTerm":false
+                     }
+                  },
+                  "chaordicInfo":{
+                     "cartSource":"cart",
+                     "apiKey":"walmart-marketplace",
+                     "cartCryptoContent":"/qqxX4HZGg7mP+bzNbOyhZMaXj+sMiWFDYGp39yICyWj+cmKrHv1e2y+/a9asrfLe4w1y7ZtOdObpn8vR4VR5AEeLKoDUFp9YBymdSQMSLRhKeKaZbTAWQ+011wxOncwp6y2ucm0MRautvKs24jN0qA1bQUuAfOhsYaIOR42R55WZ6dwxdKmEo+g3fRSHrIo1IL9LE/ywL6zdDwpChrbwq7jTOpwfVTDauBTD/m3oo8NiWWonJXOBNDlrl/6v4bWNElI5V3zwxQI6jXXS9f4B9FGOqSxGlGadoc1ZeO8dQSg14HTcU+YUAklPVj/aCKWD3f4j5FmE05VgEJTMUkOUmtR51Tx2rrGWYvd1uChf4LJNyivnm/6Qs3R1bp5Dx3wHiJdYA6MxgpJdV3tLcKuMXF2OByNWTYKugA8lZ2DKJR8SCKEBkDwhlFPL+TI4kpdSmLcaCD4lkKbOpVSH1tGviOERlPwzQrostNhxlQWdaFbiYhyRuKNd4ed2cyJCtfqwlnyj53G6hjGNXd7ANeaReFFpCxjmN3Al5l6BQxBLnLa4ZrxJpWJlzIByF+hp/ohK00rKA8styTXHleePwek7gkNbdSRIqIqooU4PWwedKA="
+                  },
+                  "estimatedBestShippingPrice":0,
+                  "giftCardDiscountAmount":0,
+                  "giftWrapperServicesAmount":0,
+                  "subtotal":52229,
+                  "servicesPrice":0,
+                  "totalPrice":50979,
+                  "amounts":{
+                     "productsAmount":52229,
+                     "servicesAmount":0,
+                     "deliveriesAmount":0,
+                     "nominalDiscount":1250,
+                     "totalNominalDiscount":1250,
+                     "usedNominalDiscount":1250,
+                     "giftCardDiscountAmount":0,
+                     "giftCardsAmount":0,
+                     "usedGiftCardsAmount":0,
+                     "remainingGiftCardsAmount":0,
+                     "estimatedBestShippingAmount":0,
+                     "couponAmount":0,
+                     "giftWrapperServicesAmount":0,
+                     "nominalFromCoupon":false,
+                     "nominalDifference":0,
+                     "discountsAmount":1250,
+                     "totalAmountPlusGiftCardDiscountAmount":50979,
+                     "totalAmountWithEstimatedBestShippingPlusGiftCardDiscountAmount":50979,
+                     "totalAmount":50979,
+                     "totalAmountWithEstimatedBestShipping":50979
+                  },
+                  "servicesPriceWithGiftWrapper":0,
+                  "discountsAmount":1250,
+                  "couponAmount":0,
+                  "usedGiftCardsAmount":0,
+                  "remainingGiftCardsAmount":0,
+                  "freightPrice":0,
+                  "nominalDiscount":1250,
+                  "giftCardsAmount":0,
+                  "totalPriceWithEstimatedBestShipping":50979
+               },
+               "sellerErrors":{
+                  "saraiva":{
+                     "errorCode":"GENERAL_ERROR",
+                     "errorLevel":"ITEM_LEVEL"
+                  }
+               }
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"Cart V1",
+   "serviceName":"Load Cart"
+}

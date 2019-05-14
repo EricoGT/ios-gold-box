@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WBRSellerTableViewCellIdentifier" rowHeight="323" id="KGk-i7-Jjw" customClass="WBRContactTicketSellerMessageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="318"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="317.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-hi-nwq">
+                        <rect key="frame" x="16" y="16" width="296" height="291"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="O7h-dd-miK">
+                                <rect key="frame" x="10" y="10" width="276" height="276"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mateus Lucio dos Santos Quaresma Mateus Lucio dos Santos Quaresma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lul-CU-svD">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="18"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVz-DX-bwl">
+                                        <rect key="frame" x="0.0" y="29" width="175" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="Vhv-Bb-KNA"/>
+                                            <constraint firstAttribute="height" priority="999" constant="190" id="xom-7m-wM8"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP8-1W-z4C">
+                                        <rect key="frame" x="0.0" y="230" width="267" height="23"/>
+                                        <string key="text">Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. </string>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-wt-PcJ">
+                                        <rect key="frame" x="0.0" y="264" width="276" height="12"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9yI-wt-PcJ" secondAttribute="trailing" id="6T8-b0-r4c"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88235294119999996" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O7h-dd-miK" secondAttribute="trailing" constant="10" id="UL3-0P-FPX"/>
+                            <constraint firstItem="O7h-dd-miK" firstAttribute="leading" secondItem="Rbq-hi-nwq" secondAttribute="leading" constant="10" id="cBT-2y-7gz"/>
+                            <constraint firstAttribute="bottom" secondItem="O7h-dd-miK" secondAttribute="bottom" constant="5" id="nOL-gp-RbY"/>
+                            <constraint firstItem="O7h-dd-miK" firstAttribute="top" secondItem="Rbq-hi-nwq" secondAttribute="top" constant="10" id="yBc-wt-NP7"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjf-an-VQm" customClass="WBRTriangleView">
+                        <rect key="frame" x="8" y="16" width="8" height="8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="oeq-sU-LVY"/>
+                            <constraint firstAttribute="width" constant="8" id="tjQ-0v-28Z"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="triangleColor">
+                                <color key="value" red="0.88235294119999996" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="pointingToLeft" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Rbq-hi-nwq" firstAttribute="top" secondItem="jjf-an-VQm" secondAttribute="bottom" constant="-8" id="3uU-tS-Rti"/>
+                    <constraint firstItem="Rbq-hi-nwq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9Ga-wh-Cm3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Rbq-hi-nwq" secondAttribute="bottom" id="Joc-Rl-f3d"/>
+                    <constraint firstItem="Rbq-hi-nwq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="QEu-pV-RSq"/>
+                    <constraint firstItem="Rbq-hi-nwq" firstAttribute="leading" secondItem="jjf-an-VQm" secondAttribute="trailing" id="ZFv-yq-sVo"/>
+                    <constraint firstItem="jjf-an-VQm" firstAttribute="top" secondItem="Rbq-hi-nwq" secondAttribute="top" id="wSi-wp-5zo"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Rbq-hi-nwq" secondAttribute="trailing" constant="30" id="xlq-kA-f0V"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="attachmentContainer" destination="DVz-DX-bwl" id="Efg-1s-Nse"/>
+                <outlet property="coloredView" destination="Rbq-hi-nwq" id="Qn3-r0-Hsd"/>
+                <outlet property="messageLabel" destination="mP8-1W-z4C" id="IXc-UB-Bbg"/>
+                <outlet property="sellerLabel" destination="Lul-CU-svD" id="iLg-5Q-eDf"/>
+                <outlet property="timeLabel" destination="9yI-wt-PcJ" id="5hN-PF-47s"/>
+            </connections>
+            <point key="canvasLocation" x="33.600000000000001" y="95.352323838080963"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,88 @@
+{
+   "sellerOptions":[
+      {
+         "currency":"R$ ",
+         "discountPrice":54.9,
+         "formattedListPrice":"59,00",
+         "formattedSellPrice":"54,90",
+         "instalment":2,
+         "instalmentValue":27.45,
+         "name":"Secador de Cabelos  Mondial Style 110V",
+         "originalPrice":59,
+         "price":54.9,
+         "quantityAvailable":13,
+         "saveAmount":"4,10",
+         "savePercentage":6,
+         "sku":32580,
+         "seller":"Walmart",
+         "sellerId":"1",
+         "active":true,
+         "tax":{
+            "tax":0,
+            "importTax":0
+         },
+         "supplierStock":false,
+         "available":true,
+         "imageIds":[
+            "2889194",
+            "0"
+         ]
+      },
+      {
+         "currency":"R$ ",
+         "discountPrice":50,
+         "formattedListPrice":"59,00",
+         "formattedSellPrice":"50,00",
+         "instalment":2,
+         "instalmentValue":25.00,
+         "name":"Secador de Cabelos  Mondial Style Bahia",
+         "originalPrice":59,
+         "price":54.9,
+         "quantityAvailable":13,
+         "saveAmount":"9,00",
+         "savePercentage":6,
+         "sku":32580,
+         "seller":"Casas Bahia",
+         "sellerId":"2",
+         "active":true,
+         "tax":{
+            "tax":0,
+            "importTax":0
+         },
+         "supplierStock":false,
+         "available":true,
+         "imageIds":[
+            "2889194",
+            "0"
+         ]
+      },
+      {
+         "currency":"R$ ",
+         "discountPrice":45,
+         "formattedListPrice":"59,00",
+         "formattedSellPrice":"50,00",
+         "instalment":2,
+         "instalmentValue":25.00,
+         "name":"Secador de Cabelos  Mondial Style Ponto",
+         "originalPrice":59,
+         "price":54.9,
+         "quantityAvailable":10,
+         "saveAmount":"9,00",
+         "savePercentage":6,
+         "sku":32580,
+         "seller":"Ponto Frio",
+         "sellerId":"3",
+         "active":true,
+         "tax":{
+            "tax":0,
+            "importTax":0
+         },
+         "supplierStock":false,
+         "available":false,
+         "imageIds":[
+            "2889194",
+            "0"
+         ]
+      }
+   ]
+}

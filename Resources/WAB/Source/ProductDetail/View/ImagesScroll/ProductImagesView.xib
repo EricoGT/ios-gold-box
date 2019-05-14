@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductImagesView">
+            <connections>
+                <outlet property="pageControl" destination="hqc-nf-gus" id="hJj-wm-SYP"/>
+                <outlet property="scrollView" destination="MT8-2X-vvv" id="My9-a6-Exn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="640" height="297"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-3Y-HdU">
+                    <rect key="frame" x="301" y="259" width="39" height="38"/>
+                    <subviews>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hqc-nf-gus">
+                            <rect key="frame" x="0.0" y="0.0" width="39" height="38"/>
+                            <color key="pageIndicatorTintColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="currentPageIndicatorTintColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="hqc-nf-gus" secondAttribute="trailing" id="OWq-km-wTu"/>
+                        <constraint firstItem="hqc-nf-gus" firstAttribute="top" secondItem="Oga-3Y-HdU" secondAttribute="top" id="PdM-08-tHb"/>
+                        <constraint firstItem="hqc-nf-gus" firstAttribute="leading" secondItem="Oga-3Y-HdU" secondAttribute="leading" id="cA6-9F-WYl"/>
+                        <constraint firstAttribute="bottom" secondItem="hqc-nf-gus" secondAttribute="bottom" id="gYU-Zq-94g"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MT8-2X-vvv">
+                    <rect key="frame" x="148" y="0.0" width="345" height="259"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="259" id="l7L-ZR-gOq"/>
+                        <constraint firstAttribute="width" constant="345" id="xC9-xD-WXf"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Oga-3Y-HdU" firstAttribute="top" secondItem="MT8-2X-vvv" secondAttribute="bottom" id="7HQ-pc-VMc"/>
+                <constraint firstItem="MT8-2X-vvv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7ci-NO-cri"/>
+                <constraint firstItem="Oga-3Y-HdU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KRu-fi-o3E"/>
+                <constraint firstAttribute="bottom" secondItem="Oga-3Y-HdU" secondAttribute="bottom" id="VNF-pD-cIV"/>
+                <constraint firstItem="MT8-2X-vvv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pd3-Sy-pF5"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="545" y="213"/>
+        </view>
+    </objects>
+</document>

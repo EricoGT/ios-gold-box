@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleDeliveryPeriodViewController">
+            <connections>
+                <outlet property="bottomView" destination="0oU-aH-BhI" id="Sqg-xE-3KQ"/>
+                <outlet property="continueButton" destination="jag-yV-eZ7" id="Tke-Sj-cMY"/>
+                <outlet property="datePeriodDescriptionLabel" destination="1oI-Of-Qrk" id="YLc-Rk-AaO"/>
+                <outlet property="headerView" destination="ER0-Tu-kvP" id="rKu-b0-8YL"/>
+                <outlet property="periodsTableView" destination="4fr-Bc-lGJ" id="UBj-He-QCo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4fr-Bc-lGJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="uwq-tN-wnG"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Y5Q-QJ-lbS"/>
+                        <outlet property="delegate" destination="-1" id="EFq-lp-05m"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Y2-pJ-ri0">
+                    <rect key="frame" x="0.0" y="240" width="375" height="289"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oI-Of-Qrk">
+                            <rect key="frame" x="39" y="55" width="296" height="0.0"/>
+                            <accessibility key="accessibilityConfiguration" identifier="datePeriodDescriptionLabel"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="19"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="1oI-Of-Qrk" firstAttribute="top" secondItem="0Y2-pJ-ri0" secondAttribute="top" constant="55" id="HNa-AT-FRP"/>
+                        <constraint firstItem="1oI-Of-Qrk" firstAttribute="leading" secondItem="0Y2-pJ-ri0" secondAttribute="leading" constant="39" id="L5x-YQ-miC"/>
+                        <constraint firstAttribute="trailing" secondItem="1oI-Of-Qrk" secondAttribute="trailing" constant="40" id="Wcy-Fr-AY4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oU-aH-BhI">
+                    <rect key="frame" x="0.0" y="529" width="375" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jag-yV-eZ7" customClass="WMButtonRounded">
+                            <rect key="frame" x="15" y="15" width="345" height="44"/>
+                            <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="ftf-q9-8O6"/>
+                                <constraint firstAttribute="width" constant="140" id="qKh-oI-faK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Escolher este período">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnPickPeriod"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="qKh-oI-faK"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="pressContinueButton:" destination="-1" eventType="touchUpInside" id="Q7a-lt-QT9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="jag-yV-eZ7" firstAttribute="leading" secondItem="0oU-aH-BhI" secondAttribute="leading" constant="15" id="ERq-FO-13H"/>
+                        <constraint firstAttribute="trailing" secondItem="jag-yV-eZ7" secondAttribute="trailing" constant="15" id="PD2-Xm-WlR"/>
+                        <constraint firstItem="jag-yV-eZ7" firstAttribute="top" secondItem="0oU-aH-BhI" secondAttribute="top" constant="15" id="YHc-jM-e3X"/>
+                        <constraint firstAttribute="height" constant="74" id="dNO-4y-pqg"/>
+                        <constraint firstAttribute="bottom" secondItem="jag-yV-eZ7" secondAttribute="bottom" constant="15" id="kp7-cT-S5f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4fr-Bc-lGJ" firstAttribute="top" secondItem="XBz-T2-RhN" secondAttribute="top" id="3Wq-Ul-b6K"/>
+                <constraint firstItem="0oU-aH-BhI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BLI-Mh-2Ly"/>
+                <constraint firstAttribute="trailing" secondItem="0Y2-pJ-ri0" secondAttribute="trailing" id="Od1-Un-8vw"/>
+                <constraint firstItem="4fr-Bc-lGJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="agr-lf-aXP"/>
+                <constraint firstItem="XBz-T2-RhN" firstAttribute="bottom" secondItem="0oU-aH-BhI" secondAttribute="bottom" id="gdE-5r-g1T"/>
+                <constraint firstItem="0Y2-pJ-ri0" firstAttribute="top" secondItem="4fr-Bc-lGJ" secondAttribute="bottom" id="iLK-NP-XBi"/>
+                <constraint firstItem="0oU-aH-BhI" firstAttribute="top" secondItem="0Y2-pJ-ri0" secondAttribute="bottom" id="nor-Bg-ODz"/>
+                <constraint firstItem="0Y2-pJ-ri0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qhv-j6-f0D"/>
+                <constraint firstAttribute="trailing" secondItem="4fr-Bc-lGJ" secondAttribute="trailing" id="sRm-i5-BPX"/>
+                <constraint firstAttribute="trailing" secondItem="0oU-aH-BhI" secondAttribute="trailing" id="yFd-QD-kNq"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="XBz-T2-RhN"/>
+            <point key="canvasLocation" x="6.5" y="52.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="ER0-Tu-kvP" userLabel="Header View">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Períodos disponíveis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgK-j3-PTk">
+                    <rect key="frame" x="15" y="18" width="345" height="22"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EgK-j3-PTk" secondAttribute="trailing" constant="15" id="H1h-Mg-cLS"/>
+                <constraint firstItem="EgK-j3-PTk" firstAttribute="leading" secondItem="ER0-Tu-kvP" secondAttribute="leading" constant="15" id="Ihe-47-XzV"/>
+                <constraint firstItem="EgK-j3-PTk" firstAttribute="top" secondItem="ER0-Tu-kvP" secondAttribute="top" constant="18" id="i5p-Ld-V9m"/>
+                <constraint firstAttribute="bottom" secondItem="EgK-j3-PTk" secondAttribute="bottom" constant="9" id="vkY-F3-dSW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="cBk-Be-Iuq"/>
+            <point key="canvasLocation" x="478.5" y="-255.5"/>
+        </view>
+    </objects>
+</document>

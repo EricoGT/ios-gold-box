@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRPaymentWarrantyDisclaimer">
+            <connections>
+                <outlet property="buttonHeightContainer" destination="ERt-Rk-9MB" id="TfN-2G-mp2"/>
+                <outlet property="buttonWithBottomConstraint" destination="TdL-F4-idb" id="D94-cQ-925"/>
+                <outlet property="buttonWithLabelConstraint" destination="R8m-h8-7Lr" id="eyx-7Q-X5a"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="zrQ-oB-d9X"/>
+                <outlet property="labelWithTopConstraint" destination="R89-CM-g4G" id="3Us-KF-wXX"/>
+                <outlet property="warningLabel" destination="Pwy-cm-n6r" id="BJD-H5-WhK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-KM-knx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-cm-n6r">
+                            <rect key="frame" x="15" y="22" width="290" height="15.5"/>
+                            <string key="text">Atenção: Você optou pagar separadamente pelo Seguro Garantia Estendida Original. Saiba que, para pagamento em separado, aceitamos apenas cartão de crédito. Cupons ou vale-compras não são aceitos e serão desconsiderados nesta compra. Se desejar utilizá-los ou quiser pagar em conjunto, toque no botão abaixo.</string>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-lg-vDA" customClass="WMButtonRounded">
+                            <rect key="frame" x="29" y="57.5" width="262" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="750" constant="44" id="ERt-Rk-9MB"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="317" id="FsI-Cn-9Ir"/>
+                            </constraints>
+                            <state key="normal" title="Pagar em conjunto"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="singlePaymentAction:" destination="-1" eventType="touchUpInside" id="D0J-mY-uIg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="AA6-lg-vDA" firstAttribute="centerX" secondItem="2du-KM-knx" secondAttribute="centerX" priority="901" id="4Jf-NW-sIW"/>
+                        <constraint firstAttribute="trailing" secondItem="AA6-lg-vDA" secondAttribute="trailing" priority="900" constant="29" id="JcO-WC-IL7"/>
+                        <constraint firstItem="Pwy-cm-n6r" firstAttribute="top" secondItem="2du-KM-knx" secondAttribute="top" priority="901" constant="22" id="R89-CM-g4G"/>
+                        <constraint firstItem="AA6-lg-vDA" firstAttribute="top" secondItem="Pwy-cm-n6r" secondAttribute="bottom" priority="901" constant="20" id="R8m-h8-7Lr"/>
+                        <constraint firstAttribute="trailing" secondItem="Pwy-cm-n6r" secondAttribute="trailing" priority="901" constant="15" id="SO9-QZ-T5C"/>
+                        <constraint firstAttribute="bottom" secondItem="AA6-lg-vDA" secondAttribute="bottom" priority="901" constant="20" id="TdL-F4-idb"/>
+                        <constraint firstItem="AA6-lg-vDA" firstAttribute="leading" secondItem="2du-KM-knx" secondAttribute="leading" priority="900" constant="29" id="V60-AH-Rey"/>
+                        <constraint firstItem="Pwy-cm-n6r" firstAttribute="leading" secondItem="2du-KM-knx" secondAttribute="leading" priority="901" constant="15" id="YuS-cM-Lmz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2du-KM-knx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="901" id="5me-Oz-mAo"/>
+                <constraint firstItem="2du-KM-knx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="901" id="h0h-SY-rfP"/>
+                <constraint firstAttribute="trailing" secondItem="2du-KM-knx" secondAttribute="trailing" priority="901" id="pFC-4J-Er7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="35" y="61.5"/>
+        </view>
+    </objects>
+</document>

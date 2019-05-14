@@ -1,0 +1,75 @@
+{
+   "product":{
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "hasExtendedWarranty":false,
+      "id":"2036037",
+      "rating":0,
+      "standardSku":38063,
+      "title":"Advantage Max 3 Cães  - Bayer",
+      "imageIds":[
+         "2099520",
+         "0"
+      ],
+      "sellerOptions":[
+         {
+            "currency":"R$ ",
+            "discountPrice":42.2,
+            "formattedListPrice":"42,20",
+            "formattedSellPrice":"42,20",
+            "instalment":1,
+            "instalmentValue":42.2,
+            "name":"Até 4 Kg - 0,4 ml",
+            "originalPrice":42.2,
+            "price":42.2,
+            "quantityAvailable":1,
+            "saveAmount":"0,00",
+            "savePercentage":0,
+            "sku":38063,
+            "seller":"Meu Amigo Pet",
+            "sellerId":"0uamigopet",
+            "active":true,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            },
+            "available":true,
+            "supplierStock":false
+         }
+      ],
+      "optionsType":"Cor",
+      "variations":[
+         {
+            "name":"Único",
+            "optionsType":"Dosagem",
+            "options":[
+               {
+                  "name":"Único",
+                  "optionsType":"Peso Recomendado",
+                  "options":[
+                     {
+                        "name":"10 a 25 Kg",
+                        "sku":38088,
+                        "imageId":"2142931"
+                     },
+                     {
+                        "name":"4 a 10 Kg",
+                        "sku":38135,
+                        "imageId":"2144374"
+                     },
+                     {
+                        "name":"Acima de 25 Kg",
+                        "sku":38136,
+                        "imageId":"2144377"
+                     },
+                     {
+                        "name":"Até 4 Kg",
+                        "sku":38063,
+                        "imageId":"2099520"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

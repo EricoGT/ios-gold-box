@@ -10,6 +10,31 @@
 
 @interface UIImage (Smart)
 
+#pragma mark - Enums
+
+#pragma mark - Structs
+
+struct ColorComponents {
+    CGFloat  red;
+    CGFloat  green;
+    CGFloat  blue;
+    CGFloat  alpha;
+};
+
+#pragma mark - UIColor
+
+/** Cria uma nova cor (UIColor) utilizando o valor RGBA parâmetro. */
++ (UIColor * _Nonnull)COLOR_R:(CGFloat)r G:(CGFloat)g B:(CGFloat)b A:(CGFloat)a;
+
+/** Cria uma nova cor (UIColor) utilizando o valor hexa parâmetro. */
++ (UIColor * _Nonnull)COLOR_HEX:(unsigned int)hex;
+
+/** Cria uma nova cor (UIColor) utilizando o valor hexa textual parâmetro. */
++ (UIColor * _Nonnull)COLOR_HEXSTR:(NSString * _Nonnull)hexSTR;
+
+/** Retorna os componentes RBGA da cor parâmetro. */
++ (struct ColorComponents)COLOR_COMPONENTS:(UIColor * _Nonnull)color;
+
 #pragma mark - Commum
 
 /** Converte um texto base64 para a imagem correspondente.*/
@@ -219,6 +244,28 @@
  * @note Este método não processa a imagem pelo 'hue'. Os canais RGB são verificados per pixel.
  */
 - (UIImage * _Nullable) imageReplacingColor:(UIColor * _Nonnull)baseColor toColor:(UIColor * _Nullable)newColor usingTolerance:(CGFloat)tolerance andInteretRect:(CGRect)interestRect;
+
+#pragma mark - Info
+
+/**
+ * Este método desenha o texto na imagem, fazendo uso das configurações disponíveis.
+ *
+ * @brief Cria uma nova imagem com o texto parâmetro renderizado.
+ * @warning Não é executado em imagens animadas.
+ * @param text Texto que se deseja renderizar.
+ * @param rect Área dentro da imagem onde o texto deve ser desenhado.
+ * @param rectCorners Cantos que se deseja aplicar arredondamento ao desenhar o rect.
+ * @param cornerSize Raio dos cantos, quando forem utilizados.
+ * @param textAligment Alinhamento horizontal do texto.
+ * @param margin Margem interna, relacionada ao rect, aplicada ao texto na renderização. Bom para impedir que o texto "grude" nas laterais do rect quando for utilizado alinhamento a direita ou esquerda.
+ * @param font Fonte que se deseja utilizar no desenho do texto.
+ * @param fontColor Cor da fonte.
+ * @param backColor Cor de fundo para a área do texto (rect). Pode ter cantos arredondados.
+ * @param shadow Parâmetro opcional aplicado ao texto, contento opção de cor, offset e dissipação para a sombra.
+ * @param adjust Quando verdadeiro, irá reajustar a altura de rect, para fazer com que a área compreenda a altura necessária para o texto parâmetro.
+ * @return Retorna uma nova imagem com o texto renderizado.
+ */
+- (UIImage * _Nullable)labeledImageWithText:(NSString * _Nonnull)text contentRect:(CGRect)rect roundingCorners:(UIRectCorner)rectCorners cornerRadii:(CGSize)cornerSize textAlign:(NSTextAlignment)textAligment internalMargin:(UIEdgeInsets)margin font:(UIFont * _Nonnull)font fontColor:(UIColor * _Nonnull)fontColor backgroundColor:(UIColor * _Nullable)backColor shadow:(NSShadow * _Nullable)shadow autoHeightAdjust:(BOOL)adjust;
 
 @end
 

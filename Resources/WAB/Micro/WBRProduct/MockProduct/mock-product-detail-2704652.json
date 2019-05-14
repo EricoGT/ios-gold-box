@@ -1,0 +1,135 @@
+{
+    "product": {
+        "imagesIds": [
+                      "3733424",
+                      "3733425",
+                      "3733427",
+                      "3733429",
+                      "3733431",
+                      "3733433"
+                      ],
+        "productId": 2704652,
+        "skuId": 806009,
+        "title": "Jogo Fifa 15 para Playstation 3",
+        "departmentId": 401,
+        "categoryId": 413,
+        "subCategoryId": 415,
+        "rating": {
+            "value": 0,
+            "total": 0
+        },
+        "offers": [
+                   {
+                   "sku": 806009,
+                   "hasExtendedWarranty": false,
+                   "seller": {
+                   "id": "1",
+                   "name": "Walmart"
+                   },
+                   "price": {
+                   "listPrice": 199.9,
+                   "sellPrice": 119.9,
+                   "installmentAmount": 22,
+                   "valuePerInstallment": 5.45
+                   },
+                   "available": true,
+                   "suggestion": {
+                   "paymentMethod": "BANK_SLIP",
+                   "price": {
+                   "current": 290,
+                   "discountedPrice": 123
+                   }
+                   }
+
+                   },
+                   {
+                   "sku": 806009,
+                   "hasExtendedWarranty": false,
+                   "seller": {
+                   "id": "multistock",
+                   "name": "MultiStock"
+                   },
+                   "price": {
+                   "sellPrice": 229.93,
+                   "installmentAmount": 22,
+                   "valuePerInstallment": 5.45
+                   },
+                   "available": true,
+                   "suggestion": {
+                   "paymentMethod": "BANK_SLIP",
+                   "price": {
+                   "current": 290,
+                   "discountedPrice": 456
+                   }
+                   }
+
+                   },
+                   {
+                   "sku": 806009,
+                   "hasExtendedWarranty": false,
+                   "seller": {
+                   "id": "uz games1",
+                   "name": "UZ Games1"
+                   },
+                   "price": {
+                   "sellPrice": 1000,
+                   "installmentAmount": 10,
+                   "valuePerInstallment": 100
+                   },
+                   "available": true,
+                   "suggestion": {
+                   "paymentMethod": "BANK_SLIP",
+                   "price": {
+                   "current": 290,
+                   "discountedPrice": 789
+                   }
+                   }
+
+                   },
+                   {
+                   "sku": 806009,
+                   "hasExtendedWarranty": false,
+                   "seller": {
+                   "id": "uz games2",
+                   "name": "UZ Games2"
+                   },
+                   "price": {
+                   "sellPrice": 2000345.89,
+                   "installmentAmount": 12,
+                   "valuePerInstallment": 166695.49
+                   },
+                   "available": true,
+                   "suggestion": {
+                   "paymentMethod": "BANK_SLIP",
+                   "price": {
+                   "current": 290,
+                   "discountedPrice": 101112
+                   }
+                   }
+
+                   },
+                   {
+                   "sku": 806009,
+                   "hasExtendedWarranty": false,
+                   "seller": {
+                   "id": "uz games3",
+                   "name": "UZ Games3"
+                   },
+                   "price": {
+                   "sellPrice": 0.60,
+                   "installmentAmount": 1,
+                   "valuePerInstallment": 0.60
+                   },
+                   "available": true,
+                   "suggestion": {
+                   "paymentMethod": "BANK_SLIP",
+                   "price": {
+                   "current": 290,
+                   "discountedPrice": 131415
+                   }
+                   }
+
+                   }
+                   ]
+    }
+}

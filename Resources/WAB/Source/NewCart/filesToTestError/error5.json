@@ -1,0 +1,20 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"seller:unrecoverableError",
+            "errorMessage":"Unrecoverable error during non-cart simulation: (501) Not Implemented\n{\"message\":\"The item 354260 does not have stock\",\"errorId\":\"LGT0115\"}",
+            "errorMap":{
+               "loggerKey":"001-8m20bp80u79vswkkw9aka0w91"
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"New Checkout V1",
+   "serviceName":"FindGroupedCart"
+}

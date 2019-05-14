@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0930"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/bash&#10;## Script developed by Marcelo dos Santos - 04/14/2016&#10;&#10;exec &gt; ~/Documents/log_frameworks_copy_xcode.txt 2&gt;&amp;1&#10;&#10;clear&#10;&#10;echo &quot;##################################################################&quot;&#10;echo &quot;                      F R A M E W O R K  Manager&quot;&#10;printf &quot;\n            Developed by MARCELO DOS SANTOS (04/14/2016)\n&quot;&#10;echo &quot;                      (mds2k01@gmail.com)&quot;&#10;printf &quot;\n     Permission to use, copy, modify, and distribute this&#10;software for any purpose and without authorization is forbidden.\n&quot;&#10;echo &quot;##################################################################&quot;&#10;&#10;DIR_LIBRARIES=&quot;$SRCROOT/Libraries&quot;&#10;&#10;## CARD IO&#10;printf &quot;Verifying Card IO files:\n&quot;&#10;echo &quot;&quot;&#10;&#10;DIR_CARD_IO=&quot;$DIR_LIBRARIES/CardIO&quot;&#10;&#10;mkdir -p &quot;$DIR_CARD_IO&quot;&#10;&#10;FILE_CHECK_CARD_IO_1=&quot;$DIR_CARD_IO/libCardIO.a&quot;&#10;FILE_CARD_IO_1=&quot;libCardIO.a&quot;&#10;printf &quot;Path CardIO 1 (libCardIO.a) to check:\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_1&#10;printf &quot;\n&quot;&#10;&#10;if [ -e &quot;$FILE_CHECK_CARD_IO_1&quot; ]&#10;then&#10;printf &quot;CardIO 1 (libCardIO.a) file was not copied.\n\n&quot;&#10;else&#10;printf &quot;NOT FOUND. Copying...\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_1&#10;cp -R ~/Documents/frameworks/$FILE_CARD_IO_1 $DIR_CARD_IO&#10;printf &quot;[ O K ]\n\n&quot;&#10;fi&#10;&#10;FILE_CHECK_CARD_IO_2=&quot;$DIR_CARD_IO/libopencv_core.a&quot;&#10;FILE_CARD_IO_2=&quot;libopencv_core.a&quot;&#10;printf &quot;Path CardIO 2 (libopencv_core.a) to check:\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_2&#10;printf &quot;\n&quot;&#10;&#10;if [ -e &quot;$FILE_CHECK_CARD_IO_2&quot; ]&#10;then&#10;printf &quot;CardIO 2 (libopencv_core.a) file was not copied.\n\n&quot;&#10;else&#10;printf &quot;NOT FOUND. Copying...\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_2&#10;cp -R ~/Documents/frameworks/$FILE_CARD_IO_2 $DIR_CARD_IO&#10;printf &quot;[ O K ]\n\n&quot;&#10;fi&#10;&#10;FILE_CHECK_CARD_IO_3=&quot;$DIR_CARD_IO/libopencv_imgproc.a&quot;&#10;FILE_CARD_IO_3=&quot;libopencv_imgproc.a&quot;&#10;printf &quot;Path CardIO 3 (libopencv_imgproc.a) to check:\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_3&#10;printf &quot;\n&quot;&#10;&#10;if [ -e &quot;$FILE_CHECK_CARD_IO_3&quot; ]&#10;then&#10;printf &quot;CardIO 3 (libopencv_imgproc.a) file was not copied.\n&quot;&#10;echo &quot;------------------------------------&quot;&#10;echo &quot;&quot;&#10;else&#10;printf &quot;NOT FOUND. Copying...\n&quot;&#10;printf ~/$FILE_CHECK_CARD_IO_3&#10;cp -R ~/Documents/frameworks/$FILE_CARD_IO_3 $DIR_CARD_IO&#10;printf &quot;[ O K ]\n&quot;&#10;echo &quot;------------------------------------&quot;&#10;echo &quot;&quot;&#10;fi&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "C47E9AA4178EF787003A761E"
+                     BuildableName = "Walmart.app"
+                     BlueprintName = "Walmart"
+                     ReferencedContainer = "container:Walmart.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C47E9AA4178EF787003A761E"
+               BuildableName = "Walmart.app"
+               BlueprintName = "Walmart"
+               ReferencedContainer = "container:Walmart.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C47E9AA4178EF787003A761E"
+            BuildableName = "Walmart.app"
+            BlueprintName = "Walmart"
+            ReferencedContainer = "container:Walmart.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C47E9AA4178EF787003A761E"
+            BuildableName = "Walmart.app"
+            BlueprintName = "Walmart"
+            ReferencedContainer = "container:Walmart.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Debug"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C47E9AA4178EF787003A761E"
+            BuildableName = "Walmart.app"
+            BlueprintName = "Walmart"
+            ReferencedContainer = "container:Walmart.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Release">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Debug"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

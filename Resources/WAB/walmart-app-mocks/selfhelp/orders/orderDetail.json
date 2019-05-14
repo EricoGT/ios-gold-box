@@ -1,0 +1,179 @@
+{
+  "id":"51461574",
+  "cancelable":false,
+  "canceled":false,
+  "allowCreateBankSlipTicket":true,
+  "approvedPayment":false,
+  "expiredBankSlip":true,
+  "creationDate":1535026713139,
+  "kits":[
+
+  ],
+  "deliveries":[
+    {
+      "shippingEstimateDate":null,
+      "expectedDeliveryDate":null,
+      "messageDate":"",
+      "items":[
+        {
+          "id":"1197180",
+          "description":"Cachaça Bocaiana 666ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261954",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        },
+        {
+          "id":"1197185",
+          "description":"Cachaça Caribé 668ml - Cachaça Caribé 667ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261964",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        },
+        {
+          "id":"1197184",
+          "description":"Cachaça Claudionor 666ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261962",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        },
+        {
+          "id":"1197183",
+          "description":"Cachaça Barranqueira 666ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261960",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        },
+        {
+          "id":"1197177",
+          "description":"Cachaça Chico Mineiro ouro 666ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261948",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        },
+        {
+          "id":"1197175",
+          "description":"Cachaça Caetanos 666ml",
+          "originCountry":"pt-BR",
+          "value":50,
+          "currency":"BRL",
+          "urlImage":"http://static.wmobjects.com.br/imgres/arquivos/ids/4261944",
+          "acquiredQuantity":1,
+          "canceledQuantity":0,
+          "parentId":"",
+          "totalAmount":50
+        }
+      ],
+      "groupedTracking":{
+        "alert":"",
+        "groups":[
+          {
+            "status":"ic_order_received",
+            "description":"Pedido Realizado",
+            "checked":true,
+            "eventId":"ORCL",
+            "alert":"",
+            "tracking":[
+
+            ]
+          },
+          {
+            "status":"ic_payment_waiting",
+            "description":"Esperando pelo pagamento",
+            "checked":true,
+            "eventId":"PC",
+            "alert":"",
+            "tracking":[
+
+            ]
+          },
+          {
+            "status":"ic_delivery_disabled",
+            "description":"Entrega está na transportadora",
+            "checked":false,
+            "eventId":"",
+            "alert":"",
+            "tracking":[
+
+            ]
+          }
+        ]
+      },
+      "seller":{
+        "sellerId":"cachacariaoriginal",
+        "sellerName":"Cachaçaria Original"
+      },
+      "hasInvoice":false,
+      "invoiceUrl":"",
+      "address":{
+        "addressLine1":"Rua Tupiguaes",
+        "addressLine2":"",
+        "country":{
+          "code":"BRA"
+        },
+        "state":{
+          "code":"SP"
+        },
+        "city":"São Paulo",
+        "zipcode":"02022040",
+        "billing":false,
+        "default":false,
+        "number":"123",
+        "neighborhood":"Santana",
+        "owner":{
+          "completeName":"Teste Teste"
+        }
+      }
+    }
+  ],
+  "payment":{
+    "orderTotal":{
+      "currencyAmount":324,
+      "currencyUnit":"BRL",
+      "itemsPrice":300,
+      "shipping":24,
+      "discount":0,
+      "warranty":0,
+      "services":0,
+      "taxImport":0
+    },
+    "paymentMethods":[
+      {
+        "method":"BARCODE",
+        "lastDigitsOfCard":"",
+        "brand":"",
+        "completeName":"",
+        "parcelAmount":"",
+        "valueWithInterest":"",
+        "interestRate":"",
+        "maxCET":"",
+        "parcelValue":324,
+        "paymentUrl":"https://meiosdepagamentobradesco.com.br/boleto/semretorno/prepara_pagto.do?merchantid=100002375&orderid=66159813&comB=DDF81DC67F9E8BE34616D5E5517AFEAA82348C3354EAF2CD97D35D657E68FE446024E7F89BEF3FB7808BD92008AA7FAED80D6D3EB8C48B0E5CB2EB32F41F845F7E07315EB0A583E5DF910674A00A711D73D015BF9EC28FE274EDA8A584B38005F10119B006770F4065430A6A95A25DEB41661A7CE2EDA5DA4221F9D463CF5FE6"
+      }
+    ]
+  }
+}

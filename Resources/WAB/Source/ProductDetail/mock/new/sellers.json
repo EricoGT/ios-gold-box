@@ -1,0 +1,124 @@
+{
+   "product":{
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "hasExtendedWarranty":false,
+      "id":"2033199",
+      "rating":45,
+      "standardSku":34763,
+      "title":"Jogo PS3 GTA - Grand Theft Auto V - Rockstar",
+      "imageIds":[
+         "2874075",
+         "2874079",
+         "2874082",
+         "2874085",
+         "2874089",
+         "2874094",
+         "2874097",
+         "2874103",
+         "2874106",
+         "2874108",
+         "2874111",
+         "2874115",
+         "0"
+      ],
+      "sellerOptions":[
+         {
+            "currency":"R$ ",
+            "discountPrice":179,
+            "formattedListPrice":"199,00",
+            "formattedSellPrice":"179,00",
+            "instalment":10,
+            "instalmentValue":17.9,
+            "name":"Jogo PS3 GTA - Grand Theft Auto V - Rockstar",
+            "originalPrice":199,
+            "price":179,
+            "quantityAvailable":1744,
+            "saveAmount":"20,00",
+            "savePercentage":10,
+            "sku":34763,
+            "seller":"Walmart",
+            "sellerId":"1",
+            "active":true,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            },
+            "available":true,
+            "supplierStock":false
+         },
+         {
+            "currency":"R$ ",
+            "discountPrice":199.9,
+            "formattedListPrice":"199,90",
+            "formattedSellPrice":"199,90",
+            "instalment":10,
+            "instalmentValue":17.9,
+            "name":"Jogo PS3 GTA - Grand Theft Auto V - Rockstar",
+            "originalPrice":199.9,
+            "price":199.9,
+            "quantityAvailable":1,
+            "saveAmount":"0,00",
+            "savePercentage":0,
+            "sku":34763,
+            "seller":"UZGames",
+            "sellerId":"uzgames",
+            "active":true,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            },
+            "available":true,
+            "supplierStock":false,
+            "imageIds":[
+               "2874075",
+               "2874079",
+               "2874082",
+               "2874085",
+               "2874089",
+               "2874094",
+               "2874097",
+               "2874103",
+               "2874106",
+               "2874108",
+               "2874111",
+               "2874115",
+               "0"
+            ]
+         },
+         {
+            "currency":"R$ ",
+            "discountPrice":299.9,
+            "formattedListPrice":"199,90",
+            "formattedSellPrice":"199,90",
+            "instalment":10,
+            "instalmentValue":29.9,
+            "name":"Jogo PS3 GTA - Grand Theft Auto V - Rockstar",
+            "originalPrice":199.9,
+            "price":199.9,
+            "quantityAvailable":1,
+            "saveAmount":"0,00",
+            "savePercentage":0,
+            "sku":34763,
+            "seller":"Zillion Games",
+            "sellerId":"zlgames",
+            "active":true,
+            "tax":{
+               "tax":0,
+               "importTax":0
+            },
+            "available":true,
+            "supplierStock":false,
+            "imageIds":[
+               "2874075",
+               "2874079",
+               "2874082",
+               "0"
+            ]
+         }
+      ],
+      "optionsType":"",
+      "variations":[
+
+      ]
+   }
+}

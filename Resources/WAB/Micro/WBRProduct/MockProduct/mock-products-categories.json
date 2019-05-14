@@ -1,0 +1,250 @@
+{
+    "count": 4,
+    "products":[
+                {
+                "productId":2033063,
+                "skuId":34592,
+                "title":"Fogão 4 Bocas de Embutir 56TBE Celebrate Grill Branco - Electrolux",
+                "imageId":"2506114",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1428,
+                "sellPrice":279.18
+                }
+                },
+                {
+                "productId":2032300,
+                "skuId":33668,
+                "title":"Fogão 4 Bocas Celebrate Branco Electrolux - 56STB",
+                "imageId":"2508642",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1599,
+                "sellPrice":279.18
+                }
+                },
+                {
+                "productId":2011321,
+                "skuId":11442,
+                "title":"Fogão Cooktop 4 Bocas Branco - Fischer",
+                "imageId":"2478175",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "sellPrice":267.89
+                }
+                },
+                {
+                "productId":2012263,
+                "skuId":12396,
+                "title":"Fogão Elétrico 2 Bocas Layr Topázio 4.0 Inox 220V",
+                "imageId":"2495961",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":false,
+                "sellerId":"1",
+                "price":{
+                "listPrice":200,
+                "sellPrice":165
+                }
+                }
+                ],
+    "filters":{
+        "departments":[
+                       {
+                       "name":"Eletrodomésticos",
+                       "count":235,
+                       "filterValue":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Fogões",
+                                     "count":121,
+                                     "url":"?fq=C:144/155/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "categoryId": 443,
+                                                      "name":"Piso até 4 bocas",
+                                                      "count":53,
+                                                      "url":"?fq=C:174/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      },
+                                                      {
+                                                      "categoryId": 444,
+                                                      "name":"Embutir 4 Bocas",
+                                                      "count":2,
+                                                      "url":"?fq=C:174/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      }
+                                                      ]
+                                     },
+                                     {
+                                     "name":"Cooktops",
+                                     "count":44,
+                                     "url":"?fq=C:144/3083/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Dominós",
+                                                      "count":1,
+                                                      "url":"?fq=C:174/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      },
+                                                      {
+                                                      "name":"Cooktop 4 Bocas",
+                                                      "count":43,
+                                                      "url":"?fq=C:174/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       }
+                       ],
+        "brands":[
+                  {
+                  "brandId":104651,
+                  "name":"Venax",
+                  "count":30,
+                  "filterValue":"fq=B:104651",
+                  "url":"?fq=C:144/155/&fq=B:104651&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":477,
+                  "name":"Atlas",
+                  "count":20,
+                  "filterValue":"fq=B:477",
+                  "url":"?fq=C:144/155/&fq=B:477&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":251,
+                  "name":"Brastemp",
+                  "count":18,
+                  "filterValue":"fq=B:251",
+                  "url":"?fq=C:144/155/&fq=B:251&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":111,
+                  "name":"Electrolux",
+                  "count":15,
+                  "filterValue":"fq=B:111",
+                  "url":"?fq=C:144/155/&fq=B:111&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":178,
+                  "name":"Esmaltec",
+                  "count":12,
+                  "filterValue":"fq=B:178",
+                  "url":"?fq=C:144/155/&fq=B:178&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":1350,
+                  "name":"Mueller",
+                  "count":10,
+                  "filterValue":"fq=B:1350",
+                  "url":"?fq=C:144/155/&fq=B:1350&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":112,
+                  "name":"Consul",
+                  "count":7,
+                  "filterValue":"fq=B:112",
+                  "url":"?fq=C:144/155/&fq=B:112&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":115,
+                  "name":"Dako",
+                  "count":3,
+                  "filterValue":"fq=B:115",
+                  "url":"?fq=C:144/155/&fq=B:115&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":108,
+                  "name":"Continental",
+                  "count":2,
+                  "filterValue":"fq=B:108",
+                  "url":"?fq=C:144/155/&fq=B:108&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":238,
+                  "name":"Layr",
+                  "count":1,
+                  "filterValue":"fq=B:238",
+                  "url":"?fq=C:144/155/&fq=B:238&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":3031,
+                  "name":"Lofra",
+                  "count":1,
+                  "filterValue":"fq=B:3031",
+                  "url":"?fq=C:144/155/&fq=B:3031&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {
+                  "brandId":106479,
+                  "name":"BRASLAR",
+                  "count":1,
+                  "filterValue":"fq=B:106479",
+                  "url":"?fq=C:144/155/&fq=B:106479&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  },
+                  {  
+                  "brandId":118734,
+                  "name":"Dako Mabe Itu",
+                  "count":1,
+                  "filterValue":"fq=B:118734",
+                  "url":"?fq=C:144/155/&fq=B:118734&ft=Fogoes&PS=20&mm=100",
+                  "selected":false
+                  }
+        ],
+        "specs":[
+        
+        ],
+        "pricesRange":[
+                       {
+                       "name":"Até R$499",
+                       "count":45,
+                       "url":"?fq=C:144/155/&fq=P:[0.01 TO 499.99]&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"fq=P:[0.01 TO 499.99]",
+                       "selected":false
+                       },
+                       {
+                       "name":"De R$500 a R$999",
+                       "count":54,
+                       "url":"?fq=C:144/155/&fq=P:[500.00 TO 999.99]&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"fq=P:[500.00 TO 999.99]",
+                       "selected":false
+                       },
+                       {
+                       "name":"Acima de R$1000,00",
+                       "count":22,
+                       "url":"?fq=C:144/155/&fq=P:[1000.00 TO 9999.99]&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"fq=P:[1000.00 TO 9999.99]",
+                       "selected":false
+                       }
+        ]
+    }
+}

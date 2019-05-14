@@ -1,0 +1,60 @@
+{
+  "hubs": [
+    {
+      "url": "fq=H:40514",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-0714b-1249-e503d-hub_mais-vendidos.png",
+      "useHub": false,
+      "text": "Mais vendidos da semana"
+    },
+    {
+      "url": "fq=H:40480",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-37ae9-1249-2787c-01_aq_de_ag.png",
+      "useHub": false,
+      "text": "Aquecedores de Água"
+    },
+    {
+      "url": "fq=H:40480",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-120fa-1249-7896f-02_tor_cub_pia.png",
+      "useHub": false,
+      "text": "Pias, Cubas e Metais"
+    },
+    {
+      "url": "fq=C:1249/1270/",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-9b3c4-1249-c9e21-03_lamp_led.png",
+      "useHub": false,
+      "text": "Iluminação"
+    },
+    {
+      "url": "fq=C:1249/1270/",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-09256-1249-682d7-04_aba_lum.png",
+      "useHub": false,
+      "text": "Lustres e Pendentes"
+    },
+    {
+      "url": "fq=H:40484",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-39a83-1249-7de2f-05_fio_eletr.png",
+      "useHub": false,
+      "text": "Materiais Elétricos"
+    },
+    {
+      "url": "fq=H:40485",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-c15a9-1249-a185f-06_enc_can.png",
+      "useHub": false,
+      "text": "Materiais Hidráulicos"
+    },
+    {
+      "url": "fq=H:40486",
+      "categoryId": "1249",
+      "image": "https://static-cms.waldev.com.br/imgres/160x160/walmartv5/hub/1249-c2df4-1249-657de-07_tin_aces.png",
+      "useHub": false,
+      "text": "Tintas e Acessórios"
+    }
+  ]
+}

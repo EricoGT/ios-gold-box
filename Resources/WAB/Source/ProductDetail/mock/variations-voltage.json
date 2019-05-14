@@ -1,0 +1,47 @@
+{
+    "product":{
+        "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+        "hasExtendedWarranty":false,
+        "id":"2031359",
+        "rating":0,
+        "standardSku":32580,
+        "title":"Secador de Cabelos  Mondial Style",
+        "imageIds":[
+                    "2889194",
+                    "0"
+                    ],
+        "productVariations":[
+                             {
+                             "currency":"R$ ",
+                             "discountPrice":54.9,
+                             "formattedListPrice":"59,00",
+                             "formattedSellPrice":"54,90",
+                             "instalment":2,
+                             "instalmentValue":27.45,
+                             "name":"220V",
+                             "originalPrice":59,
+                             "price":54.9,
+                             "quantityAvailable":13,
+                             "saveAmount":"4,10",
+                             "savePercentage":6,
+                             "sku":32580,
+                             "seller":"Walmart",
+                             "supplierStock":""
+                             }
+                             ],
+        "optionsType":"Selecione",
+        "variations":[
+                      {
+                      "name":"110V",
+                      "sku":32579,
+                      "imageId":"2889194"
+                      },
+                      {
+                      "name":"220V",
+                      "sku":32580,
+                      "imageId":"2889194"
+                      }
+                      ]
+    }
+    
+}

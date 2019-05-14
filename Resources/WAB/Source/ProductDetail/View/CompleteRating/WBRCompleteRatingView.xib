@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRCompleteRatingView">
+            <connections>
+                <outlet property="contentView" destination="TEK-4N-BL4" id="mBt-Hd-32s"/>
+                <outlet property="evaluationLabel" destination="8A7-ZC-2pd" id="nvf-Vs-Lpf"/>
+                <outlet property="ratingView" destination="QJD-wR-iV8" id="ap6-BO-OPl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TEK-4N-BL4">
+            <rect key="frame" x="0.0" y="0.0" width="218" height="22"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJD-wR-iV8" customClass="WBRProductRatingView">
+                    <rect key="frame" x="0.0" y="3.5" width="73" height="15"/>
+                    <color key="backgroundColor" red="0.62641687639999999" green="1" blue="0.98589152660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="4nc-zF-wgb"/>
+                        <constraint firstAttribute="height" constant="15" id="DG5-vy-3y3"/>
+                    </constraints>
+                </view>
+                <label hidden="YES" opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 avaliações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A7-ZC-2pd">
+                    <rect key="frame" x="78" y="5.5" width="140" height="13"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="7Ah-I7-hNE" appends="YES" id="Ctk-hH-6F9"/>
+                    </connections>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QJD-wR-iV8" firstAttribute="leading" secondItem="TEK-4N-BL4" secondAttribute="leading" id="1Gi-aU-iC1"/>
+                <constraint firstAttribute="trailing" secondItem="8A7-ZC-2pd" secondAttribute="trailing" id="mOZ-Lm-E1J"/>
+                <constraint firstItem="QJD-wR-iV8" firstAttribute="centerY" secondItem="TEK-4N-BL4" secondAttribute="centerY" id="t3y-o2-W5h"/>
+                <constraint firstItem="8A7-ZC-2pd" firstAttribute="leading" secondItem="QJD-wR-iV8" secondAttribute="trailing" constant="5" id="uLz-3W-qR5"/>
+                <constraint firstItem="8A7-ZC-2pd" firstAttribute="centerY" secondItem="TEK-4N-BL4" secondAttribute="centerY" constant="1" id="xae-wJ-aCT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-38" y="354"/>
+        </view>
+        <tapGestureRecognizer id="7Ah-I7-hNE">
+            <connections>
+                <action selector="navigateToReview:" destination="-1" id="zNA-DN-jb2"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

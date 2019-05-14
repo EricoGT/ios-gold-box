@@ -1,0 +1,54 @@
+{
+  "product": {
+    "imagesIds": [
+      "2444883"
+    ],
+    "productId": 2103512,
+    "skuId": 120398,
+    "title": "Advantage Max 3 Combo Leve 3 Pague 2 Bayer Acima de 25 Kg - 4 Ml",
+    "departmentId": 4423,
+    "categoryId": 4424,
+    "subCategoryId": 4436,
+    "hasReview": true,
+    "rating": {
+      "value": 4,
+      "total": 8
+    },
+    "offers": [
+      {
+        "sku": 120398,
+        "hasExtendedWarranty": false,
+        "seller": {
+          "id": "vtex_prod_meuamigopet",
+          "name": "Meu Amigo Pet"
+        },
+        "price": {
+          "sellPrice": 12.36,
+          "installmentAmount": 22,
+          "valuePerInstallment": 0.56
+        },
+        "available": false
+      }
+    ],
+    "optionsType": "Dosagem",
+    "variations": [
+      {
+        "name": "4,0 ml",
+        "optionsType": "Peso Recomendado",
+        "options": [
+          {
+            "name": "Acima de 25 Kg",
+            "optionsType": "Quantidade",
+            "options": [
+              {
+                "name": "3 Bisnagas",
+                "sku": 120398,
+                "imageId": "2444883"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

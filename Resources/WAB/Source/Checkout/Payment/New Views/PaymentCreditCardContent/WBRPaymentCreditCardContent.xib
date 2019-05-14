@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRPaymentCreditCardContent">
+            <connections>
+                <outlet property="addNewCardView" destination="bJ8-Fc-noT" id="Rpe-kK-2nC"/>
+                <outlet property="addNewCardViewHeightConstraint" destination="huT-Hs-BsF" id="VnC-pW-L5Q"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="s13-hY-PBS"/>
+                <outlet property="creditCardTableView" destination="exl-Gw-itp" id="zXD-p7-4K9"/>
+                <outlet property="mainCardExpiredMessageLabel" destination="2SX-97-Q5B" id="E7a-oS-gKW"/>
+                <outlet property="mainCardExpiredMessageLabelBottomConstraint" destination="dS0-fS-VvN" id="5Rb-hR-DwG"/>
+                <outlet property="mainCardExpiredMessageLabelHeightConstraint" destination="PUC-YR-Ms0" id="Pz9-5W-duU"/>
+                <outlet property="mainCardExpiredTitleLabelTopConstraint" destination="0Iq-tC-dSj" id="2oC-l0-XsV"/>
+                <outlet property="mainCardExpiredView" destination="npP-KI-A9I" id="2dT-rO-IMu"/>
+                <outlet property="mainCardExpiredViewHeightConstraint" destination="GFm-Pr-bd8" id="JUm-RZ-xgd"/>
+                <outlet property="mainCardViewTitleLabel" destination="j5b-Wq-uSv" id="FXi-Gq-ag6"/>
+                <outlet property="topView" destination="4mJ-Ga-cSb" id="Uaf-8k-uYu"/>
+                <outlet property="topViewHeightConstraint" destination="wcL-p4-ww7" id="ojK-ts-P69"/>
+                <outlet property="topViewTitleLabelBottomConstraint" destination="FG9-fU-0pC" id="T8G-3J-B4t"/>
+                <outlet property="topViewTitleLabelHeightConstraint" destination="4GD-UA-CcI" id="l5X-MF-QH7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exl-Gw-itp" customClass="WBRPaymentCreditCardTableView">
+                    <rect key="frame" x="0.0" y="98" width="320" height="302"/>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ8-Fc-noT" customClass="WBRPaymentAddNewCardView">
+                    <rect key="frame" x="0.0" y="400" width="320" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.90539319630000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="800" constant="100" id="huT-Hs-BsF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mJ-Ga-cSb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartões salvos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5b-Wq-uSv">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="800" constant="18" id="4GD-UA-CcI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npP-KI-A9I">
+                            <rect key="frame" x="0.0" y="33" width="320" height="65"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ops! O seu cartão principal venceu!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-3I-mF1">
+                                    <rect key="frame" x="10" y="10" width="174" height="13"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="11"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicione um novo ou selecione a opção boleto bancário para finalizar a compra :) " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SX-97-Q5B" userLabel="Adicione um novo ou selecione a opção boleto bancário para finalizar a compra :)">
+                                    <rect key="frame" x="10" y="29" width="300" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="800" constant="26" id="PUC-YR-Ms0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.97647058823529409" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="EyI-3I-mF1" firstAttribute="top" secondItem="npP-KI-A9I" secondAttribute="top" priority="800" constant="10" id="0Iq-tC-dSj"/>
+                                <constraint firstAttribute="trailing" secondItem="2SX-97-Q5B" secondAttribute="trailing" priority="800" constant="10" id="41p-pL-Fvg"/>
+                                <constraint firstAttribute="height" priority="800" constant="65" id="GFm-Pr-bd8"/>
+                                <constraint firstAttribute="bottom" secondItem="2SX-97-Q5B" secondAttribute="bottom" priority="800" constant="10" id="dS0-fS-VvN"/>
+                                <constraint firstItem="EyI-3I-mF1" firstAttribute="leading" secondItem="npP-KI-A9I" secondAttribute="leading" priority="800" constant="10" id="eJV-Ka-6es"/>
+                                <constraint firstItem="2SX-97-Q5B" firstAttribute="leading" secondItem="npP-KI-A9I" secondAttribute="leading" priority="800" constant="10" id="sfK-gC-LHV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="npP-KI-A9I" secondAttribute="trailing" priority="800" id="5u6-oh-1ng"/>
+                        <constraint firstItem="npP-KI-A9I" firstAttribute="top" secondItem="j5b-Wq-uSv" secondAttribute="bottom" priority="800" constant="15" id="FG9-fU-0pC"/>
+                        <constraint firstAttribute="bottom" secondItem="npP-KI-A9I" secondAttribute="bottom" priority="800" id="Fdx-yK-by2"/>
+                        <constraint firstItem="j5b-Wq-uSv" firstAttribute="top" secondItem="4mJ-Ga-cSb" secondAttribute="top" priority="800" id="t7a-PZ-e52"/>
+                        <constraint firstItem="npP-KI-A9I" firstAttribute="leading" secondItem="4mJ-Ga-cSb" secondAttribute="leading" priority="800" id="uSr-f3-NqN"/>
+                        <constraint firstAttribute="height" priority="800" constant="98" id="wcL-p4-ww7"/>
+                        <constraint firstItem="j5b-Wq-uSv" firstAttribute="leading" secondItem="4mJ-Ga-cSb" secondAttribute="leading" priority="800" id="xEl-kC-T6e"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4mJ-Ga-cSb" secondAttribute="trailing" priority="800" id="Dhl-xH-sMh"/>
+                <constraint firstItem="exl-Gw-itp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ENe-d4-9LD"/>
+                <constraint firstItem="4mJ-Ga-cSb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="800" id="Ejk-Az-nKc"/>
+                <constraint firstAttribute="trailing" secondItem="bJ8-Fc-noT" secondAttribute="trailing" id="ZTE-oQ-Dvk"/>
+                <constraint firstItem="bJ8-Fc-noT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dG6-ay-bDs"/>
+                <constraint firstAttribute="trailing" secondItem="exl-Gw-itp" secondAttribute="trailing" id="fbb-zr-BZQ"/>
+                <constraint firstItem="4mJ-Ga-cSb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="800" id="oWP-jR-kSK"/>
+                <constraint firstAttribute="bottom" secondItem="bJ8-Fc-noT" secondAttribute="bottom" priority="800" id="re9-gQ-YLS"/>
+                <constraint firstItem="bJ8-Fc-noT" firstAttribute="top" secondItem="exl-Gw-itp" secondAttribute="bottom" priority="800" id="xht-O9-B9u"/>
+                <constraint firstItem="exl-Gw-itp" firstAttribute="top" secondItem="4mJ-Ga-cSb" secondAttribute="bottom" priority="800" id="z7v-LW-XOu"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="120.5" y="97"/>
+        </view>
+    </objects>
+</document>

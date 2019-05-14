@@ -1,0 +1,519 @@
+{
+  "showcases": [
+    {
+      "id": "App_Home_Automacao",
+      "type": "mock",
+      "orderId": 1,
+      "name": "Vitrine automação",
+      "icon": "ic_trophy_bf.png",
+      "shelfItems": [
+        {
+          "productId": 2704652,
+          "skuId": 806009,
+          "title": "Jogo Fifa 15 para Playstation 3",
+          "imageId": "3733424",
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 350,
+            "sellPrice": 290
+          },
+          "suggestion": {
+            "price": {
+              "current": 291,
+              "discountedPrice": 50
+            },
+            "paymentMethod": "BANK_SLIP"
+          },
+          "paymentTypes":["MASTERCARD"],
+          "instalment": 22,
+          "instalmentValue": 5.45,
+          "rating": {
+            "value": 3,
+            "total": 2
+          }
+        },
+        {
+          "productId": 3068520,
+          "skuId": 1194541,
+          "title": "Teste EPS Stargate",
+          "imageId": "5013271",
+          "totalColors": 1,
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "omsseller",
+          "price": {
+            "listPrice": 0,
+            "sellPrice": 50
+          },
+          "paymentTypes":["MASTERCARD"],
+          "instalment": 5,
+          "instalmentValue": 50,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/79f037a7-7-d89bdbae-7-selofrete.png"
+        },
+        {
+          "productId": 2028345,
+          "skuId": 29260,
+          "title": "Geladeira\u0026#x2F;Refrigerador 1 Porta Consul Frost Free 300L com Dispenser de Água CRG36A Branco",
+          "imageId": "2626123",
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 700,
+            "sellPrice": 676.2
+          },
+          "paymentTypes":["MASTERCARD", "VISA"],
+          "instalment": 22,
+          "instalmentValue": 30.74
+        },
+        {
+          "productId": 2036037,
+          "skuId": 38063,
+          "title": "Advantage Max 3 Cães  - Bayer",
+          "imageId": "2099520",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "listPrice": 11,
+            "sellPrice": 10
+          },
+          "instalment": 22,
+          "instalmentValue": 0.45
+        },
+        {
+          "productId": 2019340,
+          "skuId": 19692,
+          "title": "Kit com 4 Pneus Aro 13 Pirelli PN P165&#x2F;70R13 78T P400",
+          "imageId": "3216767",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 2900,
+            "sellPrice": 1604
+          },
+          "instalment": 22,
+          "instalmentValue": 72.91
+        },
+        {
+          "productId": 2103512,
+          "skuId": 120398,
+          "title": "Advantage Max 3 Combo Leve 3 Pague 2 Bayer Acima de 25 Kg - 4 Ml",
+          "imageId": "2444883",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "sellPrice": 12.36
+          },
+          "rating": {
+            "value": 4,
+            "total": 3
+          },
+          "instalment": 22,
+          "instalmentValue": 0.56
+        },
+        {
+          "productId": 2880215,
+          "skuId": 991578,
+          "title": "Anel Duplo Moustache Strass 1759",
+          "imageId": "3934952",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "loucasporacessorios",
+          "price": {
+            "listPrice": 65.9,
+            "sellPrice": 46.9
+          },
+          "instalment": 22,
+          "instalmentValue": 2.13
+        },
+        {
+          "productId": 2867119,
+          "skuId": 978122,
+          "title": "Camisa Polo Aleatory Lisa Piquet Peru",
+          "imageId": "3919815",
+          "totalColors": 8,
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "aleatory",
+          "price": {
+            "sellPrice": 109
+          },
+          "instalment": 22,
+          "instalmentValue": 4.95
+        },
+        {
+          "productId": 2137851,
+          "skuId": 161218,
+          "title": "Liquidificador Mondial Pro Master 1500 Premium",
+          "imageId": "2609284",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 450.09,
+            "sellPrice": 427.59
+          },
+          "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png"
+        },
+        {
+          "productId": 2032203,
+          "skuId": 35041,
+          "title": "MDS - Máquina de Cortar Cabelo HomePro Basic - Wahl",
+          "imageId": "2498100",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "suggestion": {
+            "price": {
+              "current": 290,
+              "discountedPrice": 90
+            },
+            "paymentMethod": "BANK_SLIP"
+          },
+          "price": {
+            "listPrice": 79.9,
+            "sellPrice": 53.91
+          },
+          "instalment": 5,
+          "instalmentValue": 10.78,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        }
+      ]
+    },
+    {
+      "id": "App_Home_ReducaoPreco",
+      "type": "mock",
+      "orderId": 2,
+      "name": "Diminuiu o preço",
+      "icon": "ic_pricedown.png",
+      "shelfItems": [
+        {
+          "productId": 2032203,
+          "skuId": 35041,
+          "title": "MDS - Máquina de Cortar Cabelo",
+          "imageId": "2498100",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 79.9,
+            "sellPrice": 53.91
+          },
+          "instalment": 5,
+          "instalmentValue": 10.78,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        },
+        {
+          "productId": 2028564,
+          "skuId": 29504,
+          "title": "Balança Digital Eletrônica Camry EB9013",
+          "imageId": "2544024",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 59.9,
+            "sellPrice": 44.9
+          }
+        },
+        {
+          "productId": 2249520,
+          "skuId": 288214,
+          "title": "Home Theater Samsung HT-F5525WK&#x2F;ZD 5.1 Canais com Blu-ray 3D, Função Futebol, Karaokê, Módulo Wireless, Entrada USB e Cabo HDMI - 1000 W",
+          "imageId": "3231781",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 500,
+            "sellPrice": 400
+          },
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        },
+        {
+          "productId": 3016858,
+          "skuId": 1141996,
+          "title": "Secante Abrilhantador para Máquinas de Lavar Louça Limpol Bombril 100ml",
+          "imageId": "4165081",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "sellPrice": 6.49
+          },
+          "instalment": 1,
+          "instalmentValue": 6.49
+        },
+        {
+          "productId": 2983088,
+          "skuId": 1105172,
+          "title": "Climatizador e Umidificador de Ar Frio Midea Liva AKAF Painel Digital",
+          "imageId": "4142686",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 328,
+            "sellPrice": 313.2
+          }
+        },
+        {
+          "productId": 3016194,
+          "skuId": 1141220,
+          "title": "iPhone 5s Apple 16GB Prata Espacial ME433BR&#x2F;A",
+          "imageId": "4211574",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "sellPrice": 2499
+          }
+        },
+        {
+          "productId": 3068520,
+          "skuId": 1197038,
+          "title": "Stargate",
+          "imageId": "4261793",
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "cale19105528445",
+          "price": {
+            "listPrice": 1.31,
+            "sellPrice": 1.3
+          }
+        },
+        {
+          "productId": 3068600,
+          "skuId": 1197202,
+          "title": "Roteador D-Link DIR-615 Wireless N ( 300 Mbps &#x2F; 5 dBi )",
+          "imageId": "4261987",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "gigantechomol",
+          "price": {
+            "sellPrice": 88.9
+          },
+          "instalment": 2,
+          "instalmentValue": 44.45
+        },
+        {
+          "productId": 3068616,
+          "skuId": 1197218,
+          "title": "pista elétrica - rally fever - carrera 6947",
+          "imageId": "4262000",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "softvarhomol",
+          "price": {
+            "sellPrice": 1
+          }
+        },
+        {
+          "productId": 2104123,
+          "skuId": 126401,
+          "title": "Kit Berço Quarto Compacto meu Fofinho branco + Roupeiro Quarto Compacto Rosa - Art in Móveis",
+          "imageId": "2548068",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "sellPrice": 728.01
+          }
+        }
+      ]
+    },
+    {
+      "id": "21734",
+      "type": "mock",
+      "orderId": 3,
+      "name": "Mais ofertas",
+      "icon": "https://static-cms.waldev.com.br/app/images/showcases/ic_trophy.png",
+      "shelfItems": [
+        {
+          "productId": 2036037,
+          "skuId": 38063,
+          "title": "Advantage Max 3 Cães  - Bayer",
+          "imageId": "2099520",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "listPrice": 11,
+            "sellPrice": 10
+          },
+          "instalment": 22,
+          "instalmentValue": 0.45
+        },
+        {
+          "productId": 2019340,
+          "skuId": 19692,
+          "title": "Kit com 4 Pneus Aro 13 Pirelli PN P165&#x2F;70R13 78T P400",
+          "imageId": "3216767",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 2900,
+            "sellPrice": 1604
+          },
+          "instalment": 22,
+          "instalmentValue": 72.91
+        },
+        {
+          "productId": 2103512,
+          "skuId": 120398,
+          "title": "Advantage Max 3 Combo Leve 3 Pague 2 Bayer Acima de 25 Kg - 4 Ml",
+          "imageId": "2444883",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "sellPrice": 12.36
+          },
+          "rating": {
+            "value": 4,
+            "total": 3
+          },
+          "instalment": 22,
+          "instalmentValue": 0.56
+        },
+        {
+          "productId": 2880215,
+          "skuId": 991578,
+          "title": "Anel Duplo Moustache Strass 1759",
+          "imageId": "3934952",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "loucasporacessorios",
+          "price": {
+            "listPrice": 65.9,
+            "sellPrice": 46.9
+          },
+          "instalment": 22,
+          "instalmentValue": 2.13
+        },
+        {
+          "productId": 2867119,
+          "skuId": 978122,
+          "title": "Camisa Polo Aleatory Lisa Piquet Peru",
+          "imageId": "3919815",
+          "totalColors": 8,
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "aleatory",
+          "price": {
+            "sellPrice": 109
+          },
+          "instalment": 22,
+          "instalmentValue": 4.95
+        },
+        {
+          "productId": 2137851,
+          "skuId": 161218,
+          "title": "Liquidificador Mondial Pro Master 1500 Premium",
+          "imageId": "2609284",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 450.09,
+            "sellPrice": 427.59
+          },
+          "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png"
+        },
+        {
+          "productId": 2032203,
+          "skuId": 35041,
+          "title": "MDS - Máquina de Cortar Cabelo HomePro Basic - Wahl",
+          "imageId": "2498100",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 79.9,
+            "sellPrice": 53.91
+          },
+          "instalment": 5,
+          "instalmentValue": 10.78,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        },
+        {
+          "productId": 3066204,
+          "skuId": 1194541,
+          "title": "Nerf Usada",
+          "imageId": "5013271",
+          "totalColors": 1,
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "omsseller",
+          "price": {
+            "listPrice": 0,
+            "sellPrice": 50
+          },
+          "instalment": 1,
+          "instalmentValue": 50,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/79f037a7-7-d89bdbae-7-selofrete.png"
+        }
+      ]
+    },
+    {
+      "id": "App_Home_MaisBuscadosHora",
+      "type": "mock",
+      "orderId": 4,
+      "name": "Mais buscados",
+      "icon": "ic_book.png",
+      "shelfItems": [
+        {
+          "productId": 2032162,
+          "skuId": 33504,
+          "title": "Sensor Kinect Xbox 360 - Edição Especial",
+          "imageId": "2531614",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "sellPrice": 499
+          },
+          "installmentAmount": 10,
+          "valuePerInstallment": 49.9,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        },
+        {
+          "productId": 2109276,
+          "skuId": 33554,
+          "title": "Chapinha Taiff Look com Íons Alisa e Enrola Bivolt",
+          "imageId": "2558960",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 350.1,
+            "sellPrice": 344.97
+          },
+          "installmentAmount": 10,
+          "valuePerInstallment": 34.5
+        },
+        {
+          "productId": 2003171,
+          "skuId": 3190,
+          "title": "Armário Itaim 3 Gavetas Vidro Branco - Politorno",
+          "imageId": "2470156",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 407,
+            "sellPrice": 366.9
+          },
+          "installmentAmount": 12,
+          "valuePerInstallment": 30.58
+        }
+      ]
+    }
+  ]
+}

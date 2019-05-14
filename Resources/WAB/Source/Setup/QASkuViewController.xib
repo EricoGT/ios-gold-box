@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QASkuViewController">
+            <connections>
+                <outlet property="btSku" destination="0I0-fF-3gH" id="Pv7-PP-xKc"/>
+                <outlet property="segSku" destination="bWr-dl-GZU" id="7Ii-hv-IZD"/>
+                <outlet property="txtSku" destination="VTy-Vq-sg3" id="7S6-hT-wod"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 33555" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VTy-Vq-sg3">
+                    <rect key="frame" x="95" y="130" width="185" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="185" id="fgd-nR-uN9"/>
+                        <constraint firstAttribute="height" constant="60" id="rE4-xo-Ae1"/>
+                    </constraints>
+                    <color key="textColor" red="0.1176470588" green="0.43529411759999997" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0I0-fF-3gH" customClass="WMButtonRounded">
+                    <rect key="frame" x="95" y="296" width="185" height="44"/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.43529411759999997" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="185" id="eaU-m9-Lda"/>
+                        <constraint firstAttribute="height" constant="44" id="h15-aU-RaH"/>
+                    </constraints>
+                    <state key="normal" title="Detalhe"/>
+                    <connections>
+                        <action selector="goProduct:" destination="-1" eventType="touchUpInside" id="9Ys-h9-pHN"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bWr-dl-GZU">
+                    <rect key="frame" x="95" y="227" width="185" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="185" id="VMF-xg-Tmg"/>
+                        <constraint firstAttribute="height" constant="28" id="bjZ-34-ict"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Sku"/>
+                        <segment title="Product Id"/>
+                    </segments>
+                    <color key="tintColor" red="0.95686274510000002" green="0.4823529412" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0I0-fF-3gH" firstAttribute="top" secondItem="bWr-dl-GZU" secondAttribute="bottom" constant="41" id="3Uc-TS-kmY"/>
+                <constraint firstItem="VTy-Vq-sg3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OZE-xL-bTY"/>
+                <constraint firstItem="bWr-dl-GZU" firstAttribute="top" secondItem="VTy-Vq-sg3" secondAttribute="bottom" constant="37" id="RXL-pt-52d"/>
+                <constraint firstItem="bWr-dl-GZU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dLQ-zc-ZEf"/>
+                <constraint firstItem="0I0-fF-3gH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="md0-Tq-EGk"/>
+                <constraint firstItem="VTy-Vq-sg3" firstAttribute="top" secondItem="gd7-Lw-Fsi" secondAttribute="top" constant="86" id="rsC-k2-LI6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="gd7-Lw-Fsi"/>
+            <point key="canvasLocation" x="-25.5" y="26.5"/>
+        </view>
+    </objects>
+</document>

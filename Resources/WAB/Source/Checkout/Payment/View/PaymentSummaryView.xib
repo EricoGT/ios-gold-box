@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentSummaryView">
+            <connections>
+                <outlet property="installmentsLabel" destination="nxj-jN-5NE" id="Kb0-ST-IhA"/>
+                <outlet property="totalValueLabel" destination="CyJ-JN-9ao" id="QNm-jp-NXN"/>
+                <outlet property="valuesContainerView" destination="Sgs-54-dak" id="2Wm-I9-2Zr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-54-dak">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-oK-3R0" userLabel="Separator View">
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="N6X-WM-0tk"/>
+                    </constraints>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-Vj-Xue">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor total: R$ 99.999,99" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-JN-9ao" userLabel="Total Value Label">
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="em até 1x de 99.999,99 sem juros" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-jN-5NE" userLabel="Installments Label">
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="nxj-jN-5NE" firstAttribute="leading" secondItem="aRc-Vj-Xue" secondAttribute="leading" constant="15" id="CpY-aB-mQN"/>
+                        <constraint firstItem="nxj-jN-5NE" firstAttribute="trailing" secondItem="CyJ-JN-9ao" secondAttribute="trailing" id="Iab-p9-wn7"/>
+                        <constraint firstItem="nxj-jN-5NE" firstAttribute="top" secondItem="CyJ-JN-9ao" secondAttribute="bottom" id="W0d-67-Yk1"/>
+                        <constraint firstItem="CyJ-JN-9ao" firstAttribute="leading" secondItem="aRc-Vj-Xue" secondAttribute="leading" constant="15" id="kmY-jK-BEM"/>
+                        <constraint firstAttribute="trailing" secondItem="CyJ-JN-9ao" secondAttribute="trailing" constant="15" id="mQM-aX-T4U"/>
+                        <constraint firstAttribute="bottom" secondItem="nxj-jN-5NE" secondAttribute="bottom" constant="15" id="r9l-8j-czx"/>
+                        <constraint firstItem="CyJ-JN-9ao" firstAttribute="top" secondItem="aRc-Vj-Xue" secondAttribute="top" constant="15" id="z9F-sG-mBo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7Z3-oK-3R0" secondAttribute="trailing" id="2dd-Xy-KVX"/>
+                <constraint firstItem="7Z3-oK-3R0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4kg-Ne-CsR"/>
+                <constraint firstItem="aRc-Vj-Xue" firstAttribute="top" secondItem="7Z3-oK-3R0" secondAttribute="bottom" id="K4j-hK-WPY"/>
+                <constraint firstAttribute="trailing" secondItem="Sgs-54-dak" secondAttribute="trailing" id="Ujl-Tf-1bY"/>
+                <constraint firstItem="aRc-Vj-Xue" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fHu-L1-hx0"/>
+                <constraint firstItem="Sgs-54-dak" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iMc-Lo-Dna"/>
+                <constraint firstItem="Sgs-54-dak" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jZ6-cg-XAy"/>
+                <constraint firstAttribute="trailing" secondItem="aRc-Vj-Xue" secondAttribute="trailing" id="pk4-hz-w86"/>
+                <constraint firstItem="7Z3-oK-3R0" firstAttribute="top" secondItem="Sgs-54-dak" secondAttribute="bottom" id="vpJ-7K-qes"/>
+                <constraint firstAttribute="bottom" secondItem="aRc-Vj-Xue" secondAttribute="bottom" id="weo-yl-uCI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-200.5"/>
+        </view>
+    </objects>
+</document>

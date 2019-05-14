@@ -1,0 +1,20 @@
+{
+   "name": "ValidationError", 
+    "propagatable": true, 
+    "responseCode": 400, 
+    "message": "Invalid arguments.", 
+    "errors": [
+        {
+            "message": {
+                "errorCode": "placeOrder:preauthorizationError", 
+                "errorMessage": "PREAUTH", 
+                "errorMap": {
+                    "loggerKey": "003-cqeu1n71nvvvxfsnfjvnarkwd"
+                }
+            }
+        }
+    ], 
+    "code": null, 
+    "moduleName": "New Checkout V1", 
+    "serviceName": "Order"
+}

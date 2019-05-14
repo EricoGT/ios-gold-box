@@ -1,0 +1,35 @@
+{
+  "product":{
+    "imagesIds":[
+      "3216767",
+      "3216768"
+    ],
+    "productId":2019340,
+    "skuId":19692,
+    "title":"Kit com 4 Pneus Aro 13 Pirelli PN P165&#x2F;70R13 78T P400",
+    "departmentId":2903,
+    "categoryId":1873,
+    "subCategoryId":1901,
+    "rating":{
+      "value":0,
+      "total":0
+    },
+    "offers":[
+      {
+        "sku":19692,
+        "hasExtendedWarranty":false,
+        "seller":{
+          "id":"1",
+          "name":"Walmart"
+        },
+        "price":{
+          "listPrice":2900,
+          "sellPrice":1604,
+          "installmentAmount":22,
+          "valuePerInstallment":72.91
+        },
+        "available":true
+      }
+    ]
+  }
+}

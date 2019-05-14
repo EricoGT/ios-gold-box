@@ -1,0 +1,80 @@
+{
+  "count": 4,
+  "pageSize": 4,
+  "countPage": 2,
+  "results": [
+    {
+      "reviewId": 8094083,
+      "productId": 2029676,
+      "client": {
+        "clientId": 322,
+        "name": "Luciano de Oliveira Brandão",
+        "email": "lobradao@teste.com.br!",
+        "city": "Osasco",
+        "state": "SP"
+      },
+      "rating": 1,
+      "title": "O melhor",
+      "text": "Sem duvidas um dos melhores smartphones top's de linha que esta a venda no mercado. O preço no bolso do Brasileiro hoje pode pesar, mas o que o iPhone traz para o consumidor é surpreendente. Além da câmera e do processador, o sistema operacional é super intuitivo e não funciona trava assim como em outros celular da memas marca ou da mesma linha, parabens pelo produto e entrega.",
+      "showEmail": false,
+      "reviewDate": 1373000400000,
+      "voteCount": 1,
+      "voteRelevant": 1
+    },
+    {
+      "reviewId": 8094079,
+      "productId": 2029676,
+      "client": {
+        "clientId": 322,
+        "name": "Flavia Camargo",
+        "email": "flavia.c@teste.com.br",
+        "city": "Osasco",
+        "state": "SP"
+      },
+      "rating": 4,
+      "title": "Porderia ser melhor!",
+      "text": "Sem duvidas um dos melhores smartphones top's de linha que esta a venda no mercado. O preço no bolso do Brasileiro hoje pode pesar, mas o que o iPhone traz para o consumidor é surpreendente. Além da câmera e do processador, o sistema operacional é super intuitivo. Entrega do Walmart muito rápida e parabéns à Tex Courier, a entregadora. Sempre entrega bem antes do prazo.  ",
+      "showEmail": false,
+      "reviewDate": 1375592400000,
+      "voteCount": 1,
+      "voteRelevant": 1
+    },
+    {
+      "reviewId": 8094081,
+      "productId": 2029676,
+      "client": {
+        "clientId": 322,
+        "name": "Rogerio Iwata",
+        "email": "riwate.c@teste.com.br",
+        "city": "Osasco",
+        "state": "SP"
+      },
+      "rating": 2,
+      "title": "Ainda prefiro o Android",
+      "text": "O produto não é ruim… mas não se compara ao Android. Gosto da liberdade de personalizar a homescreen e de instalar apps de terceiros.",
+      "showEmail": false,
+      "reviewDate": 1374469200000,
+      "voteCount": 1,
+      "voteRelevant": 0
+    },
+    {
+      "reviewId": 8094082,
+      "productId": 2029676,
+      "client": {
+        "clientId": 322,
+        "name": "Clara Pacheco",
+        "email": "cpacheco.teste.com.br",
+        "city": "Osasco",
+        "state": "SP"
+      },
+      "rating": 1,
+      "title": "Fantasticooo!",
+      "text": "Estou apaixonada!!! Este telefone é um luxo... E a entrega foi sensacional, chegou no dia seguinte!",
+      "showEmail": false,
+      "reviewDate": 1373000400000,
+      "voteCount": 1,
+      "voteRelevant": 1
+    }
+  ],
+  "productId": 2029676
+}

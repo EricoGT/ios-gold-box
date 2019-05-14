@@ -1,0 +1,36 @@
+{
+  "product":{
+    "imagesIds":[
+      "15341015"
+    ],
+    "productId":5639021,
+    "skuId":5639021,
+    "title":"Iphone 8 Plus 256GB Tela 5.5 Hd 12MP 4G - Dourado",
+    "departmentId":4833,
+    "categoryId":8267,
+    "rating":{
+      "value":0,
+      "total":0
+    },
+    "offers":[
+      {
+        "sku":5639021,
+        "hasExtendedWarranty":false,
+        "seller":{
+          "id":"eshop24",
+          "name":"Eshop 24"
+        },
+        "price":{
+          "sellPrice":5558.9,
+          "installmentAmount":12,
+          "valuePerInstallment":463.24,
+          "paymentTypes":[
+            "VISA"
+          ]
+        },
+        "available":true
+      }
+    ],
+    "hasReview":false
+  }
+}

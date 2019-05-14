@@ -1,0 +1,50 @@
+[
+  {
+    "id":"12790191",
+    "receiverName":"Teste Teste",
+    "country":"Brasil",
+    "state":"SP",
+    "city":"São Paulo",
+    "neighborhood":"Santana",
+    "street":"Rua Cotoxó",
+    "number":"123",
+    "complement":"",
+    "postalCode":"13091410",
+    "referencePoint":"",
+    "type":"RESIDENTIAL",
+    "profile":{
+      "fullName":"Teste Teste",
+      "firstName":"Teste",
+      "lastName":"Teste",
+      "pid":"ab9b84a5-01d9-40a8-a0d5-b8c8d8d788e3",
+      "guid":"54f44170-1022-4fcd-97b2-5410bf640163",
+      "email":"teste@mobile.com",
+      "document":"98148268630",
+      "corporate":false,
+      "phones":[
+        {
+          "areaCode":"11",
+          "number":"22141212",
+          "type":"RESIDENTIAL"
+        }
+      ],
+      "dateBirth":"1981-04-22",
+      "gender":"MALE",
+      "visitorIdentity":"qIWjF/eRZK6mMtE7aN83cbviUyDirOWTUwwDfA0Ip8ap7/1JwbdUsSnygkevDedh6cw31/5JiZaPedH+yb+VRuAhNfVC+4Blep5G3RquVEBdvqHTgNDql6Kt9Jrr2+r3",
+      "preferences":{
+        "email":true,
+        "sms":false,
+        "acceptedTerm":false
+      },
+      "dateBirthAsDate":486010800000
+    },
+    "validAddress":true,
+    "isNotRecipientDelivery":false,
+    "stateName":"São Paulo",
+    "countryName":"BRA",
+    "description":"",
+    "hasNumber":true,
+    "isRecipientDelivery":true,
+    "default":true
+  }
+]

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kWBRContactTicketWalmartTableViewCellIdentifier" rowHeight="350" id="KGk-i7-Jjw" customClass="WBRContactTicketWalmartMessageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="349.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyA-aX-gMa">
+                        <rect key="frame" x="16" y="11" width="296" height="323"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-aM-6re">
+                                <rect key="frame" x="10" y="10" width="276" height="308"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BH-wo-OKO">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="24"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walmartContactIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sJa-eq-uP8">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="Q3P-KB-O8c"/>
+                                                    <constraint firstAttribute="width" constant="24" id="UUQ-OK-d8t"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mateus Lucio dos Santos Quaresma Mateus Lucio dos Santos Quaresma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQk-3Y-Ro1">
+                                                <rect key="frame" x="29" y="3" width="247" height="18"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="MQk-3Y-Ro1" secondAttribute="trailing" id="14G-8s-BDP"/>
+                                            <constraint firstItem="sJa-eq-uP8" firstAttribute="leading" secondItem="0BH-wo-OKO" secondAttribute="leading" id="3Io-uE-IHk"/>
+                                            <constraint firstItem="MQk-3Y-Ro1" firstAttribute="centerY" secondItem="sJa-eq-uP8" secondAttribute="centerY" id="9tY-MN-KFK"/>
+                                            <constraint firstItem="MQk-3Y-Ro1" firstAttribute="leading" secondItem="sJa-eq-uP8" secondAttribute="trailing" constant="5" id="JQY-4h-rsl"/>
+                                            <constraint firstAttribute="bottom" secondItem="sJa-eq-uP8" secondAttribute="bottom" id="q7O-Cd-gNp"/>
+                                            <constraint firstItem="sJa-eq-uP8" firstAttribute="top" secondItem="0BH-wo-OKO" secondAttribute="top" id="wZL-4o-1qU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3D-RG-84K">
+                                        <rect key="frame" x="0.0" y="35" width="175" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="190" id="TGi-Bz-sBO"/>
+                                            <constraint firstAttribute="width" constant="175" id="ZWD-sl-ebp"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsR-wn-4L0">
+                                        <rect key="frame" x="0.0" y="236" width="267" height="49"/>
+                                        <string key="text">Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. Quero o meu dinheiro de volta. </string>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-M1-mbe">
+                                        <rect key="frame" x="0.0" y="296" width="276" height="12"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3cz-M1-mbe" secondAttribute="trailing" id="Lye-lZ-nD9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.97647058819999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2RW-aM-6re" secondAttribute="trailing" constant="10" id="WFU-9y-WKU"/>
+                            <constraint firstItem="2RW-aM-6re" firstAttribute="top" secondItem="IyA-aX-gMa" secondAttribute="top" constant="10" id="ZPX-et-Lm1"/>
+                            <constraint firstAttribute="bottom" secondItem="2RW-aM-6re" secondAttribute="bottom" constant="5" id="cZs-p8-ARa"/>
+                            <constraint firstItem="2RW-aM-6re" firstAttribute="leading" secondItem="IyA-aX-gMa" secondAttribute="leading" constant="10" id="o2y-Ct-RV6"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZA7-Y5-X2u" customClass="WBRTriangleView">
+                        <rect key="frame" x="8" y="11" width="8" height="8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="8" id="3gz-Ui-gSC"/>
+                            <constraint firstAttribute="height" constant="8" id="TZm-4y-HeM"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="triangleColor">
+                                <color key="value" red="1" green="0.97647058819999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="pointingToLeft" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IyA-aX-gMa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="9Ef-95-X2u"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IyA-aX-gMa" secondAttribute="bottom" constant="5" id="N4X-Fm-Yqb"/>
+                    <constraint firstItem="IyA-aX-gMa" firstAttribute="leading" secondItem="ZA7-Y5-X2u" secondAttribute="trailing" id="Uci-GF-b1t"/>
+                    <constraint firstItem="IyA-aX-gMa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dS7-ar-OyM"/>
+                    <constraint firstItem="ZA7-Y5-X2u" firstAttribute="top" secondItem="IyA-aX-gMa" secondAttribute="top" id="glb-hE-IGO"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="IyA-aX-gMa" secondAttribute="trailing" constant="30" id="pA2-fk-t4o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="attachmentContainer" destination="J3D-RG-84K" id="1BV-o1-FWI"/>
+                <outlet property="coloredView" destination="IyA-aX-gMa" id="r0h-oE-i8n"/>
+                <outlet property="messageLabel" destination="tsR-wn-4L0" id="mrr-8t-JXj"/>
+                <outlet property="sellerLabel" destination="MQk-3Y-Ro1" id="5EY-B6-v4t"/>
+                <outlet property="timeLabel" destination="3cz-M1-mbe" id="H9i-3k-OIh"/>
+            </connections>
+            <point key="canvasLocation" x="60.799999999999997" y="83.658170914542737"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="walmartContactIcon" width="24" height="24"/>
+    </resources>
+</document>

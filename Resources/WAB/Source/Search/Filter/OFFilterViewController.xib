@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OFFilterViewController">
+            <connections>
+                <outlet property="loader" destination="lhH-ji-9gW" id="HfI-jf-guH"/>
+                <outlet property="tableView" destination="OKh-W1-t4s" id="IIb-5b-cQx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-W1-t4s">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3dx-Y8-3PU"/>
+                        <outlet property="delegate" destination="-1" id="POg-um-rs3"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lhH-ji-9gW">
+                    <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
+                    <color key="color" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lhH-ji-9gW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="HRz-Wt-qkz"/>
+                <constraint firstItem="OKh-W1-t4s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mb2-sg-aCO"/>
+                <constraint firstAttribute="trailing" secondItem="OKh-W1-t4s" secondAttribute="trailing" id="SzR-kg-qRg"/>
+                <constraint firstItem="OKh-W1-t4s" firstAttribute="top" secondItem="WpY-Nb-4Fa" secondAttribute="top" id="Wie-2c-zdo"/>
+                <constraint firstItem="WpY-Nb-4Fa" firstAttribute="bottom" secondItem="OKh-W1-t4s" secondAttribute="bottom" constant="44" id="q59-hK-pMS"/>
+                <constraint firstItem="lhH-ji-9gW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zb6-hC-2op"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="WpY-Nb-4Fa"/>
+            <point key="canvasLocation" x="-817" y="-134"/>
+        </view>
+    </objects>
+</document>

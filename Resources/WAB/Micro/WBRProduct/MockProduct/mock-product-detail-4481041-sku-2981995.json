@@ -1,0 +1,51 @@
+{
+    "product": {
+        "imagesIds": [
+                      "8845245",
+                      "8845246",
+                      "8845248",
+                      "8845249",
+                      "8845251"
+                      ],
+        "productId": 4481041,
+        "skuId": 2981995,
+        "title": "Refrigerador Consul CRM42NB 386L 2 Portas Frost Free Branco - 110V",
+        "departmentId": 144,
+        "categoryId": 7952,
+        "subCategoryId": 7967,
+        "rating": {
+            "value": 5,
+            "total": 7
+        },
+        "offers": [
+                   {
+                   "sku": 2981996,
+                   "hasExtendedWarranty": true,
+                   "seller": {
+                   "id": "1",
+                   "name": "Walmart"
+                   },
+                   "price": {
+                   "listPrice": 2199,
+                   "sellPrice": 1549.9,
+                   "installmentAmount": 9,
+                   "valuePerInstallment": 172.21
+                   },
+                   "available": true
+                   }
+                   ],
+        "optionsType": "Voltagem",
+        "variations": [
+                       {
+                       "name": "110V",
+                       "sku": 2981995,
+                       "imageId": "8845245"
+                       },
+                       {
+                       "name": "220V",
+                       "sku": 2981996,
+                       "imageId": "8845252"
+                       }
+                       ]
+    }
+}

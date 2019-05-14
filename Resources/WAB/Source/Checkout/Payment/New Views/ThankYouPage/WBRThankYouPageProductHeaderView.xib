@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRThankYouPageProductHeaderView">
+            <connections>
+                <outlet property="deliverSequenceLabel" destination="LHa-Hd-jnT" id="p6z-PT-d1r"/>
+                <outlet property="deliveryEstimateLabel" destination="d12-eP-ZNz" id="ZDs-be-kK5"/>
+                <outlet property="sellerNameLabel" destination="YVR-HT-xmw" id="Elu-Vf-QZT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrega 1 de 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHa-Hd-jnT">
+                    <rect key="frame" x="0.0" y="10" width="375" height="15.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendido e entregue por Walmart" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-HT-xmw">
+                    <rect key="frame" x="0.0" y="35.5" width="375" height="13"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em até 2 dias úteis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d12-eP-ZNz">
+                    <rect key="frame" x="0.0" y="53.5" width="375" height="15.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LHa-Hd-jnT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="2K5-FH-uBd"/>
+                <constraint firstAttribute="trailing" secondItem="YVR-HT-xmw" secondAttribute="trailing" id="2ne-t6-GGI"/>
+                <constraint firstItem="d12-eP-ZNz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9pv-pG-byH"/>
+                <constraint firstAttribute="trailing" secondItem="d12-eP-ZNz" secondAttribute="trailing" id="AO5-n0-DfE"/>
+                <constraint firstItem="d12-eP-ZNz" firstAttribute="top" secondItem="YVR-HT-xmw" secondAttribute="bottom" constant="5" id="VSw-YS-VOI"/>
+                <constraint firstItem="YVR-HT-xmw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wx5-8B-Ck9"/>
+                <constraint firstItem="YVR-HT-xmw" firstAttribute="top" secondItem="LHa-Hd-jnT" secondAttribute="bottom" constant="10" id="YzN-uA-RE8"/>
+                <constraint firstAttribute="bottom" secondItem="d12-eP-ZNz" secondAttribute="bottom" id="pIt-w1-XTa"/>
+                <constraint firstAttribute="trailing" secondItem="LHa-Hd-jnT" secondAttribute="trailing" id="sMK-cx-q5A"/>
+                <constraint firstItem="LHa-Hd-jnT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tZq-qg-t9U"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="60.5" y="-655.5"/>
+        </view>
+    </objects>
+</document>

@@ -12,6 +12,8 @@
 //
 #import "UIImage+Smart.h"
 #import "UIImage+GIF.h"
+//
+#import <CoreLocation/CoreLocation.h>
 
 #pragma mark - • INTERFACE PRIVATE PROPERTIES
 @interface BasicViewController()
@@ -110,7 +112,30 @@
         NSLog(@"imvAnimated3 >> %i", [imvAnimated3 isAnimating]);
         
     });
-        
+    
+    
+//    NSShadow *shadow = [NSShadow new];
+//    shadow.shadowColor = [UIColor yellowColor];
+//    shadow.shadowOffset = CGSizeMake(2.0, 2.0);
+//    shadow.shadowBlurRadius = 5.0;
+    
+    UIImage *i = [UIImage imageNamed:@"faces2.jpg"];
+    UIImage *ii = [i labeledImageWithText:@"EGT"
+                              contentRect:CGRectMake((i.size.width - (i.size.width / 2.0)) / 2.0, (i.size.height / 2.0 - 25.0), i.size.width / 2.0, 50.0)
+                          roundingCorners:UIRectCornerAllCorners
+                              cornerRadii:CGSizeMake(25.0, 25.0)
+                                textAlign:NSTextAlignmentCenter
+                           internalMargin:UIEdgeInsetsZero
+                                     font:[UIFont fontWithName:FONT_MYRIAD_PRO_BOLD size:40.0]
+                                fontColor:[UIColor redColor]
+                          backgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]
+                                   shadow:nil
+                         autoHeightAdjust:NO];
+    
+
+    
+    NSLog(@"%@", ii);
+    
     
 }
 
@@ -138,7 +163,7 @@
 - (IBAction)actionReturn:(id)sender
 {
     [self showActivityIndicatorView];
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self pop:1];
     });

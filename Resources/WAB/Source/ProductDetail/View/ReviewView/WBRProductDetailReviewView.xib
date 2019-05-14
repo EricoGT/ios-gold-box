@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRProductDetailReviewView">
+            <connections>
+                <outlet property="productDetailReviewHeader" destination="Ega-ID-AdL" id="GFZ-Ja-U4l"/>
+                <outlet property="showAllReviewsButton" destination="DIh-wj-8Oq" id="w4H-px-v77"/>
+                <outlet property="tableBottomConstraint" destination="tb0-YF-M5h" id="wm0-Hj-ywI"/>
+                <outlet property="tableHeightConstraint" destination="Xg3-9u-hxY" id="zEm-AW-9Gc"/>
+                <outlet property="tableReviews" destination="Os6-bd-VBL" id="5iH-75-pS8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="LwP-28-81E"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="287"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-P8-XTN" userLabel="separator">
+                    <rect key="frame" x="15" y="0.0" width="321" height="1"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pph-z8-Gpx"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-ID-AdL" customClass="WBRProductDetailReviewHeaderView">
+                    <rect key="frame" x="0.0" y="21" width="336" height="84"/>
+                    <color key="backgroundColor" red="1" green="0.54901960780000003" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="84" id="Wvq-Tu-6T1"/>
+                        <constraint firstAttribute="height" constant="84" id="isq-bE-vvx"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Wvq-Tu-6T1"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-bd-VBL">
+                    <rect key="frame" x="0.0" y="115" width="336" height="82"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="Xg3-9u-hxY"/>
+                    </constraints>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-wj-8Oq" customClass="WMButtonRounded">
+                    <rect key="frame" x="15" y="217" width="306" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fgP-Kj-Sre"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" title="Ver todos os comentários" image="icReviewBalloonBlue">
+                        <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="icReviewBalloonWhite"/>
+                    <state key="highlighted" image="icReviewBalloonWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="showAllReviews:" destination="-1" eventType="touchUpInside" id="kJz-FN-iCe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DIh-wj-8Oq" firstAttribute="top" secondItem="Os6-bd-VBL" secondAttribute="bottom" constant="20" id="CbH-tg-feQ"/>
+                <constraint firstAttribute="bottom" secondItem="DIh-wj-8Oq" secondAttribute="bottom" constant="20" id="Slg-lS-Bhb"/>
+                <constraint firstItem="uh5-P8-XTN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="chc-VU-rc5"/>
+                <constraint firstAttribute="trailing" secondItem="Ega-ID-AdL" secondAttribute="trailing" id="e9L-I7-C2z"/>
+                <constraint firstItem="Os6-bd-VBL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ge0-JG-kIY"/>
+                <constraint firstItem="Os6-bd-VBL" firstAttribute="top" secondItem="Ega-ID-AdL" secondAttribute="bottom" constant="10" id="j9M-Qw-ivm"/>
+                <constraint firstAttribute="trailing" secondItem="uh5-P8-XTN" secondAttribute="trailing" id="jNO-H8-Hyn"/>
+                <constraint firstItem="Ega-ID-AdL" firstAttribute="top" secondItem="uh5-P8-XTN" secondAttribute="bottom" constant="20" id="lPX-J8-neN"/>
+                <constraint firstItem="uh5-P8-XTN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q5x-pc-fbz"/>
+                <constraint firstItem="DIh-wj-8Oq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="qJf-Pv-0oa"/>
+                <constraint firstAttribute="bottom" secondItem="Os6-bd-VBL" secondAttribute="bottom" constant="90" id="tb0-YF-M5h"/>
+                <constraint firstItem="Ega-ID-AdL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wUC-wG-em3"/>
+                <constraint firstAttribute="trailing" secondItem="DIh-wj-8Oq" secondAttribute="trailing" constant="15" id="wsT-fo-il7"/>
+                <constraint firstAttribute="trailing" secondItem="Os6-bd-VBL" secondAttribute="trailing" id="ygs-ce-W0O"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="4" y="-225.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icReviewBalloonBlue" width="24" height="20"/>
+        <image name="icReviewBalloonWhite" width="24" height="20"/>
+    </resources>
+</document>

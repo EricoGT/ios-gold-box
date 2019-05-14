@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0F73011F-221A-48B7-8418-556B33AB9B4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Ofertas</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E1D4E99D-14D4-4B5D-ACE3-3E4E0D21A16A</key>
+		<string>ssh://git.vmcommerce.intra/clube-ofertas/clube-ofertas-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Ofertas.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E1D4E99D-14D4-4B5D-ACE3-3E4E0D21A16A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.vmcommerce.intra/clube-ofertas/clube-ofertas-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E1D4E99D-14D4-4B5D-ACE3-3E4E0D21A16A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E1D4E99D-14D4-4B5D-ACE3-3E4E0D21A16A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>clube-ofertas-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

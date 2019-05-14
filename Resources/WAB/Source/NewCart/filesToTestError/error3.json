@@ -1,0 +1,24 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"placeOrder:unrecoverableError",
+            "errorMessage":"Error while performing placeOrder: (500) Internal Server Error\n{\"message\":\"An internal error has ocurred. Please, contact the administrator.\"}",
+            "errorMap":{
+               "loggerKey":"002-cc3sfduh673gntlopgkqn7byb",
+               "placeOrderError":{
+                  "errorCode":"GENERAL_ERROR",
+                  "errorLevel":"ITEM_LEVEL"
+               }
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"New Checkout V1",
+   "serviceName":"Order"
+}

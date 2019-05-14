@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="WBRContactDeliveryProductCollectionViewCell" id="jnR-7a-ais" customClass="WBRContactDeliveryProductCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CL1-CE-8OE" customClass="WMImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CL1-CE-8OE" secondAttribute="trailing" id="2cE-2U-Xu5"/>
+                <constraint firstAttribute="bottom" secondItem="CL1-CE-8OE" secondAttribute="bottom" id="484-qn-FZz"/>
+                <constraint firstItem="CL1-CE-8OE" firstAttribute="leading" secondItem="jnR-7a-ais" secondAttribute="leading" id="Bta-nT-yc5"/>
+                <constraint firstItem="CL1-CE-8OE" firstAttribute="top" secondItem="jnR-7a-ais" secondAttribute="top" id="JFv-7u-3AF"/>
+            </constraints>
+            <connections>
+                <outlet property="product" destination="CL1-CE-8OE" id="Xc8-Il-3Mt"/>
+            </connections>
+            <point key="canvasLocation" x="157" y="144"/>
+        </collectionViewCell>
+    </objects>
+</document>

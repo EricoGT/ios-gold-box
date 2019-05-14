@@ -1,0 +1,67 @@
+{  
+   "skuItem":{  
+      "skuId":29000,
+      "productId":2028099,
+      "active":true,
+      "kit":true,
+      "kitItems":[  
+         {  
+            "skuId":33443,
+            "productId":2032112,
+            "extendedWarranties":[  
+               {  
+                  "id":350679,
+                  "idSku":10935,
+                  "type":"GARANTIA_ESTENDIDA",
+                  "name":"Garantia Estendida de 12 meses.",
+                  "price":9.9,
+                  "isAtive":true,
+                  "warrantyType":"TG",
+                  "months":12,
+                  "instalment":1,
+                  "instalmentValue":9.9
+               },
+               {  
+                  "id":350680,
+                  "idSku":10935,
+                  "type":"GARANTIA_ESTENDIDA",
+                  "name":"Garantia Estendida de 24 meses.",
+                  "price":15.9,
+                  "isAtive":true,
+                  "warrantyType":"TG",
+                  "months":24,
+                  "instalment":1,
+                  "instalmentValue":15.9
+               }
+            ],
+            "title":"Teclado do CPU Sim T150 Positivo"
+         },
+         {  
+            "skuId":33446,
+            "productId":2032114,
+            "extendedWarranties":[
+               {  
+                  "id":350678,
+                  "idSku":10936,
+                  "type":"GARANTIA_ESTENDIDA",
+                  "name":"Garantia Estendida de 24 meses.",
+                  "price":15.9,
+                  "isAtive":true,
+                  "warrantyType":"TG",
+                  "months":24,
+                  "instalment":1,
+                  "instalmentValue":15.9
+               }
+            ],
+            "title":"Mouse do CPU Sim T150 Positivo"
+         },
+         {  
+            "skuId":33462,
+            "productId":2032126,
+            "extendedWarranties":[
+            ],
+            "title":"Monitor LCD 18&quot; Positivo 1360x768, WXGA - 11063023"
+         }
+      ]
+   }
+}

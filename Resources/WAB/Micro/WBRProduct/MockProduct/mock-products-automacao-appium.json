@@ -1,0 +1,385 @@
+{
+    "count":5,
+    "products":[
+                {
+                "productId":2704652,
+                "skuId":806009,
+                "title":"Jogo Fifa 15 para Playstation 3",
+                "imageId":"3733424",
+                "hasMoreOffers":true,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":199.9,
+                "sellPrice":119.9,
+                "installmentAmount":22,
+                "valuePerInstallment":5.45
+                },
+                "rating":{
+                "value":2,
+                "total":4
+                },
+                "instalment":22,
+                "instalmentValue":5.45,
+                "suggestion":{
+                "paymentMethod":"BANK_SLIP",
+                "price":{
+                "current":290,
+                "discountedPrice":123
+                }
+                }
+                },
+                {
+                "productId":2036037,
+                "skuId":38063,
+                "title":"Advantage Max 3 Cães  - Bayer",
+                "imageId":"2099520",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "totalColors":1,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"vtex_prod_meuamigopet",
+                "price":{
+                "listPrice":11,
+                "sellPrice":10,
+                "installmentAmount":12,
+                "valuePerInstallment":0.83
+                }
+                },
+                {
+                "productId":2019340,
+                "skuId":19692,
+                "title":"Kit com 4 Pneus Aro 13 Pirelli PN P165&#x2F;70R13 78T P400",
+                "imageId":"3216767",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":300,
+                "sellPrice":240,
+                "installmentAmount":12,
+                "valuePerInstallment":20
+                }
+                },
+                {
+                "productId":2103512,
+                "skuId":120398,
+                "title":"Advantage Max 3 Combo Leve 3 Pague 2 Bayer Acima de 25 Kg - 4 Ml",
+                "imageId":"2444883",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"vtex_prod_meuamigopet",
+                "price":{
+                "sellPrice":12.36,
+                "installmentAmount":12,
+                "valuePerInstallment":1.03
+                }
+                },
+                {
+                "productId":2880215,
+                "skuId":991578,
+                "title":"Anel Duplo Moustache Strass 1759",
+                "imageId":"3934952",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "totalColors":1,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"loucasporacessorios",
+                "price":{
+                "listPrice":65.9,
+                "sellPrice":46.9,
+                "installmentAmount":12,
+                "valuePerInstallment":3.91
+                }
+                },
+                {
+                "productId":2867119,
+                "skuId":978093,
+                "title":"Camisa Polo Aleatory Lisa Piquet Peru",
+                "imageId":"3919815",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "totalColors":8,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"aleatory",
+                "price":{
+                "sellPrice":109,
+                "installmentAmount":22,
+                "valuePerInstallment":4.95
+                }
+                },
+                {
+                "productId":2137851,
+                "skuId":162106,
+                "title":"Liquidificador Mondial Pro Master 1500 Premium",
+                "imageId":"2609284",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":450.09,
+                "sellPrice":427.59,
+                "installmentAmount":12,
+                "valuePerInstallment":35.63
+                }
+                },
+                {
+                "productId":2032203,
+                "skuId":35041,
+                "title":"Máquina de Cortar Cabelo HomePro Basic - Wahl",
+                "imageId":"2498100",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":350,
+                "sellPrice":290,
+                "installmentAmount":12,
+                "valuePerInstallment":24.17
+                }
+                },
+                {
+                "productId":3066204,
+                "skuId":1194541,
+                "title":"Nerf Usada",
+                "imageId":"5013271",
+                "hasMoreOffers":true,
+                "hasSkuOptions":false,
+                "totalColors":1,
+                "rating":{
+                "value":0,
+                "total":0
+                },
+                "hasAvailability":true,
+                "sellerId":"omsseller",
+                "price":{
+                "listPrice":0,
+                "sellPrice":50,
+                "installmentAmount":1,
+                "valuePerInstallment":50
+                }
+                },
+                {
+                "productId":4481041,
+                "skuId":2981996,
+                "title":"Refrigerador Consul CRM42NB 386L 2 Portas Frost Free Branco",
+                "imageId":"8845252",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "hasAvailability":true,
+                "sellerId":"marcyn",
+                "price":{
+                "listPrice":2199,
+                "sellPrice":1598,
+                "installmentAmount":10,
+                "valuePerInstallment":159.8
+                }
+                },
+                {
+                "productId":3068520,
+                "skuId":1197117,
+                "title":"Teste EPS Stargate",
+                "imageId":"4261847",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "hasAvailability":true,
+                "sellerId":"stepbystep62",
+                "price":{
+                "listPrice":2199,
+                "sellPrice":1598,
+                "installmentAmount":10,
+                "valuePerInstallment":159.8
+                }
+                }
+                ],
+    "filters":{
+        "departments":[
+                       {
+                       "name":"Eletrodomésticos",
+                       "count":235,
+                       "url":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Fogões",
+                                     "count":121,
+                                     "url":"?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "filterValue":"?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "categoryId":443,
+                                                      "name":"Piso até 4 bocas",
+                                                      "count":53,
+                                                      "url":"?fq=C:144/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue":"?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      },
+                                                      {
+                                                      "categoryId":444,
+                                                      "name":"Embutir 4 Bocas",
+                                                      "count":2,
+                                                      "url":"?fq=C:144/155/446/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue":"?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      }
+                                                      ]
+                                     },
+                                     {
+                                     "name":"Cooktops",
+                                     "count":44,
+                                     "url":"?fq=C:144/3083/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Dominós",
+                                                      "count":1,
+                                                      "url":"?fq=C:144/3083/432/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      },
+                                                      {
+                                                      "name":"Cooktop 4 Bocas",
+                                                      "count":43,
+                                                      "url":"?fq=C:144/3083/3084/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Livros",
+                       "count":7,
+                       "filterValue":"?fq=C:5235&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Literatura Infanto-Juvenil",
+                                     "count":7,
+                                     "url":"?fq=C:5235/5267/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Infantil - 4 a 10 Anos",
+                                                      "count":7,
+                                                      "url":"?fq=C:5235/5267/5797/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Móveis e Decoração",
+                       "count":6,
+                       "filterValue":"?fq=C:755&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Cozinha",
+                                     "count":6,
+                                     "url":"?fq=C:755/784/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Armários de Cozinha",
+                                                      "count":6,
+                                                      "url":"?fq=C:755/784/826/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Acabaram de chegar",
+                       "count":2,
+                       "filterValue":"?fq=C:6381&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Móveis e Decoração",
+                                     "count":2,
+                                     "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Móveis e Decoração",
+                                                      "count":2,
+                                                      "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Esporte e Lazer",
+                       "count":1,
+                       "filterValue":"?fq=C:345&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Skate e Patins",
+                                     "count":1,
+                                     "url":"?fq=C:345/373/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Skates",
+                                                      "count":1,
+                                                      "url":"?fq=C:345/373/4887/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       }
+                       ],
+        "brands":[
+        
+        ],
+        "specs":[
+        
+        ],
+        "pricesRange":[
+        
+        ]
+    }
+}

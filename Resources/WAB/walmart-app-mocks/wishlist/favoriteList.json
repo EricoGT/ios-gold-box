@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "productId": 3068520,
+      "skuId": 1197117,
+      "bought": false,
+      "sellerId": "stepbystep62",
+      "date": 1536059045206,
+      "statusPrice": 0,
+      "quantity": 50,
+      "skuPrice": 23.9,
+      "sellerOptions": [
+        {
+          "sku": 1197117,
+          "name": "Teste EPS Stargate",
+          "rating": {
+            "value": 3,
+            "total": 2
+          },
+          "hasExtendedWarranty": false,
+          "currency": "R$ ",
+          "originalPrice": 27.49,
+          "discountPrice": 23.9,
+          "price": 23.9,
+          "quantityAvailable": 50,
+          "active": true,
+          "available": true,
+          "instalment": 1,
+          "instalmentValue": 23.9,
+          "sellerId": "stepbystep62",
+          "seller": "stepbystep62",
+          "imageIds": [
+            "4261847"
+          ]
+        }
+      ]
+    }
+  ]
+}

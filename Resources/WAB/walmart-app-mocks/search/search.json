@@ -1,0 +1,193 @@
+{
+  "count": 1,
+  "products": [
+    {
+      "productId": 2370711,
+      "skuId": 436240,
+      "title": "Calcinha String Capricho Cores com Elástico",
+      "imageId": "3105911",
+      "hasMoreOffers": false,
+      "hasSkuOptions": true,
+      "totalColors": 5,
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "marcyn",
+      "price": {
+        "listPrice": 16.99,
+        "sellPrice": 12.99,
+        "installmentAmount": 22,
+        "paymentTypes": ["MASTERCARD", "VISA"],
+        "valuePerInstallment": 0.59
+      }
+    },
+    {
+      "productId": 2947933,
+      "skuId": 1061631,
+      "title": "Ginásio de Atividades Hippo Gym Colorido Chicco",
+      "imageId": "4006407",
+      "hasMoreOffers": false,
+      "hasSkuOptions": false,
+      "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+      "rating": {
+        "value": 3,
+        "total": 5
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 179,
+        "sellPrice": 169,
+        "installmentAmount": 17,
+        "valuePerInstallment": 9.94
+      }
+    },
+    {
+      "productId": 2704652,
+      "skuId": 806009,
+      "title": "Jogo Fifa 15 para Playstation 3",
+      "imageId": "3733424",
+      "hasMoreOffers": true,
+      "hasSkuOptions": false,
+      "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+      "rating": {
+        "value": 3,
+        "total": 2
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 350,
+        "sellPrice": 290,
+        "installmentAmount": 17,
+        "paymentTypes": ["MASTERCARD"],
+        "valuePerInstallment": 9.94
+      },
+      "suggestion": {
+        "price": {
+          "current": 290,
+          "discountedPrice": 50
+        },
+        "paymentMethod": "BANK_SLIP"
+      }
+    },
+
+    {
+      "productId": 2171472,
+      "skuId": 233664,
+      "title": "Camiseta Brasil CBF RETRO 1970 Masculina - Amarela ",
+      "imageId": "2797670",
+      "hasMoreOffers": false,
+      "hasSkuOptions": true,
+      "totalColors": 1,
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 69.9,
+        "sellPrice": 39.9,
+        "installmentAmount": 22,
+        "valuePerInstallment": 1.81
+      }
+    },
+    {
+      "productId": 2788520,
+      "skuId": 896492,
+      "title": "Camiseta Iódice Slim Estampa Institucional Branca",
+      "imageId": "3801296",
+      "hasMoreOffers": false,
+      "hasSkuOptions": true,
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 119,
+        "sellPrice": 77.9,
+        "installmentAmount": 22,
+        "valuePerInstallment": 3.54
+      }
+    },
+    {
+      "productId": 2788724,
+      "skuId": 895955,
+      "title": "Camiseta em Viscolycra com Hot Fix Iódice",
+      "imageId": "3802582",
+      "hasMoreOffers": false,
+      "hasSkuOptions": true,
+      "totalColors": 1,
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 139,
+        "sellPrice": 69.9,
+        "installmentAmount": 22,
+        "valuePerInstallment": 3.18
+      }
+    },
+    {
+      "productId": 2978364,
+      "skuId": 1098485,
+      "title": "Camiseta Masculina Handbook Tito Branca",
+      "imageId": "4085065",
+      "hasMoreOffers": false,
+      "hasSkuOptions": true,
+      "totalColors": 1,
+      "rating": {
+        "value": 0,
+        "total": 0
+      },
+      "hasAvailability": true,
+      "sellerId": "1",
+      "price": {
+        "listPrice": 89.9,
+        "sellPrice": 65.9,
+        "installmentAmount": 22,
+        "valuePerInstallment": 3
+      }
+    }
+  ],
+  "filters": {
+    "departments": [
+      {
+        "name": "Bebês e Crianças",
+        "count": 1,
+        "filterValue": "?fq=C:580&ft=2947933&PS=20&mm=100",
+        "selected": false,
+        "categories": [
+          {
+            "name": "Brinquedos e Diversão",
+            "count": 1,
+            "url": "automacao filtro 1",
+            "selected": false,
+            "countSubCategories": 1,
+            "subCategories": [
+              {
+                "name": "Tapetes e Ginásios",
+                "count": 1,
+                "url": "automacao filtro 1"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "brands": [
+    ],
+    "specs": [
+    ],
+    "pricesRange": [
+    ]
+  }
+}

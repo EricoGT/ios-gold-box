@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OFSplashViewController">
+            <connections>
+                <outlet property="actInd" destination="15" id="16"/>
+                <outlet property="imgPromotion" destination="11" id="17"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                    <rect key="frame" x="169" y="563" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="nXT-eX-7Oj"/>
+                        <constraint firstAttribute="width" constant="37" id="ueR-ex-yfH"/>
+                    </constraints>
+                </activityIndicatorView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="img_splashpage" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                    <rect key="frame" x="15" y="311.5" width="345" height="44"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="s5z-Rk-QEz" firstAttribute="bottom" secondItem="15" secondAttribute="bottom" constant="67" id="1Lg-Xb-wvY"/>
+                <constraint firstItem="11" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="LeF-kw-UFg"/>
+                <constraint firstItem="15" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="QKd-9J-sNY"/>
+                <constraint firstItem="11" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="dTS-KU-DsR"/>
+                <constraint firstItem="11" firstAttribute="leading" secondItem="s5z-Rk-QEz" secondAttribute="leading" constant="15" id="n0M-ab-vsR"/>
+                <constraint firstItem="s5z-Rk-QEz" firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="15" id="uhU-A2-y2Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="s5z-Rk-QEz"/>
+            <point key="canvasLocation" x="-99" y="7"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_splashpage" width="179" height="44"/>
+    </resources>
+</document>

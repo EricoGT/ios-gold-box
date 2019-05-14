@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OFFreightItemView">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-98-1qx" userLabel="View - No Freight">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indisponível para entrega na sua região." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-Hf-93E">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7bd-Hf-93E" secondAttribute="trailing" id="J2O-aS-KLh"/>
+                        <constraint firstItem="7bd-Hf-93E" firstAttribute="leading" secondItem="XGc-98-1qx" secondAttribute="leading" id="SfG-J6-htF"/>
+                        <constraint firstAttribute="bottom" secondItem="7bd-Hf-93E" secondAttribute="bottom" id="nJa-Hg-wXT"/>
+                        <constraint firstItem="7bd-Hf-93E" firstAttribute="top" secondItem="XGc-98-1qx" secondAttribute="top" id="rAB-Fe-Vq2"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drL-wc-PNs" userLabel="View - With Freight">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-qW-4Un">
+                            <rect key="frame" x="0.0" y="0.0" width="203" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCM-43-GGO">
+                            <rect key="frame" x="203" y="0.5" width="87" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <color key="textColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="DCM-43-GGO" secondAttribute="bottom" id="2Hf-SQ-rU5"/>
+                        <constraint firstAttribute="bottom" secondItem="7Vx-qW-4Un" secondAttribute="bottom" id="OND-TR-2Rb"/>
+                        <constraint firstItem="7Vx-qW-4Un" firstAttribute="leading" secondItem="drL-wc-PNs" secondAttribute="leading" id="Q2i-0g-ROi"/>
+                        <constraint firstItem="DCM-43-GGO" firstAttribute="width" secondItem="drL-wc-PNs" secondAttribute="width" multiplier="0.3" id="RNh-0H-Z97"/>
+                        <constraint firstItem="7Vx-qW-4Un" firstAttribute="width" secondItem="drL-wc-PNs" secondAttribute="width" multiplier="0.7" id="TDn-BC-1aZ"/>
+                        <constraint firstAttribute="trailing" secondItem="DCM-43-GGO" secondAttribute="trailing" id="YGM-eO-cUd"/>
+                        <constraint firstItem="DCM-43-GGO" firstAttribute="top" secondItem="drL-wc-PNs" secondAttribute="top" id="g7u-lm-YQ9"/>
+                        <constraint firstItem="7Vx-qW-4Un" firstAttribute="top" secondItem="drL-wc-PNs" secondAttribute="top" id="gch-J5-5sJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XGc-98-1qx" secondAttribute="bottom" id="GmV-LZ-r8O"/>
+                <constraint firstAttribute="bottom" secondItem="drL-wc-PNs" secondAttribute="bottom" id="MJo-Ew-SIx"/>
+                <constraint firstAttribute="trailing" secondItem="drL-wc-PNs" secondAttribute="trailing" id="MYc-mj-yhI"/>
+                <constraint firstItem="XGc-98-1qx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TOc-sh-HBH"/>
+                <constraint firstItem="drL-wc-PNs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a9f-iO-Lw2"/>
+                <constraint firstItem="XGc-98-1qx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cVn-Ee-CZ2"/>
+                <constraint firstItem="drL-wc-PNs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dIi-j4-ObL"/>
+                <constraint firstAttribute="trailing" secondItem="XGc-98-1qx" secondAttribute="trailing" id="djp-ro-ht3"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="7Vx-qW-4Un" id="x8f-ju-ZDH"/>
+                <outlet property="failFreightView" destination="XGc-98-1qx" id="7yu-99-WS2"/>
+                <outlet property="freightView" destination="drL-wc-PNs" id="23l-7H-nfZ"/>
+                <outlet property="infoFailFreightLabel" destination="7bd-Hf-93E" id="dHc-F3-TwI"/>
+                <outlet property="priceLabel" destination="DCM-43-GGO" id="3ks-pD-bto"/>
+            </connections>
+            <point key="canvasLocation" x="-165" y="-45"/>
+        </view>
+    </objects>
+</document>

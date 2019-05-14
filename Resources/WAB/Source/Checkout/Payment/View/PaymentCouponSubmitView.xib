@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentCouponSubmitView">
+            <connections>
+                <outlet property="couponSubmitView" destination="JjJ-zK-atG" id="WUd-p2-bfT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="104"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupom de desconto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FG9-iO-4yu">
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxL-ms-PmD">
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="smz-OQ-Yhw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjJ-zK-atG" customClass="CouponSubmitView">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VxL-ms-PmD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1az-6x-bMS"/>
+                <constraint firstAttribute="bottom" secondItem="JjJ-zK-atG" secondAttribute="bottom" constant="15" id="IjF-Mi-DRq"/>
+                <constraint firstItem="JjJ-zK-atG" firstAttribute="top" secondItem="VxL-ms-PmD" secondAttribute="bottom" constant="15" id="LiS-Ar-A1m"/>
+                <constraint firstAttribute="trailing" secondItem="FG9-iO-4yu" secondAttribute="trailing" constant="15" id="RK4-E5-2EO"/>
+                <constraint firstItem="JjJ-zK-atG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="So1-te-xxP"/>
+                <constraint firstAttribute="trailing" secondItem="JjJ-zK-atG" secondAttribute="trailing" constant="15" id="Vw9-Bv-GGM"/>
+                <constraint firstAttribute="trailing" secondItem="VxL-ms-PmD" secondAttribute="trailing" id="YJx-jw-blB"/>
+                <constraint firstItem="FG9-iO-4yu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="jET-x6-8UO"/>
+                <constraint firstItem="VxL-ms-PmD" firstAttribute="top" secondItem="FG9-iO-4yu" secondAttribute="bottom" constant="9" id="lEN-uP-Ny3"/>
+                <constraint firstItem="FG9-iO-4yu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tR5-q4-t7M"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-16" y="-226"/>
+        </view>
+    </objects>
+</document>

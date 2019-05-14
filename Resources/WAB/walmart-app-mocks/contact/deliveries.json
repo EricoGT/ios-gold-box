@@ -1,0 +1,22 @@
+{
+  "deliveries": [
+    {
+      "id": -1,
+      "items": [
+        {
+          "id": 1197184,
+          "description": "Cachaça Claudionor 666ml",
+          "urlImage": "http://static.wmobjects.com.br/imgres/arquivos/ids/4261962",
+          "acquiredQuantity": 1,
+          "value": 50,
+          "totalAmount": 50,
+          "returnable": false
+        }
+      ],
+      "seller": {
+        "sellerId": "cachacariaoriginal",
+        "sellerName": "Cachaçaria Original"
+      }
+    }
+  ]
+}

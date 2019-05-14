@@ -1,0 +1,22 @@
+{
+    "name": "ValidationError",
+    "propagatable": true,
+    "responseCode": 400,
+    "message": "Invalid arguments.",
+    "errors": [{
+        "message": {
+            "errorCode": "placeOrder:unrecoverableError",
+            "errorMessage": "Error while performing placeOrder: (501) Not Implemented\n{\"message\":\"Freight price should be: 1087.00. It was sent: 1086. \",\"errorId\":\"PLC0213\"}",
+            "errorMap": {
+                "loggerKey": "002-bxf2uu0cjyzvqs71vphj80css",
+                "placeOrderError": {
+                    "errorCode": "FREIGHT_PRICE_CHANGED",
+                    "errorLevel": "ITEM_LEVEL"
+                }
+            }
+        }
+    }],
+    "code": null,
+    "moduleName": "New Checkout V1",
+    "serviceName": "Order"
+}

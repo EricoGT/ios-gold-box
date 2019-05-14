@@ -1,0 +1,198 @@
+{
+  "payments": [
+    {
+      "paymentType": {
+        "id": 1,
+        "type": "CREDIT_CARD"
+      },
+      "installments": [
+        {
+          "price": 290,
+          "instalment": 2,
+          "instalmentValue": 145
+        },
+        {
+          "price": 290,
+          "instalment": 3,
+          "instalmentValue": 96.67
+        },
+        {
+          "price": 290,
+          "instalment": 4,
+          "instalmentValue": 72.5
+        },
+        {
+          "price": 290,
+          "instalment": 5,
+          "instalmentValue": 58
+        },
+        {
+          "price": 290,
+          "instalment": 6,
+          "instalmentValue": 48.33
+        },
+        {
+          "price": 290,
+          "instalment": 7,
+          "instalmentValue": 41.43
+        },
+        {
+          "price": 290,
+          "instalment": 8,
+          "instalmentValue": 36.25
+        },
+        {
+          "price": 290,
+          "instalment": 9,
+          "instalmentValue": 32.22
+        },
+        {
+          "price": 290,
+          "instalment": 10,
+          "instalmentValue": 29
+        }
+      ]
+    },
+    {
+      "paymentType": {
+        "id": 2,
+        "type": "CREDIT_CARD"
+      },
+      "installments": [
+        {
+          "price": 290,
+          "instalment": 2,
+          "instalmentValue": 145
+        },
+        {
+          "price": 290,
+          "instalment": 3,
+          "instalmentValue": 96.67
+        },
+        {
+          "price": 290,
+          "instalment": 4,
+          "instalmentValue": 72.5
+        },
+        {
+          "price": 290,
+          "instalment": 5,
+          "instalmentValue": 58
+        },
+        {
+          "price": 290,
+          "instalment": 6,
+          "instalmentValue": 48.33
+        },
+        {
+          "price": 290,
+          "instalment": 7,
+          "instalmentValue": 41.43
+        },
+        {
+          "price": 290,
+          "instalment": 8,
+          "instalmentValue": 36.25
+        },
+        {
+          "price": 290,
+          "instalment": 9,
+          "instalmentValue": 32.22
+        },
+        {
+          "price": 290,
+          "instalment": 10,
+          "instalmentValue": 29
+        }
+      ]
+    },
+    {
+      "paymentType": {
+        "id": 3,
+        "type": "CREDIT_CARD"
+      },
+      "installments": [
+        {
+          "price": 290,
+          "instalment": 2,
+          "instalmentValue": 145
+        },
+        {
+          "price": 290,
+          "instalment": 3,
+          "instalmentValue": 96.67
+        },
+        {
+          "price": 290,
+          "instalment": 4,
+          "instalmentValue": 72.5
+        },
+        {
+          "price": 290,
+          "instalment": 5,
+          "instalmentValue": 58
+        },
+        {
+          "price": 290,
+          "instalment": 6,
+          "instalmentValue": 48.33
+        },
+        {
+          "price": 290,
+          "instalment": 7,
+          "instalmentValue": 41.43
+        },
+        {
+          "price": 290,
+          "instalment": 8,
+          "instalmentValue": 36.25
+        },
+        {
+          "price": 290,
+          "instalment": 9,
+          "instalmentValue": 32.22
+        },
+        {
+          "price": 290,
+          "instalment": 10,
+          "instalmentValue": 29
+        }
+      ]
+    },
+    {
+      "paymentType": {
+        "id": 4,
+        "type": "CREDIT_CARD"
+      },
+      "installments": []
+    },
+    {
+      "paymentType": {
+        "id": 22,
+        "type": "CREDIT_CARD"
+      },
+      "installments": []
+    },
+    {
+      "paymentType": {
+        "id": 33,
+        "type": "CREDIT_CARD"
+      },
+      "installments": []
+    },
+    {
+      "paymentType": {
+        "id": 3,
+        "type": "DEBIT_CARD"
+      },
+      "installments": []
+    },
+    {
+      "paymentType": {
+        "id": 1,
+        "type": "DEBIT_CARD"
+      },
+      "installments": []
+    }
+  ]
+}

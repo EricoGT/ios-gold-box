@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRFreightView">
+            <connections>
+                <outlet property="buttonView" destination="zQ9-YK-amr" id="pv3-2v-ZcC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="view">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhK-Mf-71a" userLabel="separator">
+                    <rect key="frame" x="15" y="0.0" width="345" height="1"/>
+                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="S3a-7c-onz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ9-YK-amr" userLabel="ButtonView">
+                    <rect key="frame" x="15" y="21" width="315" height="44"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="l39-ZW-UAF" userLabel="FreightImage">
+                            <rect key="frame" x="293" y="14.5" width="10" height="15"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et7-7b-o5R" userLabel="FreightButton">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Calcular o frete">
+                                <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="0.59607843140000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="pressedCalculateFreight" destination="-1" eventType="touchUpInside" id="5cn-JY-XYN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Et7-7b-o5R" firstAttribute="top" secondItem="zQ9-YK-amr" secondAttribute="top" id="6Kv-4k-qsB"/>
+                        <constraint firstItem="Et7-7b-o5R" firstAttribute="width" secondItem="zQ9-YK-amr" secondAttribute="width" id="GbJ-I6-sC1"/>
+                        <constraint firstAttribute="trailing" secondItem="l39-ZW-UAF" secondAttribute="trailing" constant="12" id="SUD-OT-Rbx"/>
+                        <constraint firstItem="Et7-7b-o5R" firstAttribute="leading" secondItem="zQ9-YK-amr" secondAttribute="leading" id="Zeg-rV-GZz"/>
+                        <constraint firstItem="Et7-7b-o5R" firstAttribute="height" secondItem="zQ9-YK-amr" secondAttribute="height" id="cQj-0Q-idr"/>
+                        <constraint firstItem="l39-ZW-UAF" firstAttribute="centerY" secondItem="zQ9-YK-amr" secondAttribute="centerY" id="oEX-Ce-lHZ"/>
+                        <constraint firstAttribute="height" constant="44" id="xsT-1k-Zt4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="JhK-Mf-71a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MEi-Ol-HU3"/>
+                <constraint firstAttribute="bottom" secondItem="zQ9-YK-amr" secondAttribute="bottom" id="OAi-Nf-SsX"/>
+                <constraint firstItem="JhK-Mf-71a" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="dCl-Tf-qfx"/>
+                <constraint firstItem="JhK-Mf-71a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="iwY-4Z-ngN"/>
+                <constraint firstItem="zQ9-YK-amr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="mUf-La-ZhH"/>
+                <constraint firstAttribute="trailing" secondItem="zQ9-YK-amr" secondAttribute="trailing" constant="15" id="odB-yW-SfI"/>
+                <constraint firstItem="zQ9-YK-amr" firstAttribute="top" secondItem="JhK-Mf-71a" secondAttribute="bottom" constant="20" id="pP0-zc-J6D"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24.5" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_arrow_right" width="10" height="15"/>
+    </resources>
+</document>

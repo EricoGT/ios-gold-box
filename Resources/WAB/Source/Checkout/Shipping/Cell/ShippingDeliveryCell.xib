@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShippingDeliveryCell" id="KGk-i7-Jjw" customClass="ShippingDeliveryCell">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="447" height="35.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXT-1W-dQD">
+                        <rect key="frame" x="0.0" y="0.0" width="447" height="35.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shipmentCheckOff" translatesAutoresizingMaskIntoConstraints="NO" id="xuQ-70-qdg">
+                                <rect key="frame" x="0.0" y="6" width="24" height="24"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grátis" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utk-jx-LB2">
+                                <rect key="frame" x="412" y="10" width="35" height="15.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQr-Jx-9rK" customClass="ConciergeDeliveryButton">
+                                <rect key="frame" x="73" y="10" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="CrE-xe-29z"/>
+                                    <constraint firstAttribute="width" constant="16" id="pUf-vS-fRD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="conciergeDeliveryButtonType">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="NRO-8f-XLV">
+                                <rect key="frame" x="36" y="10" width="32" height="15.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-7h-1Zf">
+                                <rect key="frame" x="73" y="7" width="52" height="20"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shipmentDateDeselected" translatesAutoresizingMaskIntoConstraints="NO" id="Q5z-mD-KzS">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrf-cG-b6y">
+                                        <rect key="frame" x="25" y="3.5" width="27" height="13"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                        <color key="textColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Q5z-mD-KzS" firstAttribute="top" secondItem="cXf-7h-1Zf" secondAttribute="top" id="9dv-mS-2wH"/>
+                                    <constraint firstItem="Wrf-cG-b6y" firstAttribute="leading" secondItem="Q5z-mD-KzS" secondAttribute="trailing" constant="5" id="Mbp-2U-5pa"/>
+                                    <constraint firstItem="Wrf-cG-b6y" firstAttribute="centerY" secondItem="cXf-7h-1Zf" secondAttribute="centerY" id="NW3-aS-lWE"/>
+                                    <constraint firstItem="Q5z-mD-KzS" firstAttribute="leading" secondItem="cXf-7h-1Zf" secondAttribute="leading" id="lQO-0d-5Ox"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q5z-mD-KzS" secondAttribute="bottom" id="tTy-7L-J7j"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wrf-cG-b6y" secondAttribute="trailing" id="xzN-m3-UYl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xuQ-70-qdg" firstAttribute="leading" secondItem="cXT-1W-dQD" secondAttribute="leading" id="7Zm-a0-7HS"/>
+                            <constraint firstItem="SQr-Jx-9rK" firstAttribute="centerY" secondItem="cXT-1W-dQD" secondAttribute="centerY" id="9SW-jW-B2x"/>
+                            <constraint firstItem="xuQ-70-qdg" firstAttribute="centerY" secondItem="cXT-1W-dQD" secondAttribute="centerY" id="Jq7-2K-i6H"/>
+                            <constraint firstItem="NRO-8f-XLV" firstAttribute="centerY" secondItem="cXT-1W-dQD" secondAttribute="centerY" id="MeT-B8-SCc"/>
+                            <constraint firstItem="cXf-7h-1Zf" firstAttribute="leading" secondItem="NRO-8f-XLV" secondAttribute="trailing" constant="5" id="Qho-0u-JtS"/>
+                            <constraint firstItem="utk-jx-LB2" firstAttribute="centerY" secondItem="cXT-1W-dQD" secondAttribute="centerY" id="VXi-gK-4bc"/>
+                            <constraint firstItem="NRO-8f-XLV" firstAttribute="leading" secondItem="xuQ-70-qdg" secondAttribute="trailing" constant="12" id="ZRo-6Y-kht"/>
+                            <constraint firstAttribute="trailing" secondItem="utk-jx-LB2" secondAttribute="trailing" id="aT3-ld-gLU"/>
+                            <constraint firstItem="SQr-Jx-9rK" firstAttribute="leading" secondItem="NRO-8f-XLV" secondAttribute="trailing" constant="5" id="m3M-JH-Faz"/>
+                            <constraint firstItem="cXf-7h-1Zf" firstAttribute="centerY" secondItem="cXT-1W-dQD" secondAttribute="centerY" id="ryx-rS-Yt8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="cXT-1W-dQD" secondAttribute="bottom" id="M6x-ZZ-Wld"/>
+                    <constraint firstAttribute="trailing" secondItem="cXT-1W-dQD" secondAttribute="trailing" id="gbY-jl-oPG"/>
+                    <constraint firstItem="cXT-1W-dQD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hby-bM-5Zp"/>
+                    <constraint firstItem="cXT-1W-dQD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="s2w-fO-pi0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="scheduleDeliveryOption">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="scheduleDeliveryOption"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="checkImageView" destination="xuQ-70-qdg" id="qQ9-eB-kqk"/>
+                <outlet property="conciergeButton" destination="SQr-Jx-9rK" id="9ad-fi-bjm"/>
+                <outlet property="descriptionLabel" destination="NRO-8f-XLV" id="EB3-v6-ac9"/>
+                <outlet property="scheduledShippingImageView" destination="Q5z-mD-KzS" id="FIf-by-Io9"/>
+                <outlet property="scheduledShippingLabel" destination="Wrf-cG-b6y" id="oaP-VU-QWH"/>
+                <outlet property="scheduledShippingView" destination="cXf-7h-1Zf" id="UYq-gJ-ifY"/>
+                <outlet property="valueLabel" destination="utk-jx-LB2" id="hQS-mW-hdq"/>
+            </connections>
+            <point key="canvasLocation" x="-29.5" y="92"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="shipmentCheckOff" width="24" height="24"/>
+        <image name="shipmentDateDeselected" width="20" height="20"/>
+    </resources>
+</document>

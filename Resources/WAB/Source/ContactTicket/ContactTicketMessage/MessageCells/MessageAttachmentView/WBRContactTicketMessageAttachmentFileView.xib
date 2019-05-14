@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRContactTicketMessageAttachmentFileView">
+            <connections>
+                <outlet property="downloadButton" destination="37a-TW-9VA" id="7qR-gv-k8o"/>
+                <outlet property="nameLabel" destination="dX5-gu-Rts" id="6Td-D9-EJo"/>
+                <outlet property="sizeLabel" destination="QZf-nW-db7" id="5t2-7G-JEk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-NZ-0b9">
+                    <rect key="frame" x="0.0" y="0.0" width="175" height="190"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zis-Cu-uiG">
+                            <rect key="frame" x="70" y="20" width="35" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="PMg-W3-yw7"/>
+                                <constraint firstAttribute="width" constant="35" id="b4B-Xd-osf"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="file" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-gu-Rts">
+                            <rect key="frame" x="0.0" y="73" width="175" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Jpt-St-Nqs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" red="0.4039920568" green="0.39981892699999999" blue="0.40784496069999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZf-nW-db7">
+                            <rect key="frame" x="0.0" y="121" width="175" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="mdF-Gy-Guk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <color key="textColor" red="0.49019607840000001" green="0.47843137250000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37a-TW-9VA">
+                            <rect key="frame" x="27.5" y="149" width="120" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="OJw-oC-sEQ"/>
+                                <constraint firstAttribute="height" constant="35" id="bAy-BT-XiW"/>
+                            </constraints>
+                            <state key="normal" image="attachment-download-button"/>
+                            <connections>
+                                <action selector="openAttachment:" destination="-1" eventType="touchUpInside" id="A38-Eu-Czm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zis-Cu-uiG" firstAttribute="top" secondItem="1dZ-NZ-0b9" secondAttribute="top" constant="20" id="2Ra-T9-PYA"/>
+                        <constraint firstItem="zis-Cu-uiG" firstAttribute="centerX" secondItem="1dZ-NZ-0b9" secondAttribute="centerX" id="Ds2-5N-6BM"/>
+                        <constraint firstItem="QZf-nW-db7" firstAttribute="leading" secondItem="1dZ-NZ-0b9" secondAttribute="leading" id="Jdx-kP-djR"/>
+                        <constraint firstItem="37a-TW-9VA" firstAttribute="centerX" secondItem="1dZ-NZ-0b9" secondAttribute="centerX" id="Uzs-qD-Qz6"/>
+                        <constraint firstItem="dX5-gu-Rts" firstAttribute="top" secondItem="zis-Cu-uiG" secondAttribute="bottom" constant="8" id="g29-3m-ahu"/>
+                        <constraint firstAttribute="bottom" secondItem="37a-TW-9VA" secondAttribute="bottom" constant="6" id="jF3-SB-SOq"/>
+                        <constraint firstAttribute="trailing" secondItem="QZf-nW-db7" secondAttribute="trailing" id="npA-hS-8or"/>
+                        <constraint firstItem="QZf-nW-db7" firstAttribute="top" secondItem="dX5-gu-Rts" secondAttribute="bottom" constant="8" id="os6-tM-PKa"/>
+                        <constraint firstItem="dX5-gu-Rts" firstAttribute="leading" secondItem="1dZ-NZ-0b9" secondAttribute="leading" id="pfP-ml-g27"/>
+                        <constraint firstAttribute="trailing" secondItem="dX5-gu-Rts" secondAttribute="trailing" id="sTr-1b-VZH"/>
+                        <constraint firstItem="37a-TW-9VA" firstAttribute="top" secondItem="QZf-nW-db7" secondAttribute="bottom" constant="8" id="sz8-Ae-ExY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="1dZ-NZ-0b9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6To-4G-ulc"/>
+                <constraint firstAttribute="trailing" secondItem="1dZ-NZ-0b9" secondAttribute="trailing" id="PqO-pT-Mq3"/>
+                <constraint firstItem="1dZ-NZ-0b9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZC0-0E-ymX"/>
+                <constraint firstAttribute="bottom" secondItem="1dZ-NZ-0b9" secondAttribute="bottom" id="Zai-qV-m73"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-132" y="-68.815592203898049"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="attachment-download-button" width="17" height="21"/>
+        <image name="file-icon" width="30" height="35"/>
+    </resources>
+</document>

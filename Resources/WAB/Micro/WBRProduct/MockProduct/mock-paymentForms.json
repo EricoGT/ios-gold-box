@@ -1,0 +1,848 @@
+{
+    "payments":[
+                {
+                "credit":"false",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"2.218,12",
+                                "instalment":1,
+                                "instalmentValue":2218.12,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":false,
+                "id":1,
+                "idFile":"",
+                "name":"Cartão Visa",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"DEBIT_CARD"
+                }
+                },
+                {
+                "credit":"true",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"2.218,12",
+                                "instalment":1,
+                                "instalmentValue":2218.12,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":true,
+                "id":4,
+                "idFile":"",
+                "name":"Diners",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"CREDIT_CARD"
+                }
+                },
+                {
+                "credit":"false",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"2.218,12",
+                                "instalment":1,
+                                "instalmentValue":2218.12,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"184,84",
+                                "instalment":12,
+                                "instalmentValue":184.84,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":false,
+                "id":3,
+                "idFile":"",
+                "name":"Cartão MasterCard",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"DEBIT_CARD"
+                }
+                },
+                {
+                "credit":"true",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"2.218,12",
+                                "instalment":1,
+                                "instalmentValue":2218.12,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":true,
+                "id":33,
+                "idFile":"",
+                "name":"Elo",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"CREDIT_CARD"
+                }
+                },
+                {
+                "credit":"false",
+                "installments":[
+                
+                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":false,
+                "id":0,
+                "idFile":"",
+                "name":"Boleto Bancário",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"BANK_SLIP"
+                }
+                },
+                {
+                "credit":"true",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"184,84",
+                                "instalment":12,
+                                "instalmentValue":184.84,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"170,62",
+                                "instalment":13,
+                                "instalmentValue":170.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"158,44",
+                                "instalment":14,
+                                "instalmentValue":158.44,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"147,87",
+                                "instalment":15,
+                                "instalmentValue":147.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"138,63",
+                                "instalment":16,
+                                "instalmentValue":138.63,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"130,48",
+                                "instalment":17,
+                                "instalmentValue":130.48,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"123,23",
+                                "instalment":18,
+                                "instalmentValue":123.23,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"116,74",
+                                "instalment":19,
+                                "instalmentValue":116.74,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"110,91",
+                                "instalment":20,
+                                "instalmentValue":110.91,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"105,62",
+                                "instalment":21,
+                                "instalmentValue":105.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"100,82",
+                                "instalment":22,
+                                "instalmentValue":100.82,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":true,
+                "id":22,
+                "idFile":"",
+                "name":"Hipercard",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"CREDIT_CARD"
+                }
+                },
+                {
+                "credit":"true",
+                "installments":[
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"1.109,06",
+                                "instalment":2,
+                                "instalmentValue":1109.06,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"739,37",
+                                "instalment":3,
+                                "instalmentValue":739.37,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"554,53",
+                                "instalment":4,
+                                "instalmentValue":554.53,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"443,62",
+                                "instalment":5,
+                                "instalmentValue":443.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"369,69",
+                                "instalment":6,
+                                "instalmentValue":369.69,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"316,87",
+                                "instalment":7,
+                                "instalmentValue":316.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"277,26",
+                                "instalment":8,
+                                "instalmentValue":277.26,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"246,46",
+                                "instalment":9,
+                                "instalmentValue":246.46,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"221,81",
+                                "instalment":10,
+                                "instalmentValue":221.81,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"201,65",
+                                "instalment":11,
+                                "instalmentValue":201.65,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"184,84",
+                                "instalment":12,
+                                "instalmentValue":184.84,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"170,62",
+                                "instalment":13,
+                                "instalmentValue":170.62,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"158,44",
+                                "instalment":14,
+                                "instalmentValue":158.44,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"147,87",
+                                "instalment":15,
+                                "instalmentValue":147.87,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"138,63",
+                                "instalment":16,
+                                "instalmentValue":138.63,
+                                "price":2218.12,
+                                "rate":0
+                                },
+                                {
+                                "currency":"R$ ",
+                                "formattedPrice":"2.218,12",
+                                "formattedValuePerInstallment":"130,48",
+                                "instalment":17,
+                                "instalmentValue":130.48,
+                                "price":2218.12,
+                                "rate":0
+                                }
+                                ],
+                "maxCET":0,
+                "paymentType":{
+                "credit":true,
+                "id":2,
+                "idFile":"",
+                "name":"Cartão AMEX",
+                "sigeBankId":0,
+                "sigePaymentTypeId":0,
+                "type":"CREDIT_CARD"
+                }
+                }
+                ]
+}

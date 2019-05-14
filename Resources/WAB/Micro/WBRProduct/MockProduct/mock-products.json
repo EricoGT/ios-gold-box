@@ -1,0 +1,339 @@
+{
+    "count": 12,
+    "products":[
+                {
+                "productId":2137851,
+                "skuId":161218,
+                "title":"Liquidificador Mondial Pro Master 1500 Premium",
+                "imageId":"2609284",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":450.09,
+                "sellPrice":427.57
+                }
+                },
+                {
+                "productId":2032802,
+                "skuId":34269,
+                "title":"Fogão 4 Bocas Chef Timer Branco 52SRB  Bivolt -  Electrolux ",
+                "imageId":"2522988",
+                "totalColors": 8,
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":819.72,
+                "sellPrice":819.72
+                },
+                "instalment":1,
+                "instalmentValue":819.72,
+                "stampImage":"https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+                },
+                {
+                "productId":2122796,
+                "skuId":145343,
+                "title":"Fogão de Piso 4 Bocas Brastemp Ative! BF150AR  Inox com Grill e Timer ",
+                "imageId":"2643576",
+                "hasMoreOffers":false,
+                "hasSkuOptions":true,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1178,
+                "sellPrice":1037.52
+                },
+                "instalment":2,
+                "instalmentValue":518.76
+                },
+                {
+                "productId":2033082,
+                "skuId":34616,
+                "title":"Fogão 4 Bocas 56DTB Celebrate Duplo Forno, Queimador Tri-chama, Grill elétrico Branco - Electrolux",
+                "imageId":"2521385",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1798,
+                "sellPrice":1344.32
+                },
+                "instalment":3,
+                "instalmentValue":448.10
+                },
+                {
+                "productId":2208530,
+                "skuId":235408,
+                "title":"Cooktop 4 Bocas Elétrico Vitrocerâmico Preto 2703-11305 Fischer 220V",
+                "imageId":"2478323",
+                "hasMoreOffers":true,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"laranja.com",
+                "price":{
+                "listPrice":1499.9,
+                "sellPrice":1185.9
+                },
+                "instalment":4,
+                "instalmentValue":298.97
+                },
+                {
+                "productId":2032733,
+                "skuId":34182,
+                "title":"Cooktop a Gás 4 Bocas Ative! Acendimento Super Automático Vidro Temperado BDD61AE Preto - Brastemp",
+                "imageId":"2503133",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":599,
+                "sellPrice":279.18
+                }
+                },
+                {
+                "productId":2027332,
+                "skuId":28204,
+                "title":"Fogão 4 Bocas Acendimento Automático Chef 52SPX Inox Bivolt - Electrolux ",
+                "imageId":"2523635",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":false,
+                "sellerId":"1",
+                "price":{
+                "listPrice":200,
+                "sellPrice":163.35
+                }
+                },
+                {
+                "productId":2032996,
+                "skuId":34511,
+                "title":"Fogão 4 Bocas 56DB Duplo Forno Celebrate Branco Bivolt - Electrolux",
+                "imageId":"2526222",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1599,
+                "sellPrice":267.89
+                }
+                },
+                {
+                "productId":2033063,
+                "skuId":34592,
+                "title":"Fogão 4 Bocas de Embutir 56TBE Celebrate Grill Branco - Electrolux",
+                "imageId":"2506114",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1428,
+                "sellPrice":279.18
+                }
+                },
+                {
+                "productId":2032300,
+                "skuId":33668,
+                "title":"Fogão 4 Bocas Celebrate Branco Electrolux - 56STB",
+                "imageId":"2508642",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "listPrice":1599,
+                "sellPrice":279.18
+                }
+                },
+                {
+                "productId":2011321,
+                "skuId":11442,
+                "title":"Fogão Cooktop 4 Bocas Branco - Fischer",
+                "imageId":"2478175",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":true,
+                "sellerId":"1",
+                "price":{
+                "sellPrice":267.89
+                }
+                },
+                {
+                "productId":2012263,
+                "skuId":12396,
+                "title":"Fogão Elétrico 2 Bocas Layr Topázio 4.0 Inox 220V",
+                "imageId":"2495961",
+                "hasMoreOffers":false,
+                "hasSkuOptions":false,
+                "hasAvailability":false,
+                "sellerId":"1",
+                "price":{
+                "listPrice":200,
+                "sellPrice":165
+                }
+                }
+                ],
+    "filters":{
+        "departments":[
+                       {
+                       "name":"Eletrodomésticos",
+                       "count":235,
+                       "url":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "filterValue":"?fq=C:144&ft=Fogoes&PS=20&mm=100",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Fogões",
+                                     "count":121,
+                                     "url": "?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "filterValue": "?fq=C:144/155/&ft=fogoes&PS=20&mm=100",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "categoryId": 443,
+                                                      "name":"Piso até 4 bocas",
+                                                      "count":53,
+                                                      "url":"?fq=C:144/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      },
+                                                      {
+                                                      "categoryId": 444,
+                                                      "name":"Embutir 4 Bocas",
+                                                      "count":2,
+                                                      "url":"?fq=C:144/155/446/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                                      "filterValue": "?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+                                                      "selected":false,
+                                                      "order":1
+                                                      }
+                                                      ]
+                                     },
+                                     {
+                                     "name":"Cooktops",
+                                     "count":44,
+                                     "url":"?fq=C:144/3083/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":2,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Dominós",
+                                                      "count":1,
+                                                      "url":"?fq=C:144/3083/432/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      },
+                                                      {
+                                                      "name":"Cooktop 4 Bocas",
+                                                      "count":43,
+                                                      "url":"?fq=C:144/3083/3084/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Livros",
+                       "count":7,
+                       "filterValue":"?fq=C:5235&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Literatura Infanto-Juvenil",
+                                     "count":7,
+                                     "url":"?fq=C:5235/5267/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Infantil - 4 a 10 Anos",
+                                                      "count":7,
+                                                      "url":"?fq=C:5235/5267/5797/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Móveis e Decoração",
+                       "count":6,
+                       "filterValue":"?fq=C:755&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Cozinha",
+                                     "count":6,
+                                     "url":"?fq=C:755/784/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Armários de Cozinha",
+                                                      "count":6,
+                                                      "url":"?fq=C:755/784/826/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Acabaram de chegar",
+                       "count":2,
+                       "filterValue":"?fq=C:6381&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Móveis e Decoração",
+                                     "count":2,
+                                     "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Móveis e Decoração",
+                                                      "count":2,
+                                                      "url":"?fq=C:6381/6400/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       },
+                       {
+                       "name":"Esporte e Lazer",
+                       "count":1,
+                       "filterValue":"?fq=C:345&ft=fog\ufffdo 4 bocas&PS=20&mm=75",
+                       "selected":false,
+                       "categories":[
+                                     {
+                                     "name":"Skate e Patins",
+                                     "count":1,
+                                     "url":"?fq=C:345/373/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+                                     "selected":false,
+                                     "countSubCategories":1,
+                                     "subCategories":[
+                                                      {
+                                                      "name":"Skates",
+                                                      "count":1,
+                                                      "url":"?fq=C:345/373/4887/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75"
+                                                      }
+                                                      ]
+                                     }
+                                     ]
+                       }
+                       ],
+        "brands":[
+        
+        ],
+        "specs":[
+        
+        ],
+        "pricesRange":[
+        
+        ]
+    }
+}

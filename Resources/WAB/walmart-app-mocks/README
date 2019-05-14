@@ -1,0 +1,7 @@
+#Walmart Mock 
+
+This is the repository for the mocks to Walmart.com Android and iOS application. 
+
+The mocks are JSON files that represents the response of API's servers. 
+
+This repository is a submodule from Android and iOS projects.

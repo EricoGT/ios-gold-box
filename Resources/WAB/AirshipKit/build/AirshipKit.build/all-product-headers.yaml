@@ -1,0 +1,734 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/build/Release-appletvos/AirshipKit.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AirshipKit-Swift.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/build/Release-appletvos/AirshipKit.framework/Headers/AirshipKit-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "AirshipKit.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/AirshipKit.h"
+        },
+        {
+          'type': 'file',
+          'name': "AirshipLib.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/tvos/AirshipLib.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSJSONSerialization+UAAdditions.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/NSJSONSerialization+UAAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSManagedObjectContext+UAAdditions.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/NSManagedObjectContext+UAAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSOperationQueue+UAAdditions.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/NSOperationQueue+UAAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+UALocalizationAdditions.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/NSString+UALocalizationAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+UAURLEncoding.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/NSString+UAURLEncoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAccountEventTemplate.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAccountEventTemplate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAction+Operators.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAction+Operators.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionArguments.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionArguments.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRegistry.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRegistry.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRegistryEntry.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRegistryEntry.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionResult.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRunner.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRunner.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionSchedule.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionSchedule.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionScheduleInfo.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionScheduleInfo.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAddCustomEventAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAddCustomEventAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAddTagsAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAddTagsAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAggregateActionResult.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAggregateActionResult.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAnalytics.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAnalytics.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppIntegration.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppIntegration.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAApplicationMetrics.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAApplicationMetrics.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAssociatedIdentifiers.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAssociatedIdentifiers.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAutomation.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAutomation.h"
+        },
+        {
+          'type': 'file',
+          'name': "UABespokeCloseView.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UABespokeCloseView.h"
+        },
+        {
+          'type': 'file',
+          'name': "UABeveledLoadingIndicator.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UABeveledLoadingIndicator.h"
+        },
+        {
+          'type': 'file',
+          'name': "UACancelSchedulesAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UACancelSchedulesAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAChannelRegistrar.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAChannelRegistrar.h"
+        },
+        {
+          'type': 'file',
+          'name': "UACircularRegion.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UACircularRegion.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAConfig.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAConfig.h"
+        },
+        {
+          'type': 'file',
+          'name': "UACustomEvent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UACustomEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UADeepLinkAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UADeepLinkAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UADisposable.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UADisposable.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEnableFeatureAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEnableFeatureAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEvent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAFetchDeviceInfoAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAFetchDeviceInfoAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAGlobal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAGlobal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAInstallAttributionEvent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAInstallAttributionEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAJSONMatcher.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAJSONMatcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAJSONPredicate.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAJSONPredicate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAJSONValueMatcher.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAJSONValueMatcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAJavaScriptDelegate.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAJavaScriptDelegate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UALocation.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UALocation.h"
+        },
+        {
+          'type': 'file',
+          'name': "UALocationEvent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UALocationEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAMediaEventTemplate.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAMediaEventTemplate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAModifyTagsAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAModifyTagsAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANamedUser.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANamedUser.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationCategories.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationCategories.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationCategory.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationCategory.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationContent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationContent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationResponse.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationResponse.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAOpenExternalURLAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAOpenExternalURLAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAProximityRegion.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAProximityRegion.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAPush.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAPush.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARegionEvent.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARegionEvent.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARemoveTagsAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARemoveTagsAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARetailEventTemplate.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARetailEventTemplate.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleDelay.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleDelay.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleTrigger.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleTrigger.h"
+        },
+        {
+          'type': 'file',
+          'name': "UATextInputNotificationAction.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UATextInputNotificationAction.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAURLProtocol.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAURLProtocol.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAUser.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAUser.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAUtils.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAUtils.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAWhitelist.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAWhitelist.h"
+        },
+        {
+          'type': 'file',
+          'name': "UA_Base64.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UA_Base64.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAirship.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAirship.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAirshipVersion.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAirshipVersion.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/build/Release-appletvos/AirshipKit.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/build/AirshipKit.build/Release-appletvos/AirshipKit tvOS.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/build/Release-appletvos/AirshipKit.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "UAAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAPNSRegistration+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAPNSRegistration+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAPNSRegistrationProtocol+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAPNSRegistrationProtocol+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAction+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAction+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionArguments+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionArguments+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionPredicateProtocol+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionPredicateProtocol+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRegistry+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRegistry+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRegistryEntry+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRegistryEntry+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionResult+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionResult+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionRunner+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionRunner+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionSchedule+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionSchedule+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAActionScheduleData+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAActionScheduleData+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAddCustomEventActionPredicate+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAddCustomEventActionPredicate+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAnalytics+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAnalytics+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppBackgroundEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppBackgroundEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppExitEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppExitEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppForegroundEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppForegroundEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppInitEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppInitEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAppIntegration+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAppIntegration+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAApplicationMetrics+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAApplicationMetrics+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAssociateIdentifiersEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAssociateIdentifiersEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAsyncOperation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAsyncOperation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAutoIntegration+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAutoIntegration+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAutomation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAutomation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAAutomationStore+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAAutomationStore+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAChannelAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAChannelAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAChannelRegistrar+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAChannelRegistrar+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAChannelRegistrationPayload+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAChannelRegistrationPayload+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UACircularRegion+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UACircularRegion+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAColorUtils+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAColorUtils+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAConfig+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAConfig+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UACustomEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UACustomEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UADelayOperation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UADelayOperation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UADeviceRegistrationEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UADeviceRegistrationEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEventAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEventAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEventData+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEventData+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEventManager+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEventManager+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAEventStore+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAEventStore+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAFetchDeviceInfoActionPredicate+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAFetchDeviceInfoActionPredicate+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAInteractiveNotificationEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAInteractiveNotificationEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAJSONValueTransformer+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAJSONValueTransformer+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAKeychainUtils+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAKeychainUtils+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UALocation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UALocation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANamedUser+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANamedUser+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANamedUserAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANamedUserAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UANotificationCategories+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UANotificationCategories+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAPreferenceDataStore+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAPreferenceDataStore+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAPreferenceDataStore+InternalTagGroupsMutation.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAPreferenceDataStore+InternalTagGroupsMutation.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAProximityRegion+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAProximityRegion+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAPush+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAPush+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAPushReceivedEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAPushReceivedEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARegionEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARegionEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARequest+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARequest+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UARequestSession+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UARequestSession+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UASQLite+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UASQLite+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleDelayData+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleDelayData+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleTrigger+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleTrigger+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScheduleTriggerData+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScheduleTriggerData+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAScreenTrackingEvent+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAScreenTrackingEvent+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UASwizzler+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UASwizzler+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UATagGroupsAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UATagGroupsAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UATagGroupsMutation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UATagGroupsMutation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UATagUtils+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UATagUtils+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UATagsActionPredicate+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UATagsActionPredicate+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAURLRequestOperation+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAURLRequestOperation+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAUser+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAUser+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAUserAPIClient+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAUserAPIClient+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAUserData+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAUserData+Internal.h"
+        },
+        {
+          'type': 'file',
+          'name': "UAirship+Internal.h",
+          'external-contents': "/Users/swizzler/workspace/ios-library-deploy/AirshipKit/AirshipKit/common/UAirship+Internal.h"
+        }
+      ]
+    }
+  ]
+}

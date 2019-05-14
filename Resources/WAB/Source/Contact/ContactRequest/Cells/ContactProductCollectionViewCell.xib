@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContactProductCollectionViewCell" id="gTV-IL-0wX" customClass="ContactProductCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-vB-DYY">
+                        <rect key="frame" x="12" y="12" width="72" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="9zx-h2-EMJ"/>
+                            <constraint firstAttribute="height" constant="72" id="YQ8-Sl-n78"/>
+                        </constraints>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J0e-nS-OQK" userLabel="loader">
+                        <rect key="frame" x="38" y="38" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="color" red="0.091796569526195526" green="0.36870548129081726" blue="0.76829028129577637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </activityIndicatorView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzj-ZB-xhr">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHU-ds-Ivo">
+                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Zwr-6Y-0Yr">
+                                <rect key="frame" x="30" y="30" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Wc0-yt-4rm"/>
+                                    <constraint firstAttribute="height" constant="36" id="cPL-Rh-gnu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xHU-ds-Ivo" firstAttribute="leading" secondItem="qzj-ZB-xhr" secondAttribute="leading" id="5mj-yj-6dz"/>
+                            <constraint firstAttribute="trailing" secondItem="xHU-ds-Ivo" secondAttribute="trailing" id="Vk4-8t-2kf"/>
+                            <constraint firstItem="Zwr-6Y-0Yr" firstAttribute="centerX" secondItem="qzj-ZB-xhr" secondAttribute="centerX" id="f9k-yJ-TRF"/>
+                            <constraint firstItem="Zwr-6Y-0Yr" firstAttribute="centerY" secondItem="qzj-ZB-xhr" secondAttribute="centerY" id="jr7-Ir-u1G"/>
+                            <constraint firstItem="xHU-ds-Ivo" firstAttribute="top" secondItem="qzj-ZB-xhr" secondAttribute="top" id="oIA-L6-8bO"/>
+                            <constraint firstAttribute="bottom" secondItem="xHU-ds-Ivo" secondAttribute="bottom" id="yYm-a1-8pq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qzj-ZB-xhr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EY1-zg-H4L"/>
+                <constraint firstAttribute="centerY" secondItem="lQ8-vB-DYY" secondAttribute="centerY" id="PPE-uS-G6l"/>
+                <constraint firstItem="qzj-ZB-xhr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Y8D-Nd-pMh"/>
+                <constraint firstAttribute="centerX" secondItem="lQ8-vB-DYY" secondAttribute="centerX" id="cZR-3f-09A"/>
+                <constraint firstAttribute="trailing" secondItem="qzj-ZB-xhr" secondAttribute="trailing" id="dp8-Ig-uQN"/>
+                <constraint firstAttribute="bottom" secondItem="qzj-ZB-xhr" secondAttribute="bottom" id="opn-s5-sJd"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="lQ8-vB-DYY" id="jo5-pK-2Ul"/>
+                <outlet property="loader" destination="J0e-nS-OQK" id="ytm-fH-W7E"/>
+                <outlet property="selectedAlphaView" destination="qzj-ZB-xhr" id="sCB-fa-pQ6"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="checkedBlue" width="30" height="30"/>
+    </resources>
+</document>

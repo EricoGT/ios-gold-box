@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7uA-kT-SUW" userLabel="LoadMoreTableFooterView" customClass="LoadMoreTableFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Mnn-X8-CJD" userLabel="loadMore">
+                    <rect key="frame" x="150" y="22" width="20" height="20"/>
+                    <color key="color" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZd-4x-Rcx" customClass="WMButtonRounded">
+                    <rect key="frame" x="80" y="15" width="160" height="34"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="EPo-Cv-6XF"/>
+                        <constraint firstAttribute="height" constant="34" id="ebJ-81-nGn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <state key="normal" title="Tentar novamente">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="retry" destination="7uA-kT-SUW" eventType="touchUpInside" id="14b-fz-p8V"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="VZd-4x-Rcx" secondAttribute="centerX" id="0Mv-VG-eVd"/>
+                <constraint firstItem="VZd-4x-Rcx" firstAttribute="centerY" secondItem="7uA-kT-SUW" secondAttribute="centerY" id="Bpw-dd-1CC"/>
+                <constraint firstAttribute="centerX" secondItem="Mnn-X8-CJD" secondAttribute="centerX" id="Upz-E2-ypx"/>
+                <constraint firstItem="Mnn-X8-CJD" firstAttribute="centerY" secondItem="7uA-kT-SUW" secondAttribute="centerY" id="VLX-sH-I8n"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicator" destination="Mnn-X8-CJD" id="42n-L4-N4Q"/>
+                <outlet property="retryButton" destination="VZd-4x-Rcx" id="BRu-iT-qhd"/>
+            </connections>
+            <point key="canvasLocation" x="488" y="225"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,50 @@
+{
+  "addresses": [
+    {
+      "id": 12790191,
+      "addressName": "",
+      "receiverName": "Teste Teste",
+      "country": {
+        "id": "BRA",
+        "name": "Brasil"
+      },
+      "state": {
+        "id": "SP"
+      },
+      "city": "São Paulo",
+      "zipcode": "02022040",
+      "type": "Residential",
+      "street": "Rua Tupiguaes",
+      "number": 123,
+      "complement": "",
+      "neighborhood": "Santana",
+      "referencePoint": "",
+      "hash": "09bc13d4185850c512184a765df946700887785f966d231eaf2859b9a3aaba4a",
+      "defaultAddress": true,
+      "notReceiver": false
+    },
+    {
+      "id": 12790326,
+      "addressName": "",
+      "receiverName": "Teste Teste",
+      "country": {
+        "id": "BRA",
+        "name": "Brasil"
+      },
+      "state": {
+        "id": "SP"
+      },
+      "city": "São Paulo",
+      "zipcode": "05021001",
+      "type": "Residential",
+      "street": "Rua Cotoxó",
+      "number": 123,
+      "complement": "",
+      "neighborhood": "Perdizes",
+      "referencePoint": "teste tete",
+      "hash": "ae63533b958c63854f8a73c365cb39a2abe9b7b1793c99263877eea78804eb40",
+      "defaultAddress": false,
+      "notReceiver": false
+    }
+  ]
+}

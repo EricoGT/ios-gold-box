@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyAddressesTableViewController">
+            <connections>
+                <outlet property="emptyStateView" destination="DXJ-Xk-CbQ" id="NDt-Aa-WjI"/>
+                <outlet property="headerView" destination="nbk-lf-39r" id="R4O-pi-Mhi"/>
+                <outlet property="tableView" destination="Qkc-kI-YBM" id="2i0-F9-ZoQ"/>
+                <outlet property="view" destination="Vw4-dv-N5f" id="bsX-Me-YmT"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="Vw4-dv-N5f">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qkc-kI-YBM">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pdg-YO-fTF" firstAttribute="bottom" secondItem="Qkc-kI-YBM" secondAttribute="bottom" id="H7w-sV-Ec6"/>
+                <constraint firstAttribute="trailing" secondItem="Qkc-kI-YBM" secondAttribute="trailing" id="M21-wA-IB0"/>
+                <constraint firstItem="Qkc-kI-YBM" firstAttribute="leading" secondItem="Vw4-dv-N5f" secondAttribute="leading" id="YdX-be-QdE"/>
+                <constraint firstItem="Qkc-kI-YBM" firstAttribute="top" secondItem="pdg-YO-fTF" secondAttribute="top" id="pa5-yO-Ay7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="pdg-YO-fTF"/>
+            <point key="canvasLocation" x="15" y="26"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nbk-lf-39r" userLabel="HeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-4o-FVf" customClass="WMBDottedBorderButton">
+                    <rect key="frame" x="15" y="20" width="290" height="72"/>
+                    <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <state key="normal">
+                        <string key="title">+ Adicionar novo endereço
+</string>
+                        <color key="titleColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="paintedSize">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="notPaintedSize">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addNewAddress:" destination="-1" eventType="touchUpInside" id="QtQ-Ym-YGY"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereços salvos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npg-tq-xeg">
+                    <rect key="frame" x="15" y="112" width="290" height="18"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XdR-4o-FVf" secondAttribute="trailing" constant="15" id="FBd-ZL-lWS"/>
+                <constraint firstItem="npg-tq-xeg" firstAttribute="leading" secondItem="nbk-lf-39r" secondAttribute="leading" constant="15" id="PQN-6D-fBV"/>
+                <constraint firstAttribute="bottom" secondItem="npg-tq-xeg" secondAttribute="bottom" constant="13" id="VOO-8H-PLz"/>
+                <constraint firstItem="XdR-4o-FVf" firstAttribute="leading" secondItem="nbk-lf-39r" secondAttribute="leading" constant="15" id="icV-jw-bHh"/>
+                <constraint firstItem="XdR-4o-FVf" firstAttribute="top" secondItem="nbk-lf-39r" secondAttribute="top" constant="20" id="kem-Va-sPy"/>
+                <constraint firstAttribute="trailing" secondItem="npg-tq-xeg" secondAttribute="trailing" constant="15" id="psa-A6-dXE"/>
+                <constraint firstItem="npg-tq-xeg" firstAttribute="top" secondItem="XdR-4o-FVf" secondAttribute="bottom" constant="20" id="tNo-ax-6Jy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ety-oE-HJC"/>
+            <point key="canvasLocation" x="881" y="290"/>
+        </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DXJ-Xk-CbQ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4n-ak-ftZ" customClass="WMButtonRounded">
+                    <rect key="frame" x="15" y="608" width="345" height="44"/>
+                    <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="LG7-Gr-RHR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <state key="normal" title="+ Adicionar endereço">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnAddAddress"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addNewAddress:" destination="-1" eventType="touchUpInside" id="6q8-i3-VbS"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-cY-gmy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="606"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCb-Vt-k2j">
+                            <rect key="frame" x="43.5" y="126.5" width="289" height="353"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_address_empty" translatesAutoresizingMaskIntoConstraints="NO" id="hgH-Jb-8gs">
+                                    <rect key="frame" x="20" y="11" width="249" height="240"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="240" id="TLb-bB-Vl5"/>
+                                        <constraint firstAttribute="width" constant="249" id="q7R-xX-fxJ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não tem endereço cadastrado!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZS-GQ-I3V">
+                                    <rect key="frame" x="5.5" y="275" width="281" height="18"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicione um endereço para que você faça as suas compras de forma mais rápida ;)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-bS-c3A">
+                                    <rect key="frame" x="10" y="305" width="269" height="30.5"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="iHf-bS-c3A" firstAttribute="top" secondItem="QZS-GQ-I3V" secondAttribute="top" constant="30" id="6xc-ge-SYd"/>
+                                <constraint firstItem="iHf-bS-c3A" firstAttribute="width" secondItem="hgH-Jb-8gs" secondAttribute="width" constant="20" id="7DX-aZ-aIe"/>
+                                <constraint firstItem="QZS-GQ-I3V" firstAttribute="top" secondItem="hgH-Jb-8gs" secondAttribute="bottom" constant="24" id="8oQ-3T-xmk"/>
+                                <constraint firstItem="iHf-bS-c3A" firstAttribute="centerX" secondItem="TCb-Vt-k2j" secondAttribute="centerX" id="Cmk-J0-Emu"/>
+                                <constraint firstItem="QZS-GQ-I3V" firstAttribute="centerX" secondItem="TCb-Vt-k2j" secondAttribute="centerX" constant="1" id="W4l-rM-o9H"/>
+                                <constraint firstItem="hgH-Jb-8gs" firstAttribute="top" secondItem="TCb-Vt-k2j" secondAttribute="top" constant="11" id="dIG-Lz-BYj"/>
+                                <constraint firstAttribute="width" constant="289" id="jN6-SN-tQx"/>
+                                <constraint firstAttribute="height" constant="353" id="qjt-nb-0L3"/>
+                                <constraint firstItem="hgH-Jb-8gs" firstAttribute="centerX" secondItem="TCb-Vt-k2j" secondAttribute="centerX" id="yr0-OP-Ee1"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="TCb-Vt-k2j" firstAttribute="centerX" secondItem="2yb-cY-gmy" secondAttribute="centerX" id="Afk-NM-rW0"/>
+                        <constraint firstItem="TCb-Vt-k2j" firstAttribute="centerY" secondItem="2yb-cY-gmy" secondAttribute="centerY" id="kMM-ci-o0e"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eHk-Tw-7Fw" firstAttribute="bottom" secondItem="f4n-ak-ftZ" secondAttribute="bottom" constant="15" id="47d-yc-mf2"/>
+                <constraint firstItem="2yb-cY-gmy" firstAttribute="leading" secondItem="DXJ-Xk-CbQ" secondAttribute="leading" id="OGF-8G-hbV"/>
+                <constraint firstItem="f4n-ak-ftZ" firstAttribute="leading" secondItem="DXJ-Xk-CbQ" secondAttribute="leading" constant="15" id="Sk3-Ri-qi9"/>
+                <constraint firstAttribute="trailing" secondItem="f4n-ak-ftZ" secondAttribute="trailing" constant="15" id="YsQ-2K-qbe"/>
+                <constraint firstItem="2yb-cY-gmy" firstAttribute="top" secondItem="DXJ-Xk-CbQ" secondAttribute="top" id="kJ7-Ea-Iph"/>
+                <constraint firstItem="f4n-ak-ftZ" firstAttribute="top" secondItem="2yb-cY-gmy" secondAttribute="bottom" constant="2" id="sCc-f9-qNR"/>
+                <constraint firstAttribute="trailing" secondItem="2yb-cY-gmy" secondAttribute="trailing" id="xGe-Ar-EKu"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="eHk-Tw-7Fw"/>
+            <point key="canvasLocation" x="-142.5" y="333.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_address_empty" width="270" height="241"/>
+    </resources>
+</document>

@@ -1,0 +1,52 @@
+{
+  "product":{
+    "imagesIds":[
+      "2498100",
+      "2498107"
+    ],
+    "productId":2032203,
+    "skuId":35041,
+    "title":"Máquina de Cortar Cabelo HomePro Basic - Wahl",
+    "departmentId":1,
+    "categoryId":1292,
+    "subCategoryId":8,
+    "rating":{
+      "value":3.9,
+      "total":12
+    },
+    "offers":[
+      {
+        "sku":35041,
+        "hasExtendedWarranty":true,
+        "seller":{
+          "id":"1",
+          "name":"Walmart"
+        },
+        "price":{
+          "listPrice":350,
+          "sellPrice":116,
+          "installmentAmount":22,
+          "valuePerInstallment":5.27
+        },
+        "available":true
+      }
+    ],
+    "stampUrl":"https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+    "stampTitle":"selo app teste",
+    "stampDescription":"teste",
+    "stampFullDescription":"https://qa.webstore.waldev.com.br/busca/?ft=bola&amp;PS=20",
+    "optionsType":"Selecione",
+    "variations":[
+      {
+        "name":"220V",
+        "sku":35041,
+        "imageId":"2498100"
+      },
+      {
+        "name":"110V",
+        "sku":33555,
+        "imageId":"2498100"
+      }
+    ]
+  }
+}

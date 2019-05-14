@@ -1,0 +1,151 @@
+{
+  "count":4,
+  "products":[
+    {
+      "productId":2033063,
+      "skuId":34592,
+      "title":"Fogão 4 Bocas de Embutir 56TBE Celebrate Grill Branco - Electrolux",
+      "imageId":"2506114",
+      "hasMoreOffers":false,
+      "hasSkuOptions":false,
+      "hasAvailability":true,
+      "sellerId":"1",
+      "price":{
+        "listPrice":1428,
+        "sellPrice":279.18
+      }
+    },
+    {
+      "productId":2032300,
+      "skuId":33668,
+      "title":"Fogão 4 Bocas Celebrate Branco Electrolux - 56STB",
+      "imageId":"2508642",
+      "hasMoreOffers":false,
+      "hasSkuOptions":false,
+      "hasAvailability":true,
+      "sellerId":"1",
+      "price":{
+        "listPrice":1599,
+        "sellPrice":279.18
+      }
+    },
+    {
+      "productId":2011321,
+      "skuId":11442,
+      "title":"Fogão Cooktop 4 Bocas Branco - Fischer",
+      "imageId":"2478175",
+      "hasMoreOffers":false,
+      "hasSkuOptions":false,
+      "hasAvailability":true,
+      "sellerId":"1",
+      "price":{
+        "sellPrice":267.89
+      }
+    },
+    {
+      "productId":2012263,
+      "skuId":12396,
+      "title":"Fogão Elétrico 2 Bocas Layr Topázio 4.0 Inox 220V",
+      "imageId":"2495961",
+      "hasMoreOffers":false,
+      "hasSkuOptions":false,
+      "hasAvailability":false,
+      "sellerId":"1",
+      "price":{
+        "listPrice":200,
+        "sellPrice":165
+      }
+    }
+  ],
+  "filters":{
+    "departments":[
+      {
+        "name":"Fogões",
+        "count":0,
+        "url":"?fq=C:155&ft=Fogoes&PS=20&mm=100",
+        "filterValue":"?fq=C:155&ft=Fogoes&PS=20&mm=100",
+        "selected":false,
+        "categories":[
+          {
+            "categoryId":443,
+            "name":"Piso até 4 bocas",
+            "count":53,
+            "url":"?fq=C:174/155/443/&amp;ft=fog\ufffdo 4 bocas&amp;PS=20&amp;mm=75",
+            "filterValue":"?fq=C:144/155/443/&ft=Fogoes&PS=20&mm=100",
+            "selected":false,
+            "order":1,
+            "subCategories":[
+
+            ]
+          }
+        ]
+      }
+    ],
+    "brands":[
+      {
+        "brandId":104651,
+        "name":"Venax",
+        "count":30,
+        "filterValue":"fq=B:104651",
+        "url":"?fq=C:199/155/&fq=B:104651&ft=Fogoes&PS=20&mm=100",
+        "selected":true
+      },
+      {
+        "brandId":477,
+        "name":"Atlas",
+        "count":20,
+        "filterValue":"fq=B:477",
+        "url":"?fq=C:144/155/&fq=B:477&ft=Fogoes&PS=20&mm=100",
+        "selected":false
+      }
+    ],
+    "specs":[
+      {
+        "name":"Modelo",
+        "order":2,
+        "countValues":6,
+        "values":[
+          {
+            "name":"Acendimento automático",
+            "count":31,
+            "url":"?fq=C:144/155/443/&ft=Fogoes&fq=spec_fct_60073:Acendimento automático&PS=20&mm=100",
+            "filterValue":"fq=spec_fct_60073:Acendimento automático",
+            "order":1,
+            "selected":false
+          },
+          {
+            "name":"Forno autolimpante",
+            "count":27,
+            "url":"?fq=C:144/155/443/&ft=Fogoes&fq=spec_fct_60073:Forno autolimpante&PS=20&mm=100",
+            "filterValue":"fq=spec_fct_60073:Forno autolimpante",
+            "order":2,
+            "selected":false
+          }
+        ]
+      }
+    ],
+    "pricesRange":[
+      {
+        "name":"Até R$499",
+        "count":45,
+        "url":"?fq=C:144/155/&fq=P:[0.01 TO 499.99]&ft=Fogoes&PS=20&mm=100",
+        "filterValue":"fq=P:[0.01 TO 499.99]",
+        "selected":false
+      },
+      {
+        "name":"De R$500 a R$999",
+        "count":54,
+        "url":"?fq=C:144/155/&fq=P:[500.00 TO 999.99]&ft=Fogoes&PS=20&mm=100",
+        "filterValue":"fq=P:[500.00 TO 999.99]",
+        "selected":false
+      },
+      {
+        "name":"Acima de R$1000,00",
+        "count":22,
+        "url":"?fq=C:144/155/&fq=P:[1000.00 TO 9999.99]&ft=Fogoes&PS=20&mm=100",
+        "filterValue":"fq=P:[1000.00 TO 9999.99]",
+        "selected":false
+      }
+    ]
+  }
+}

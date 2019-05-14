@@ -1,0 +1,189 @@
+{
+  "items":[
+    {
+      "categoryId":4774,
+      "name":"iPads e Tablets",
+      "url":"fq=C:4722/4774/",
+      "children":[
+        {
+          "categoryId":4777,
+          "name":"iPads",
+          "url":"fq=C:4722/4774/4777/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4778,
+          "name":"Samsung Galaxy",
+          "url":"fq=C:4722/4774/4778/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4779,
+          "name":"Tablets",
+          "url":"fq=C:4722/4774/4779/",
+          "children":[
+
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId":4776,
+      "name":"Acessórios",
+      "url":"fq=C:4722/4776/",
+      "children":[
+        {
+          "categoryId":4781,
+          "name":"Cabo de Dados",
+          "url":"fq=C:4722/4776/4781/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4783,
+          "name":"Canetas",
+          "url":"fq=C:4722/4776/4783/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4787,
+          "name":"Capas e Cases",
+          "url":"fq=C:4722/4776/4787/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4786,
+          "name":"Carregadores",
+          "url":"fq=C:4722/4776/4786/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4780,
+          "name":"Películas",
+          "url":"fq=C:4722/4776/4780/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4790,
+          "name":"Skins",
+          "url":"fq=C:4722/4776/4790/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4785,
+          "name":"Suportes",
+          "url":"fq=C:4722/4776/4785/",
+          "children":[
+
+          ]
+        },
+        {
+          "categoryId":4782,
+          "name":"Teclados",
+          "url":"fq=C:4722/4776/4782/",
+          "children":[
+
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId":6670,
+      "name":"Acessórios de Tablets",
+      "url":"fq=C:4722/6670/",
+      "children":[
+
+      ]
+    },
+    {
+      "categoryId":6792,
+      "name":"Teste Jobs MIB",
+      "url":"fq=C:4722/6792/",
+      "children":[
+
+      ]
+    }
+  ],
+  "totais":[
+    {
+      "categoryId":4777,
+      "url":"4722/4774/4777/",
+      "total":23
+    },
+    {
+      "categoryId":4778,
+      "url":"4722/4774/4778/",
+      "total":43
+    },
+    {
+      "categoryId":4779,
+      "url":"4722/4774/4779/",
+      "total":141
+    },
+    {
+      "categoryId":4781,
+      "url":"4722/4776/4781/",
+      "total":4
+    },
+    {
+      "categoryId":4783,
+      "url":"4722/4776/4783/",
+      "total":48
+    },
+    {
+      "categoryId":4787,
+      "url":"4722/4776/4787/",
+      "total":449
+    },
+    {
+      "categoryId":4786,
+      "url":"4722/4776/4786/",
+      "total":17
+    },
+    {
+      "categoryId":4780,
+      "url":"4722/4776/4780/",
+      "total":31
+    },
+    {
+      "categoryId":4790,
+      "url":"4722/4776/4790/",
+      "total":0
+    },
+    {
+      "categoryId":4785,
+      "url":"4722/4776/4785/",
+      "total":17
+    },
+    {
+      "categoryId":4782,
+      "url":"4722/4776/4782/",
+      "total":2
+    },
+    {
+      "categoryId":6670,
+      "url":"4722/6670/",
+      "total":0
+    },
+    {
+      "categoryId":6792,
+      "url":"4722/6792/",
+      "total":0
+    }
+  ]
+}

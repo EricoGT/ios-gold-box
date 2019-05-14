@@ -1,0 +1,51 @@
+{
+   "product":{
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "hasExtendedWarranty":false,
+      "id":"2211871",
+      "rating":30,
+      "standardSku":239376,
+      "title":"Calça Feminina",
+      "imageIds":[
+         "2975157",
+         "0"
+      ],
+      "productVariations":[
+         {
+            "currency":"R$ ",
+            "discountPrice":51,
+            "formattedListPrice":"99.999,00",
+            "formattedSellPrice":"51,00",
+            "instalment":1,
+            "instalmentValue":51,
+            "name":"Calça Feminina Azul P",
+            "originalPrice":99999,
+            "price":60,
+            "quantityAvailable":1000,
+            "saveAmount":"99.948,00",
+            "savePercentage":99,
+            "sku":239376,
+            "seller":"Walmart",
+            "supplierStock":""
+         }
+      ],
+      "optionsType":"Cor",
+      "variations":[
+         {
+            "name":"Azul",
+            "sku":239376,
+            "imageId":"2975157"
+         },
+         {
+            "name":"Vermelho",
+            "sku":240301,
+            "imageId":"2975160"
+         },
+         {
+            "name":"Branco",
+            "sku":240521,
+            "imageId":"2975163"
+         }
+      ]
+   }
+}

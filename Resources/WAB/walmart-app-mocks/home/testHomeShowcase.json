@@ -1,0 +1,193 @@
+{
+  "showcases": [
+    {
+      "id": "App_Home_Automacao",
+      "type": "mock",
+      "orderId": 0,
+      "name": "Vitrine Automação",
+      "icon": "ic_trophy_bf.png",
+      "shelfItems": [
+        {
+          "productId": 2704652,
+          "skuId": 806009,
+          "title": "Jogo Fifa 15 para Playstation 3",
+          "imageId": "3733424",
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 199.9,
+            "sellPrice": 119.9
+          },
+          "suggestion": {
+            "price": {
+              "current": 290,
+              "discountedPrice": 50
+            },
+            "paymentMethod": "BANK_SLIP"
+          },
+          "instalment": 21,
+          "instalmentValue": 5.45,
+          "rating": {
+              "value": 3,
+              "total": 2
+          }
+        },
+        {
+            "productId": 3068520,
+            "skuId": 1194541,
+            "title": "Teste EPS Stargate",
+            "imageId": "5013271",
+            "totalColors": 1,
+            "hasMoreOffers": true,
+            "hasSkuOptions": false,
+            "sellerId": "omsseller",
+            "price": {
+                "listPrice": 0,
+                "sellPrice": 50
+            },
+            "paymentTypes":["MASTERCARD"],
+            "instalment": 5,
+            "instalmentValue": 50,
+            "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/79f037a7-7-d89bdbae-7-selofrete.png"
+        },
+        {
+          "productId": 2028345,
+          "skuId": 29260,
+          "title": "Geladeira\u0026#x2F;Refrigerador 1 Porta Consul Frost Free 300L com Dispenser de Água CRG36A Branco",
+          "imageId": "2626123",
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 700,
+            "sellPrice": 676.2
+          },
+          "instalment": 22,
+          "instalmentValue": 30.74
+        },
+        {
+          "productId": 2036037,
+          "skuId": 38063,
+          "title": "Advantage Max 3 Cães  - Bayer",
+          "imageId": "2099520",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "listPrice": 11,
+            "sellPrice": 10
+          },
+          "instalment": 22,
+          "instalmentValue": 0.45
+        },
+        {
+          "productId": 2019340,
+          "skuId": 19692,
+          "title": "Kit com 4 Pneus Aro 13 Pirelli PN P165&#x2F;70R13 78T P400",
+          "imageId": "3216767",
+          "hasMoreOffers": false,
+          "hasSkuOptions": false,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 2900,
+            "sellPrice": 1604
+          },
+          "instalment": 22,
+          "instalmentValue": 72.91
+        },
+        {
+          "productId": 2103512,
+          "skuId": 120398,
+          "title": "Advantage Max 3 Combo Leve 3 Pague 2 Bayer Acima de 25 Kg - 4 Ml",
+          "imageId": "2444883",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "vtex_prod_meuamigopet",
+          "price": {
+            "sellPrice": 12.36
+          },
+          "instalment": 22,
+          "instalmentValue": 0.56
+        },
+        {
+          "productId": 2880215,
+          "skuId": 991578,
+          "title": "Anel Duplo Moustache Strass 1759",
+          "imageId": "3934952",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "loucasporacessorios",
+          "price": {
+            "listPrice": 65.9,
+            "sellPrice": 46.9
+          },
+          "instalment": 22,
+          "instalmentValue": 2.13
+        },
+        {
+          "productId": 2867119,
+          "skuId": 978122,
+          "title": "Camisa Polo Aleatory Lisa Piquet Peru",
+          "imageId": "3919815",
+          "totalColors": 8,
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "aleatory",
+          "price": {
+            "sellPrice": 109
+          },
+          "instalment": 22,
+          "instalmentValue": 4.95
+        },
+        {
+          "productId": 2137851,
+          "skuId": 161218,
+          "title": "Liquidificador Mondial Pro Master 1500 Premium",
+          "imageId": "2609284",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 450.09,
+            "sellPrice": 427.59
+          },
+          "stampImage": "https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png"
+        },
+        {
+          "productId": 2032203,
+          "skuId": 35041,
+          "title": "MDS - Máquina de Cortar Cabelo HomePro Basic - Wahl",
+          "imageId": "2498100",
+          "hasMoreOffers": false,
+          "hasSkuOptions": true,
+          "sellerId": "1",
+          "price": {
+            "listPrice": 79.9,
+            "sellPrice": 53.91
+          },
+          "instalment": 5,
+          "instalmentValue": 10.78,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/031b5804-1-5offboleto.png"
+        },
+        {
+          "productId": 3066204,
+          "skuId": 1194541,
+          "title": "Nerf Usada",
+          "imageId": "5013271",
+          "totalColors": 1,
+          "hasMoreOffers": true,
+          "hasSkuOptions": false,
+          "sellerId": "omsseller",
+          "price": {
+            "listPrice": 0,
+            "sellPrice": 50
+          },
+          "instalment": 1,
+          "instalmentValue": 50,
+          "stampImage": "https://static.wmobjects.com.br/imgres/0x0/walmartv5/stamp/79f037a7-7-d89bdbae-7-selofrete.png"
+        }
+      ]
+    }
+  ]
+}

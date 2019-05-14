@@ -1,0 +1,209 @@
+{
+    "id":"217cab78-c5ee-4eab-ba75-0964f466c0fa",
+    "loggerKey":"g55uzzbl0htx5urcz0d3vdwt",
+    "items":[
+             {
+             "shippingValue":0,
+             "imageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+             "originalImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+             "cartImageUrl":"//static.wmobjects.com.br/imgres/arquivos/ids/3733424",
+             "detailUrl":"/produto/2704652/pr",
+             "listPrice":19990,
+             "unavailableProduct":false,
+             "services":[
+             
+             ],
+             "deliveryTypes":[
+             
+             ],
+             "sellerName":"Walmart",
+             "stockBalance":12,
+             "markedToRemove":false,
+             "sku":806009,
+             "marketPlaceSku":806009,
+             "giftWrappable":false,
+             "currentMaxQuantityBySellerAndSku":1,
+             "brandName":"EA",
+             "productId":2704652,
+             "kit":false,
+             "skuName":"Jogo Fifa 15 para Playstation 3",
+             "kitItems":[
+             
+             ],
+             "categories":[
+                           {
+                           "id":401,
+                           "name":"Games"
+                           },
+                           {
+                           "id":413,
+                           "name":"Playstation 3"
+                           },
+                           {
+                           "id":415,
+                           "name":"Jogos para PS3"
+                           }
+                           ],
+             "fullDescription":"Jogo Fifa 15 para Playstation 3",
+             "sellerId":"1",
+             "description":"Jogo Fifa 15 para Playstation 3",
+             "quantity":1,
+             "price":11990,
+             "priceWithoutDiscountCurrent":11990,
+             "priceWithoutDiscountOriginal":11990,
+             "key":"4yh8mxrg0znifd7jwn63gbzb3",
+             "departmentId":401,
+             "categoryId":413,
+             "subCategoryId":415,
+             "itemUnavailable":false,
+             "pageContext":{
+             "categoryId":null,
+             "categoryName":null,
+             "departmentId":null,
+             "departmentName":null,
+             "subcategoryId":null,
+             "subcategoryName":null,
+             "suggestion": {
+             "paymentMethod": "BANK_SLIP",
+             "price": {
+             "current": 290,
+             "discountedPrice": 789
+             }
+             }
+             },
+             "defaultContext":{
+             "categoryId":null,
+             "categoryName":null,
+             "departmentId":null,
+             "departmentName":null,
+             "subcategoryId":null,
+             "subcategoryName":null
+             },
+             "createDateTime":1497882145964,
+             "priceDivergentToLow":false,
+             "servicesIds":[
+             
+             ],
+             "isGiftWrapper":false,
+             "importFee":0,
+             "priceDivergentToHigh":false,
+             "service":false,
+             "priceDivergent":false
+             }
+             ],
+    "gifts":[
+    
+    ],
+    "hasProductImported":false,
+    "removedGiftCards":[
+    
+    ],
+    "voucherStatus":[
+    
+    ],
+    "giftCards":[
+    
+    ],
+    "bestInstallment":{
+        "valuePerInstallment":5,
+        "installmentAmount":24,
+        "formattedValuePerInstallment":"5,00",
+        "valuePerInstallmentCents":500
+    },
+    "userProfile":{
+        "fullName":"Jose API Rnxc",
+        "firstName":"Jose",
+        "lastName":"API Rnxc",
+        "pid":"a5a8643b-481c-48b7-a1a8-84c8ba31b3d1",
+        "guid":"217cab78-c5ee-4eab-ba75-0964f466c0fa",
+        "email":"wmteste@mobile.com",
+        "document":"05264103887",
+        "corporate":false,
+        "phones":[
+                  {
+                  "areaCode":"19",
+                  "number":"996031655",
+                  "type":"MOBILE"
+                  },
+                  {
+                  "areaCode":"19",
+                  "number":"33017788",
+                  "type":"RESIDENTIAL"
+                  }
+                  ],
+        "dateBirth":"2002-09-02",
+        "gender":"MALE",
+        "visitorIdentity":"SMHpKOqw8TSxTqiHUmuMQEKhWJs8nLEQTLlEH0rSAKi9ANzShE24GOoyxoBHW1oZYzUqH8OgDlcdjQVm8OInEgpjR+KpUSM3hl6dKaYyBN4=",
+        "preferences":{
+            "email":false,
+            "sms":false,
+            "acceptedTerm":false
+        },
+        "dateBirthAsDate":1030935600000
+    },
+    "chaordicInfo":{
+        "cartSource":"cart",
+        "apiKey":"walmart-marketplace",
+        "cartCryptoContent":"/qqxX4HZGg7mP+bzNbOyhclib10bnCXbKHybxSbiA0h4dBuuZJAN3kjvVr+K7uSwDbRMg1ZLdw3shzogJY/RHPYuTs263ucyMFSZgMjStZneO297alkF+KBQH2dA78/1CibD6Mxjf3qEvkiNe1mxg4QgH63zd1/tXDww1I0LMw8yrkYp2oIkPJt81Q081ByRU7kqHUgZnl4SmSEGVMDYixwoLvg8CQKI0zmUAxrScfv+VdbgUADZrfj4yY/jmBrf3n7PKvPTfsfnVS5BYMwTpA5OMY/hV8JGvLefiqF8bjf6zXKDnCA27V82NLdasliUwvmFeccZwalSc7AIl053jCkxeoZztMDmsJfex4Oo82e4PtzzbQJVD9g4ZFbFvLNs"
+    },
+    "locale":{
+        "locale":"pt-BR",
+        "country":"BRA",
+        "currencyCode":"BRL",
+        "brazil":true,
+        "notBrazil":false,
+        "countryCOL":false,
+        "notCountryCOL":true
+    },
+    "hasError":false,
+    "discountsAmount":0,
+    "couponAmount":0,
+    "usedGiftCardsAmount":0,
+    "remainingGiftCardsAmount":0,
+    "giftCardDiscountAmount":0,
+    "giftWrapperServicesAmount":0,
+    "giftCardsAmount":0,
+    "freightPrice":0,
+    "nominalDiscount":0,
+    "servicesPrice":0,
+    "totalPrice":11990,
+    "totalPriceWithEstimatedBestShipping":11990,
+    "amounts":{
+        "productsAmount":11990,
+        "servicesAmount":0,
+        "deliveriesAmount":0,
+        "deliveriesAmountLocal":0,
+        "deliveriesAmountImported":0,
+        "nominalDiscount":0,
+        "totalNominalDiscount":0,
+        "usedNominalDiscount":0,
+        "giftCardDiscountAmount":0,
+        "giftCardsAmount":0,
+        "usedGiftCardsAmount":0,
+        "remainingGiftCardsAmount":0,
+        "estimatedBestShippingAmount":0,
+        "estimatedBestShippingAmountLocal":0,
+        "estimatedBestShippingAmountImported":0,
+        "couponAmount":0,
+        "giftWrapperServicesAmount":0,
+        "importFeesAmount":0,
+        "nominalFromCoupon":false,
+        "discountsAmount":0,
+        "totalAmountPlusGiftCardDiscountAmount":11990,
+        "totalAmountWithEstimatedBestShippingPlusGiftCardDiscountAmount":11990,
+        "nominalDifference":0,
+        "totalAmount":11990,
+        "totalAmountWithEstimatedBestShipping":11990
+    },
+    "servicesPriceWithGiftWrapper":0,
+    "loadOrderParams":"1,806009",
+    "userLogged":true,
+    "subtotal":11990,
+    "freightPriceLocal":0,
+    "freightPriceImported":0,
+    "estimatedBestShippingPrice":0,
+    "cookies":[
+               "cart=217cab78-c5ee-4eab-ba75-0964f466c0fa;Version=1;Comment=;Path=/;Max-Age=0;HttpOnly",
+               "token=5hv7uxubfbjkcnn7cc4k71fih;Version=1;Comment=;Path=/;Max-Age=1296000;HttpOnly"
+               ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "fe4656c5-bd0d-4414-bea1-7f14b1e84e83",
+  "loggerKey": "166zop3pudofshzxk8kgi6sl",
+  "items": [],
+  "gifts": [],
+  "hasProductImported": false,
+  "removedGiftCards": [],
+  "voucherStatus": [],
+  "giftCards": [],
+  "userProfile": {
+    "fullName": "Matheus silveira ",
+    "firstName": "Matheus",
+    "lastName": "silveira ",
+    "pid": "31fac86a-1c4a-42bd-b056-852e007a923d",
+    "guid": "fe4656c5-bd0d-4414-bea1-7f14b1e84e83",
+    "email": "silveira@ciandt.com",
+    "document": "37975992852",
+    "corporate": false,
+    "phones": [
+      {
+        "areaCode": "19",
+        "number": "991279969",
+        "type": "MOBILE"
+      }
+    ],
+    "dateBirth": "2017-09-21",
+    "gender": "MALE",
+    "visitorIdentity": "RORINk1KQi8yPqsGZYPBboQfEMl8Gtdyn4ItD2juuoJHSk0mgctyQ9lrn8nuZvRVzn4lIkvf3yV3P1KBbwq9uXA1/72HTHpHpJg6gxpvyZo=",
+    "preferences": {
+      "email": false,
+      "sms": false,
+      "acceptedTerm": false
+    },
+    "dateBirthAsDate": 1505962800000
+  },
+  "chaordicInfo": {
+    "cartSource": "cart",
+    "apiKey": "walmart-marketplace",
+    "cartCryptoContent": "OCjodmfyJm6HO6BMknWyZT4+lA0tuo52uxYf8sftMAsWC4MLCqzAEhSs5aHzNBIXCjzU/N4kfqiOw4mRyomJKXPoSpwwINmZaNQCkQR5saL8rd7XT7bsfhxvBrgxjEZZoWPnPDPpGc7aaZWKSKt8H8uxpBF4zJ7OBG4kUMK6wYfTYNHO8YO1vBA4xnjgVeAIVIeesog5X7B/ABhGKM9QcRwtg/x/aGz+q9t9rzMVb9za0ANnlag3GSkA+h3XyvFz"
+  },
+  "locale": {
+    "locale": "pt-BR",
+    "country": "BRA",
+    "currencyCode": "BRL",
+    "notBrazil": false,
+    "brazil": true,
+    "countryCOL": false,
+    "notCountryCOL": true
+  },
+  "hasError": false,
+  "giftCardsAmount": 0,
+  "freightPrice": 0,
+  "nominalDiscount": 0,
+  "estimatedBestShippingPrice": 0,
+  "discountsAmount": 0,
+  "couponAmount": 0,
+  "usedGiftCardsAmount": 0,
+  "remainingGiftCardsAmount": 0,
+  "giftCardDiscountAmount": 0,
+  "giftWrapperServicesAmount": 0,
+  "subtotal": 0,
+  "freightPriceLocal": 0,
+  "freightPriceImported": 0,
+  "servicesPrice": 0,
+  "totalPrice": 0,
+  "totalPriceWithEstimatedBestShipping": 0,
+  "totalWithoutDiscounts": 0,
+  "amounts": {
+    "productsAmount": 0,
+    "servicesAmount": 0,
+    "deliveriesAmount": 0,
+    "deliveriesAmountLocal": 0,
+    "deliveriesAmountImported": 0,
+    "nominalDiscount": 0,
+    "totalNominalDiscount": 0,
+    "usedNominalDiscount": 0,
+    "giftCardDiscountAmount": 0,
+    "giftCardsAmount": 0,
+    "usedGiftCardsAmount": 0,
+    "remainingGiftCardsAmount": 0,
+    "estimatedBestShippingAmount": 0,
+    "estimatedBestShippingAmountLocal": 0,
+    "estimatedBestShippingAmountImported": 0,
+    "couponAmount": 0,
+    "giftWrapperServicesAmount": 0,
+    "importFeesAmount": 0,
+    "nominalFromCoupon": false,
+    "totalAmount": 0,
+    "totalAmountWithEstimatedBestShipping": 0,
+    "discountsAmount": 0,
+    "totalAmountWithoutDiscount": 0,
+    "totalAmountPlusGiftCardDiscountAmount": 0,
+    "totalAmountWithEstimatedBestShippingPlusGiftCardDiscountAmount": 0,
+    "nominalDifference": 0
+  },
+  "servicesPriceWithGiftWrapper": 0,
+  "loadOrderParams": "",
+  "userLogged": true,
+  "cookies": [
+    "token=7o5ovomwr3npi3mq61xqpy91q;Version=1;Comment=;Path=/;Max-Age=1296000;HttpOnly",
+    "cart=fe4656c5-bd0d-4414-bea1-7f14b1e84e83;Version=1;Comment=;Path=/;Max-Age=0;HttpOnly"
+  ]
+}

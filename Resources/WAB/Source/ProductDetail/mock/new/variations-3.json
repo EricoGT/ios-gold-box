@@ -1,0 +1,72 @@
+{  
+   "message":{  
+      "type":"",
+      "message":"",
+      "title":"",
+      "buttonOk":"",
+      "buttonCancel":"",
+      "url":"",
+      "status":0
+   },
+   "product":{  
+      "id":"2037281",
+      "standardSku":39662,
+      "title":"Condroton - 60 Comprimidos - Vetnil",
+      "rating":0,
+      "baseImageUrl":"https://static-cms.waldev.com.br/imgres/arquivos/ids/",
+      "hasExtendedWarranty":false,
+      "imageIds":[  
+         "2230766",
+         "0"
+      ],
+      "priceVariations":false,
+      "stampUrl":"",
+      "deliveryStampUrl":"",
+      "sellerOptions":[  
+         {  
+            "sku":39662,
+            "name":"1000 mg - 10 A 25 Kg",
+            "currency":"R$ ",
+            "originalPrice":0,
+            "discountPrice":0,
+            "price":0,
+            "saveAmount":"0,00",
+            "savePercentage":0,
+            "formattedListPrice":"0,00",
+            "formattedSellPrice":"0,00",
+            "instalment":1,
+            "instalmentValue":0,
+            "quantityAvailable":0,
+            "seller":"",
+            "sellerId":"",
+            "active":false,
+            "available":false,
+            "supplierStock":false,
+            "tax":{  
+               "tax":0,
+               "importTax":0
+            }
+         }
+      ],
+      "optionsType":"Dosagem",
+      "variations":[  
+         {  
+            "name":"1000 mg",
+            "optionsType":"Peso Recomendado",
+            "options":[  
+               {  
+                  "name":"10 a 25 Kg",
+                  "optionsType":"Quantidade",
+                  "options":[  
+                     {  
+                        "name":"60 comprimidos",
+                        "sku":39662,
+                        "imageId":"2230766"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

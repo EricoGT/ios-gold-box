@@ -1,0 +1,47 @@
+{
+  "product":{
+    "imagesIds":[
+      "2609284",
+      "2609285"
+    ],
+    "productId":2137851,
+    "skuId":161218,
+    "title":"Liquidificador Mondial Pro Master 1500 Premium",
+    "departmentId":169,
+    "categoryId":2059,
+    "subCategoryId":2077,
+    "rating":{
+      "value":0,
+      "total":0
+    },
+    "offers":[
+      {
+        "sku":161218,
+        "hasExtendedWarranty":false,
+        "seller":{
+          "id":"1",
+          "name":"Walmart"
+        },
+        "price":{
+          "listPrice":450.09,
+          "sellPrice":85.51,
+          "installmentAmount":22,
+          "valuePerInstallment":3.89
+        },
+        "available":true
+      }
+    ],
+    "stampUrl":"https://static-cms.waldev.com.br/imgres/0x0/walmartv5/stamp/d7453eba-9-selo.png",
+    "stampTitle":"selo app teste",
+    "stampDescription":"*válido apenas para produtos vendidos e entregues diretamente pelo Walmart.com. O desconto será aplicado ao colocar o número do cartão na área de pagamento.",
+    "stampFullDescription":"https://qa.webstore.waldev.com.br/busca/?ft=bola&amp;PS=20",
+    "optionsType":"Selecione",
+    "variations":[
+      {
+        "name":"220V",
+        "sku":162106,
+        "imageId":"2609284"
+      }
+    ]
+  }
+}

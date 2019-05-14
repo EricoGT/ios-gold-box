@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CouponSubmitView">
+            <connections>
+                <outlet property="redempetionCodeTextField" destination="bIL-7J-Fry" id="T4n-sm-1d5"/>
+                <outlet property="warningLabel" destination="tIN-5g-QYo" id="8nf-PA-UiQ"/>
+                <outlet property="warningLabelTopSpaceConstraint" destination="mYP-Zr-kzH" id="5tT-Nx-W6a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0l0-j5-fEr" userLabel="Submit View">
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Incluir cupom de desconto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIL-7J-Fry" customClass="WMBTextField">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neP-j7-vnL" customClass="WMButton">
+                            <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="66" id="ffp-k3-9se"/>
+                            </constraints>
+                            <state key="normal" title="Aplicar">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="pressedSubmit:" destination="-1" eventType="touchUpInside" id="Ery-zZ-vNa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="neP-j7-vnL" secondAttribute="trailing" id="IuM-ai-T9s"/>
+                        <constraint firstAttribute="bottom" secondItem="neP-j7-vnL" secondAttribute="bottom" id="JDv-Hr-RuQ"/>
+                        <constraint firstItem="neP-j7-vnL" firstAttribute="top" secondItem="0l0-j5-fEr" secondAttribute="top" id="JnR-P5-R8e"/>
+                        <constraint firstAttribute="bottom" secondItem="bIL-7J-Fry" secondAttribute="bottom" id="bU5-8y-Spk"/>
+                        <constraint firstItem="neP-j7-vnL" firstAttribute="leading" secondItem="bIL-7J-Fry" secondAttribute="trailing" id="f1A-To-cRf"/>
+                        <constraint firstItem="bIL-7J-Fry" firstAttribute="top" secondItem="0l0-j5-fEr" secondAttribute="top" id="w2b-4F-hq5"/>
+                        <constraint firstItem="bIL-7J-Fry" firstAttribute="leading" secondItem="0l0-j5-fEr" secondAttribute="leading" id="xVm-Qr-pj7"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-5g-QYo">
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" red="0.96470588235294119" green="0.70588235294117641" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tIN-5g-QYo" secondAttribute="trailing" id="8cn-BX-D8D"/>
+                <constraint firstItem="tIN-5g-QYo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="efl-nC-sZ9"/>
+                <constraint firstAttribute="bottom" secondItem="tIN-5g-QYo" secondAttribute="bottom" id="jVq-jS-l39"/>
+                <constraint firstItem="tIN-5g-QYo" firstAttribute="top" secondItem="0l0-j5-fEr" secondAttribute="bottom" constant="15" id="mYP-Zr-kzH"/>
+                <constraint firstAttribute="trailing" secondItem="0l0-j5-fEr" secondAttribute="trailing" id="qMt-vq-4dU"/>
+                <constraint firstItem="0l0-j5-fEr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xqy-DT-Sxh"/>
+                <constraint firstItem="0l0-j5-fEr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zI2-F6-rTN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="-265"/>
+        </view>
+    </objects>
+</document>

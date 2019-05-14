@@ -1,0 +1,42 @@
+{
+  "skuItem": {
+    "skuId": 25808,
+    "productId": 2025081,
+    "kit": false,
+    "warranties": [
+      {
+        "id": 531085,
+        "type": "WARRANTY_REPAIR",
+        "period": 12,
+        "name": "checkout garantia 12",
+        "price": {
+          "sellPrice": 45.9,
+          "instalmentAmount": 10,
+          "valuePerInstalment": 4.59
+        }
+      },
+      {
+        "id": 531085,
+        "type": "WARRANTY_REPAIR",
+        "period": 12,
+        "name": "mobile NAO APAGAR 12",
+        "price": {
+          "sellPrice": 61.99,
+          "instalmentAmount": 5,
+          "valuePerInstalment": 12.39
+        }
+      },
+      {
+        "id": 531105,
+        "type": "WARRANTY_REPAIR",
+        "period": 24,
+        "name": "mobile  NAO APAGAR 24",
+        "price": {
+          "sellPrice": 99.94,
+          "instalmentAmount": 10,
+          "valuePerInstalment": 9.99
+        }
+      }
+    ]
+  }
+}

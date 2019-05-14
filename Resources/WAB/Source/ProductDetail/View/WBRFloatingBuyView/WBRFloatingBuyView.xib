@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRFloatingBuyView">
+            <connections>
+                <outlet property="installmentsLabel" destination="IAU-mf-F2Y" id="7RM-VC-ixF"/>
+                <outlet property="sellerLabel" destination="QXw-8l-luL" id="dnt-fg-7xf"/>
+                <outlet property="sellerPrice" destination="MXr-sN-hwB" id="gm7-XM-mhW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJL-xh-nJt" customClass="WMButtonRounded">
+                    <rect key="frame" x="141" y="15" width="150" height="44"/>
+                    <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="oku-Gl-Tgl"/>
+                        <constraint firstAttribute="height" constant="44" id="sdW-Mz-Cr3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                    <state key="normal" title="Adicionar ao carrinho"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapBuyButton" destination="-1" eventType="touchUpInside" id="qdw-2U-aFO"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walmart " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXw-8l-luL">
+                    <rect key="frame" x="15" y="14" width="116" height="13"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 3.198,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-sN-hwB">
+                    <rect key="frame" x="15" y="28" width="81" height="18"/>
+                    <accessibility key="accessibilityConfiguration" identifier="WBRFloatingBuyViewPriceLabel"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                    <color key="textColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10x de R$ 1319,80 sem juros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IAU-mf-F2Y">
+                    <rect key="frame" x="15" y="46" width="118" height="13"/>
+                    <accessibility key="accessibilityConfiguration" identifier="WBRFloatingBuyViewInstallmentLabel"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                    <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yJL-xh-nJt" secondAttribute="trailing" constant="15" id="6NL-yt-e16"/>
+                <constraint firstItem="MXr-sN-hwB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Gpt-Dp-46P"/>
+                <constraint firstItem="QXw-8l-luL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="H6x-Iq-cpE"/>
+                <constraint firstItem="yJL-xh-nJt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="KGi-V9-d4f"/>
+                <constraint firstItem="yJL-xh-nJt" firstAttribute="leading" secondItem="QXw-8l-luL" secondAttribute="trailing" constant="10" id="N5j-LP-Qwr"/>
+                <constraint firstItem="QXw-8l-luL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="XNU-ZB-FKk"/>
+                <constraint firstAttribute="bottom" secondItem="IAU-mf-F2Y" secondAttribute="bottom" constant="15" id="XfS-b3-KOU"/>
+                <constraint firstItem="IAU-mf-F2Y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Xw2-mJ-T7C"/>
+                <constraint firstItem="IAU-mf-F2Y" firstAttribute="top" secondItem="MXr-sN-hwB" secondAttribute="bottom" id="ay1-CM-rkK"/>
+                <constraint firstItem="MXr-sN-hwB" firstAttribute="top" secondItem="QXw-8l-luL" secondAttribute="bottom" constant="1" id="hYq-qc-DV1"/>
+                <constraint firstItem="yJL-xh-nJt" firstAttribute="leading" secondItem="IAU-mf-F2Y" secondAttribute="trailing" constant="8" id="rX4-Eb-N63"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="478" y="63"/>
+        </view>
+    </objects>
+</document>

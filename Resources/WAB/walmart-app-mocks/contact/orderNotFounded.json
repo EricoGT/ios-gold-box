@@ -1,0 +1,22 @@
+{
+"name": "NotFoundError",
+"responseCode": 404,
+"propagatable": true,
+"message": "Not found.",
+"cause": {
+"name": "HttpRequestError",
+"statusCode": 404,
+"path": "/self-help/order/detail/0000",
+"message": {
+"errors": [
+{
+"code": 6,
+"param": "Order not found - orderId: 0",
+"message": "Not Found"
+}
+]
+}
+},
+"moduleName": "Selfhelp V1",
+"serviceName": "Order Details"
+}

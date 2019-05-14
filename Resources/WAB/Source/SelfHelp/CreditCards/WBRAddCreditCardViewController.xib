@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2320" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBRAddCreditCardViewController">
+            <connections>
+                <outlet property="actionButtonContainerBottomConstraint" destination="3p8-Kd-FFQ" id="1Nc-Ng-tL6"/>
+                <outlet property="clientDocument" destination="yy5-fB-0t0" id="Hh3-Xd-xnB"/>
+                <outlet property="creditCardExpirationDate" destination="x1D-OS-Tba" id="4sU-0T-QLp"/>
+                <outlet property="creditCardFlagImage" destination="To1-Z9-YYO" id="wjX-jE-nLd"/>
+                <outlet property="creditCardName" destination="gvN-SE-mVe" id="CUP-t3-H63"/>
+                <outlet property="creditCardNumber" destination="rjR-u2-HtJ" id="4Dc-M0-Hjq"/>
+                <outlet property="scrollView" destination="XqN-fd-8qy" id="1e3-Py-typ"/>
+                <outlet property="view" destination="ITf-1p-QTw" id="XhA-RI-B0h"/>
+                <outlet property="viewBottom" destination="mfq-hP-tCv" id="X8b-ez-q8r"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ITf-1p-QTw">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqN-fd-8qy">
+                    <rect key="frame" x="0.0" y="20" width="375" height="573"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf2-cG-Xkr">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="344"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVT-Ld-IuI" userLabel="Card Reader Button Container">
+                                    <rect key="frame" x="20" y="20" width="335" height="62"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrD-iR-IHw" customClass="WMButtonRounded">
+                                            <rect key="frame" x="60" y="9" width="216" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="216" id="fPi-qR-kPi"/>
+                                                <constraint firstAttribute="height" constant="44" id="yCc-ta-Hw6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                            <state key="normal" title="Utilizar leitor de cartão" image="creditCardReader"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="presentCameraScanCreditCard:" destination="-1" eventType="touchUpInside" id="56y-e8-ezv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="HrD-iR-IHw" firstAttribute="centerY" secondItem="NVT-Ld-IuI" secondAttribute="centerY" id="Svh-c9-wVB"/>
+                                        <constraint firstItem="HrD-iR-IHw" firstAttribute="centerX" secondItem="NVT-Ld-IuI" secondAttribute="centerX" id="bE2-H4-hBk"/>
+                                        <constraint firstAttribute="height" constant="62" id="g7X-1Z-l0a"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Número do seu cartão de crédito" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjR-u2-HtJ" userLabel="Card Number" customClass="WMFloatLabelMaskedTextField">
+                                    <rect key="frame" x="20" y="103" width="335" height="44"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Y2h-UA-sA6"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtCard"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="To1-Z9-YYO" userLabel="Card Flag">
+                                    <rect key="frame" x="257" y="110" width="83" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="83" id="Q9b-In-vuZ"/>
+                                        <constraint firstAttribute="height" constant="30" id="QN2-lZ-gg1"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Seu nome como está impresso no cartão" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvN-SE-mVe" userLabel="Card User Name" customClass="WMFloatLabelMaskedTextField">
+                                    <rect key="frame" x="20" y="162" width="335" height="44"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="d1F-h2-Vmj"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtName"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Validade (mm/aa)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-OS-Tba" userLabel="Card Expiration Date" customClass="WMFloatLabelMaskedTextField">
+                                    <rect key="frame" x="20" y="221" width="335" height="44"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="7TR-3g-bQH"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtExpiration"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF ou CNPJ do titular" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yy5-fB-0t0" userLabel="CPF CNPJ" customClass="WMFloatLabelMaskedTextField">
+                                    <rect key="frame" x="20" y="280" width="335" height="44"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="shC-rw-3da"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="txtDocument"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="NVT-Ld-IuI" secondAttribute="trailing" constant="20" id="0Uw-Eh-C5r"/>
+                                <constraint firstItem="rjR-u2-HtJ" firstAttribute="leading" secondItem="Bf2-cG-Xkr" secondAttribute="leading" constant="20" id="8oT-mb-9Hc"/>
+                                <constraint firstItem="NVT-Ld-IuI" firstAttribute="leading" secondItem="Bf2-cG-Xkr" secondAttribute="leading" constant="20" id="Au1-a9-qK3"/>
+                                <constraint firstAttribute="bottom" secondItem="yy5-fB-0t0" secondAttribute="bottom" constant="20" id="Fy1-qF-S84"/>
+                                <constraint firstItem="x1D-OS-Tba" firstAttribute="top" secondItem="gvN-SE-mVe" secondAttribute="bottom" constant="15" id="HSg-KX-Pok"/>
+                                <constraint firstItem="NVT-Ld-IuI" firstAttribute="top" secondItem="Bf2-cG-Xkr" secondAttribute="top" constant="20" id="Jmp-Gh-5Ti"/>
+                                <constraint firstItem="To1-Z9-YYO" firstAttribute="centerY" secondItem="rjR-u2-HtJ" secondAttribute="centerY" id="LUw-BG-TZU"/>
+                                <constraint firstAttribute="trailing" secondItem="yy5-fB-0t0" secondAttribute="trailing" constant="20" id="OY9-he-Cex"/>
+                                <constraint firstItem="x1D-OS-Tba" firstAttribute="leading" secondItem="Bf2-cG-Xkr" secondAttribute="leading" constant="20" id="R5L-QE-5uP"/>
+                                <constraint firstItem="yy5-fB-0t0" firstAttribute="top" secondItem="x1D-OS-Tba" secondAttribute="bottom" constant="15" id="Sjt-hm-U1c"/>
+                                <constraint firstItem="rjR-u2-HtJ" firstAttribute="top" secondItem="NVT-Ld-IuI" secondAttribute="bottom" constant="21" id="UPK-LC-GlP"/>
+                                <constraint firstItem="gvN-SE-mVe" firstAttribute="leading" secondItem="Bf2-cG-Xkr" secondAttribute="leading" constant="20" id="aAU-5T-jRm"/>
+                                <constraint firstAttribute="trailing" secondItem="To1-Z9-YYO" secondAttribute="trailing" constant="35" id="cNH-ie-IA4"/>
+                                <constraint firstAttribute="trailing" secondItem="gvN-SE-mVe" secondAttribute="trailing" constant="20" id="fEJ-qn-j1L"/>
+                                <constraint firstAttribute="trailing" secondItem="rjR-u2-HtJ" secondAttribute="trailing" constant="20" id="gL2-5H-0b7"/>
+                                <constraint firstItem="gvN-SE-mVe" firstAttribute="top" secondItem="rjR-u2-HtJ" secondAttribute="bottom" constant="15" id="kLW-gW-LlA"/>
+                                <constraint firstAttribute="trailing" secondItem="x1D-OS-Tba" secondAttribute="trailing" constant="20" id="r5p-1c-zd8"/>
+                                <constraint firstItem="yy5-fB-0t0" firstAttribute="leading" secondItem="Bf2-cG-Xkr" secondAttribute="leading" constant="20" id="sos-e7-dko"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Bf2-cG-Xkr" firstAttribute="top" secondItem="XqN-fd-8qy" secondAttribute="top" id="89e-Jd-3mQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Bf2-cG-Xkr" secondAttribute="trailing" id="NR3-jx-wzS"/>
+                        <constraint firstAttribute="bottom" secondItem="Bf2-cG-Xkr" secondAttribute="bottom" id="cHB-6w-ebB"/>
+                        <constraint firstItem="Bf2-cG-Xkr" firstAttribute="leading" secondItem="XqN-fd-8qy" secondAttribute="leading" id="wwv-bc-nh2"/>
+                    </constraints>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-hP-tCv">
+                    <rect key="frame" x="0.0" y="593" width="375" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXb-wF-zVP" customClass="WMButtonRounded">
+                            <rect key="frame" x="15" y="15" width="345" height="44"/>
+                            <color key="backgroundColor" red="0.13042959570000001" green="0.59027993680000002" blue="0.95084029439999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="7PH-ML-1jF"/>
+                                <constraint firstAttribute="width" constant="140" id="9Qx-Jt-w5q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <state key="normal" title="Adicionar">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="btnAddAddress"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="roundedButtonStyle">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="9Qx-Jt-w5q"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="addCard:" destination="-1" eventType="touchUpInside" id="OO0-lB-5gC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="74" id="2gi-Zl-oQh"/>
+                        <constraint firstItem="YXb-wF-zVP" firstAttribute="leading" secondItem="mfq-hP-tCv" secondAttribute="leading" constant="15" id="3J8-hI-baB"/>
+                        <constraint firstAttribute="bottom" secondItem="YXb-wF-zVP" secondAttribute="bottom" constant="15" id="Opd-p8-ugw"/>
+                        <constraint firstItem="YXb-wF-zVP" firstAttribute="top" secondItem="mfq-hP-tCv" secondAttribute="top" constant="15" id="X9R-bs-xnt"/>
+                        <constraint firstAttribute="trailing" secondItem="YXb-wF-zVP" secondAttribute="trailing" constant="15" id="oit-F8-9zs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="emT-aA-gsQ" firstAttribute="bottom" secondItem="mfq-hP-tCv" secondAttribute="bottom" id="3p8-Kd-FFQ"/>
+                <constraint firstItem="Bf2-cG-Xkr" firstAttribute="width" secondItem="ITf-1p-QTw" secondAttribute="width" id="DaV-ci-ZkF"/>
+                <constraint firstItem="mfq-hP-tCv" firstAttribute="top" secondItem="XqN-fd-8qy" secondAttribute="bottom" id="bJp-sj-Ldw"/>
+                <constraint firstAttribute="trailing" secondItem="mfq-hP-tCv" secondAttribute="trailing" id="cjw-6L-hQy"/>
+                <constraint firstItem="mfq-hP-tCv" firstAttribute="leading" secondItem="ITf-1p-QTw" secondAttribute="leading" id="d96-hL-312"/>
+                <constraint firstItem="XqN-fd-8qy" firstAttribute="leading" secondItem="ITf-1p-QTw" secondAttribute="leading" id="fzJ-Nw-HgY"/>
+                <constraint firstItem="XqN-fd-8qy" firstAttribute="top" secondItem="emT-aA-gsQ" secondAttribute="top" id="hEm-Km-m4s"/>
+                <constraint firstAttribute="trailing" secondItem="XqN-fd-8qy" secondAttribute="trailing" id="pYY-JL-XnD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="emT-aA-gsQ"/>
+            <point key="canvasLocation" x="24.5" y="67.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="creditCardReader" width="20" height="17"/>
+    </resources>
+</document>

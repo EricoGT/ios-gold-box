@@ -1,0 +1,20 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"seller:unrecoverableError",
+            "errorMessage":"Unrecoverable error during non-cart simulation: \n{\"message\":\"null\",\"errorId\":\"LGT0115\"}",
+            "errorMap":{
+               "loggerKey":"xy2-1013436229-12.158"
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"New Checkout V1",
+   "serviceName":"SelectDeliveryPaymentWithCompleteCart"
+}

@@ -20,6 +20,83 @@
 
 @implementation UIImage (Smart)
 
+#pragma mark - UIColor
+
++ (UIColor * _Nonnull)COLOR_R:(CGFloat)r G:(CGFloat)g B:(CGFloat)b A:(CGFloat)a
+{
+    CGFloat red = r < 0.0 ? 0.0 : (r > 1.0 ? 1.0 : r);
+    CGFloat green = g < 0.0 ? 0.0 : (g > 1.0 ? 1.0 : g);
+    CGFloat blue = b < 0.0 ? 0.0 : (b > 1.0 ? 1.0 : b);
+    CGFloat alpha = a < 0.0 ? 0.0 : (a > 1.0 ? 1.0 : a);
+    //
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0];
+}
+
++ (UIColor * _Nonnull)COLOR_HEX:(unsigned int)hex
+{
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0];
+}
+
++ (UIColor * _Nonnull)COLOR_HEXSTR:(NSString * _Nonnull)hexSTR
+{
+    NSString *colorString = [[hexSTR stringByReplacingOccurrencesOfString: @"#" withString: @""] uppercaseString];
+    CGFloat alpha, red, blue, green;
+    switch ([colorString length]) {
+        case 3: // #RGB
+            alpha = 1.0f;
+            red   = [self colorComponentFrom: colorString start: 0 length: 1];
+            green = [self colorComponentFrom: colorString start: 1 length: 1];
+            blue  = [self colorComponentFrom: colorString start: 2 length: 1];
+            break;
+        case 4: // #ARGB
+            alpha = [self colorComponentFrom: colorString start: 0 length: 1];
+            red   = [self colorComponentFrom: colorString start: 1 length: 1];
+            green = [self colorComponentFrom: colorString start: 2 length: 1];
+            blue  = [self colorComponentFrom: colorString start: 3 length: 1];
+            break;
+        case 6: // #RRGGBB
+            alpha = 1.0f;
+            red   = [self colorComponentFrom: colorString start: 0 length: 2];
+            green = [self colorComponentFrom: colorString start: 2 length: 2];
+            blue  = [self colorComponentFrom: colorString start: 4 length: 2];
+            break;
+        case 8: // #AARRGGBB
+            alpha = [self colorComponentFrom: colorString start: 0 length: 2];
+            red   = [self colorComponentFrom: colorString start: 2 length: 2];
+            green = [self colorComponentFrom: colorString start: 4 length: 2];
+            blue  = [self colorComponentFrom: colorString start: 6 length: 2];
+            break;
+        default:
+            alpha = 1.0f;
+            red   = 0.0f;
+            green = 0.0f;
+            blue  = 0.0f;
+            break;
+    }
+    
+    return [UIColor colorWithRed: red green: green blue: blue alpha: alpha];
+}
+
++ (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length
+{
+    NSString *substring = [string substringWithRange: NSMakeRange(start, length)];
+    NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat: @"%@%@", substring, substring];
+    unsigned hexComponent;
+    [[NSScanner scannerWithString: fullHex] scanHexInt: &hexComponent];
+    return hexComponent / 255.0;
+}
+
++ (struct ColorComponents)COLOR_COMPONENTS:(UIColor * _Nonnull)color
+{
+    struct ColorComponents cc;
+    [color getRed:&cc.red green:&cc.green blue:&cc.blue alpha:&cc.alpha];
+    cc.red = cc.red * 255.0f;
+    cc.green = cc.green * 255.0f;
+    cc.blue = cc.blue * 255.0;
+    cc.alpha = cc.alpha * 255.0f;
+    return cc;
+}
+
 #pragma mark - Commum
 
 + (UIImage * _Nullable) decodeBase64StringToImage:(NSString * _Nonnull)base64string
@@ -1258,4 +1335,63 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     return rawImage;
 }
 
+#pragma mark - Info
+
+- (UIImage * _Nullable)labeledImageWithText:(NSString * _Nonnull)text contentRect:(CGRect)rect roundingCorners:(UIRectCorner)rectCorners cornerRadii:(CGSize)cornerSize textAlign:(NSTextAlignment)textAligment internalMargin:(UIEdgeInsets)margin font:(UIFont * _Nonnull)font fontColor:(UIColor * _Nonnull)fontColor backgroundColor:(UIColor * _Nullable)backColor shadow:(NSShadow * _Nullable)shadow autoHeightAdjust:(BOOL)adjust;
+{
+    if (self.size.width == 0 || self.size.height == 0 || [self isAnimated]) {
+        return self;
+    }
+    
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1.0f);
+    
+    [self drawInRect:CGRectMake(0.0f ,0.0f ,self.size.width, self.size.height)];
+    
+    CGRect textRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    
+    CGSize constraintRect = CGSizeMake(rect.size.width, CGFLOAT_MAX);
+    CGRect boundingBox = [text boundingRectWithSize:constraintRect options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil] context:nil];
+    
+    if (adjust){
+        textRect = CGRectMake(textRect.origin.x, textRect.origin.y, textRect.size.width, boundingBox.size.height);
+    }
+    
+    //RECT
+    if (backColor){
+        UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:textRect byRoundingCorners:rectCorners cornerRadii:cornerSize];
+        [backColor setFill];
+        [rounded fill];
+    }
+    
+    if (boundingBox.size.height <= textRect.size.height){
+        textRect = CGRectMake(textRect.origin.x, textRect.origin.y + (textRect.size.height - boundingBox.size.height) / 2.0, textRect.size.width, textRect.size.height);
+    }
+    
+    //INTERNAL_MARGIN
+    textRect = CGRectMake(textRect.origin.x + margin.left, textRect.origin.y + margin.top, textRect.size.width - (margin.left + margin.right), textRect.size.height - (margin.top + margin.bottom));
+    
+    //TEXT
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = textAligment;
+    paragraphStyle.minimumLineHeight = font.pointSize;
+    paragraphStyle.maximumLineHeight = font.pointSize * 1.5;
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    NSMutableDictionary *att = [NSMutableDictionary new];
+    [att setObject:font forKey:NSFontAttributeName];
+    [att setObject:fontColor forKey:NSForegroundColorAttributeName];
+    [att setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
+    if (shadow){
+        [att setObject:shadow forKey:NSShadowAttributeName];
+    }
+    [text drawInRect:textRect withAttributes:att];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end
+
+

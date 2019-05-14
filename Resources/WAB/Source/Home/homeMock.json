@@ -1,0 +1,245 @@
+{
+    "services":{
+        "tracking":true,
+        "showDepartmentsOnMenu":true,
+        "paymentByBankSlip":true,
+        "showWarranties":true,
+        "showTickets":true,
+        "yourAccount":true
+    },
+    "banner":{
+        "image":"https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/Art/smartbanner_2x.png",
+        "target":"ft=calcinha",
+        "bgColor":[
+                   "0",
+                   "204",
+                   "51",
+                   "255"
+                   ]
+    },
+    "errata":{
+        "urlImage":"",
+        "title":"Errata TESTE",
+        "message":"Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago. Fomos comunicados pelo Vendedor Centauro que em 15/06/2015, das 14:30 às 17h:00 - horário de Brasília, o item Chuteira de Campo Penalty Victoria RX V FG Verde foi anunciado com erro de preço no site do Walmart.com (desconto errado acima de 99% do valor original do produto). Em decorrência deste erro, o Vendedor informou que os pedidos de compra do produto indicado foram cancelados e será realizado o ressarcimento integral do valor eventualmente já pago.",
+        "url":"https://m.walmart.com.br"
+    },
+    "showcases":[
+                 {
+                 "name":"Primeiro Scroll de Produtos",
+                 "icon":"",
+                 "products":[
+                             {
+                             "productId":"2802098",
+                             "title":"Jogo Halo: Master Chief Collection para XBOX One",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"https://info.dacadoo.com/wp-content/uploads/2012/06/apple.png",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":95990.99,
+                             "discountPrice":95000.99,
+                             "instalment":10,
+                             "instalmentValue":9500.09,
+                             "hasVariations":true
+                             },
+                             {
+                             "productId":"3040606",
+                             "title":"Jogo para PS4 Mortal Kombat X WB Games WG0957AN",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4404787-1000-1000/jogo-para-ps4-mortal-kombat-x-wb-games-wg0957an.jpg",
+                             "priceVariations":true,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":249.9,
+                             "discountPrice":249.9,
+                             "instalment":10,
+                             "instalmentValue":24.99
+                             },
+                             {
+                             "productId":"2760803",
+                             "title":"Motorola Moto G (2ª Geração) DTV Colors Preto, TV Digital, Dual Chip, Processador Quad Core 1.2GHz, Tela 5&quot;, Memória 16GB, Acompanha 2 Capas Coloridas",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/3747929-1000-1000/motorola-moto-g--2--geracao--dtv-colors-preto-tv-digital-dual-chip-processador-quad-core-1-2ghz-tela-5--memoria-16gb-acompanha-2-capas-coloridas.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":849,
+                             "discountPrice":764.1,
+                             "instalment":10,
+                             "instalmentValue":76.41
+                             }
+                             ]
+                 },
+                 {
+                 "name":"Segundo Scroll de Produtos",
+                 "icon":"",
+                 "products":[
+                             {
+                             "productId":"2802098",
+                             "title":"SEGUNDO Jogo Halo: Master Chief Collection para XBOX One",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4386376-1000-1000/jogo-ryse--son-of-rome---xbox-one.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":159.9,
+                             "discountPrice":159.9,
+                             "instalment":10,
+                             "instalmentValue":15.99
+                             },
+                             {
+                             "productId":"3040606",
+                             "title":"SEGUNDO Jogo para PS4 Mortal Kombat X WB Games WG0957AN",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4404787-1000-1000/jogo-para-ps4-mortal-kombat-x-wb-games-wg0957an.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":249.9,
+                             "discountPrice":249.9,
+                             "instalment":10,
+                             "instalmentValue":24.99
+                             },
+                             {
+                             "productId":"2760803",
+                             "title":"SEGUNDO Motorola Moto G (2ª Geração) DTV Colors Preto, TV Digital, Dual Chip, Processador Quad Core 1.2GHz, Tela 5&quot;, Memória 16GB, Acompanha 2 Capas Coloridas",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/3747929-1000-1000/motorola-moto-g--2--geracao--dtv-colors-preto-tv-digital-dual-chip-processador-quad-core-1-2ghz-tela-5--memoria-16gb-acompanha-2-capas-coloridas.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"https://info.dacadoo.com/wp-content/uploads/2012/06/apple.png",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":849,
+                             "discountPrice":764.1,
+                             "instalment":10,
+                             "instalmentValue":76.41
+                             }
+                             ]
+                 },
+                 {
+                 "name":"Terceiro Scroll de Produtos",
+                 "icon":"",
+                 "products":[
+                             {
+                             "productId":"2802098",
+                             "title":"TERCEIRO Jogo Halo: Master Chief Collection para XBOX One",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4386376-1000-1000/jogo-ryse--son-of-rome---xbox-one.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":159.9,
+                             "discountPrice":159.9,
+                             "instalment":10,
+                             "instalmentValue":15.99
+                             },
+                             {
+                             "productId":"3040606",
+                             "title":"TERCEIRO Jogo para PS4 Mortal Kombat X WB Games WG0957AN",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4404787-1000-1000/jogo-para-ps4-mortal-kombat-x-wb-games-wg0957an.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":249.9,
+                             "discountPrice":249.9,
+                             "instalment":10,
+                             "instalmentValue":24.99
+                             },
+                             {
+                             "productId":"2760803",
+                             "title":"TERCEIRO Motorola Moto G (2ª Geração) DTV Colors Preto, TV Digital, Dual Chip, Processador Quad Core 1.2GHz, Tela 5&quot;, Memória 16GB, Acompanha 2 Capas Coloridas",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/3747929-1000-1000/motorola-moto-g--2--geracao--dtv-colors-preto-tv-digital-dual-chip-processador-quad-core-1-2ghz-tela-5--memoria-16gb-acompanha-2-capas-coloridas.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"https://napsao-nix-qa-imgres-01.qa.vmcommerce.intra:8080/imgres/62x62/walmartv5/stamp/35f18514-6-joia.png",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":849,
+                             "discountPrice":764.1,
+                             "instalment":10,
+                             "instalmentValue":76.41
+                             }
+                             ]
+                 },
+                 {
+                 "name":"Quarto Scroll de Produtos",
+                 "icon":"",
+                 "products":[
+                             {
+                             "productId":"2802098",
+                             "title":"QUARTO Jogo Halo: Master Chief Collection para XBOX One",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4386376-1000-1000/jogo-ryse--son-of-rome---xbox-one.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":157.7,
+                             "discountPrice":157.7,
+                             "instalment":5,
+                             "instalmentValue":31.4
+                             },
+                             {
+                             "productId":"3040606",
+                             "title":"QUARTO Jogo para PS4 Mortal Kombat X WB Games WG0957AN",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/4404787-1000-1000/jogo-para-ps4-mortal-kombat-x-wb-games-wg0957an.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":249.9,
+                             "discountPrice":249.9,
+                             "instalment":10,
+                             "instalmentValue":24.99
+                             },
+                             {
+                             "productId":"2760803",
+                             "title":"QUARTO Motorola Moto G (2ª Geração) DTV Colors Preto, TV Digital, Dual Chip, Processador Quad Core 1.2GHz, Tela 5&quot;, Memória 16GB, Acompanha 2 Capas Coloridas",
+                             "image":"https://static.wmobjects.com.br/imgres/arquivos/ids/3747929-1000-1000/motorola-moto-g--2--geracao--dtv-colors-preto-tv-digital-dual-chip-processador-quad-core-1-2ghz-tela-5--memoria-16gb-acompanha-2-capas-coloridas.jpg",
+                             "priceVariations":false,
+                             "totalColors":0,
+                             "stampImage":"",
+                             "stampTitle":"",
+                             "stampDescription":"",
+                             "quantityAvailable":true,
+                             "currency":"R$ ",
+                             "price":849,
+                             "discountPrice":764.1,
+                             "instalment":10,
+                             "instalmentValue":76.41
+                             }
+                             ]
+                 }
+                 ]
+}

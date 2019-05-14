@@ -1,0 +1,23 @@
+{
+   "name":"ValidationError",
+   "propagatable":true,
+   "responseCode":400,
+   "message":"Invalid arguments.",
+   "errors":[
+      {
+         "message":{
+            "errorCode":"deliveryGroup:simulation:findGroupedCart",
+            "errorMessage":"Partial errors during seller simulation",
+            "errorMap":{
+               "loggerKey":"001-apf7hka31vlz9q86gj9dpcf7z",
+               "sellerErrors":[
+                  "1"
+               ]
+            }
+         }
+      }
+   ],
+   "code":null,
+   "moduleName":"New Checkout V1",
+   "serviceName":"FindGroupedCart"
+}

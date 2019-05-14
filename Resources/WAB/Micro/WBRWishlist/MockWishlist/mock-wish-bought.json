@@ -1,0 +1,276 @@
+{
+    "products": [
+                 {
+                 "productId": 2032162,
+                 "skuId": 33504,
+                 "bought": false,
+                 "sellerId": "1",
+                 "date": 1496170801750,
+                 "statusPrice": 0,
+                 "quantity": 1,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 33504,
+                                   "name": "Sensor Kinect Xbox 360 - Edição Especial",
+                                   "rating": {
+                                   "value": 4.2,
+                                   "total": 10
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 499,
+                                   "price": 499,
+                                   "quantityAvailable": 1,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 22.68,
+                                   "sellerId": "1",
+                                   "seller": "Walmart",
+                                   "imageIds": [
+                                                "2531614"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2370711,
+                 "skuId": 436383,
+                 "bought": false,
+                 "sellerId": "marcyn",
+                 "date": 1496152650143,
+                 "statusPrice": 0,
+                 "quantity": 318,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 436383,
+                                   "name": "Calcinha String Capricho Cores com Elástico - P - Mescla",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 16.99,
+                                   "discountPrice": 12.99,
+                                   "price": 12.99,
+                                   "quantityAvailable": 318,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 0.59,
+                                   "sellerId": "marcyn",
+                                   "seller": "Marcyn",
+                                   "imageIds": [
+                                                "3106413"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2867119,
+                 "skuId": 978111,
+                 "bought": true,
+                 "sellerId": "aleatory",
+                 "date": 1496078157873,
+                 "statusPrice": 0,
+                 "quantity": 1,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 978111,
+                                   "name": "Camisa Polo Aleatory Lisa Piquet Peru - M - Verde",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 109,
+                                   "price": 109,
+                                   "quantityAvailable": 1,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 4.95,
+                                   "sellerId": "aleatory",
+                                   "seller": "Aleatory",
+                                   "imageIds": [
+                                                "3919826"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2031597,
+                 "skuId": 32860,
+                 "bought": false,
+                 "sellerId": "1",
+                 "date": 1496078108155,
+                 "statusPrice": 0,
+                 "quantity": 551,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 32860,
+                                   "name": "Climatizador e Umidificador de Ar Frio Display Digital CL07F - Electrolux - 220V",
+                                   "rating": {
+                                   "value": 5,
+                                   "total": 1
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 700,
+                                   "discountPrice": 683.1,
+                                   "price": 683.1,
+                                   "quantityAvailable": 551,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 31.05,
+                                   "sellerId": "1",
+                                   "seller": "Walmart",
+                                   "imageIds": [
+                                                "3858740"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 3064598,
+                 "skuId": 1192492,
+                 "bought": true,
+                 "sellerId": "lojasmanica",
+                 "date": 1495816318520,
+                 "statusPrice": 0,
+                 "quantity": 8,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 1192492,
+                                   "name": "Lavadora de Roupas 10 Kg Semi-Automática Bárbara Wanke - 110V",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 399,
+                                   "discountPrice": 329,
+                                   "price": 329,
+                                   "quantityAvailable": 8,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 14.95,
+                                   "sellerId": "lojasmanica",
+                                   "seller": "Lojas Manica",
+                                   "imageIds": [
+                                                "4250363"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2048467,
+                 "skuId": 123376,
+                 "bought": false,
+                 "sellerId": "nikkey",
+                 "date": 1495752248329,
+                 "statusPrice": 0,
+                 "quantity": 2,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 123376,
+                                   "name": "Chapa Taiff Cerâmica Bivolt",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 350,
+                                   "discountPrice": 116,
+                                   "price": 290,
+                                   "quantityAvailable": 457,
+                                   "active": true,
+                                   "available": true,
+                                   "instalment": 22,
+                                   "instalmentValue": 5.27,
+                                   "sellerId": "nikkey",
+                                   "seller": "Nikkey Cosméticos",
+                                   "imageIds": [
+                                                "2459782"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2867119,
+                 "skuId": 978126,
+                 "bought": false,
+                 "sellerId": "aleatory",
+                 "date": 1496152689531,
+                 "statusPrice": 0,
+                 "quantity": 0,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 978126,
+                                   "name": "Camisa Polo Aleatory Lisa Piquet Peru - M - Rosa",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 109,
+                                   "price": 109,
+                                   "quantityAvailable": 0,
+                                   "active": true,
+                                   "available": false,
+                                   "instalment": 22,
+                                   "instalmentValue": 4.95,
+                                   "sellerId": "aleatory",
+                                   "seller": "Aleatory",
+                                   "imageIds": [
+                                                "3919844"
+                                                ]
+                                   }
+                                   ]
+                 },
+                 {
+                 "productId": 2036037,
+                 "skuId": 38135,
+                 "bought": false,
+                 "sellerId": "vtex_prod_meuamigopet",
+                 "date": 1496077978846,
+                 "statusPrice": 0,
+                 "quantity": 0,
+                 "sellerOptions": [
+                                   {
+                                   "sku": 38135,
+                                   "name": "Advantage Max 3 Cães  - Bayer - 4 A 10Kg - 1,0ml",
+                                   "rating": {
+                                   "value": 0,
+                                   "total": 0
+                                   },
+                                   "hasExtendedWarranty": false,
+                                   "currency": "R$ ",
+                                   "originalPrice": 0,
+                                   "discountPrice": 4.38,
+                                   "price": 4.38,
+                                   "quantityAvailable": 0,
+                                   "active": true,
+                                   "available": false,
+                                   "instalment": 22,
+                                   "instalmentValue": 0.2,
+                                   "sellerId": "vtex_prod_meuamigopet",
+                                   "seller": "Meu Amigo Pet",
+                                   "imageIds": [
+                                                "2144374"
+                                                ]
+                                   }
+                                   ]
+                 }
+                 ]
+}

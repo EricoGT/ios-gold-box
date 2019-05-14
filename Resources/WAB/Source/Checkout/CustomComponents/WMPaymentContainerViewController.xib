@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11201"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMPaymentContainerViewController">
+            <connections>
+                <outlet property="bottomIndicatorView" destination="efU-Vu-4wI" id="RGy-xb-ABW"/>
+                <outlet property="bottomIndicatorViewLeading" destination="JFV-4g-ar6" id="alZ-NG-LgP"/>
+                <outlet property="contentView" destination="FlI-Mn-mRh" id="5wl-J9-kl3"/>
+                <outlet property="menuView" destination="65T-Hl-hqy" id="XeM-8j-ve7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="usI-OD-p2Y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-Mn-mRh" userLabel="Content View">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65T-Hl-hqy">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnq-9C-ABa">
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="TOc-Mh-sdl"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efU-Vu-4wI">
+                            <color key="backgroundColor" red="0.1019607843" green="0.45882352939999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="125" id="7Co-Cn-c8l"/>
+                                <constraint firstAttribute="height" constant="6" id="xAm-RZ-qsB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="tnq-9C-ABa" firstAttribute="leading" secondItem="65T-Hl-hqy" secondAttribute="leading" id="8Gx-D1-v6M"/>
+                        <constraint firstItem="efU-Vu-4wI" firstAttribute="leading" secondItem="65T-Hl-hqy" secondAttribute="leading" id="JFV-4g-ar6"/>
+                        <constraint firstAttribute="height" constant="44" id="gxI-yl-0g6"/>
+                        <constraint firstAttribute="trailing" secondItem="tnq-9C-ABa" secondAttribute="trailing" id="jcx-Ca-G0m"/>
+                        <constraint firstItem="tnq-9C-ABa" firstAttribute="top" secondItem="efU-Vu-4wI" secondAttribute="bottom" id="ndF-sU-Kri"/>
+                        <constraint firstAttribute="bottom" secondItem="tnq-9C-ABa" secondAttribute="bottom" id="xkQ-Tk-3u9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="65T-Hl-hqy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="42p-ko-2kt"/>
+                <constraint firstItem="FlI-Mn-mRh" firstAttribute="top" secondItem="65T-Hl-hqy" secondAttribute="bottom" id="A8m-hL-aEC"/>
+                <constraint firstAttribute="bottom" secondItem="FlI-Mn-mRh" secondAttribute="bottom" id="a3V-fF-t5n"/>
+                <constraint firstAttribute="trailing" secondItem="FlI-Mn-mRh" secondAttribute="trailing" id="ahp-lG-4al"/>
+                <constraint firstItem="FlI-Mn-mRh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eTj-aC-ZVM"/>
+                <constraint firstAttribute="trailing" secondItem="65T-Hl-hqy" secondAttribute="trailing" id="hed-rJ-hYv"/>
+                <constraint firstItem="65T-Hl-hqy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vTE-vu-G1Y"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-397.5" y="80.5"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
