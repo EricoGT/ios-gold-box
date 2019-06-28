@@ -6,6 +6,7 @@ Prototypes/Raspadinha/Pods/Pods.xcodeproj/xcuserdata/lordesire.xcuserdatad/xcsch
 Prototypes/Raspadinha/Raspadinha.xcodeproj/xcuserdata/lordesire.xcuserdatad/xcschemes/xcschememanagement.plist
 Prototypes/Raspadinha/Raspadinha.xcworkspace/xcuserdata/lordesire.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 Swift/Project-Model/Project-Swift/Project-Swift.xcworkspace/xcuserdata/lordesire.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-Swift/Project-Model/Project-Swift/Project-Swift/Pods/*
 Swift/Project-Model/Project-Swift/Project-Swift.xcodeproj/xcuserdata/ericogt.xcuserdatad/xcschemes/xcschememanagement.plist
 Swift/Project-Model/Project-Swift/Project-Swift.xcworkspace/xcuserdata/ericogt.xcuserdatad/UserInterfaceState.xcuserstate
+Swift/Sample-Project-/Pods/*
+Swift/Sample-Project-/Podfile.lock

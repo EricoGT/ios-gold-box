@@ -1,0 +1,9 @@
+platform :ios, “11.0”
+use_frameworks!
+
+target 'ProjectModel' do
+ 
+pod 'Alamofire', '~> 4.0'
+pod 'Kingfisher', '~> 4.0'
+
+end
