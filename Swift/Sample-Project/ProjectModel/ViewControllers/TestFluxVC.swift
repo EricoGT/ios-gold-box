@@ -17,7 +17,7 @@ import UIKit
 
 //MARK: - • CLASS
 
-class TestFluxVC: UIViewController {
+class TestFluxVC: ModelViewController {
     
     //MARK: - • LOCAL DEFINES
     
@@ -134,9 +134,8 @@ class TestFluxVC: UIViewController {
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
-    private func setupLayout() {
-        
-        self.view.layoutIfNeeded()
+    override func setupLayout() {
+        super.defaultSetup("Title")
         
         self.view.backgroundColor = UIColor.white
         

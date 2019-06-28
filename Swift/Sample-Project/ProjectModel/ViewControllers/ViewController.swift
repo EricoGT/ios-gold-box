@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imvAnimation:UIImageView!
     
     override func viewDidLoad() {
@@ -102,10 +102,15 @@ class ViewController: UIViewController {
 //        var tshirt = UIImage(named: "blue_tshirt.jpg")!
 //        tshirt = tshirt.filterColor(targetHue: 240.0/360.0, tolerance: 15.0/360.0)
         
-        var tshirt = UIImage(named: "blue_tshirt.jpg")!
-        let thumb = tshirt.createThumbnail(128)
+//        var tshirt = UIImage(named: "blue_tshirt.jpg")!
+//        let thumb = tshirt.createThumbnail(128)
         
-        imvAnimation.image = thumb
+        var tshirt = UIImage(named: "blue_tshirt.jpg")!
+        let img1 = tshirt.monochromaticBWImage(intensity: .normal)
+        let img2 = tshirt.monochromaticBWImage(intensity: .low)
+        let img3 = tshirt.monochromaticBWImage(intensity: .high)
+        
+        imvAnimation.image = img1
     }
 
 }
