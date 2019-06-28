@@ -40,26 +40,51 @@ extension UIImage {
     
     /**
      * Copia a imagem, incluindo a animação, se existir.
-     * @return Retorna uma nova instância cópia do objeto imagem original.
+     * - Returns: Retorna uma nova instância cópia do objeto imagem original.
      */
     func clone() -> UIImage {
         
-        if ((self.images?.count ?? 0) > 1) {
-            //copiando animações
-            
-            if let data = self.pngData() {
-                return UIImage.init(data: data)!
+        //copiando animações:
+        if self.isAnimated() {
+            var iList:[UIImage] = Array()
+            for image in self.images! {
+                let copy = image.clone()
+                iList.append(copy)
             }
-            
-            //TODO; após ter animaçÕes:
-            //UIImage *animationImage = [UIImage animatedImageWithImages:self.images duration:self.duration];
-            //return animationImage;
-            
+            let newImage:UIImage? = UIImage.animatedImage(with: iList, duration: self.duration)
+            return newImage ?? self
         }
         
-        //copiando imagem única
+        //copiando imagem única:
         if let data = self.pngData() {
             return UIImage.init(data: data)!
+        }
+        
+        return self
+    }
+    
+    /**
+     * Cria o `thumbnail` da imagem.
+     * - Parameter maxPixelSize: Máxima dimensão que o thumb deve ter.
+     * - Returns: Retorna uma nova instância cópia do objeto imagem original.
+     */
+    func createThumbnail(_ maxPixelSize:UInt) -> UIImage {
+        
+        if self.size.width == 0 || self.size.height == 0 || self.isAnimated() {
+            return self
+        }
+        
+        if let data = self.pngData() {
+            let imageSource:CGImageSource = CGImageSourceCreateWithData(data as CFData, nil)!
+            //
+            var options: [NSString:Any] = Dictionary()
+            options[kCGImageSourceThumbnailMaxPixelSize] = maxPixelSize
+            options[kCGImageSourceCreateThumbnailFromImageAlways] = true
+            //
+            if let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) {
+                let finalImage = UIImage.init(cgImage: scaledImage)
+                return finalImage
+            }
         }
         
         return self
@@ -78,10 +103,10 @@ extension UIImage {
      *
      * Por exemplo, suponha que o GIF contenha três quadros. O quadro 0 tem duração 3. O quadro 1 tem duração 9. O quadro 2 tem duração 15. Divide-se cada duração pelo maior denominador comum de todas as durações, que é 3, e adiciona-se cada quadro ao número resultante de vezes. Assim, 'animation' conterá o quadro 0 3/3 = 1 vez, depois o quadro 1 9/3 = 3 vezes, depois o quadro 2 15/3 = 5 vezes. Assim é definido 'animation.duration' para (3 + 9 + 15) / 100 = 0,27 segundos.
      *
-     * @brief Instancia uma imagem animada de um arquivo tipo GIF.
-     * @warning É necessário que o arquivo carregado seja do tipo GIF para que a animação seja processada corretamente.
-     * @param data Objeto NSData do arquivo de imagem.
-     * @return Retorna Uma nova imagem animada.
+     * - Brief: Instancia uma imagem animada de um arquivo tipo GIF.
+     * - Warning: É necessário que o arquivo carregado seja do tipo GIF para que a animação seja processada corretamente.
+     * - Parameter data: Objeto NSData do arquivo de imagem.
+     * - Returns: Retorna Uma nova imagem animada.
      * @note Utilize este método para carregar os frames de um arquivo GIF numa animação da UIImage.
      */
     class func animatedImageWithAnimatedGIF(data:Data) -> UIImage? {
@@ -95,10 +120,10 @@ extension UIImage {
     /**
      * Este método opera extamente como \c <animatedImageWithAnimatedGIFData:>, exceto pelo fato que os dados são recuperados de uma URL.
      *
-     * @brief Instancia uma imagem animada de um arquivo tipo GIF, referenciado pela URL do arquivo.
-     * @warning É necessário que o arquivo carregado seja do tipo GIF para que a animação seja processada corretamente.
-     * @param theURL URL do arquivo. Se \c theURL não for um arquivo local é aconselhável que a chamada seja feita em background para evitar o bloqueio da thread principal.
-     * @return Retorna Uma nova imagem animada.
+     * - Brief: Instancia uma imagem animada de um arquivo tipo GIF, referenciado pela URL do arquivo.
+     * - Warning: É necessário que o arquivo carregado seja do tipo GIF para que a animação seja processada corretamente.
+     * - Parameter url: URL do arquivo. Se \c theURL não for um arquivo local é aconselhável que a chamada seja feita em background para evitar o bloqueio da thread principal.
+     * - Returns: Retorna Uma nova imagem animada.
      * @note Utilize este método para carregar os frames de um arquivo GIF numa animação da UIImage.
      */
     class func animatedImageWithAnimatedGIF(url:URL) -> UIImage? {
@@ -114,11 +139,11 @@ extension UIImage {
      *
      * Observe que a duração total da animação será dada pela soma de todos os tempos passados no parâmetro \c durations.
      *
-     * @brief Instancia uma imagem animada utilizando uma lista de imagens (frames) e tempos (timeFrames).
-     * @warning É necessário que as imagens da lista parâmetro possuam a mesma dimensão e escala. Além disso, cada imagem precisa ter a propriedade 'CGImage' não nula e o número de imagens e tempos sejam equivalentes.
-     * @param images Cada imagem desta lista será um ou vários frames da animação final.
-     * @param durations Cada duração desta lista representa a parcela de tempo que uma imagem deve ficar visível na animação.
-     * @return Retorna um objeto UIImage animado.
+     * - Brief: Instancia uma imagem animada utilizando uma lista de imagens (frames) e tempos (timeFrames).
+     * - Warning: É necessário que as imagens da lista parâmetro possuam a mesma dimensão e escala. Além disso, cada imagem precisa ter a propriedade 'CGImage' não nula e o número de imagens e tempos sejam equivalentes.
+     * - Parameter  images: Cada imagem desta lista será um ou vários frames da animação final.
+     * - Parameter  durations: Cada duração desta lista representa a parcela de tempo que uma imagem deve ficar visível na animação.
+     * - Returns: Retorna um objeto UIImage animado.
      * @note Este método é uma alternativa ao método \c <animatedImageNamed:duration:> em que cada frame (imagem individual da animação) pode ficar visível uma parcela de tempo variável.
      */
     class func animatedImageWithFrames(images:[UIImage], durations:[Int]) -> UIImage? {
@@ -151,7 +176,7 @@ extension UIImage {
     
     /**
      * Verifica se a imagem instanciada é uma animação.
-     * @return O retorno será 'true' para imagens animadas e 'false' para imagens normais.
+     * - Returns: O retorno será 'true' para imagens animadas e 'false' para imagens normais.
      */
     func isAnimated() -> Bool {
         if ((self.images?.count ?? 0) > 1) {
@@ -167,9 +192,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem com orientação modificada (UIImageOrientationUp).
-     * @warning Não é executado em imagens animadas.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem com orientação modificada (UIImageOrientationUp).
+     * - Warning: Não é executado em imagens animadas.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      * @note Utilize o método \p <imageRotatedByDegrees:> para ângulos arbitrários.
      */
     func imageOrientedToUP() -> UIImage {
@@ -252,9 +277,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem rotacionada no sentido horário.
-     * @warning Não é executado em imagens animadas.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem rotacionada no sentido horário.
+     * - Warning: Não é executado em imagens animadas.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      * @note Utilize o método \p <imageRotatedByDegrees:> para ângulos arbitrários.
      */
     func imageRotatedClockwise() -> UIImage {
@@ -264,9 +289,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem rotacionada no sentido antihorário.
-     * @warning Não é executado em imagens animadas.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem rotacionada no sentido antihorário.
+     * - Warning: Não é executado em imagens animadas.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      * @note Utilize o método \p <imageRotatedByDegrees:> para ângulos arbitrários.
      */
     func imageRotatedCounterClockwise() -> UIImage {
@@ -276,10 +301,10 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem rotacionada num ângulo arbitrário.
-     * @warning Não é executado em imagens animadas.
-     * @param byDegrees Ângulo, em graus, que se deseja girar a imagem. Pode ser negativo.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem rotacionada num ângulo arbitrário.
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  byDegrees: Ângulo, em graus, que se deseja girar a imagem. Pode ser negativo.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      */
     func imageRotated(byDegrees:CGFloat) -> UIImage {
         
@@ -312,9 +337,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem horizontalmente espelhada.
-     * @warning Não é executado em imagens animadas.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem horizontalmente espelhada.
+     * - Warning: Não é executado em imagens animadas.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      */
     func imageFlippedHorizontally() -> UIImage {
         
@@ -337,9 +362,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Cria uma nova imagem verticalmente espelhada.
-     * @warning Não é executado em imagens animadas.
-     * @return Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
+     * - Brief: Cria uma nova imagem verticalmente espelhada.
+     * - Warning: Não é executado em imagens animadas.
+     * - Returns: Retorna uma cópia alterada da imagem origem. Caso o método não consiga executar a transformação, será retornada a própria imagem original.
      */
     func imageFlippedVertically() -> UIImage {
         
@@ -742,6 +767,7 @@ extension UIImage {
         return self
     }
     
+    /** Adiciona o efeito GaussianBlur em uma nova instância da imagem. */
     func bluredImage(radius:CGFloat) -> UIImage {
         
         if self.cgImage == nil || self.size.width == 0 || self.size.height == 0 || self.isAnimated() {
@@ -771,9 +797,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Detecta faces na imagem origem, criando uma lista a partir desta contendo subimagens dessas faces.
-     * @warning Não é executado em imagens animadas.
-     * @param handler Bloco de código que será executado ao fim da busca.
+     * - Brief: Detecta faces na imagem origem, criando uma lista a partir desta contendo subimagens dessas faces.
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  completionHandler: Bloco de código que será executado ao fim da busca.
      * @note Por ser um processo potencialmente demorado, este método executa a detecção em background. Não há limite no tamanho da imagem para a busca nem na quantidade de faces que podem ser reportadas.
      */
     func detectFacesImages(completionHandler:@escaping (_ detectedFaces:[UIImage]) -> ()) -> () {
@@ -838,9 +864,9 @@ extension UIImage {
     /**
      * É necessário que a imagem origem possua a propriedade 'CGImage' não nula e nenhuma de suas dimensões (largura ou altura) pode ser zero (0).
      *
-     * @brief Detecta mensagem de texto na imagem, representados por QRCodes (cada QRCode na imagem vai gerar uma mensagem diferente).
-     * @warning Não é executado em imagens animadas.
-     * @param handler Bloco de código que será executado ao fim da busca.
+     * - Brief: Detecta mensagem de texto na imagem, representados por QRCodes (cada QRCode na imagem vai gerar uma mensagem diferente).
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  completionHandler: Bloco de código que será executado ao fim da busca.
      * @note Por ser um processo potencialmente demorado, este método executa a detecção em background. Não há limite no tamanho da imagem para a busca nem na quantidade de mensagens que podem ser reportadas.
      */
     func detectQRCodeMessages(completionHandler:@escaping (_ detectedMessages:[String]) -> ()) -> () {
@@ -884,11 +910,11 @@ extension UIImage {
     /**
      * Aplica o efeito "ChromaKey", utilizando o intervalo de HUE parâmetro.
      *
-     * @brief O intervalo de cores definido pelo alcance HUE será removido da imagem (substituído por transparência).
-     * @warning Não é executado em imagens animadas.
-     * @param targetHue Valor entre 0 e 1 que representa o ângulo HUE para o qual se deseja aplicar o efeito, onde 0 corresponde a 0º e 1 a 360º.
-     * @param tolerance Tolerância que será aplicada ao HUE alvo, para mais e para menos, para criação de um intervalo de cores. Igual ao parâmetro 'targetHue' também deve ser um valor entre 0 e 1, que representará o ângulo correspondente.
-     * @return O retorno será uma cópia da imagem original, tendo todos os pixels afetados com suas cores substituídas por transparência.
+     * - Brief: O intervalo de cores definido pelo alcance HUE será removido da imagem (substituído por transparência).
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  targetHue: Valor entre 0 e 1 que representa o ângulo HUE para o qual se deseja aplicar o efeito, onde 0 corresponde a 0º e 1 a 360º.
+     * - Parameter  tolerance: Tolerância que será aplicada ao HUE alvo, para mais e para menos, para criação de um intervalo de cores. Igual ao parâmetro 'targetHue' também deve ser um valor entre 0 e 1, que representará o ângulo correspondente.
+     * - Returns: O retorno será uma cópia da imagem original, tendo todos os pixels afetados com suas cores substituídas por transparência.
      * @note Para saber mais sobre os valores Hue, veja o exemplo no endereço: 'https://en.wikipedia.org/wiki/Hue#/media/File:HueScale.svg'
      */
     func filterColor(targetHue:CGFloat, tolerance:CGFloat) -> UIImage {
@@ -951,13 +977,13 @@ extension UIImage {
     /**
      * Este método transforma uma cor em outra, dentro de uma área de interesse.
      *
-     * @brief O intervalo de cores é criado pela tolerância parâmetro, na busca, e o HUE da cor destino define a aparência final.
-     * @warning Não é executado em imagens animadas.
-     * @param from Cor alvo, que se deseja alterar.
-     * @param to Cor destino, para a qual se deseja transformar a cor alvo.
-     * @param tolerance Fator que define a precisão na busca pela cor alvo (são considerados Hue, Saturation, Brightness, Alpha). Aceita valores entre 0 e 1.
-     * @param interestAreas Quando fornecido define as áreas de atuação do efeito. Ignore para buscar em toda a imagem.
-     * @return O retorno será uma cópia da imagem original, com as cores transmutadas nos pontos atingidos pelas regras.
+     * - Brief: O intervalo de cores é criado pela tolerância parâmetro, na busca, e o HUE da cor destino define a aparência final.
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  from: Cor alvo, que se deseja alterar.
+     * - Parameter  to: Cor destino, para a qual se deseja transformar a cor alvo.
+     * - Parameter  tolerance: Fator que define a precisão na busca pela cor alvo (são considerados Hue, Saturation, Brightness, Alpha). Aceita valores entre 0 e 1.
+     * - Parameter  interestAreas: Quando fornecido define as áreas de atuação do efeito. Ignore para buscar em toda a imagem.
+     * - Returns: O retorno será uma cópia da imagem original, com as cores transmutadas nos pontos atingidos pelas regras.
      * @note Para saber mais sobre os valores Hue, veja o exemplo no endereço: 'https://en.wikipedia.org/wiki/Hue#/media/File:HueScale.svg'
      */
     func transmuteColor(from:UIColor, to:UIColor, tolerance:CGFloat, interestAreas:[CGRect]?) -> UIImage {
@@ -1073,20 +1099,20 @@ extension UIImage {
     /**
      * Este método desenha o texto na imagem, fazendo uso das configurações disponíveis.
      *
-     * @brief Cria uma nova imagem com o texto parâmetro renderizado.
-     * @warning Não é executado em imagens animadas.
-     * @param text Texto que se deseja renderizar.
-     * @param rect Área dentro da imagem onde o texto deve ser desenhado.
-     * @param rectCorners Cantos que se deseja aplicar arredondamento ao desenhar o rect.
-     * @param cornerSize Raio dos cantos, quando forem utilizados.
-     * @param textAligment Alinhamento horizontal do texto.
-     * @param margin Margem interna, relacionada ao rect, aplicada ao texto na renderização. Bom para impedir que o texto "grude" nas laterais do rect quando for utilizado alinhamento a direita ou esquerda.
-     * @param font Fonte que se deseja utilizar no desenho do texto.
-     * @param fontColor Cor da fonte.
-     * @param backColor Cor de fundo para a área do texto (rect). Pode ter cantos arredondados.
-     * @param shadow Parâmetro opcional aplicado ao texto, contento opção de cor, offset e dissipação para a sombra.
-     * @param adjust Quando verdadeiro, irá reajustar a altura de rect, para fazer com que a área compreenda a altura necessária para o texto parâmetro.
-     * @return Retorna uma nova imagem com o texto renderizado.
+     * - Brief: Cria uma nova imagem com o texto parâmetro renderizado.
+     * - Warning: Não é executado em imagens animadas.
+     * - Parameter  text: Texto que se deseja renderizar.
+     * - Parameter  contentRect: Área dentro da imagem onde o texto deve ser desenhado.
+     * - Parameter  rectCorners: Cantos que se deseja aplicar arredondamento ao desenhar o rect.
+     * - Parameter  cornerSize: Raio dos cantos, quando forem utilizados.
+     * - Parameter  textAligment: Alinhamento horizontal do texto.
+     * - Parameter  internalMargin: Margem interna, relacionada ao rect, aplicada ao texto na renderização. Bom para impedir que o texto "grude" nas laterais do rect quando for utilizado alinhamento a direita ou esquerda.
+     * - Parameter  font: Fonte que se deseja utilizar no desenho do texto.
+     * - Parameter  fontColor: Cor da fonte.
+     * - Parameter  backgroundColor: Cor de fundo para a área do texto (rect). Pode ter cantos arredondados.
+     * - Parameter  shadow: Parâmetro opcional aplicado ao texto, contento opção de cor, offset e dissipação para a sombra.
+     * - Parameter  autoHeightAdjust: Quando verdadeiro, irá reajustar a altura de rect, para fazer com que a área compreenda a altura necessária para o texto parâmetro.
+     * - Returns: Retorna uma nova imagem com o texto renderizado.
      */
     func labeledImage(text:String, contentRect:CGRect, rectCorners:UIRectCorner, cornerSize:CGSize, textAligment:NSTextAlignment, internalMargin:UIEdgeInsets, font:UIFont, fontColor:UIColor, backgroundColor:UIColor?, shadow:NSShadow?, autoHeightAdjust:Bool) -> UIImage {
         

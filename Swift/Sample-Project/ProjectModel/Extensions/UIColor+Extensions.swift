@@ -19,10 +19,34 @@ struct ColorComponents {
     var brightness : CGFloat = 0.0
 }
 
+//enum CustomColor {
+//    case day
+//    case night
+//}
+//
+//extension CustomColor: RawRepresentable {
+//    typealias RawValue = UIColor
+//
+//    init?(rawValue: RawValue) {
+//        switch rawValue {
+//        case UIColor.init(red: 1, green: 1, blue: 1, alpha: 1) : self = .day
+//        case UIColor.init(red: 0, green: 0, blue: 0, alpha: 1) : self = .night
+//        default: return nil
+//        }
+//    }
+//
+//    var rawValue: RawValue {
+//        switch self {
+//        case .day: return UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+//        case .night: return UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+//        }
+//    }
+//}
+
 extension UIColor {
 
     /** Cria uma nova cor (UIColor) utilizando o valor RGBA parâmetro (0~1). */
-    class func color(red:CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat) -> UIColor {
+    class func RGBA(_ red:CGFloat, _ green:CGFloat, _ blue:CGFloat, _ alpha:CGFloat) -> UIColor {
         let r = red < 0.0 ? 0.0 : (red > 1.0 ? 1.0 : red)
         let g = green < 0.0 ? 0.0 : (green > 1.0 ? 1.0 : green)
         let b = blue < 0.0 ? 0.0 : (blue > 1.0 ? 1.0 : blue)
@@ -32,7 +56,7 @@ extension UIColor {
     }
     
     /** Cria uma nova cor (UIColor) utilizando o valor RGBA parâmetro (0~255). */
-    class func COLOR(_ R:Int, _ G:Int, _ B:Int, _ A:Int) -> UIColor {
+    class func RGBA(_ R:Int, _ G:Int, _ B:Int, _ A:Int) -> UIColor {
         let r = R < 0 ? 0 : (R > 255 ? 255 : R)
         let g = G < 0 ? 0 : (G > 255 ? 255 : G)
         let b = B < 0 ? 0 : (B > 255 ? 255 : B)
@@ -101,8 +125,8 @@ extension UIColor {
         return CGFloat.init(hexComponent) / 255.0
     }
     
-    /** Retorna os componentes RBGA da cor parâmetro. */
-    func colorComponents() -> ColorComponents {
+    /** Retorna os componentes RBGA da cor parâmetro, além do Hue, Saturation and Brightness. */
+    func components() -> ColorComponents {
         
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0, h: CGFloat = 0, s: CGFloat = 0, v: CGFloat = 0
         self.getRed(&r, green: &g, blue: &b, alpha: &a)

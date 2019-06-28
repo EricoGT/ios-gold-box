@@ -93,8 +93,8 @@ class ViewController: UIViewController {
 //            }
 //        }
         
-        var tshirt = UIImage(named: "blue_tshirt.jpg")!
-        tshirt = tshirt.transmuteColor(from: UIColor.init(red: 52.0/255.0, green: 106.0/255.0, blue: 215.0/255.0, alpha: 1.0), to: UIColor.init(red: 213.0/255.0, green: 65.0/255.0, blue: 231.0/255.0, alpha: 1.0), tolerance: 0.4, interestAreas: [CGRect.init(x: 0.0, y: tshirt.size.height / 4.0, width: tshirt.size.width / 2.0, height: tshirt.size.height / 2.0)])
+//        var tshirt = UIImage(named: "blue_tshirt.jpg")!
+//        tshirt = tshirt.transmuteColor(from: UIColor.init(red: 52.0/255.0, green: 106.0/255.0, blue: 215.0/255.0, alpha: 1.0), to: UIColor.init(red: 213.0/255.0, green: 65.0/255.0, blue: 231.0/255.0, alpha: 1.0), tolerance: 0.4, interestAreas: [CGRect.init(x: 0.0, y: tshirt.size.height / 4.0, width: tshirt.size.width / 2.0, height: tshirt.size.height / 2.0)])
         
 //        var tshirt = UIImage(named: "chroma_key.jpg")!
 //        tshirt = tshirt.labeledImage(text: "Helena!", contentRect: CGRect(x: 0.0, y: tshirt.size.height / 2.0, width: tshirt.size.width, height: 40.0), rectCorners: .allCorners, cornerSize: CGSize(width: 10.0, height: 10.0), textAligment: .center, internalMargin: UIEdgeInsets.zero, font: UIFont.boldSystemFont(ofSize: 20.0), fontColor: UIColor.red, backgroundColor: UIColor.yellow, shadow: nil, autoHeightAdjust: false)
@@ -102,8 +102,10 @@ class ViewController: UIViewController {
 //        var tshirt = UIImage(named: "blue_tshirt.jpg")!
 //        tshirt = tshirt.filterColor(targetHue: 240.0/360.0, tolerance: 15.0/360.0)
         
+        var tshirt = UIImage(named: "blue_tshirt.jpg")!
+        let thumb = tshirt.createThumbnail(128)
         
-        imvAnimation.image = tshirt
+        imvAnimation.image = thumb
     }
 
 }
