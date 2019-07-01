@@ -848,7 +848,7 @@ extension UIImage {
             completionHandler(Array())
         }
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             
             let context = CIContext.init()
             let detectorOptions = [CIDetectorAccuracy:CIDetectorAccuracyHigh]
@@ -916,7 +916,7 @@ extension UIImage {
             completionHandler(Array())
         }
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             
             let context = CIContext.init()
             let detectorOptions = [CIDetectorAccuracy:CIDetectorAccuracyHigh]
@@ -1212,6 +1212,59 @@ extension UIImage {
         return finalImage ?? self
     }
     
+    /**
+     * Este método extrai da imagem as cores mais relevantes (conforme parâmetros).
+     *
+     * - Brief: Cria uma lista de cores após processamento da imagem.
+     * - Warning: Em imagens animadas somente o primeiro frame será considerado.
+     * - Parameter  withFlags: Parâmetros a serem utilizados na busca.
+     * - Parameter  avoidColor: Cor opcional que será ignorada na busca. É necessário que a cor possua todos os parâmetros RGA, por isso utilize `UIColor.init(red:green:blue:alpha:)`.
+     * - Parameter  count: Limita o resultado apenas para as cores mais relevantes.
+     * - Parameter  completionHandler: Bloco de código que será executado ao final do processamento.
+     * - Parameter  colors: Lista com as cores extraídas. A quantidade máxima pode ser limitada pelo parâmetro `count`.
+     */
+    public func extractColors(withFlags flags: [CCFlags], avoidColor: UIColor?, count: Int, completionHandler:@escaping (_ colors:[UIColor]) -> ()) -> Void {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let colorCube = CCColorCube()
+            var sortedMaxima = colorCube.findAndSortMaxima(inImage: self, flags: flags)
+            if let avoidColor = avoidColor {
+                sortedMaxima = colorCube.filter(maxima: sortedMaxima, tooCloseToColor: avoidColor)
+            }
+            sortedMaxima = colorCube.performAdaptiveDistinctFiltering(forMaxima: sortedMaxima, count: count)
+            let colors = colorCube.colors(fromMaxima: sortedMaxima)
+            //
+            DispatchQueue.main.async {
+                completionHandler(colors)
+            }
+        }
+    }
+    
+    /**
+     * Este método busca a cor de um pixel específico na imagem.
+     * - Warning: A imagem deve ter a propriedade 'cgImage' válida.
+     * - Parameter  atLocation: Posição do pixel que se deseja obter a informação de cor.
+     * - Returns: Cor do pixel, quando a posição na imagem for válida.
+     */
+    public func pixelColor(atLocation:CGPoint) -> UIColor? {
+        let boundRect = CGRect.init(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height)
+        if !boundRect.contains(atLocation) || self.cgImage == nil {
+            return nil
+        }
+        //
+        let pixelData = self.cgImage!.dataProvider!.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        
+        let pixelInfo: Int = ((Int(self.size.width) * Int(atLocation.y)) + Int(atLocation.x)) * 4
+        
+        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+        
+    }
+    
     //******************************************************************************************************
     //MARK: - PRIVATE FUNCTIONS (UTILS AND SUPPORT)
     //******************************************************************************************************
@@ -1453,7 +1506,7 @@ extension UIImage {
 
 //MARK: - COLOR CUBE - ORIGINAL CODE: https://github.com/YamiDaisuke/ColorCubeSwift
 
-private struct CCCubeCell {
+fileprivate struct CCCubeCell {
     var hitCount: Int = 0
     
     var redAcc: CGFloat = 0.0
@@ -1461,7 +1514,7 @@ private struct CCCubeCell {
     var blueAcc: CGFloat = 0.0
 }
 
-private enum CCFlags: OptionBits {
+public enum CCFlags: OptionBits {
     public typealias RawValue = UInt32
     
     // This ignores all pixels that are darker than a threshold
@@ -1488,7 +1541,7 @@ private enum CCFlags: OptionBits {
     case avoidBlack         = 64
 }
 
-private class CCLocalMaximum: NSObject {
+fileprivate class CCLocalMaximum: NSObject {
     
     // Hit count of the cell
     var hitCount: Int = 0
@@ -1505,7 +1558,7 @@ private class CCLocalMaximum: NSObject {
     var brightness: CGFloat = 0.0
 }
 
-private class CCColorCube: NSObject {
+fileprivate class CCColorCube: NSObject {
     
     // The cell resolution in each color dimension
     private static let COLOR_CUBE_RESOLUTION: Int = 30
@@ -1567,6 +1620,8 @@ private class CCColorCube: NSObject {
     ]
     
     private var cells: [CCCubeCell] = []
+    
+    
     
     // Extracts and returns dominant colors of the image (the array contains UIColor objects). Result might be empty.
     public func extractColors(fromImage image:UIImage, withFlags flags: [CCFlags] ) -> [UIColor] {
@@ -1642,7 +1697,7 @@ private class CCColorCube: NSObject {
     
     
     // Returns array of raw pixel data (needs to be freed)
-    private func rawPixelData(fromImage image: UIImage) -> (data: [CUnsignedChar], pixelCount: Int) {
+    fileprivate func rawPixelData(fromImage image: UIImage) -> (data: [CUnsignedChar], pixelCount: Int) {
         // Get cg image and its size
         let cgImage = image.cgImage
         
@@ -1674,7 +1729,7 @@ private class CCColorCube: NSObject {
     }
     
     // Resets all cells
-    private func clearCells() {
+    fileprivate func clearCells() {
         self.cells.removeAll()
         
         self.cells = [CCCubeCell](
@@ -1690,7 +1745,7 @@ private class CCColorCube: NSObject {
     }
     
     // Returns array of CCLocalMaximum objects
-    private func findLocalMaxima(inImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
+    fileprivate func findLocalMaxima(inImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
         self.clearCells()
         
         var raw = self.rawPixelData(fromImage: image)
@@ -1813,7 +1868,7 @@ private class CCColorCube: NSObject {
     }
     
     // Returns array of CCLocalMaximum objects
-    private func findAndSortMaxima(inImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
+    fileprivate func findAndSortMaxima(inImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
         
         // First get local maxima of image
         var sortedMaxima = self.findLocalMaxima(inImage: image, flags: flags)
@@ -1835,7 +1890,7 @@ private class CCColorCube: NSObject {
     }
     
     // Returns array of CCLocalMaximum objects
-    private func extractAndFilterMaxima(fromImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
+    fileprivate func extractAndFilterMaxima(fromImage image: UIImage, flags: [CCFlags]) -> [CCLocalMaximum] {
         // Get maxima
         var sortedMaxima = self.findAndSortMaxima(inImage: image, flags: flags)
         
@@ -1854,12 +1909,12 @@ private class CCColorCube: NSObject {
     }
     
     // Returns array of UIColor objects
-    private func colors(fromMaxima maxima: [CCLocalMaximum]) -> [UIColor] {
+    fileprivate func colors(fromMaxima maxima: [CCLocalMaximum]) -> [UIColor] {
         return maxima.map({UIColor(red: $0.red, green: $0.green, blue: $0.blue, alpha: 1) })
     }
     
     // Returns new array with only distinct maxima
-    private func filterDistinct(maxima: [CCLocalMaximum], threshold: CGFloat) -> [CCLocalMaximum] {
+    fileprivate func filterDistinct(maxima: [CCLocalMaximum], threshold: CGFloat) -> [CCLocalMaximum] {
         var filteredMaxima: [CCLocalMaximum] = [];
         
         // Check for each maximum
@@ -1903,7 +1958,7 @@ private class CCColorCube: NSObject {
     }
     
     // Removes maxima too close to specified color
-    private func filter(maxima: [CCLocalMaximum], tooCloseToColor color: UIColor) -> [CCLocalMaximum] {
+    fileprivate func filter(maxima: [CCLocalMaximum], tooCloseToColor color: UIColor) -> [CCLocalMaximum] {
         // Get color components
         let components = color.cgColor.components ?? []
         
@@ -1932,7 +1987,7 @@ private class CCColorCube: NSObject {
     }
     
     // Tries to get count distinct maxima
-    private func performAdaptiveDistinctFiltering(forMaxima maxima: [CCLocalMaximum], count: Int) -> [CCLocalMaximum] {
+    fileprivate func performAdaptiveDistinctFiltering(forMaxima maxima: [CCLocalMaximum], count: Int) -> [CCLocalMaximum] {
         
         var maxima = maxima
         
@@ -1968,12 +2023,12 @@ private class CCColorCube: NSObject {
     }
     
     // Orders maxima by brightness
-    private func orderByBrightness(maxima: [CCLocalMaximum]) -> [CCLocalMaximum] {
+    fileprivate func orderByBrightness(maxima: [CCLocalMaximum]) -> [CCLocalMaximum] {
         return maxima.sorted(by: { $0.brightness > $1.brightness })
     }
     
     // Orders maxima by darkness
-    private func orderByDarkness(maxima: [CCLocalMaximum]) -> [CCLocalMaximum] {
+    fileprivate func orderByDarkness(maxima: [CCLocalMaximum]) -> [CCLocalMaximum] {
         return maxima.sorted(by: { $0.brightness < $1.brightness })
     }
 }

@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var imvAnimation:UIImageView!
+    //
+    @IBOutlet weak var lbl1:UILabel!
+    @IBOutlet weak var lbl2:UILabel!
+    @IBOutlet weak var lbl3:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,12 +109,41 @@ class ViewController: UIViewController {
 //        var tshirt = UIImage(named: "blue_tshirt.jpg")!
 //        let thumb = tshirt.createThumbnail(128)
         
-        var tshirt = UIImage(named: "blue_tshirt.jpg")!
-        let img1 = tshirt.monochromaticBWImage(intensity: .normal)
-        let img2 = tshirt.monochromaticBWImage(intensity: .low)
-        let img3 = tshirt.monochromaticBWImage(intensity: .high)
+//        var tshirt = UIImage(named: "blue_tshirt.jpg")!
+//        let img1 = tshirt.monochromaticBWImage(intensity: .normal)
+//        let img2 = tshirt.monochromaticBWImage(intensity: .low)
+//        let img3 = tshirt.monochromaticBWImage(intensity: .high)
         
-        imvAnimation.image = img1
+//        var img1 = UIImage(named: "color1.jpg")!
+//        var img2 = UIImage(named: "color2.jpg")!
+//        //
+//        img1.extractColors(withFlags: [.onlyBrightColors], avoidColor: UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), count: 3) { colors in
+//            print("\(colors.count)")
+//        }
+//        //
+//        img2.extractColors(withFlags: [.onlyDistinctColors], avoidColor: UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), count: 3) { colors in
+//            print("\(colors.count)")
+//        }
+        
+//        let pxColor = staticImg.pixelColor(atLocation: CGPoint.init(x: 100.0, y: 100.0))
+        
+        let imageToExtractColors = UIImage(named: "color1.jpg")!
+        imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
+            if colors.count > 0 {
+                self.view.backgroundColor = colors[0]
+            }
+            if colors.count > 1 {
+                self.lbl1.textColor = colors[1]
+            }
+            if colors.count > 2 {
+                self.lbl2.textColor = colors[2]
+            }
+            if colors.count > 3 {
+                self.lbl3.textColor = colors[3]
+            }
+        }
+        
+        imvAnimation.image = imageToExtractColors
     }
 
 }
