@@ -144,6 +144,7 @@ class ViewController: UIViewController {
         }
         
         imvAnimation.image = imageToExtractColors
+       
     }
 
 }

@@ -62,7 +62,7 @@ extension UIColor {
         let b = B < 0 ? 0 : (B > 255 ? 255 : B)
         let a = A < 0 ? 0 : (A > 255 ? 255 : A)
         //
-        return UIColor.init(red: CGFloat(r/255), green: CGFloat(g/255), blue: CGFloat(b/255), alpha: CGFloat(a/255))
+        return UIColor.init(red: CGFloat(Double(r)/255.0), green: CGFloat(Double(g)/255), blue: CGFloat(Double(b)/255.0), alpha: CGFloat(Double(a)/255.0))
     }
     
     /** Cria uma nova cor (UIColor) utilizando o valor hexa parâmetro. */
@@ -116,6 +116,13 @@ extension UIColor {
         return UIColor.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     
+    class func random() -> UIColor {
+        let red = Int.random(min: 0, max: 255)
+        let green = Int.random(min: 0, max: 255)
+        let blue = Int.random(min: 0, max: 255)
+        return UIColor.RGBA(red, green, blue, 255)
+    }
+    
     private class func colorComponent(fromText:String, start:Int, length:Int) -> CGFloat {
         let substring = fromText.substring(from: start, length: length)
         let fullHex = length == 2 ? substring : String.init(format: "%@%@", substring, substring)
@@ -144,6 +151,22 @@ extension UIColor {
         //
         return colorC
         
+    }
+    
+    func lighten(by percentage: CGFloat = 0.2) -> UIColor {
+        let cc = self.components()
+        return UIColor.RGBA(min(cc.red + percentage, 1.0),
+                            min(cc.green + percentage, 1.0),
+                            min(cc.blue + percentage, 1.0),
+                            cc.alpha)
+    }
+    
+    func darken(by percentage: CGFloat = 0.2) -> UIColor {
+        let cc = self.components()
+        return UIColor.RGBA(max(cc.red - percentage, 0.0),
+                            max(cc.green - percentage, 0.0),
+                            max(cc.blue - percentage, 0.0),
+                            cc.alpha)
     }
 
 }

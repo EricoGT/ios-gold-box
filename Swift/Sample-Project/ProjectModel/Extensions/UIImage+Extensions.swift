@@ -1131,7 +1131,6 @@ extension UIImage {
         return self
     }
     
-    
     //******************************************************************************************************
     //MARK: - INFO
     //******************************************************************************************************
@@ -1561,8 +1560,8 @@ fileprivate class CCLocalMaximum: NSObject {
 fileprivate class CCColorCube: NSObject {
     
     // The cell resolution in each color dimension
-    private static let COLOR_CUBE_RESOLUTION: Int = 30
-    private static let COLOR_CUBE_RESOLUTION_GCFLOAT: CGFloat = 30
+    private static let COLOR_CUBE_RESOLUTION: Int = 32 //30
+    private static let COLOR_CUBE_RESOLUTION_GCFLOAT: CGFloat = 32 //30
     
     // Threshold used to filter bright colors
     private static let BRIGHT_COLOR_THRESHOLD: CGFloat = 0.6
