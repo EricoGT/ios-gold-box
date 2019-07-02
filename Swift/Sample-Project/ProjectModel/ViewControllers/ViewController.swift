@@ -15,10 +15,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbl1:UILabel!
     @IBOutlet weak var lbl2:UILabel!
     @IBOutlet weak var lbl3:UILabel!
+    //
+    var bubble:UIBubbleView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let imv:UIImageView = UIImageView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
+        imv.contentMode = .scaleAspectFit
+        imv.backgroundColor = UIColor.blue
+        imv.image = UIImage.init(named: "fish.jpg")!
+        imv.layer.cornerRadius = 5.0
+        
+        bubble = UIBubbleView.init()
+        bubble?.setBubbleContent(view: imv)
+        bubble?.center = self.view.center
+        //
+        bubble?.setBubbleCorner(corners: .allCorners, radius: CGSize.init(width: 10.0, height: 10.0))
+        bubble?.setInternalMargin(insets: UIEdgeInsets.init(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0))
+        
+       
+        
+        
+        self.view.addSubview(bubble!)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -144,7 +165,52 @@ class ViewController: UIViewController {
         }
         
         imvAnimation.image = imageToExtractColors
-       
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: bubble)
+        //
+        if (bubble!.frame.contains((touch?.location(in: self.view))!)){
+            bubble!.tag = 1
+        }else{
+            bubble?.setLinkTarget(point)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: bubble)
+        //
+        if bubble!.tag == 1 {
+            bubble!.setPosition(touch!.location(in: self.view))
+        }else{
+            bubble?.setLinkTarget(point)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: bubble)
+        //
+        if bubble!.tag == 1 {
+            bubble!.tag = 0
+            bubble!.setPosition(touch!.location(in: self.view))
+        } else {
+            bubble?.setLinkTarget(point)
+        }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: bubble)
+        //
+        if bubble!.tag == 1 {
+            bubble!.tag = 0
+            bubble!.setPosition(touch!.location(in: self.view))
+        } else {
+            bubble?.setLinkTarget(point)
+        }
     }
 
 }
