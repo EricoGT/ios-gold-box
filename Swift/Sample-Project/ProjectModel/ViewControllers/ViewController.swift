@@ -28,16 +28,9 @@ class ViewController: UIViewController {
         imv.image = UIImage.init(named: "fish.jpg")!
         imv.layer.cornerRadius = 5.0
         
-        bubble = UIBubbleView.init()
+        bubble = UIBubbleView.defaultBubble()
         bubble?.setBubbleContent(view: imv)
-        bubble?.center = self.view.center
-        //
-        bubble?.setBubbleCorner(corners: .allCorners, radius: CGSize.init(width: 10.0, height: 10.0))
-        bubble?.setInternalMargin(insets: UIEdgeInsets.init(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0))
-        
-       
-        
-        
+        bubble?.setPosition(center: self.view.center)
         self.view.addSubview(bubble!)
         
     }
@@ -183,7 +176,7 @@ class ViewController: UIViewController {
         let point = touch?.location(in: bubble)
         //
         if bubble!.tag == 1 {
-            bubble!.setPosition(touch!.location(in: self.view))
+            bubble!.setPosition(center:touch!.location(in: self.view))
         }else{
             bubble?.setLinkTarget(point)
         }
@@ -195,7 +188,7 @@ class ViewController: UIViewController {
         //
         if bubble!.tag == 1 {
             bubble!.tag = 0
-            bubble!.setPosition(touch!.location(in: self.view))
+            bubble!.setPosition(center:touch!.location(in: self.view))
         } else {
             bubble?.setLinkTarget(point)
         }
@@ -207,7 +200,7 @@ class ViewController: UIViewController {
         //
         if bubble!.tag == 1 {
             bubble!.tag = 0
-            bubble!.setPosition(touch!.location(in: self.view))
+            bubble!.setPosition(center:touch!.location(in: self.view))
         } else {
             bubble?.setLinkTarget(point)
         }

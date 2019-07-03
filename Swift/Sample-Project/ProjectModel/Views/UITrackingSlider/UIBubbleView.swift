@@ -11,7 +11,7 @@ import UIKit
 
 class UIBubbleView : UIView {
     
-    //MARK: Properties
+    //MARK: PROPERTIES
     
     //content
     private weak var contentView:UIView? = nil
@@ -23,12 +23,12 @@ class UIBubbleView : UIView {
     private var cornerType:UIRectCorner = .allCorners
     private var cornerRadius:CGSize = .zero
     //target
-    private var targetPoint:CGPoint? = .zero
+    private var targetPoint:CGPoint? = nil
     //background
     private var bubbleColor:UIColor = UIColor.white
     private var shapeLayer:CAShapeLayer = CAShapeLayer.init()
     
-    //MARK: - INITIALIZERS:
+    //MARK: - INITIALIZERS
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,12 +40,41 @@ class UIBubbleView : UIView {
         self.updateLink()
     }
     
+    public class func defaultBubble() -> UIBubbleView {
+        
+        let bubble:UIBubbleView = UIBubbleView.init()
+        bubble.frame = CGRect.init(x: 0.0, y: 0.0, width: 80.0, height: 80.0)
+        bubble.setBubbleCorner(corners: .allCorners, radius: CGSize.init(width: 10.0, height: 10.0))
+        bubble.setInternalMargin(insets: UIEdgeInsets.init(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0))
+        bubble.setBubbleBackground(color: UIColor.groupTableViewBackground)
+        bubble.applyShadow(color: UIColor.black, offset: CGSize.init(width: 3.0, height: 3.0), radius: 3.0, opacity: 0.5)
+        //
+        return bubble
+    }
+    
+    //MARK: OVERRIDES
+    
+    override var backgroundColor: UIColor? {
+        
+        willSet {
+            if let color = newValue {
+                self.setBubbleBackground(color: color)
+            }
+            //
+            self.backgroundColor = UIColor.clear
+        }
+    }
+    
+    //MARK: PRIVATE
+    
     private func updateLink() -> Void {
         
-        
+        //TODO: aditional code here...
         
         updateShapeLayer()
     }
+    
+    //MARK: PUBLIC METHIDS
     
     public func show(animated:Bool) -> Void {
         if animated {
@@ -67,6 +96,24 @@ class UIBubbleView : UIView {
         }
     }
     
+    public func applyShadow(color:UIColor, offset:CGSize, radius:CGFloat, opacity: Float) -> Void {
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    public func removeShadow() -> Void {
+        self.layer.shadowColor = nil
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 0.0
+        self.layer.shadowOpacity = 0.0
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
     public func setBubbleContent(view contentView:UIView) -> Void {
         
         if let actualContent = self.contentView {
@@ -81,10 +128,23 @@ class UIBubbleView : UIView {
         self.frame = CGRect.init(x: self.bounds.origin.x, y: self.bounds.origin.y, width: self.contentView!.bounds.size.width + internalMargin.left + internalMargin.right, height: self.contentView!.bounds.size.height + internalMargin.top + internalMargin.bottom)
     }
     
-    public func setBubbleBackground(color:UIColor, animated:Bool) -> Void {
+    public func setBubbleBackground(color:UIColor) -> Void {
         self.bubbleColor = color//
-        //TODO:
+        //
         updateLink()
+    }
+    
+    public func animateToColor(color:UIColor) -> Void {
+        if let lArray = self.layer.sublayers {
+            for layer in lArray {
+                if layer is CAShapeLayer {
+                    self.animateFill(layer: layer, fromColor: self.bubbleColor, toColor: color)
+                }
+                
+            }
+        }
+        //
+        //self.bubbleColor = color
     }
     
     public func setLinkTarget(_ target:CGPoint?) -> Void {
@@ -112,23 +172,21 @@ class UIBubbleView : UIView {
         self.updateShapeLayer()
     }
     
-    public func setPosition(_ newPosition:CGPoint) -> Void {
-        
+    public func setPosition(center:CGPoint) -> Void {
         if let target = targetPoint {
-            let deltaX = self.center.x - newPosition.x
-            let deltaY = self.center.y - newPosition.y
-            self.center = newPosition
+            let deltaX = self.center.x - center.x
+            let deltaY = self.center.y - center.y
             self.targetPoint = CGPoint.init(x: target.x + deltaX, y: target.y + deltaY)
-        } else {
-            self.center = newPosition
         }
+        //
+        self.center = center
         //
         updateLink()
     }
     
     private func updateShapeLayer() -> Void {
         
-        self.backgroundColor = UIColor.clear
+        //self.backgroundColor = UIColor.clear
         
         //FINAL LAYER
         let layer:CAShapeLayer = CAShapeLayer.init()
@@ -191,6 +249,7 @@ class UIBubbleView : UIView {
         shapeLayer.removeFromSuperlayer()
         
         shapeLayer = layer
+        
         self.layer.insertSublayer(shapeLayer, at: 0)
     }
     
@@ -206,6 +265,16 @@ class UIBubbleView : UIView {
         let xDist = a.x - b.x
         let yDist = a.y - b.y
         return CGFloat(sqrt(xDist * xDist + yDist * yDist))
+    }
+    
+    private func animateFill(layer:CALayer, fromColor:UIColor, toColor:UIColor) -> Void {
+        let animcolor = CABasicAnimation(keyPath: "fillColor")
+        animcolor.fromValue = fromColor.cgColor
+        animcolor.toValue = toColor.cgColor
+        animcolor.duration = 0.3;
+        animcolor.repeatCount = 0;
+        animcolor.autoreverses = false
+        layer.add(animcolor, forKey: "fillColorAnimation")
     }
     
 }
