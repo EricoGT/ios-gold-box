@@ -134,19 +134,6 @@ class UIBubbleView : UIView {
         updateLink()
     }
     
-    public func animateToColor(color:UIColor) -> Void {
-        if let lArray = self.layer.sublayers {
-            for layer in lArray {
-                if layer is CAShapeLayer {
-                    self.animateFill(layer: layer, fromColor: self.bubbleColor, toColor: color)
-                }
-                
-            }
-        }
-        //
-        //self.bubbleColor = color
-    }
-    
     public func setLinkTarget(_ target:CGPoint?) -> Void {
         self.targetPoint = target
         //
@@ -185,8 +172,6 @@ class UIBubbleView : UIView {
     }
     
     private func updateShapeLayer() -> Void {
-        
-        //self.backgroundColor = UIColor.clear
         
         //FINAL LAYER
         let layer:CAShapeLayer = CAShapeLayer.init()

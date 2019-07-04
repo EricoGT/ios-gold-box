@@ -66,18 +66,18 @@
             </objects>
             <point key="canvasLocation" x="1314" y="-744"/>
         </scene>
-        <!--ViewController-->
+        <!--SampleViewController-->
         <scene sceneID="wLV-vg-IBi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="ViewController" id="fNs-4b-kIq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SampleViewController" id="fNs-4b-kIq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1k-8Y-DH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2016" y="-872"/>
         </scene>
-        <!--ViewController-->
+        <!--SampleViewController-->
         <scene sceneID="jyF-ql-z4U">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="ViewController" id="u5E-wc-jBl" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SampleViewController" id="u5E-wc-jBl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRZ-NO-D8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2016" y="-631"/>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F40713B22C23293008181F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40713A22C23293008181F8 /* AppDelegate.swift */; };
-		2F40713D22C23293008181F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40713C22C23293008181F8 /* ViewController.swift */; };
 		2F40714022C23293008181F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40713E22C23293008181F8 /* Main.storyboard */; };
 		2F40714222C23294008181F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F40714122C23294008181F8 /* Assets.xcassets */; };
 		2F40714522C23294008181F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F40714322C23294008181F8 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,7 @@
 		2FCAFC1E22C552F700A5E37A /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCAFC1D22C552F700A5E37A /* SampleDataSource.swift */; };
 		2FD5B1A222CB76F100B3C1D4 /* UIBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5B1A122CB76F100B3C1D4 /* UIBubbleView.swift */; };
 		2FD8993322C6500500C193FE /* Random+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993222C6500500C193FE /* Random+Extensions.swift */; };
-		2FD8993622C67CEC00C193FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993522C67CEC00C193FE /* ViewModel.swift */; };
+		2FD8993622C67CEC00C193FE /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993522C67CEC00C193FE /* SampleViewModel.swift */; };
 		2FD8993822C67EB500C193FE /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993722C67EB500C193FE /* SampleViewController.swift */; };
 		2FD8993A22C684AE00C193FE /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ModelViewController.swift */; };
 		380864EE4A36926CB3A468E6 /* Pods_ProjectModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F566CFA5F64808EB9556232D /* Pods_ProjectModel.framework */; };
@@ -51,7 +50,6 @@
 /* Begin PBXFileReference section */
 		2F40713722C23293008181F8 /* ProjectModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F40713A22C23293008181F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F40713C22C23293008181F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F40713F22C23293008181F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F40714122C23294008181F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F40714422C23294008181F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,7 +84,7 @@
 		2FCAFC1D22C552F700A5E37A /* SampleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
 		2FD5B1A122CB76F100B3C1D4 /* UIBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBubbleView.swift; sourceTree = "<group>"; };
 		2FD8993222C6500500C193FE /* Random+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random+Extensions.swift"; sourceTree = "<group>"; };
-		2FD8993522C67CEC00C193FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2FD8993522C67CEC00C193FE /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		2FD8993722C67EB500C193FE /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		2FD8993922C684AE00C193FE /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		F16BDC48B40EDCE70D47B471 /* Pods-ProjectModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectModel.debug.xcconfig"; path = "Target Support Files/Pods-ProjectModel/Pods-ProjectModel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,9 +165,10 @@
 		2F40715022C23445008181F8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F86EAE322CE251F009564CD /* Base */,
 				2F40716422C23A0B008181F8 /* AppStartViewController.swift */,
 				2F40716322C23A0B008181F8 /* TestFluxVC.swift */,
-				2F40713C22C23293008181F8 /* ViewController.swift */,
+				2FD8993722C67EB500C193FE /* SampleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,9 +184,7 @@
 		2F40715222C23457008181F8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2FD8993522C67CEC00C193FE /* ViewModel.swift */,
-				2FD8993722C67EB500C193FE /* SampleViewController.swift */,
-				2FD8993922C684AE00C193FE /* ModelViewController.swift */,
+				2FD8993522C67CEC00C193FE /* SampleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +296,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		2F86EAE322CE251F009564CD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2FD8993922C684AE00C193FE /* ModelViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		2FCA1B6522CA79FC00D12415 /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,17 +315,17 @@
 		2FD5B19F22CB76AA00B3C1D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2FD5B1A022CB76B700B3C1D4 /* UITrackingSlider */,
+				2FD5B1A022CB76B700B3C1D4 /* UIBubbleView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2FD5B1A022CB76B700B3C1D4 /* UITrackingSlider */ = {
+		2FD5B1A022CB76B700B3C1D4 /* UIBubbleView */ = {
 			isa = PBXGroup;
 			children = (
 				2FD5B1A122CB76F100B3C1D4 /* UIBubbleView.swift */,
 			);
-			path = UITrackingSlider;
+			path = UIBubbleView;
 			sourceTree = "<group>";
 		};
 		2FD8993422C67CD400C193FE /* Protocols */ = {
@@ -477,13 +482,12 @@
 				2F40716022C238BC008181F8 /* NSPointerArray+Extensions.swift in Sources */,
 				2F40717222C26FE8008181F8 /* String+Extensions.swift in Sources */,
 				2F40714E22C233B1008181F8 /* App.swift in Sources */,
-				2F40713D22C23293008181F8 /* ViewController.swift in Sources */,
 				2F40717022C26852008181F8 /* UIImage+Extensions.swift in Sources */,
 				2FD5B1A222CB76F100B3C1D4 /* UIBubbleView.swift in Sources */,
 				2F40715E22C23818008181F8 /* UIViewController+Extensions.swift in Sources */,
 				2FCA1B6422CA56CD00D12415 /* Palette.swift in Sources */,
 				2F40716522C23A0B008181F8 /* TestFluxVC.swift in Sources */,
-				2FD8993622C67CEC00C193FE /* ViewModel.swift in Sources */,
+				2FD8993622C67CEC00C193FE /* SampleViewModel.swift in Sources */,
 				2FCA1B6722CA7A3200D12415 /* SwiftDocumentation.swift in Sources */,
 				2FD8993A22C684AE00C193FE /* ModelViewController.swift in Sources */,
 				2F40716822C24115008181F8 /* User.swift in Sources */,
