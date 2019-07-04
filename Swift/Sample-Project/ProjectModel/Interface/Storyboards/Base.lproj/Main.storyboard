@@ -51,13 +51,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fud-ZY-2yo">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ERt-1X-DhJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7T-4v-RyV" secondAttribute="trailing" id="04X-vl-MOE"/>
                             <constraint firstItem="r5D-bA-8T1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="110-zS-zHA"/>
                             <constraint firstItem="B7T-4v-RyV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aaa-2S-S8T"/>
+                            <constraint firstItem="Fud-ZY-2yo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C8q-DP-OAH"/>
                             <constraint firstItem="r5D-bA-8T1" firstAttribute="top" secondItem="st3-zw-9oL" secondAttribute="bottom" id="IOh-yk-46k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fud-ZY-2yo" secondAttribute="trailing" id="OK8-oc-qmB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lhl-bf-duS" secondAttribute="trailing" id="VHC-pc-dL6"/>
                             <constraint firstItem="r5D-bA-8T1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cKu-qj-4Eb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="st3-zw-9oL" secondAttribute="trailing" id="fF2-fO-e4H"/>
@@ -66,6 +78,7 @@
                             <constraint firstItem="r5D-bA-8T1" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kGE-DH-YZ9"/>
                             <constraint firstItem="B7T-4v-RyV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kcM-zJ-IEf"/>
                             <constraint firstItem="lhl-bf-duS" firstAttribute="top" secondItem="r5D-bA-8T1" secondAttribute="bottom" id="syU-jC-Jcf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fud-ZY-2yo" secondAttribute="bottom" id="yIu-7c-uX2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,6 +87,7 @@
                         <outlet property="lbl1" destination="B7T-4v-RyV" id="xTp-O4-LCf"/>
                         <outlet property="lbl2" destination="st3-zw-9oL" id="MJb-6c-jzC"/>
                         <outlet property="lbl3" destination="lhl-bf-duS" id="Pun-S1-aRj"/>
+                        <outlet property="lbl4" destination="Fud-ZY-2yo" id="4um-bf-BwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

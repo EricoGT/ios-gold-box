@@ -28,8 +28,10 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
     @IBOutlet weak var lbl1:UILabel!
     @IBOutlet weak var lbl2:UILabel!
     @IBOutlet weak var lbl3:UILabel!
+    @IBOutlet weak var lbl4:UILabel!
     //
     var bubble:UIBubbleView?
+    var textComposer = TextComposer()
     
     //MARK: - • PRIVATE PROPERTIES
     
@@ -176,7 +178,7 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         
         //        let pxColor = staticImg.pixelColor(atLocation: CGPoint.init(x: 100.0, y: 100.0))
         
-        let imageToExtractColors = UIImage(named: "color1.jpg")!
+        let imageToExtractColors = UIImage(named: "faces1.jpg")!
         imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
             if colors.count > 0 {
                 self.view.backgroundColor = colors[0]
@@ -193,6 +195,44 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         }
         
         imvAnimation.image = imageToExtractColors
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var attribute1 = Dictionary<NSAttributedString.Key, Any>()
+        attribute1[NSAttributedString.Key.font] = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        attribute1[NSAttributedString.Key.foregroundColor] = UIColor.red
+        
+        var attribute2 = Dictionary<NSAttributedString.Key, Any>()
+        attribute2[NSAttributedString.Key.font] = UIFont.boldSystemFont(ofSize: 18.0)
+        attribute2[NSAttributedString.Key.foregroundColor] = UIColor.blue
+        
+        var attribute3 = Dictionary<NSAttributedString.Key, Any>()
+        attribute3[.font] = UIFont.italicSystemFont(ofSize: 15.0)
+        attribute3[NSAttributedString.Key.foregroundColor] = UIColor.green
+        
+        var attribute4 = Dictionary<NSAttributedString.Key, Any>()
+        let attachment:NSTextAttachment = NSTextAttachment()
+        attachment.image = UIImage.init(named: "fish.jpg")!
+        attachment.bounds = CGRect.init(x: 0.0, y: 0.0, width: (UIFont.systemFontSize * (attachment.image!.size.width / attachment.image!.size.height)), height: UIFont.systemFontSize)
+        attribute4[.attachment] = attachment
+        
+        textComposer.register(style: attribute1, withName: TextComposer.normal)
+        textComposer.register(style: attribute2, withName: TextComposer.bold)
+        textComposer.register(style: attribute3, withName: TextComposer.italic)
+        textComposer.register(style: attribute4, withName: TextComposer.attachment)
+        
+        textComposer.append(text: "Teste de ", styleIdentifier: TextComposer.normal)
+        textComposer.append(text: "TEXTO ATRIBUIDO ", styleIdentifier: TextComposer.bold)
+        textComposer.append(text: "para componente ", styleIdentifier: TextComposer.normal)
+        textComposer.append(text: "personalizado!  ", styleIdentifier: TextComposer.italic)
+        //
+        textComposer.append(attachment: attachment, styleIdentifier: TextComposer.attachment)
+        
+        lbl4.attributedText = textComposer.attributedString()
+        
+        
     }
     
     //Super Methods
