@@ -66,6 +66,11 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         bubble?.setBubbleContent(view: imv)
         bubble?.setPosition(center: self.view.center)
         self.view.addSubview(bubble!)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(actionTakePhoto(sender:)))
+        self.navigationItem.hidesBackButton = true
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -327,6 +332,9 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
     
     //MARK: - • ACTION METHODS
     
+    @IBAction func actionTakePhoto(sender:Any?) -> Void {
+        self.segue(to: "SegueToPhoto", backButtonTitle: "Voltar")
+    }
     
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
