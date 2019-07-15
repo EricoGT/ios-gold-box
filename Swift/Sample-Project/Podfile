@@ -1,9 +1,17 @@
 platform :ios, “11.0”
 use_frameworks!
 
-target 'ProjectModel' do
- 
+def used_pods
+
 pod 'Alamofire', '~> 4.0'
 pod 'Kingfisher', '~> 4.0'
 
+end
+ 
+target 'ProjectModel' do
+    used_pods
+end
+
+target 'ProjectModelTests' do
+    used_pods
 end

@@ -81,7 +81,7 @@ class TextComposer {
         }
     }
     
-    /// Remove um bloco de texto na posição esppcificada.
+    /// Remove um bloco de texto na posição especificada.
     func removeText(at:Int) -> Void {
         if at < self.textList.count {
             textList.remove(at: at)

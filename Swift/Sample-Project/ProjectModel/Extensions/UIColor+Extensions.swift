@@ -97,8 +97,8 @@ extension UIColor {
         case 6: // #RRGGBB
             alpha = 1.0
             red   = self.colorComponent(fromText: colorString, start: 0, length: 2)
-            green = self.colorComponent(fromText: colorString, start: 4, length: 2)
-            blue  = self.colorComponent(fromText: colorString, start: 6, length: 2)
+            green = self.colorComponent(fromText: colorString, start: 2, length: 2)
+            blue  = self.colorComponent(fromText: colorString, start: 4, length: 2)
             
         case 8: // #AARRGGBB
             alpha = self.colorComponent(fromText: colorString, start: 0, length: 2)
