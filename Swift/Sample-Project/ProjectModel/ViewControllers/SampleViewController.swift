@@ -183,23 +183,35 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         
         //        let pxColor = staticImg.pixelColor(atLocation: CGPoint.init(x: 100.0, y: 100.0))
         
-        let imageToExtractColors = UIImage(named: "faces1.jpg")!
-        imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
-            if colors.count > 0 {
-                self.view.backgroundColor = colors[0]
+        let face = UIImage(named: "face.jpg")!
+        let base64 = face.encodeToBase64String()
+        face.detectFacesImages { (detectedFaces:[UIImage]) in
+            var faces:[UIImage] = Array()
+            for face in detectedFaces {
+                let newFace = face.resizedImageToSize(detectedFaces[0].size)
+                faces.append(newFace)
             }
-            if colors.count > 1 {
-                self.lbl1.textColor = colors[1]
-            }
-            if colors.count > 2 {
-                self.lbl2.textColor = colors[2]
-            }
-            if colors.count > 3 {
-                self.lbl3.textColor = colors[3]
-            }
+            let gif = UIImage.animatedImage(with: faces, duration: 10.0)
+            self.imvAnimation.image = gif
         }
         
-        imvAnimation.image = imageToExtractColors
+//        let imageToExtractColors = UIImage(named: "faces1.jpg")!
+//        imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
+//            if colors.count > 0 {
+//                self.view.backgroundColor = colors[0]
+//            }
+//            if colors.count > 1 {
+//                self.lbl1.textColor = colors[1]
+//            }
+//            if colors.count > 2 {
+//                self.lbl2.textColor = colors[2]
+//            }
+//            if colors.count > 3 {
+//                self.lbl3.textColor = colors[3]
+//            }
+//        }
+//
+//        imvAnimation.image = imageToExtractColors
     }
     
     override func viewDidAppear(_ animated: Bool) {

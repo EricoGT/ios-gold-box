@@ -39,7 +39,7 @@ extension UIImage {
             return nil
         }
         //
-        if let data:Data = self.pngData() {
+        if let data:Data = self.jpegData(compressionQuality: 1.0) { //self.pngData() {
             return data.base64EncodedString(options: .endLineWithLineFeed)
         }
         return nil
