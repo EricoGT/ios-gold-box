@@ -427,22 +427,26 @@ extension UIImage {
     /** Cria uma nova imagem baseado na imagem original, mantendo o aspecto original. O parâmetro 'frameSize' deve ser dado em points, conforme tamanho do componente (ex.: UIImageView.frame.size). Utilize 'bounds' do componente para transformações, quando necessário. */
     func resizedImageToFrameSize(_ frameSize:CGSize) -> UIImage {
         
-        var width = self.size.width
-        var height = self.size.height
+        let width = self.size.width
+        let height = self.size.height
         let ratio = width / height
+        
         let scale = UIScreen.main.nativeScale
-        let maxWidth = frameSize.width * scale
-        let maxHeight = frameSize.height * scale
-        //
-        if width > maxWidth {
-            width = maxWidth
-            height = width / ratio
-        } else if height > maxHeight {
-            height = maxHeight
-            width = height * ratio
+        let frameWidth = frameSize.width * scale
+        let frameHeight = frameSize.height * scale
+        let frameRatio = frameWidth / frameHeight
+        
+        //Inicia-se supondo que a imagem usa left/right
+        var idealWidth:CGFloat = frameWidth
+        var idealHeight:CGFloat = idealWidth / ratio
+        
+        //Caso contrário a imagem usa top/bottom
+        if ratio < frameRatio {
+            idealHeight = frameHeight
+            idealWidth = idealHeight * ratio
         }
-        //
-        let newSize = CGSize.init(width: width, height: height)
+        
+        let newSize = CGSize.init(width: idealWidth, height: idealHeight)
         return self.resizedImageToSize(newSize)
     }
     
