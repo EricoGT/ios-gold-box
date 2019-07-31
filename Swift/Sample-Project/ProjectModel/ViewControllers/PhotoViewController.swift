@@ -24,6 +24,7 @@ class PhotoViewController: ModelViewController, UINavigationControllerDelegate, 
     
     //MARK: - • PUBLIC PROPERTIES
 
+    @IBOutlet weak var switcher: UISwitch!
     @IBOutlet weak var imvPhoto: UIImageView!
     @IBOutlet weak var btnPhoto: UIButton!
     
@@ -72,6 +73,15 @@ class PhotoViewController: ModelViewController, UINavigationControllerDelegate, 
         super.defaultSetup("Photo")
         //
         //Custom setup here...
+        
+//        let tap = UITapGestureRecognizer.init(target: self, action: #selector(actionTap(sender:)))
+//        tap.numberOfTapsRequired = 1
+//        tap.numberOfTouchesRequired = 1
+//        imvPhoto.addGestureRecognizer(tap)
+//        imvPhoto.isUserInteractionEnabled = true
+//        imvPhoto.backgroundColor = UIColor.lightGray
+        
+        switcher.isOn = false
     }
     
     override func loadContent() {
@@ -163,6 +173,18 @@ class PhotoViewController: ModelViewController, UINavigationControllerDelegate, 
         }
     }
     
+    @IBAction func actionChangeColor(sender: UISwitch) -> Void {
+    
+        let point = imvPhoto.convert(sender.center, from: self.view)
+        if sender.isOn {
+            self.applyRippleEffect(inView: imvPhoto, innerPoint: point, duration: 1.0, color: UIColor.green)
+        } else {
+            self.applyRippleEffect(inView: imvPhoto, innerPoint: point, duration: 1.0, color: UIColor.white)
+        }
+        
+        
+    }
+    
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
     private func openCamera() -> Void {
@@ -246,8 +268,65 @@ class PhotoViewController: ModelViewController, UINavigationControllerDelegate, 
         return overlayView
     }
     
+    @objc private func actionTap(sender: UITapGestureRecognizer) -> Void {
+        let point = sender.location(in: sender.view)
+        print(point)
+        //
+        self.applyRippleEffect(inView: sender.view!, innerPoint: point, duration:0.3, color: UIColor.random())
+    }
     
+    private func applyRippleEffect(inView:UIView, innerPoint:CGPoint, duration: CFTimeInterval, color:UIColor?) -> Void {
+        
+        //top left:
+        let d1 = hypot(innerPoint.x, innerPoint.y)
+        //top right:
+        let d2 = hypot(innerPoint.x - (inView.frame.size.width), innerPoint.y)
+        //bottom left:
+        let d3 = hypot(innerPoint.x, innerPoint.y - (inView.frame.size.height))
+        //bottom  right:
+        let d4 = hypot(innerPoint.x - (inView.frame.size.width), innerPoint.y - (inView.frame.size.height))
+        
+        let radius = max( max(d1, d2) , max(d3, d4)) + 1.0
+        let circularRect = CGRect.init(x: innerPoint.x - radius, y: innerPoint.y - radius, width: radius * 2.0, height: radius * 2.0)
+        
+        let startPath:UIBezierPath = UIBezierPath.init(roundedRect: CGRect.init(x: innerPoint.x, y: innerPoint.y, width: 1.0, height: 1.0), cornerRadius: 1)
+        let endPath:UIBezierPath = UIBezierPath.init(roundedRect: circularRect, cornerRadius: radius)
+        
+        let circleShape:CAShapeLayer = CAShapeLayer.init()
+        circleShape.path = startPath.cgPath
+        circleShape.fillColor = color?.cgColor ?? UIColor.white.cgColor
+        inView.layer.addSublayer(circleShape)
+        
+        // Begin the transaction
+        CATransaction.begin()
+        
+        let animation = CABasicAnimation.init(keyPath: "path")
+        animation.delegate = self
+        animation.fromValue = startPath.cgPath
+        animation.toValue = endPath.cgPath
+        animation.duration = duration
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = .forwards
+        animation.timingFunction = CAMediaTimingFunction.init(name: .easeInEaseOut)
     
+        // Callback function
+        CATransaction.setCompletionBlock {
+            inView.backgroundColor = color
+            circleShape.removeFromSuperlayer()
+        }
+        
+        // Do the actual animation and commit the transaction
+        circleShape.add(animation, forKey: "rippleAnimation")
+        CATransaction.commit()
+        
+    }
     
+}
+
+extension PhotoViewController: CAAnimationDelegate {
+ 
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+    }
     
 }

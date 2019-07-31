@@ -10,6 +10,7 @@
 
 //MARK: - • FRAMEWORK HEADERS
 import UIKit
+import AVFoundation
 
 //MARK: - • OTHERS IMPORTS
 
@@ -57,10 +58,14 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         super.viewDidLoad()
         
         let imv:UIImageView = UIImageView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
-        imv.contentMode = .scaleAspectFit
-        imv.backgroundColor = UIColor.blue
+        imv.contentMode = .scaleAspectFill
+        imv.backgroundColor = UIColor.clear
         imv.image = UIImage.init(named: "fish.jpg")!
+        imv.clipsToBounds = true
         imv.layer.cornerRadius = 5.0
+        imv.tag = 1
+        
+        //let rect = AVMakeRect(aspectRatio: imv.image!.size, insideRect: imv.frame)
         
         bubble = UIBubbleView.defaultBubble()
         bubble?.setBubbleContent(view: imv)
@@ -183,8 +188,38 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
         
         //        let pxColor = staticImg.pixelColor(atLocation: CGPoint.init(x: 100.0, y: 100.0))
         
-        let face = UIImage(named: "face.jpg")!
-        let base64 = face.encodeToBase64String()
+//        let face = UIImage(named: "face.jpg")!
+//        let base64 = face.encodeToBase64String()
+//        face.detectFacesImages { (detectedFaces:[UIImage]) in
+//            var faces:[UIImage] = Array()
+//            for face in detectedFaces {
+//                let newFace = face.resizedImageToSize(detectedFaces[0].size)
+//                faces.append(newFace)
+//            }
+//            let gif = UIImage.animatedImage(with: faces, duration: 10.0)
+//            self.imvAnimation.image = gif
+//        }
+        
+        let imageToExtractColors = UIImage(named: "faces1.jpg")!
+        imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
+            if colors.count > 0 {
+                self.view.backgroundColor = colors[0]
+            }
+            if colors.count > 1 {
+                self.lbl1.textColor = colors[1]
+            }
+            if colors.count > 2 {
+                self.lbl2.textColor = colors[2]
+            }
+            if colors.count > 3 {
+                self.lbl3.textColor = colors[3]
+            }
+        }
+
+        imvAnimation.image = imageToExtractColors
+        
+        
+        let face = UIImage(named: "faces1.jpg")!
         face.detectFacesImages { (detectedFaces:[UIImage]) in
             var faces:[UIImage] = Array()
             for face in detectedFaces {
@@ -192,26 +227,18 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
                 faces.append(newFace)
             }
             let gif = UIImage.animatedImage(with: faces, duration: 10.0)
-            self.imvAnimation.image = gif
+            //
+            if let iv = self.bubble?.viewWithTag(1) as? UIImageView {
+                iv.image = gif
+            }
         }
         
-//        let imageToExtractColors = UIImage(named: "faces1.jpg")!
-//        imageToExtractColors.extractColors(withFlags: [.onlyDistinctColors], avoidColor: nil, count: 4) { colors in
-//            if colors.count > 0 {
-//                self.view.backgroundColor = colors[0]
-//            }
-//            if colors.count > 1 {
-//                self.lbl1.textColor = colors[1]
-//            }
-//            if colors.count > 2 {
-//                self.lbl2.textColor = colors[2]
-//            }
-//            if colors.count > 3 {
-//                self.lbl3.textColor = colors[3]
-//            }
-//        }
-//
-//        imvAnimation.image = imageToExtractColors
+        
+     
+        
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

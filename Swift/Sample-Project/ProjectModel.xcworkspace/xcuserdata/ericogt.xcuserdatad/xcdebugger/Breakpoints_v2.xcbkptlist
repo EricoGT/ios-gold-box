@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjectModel/ViewControllers/SampleViewController.swift"
-            timestampString = "585170937.563104"
+            filePath = "ProjectModel/ViewControllers/PhotoViewController.swift"
+            timestampString = "586297272.41549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "actionChangeColor(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
