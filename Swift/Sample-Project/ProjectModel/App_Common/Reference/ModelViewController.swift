@@ -30,8 +30,9 @@ class ModelViewController: UIViewController {
     //MARK: - • PUBLIC PROPERTIES
     
     var contentLoaded:Bool = false
-    var refreshLayout:Bool = false
     var layoutRead:Bool = false
+    var refreshContent:Bool = false
+    var refreshLayout:Bool = false
     
     //MARK: - • PRIVATE PROPERTIES
     
@@ -57,9 +58,12 @@ class ModelViewController: UIViewController {
             self.setupLayout()
         } else if !layoutRead {
             self.setupLayout()
+            layoutRead = true
         }
         //
-        if !contentLoaded {
+        if refreshContent {
+            self.loadContent()
+        } else if !contentLoaded {
             self.loadContent()
             contentLoaded = true
         }
@@ -68,7 +72,7 @@ class ModelViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //
-        if self.isMovingFromParent {
+        if self.isMovingFromParent || isBeingDismissed  {
             NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         }
@@ -80,7 +84,7 @@ class ModelViewController: UIViewController {
     
     //MARK: - • PUBLIC METHODS
     
-    func pop(returning:IndexesToReturn, animated:Bool = true) {
+    final func pop(returning:IndexesToReturn, animated:Bool = true) {
         
         DispatchQueue.main.async {
             
@@ -125,7 +129,7 @@ class ModelViewController: UIViewController {
         }
     }
     
-    func segue(to:String, backButtonTitle:String?) {
+    final func segue(to:String, backButtonTitle:String?) {
         
         if (self.shouldPerformSegue(withIdentifier: to, sender: self)){
             if let backSTR:String = backButtonTitle {
@@ -135,7 +139,7 @@ class ModelViewController: UIViewController {
         }
     }
     
-    func showActivityIndicator(inStatusBar:Bool = false) -> Void {
+    final func showActivityIndicator(inStatusBar:Bool = false) -> Void {
         
         var indicator:UIActivityIndicatorView? = nil
         
@@ -189,7 +193,7 @@ class ModelViewController: UIViewController {
         
     }
     
-    func hideActivityIndicator(inStatusBar:Bool = false) -> Void {
+    final func hideActivityIndicator(inStatusBar:Bool = false) -> Void {
         if let view = embebedActivityIndicatorView {
             UIView.animate(withDuration: 0.25, animations: {
                 view.alpha = 0.0
@@ -204,10 +208,6 @@ class ModelViewController: UIViewController {
             }
         }
     }
-    
-    //MARK: - • ACTION METHODS
-    
-    //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
     func setupLayout() {
         fatalError("\(#function) method must be override in subclass of ModelViewController.")
@@ -225,7 +225,7 @@ class ModelViewController: UIViewController {
         fatalError("\(#function) method must be override in subclass of ModelViewController.")
     }
     
-    func defaultSetup(_ screenTitle:String) {
+    final func defaultSetup(_ screenTitle:String) {
         
         self.navigationItem.title = screenTitle
         //
@@ -238,6 +238,10 @@ class ModelViewController: UIViewController {
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
+    
+    //MARK: - • ACTION METHODS
+    
+    //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
     @objc private func keyboardWillShow(_ notification : Notification?) -> Void {
         

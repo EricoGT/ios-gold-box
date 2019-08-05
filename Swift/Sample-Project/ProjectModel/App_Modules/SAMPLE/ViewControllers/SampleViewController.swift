@@ -20,7 +20,7 @@ import AVFoundation
 
 //MARK: - • CLASS
 
-class SampleViewController: ModelViewController, SampleViewControllerProtocol {
+class SampleViewController: ModelViewController, SampleManagerViewControllerProtocol {
 
     //MARK: - • PUBLIC PROPERTIES
     
@@ -36,7 +36,7 @@ class SampleViewController: ModelViewController, SampleViewControllerProtocol {
     
     //MARK: - • PRIVATE PROPERTIES
     
-    private lazy var viewModel: SampleViewModelProtocol = SampleViewModel(self)
+    private lazy var viewModel: SampleManagerProtocol = SampleManager(self)
     
     //MARK: - • INITIALISERS
     

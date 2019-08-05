@@ -10,28 +10,28 @@ import Foundation
 import UIKit
 
 //View Controller Protocol
-protocol SampleViewControllerProtocol: class {
+protocol SampleManagerViewControllerProtocol: class {
     func showLoading()
     func hideLoading()
 }
 
 //View Model Protocol
-protocol SampleViewModelProtocol: class {
+protocol SampleManagerProtocol: class {
     func method1() -> Int
     func method2() -> Int
     func method3() -> Int
 }
 
 //View Model
-class SampleViewModel : SampleViewModelProtocol {
+class SampleManager : SampleManagerProtocol {
     
-    private weak var viewController: SampleViewControllerProtocol?
+    private weak var viewController: SampleManagerViewControllerProtocol?
     
-    init(_ viewControllerProtocol: SampleViewControllerProtocol) {
+    required init(_ viewControllerProtocol: SampleManagerViewControllerProtocol) {
         self.viewController = viewControllerProtocol
     }
     
-    //ViewModelProtocol:
+    //SampleManagerProtocol:
     
     func method1() -> Int {
         return 1

@@ -88,16 +88,7 @@ class EmptyViewController: ModelViewController {
     
     
     //MARK: - • INTERFACE/PROTOCOL METHODS
-    
-    //ViewControllerProtocol
-    
-    func showLoading() {
-        self.showActivityIndicator(inStatusBar: true)
-    }
-    
-    func hideLoading() {
-        self.hideActivityIndicator(inStatusBar: true)
-    }
+
     
     //MARK: - • PUBLIC METHODS
     

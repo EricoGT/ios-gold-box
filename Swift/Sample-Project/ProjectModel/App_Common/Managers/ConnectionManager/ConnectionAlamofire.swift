@@ -46,7 +46,7 @@ class ConnectionDataSource
                         }
 
                     case .failure(let error):
-                        handler(nil, (dResponse.response?.statusCode)!, error as NSError)
+                        handler(nil, code, error as NSError)
                 }
         }
         

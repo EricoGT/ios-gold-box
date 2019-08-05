@@ -7,7 +7,6 @@
 //
 
 //MARK: - • INTERFACE HEADERS
-import Alamofire
 
 //MARK: - • FRAMEWORK HEADERS
 import UIKit
@@ -94,7 +93,7 @@ class ConnectionManager : NSObject
             //request
             let task = session.dataTask(with: urlRequest) { (taskData, taskResponse, taskError) in
                 //status code
-                var code:Int = -1
+                var code:Int = 0
                 if let httpResponse = taskResponse as? HTTPURLResponse {
                     code = httpResponse.statusCode
                 }
@@ -102,13 +101,29 @@ class ConnectionManager : NSObject
                 DispatchQueue.main.async {
                     handler(taskData, code, taskError)
                 }
+                
+                #if DEBUG
+                print("\n<<<<<<<<<<  INTERNET CONNECTION - START >>>>>>>>>>")
+                print("\nFUNCTION: \(#function)")
+                print("\nMETHOD: \(method.rawValue)")
+                print("\nREQUEST: \(String(describing: urlRequest))")
+                print("\nHEADERS: \(String(describing: urlRequest.allHTTPHeaderFields))")
+                print("\nPARAMETERS: \(String(describing: body))")
+                print("\nRESPONSE: \(String(describing: taskResponse))")
+                print("\nDATA: \(String(describing: taskData))")
+                print("\nERROR: \(String(describing: taskError))")
+                print("\n<<<<<<<<<<  INTERNET CONNECTION - END >>>>>>>>>>")
+                #endif
+                
             }
             task.resume()
             return task
         }
-        
+
         return nil
     }
+    
+    
     
     //MARK: - DOWNLOAD
     
@@ -131,19 +146,6 @@ class ConnectionManager : NSObject
         deviceDic["app_version"] = ToolBox.Application.versionBundle()
         //
         return deviceDic
-    }
-    
-    private func createDefaultHeader() -> HTTPHeaders{
-        
-        let token:String? = UserDefaults.standard.value(forKey: "PLISTKEY_ACCESS_TOKEN") as! String?
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "idiom": NSLocalizedString("LANGUAGE_APP", comment: ""),
-            "device_info": ToolBox.Converter.stringJsonFromDictionary(dictionary: getDeviceInfo() as NSDictionary, prettyPrinted: false),
-            "token": ToolBox.isNil(token as AnyObject?) ? "" :  token!
-        ]
-        return header
     }
     
 }
