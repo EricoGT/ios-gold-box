@@ -20,7 +20,7 @@ import AVFoundation
 
 //MARK: - • CLASS
 
-class SampleViewController: ModelViewController, SampleManagerViewControllerProtocol {
+class SampleViewController: ViewController, SampleManagerViewControllerProtocol {
 
     //MARK: - • PUBLIC PROPERTIES
     

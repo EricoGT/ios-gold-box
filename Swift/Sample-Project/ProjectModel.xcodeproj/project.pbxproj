@@ -19,7 +19,7 @@
 		2F06260E22DC9B1F008B6573 /* ToolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40715922C23504008181F8 /* ToolBox.swift */; };
 		2F06260F22DC9B22008B6573 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA1B6322CA56CD00D12415 /* Palette.swift */; };
 		2F06261022DC9B35008B6573 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B629B22CFD2E4004B3BC1 /* EmptyViewController.swift */; };
-		2F06261122DC9B38008B6573 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ModelViewController.swift */; };
+		2F06261122DC9B38008B6573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ViewController.swift */; };
 		2F06261222DC9B3B008B6573 /* TestFluxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40716322C23A0B008181F8 /* TestFluxVC.swift */; };
 		2F06261322DC9B3D008B6573 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40716422C23A0B008181F8 /* AppStartViewController.swift */; };
 		2F06261422DC9B40008B6573 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993722C67EB500C193FE /* SampleViewController.swift */; };
@@ -85,7 +85,8 @@
 		2FD8993322C6500500C193FE /* Random+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993222C6500500C193FE /* Random+Extensions.swift */; };
 		2FD8993622C67CEC00C193FE /* SampleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993522C67CEC00C193FE /* SampleManager.swift */; };
 		2FD8993822C67EB500C193FE /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993722C67EB500C193FE /* SampleViewController.swift */; };
-		2FD8993A22C684AE00C193FE /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ModelViewController.swift */; };
+		2FD8993A22C684AE00C193FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ViewController.swift */; };
+		2FE5F90722FDA4280078A194 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5F90622FDA4280078A194 /* Button.swift */; };
 		380864EE4A36926CB3A468E6 /* Pods_ProjectModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F566CFA5F64808EB9556232D /* Pods_ProjectModel.framework */; };
 		6E0AE7A2B338DBF7AD1B21B4 /* Pods_ProjectModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE4E66C17A6D86AD549000A /* Pods_ProjectModelTests.framework */; };
 /* End PBXBuildFile section */
@@ -147,7 +148,8 @@
 		2FD8993222C6500500C193FE /* Random+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Random+Extensions.swift"; sourceTree = "<group>"; };
 		2FD8993522C67CEC00C193FE /* SampleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleManager.swift; sourceTree = "<group>"; };
 		2FD8993722C67EB500C193FE /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
-		2FD8993922C684AE00C193FE /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
+		2FD8993922C684AE00C193FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2FE5F90622FDA4280078A194 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9F8EBA473D34F726F09F62C7 /* Pods-ProjectModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectModelTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectModelTests/Pods-ProjectModelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABE4E66C17A6D86AD549000A /* Pods_ProjectModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FE588FCE9400096E115F28 /* Pods-ProjectModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectModelTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectModelTests/Pods-ProjectModelTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -472,8 +474,9 @@
 		2FD6FE7D22F30251004BA63E /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				2FE5F90622FDA4280078A194 /* Button.swift */,
 				2F2B629B22CFD2E4004B3BC1 /* EmptyViewController.swift */,
-				2FD8993922C684AE00C193FE /* ModelViewController.swift */,
+				2FD8993922C684AE00C193FE /* ViewController.swift */,
 			);
 			path = Reference;
 			sourceTree = "<group>";
@@ -804,7 +807,7 @@
 				2F06260722DC9ACD008B6573 /* UIViewController+Extensions.swift in Sources */,
 				2F06262522DC9BA5008B6573 /* SampleDataSource.swift in Sources */,
 				2F06261322DC9B3D008B6573 /* AppStartViewController.swift in Sources */,
-				2F06261122DC9B38008B6573 /* ModelViewController.swift in Sources */,
+				2F06261122DC9B38008B6573 /* ViewController.swift in Sources */,
 				2F06261222DC9B3B008B6573 /* TestFluxVC.swift in Sources */,
 				2F06260822DC9AD0008B6573 /* NSPointerArray+Extensions.swift in Sources */,
 				2F06260622DC9AA2008B6573 /* UIImage+Extensions.swift in Sources */,
@@ -825,7 +828,8 @@
 				2F40716522C23A0B008181F8 /* TestFluxVC.swift in Sources */,
 				2FD8993622C67CEC00C193FE /* SampleManager.swift in Sources */,
 				2FCA1B6722CA7A3200D12415 /* SwiftDocumentation.swift in Sources */,
-				2FD8993A22C684AE00C193FE /* ModelViewController.swift in Sources */,
+				2FD8993A22C684AE00C193FE /* ViewController.swift in Sources */,
+				2FE5F90722FDA4280078A194 /* Button.swift in Sources */,
 				2F40716822C24115008181F8 /* User.swift in Sources */,
 				2FCAFC1C22C5526B00A5E37A /* ConnectionAlamofire.swift in Sources */,
 				2F40716622C23A0B008181F8 /* AppStartViewController.swift in Sources */,

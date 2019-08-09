@@ -17,7 +17,7 @@ public class Palette {
     
     //MARK: - Controls Configuration
     
-    func configureNavigationController(viewController: inout ModelViewController) -> Void {
+    func configureNavigationController(viewController: inout ViewController) -> Void {
         viewController.navigationItem.title = "Título"
         //
         viewController.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)

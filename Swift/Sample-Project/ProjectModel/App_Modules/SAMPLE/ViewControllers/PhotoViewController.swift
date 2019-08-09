@@ -20,7 +20,7 @@ import Photos
 
 //MARK: - • CLASS
 
-class PhotoViewController: ModelViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PhotoViewController: ViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //MARK: - • PUBLIC PROPERTIES
 

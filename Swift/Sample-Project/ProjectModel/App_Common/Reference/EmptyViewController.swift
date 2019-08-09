@@ -19,7 +19,7 @@ import UIKit
 
 //MARK: - • CLASS
 
-class EmptyViewController: ModelViewController {
+class EmptyViewController: ViewController {
     
     //MARK: - • PUBLIC PROPERTIES
     

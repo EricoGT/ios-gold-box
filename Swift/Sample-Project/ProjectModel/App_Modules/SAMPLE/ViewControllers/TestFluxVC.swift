@@ -17,7 +17,7 @@ import UIKit
 
 //MARK: - • CLASS
 
-class TestFluxVC: ModelViewController {
+class TestFluxVC: ViewController {
     
     //MARK: - • LOCAL DEFINES
     

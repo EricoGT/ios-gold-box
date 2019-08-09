@@ -25,7 +25,7 @@ enum IndexesToReturn {
 
 //MARK: - • CLASS
 
-class ModelViewController: UIViewController {
+class ViewController: UIViewController {
     
     //MARK: - • PUBLIC PROPERTIES
     
