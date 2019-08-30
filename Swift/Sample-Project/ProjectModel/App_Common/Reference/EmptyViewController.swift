@@ -6,6 +6,8 @@
 //  Copyright © 2019 Erico Gimenes Teixeira. All rights reserved.
 //
 
+//MARK: - • PROTOCOLS
+
 //MARK: - • INTERFACE HEADERS
 
 //MARK: - • FRAMEWORK HEADERS
@@ -73,6 +75,7 @@ class EmptyViewController: ViewController {
     
     override func loadContent() {
         //Insert code here...
+        //
         contentLoaded = true
     }
     

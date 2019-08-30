@@ -6,6 +6,8 @@
 //  Copyright © 2019 Erico Gimenes Teixeira. All rights reserved.
 //
 
+//MARK: - • PROTOCOLS
+
 //MARK: - • INTERFACE HEADERS
 
 //MARK: - • FRAMEWORK HEADERS
@@ -101,6 +103,8 @@ class ViewController: UIViewController {
                 case .root :
                     if let vc = App.Delegate.rootViewController {
                         self.navigationController?.popToViewController(vc, animated: animated)
+                    } else {
+                        self.navigationController?.popToRootViewController(animated: animated)
                     }
                     break
                     
