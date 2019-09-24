@@ -123,7 +123,7 @@ class Button : UIButton {
         CATransaction.begin()
         
         let group = CAAnimationGroup.init()
-        group.fillMode = .both
+        group.fillMode = CAMediaTimingFillMode.both
         group.duration = duration
         group.isRemovedOnCompletion = true
         
@@ -133,8 +133,8 @@ class Button : UIButton {
         animationPath.toValue = endPath.cgPath
         animationPath.duration = duration
         animationPath.isRemovedOnCompletion = false
-        animationPath.fillMode = .forwards
-        animationPath.timingFunction = CAMediaTimingFunction.init(name: .easeInEaseOut)
+        animationPath.fillMode = CAMediaTimingFillMode.forwards
+        animationPath.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeInEaseOut)
         animationPath.beginTime = 0.0
         
         let animationAlpha = CABasicAnimation.init(keyPath: "opacity")
@@ -143,8 +143,8 @@ class Button : UIButton {
         animationAlpha.toValue = 0.01
         animationAlpha.duration = duration
         animationAlpha.isRemovedOnCompletion = false
-        animationAlpha.fillMode = .forwards
-        animationAlpha.timingFunction = CAMediaTimingFunction.init(name: .easeInEaseOut)
+        animationAlpha.fillMode = CAMediaTimingFillMode.forwards
+        animationAlpha.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeInEaseOut)
         animationAlpha.beginTime = 0.0
         
         group.animations = [animationPath, animationAlpha]

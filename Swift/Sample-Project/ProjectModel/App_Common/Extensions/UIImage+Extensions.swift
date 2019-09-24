@@ -39,9 +39,35 @@ extension UIImage {
             return nil
         }
         //
-        if let data:Data = self.jpegData(compressionQuality: 1.0) { //self.pngData() {
+        if let data:Data = self.jpegData(compressionQuality: 1.0) {
             return data.base64EncodedString(options: .endLineWithLineFeed)
         }
+        return nil
+    }
+    
+    func encodeToBase64String(asJPEG: Bool, options: Data.Base64EncodingOptions, appendPrefix: Bool) -> String? {
+        if (self.isAnimated()){
+            return nil
+        }
+        //
+        if asJPEG {
+            if let data:Data = self.jpegData(compressionQuality: 1.0) {
+                if appendPrefix {
+                    return "data:image/jpeg;base64," + data.base64EncodedString(options: options)
+                } else {
+                    return data.base64EncodedString(options: options)
+                }
+            }
+        } else {
+            if let data:Data = self.pngData() {
+                if appendPrefix {
+                    return "data:image/png;base64," + data.base64EncodedString(options: options)
+                } else {
+                    return data.base64EncodedString(options: options)
+                }
+            }
+        }
+        
         return nil
     }
     
@@ -95,6 +121,27 @@ extension UIImage {
         }
         
         return self
+    }
+    
+    /**
+     * Cria uma imagem retangular, podendo ter cantos arredondados.
+     * - Parameter size: Dimensão desejada para a imagem.
+     * - Parameter corners: Cantos que se deseja arredondar.
+     * - Parameter cornerRadius: Raio que se deseja aplicar aos cantos.
+     * - Parameter color: Cor que se deseja para imagem (o alpha deve estar incluso).
+     * - Returns: Retorna uma nova instância de UIImage, com as características parâmetro.
+     */
+    class func createFlatImage(size:CGSize, corners:UIRectCorner, cornerRadius:CGSize, color:UIColor) -> UIImage{
+        
+        let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        let path:UIBezierPath = UIBezierPath.init(roundedRect: rect , byRoundingCorners: corners, cornerRadii: cornerRadius)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        path.fill()
+        let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        //
+        return image
     }
     
     //******************************************************************************************************
@@ -448,6 +495,25 @@ extension UIImage {
         
         let newSize = CGSize.init(width: idealWidth, height: idealHeight)
         return self.resizedImageToSize(newSize)
+        
+        
+//        var width = self.size.width
+//        var height = self.size.height
+//        let ratio = width / height
+//        let scale = UIScreen.main.nativeScale
+//        let maxWidth = frameSize.width * scale
+//        let maxHeight = frameSize.height * scale
+//        //
+//        if width > maxWidth {
+//            width = maxWidth
+//            height = width / ratio
+//        } else if height > maxHeight {
+//            height = maxHeight
+//            width = height * ratio
+//        }
+//        //
+//        let newSize = CGSize.init(width: width, height: height)
+//        return self.resizedImageToSize(newSize)
     }
     
     /** Este método retorna uma nova imagem, baseando-se numa dada área da imagem original. */
@@ -1435,19 +1501,19 @@ extension UIImage {
             return finalImage
         }
         
-        return image        
+        return image
     }
     
     private func compress(image:UIImage, quality:CGFloat) -> UIImage {
         if quality == 1.0 {
             //Lossless compression
-            if let data:Data = image.pngData() {
+            if let data:Data = self.pngData() {
                 let img:UIImage? = UIImage.init(data: data)
                 return img ?? image
             }
         } else {
             //Lossy compression (remove transparency)
-            if let data:Data = image.jpegData(compressionQuality: quality) {
+            if let data:Data = self.jpegData(compressionQuality: quality) {
                 let img:UIImage? = UIImage.init(data: data)
                 return img ?? image
             }

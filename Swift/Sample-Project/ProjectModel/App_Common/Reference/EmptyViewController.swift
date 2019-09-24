@@ -1,9 +1,9 @@
 //
-//  EmptyViewController.swift
-//  ProjectModel
+//  DAM_EmptySample_VC.swift
+//  Pernambucanas
 //
-//  Created by Erico Gimenes Teixeira on 05/07/19.
-//  Copyright © 2019 Erico Gimenes Teixeira. All rights reserved.
+//  Created by Erico Gimenes Teixeira on 16/09/19.
+//  Copyright © 2019 Conductor. All rights reserved.
 //
 
 //MARK: - • PROTOCOLS
@@ -21,7 +21,7 @@ import UIKit
 
 //MARK: - • CLASS
 
-class EmptyViewController: ViewController {
+class DAM_EmptySample_VC: ViewController {
     
     //MARK: - • PUBLIC PROPERTIES
     
@@ -47,7 +47,7 @@ class EmptyViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,7 +91,7 @@ class EmptyViewController: ViewController {
     
     
     //MARK: - • INTERFACE/PROTOCOL METHODS
-
+    
     
     //MARK: - • PUBLIC METHODS
     
@@ -102,3 +102,5 @@ class EmptyViewController: ViewController {
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
 }
+
+

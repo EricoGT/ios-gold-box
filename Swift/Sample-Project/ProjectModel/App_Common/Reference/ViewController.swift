@@ -35,10 +35,14 @@ class ViewController: UIViewController {
     var layoutRead:Bool = false
     var refreshContent:Bool = false
     var refreshLayout:Bool = false
+    //
+    var textComposer: TextComposer = TextComposer.init()
     
     //MARK: - • PRIVATE PROPERTIES
     
-    private var embebedActivityIndicatorView:UIView?
+    private var embebedActivityIndicatorView: UIView?
+    
+    
     
     //MARK: - • INITIALISERS
     
@@ -48,9 +52,19 @@ class ViewController: UIViewController {
     
     //MARK: - • SUPER CLASS OVERRIDES
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if !contentLoaded {
+            self.loadContent()
+            contentLoaded = true
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //
+        self.view.updateConstraints()
         self.view.layoutIfNeeded()
         //
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -65,9 +79,6 @@ class ViewController: UIViewController {
         //
         if refreshContent {
             self.loadContent()
-        } else if !contentLoaded {
-            self.loadContent()
-            contentLoaded = true
         }
     }
     
@@ -236,11 +247,46 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.color(hexSTR: "#141F78")
         //
-        self.navigationController?.navigationBar.tintColor = UIColor.groupTableViewBackground
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 15.0)]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, NSAttributedString.Key.font:UIFont.init(name: "Roboto-Light", size: 20.0)!]
         //
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    public func showNavigationBar() -> Void {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.view.updateConstraints()
+        self.view.layoutIfNeeded()
+    }
+    
+    public func hideNavigationBar() -> Void {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.view.updateConstraints()
+        self.view.layoutIfNeeded()
+    }
+    
+    public func showTabBar() -> Void {
+        self.tabBarController?.tabBar.isHidden = false
+        self.hidesBottomBarWhenPushed = false
+        self.view.updateConstraints()
+        self.view.layoutIfNeeded()
+    }
+    
+    public func hideTabBar() -> Void {
+        self.tabBarController?.tabBar.isHidden = true
+        self.hidesBottomBarWhenPushed = true
+        self.view.updateConstraints()
+        self.view.layoutIfNeeded()
+    }
+    
+    public func showNavigationBarBackButton() -> Void {
+        self.navigationItem.setHidesBackButton(false, animated: true)
+    }
+    
+    public func hideNavigationBarBackButton() -> Void {
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     //MARK: - • ACTION METHODS
@@ -256,7 +302,7 @@ class ViewController: UIViewController {
             //
             var animationCurve:UIView.AnimationOptions = .curveEaseOut
             var animationDuration:TimeInterval = 0.25
-            var height:CGFloat = CGFloat.zero
+            var height:CGFloat = 0.0
             
             //  Getting keyboard animation.
             if let curve = info[curveUserInfoKey] as? UIView.AnimationOptions {
