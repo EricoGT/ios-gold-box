@@ -88,8 +88,6 @@
 		2FD8993A22C684AE00C193FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8993922C684AE00C193FE /* ViewController.swift */; };
 		2FDA7C10233A3CAA00852F3C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA7C0F233A3CAA00852F3C /* Colors.xcassets */; };
 		2FDA7C11233A3CAA00852F3C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA7C0F233A3CAA00852F3C /* Colors.xcassets */; };
-		2FDA7C13233A3CBD00852F3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA7C12233A3CBD00852F3C /* Images.xcassets */; };
-		2FDA7C14233A3CBD00852F3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA7C12233A3CBD00852F3C /* Images.xcassets */; };
 		2FE5F90722FDA4280078A194 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5F90622FDA4280078A194 /* Button.swift */; };
 		380864EE4A36926CB3A468E6 /* Pods_ProjectModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F566CFA5F64808EB9556232D /* Pods_ProjectModel.framework */; };
 		6E0AE7A2B338DBF7AD1B21B4 /* Pods_ProjectModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE4E66C17A6D86AD549000A /* Pods_ProjectModelTests.framework */; };
@@ -154,7 +152,6 @@
 		2FD8993722C67EB500C193FE /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		2FD8993922C684AE00C193FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FDA7C0F233A3CAA00852F3C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		2FDA7C12233A3CBD00852F3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2FE5F90622FDA4280078A194 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9F8EBA473D34F726F09F62C7 /* Pods-ProjectModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectModelTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectModelTests/Pods-ProjectModelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABE4E66C17A6D86AD549000A /* Pods_ProjectModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,7 +405,6 @@
 			children = (
 				2F40714122C23294008181F8 /* Assets.xcassets */,
 				2FDA7C0F233A3CAA00852F3C /* Colors.xcassets */,
-				2FDA7C12233A3CBD00852F3C /* Images.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -674,7 +670,6 @@
 				2F06261922DC9B72008B6573 /* Main.storyboard in Resources */,
 				2F06261B22DC9B95008B6573 /* color1.jpg in Resources */,
 				2F06261F22DC9B99008B6573 /* qrcode.png in Resources */,
-				2FDA7C14233A3CBD00852F3C /* Images.xcassets in Resources */,
 				2F06261E22DC9B99008B6573 /* chroma_key.jpg in Resources */,
 				2F06261722DC9B6A008B6573 /* LaunchScreen.storyboard in Resources */,
 				2F06262122DC9B99008B6573 /* mask_alpha.png in Resources */,
@@ -699,7 +694,6 @@
 				2F40716222C239E9008181F8 /* Start.storyboard in Resources */,
 				2FCA1B4C22CA1EB700D12415 /* color2.jpg in Resources */,
 				2F5D214222C39D8E0049B7DA /* animation.gif in Resources */,
-				2FDA7C13233A3CBD00852F3C /* Images.xcassets in Resources */,
 				2F5D214822C3F5700049B7DA /* mask_gray.jpg in Resources */,
 				2FCAFC0E22C4DEEB00A5E37A /* faces1.jpg in Resources */,
 				2FCAFC1422C5270100A5E37A /* chroma_key.jpg in Resources */,

@@ -11,7 +11,7 @@ struct SwiftDocumentation {
     /**
      Summary: The leading paragraph of a documentation comment becomes the documentation Summary. Any additional content is grouped together into the Discussion section.
      
-     Discussion: You can apply *italic*, **bold**, or `code` inline styles.
+     Discussion: You can apply *italic*, **bold**, or ` code ` inline styles.
      
      ## Unordered Lists
      - Lists are great,
